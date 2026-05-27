@@ -59,7 +59,7 @@ export default {
   title: 'Deck 标题',
   slides: [
     slide('cover', {...}),
-    slide('timeline', {...}),
+    slide('s02', {...}),
     slide('closing', {...}),
   ],
 };
@@ -86,6 +86,28 @@ export default {
 
 | key | data-layout | 用途 |
 |---|---|---|
+| `s01` | `S01` | Index Cover |
+| `s02` | `S02` | Vertical Timeline + KPI |
+| `s03` | `S03` | Split Statement |
+| `s04` | `S04` | Six Cells |
+| `s05` | `S05` | Three Layers |
+| `s06` | `S06` | KPI Tower |
+| `s07` | `S07` | H-Bar Chart |
+| `s08` | `S08` | Duo Compare |
+| `s09` | `S09` | Dot Matrix Statement |
+| `s10` | `S10` | Split Closing |
+| `s11` | `S11` | Horizontal Timeline |
+| `s12` | `S12` | Manifesto + Ink Banner |
+| `s13` | `S13` | Three Forces |
+| `s14` | `S14` | Loop Form |
+| `s15` | `S15` | Matrix + Hero Stat |
+| `s16` | `S16` | Multi-card Brief |
+| `s17` | `S17` | System Diagram |
+| `s18` | `S18` | Why Now |
+| `s19` | `S19` | Four Cards |
+| `s20` | `S20` | Stacked KPI Ledger |
+| `s21` | `S21` | Tech Spec Sheet |
+| `s22` | `S22` | Image Hero |
 | `cover` | `SWISS-COVER-ASCII` | 封面 |
 | `timeline` | `S02` | 时间线 + KPI |
 | `sixCells` | `S04` | 六宫格概念/能力定义 |
@@ -94,11 +116,14 @@ export default {
 | `imageHero` | `S22` | 21:9 图片主视觉 |
 | `closing` | `SWISS-CLOSING-ASCII` | 收尾页 |
 
+`s01`-`s22` 是原始 Swiss 正文布局的 canonical key;`cover`、`closing` 和旧的语义 key 保留给示例兼容。
+
 ### 3. 复制示例并改内容
 
 从 `examples/component-decks/` 复制最接近的示例:
 
 - `ai-ops-review.jsx`
+- `all-layouts-showcase.jsx`
 - `climate-field-report.jsx`
 - `retail-launch-brief.jsx`
 - `swiss-demo.jsx`

@@ -15,6 +15,7 @@ const descriptions = {
   'docs/ADR.md': '架构决策记录,描述当前生成链路和组件化边界。',
   'docs/project-files.md': '项目文件作用说明,由脚本根据当前文件列表生成。',
   'examples/component-decks/ai-ops-review.jsx': 'AI 运营复盘示例 deck,演示技术/运营复盘主题的页面组合。',
+  'examples/component-decks/all-layouts-showcase.jsx': 'Swiss S01-S22 布局总览示例 deck,顺序渲染全部原始正文布局。',
   'examples/component-decks/climate-field-report.jsx': '城市微气候田野报告示例 deck,演示生态/田野主题的页面组合。',
   'examples/component-decks/retail-launch-brief.jsx': '零售新品上市简报示例 deck,演示消费/上市主题的页面组合。',
   'examples/component-decks/swiss-demo.jsx': '组件选项机制 demo deck,可用环境变量切换主题和字体。',
@@ -29,6 +30,23 @@ const descriptions = {
   'src/components/swiss/HBar.jsx': '横向柱状排行组件,对应 S07。',
   'src/components/swiss/ImageHero.jsx': '图片主视觉页组件,对应 S22。',
   'src/components/swiss/KpiTower.jsx': 'KPI 塔组件,对应 S06。',
+  'src/components/swiss/S01IndexCover.jsx': 'Index Cover 正文布局组件,对应 S01。',
+  'src/components/swiss/S03SplitStatement.jsx': 'Split Statement 正文布局组件,对应 S03。',
+  'src/components/swiss/S05ThreeLayers.jsx': 'Three Layers 正文布局组件,对应 S05。',
+  'src/components/swiss/S08DuoCompare.jsx': 'Duo Compare 正文布局组件,对应 S08。',
+  'src/components/swiss/S09DotMatrixStatement.jsx': 'Dot Matrix Statement 正文布局组件,对应 S09。',
+  'src/components/swiss/S10SplitClosing.jsx': 'Split Closing 正文布局组件,对应 S10。',
+  'src/components/swiss/S11HorizontalTimeline.jsx': 'Horizontal Timeline 正文布局组件,对应 S11。',
+  'src/components/swiss/S12ManifestoBanner.jsx': 'Manifesto + Ink Banner 正文布局组件,对应 S12。',
+  'src/components/swiss/S13ThreeForces.jsx': 'Three Forces 正文布局组件,对应 S13。',
+  'src/components/swiss/S14LoopForm.jsx': 'Loop Form 正文布局组件,对应 S14。',
+  'src/components/swiss/S15MatrixHeroStat.jsx': 'Matrix + Hero Stat 正文布局组件,对应 S15。',
+  'src/components/swiss/S16MultiCardBrief.jsx': 'Multi-card Brief 正文布局组件,对应 S16。',
+  'src/components/swiss/S17SystemDiagram.jsx': 'System Diagram 正文布局组件,对应 S17。',
+  'src/components/swiss/S18WhyNow.jsx': 'Why Now 正文布局组件,对应 S18。',
+  'src/components/swiss/S19FourCards.jsx': 'Four Cards 正文布局组件,对应 S19。',
+  'src/components/swiss/S20StackedLedger.jsx': 'Stacked KPI Ledger 正文布局组件,对应 S20。',
+  'src/components/swiss/S21TechSpec.jsx': 'Tech Spec Sheet 正文布局组件,对应 S21。',
   'src/components/swiss/SixCells.jsx': '六宫格组件,对应 S04。',
   'src/components/swiss/Timeline.jsx': '纵向时间线 + KPI 组件,对应 S02。',
   'src/components/swiss/index.jsx': 'Swiss 组件统一导出口,供 LAYOUT_OPTIONS 引用。',
@@ -98,6 +116,10 @@ function renderAdr() {
 ## ADR-006: Swiss 布局组件按文件拆分
 
 每个 Swiss 页面布局组件独立放在 \`src/components/swiss/*.jsx\`,共享基础件放在 \`src/components/swiss/primitives.jsx\`,统一导出放在 \`src/components/swiss/index.jsx\`。\`src/options.jsx\` 只负责把 layout key 登记到组件。
+
+## ADR-007: 原始 Swiss 正文布局使用 canonical key
+
+原始 Swiss \`S01\` 到 \`S22\` 正文布局统一登记为 \`s01\` 到 \`s22\`。旧的语义 key 仅保留给已有示例兼容,新的正文页面优先使用 canonical key。
 `;
 }
 

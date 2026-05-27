@@ -15,6 +15,7 @@
 |-- examples/
 |   `-- component-decks/
 |       |-- ai-ops-review.jsx - AI 运营复盘示例 deck,演示技术/运营复盘主题的页面组合。
+|       |-- all-layouts-showcase.jsx - Swiss S01-S22 布局总览示例 deck,顺序渲染全部原始正文布局。
 |       |-- climate-field-report.jsx - 城市微气候田野报告示例 deck,演示生态/田野主题的页面组合。
 |       |-- retail-launch-brief.jsx - 零售新品上市简报示例 deck,演示消费/上市主题的页面组合。
 |       `-- swiss-demo.jsx - 组件选项机制 demo deck,可用环境变量切换主题和字体。
@@ -34,6 +35,23 @@
 |   |       |-- index.jsx - Swiss 组件统一导出口,供 LAYOUT_OPTIONS 引用。
 |   |       |-- KpiTower.jsx - KPI 塔组件,对应 S06。
 |   |       |-- primitives.jsx - Swiss 组件共享基础件,包含 slide 外壳、画布卡、页眉、图标和 KPI 行。
+|   |       |-- S01IndexCover.jsx - Index Cover 正文布局组件,对应 S01。
+|   |       |-- S03SplitStatement.jsx - Split Statement 正文布局组件,对应 S03。
+|   |       |-- S05ThreeLayers.jsx - Three Layers 正文布局组件,对应 S05。
+|   |       |-- S08DuoCompare.jsx - Duo Compare 正文布局组件,对应 S08。
+|   |       |-- S09DotMatrixStatement.jsx - Dot Matrix Statement 正文布局组件,对应 S09。
+|   |       |-- S10SplitClosing.jsx - Split Closing 正文布局组件,对应 S10。
+|   |       |-- S11HorizontalTimeline.jsx - Horizontal Timeline 正文布局组件,对应 S11。
+|   |       |-- S12ManifestoBanner.jsx - Manifesto + Ink Banner 正文布局组件,对应 S12。
+|   |       |-- S13ThreeForces.jsx - Three Forces 正文布局组件,对应 S13。
+|   |       |-- S14LoopForm.jsx - Loop Form 正文布局组件,对应 S14。
+|   |       |-- S15MatrixHeroStat.jsx - Matrix + Hero Stat 正文布局组件,对应 S15。
+|   |       |-- S16MultiCardBrief.jsx - Multi-card Brief 正文布局组件,对应 S16。
+|   |       |-- S17SystemDiagram.jsx - System Diagram 正文布局组件,对应 S17。
+|   |       |-- S18WhyNow.jsx - Why Now 正文布局组件,对应 S18。
+|   |       |-- S19FourCards.jsx - Four Cards 正文布局组件,对应 S19。
+|   |       |-- S20StackedLedger.jsx - Stacked KPI Ledger 正文布局组件,对应 S20。
+|   |       |-- S21TechSpec.jsx - Tech Spec Sheet 正文布局组件,对应 S21。
 |   |       |-- SixCells.jsx - 六宫格组件,对应 S04。
 |   |       `-- Timeline.jsx - 纵向时间线 + KPI 组件,对应 S02。
 |   |-- options.jsx - 选项注册表,集中登记主题色、字体组合和页面版式。

@@ -27,7 +27,7 @@ export default {
       kicker: 'SECTION LABEL',
       lead: '一段副标题。',
     }),
-    slide('timeline', {
+    slide('s02', {
       page: '02 / 05',
       title: '时间线标题',
       kicker: 'FLOW',
@@ -67,6 +67,8 @@ npm run validate:swiss -- output/ai-ops/ppt/index.html
 4. 在 `LAYOUT_OPTIONS` 登记 key。
 5. 必要时更新 `scripts/validate-swiss-deck.mjs`。
 
+原始 Swiss 正文布局使用 `s01` 到 `s22` 作为 canonical key。旧示例里的 `timeline`、`sixCells`、`kpiTower`、`hBar`、`imageHero` 只是兼容别名。
+
 ## Subagent 测试
 
 测试不能只换颜色。每个 subagent 需要生成不同内容主题和页面组合:
@@ -74,6 +76,7 @@ npm run validate:swiss -- output/ai-ops/ppt/index.html
 - AI/技术复盘:偏 `timeline`、`kpiTower`、`hBar`
 - 城市/生态报告:偏 `imageHero`、`sixCells`、`timeline`
 - 零售/消费简报:偏 `hBar`、`kpiTower`、`imageHero`
+- 全量布局回归:运行 `npm run render:all-layouts`,检查 `output/all-components-showcase/ppt/index.html` 的 22 页总览
 
 比较结果时看:
 

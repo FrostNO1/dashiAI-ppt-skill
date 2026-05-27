@@ -5,6 +5,23 @@ import {
   SwissHBarSlide,
   SwissImageHeroSlide,
   SwissKpiTowerSlide,
+  SwissS01IndexCover,
+  SwissS03SplitStatement,
+  SwissS05ThreeLayers,
+  SwissS08DuoCompare,
+  SwissS09DotMatrixStatement,
+  SwissS10SplitClosing,
+  SwissS11HorizontalTimeline,
+  SwissS12ManifestoBanner,
+  SwissS13ThreeForces,
+  SwissS14LoopForm,
+  SwissS15MatrixHeroStat,
+  SwissS16MultiCardBrief,
+  SwissS17SystemDiagram,
+  SwissS18WhyNow,
+  SwissS19FourCards,
+  SwissS20StackedLedger,
+  SwissS21TechSpec,
   SwissSixCellsSlide,
   SwissTimelineSlide,
 } from './components/swiss/index.jsx';
@@ -104,6 +121,116 @@ export const FONT_OPTIONS = {
 };
 
 export const LAYOUT_OPTIONS = {
+  s01: {
+    label: 'S01 Index Cover',
+    dataLayout: 'S01',
+    component: SwissS01IndexCover,
+  },
+  s02: {
+    label: 'S02 Vertical Timeline + KPI',
+    dataLayout: 'S02',
+    component: SwissTimelineSlide,
+  },
+  s03: {
+    label: 'S03 Split Statement',
+    dataLayout: 'S03',
+    component: SwissS03SplitStatement,
+  },
+  s04: {
+    label: 'S04 Six Cells',
+    dataLayout: 'S04',
+    component: SwissSixCellsSlide,
+  },
+  s05: {
+    label: 'S05 Three Layers',
+    dataLayout: 'S05',
+    component: SwissS05ThreeLayers,
+  },
+  s06: {
+    label: 'S06 KPI Tower',
+    dataLayout: 'S06',
+    component: SwissKpiTowerSlide,
+  },
+  s07: {
+    label: 'S07 Horizontal Bar Chart',
+    dataLayout: 'S07',
+    component: SwissHBarSlide,
+  },
+  s08: {
+    label: 'S08 Duo Compare',
+    dataLayout: 'S08',
+    component: SwissS08DuoCompare,
+  },
+  s09: {
+    label: 'S09 Dot Matrix Statement',
+    dataLayout: 'S09',
+    component: SwissS09DotMatrixStatement,
+  },
+  s10: {
+    label: 'S10 Split Closing',
+    dataLayout: 'S10',
+    component: SwissS10SplitClosing,
+  },
+  s11: {
+    label: 'S11 Horizontal Timeline',
+    dataLayout: 'S11',
+    component: SwissS11HorizontalTimeline,
+  },
+  s12: {
+    label: 'S12 Manifesto + Ink Banner',
+    dataLayout: 'S12',
+    component: SwissS12ManifestoBanner,
+  },
+  s13: {
+    label: 'S13 Three Forces',
+    dataLayout: 'S13',
+    component: SwissS13ThreeForces,
+  },
+  s14: {
+    label: 'S14 Loop Form',
+    dataLayout: 'S14',
+    component: SwissS14LoopForm,
+  },
+  s15: {
+    label: 'S15 Matrix + Hero Stat',
+    dataLayout: 'S15',
+    component: SwissS15MatrixHeroStat,
+  },
+  s16: {
+    label: 'S16 Multi-card Brief',
+    dataLayout: 'S16',
+    component: SwissS16MultiCardBrief,
+  },
+  s17: {
+    label: 'S17 System Diagram',
+    dataLayout: 'S17',
+    component: SwissS17SystemDiagram,
+  },
+  s18: {
+    label: 'S18 Why Now',
+    dataLayout: 'S18',
+    component: SwissS18WhyNow,
+  },
+  s19: {
+    label: 'S19 Four Cards',
+    dataLayout: 'S19',
+    component: SwissS19FourCards,
+  },
+  s20: {
+    label: 'S20 Stacked KPI Ledger',
+    dataLayout: 'S20',
+    component: SwissS20StackedLedger,
+  },
+  s21: {
+    label: 'S21 Tech Spec Sheet',
+    dataLayout: 'S21',
+    component: SwissS21TechSpec,
+  },
+  s22: {
+    label: 'S22 Image Hero',
+    dataLayout: 'S22',
+    component: SwissImageHeroSlide,
+  },
   cover: {
     label: 'Cover',
     dataLayout: 'SWISS-COVER-ASCII',

@@ -31,6 +31,13 @@ npm run render:demo
 npm run validate:swiss -- output/component-demo/ppt/index.html
 ```
 
+渲染全部 `S01-S22` 布局总览:
+
+```bash
+npm run render:all-layouts
+npm run validate:swiss -- output/all-components-showcase/ppt/index.html
+```
+
 渲染指定 deck:
 
 ```bash
@@ -48,6 +55,7 @@ npm run render:examples
 | 文件 | 内容主题 | 选项特点 |
 |---|---|---|
 | `examples/component-decks/ai-ops-review.jsx` | AI 运营系统季度复盘 | IKB + Inter + 时间线/KPI/排行 |
+| `examples/component-decks/all-layouts-showcase.jsx` | Swiss S01-S22 布局总览 | 顺序展示全部 22 个正文布局 |
 | `examples/component-decks/climate-field-report.jsx` | 城市微气候田野报告 | Green + Compact + 图片主视觉/六宫格/时间线 |
 | `examples/component-decks/retail-launch-brief.jsx` | 零售新品上市简报 | Lemon + System + 排行/KPI/上市节奏 |
 | `examples/component-decks/swiss-demo.jsx` | 组件选项机制演示 | 可用环境变量切换 theme/fontSet |
@@ -69,13 +77,10 @@ npm run render:examples
 
 页面版式:
 
-- `cover`
-- `timeline`
-- `sixCells`
-- `kpiTower`
-- `hBar`
-- `imageHero`
-- `closing`
+- `s01` 到 `s22`: 原始 Swiss 22 个正文布局
+- `cover`: 特殊 ASCII 封面
+- `closing`: 特殊 ASCII 收尾页
+- `timeline`、`sixCells`、`kpiTower`、`hBar`、`imageHero`: 旧示例兼容 key,分别指向 `S02`、`S04`、`S06`、`S07`、`S22`
 
 ## 项目结构
 
@@ -113,5 +118,5 @@ npm run validate:swiss -- output/examples/retail-launch-brief/ppt/index.html
 以下文档由 `npm run docs:update` 同步,提交前也会由 `.githooks/pre-commit` 自动更新。
 
 - [ADR](docs/ADR.md): 当前架构决策记录
-- [项目文件作用说明](docs/project-files.md): 当前 30 个源码文件的主要作用
+- [项目文件作用说明](docs/project-files.md): 当前 48 个源码文件的主要作用
 <!-- project-docs:end -->

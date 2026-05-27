@@ -25,3 +25,7 @@
 ## ADR-006: Swiss 布局组件按文件拆分
 
 每个 Swiss 页面布局组件独立放在 `src/components/swiss/*.jsx`,共享基础件放在 `src/components/swiss/primitives.jsx`,统一导出放在 `src/components/swiss/index.jsx`。`src/options.jsx` 只负责把 layout key 登记到组件。
+
+## ADR-007: 原始 Swiss 正文布局使用 canonical key
+
+原始 Swiss `S01` 到 `S22` 正文布局统一登记为 `s01` 到 `s22`。旧的语义 key 仅保留给已有示例兼容,新的正文页面优先使用 canonical key。

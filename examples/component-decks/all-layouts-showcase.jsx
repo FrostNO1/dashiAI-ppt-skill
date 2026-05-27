@@ -1,0 +1,267 @@
+import React from 'react';
+import { slide } from '../../src/options.jsx';
+
+const metrics = [
+  { label: 'ARR', value: '¥48M', note: '同比增长 92%' },
+  { label: 'NRR', value: '118%', note: '续费与扩容同步改善' },
+  { label: 'MAU', value: '3.2M', note: '年度峰值月活' },
+  { label: 'CSAT', value: '4.6', note: '企业客户平均评分' },
+];
+
+export default {
+  style: 'swiss',
+  theme: process.env.GUIZANG_THEME || 'ikb',
+  fontSet: process.env.GUIZANG_FONT || 'inter',
+  title: 'Swiss S01-S22 布局总览',
+  slides: [
+    slide('s01', {
+      page: '01 / 22',
+      title: 'Swiss layout index',
+      kicker: 'S01 · INDEX COVER',
+      rows: [
+        { label: 'Context' },
+        { label: 'Evidence', accent: true },
+        { label: 'Decision' },
+      ],
+      footer: '原始正文布局按 S01-S22 注册,每页从布局选项中 n 选 1。',
+    }),
+    slide('s02', {
+      page: '02 / 22',
+      title: '先沉淀结构,再推进节奏',
+      kicker: 'S02 · VERTICAL TIMELINE + KPI',
+      nodes: [
+        { label: '01', value: 'Signal', body: '识别关键主题和叙事顺序。' },
+        { label: '02', value: 'System', body: '把页面职责映射到稳定组件。' },
+        { label: '03', value: 'Output', body: '渲染为可离线打开的静态 HTML。', accent: true },
+      ],
+      metrics,
+    }),
+    slide('s03', {
+      page: '03 / 22',
+      left: {
+        kicker: 'S03 · SPLIT STATEMENT',
+        title: '组件不是模板嵌套,而是可选表达。',
+        body: '左侧承载判断,右侧承载证据或反差,适合一页讲清一个核心冲突。',
+      },
+      right: {
+        kicker: 'OPERATING SIGNAL',
+        value: '1:1',
+        title: '布局和内容一一对应',
+        body: '每个 Sxx 组件保留原模板的结构节奏,Agent 只填内容参数。',
+        note: 'LOCKED LAYOUT',
+      },
+    }),
+    slide('s04', {
+      page: '04 / 22',
+      title: '六宫格适合定义一组能力',
+      kicker: 'S04 · SIX CELLS',
+      cells: [
+        { icon: 'palette', title: 'Theme', body: 'Deck 级主题色多选一。' },
+        { icon: 'type', title: 'Font', body: '字体组合多选一。' },
+        { icon: 'layout-grid', title: 'Layout', body: '每页布局多选一。', accent: true },
+        { icon: 'image', title: 'Slot', body: '媒体比例由组件约束。' },
+        { icon: 'sparkles', title: 'Motion', body: '动画 recipe 绑定布局语义。' },
+        { icon: 'file-code-2', title: 'Static', body: '最终输出纯 HTML。' },
+      ],
+    }),
+    slide('s05', {
+      page: '05 / 22',
+      title: '三层结构把抽象关系变成块面',
+      kicker: 'S05 · THREE LAYERS',
+      layers: [
+        { icon: 'boxes', title: 'Capability', body: '复用的页面表达能力。', tag: 'LAYER 01', tone: 'b-grey' },
+        { icon: 'workflow', title: 'Registry', body: '主题、字体、布局统一登记。', tag: 'LAYER 02', tone: 'b-accent' },
+        { icon: 'monitor-play', title: 'Runtime', body: '模板负责翻页和动效。', tag: 'LAYER 03', tone: 'b-ink' },
+      ],
+    }),
+    slide('s06', {
+      page: '06 / 22',
+      title: 'KPI 塔用于强调一组指标',
+      kicker: 'S06 · KPI TOWER',
+      lead: '塔高、accent 和图标由组件固定,内容只传入业务含义。',
+      towers: [
+        { icon: 'trending-up', label: 'Speed', value: '3.1x', body: '生成速度', height: 3 },
+        { icon: 'blocks', label: 'Reuse', value: '62%', body: '复用比例', height: 4, accent: true },
+        { icon: 'scan-eye', label: 'QA', value: '14', body: '校验项', height: 2 },
+        { icon: 'file-code-2', label: 'HTML', value: '1', body: '静态交付', height: 1 },
+      ],
+    }),
+    slide('s07', {
+      page: '07 / 22',
+      title: '横条图适合表达排序和权重',
+      kicker: 'S07 · H-BAR CHART',
+      label: 'COMPONENT VALUE',
+      rows: [
+        { label: '布局一致性', width: '94%', value: '94%', accent: true },
+        { label: '文字层级', width: '86%', value: '86%' },
+        { label: '图片比例', width: '78%', value: '78%' },
+        { label: '动效语义', width: '72%', value: '72%' },
+        { label: '校验覆盖', width: '63%', value: '63%' },
+      ],
+    }),
+    slide('s08', {
+      page: '08 / 22',
+      title: '双栏对比用于拆开两种逻辑',
+      kicker: 'S08 · DUO COMPARE',
+      left: {
+        kicker: 'TEMPLATE',
+        title: '固定骨架',
+        body: '模板保留视觉系统、翻页逻辑和动效运行时。',
+        points: ['结构稳定', '运行时简单', '校验边界清晰'],
+      },
+      right: {
+        kicker: 'COMPONENT',
+        title: '灵活组合',
+        body: '组件暴露内容参数,让 Agent 在限定集合内选择。',
+        points: ['每页 n 选 1', '内容参数化', '输出仍是静态 HTML'],
+      },
+      footer: 'S08 用于对仗、利弊、Before / After。',
+    }),
+    slide('s09', {
+      page: '09 / 22',
+      title: '把复杂页面约束成少量明确选择。',
+      kicker: 'S09 · DOT MATRIX STATEMENT',
+      body: '点阵页适合放置一句大判断,用几何背景强化瑞士风的精密感。',
+      label: 'NO FREEFORM HTML INSIDE LOCKED MODE',
+    }),
+    slide('s10', {
+      page: '10 / 22',
+      title: '收束页面可以提前给结论',
+      kicker: 'S10 · SPLIT CLOSING',
+      values: ['ONCE', 'FOREVER'],
+      takeaways: [
+        { title: '选择先于生成', body: '先选 theme、font、layout,再填内容。' },
+        { title: '组件各自独立', body: '一个布局一个 JSX 文件,便于维护和替换。' },
+        { title: '输出保持简单', body: 'React 只在构建期使用,最终仍是 HTML。' },
+      ],
+    }),
+    slide('s11', {
+      page: '11 / 22',
+      title: '横向时间线适合讲演进',
+      kicker: 'S11 · HORIZONTAL TIMELINE',
+      nodes: [
+        { label: '2022', title: 'Prompt', body: '自由生成' },
+        { label: '2023', title: 'Template', body: '模板约束' },
+        { label: '2024', title: 'Lock', body: '布局锁定', accent: true },
+        { label: '2025', title: 'Registry', body: '选项登记' },
+        { label: '2026', title: 'Agent', body: '组合生成' },
+      ],
+      footer: 'S11 适合里程碑、产品演进、研究脉络。',
+    }),
+    slide('s12', {
+      page: '12 / 22',
+      title: 'Form follows the option set.',
+      kicker: 'S12 · MANIFESTO + INK BANNER',
+      banner: '限制不是减少表达,而是减少无效变体。',
+      note: '用于章节宣言、原则页或从分析切到行动的转场页。',
+    }),
+    slide('s13', {
+      page: '13 / 22',
+      title: '三股力量构成系统变化',
+      kicker: 'S13 · THREE FORCES',
+      hero: { kicker: 'CORE FORCE', value: '03', body: '把主题、风格和页面职责拆成可组合的选择。' },
+      forces: [
+        { title: '主题差异', body: '不同 subagent 应测试不同主题,不是只换颜色。' },
+        { title: '风格差异', body: '页面密度、图文关系和叙事节奏都应变化。', accent: true },
+        { title: '页面差异', body: '用不同布局验证最终组合效果。' },
+      ],
+    }),
+    slide('s14', {
+      page: '14 / 22',
+      title: '闭环页适合表达迭代机制',
+      kicker: 'S14 · LOOP FORM',
+      center: { kicker: 'CENTER', title: 'Improve' },
+      steps: [
+        { title: 'Generate', body: '按选择集生成页面。' },
+        { title: 'Render', body: '渲染为静态 HTML。' },
+        { title: 'Review', body: '截图和校验发现问题。' },
+        { title: 'Refine', body: '只改必要的组件。' },
+      ],
+    }),
+    slide('s15', {
+      page: '15 / 22',
+      title: '矩阵页适合展示能力覆盖',
+      kicker: 'S15 · MATRIX + HERO STAT',
+      cells: ['主题', '字体', '封面', '时间线', '对比', '图表', '宣言', '系统图', '图片页', 'KPI', '卡片', '收尾'],
+      stat: { kicker: 'CANONICAL BODY LAYOUTS', value: '22', body: '正文布局从 S01 到 S22 统一注册,示例页按顺序展示。' },
+    }),
+    slide('s16', {
+      page: '16 / 22',
+      title: '多卡片简报承载离散观察',
+      kicker: 'S16 · MULTI-CARD BRIEF',
+      cards: [
+        { title: '主题', body: '不同叙事主题应触发不同页面选择。' },
+        { title: '风格', body: '密度、留白和素材策略需要变化。' },
+        { title: '页面', body: '同一 deck 内组合多种版式。', accent: true },
+        { title: '动效', body: 'recipe 跟随 Sxx 布局。' },
+        { title: '校验', body: '禁止未登记 layout 和实验结构。' },
+        { title: '交付', body: '最终 HTML 可离线打开。' },
+      ],
+    }),
+    slide('s17', {
+      page: '17 / 22',
+      title: '系统图用于说明组件边界',
+      kicker: 'S17 · SYSTEM DIAGRAM',
+      systems: [
+        { title: 'Options', body: 'theme/font/layout 的选择集。' },
+        { title: 'Components', body: '每个布局独立 JSX。', accent: true },
+        { title: 'Template', body: '负责运行时和 CSS 动效。' },
+      ],
+    }),
+    slide('s18', {
+      page: '18 / 22',
+      title: '为什么现在要补齐布局',
+      kicker: 'S18 · WHY NOW',
+      columns: [
+        { kicker: '01', title: '旧 demo 只有 7 页', body: '只能看到少量组件,误以为原项目只有 7 个布局。' },
+        { kicker: '02', title: '原项目有 S01-S22', body: '锁定模式要求正文布局在 22 个选择中选。' },
+        { kicker: '03', title: '需要总览页验证', body: '同一个 deck 顺序展示所有布局,更容易比较差异。' },
+      ],
+    }),
+    slide('s19', {
+      page: '19 / 22',
+      title: '四卡片页适合总结四个判断',
+      kicker: 'S19 · FOUR CARDS',
+      cards: [
+        { title: '独立文件', body: '一个 Sxx 一个 JSX。' },
+        { title: '统一出口', body: 'index.jsx 负责导出。' },
+        { title: '统一注册', body: 'options.jsx 负责 key 到组件。', accent: true },
+        { title: '统一展示', body: 'all-layouts-showcase 顺序渲染。' },
+      ],
+    }),
+    slide('s20', {
+      page: '20 / 22',
+      title: '账单式 KPI 适合强调堆叠结果',
+      kicker: 'S20 · STACKED KPI LEDGER',
+      rows: [
+        { value: '22', label: 'Canonical layouts', body: 'S01-S22 已进入 registry。', icon: 'layout-template', accent: true },
+        { value: '17', label: 'New JSX files', body: '缺失布局按独立组件补齐。', icon: 'file-plus-2' },
+        { value: '01', label: 'Showcase deck', body: '一个 deck 顺序展示完整组合。', icon: 'monitor-play' },
+        { value: '00', label: 'Runtime changes', body: '模板运行时保持不变。', icon: 'shield-check' },
+      ],
+    }),
+    slide('s21', {
+      page: '21 / 22',
+      title: 'Tech spec sheet',
+      kicker: 'S21 · TECH SPEC',
+      note: '用于参数、限制、技术指标和实现摘要。',
+      specs: [
+        { label: 'Registry', value: 'S01-S22', body: '正文布局 canonical key。', accent: true },
+        { label: 'Runtime', value: 'HTML', body: '最终交付静态文件。' },
+        { label: 'Motion', value: 'Recipes', body: '模板内置动画语义。' },
+      ],
+      hero: {
+        value: '1',
+        title: 'One deck to inspect every layout',
+        body: '刷新 all-components-showcase 即可看完整 22 页。',
+        label: 'LAYOUT COVERAGE',
+      },
+    }),
+    slide('s22', {
+      page: '22 / 22',
+      title: '图片页锁住 21:9 主视觉槽位',
+      kicker: 'S22 · IMAGE HERO',
+      stats: metrics,
+    }),
+  ],
+};
