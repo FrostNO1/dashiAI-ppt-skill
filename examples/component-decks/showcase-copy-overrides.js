@@ -1341,9 +1341,9 @@ export const SHOWCASE_DEV_ADJUSTMENTS = {
       layout: "BT02",
       html: "这页面向真实 PPT 场景，重点是对齐目标、确认线索，并形成可追踪结论。<br>销售目标校准 · 目标<strong>目标</strong>线索",
       text: "这页面向真实 PPT 场景，重点是对齐目标、确认线索，并形成可追踪结论。 销售目标校准 · 目标目标线索",
-      colorToken: "--ink",
+      colorToken: "--accent-on",
       scope: "theme",
-      theme: "acidIndigo",
+      theme: "dark",
     },
     "element:rp02:18": {
       id: "element:rp02:18",
@@ -2380,7 +2380,9 @@ export const SHOWCASE_DEV_ADJUSTMENTS = {
       html: "<span>结论提炼</span><strong>INSIGHT</strong>",
       text: "结论提炼 INSIGHT",
       fontSizeToken: null,
-      colorToken: "--ink",
+      colorToken: "--theme-decor-1",
+      scope: "theme",
+      theme: "dark",
     },
     "element:xhs3_14:10": {
       id: "element:xhs3_14:10",
@@ -2399,6 +2401,7 @@ export const SHOWCASE_DEV_ADJUSTMENTS = {
       html: "<span>负责人</span><strong>ACTION MAP</strong>",
       text: "负责人 ACTION MAP",
       fontSizeToken: null,
+      colorToken: "--theme-decor-1",
     },
     "text:xhs3_15:1": {
       id: "text:xhs3_15:1",
