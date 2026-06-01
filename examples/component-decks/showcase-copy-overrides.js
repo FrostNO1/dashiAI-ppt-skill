@@ -2371,6 +2371,14 @@ export const SHOWCASE_DEV_ADJUSTMENTS = {
       text: "结论提炼页",
       fontSizeToken: "--fs-h3",
     },
+    "element:xhs3_14:6": {
+      id: "element:xhs3_14:6",
+      slide: 57,
+      slideId: "xhs3_14-57",
+      slideKey: "xhs3_14",
+      layout: "XHS3-14",
+      colorToken: "--accent",
+    },
     "text:xhs3_14:9": {
       id: "text:xhs3_14:9",
       slide: 57,
@@ -2390,7 +2398,9 @@ export const SHOWCASE_DEV_ADJUSTMENTS = {
       slideId: "xhs3_14-57",
       slideKey: "xhs3_14",
       layout: "XHS3-14",
-      colorToken: "--focus-mark",
+      colorToken: "--accent",
+      scope: "theme",
+      theme: "light",
     },
     "text:xhs3_14:10": {
       id: "text:xhs3_14:10",
