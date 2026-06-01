@@ -2757,6 +2757,18 @@ export const SHOWCASE_DEV_ADJUSTMENTS = {
       html: "工具<div>选型范围</div>",
       text: "工具 选型范围",
     },
+    "text:xhs3_25:5": {
+      id: "text:xhs3_25:5",
+      slide: 68,
+      slideId: "xhs3_25-68",
+      slideKey: "xhs3_25",
+      layout: "XHS3-25",
+      html: "演讲收束边界<br>演讲收束<span>边界</span>P6",
+      text: "演讲收束边界 演讲收束边界P6",
+      colorToken: "--theme-x3-accent",
+      scope: "theme",
+      theme: "colorful",
+    },
     "text:style2_02:3": {
       id: "text:style2_02:3",
       slide: 85,
