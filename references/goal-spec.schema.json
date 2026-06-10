@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dashi PPT Goal Spec",
+  "type": "object",
+  "required": [
+    "title",
+    "goal"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "randomSeed": {
+      "type": "string"
+    },
+    "pageCount": {
+      "type": "number"
+    },
+    "themePack": {
+      "type": "string",
+      "enum": [
+        "theme01",
+        "theme02",
+        "theme03",
+        "theme04",
+        "theme07",
+        "theme08",
+        "theme09",
+        "theme10",
+        "theme11",
+        "theme12"
+      ]
+    },
+    "text": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "media": {
+      "type": "object"
+    },
+    "props": {
+      "type": "object"
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "layout"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "slideKey": {
+            "type": "string"
+          },
+          "logicalIndex": {
+            "type": "number"
+          },
+          "layout": {
+            "type": "string"
+          },
+          "props": {
+            "type": "object"
+          },
+          "media": {
+            "type": "object"
+          },
+          "copy": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}

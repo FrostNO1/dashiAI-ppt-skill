@@ -1,0 +1,61 @@
+{
+  "title": "AI 融资年度回顾",
+  "goal": "面向投资团队汇报 AI 融资年度进展、关键变化和下一步判断",
+  "audience": "投资团队",
+  "owner": "研究团队",
+  "randomSeed": "theme08-example",
+  "pageCount": 5,
+  "themePack": "theme08",
+  "slides": [
+    {
+      "layout": "theme08_page001",
+      "props": {
+        "kicker": "示例封面",
+        "title": "AI 融资年度回顾",
+        "subtitle": "面向投资团队汇报 AI 融资年度进展、关键变化和下一步判断",
+        "lead": "面向投资团队汇报 AI 融资年度进展、关键变化和下一步判断",
+        "note": "投资团队 / 研究团队"
+      }
+    },
+    {
+      "layout": "theme08_page006",
+      "props": {
+        "kicker": "示例页面 2",
+        "title": "AI 融资年度回顾 · 2",
+        "subtitle": "面向投资团队汇报 AI 融资年度进展、关键变化和下一步判断",
+        "lead": "面向投资团队汇报 AI 融资年度进展、关键变化和下一步判断",
+        "note": "投资团队 / 研究团队"
+      }
+    },
+    {
+      "layout": "theme08_page018",
+      "props": {
+        "kicker": "示例页面 3",
+        "title": "AI 融资年度回顾 · 3",
+        "subtitle": "面向投资团队汇报 AI 融资年度进展、关键变化和下一步判断",
+        "lead": "面向投资团队汇报 AI 融资年度进展、关键变化和下一步判断",
+        "note": "投资团队 / 研究团队"
+      }
+    },
+    {
+      "layout": "theme08_page030",
+      "props": {
+        "kicker": "示例页面 4",
+        "title": "AI 融资年度回顾 · 4",
+        "subtitle": "面向投资团队汇报 AI 融资年度进展、关键变化和下一步判断",
+        "lead": "面向投资团队汇报 AI 融资年度进展、关键变化和下一步判断",
+        "note": "投资团队 / 研究团队"
+      }
+    },
+    {
+      "layout": "theme08_page074",
+      "props": {
+        "kicker": "示例页面 5",
+        "title": "AI 融资年度回顾 · 5",
+        "subtitle": "面向投资团队汇报 AI 融资年度进展、关键变化和下一步判断",
+        "lead": "面向投资团队汇报 AI 融资年度进展、关键变化和下一步判断",
+        "note": "投资团队 / 研究团队"
+      }
+    }
+  ]
+}
