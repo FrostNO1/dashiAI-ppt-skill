@@ -17,6 +17,7 @@ import { runtimePages as theme12Pages } from './theme12/runtime.jsx';
 
 const mountedRoots = new WeakMap();
 const rootMediaApis = new WeakMap();
+const releaseInactiveThemeKeys = new Set(['theme03', 'theme10']);
 const runtimePages = [
   ...theme01Pages,
   ...theme02Pages,
@@ -338,6 +339,30 @@ function renderImportedThemeSlide(slide, values = {}) {
   return true;
 }
 
+function releaseImportedThemeSlide(slide) {
+  const root = slide?.querySelector?.('.imported-theme-root');
+  const api = root && mountedRoots.get(root);
+  if (!root || !api) return false;
+  try {
+    api.unmount();
+  } catch {}
+  mountedRoots.delete(root);
+  rootMediaApis.delete(root);
+  root.replaceChildren();
+  delete root.dataset.importedThemeRuntime;
+  return true;
+}
+
+function releaseInactiveRuntimeSlides(activeSlide, options = {}) {
+  const keys = options.themeKeys ? new Set(options.themeKeys) : releaseInactiveThemeKeys;
+  document.querySelectorAll?.('.slide.imported-theme-slide').forEach(slide => {
+    if (slide === activeSlide) return;
+    const root = slide.querySelector?.('.imported-theme-root');
+    if (!root || !keys.has(root.dataset.themeKey)) return;
+    releaseImportedThemeSlide(slide);
+  });
+}
+
 function renderImportedThemeSlides(scope = document) {
   scope.querySelectorAll?.('.slide.imported-theme-slide').forEach(slide => {
     renderImportedThemeSlide(slide);
@@ -356,3 +381,5 @@ window.__renderImportedThemeSlide = renderImportedThemeSlide;
 window.__renderImportedThemeSlides = renderImportedThemeSlides;
 window.__renderRuntimeSlide = renderRuntimeSlide;
 window.__renderRuntimeSlides = renderRuntimeSlides;
+window.__releaseRuntimeSlide = releaseImportedThemeSlide;
+window.__releaseInactiveRuntimeSlides = releaseInactiveRuntimeSlides;

@@ -662,6 +662,7 @@ function theme10ElementChildren(node){
 }
 
 function playTheme10Motion(slide){
+  if(!slide?.hasAttribute?.('data-deck-active')) return false;
   const wrap = slide?.querySelector?.('.ds-slidewrap');
   const root = wrap?.firstElementChild || wrap;
   if(!root) return false;
@@ -700,6 +701,7 @@ function syncTheme10Motion(activeSlide=getActiveSlide()){
   if(!activeSlide?.querySelector?.('.ds-slidewrap')) return;
   let tries = 0;
   function attempt(){
+    if(!activeSlide?.isConnected || !activeSlide.hasAttribute('data-deck-active')) return;
     if(playTheme10Motion(activeSlide)) return;
     if(tries++ < 15) requestAnimationFrame(attempt);
   }
@@ -756,6 +758,7 @@ function commitSlideIndex(nextIndex){
   syncNav();
   const el=slides[idx];
   ensureRuntimeSlideRendered(el);
+  window.__releaseInactiveRuntimeSlides?.(el);
   syncSlideTone(el);
   syncActiveEffects(el);
   writeStoredSlideIndex(idx);
@@ -823,6 +826,7 @@ function moveSlide(fromIndex, insertIndex){
     else slide.removeAttribute('data-deck-active');
   });
   ensureRuntimeSlideRendered(active);
+  window.__releaseInactiveRuntimeSlides?.(active);
   syncSlideTone(active);
   syncActiveEffects(active);
   window.__deckViewModel?.setSlideOrder?.(slides.map((item, index) => item.dataset.vmSlideId || `slide-${index + 1}`));
