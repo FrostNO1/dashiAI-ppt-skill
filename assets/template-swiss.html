@@ -1949,6 +1949,7 @@ go(Number.isFinite(initialSlide) ? initialSlide : 0, {animate:false});
         await nextFrame();
         await nextFrame();
         const slideEl = slides[i];
+        await waitForSlideCaptureReady(slideEl);
 
         document.body.classList.add('pptx-export-capturing');
         await nextFrame();
@@ -2207,7 +2208,7 @@ go(Number.isFinite(initialSlide) ? initialSlide : 0, {animate:false});
 
 
 	  function captureSlideImage(slideEl, options){
-	    const image = window.htmlToImage.toPng(slideEl, options);
+	    const image = window.htmlToImage.toPng(slideEl, withSlideCaptureFilter(options));
 	    const timeout = new Promise((_, reject) => {
 	      setTimeout(() => reject(new Error('Slide image capture timed out')), 20000);
 	    });
@@ -2215,12 +2216,32 @@ go(Number.isFinite(initialSlide) ? initialSlide : 0, {animate:false});
 	  }
 
 	  function captureSlideJpeg(slideEl, options){
-	    const image = window.htmlToImage.toJpeg(slideEl, options);
+	    const image = window.htmlToImage.toJpeg(slideEl, withSlideCaptureFilter(options));
 	    const timeout = new Promise((_, reject) => {
 	      setTimeout(() => reject(new Error('Slide image capture timed out')), 20000);
 	    });
 	    return Promise.race([image, timeout]);
 	  }
+
+  const slideCaptureIgnoredTags = new Set(['STYLE', 'SCRIPT', 'NOSCRIPT', 'TEMPLATE']);
+
+  function withSlideCaptureFilter(options = {}){
+    const customFilter = options.filter;
+    return {
+      ...options,
+      filter(node){
+        if(typeof customFilter === 'function' && !customFilter(node)) return false;
+        if(node?.nodeType === 1 && node.tagName === 'IMG' && !(node.currentSrc || node.getAttribute('src'))) return false;
+        if(node?.nodeType === 1 && node.tagName === 'VIDEO' && !(node.currentSrc || node.getAttribute('src') || node.querySelector('source[src]'))) return false;
+        let current = node?.nodeType === 1 ? node : node?.parentNode;
+        while(current){
+          if(current.nodeType === 1 && slideCaptureIgnoredTags.has(current.tagName)) return false;
+          current = current.parentNode;
+        }
+        return true;
+      },
+    };
+  }
 
 	  function getImageSize(dataUrl){
 	    return new Promise((resolve, reject) => {
@@ -2246,6 +2267,7 @@ go(Number.isFinite(initialSlide) ? initialSlide : 0, {animate:false});
     });
     await nextFrame();
     finishSlideCaptureMotion(slide);
+    await nextFrame();
     await nextFrame();
   }
 
