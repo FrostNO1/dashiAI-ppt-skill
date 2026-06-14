@@ -138722,6 +138722,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 3,
         "step": 1,
+        "dependsOn": "showCoverLines",
         "desc": "封面导语条目数量"
       },
       {
@@ -138952,6 +138953,38 @@ export const GENERATED_THEME_PAGES = [
         "desc": "动态 shader 或自定义背景媒体"
       },
       {
+        "key": "unicornScene",
+        "label": "动态场景",
+        "type": "segment",
+        "default": "tech",
+        "def": "tech",
+        "options": [
+          {
+            "value": "tech",
+            "label": "科技"
+          },
+          {
+            "value": "automations",
+            "label": "自动化"
+          },
+          {
+            "value": "moving",
+            "label": "流动"
+          },
+          {
+            "value": "goey",
+            "label": "黏球"
+          },
+          {
+            "value": "donut",
+            "label": "蓝环"
+          }
+        ],
+        "dependsOn": "backgroundMode",
+        "dependsOnValue": "unicorn",
+        "desc": "选择固定 Unicorn shader 场景"
+      },
+      {
         "key": "mediaFit",
         "label": "图片填充",
         "type": "segment",
@@ -139012,6 +139045,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 3,
         "step": 1,
+        "dependsOn": "showCoverLines",
         "desc": "封面导语条目数量"
       },
       {
@@ -139048,6 +139082,7 @@ export const GENERATED_THEME_PAGES = [
     "defaultProps": {
       "accent": "#f15a29",
       "backgroundMode": "unicorn",
+      "unicornScene": "tech",
       "mediaFit": "cover",
       "scrim": "dark",
       "showSpine": true,
@@ -139139,6 +139174,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 5,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被强调条目的序号（1 起）"
       },
       {
@@ -139158,6 +139194,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 0,
         "max": 3,
         "step": 1,
+        "dependsOn": "showStats",
         "desc": "数据标签的数量"
       },
       {
@@ -139329,6 +139366,7 @@ export const GENERATED_THEME_PAGES = [
             "label": "完整"
           }
         ],
+        "dependsOn": "mediaCount",
         "desc": "多图时图片的填充方式"
       },
       {
@@ -139359,6 +139397,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 4,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被强调条目的序号（1 起）"
       },
       {
@@ -139586,6 +139625,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 6,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被强调章节的序号（1 起）"
       },
       {
@@ -139834,6 +139874,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 4,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被强调卡片的序号（1 起）"
       },
       {
@@ -139966,6 +140007,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 6,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被强调格子的序号（1 起）"
       },
       {
@@ -140086,6 +140128,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 5,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被强调步骤的序号（1 起）"
       },
       {
@@ -140460,6 +140503,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 0,
         "max": 2,
         "step": 1,
+        "dependsOn": "showStats",
         "desc": "标题下数据条目的数量"
       },
       {
@@ -141009,6 +141053,7 @@ export const GENERATED_THEME_PAGES = [
             "label": "完整"
           }
         ],
+        "dependsOn": "mediaCount",
         "desc": "多图时图片的填充方式"
       },
       {
@@ -141088,6 +141133,38 @@ export const GENERATED_THEME_PAGES = [
         "desc": "动态 shader 或自定义背景媒体"
       },
       {
+        "key": "unicornScene",
+        "label": "动态场景",
+        "type": "segment",
+        "default": "tech",
+        "def": "tech",
+        "options": [
+          {
+            "value": "tech",
+            "label": "科技"
+          },
+          {
+            "value": "automations",
+            "label": "自动化"
+          },
+          {
+            "value": "moving",
+            "label": "流动"
+          },
+          {
+            "value": "goey",
+            "label": "黏球"
+          },
+          {
+            "value": "donut",
+            "label": "蓝环"
+          }
+        ],
+        "dependsOn": "backgroundMode",
+        "dependsOnValue": "unicorn",
+        "desc": "选择固定 Unicorn shader 场景"
+      },
+      {
         "key": "overlayPosition",
         "label": "文案位置",
         "type": "segment",
@@ -141162,6 +141239,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 0,
         "max": 3,
         "step": 1,
+        "dependsOn": "showStats",
         "desc": "数据标签的数量"
       },
       {
@@ -141182,6 +141260,7 @@ export const GENERATED_THEME_PAGES = [
     "defaultProps": {
       "accent": "#f15a29",
       "backgroundMode": "unicorn",
+      "unicornScene": "tech",
       "mediaFit": "cover",
       "overlayPosition": "bottom-left",
       "scrim": "dark",
@@ -141238,6 +141317,38 @@ export const GENERATED_THEME_PAGES = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体"
+      },
+      {
+        "key": "unicornScene",
+        "label": "动态场景",
+        "type": "segment",
+        "default": "tech",
+        "def": "tech",
+        "options": [
+          {
+            "value": "tech",
+            "label": "科技"
+          },
+          {
+            "value": "automations",
+            "label": "自动化"
+          },
+          {
+            "value": "moving",
+            "label": "流动"
+          },
+          {
+            "value": "goey",
+            "label": "黏球"
+          },
+          {
+            "value": "donut",
+            "label": "蓝环"
+          }
+        ],
+        "dependsOn": "backgroundMode",
+        "dependsOnValue": "unicorn",
+        "desc": "选择固定 Unicorn shader 场景"
       },
       {
         "key": "mediaFit",
@@ -141299,6 +141410,7 @@ export const GENERATED_THEME_PAGES = [
     "defaultProps": {
       "accent": "#f15a29",
       "backgroundMode": "unicorn",
+      "unicornScene": "tech",
       "mediaFit": "cover",
       "showCoverLines": true,
       "showBarcode": true,
@@ -141355,6 +141467,38 @@ export const GENERATED_THEME_PAGES = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体"
+      },
+      {
+        "key": "unicornScene",
+        "label": "动态场景",
+        "type": "segment",
+        "default": "tech",
+        "def": "tech",
+        "options": [
+          {
+            "value": "tech",
+            "label": "科技"
+          },
+          {
+            "value": "automations",
+            "label": "自动化"
+          },
+          {
+            "value": "moving",
+            "label": "流动"
+          },
+          {
+            "value": "goey",
+            "label": "黏球"
+          },
+          {
+            "value": "donut",
+            "label": "蓝环"
+          }
+        ],
+        "dependsOn": "backgroundMode",
+        "dependsOnValue": "unicorn",
+        "desc": "选择固定 Unicorn shader 场景"
       },
       {
         "key": "cardCorner",
@@ -141446,6 +141590,7 @@ export const GENERATED_THEME_PAGES = [
       "showCaption": true,
       "showShapes": true,
       "backgroundMode": "unicorn",
+      "unicornScene": "tech",
       "mediaFit": "cover",
       "media": [],
       "brand": "声浪 SOUNDWAVE",
@@ -141595,6 +141740,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 2,
         "max": 3,
         "step": 1,
+        "dependsOn": "showMeta",
         "desc": "事实条目数量"
       },
       {
@@ -141804,6 +141950,7 @@ export const GENERATED_THEME_PAGES = [
         "type": "toggle",
         "default": true,
         "def": true,
+        "dependsOn": "showStamp",
         "desc": "邮票上的圆形邮戳"
       },
       {
@@ -142506,6 +142653,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 4,
         "step": 1,
+        "dependsOn": "highlight",
         "desc": "被突出列的序号（1 起）"
       },
       {
@@ -142849,6 +142997,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 7,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "高亮的行序号"
       },
       {
@@ -143109,6 +143258,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 4,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "高亮的泳道序号"
       },
       {
@@ -143615,6 +143765,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 6,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被强调条目的序号（1 起）"
       },
       {
@@ -144006,6 +144157,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 4,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被强调指标的序号（1 起）"
       },
       {
@@ -144133,6 +144285,7 @@ export const GENERATED_THEME_PAGES = [
         "type": "toggle",
         "default": true,
         "def": true,
+        "dependsOn": "chartType",
         "desc": "环形中心显示总计（仅环形）"
       },
       {
@@ -144152,6 +144305,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 5,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被强调分段的序号（1 起）"
       },
       {
@@ -144250,6 +144404,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 6,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "高亮的方块（按占比从大到小）"
       },
       {
@@ -144378,6 +144533,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 5,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "高亮的资金流序号"
       },
       {
@@ -144505,6 +144661,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 5,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被突出增减项的序号（1 起）"
       },
       {
@@ -144872,6 +145029,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 6,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "高亮的指标线（自上而下）"
       },
       {
@@ -145005,6 +145163,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 5,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被高亮阶段的序号（1 起）"
       },
       {
@@ -145141,6 +145300,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 4,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被高亮类目的序号（1 起）"
       },
       {
@@ -145232,6 +145392,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 7,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "高亮的气泡序号"
       },
       {
@@ -145403,6 +145564,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 8,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被高亮周期的序号（1 起）"
       },
       {
@@ -145571,6 +145733,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 7,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被强调条目的序号（1 起）"
       },
       {
@@ -145810,6 +145973,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 5,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "高亮的指标行序号"
       },
       {
@@ -145940,6 +146104,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 6,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "被高亮分层的序号（自上而下，1 起）"
       },
       {
@@ -146463,6 +146628,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 0,
         "max": 3,
         "step": 1,
+        "dependsOn": "showSupporting",
         "desc": "底部辅助指标的数量"
       },
       {
@@ -147146,6 +147312,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 10,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "主打曲目的序号（1 起）"
       },
       {
@@ -147324,6 +147491,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 3,
         "max": 6,
         "step": 1,
+        "dependsOn": "showTracklist",
         "desc": "曲目列表的行数"
       },
       {
@@ -148116,6 +148284,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 5,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "当前节点序号（1 起）"
       },
       {
@@ -148220,6 +148389,38 @@ export const GENERATED_THEME_PAGES = [
         "desc": "动态 shader 或自定义背景媒体"
       },
       {
+        "key": "unicornScene",
+        "label": "动态场景",
+        "type": "segment",
+        "default": "tech",
+        "def": "tech",
+        "options": [
+          {
+            "value": "tech",
+            "label": "科技"
+          },
+          {
+            "value": "automations",
+            "label": "自动化"
+          },
+          {
+            "value": "moving",
+            "label": "流动"
+          },
+          {
+            "value": "goey",
+            "label": "黏球"
+          },
+          {
+            "value": "donut",
+            "label": "蓝环"
+          }
+        ],
+        "dependsOn": "backgroundMode",
+        "dependsOnValue": "unicorn",
+        "desc": "选择固定 Unicorn shader 场景"
+      },
+      {
         "key": "tint",
         "label": "蒙版色调",
         "type": "segment",
@@ -148289,6 +148490,7 @@ export const GENERATED_THEME_PAGES = [
     "defaultProps": {
       "accent": "#f15a29",
       "backgroundMode": "unicorn",
+      "unicornScene": "tech",
       "tint": "dark",
       "quotePos": "bottom",
       "showMark": true,
@@ -148683,6 +148885,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 5,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "当前里程碑的序号（1 起）"
       },
       {
@@ -149203,6 +149406,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 1,
         "max": 4,
         "step": 1,
+        "dependsOn": "focus",
         "desc": "高亮的引言序号"
       },
       {
@@ -149298,6 +149502,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 2,
         "max": 4,
         "step": 1,
+        "dependsOn": "showDirectory",
         "desc": "链接目录的列数"
       },
       {
@@ -149317,6 +149522,7 @@ export const GENERATED_THEME_PAGES = [
         "min": 8,
         "max": 40,
         "step": 1,
+        "dependsOn": "showMarquee",
         "desc": "滚动一圈的秒数（越小越快）"
       },
       {

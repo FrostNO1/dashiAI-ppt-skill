@@ -10,7 +10,7 @@
 import React from 'react';
 import { swTheme } from './swTheme.js';
 import { Kicker, useSwReveal, injectBaseStyles, renderSwText } from './swBase.jsx';
-import { SwBackgroundLayer, SW_UNICORN_BACKGROUND_CONTROL } from './SwUnicornBackground.jsx';
+import { SwBackgroundLayer, SW_UNICORN_BACKGROUND_CONTROL, SW_UNICORN_SCENE_CONTROL } from './SwUnicornBackground.jsx';
 
 const C = swTheme.color, F = swTheme.font;
 
@@ -19,6 +19,7 @@ export const meta = { id: 'quoteimage', index: 73, label: '图上金句 / Quote 
 export const defaultProps = {
   accent: C.orange,
   backgroundMode: 'unicorn',
+  unicornScene: 'tech',
   tint: 'dark',            // 'dark' | 'accent'
   quotePos: 'bottom',      // 'bottom' | 'center'
   showMark: true,
@@ -38,6 +39,7 @@ export const defaultProps = {
 
 export const controls = [
   SW_UNICORN_BACKGROUND_CONTROL,
+  SW_UNICORN_SCENE_CONTROL,
   { key: 'tint', label: '蒙版色调', type: 'segment', def: 'dark',
     options: [{ value: 'dark', label: '深色' }, { value: 'accent', label: '强调色' }], desc: '图片上的蒙版色调' },
   { key: 'quotePos', label: '金句位置', type: 'segment', def: 'bottom',
@@ -68,7 +70,7 @@ export default function SwSlideQuoteImage(props) {
          doesn't slide; the quote block and footer animate in instead. */}
       <div data-sw-no-reveal="" style={{ position: 'absolute', inset: 0 }}>
         <SwBackgroundLayer mode={p.backgroundMode} media={p.media} onMediaChange={p.onMediaChange}
-          fit="cover" accent={accent} placeholder={p.mediaPlaceholder} />
+          scene={p.unicornScene} fit="cover" accent={accent} placeholder={p.mediaPlaceholder} />
       </div>
 
       {/* tint scrim */}

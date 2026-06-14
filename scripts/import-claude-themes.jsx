@@ -1215,6 +1215,9 @@ function serializeControls(controls) {
       countKey: control.countKey,
       countIndex: control.countIndex,
       maxFromKey: control.maxFromKey,
+      dependsOn: serializeValue(control.dependsOn),
+      dependsOnValue: serializeValue(control.dependsOnValue),
+      dependsOnValues: serializeValue(control.dependsOnValues),
       desc: genericControlText(control.desc || control.describe || control.description),
     };
   }).filter(Boolean);

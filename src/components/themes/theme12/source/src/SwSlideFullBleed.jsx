@@ -11,7 +11,7 @@
 import React from 'react';
 import { swTheme } from './swTheme.js';
 import { Hl, Shape, injectBaseStyles, useSwReveal, renderSwText } from './swBase.jsx';
-import { SwBackgroundLayer, SW_UNICORN_BACKGROUND_CONTROL } from './SwUnicornBackground.jsx';
+import { SwBackgroundLayer, SW_UNICORN_BACKGROUND_CONTROL, SW_UNICORN_SCENE_CONTROL } from './SwUnicornBackground.jsx';
 
 const C = swTheme.color, F = swTheme.font;
 
@@ -24,6 +24,7 @@ export const defaultProps = {
   showCaption: true,
   showShapes: true,
   backgroundMode: 'unicorn',
+  unicornScene: 'tech',
   mediaFit: 'cover',
   media: [],
   onMediaChange: () => {},
@@ -40,6 +41,7 @@ export const defaultProps = {
 
 export const controls = [
   SW_UNICORN_BACKGROUND_CONTROL,
+  SW_UNICORN_SCENE_CONTROL,
   { key: 'cardCorner', label: '文字卡位置', type: 'segment', def: 'bl',
     options: [{ value: 'bl', label: '左下' }, { value: 'br', label: '右下' }, { value: 'tl', label: '左上' }, { value: 'tr', label: '右上' }],
     desc: '实色文字卡所在的画面角落' },
@@ -76,7 +78,7 @@ export default function SwSlideFullBleed(props) {
       {/* full-bleed image */}
       <div data-sw-no-reveal="" style={{ position: 'absolute', inset: 0 }}>
         <SwBackgroundLayer mode={p.backgroundMode} media={p.media} onMediaChange={p.onMediaChange}
-          fit={p.mediaFit} accent={accent} placeholder={p.mediaPlaceholder} />
+          scene={p.unicornScene} fit={p.mediaFit} accent={accent} placeholder={p.mediaPlaceholder} />
       </div>
 
       {/* legibility scrim */}

@@ -268,6 +268,9 @@ function normalizeControls(page) {
       countKey: control.countKey,
       countIndex: control.countIndex,
       maxFromKey: control.maxFromKey,
+      dependsOn: control.dependsOn,
+      dependsOnValue: control.dependsOnValue,
+      dependsOnValues: control.dependsOnValues,
     }, defaults));
   }
 
@@ -283,6 +286,9 @@ function normalizeControls(page) {
     countKey: control.countKey,
     countIndex: control.countIndex,
     maxFromKey: control.maxFromKey,
+    dependsOn: control.dependsOn,
+    dependsOnValue: control.dependsOnValue,
+    dependsOnValues: control.dependsOnValues,
   }, page.defaultProps || {}));
 }
 
@@ -303,6 +309,9 @@ function normalizeControl(control, defaults) {
     countKey: serializeValue(control.countKey),
     countIndex: serializeValue(control.countIndex),
     maxFromKey: serializeValue(control.maxFromKey),
+    dependsOn: serializeValue(control.dependsOn),
+    dependsOnValue: serializeValue(control.dependsOnValue),
+    dependsOnValues: serializeValue(control.dependsOnValues),
   };
 }
 

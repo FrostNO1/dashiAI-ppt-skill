@@ -116,6 +116,9 @@ function normalizeControls(controls, defaults) {
         countKey: serializeValue(control.countKey),
         countIndex: serializeValue(control.countIndex),
         maxFromKey: serializeValue(control.maxFromKey),
+        dependsOn: serializeValue(control.dependsOn),
+        dependsOnValue: serializeValue(control.dependsOnValue),
+        dependsOnValues: serializeValue(control.dependsOnValues),
       };
       if (type === 'select' && (control.type === 'color' || control.type === 'palette')) {
         next.display = 'color';

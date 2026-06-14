@@ -1913,7 +1913,14 @@ go(Number.isFinite(initialSlide) ? initialSlide : 0, {animate:false});
   }
 
   function shouldRenderPropControl(control, values){
-    if(control.dependsOn && !values[control.dependsOn]) return false;
+    if(control.dependsOn){
+      const actual = values[control.dependsOn];
+      if(Object.prototype.hasOwnProperty.call(control, 'dependsOnValue')){
+        if(String(actual) !== String(control.dependsOnValue)) return false;
+      } else if(Array.isArray(control.dependsOnValues)){
+        if(!control.dependsOnValues.map(String).includes(String(actual))) return false;
+      } else if(!actual) return false;
+    }
     if(control.countKey && control.countIndex !== undefined){
       const count = Number(values[control.countKey]);
       const index = Number(control.countIndex);

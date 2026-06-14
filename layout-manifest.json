@@ -96738,7 +96738,8 @@
           "default": 3,
           "min": 1,
           "max": 3,
-          "step": 1
+          "step": 1,
+          "dependsOn": "showCoverLines"
         },
         {
           "key": "showSeal",
@@ -96894,6 +96895,36 @@
           ]
         },
         {
+          "key": "unicornScene",
+          "label": "动态场景",
+          "type": "select",
+          "default": "tech",
+          "options": [
+            {
+              "value": "tech",
+              "label": "科技"
+            },
+            {
+              "value": "automations",
+              "label": "自动化"
+            },
+            {
+              "value": "moving",
+              "label": "流动"
+            },
+            {
+              "value": "goey",
+              "label": "黏球"
+            },
+            {
+              "value": "donut",
+              "label": "蓝环"
+            }
+          ],
+          "dependsOn": "backgroundMode",
+          "dependsOnValue": "unicorn"
+        },
+        {
           "key": "mediaFit",
           "label": "图片填充",
           "type": "select",
@@ -96944,7 +96975,8 @@
           "default": 2,
           "min": 1,
           "max": 3,
-          "step": 1
+          "step": 1,
+          "dependsOn": "showCoverLines"
         },
         {
           "key": "showBarcode",
@@ -97028,7 +97060,8 @@
           "default": 1,
           "min": 1,
           "max": 5,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showStats",
@@ -97043,7 +97076,8 @@
           "default": 3,
           "min": 0,
           "max": 3,
-          "step": 1
+          "step": 1,
+          "dependsOn": "showStats"
         },
         {
           "key": "showSeal",
@@ -97140,7 +97174,8 @@
               "value": "contain",
               "label": "完整"
             }
-          ]
+          ],
+          "dependsOn": "mediaCount"
         },
         {
           "key": "indexCount",
@@ -97164,7 +97199,8 @@
           "default": 1,
           "min": 1,
           "max": 4,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showKicker",
@@ -97318,7 +97354,8 @@
           "default": 1,
           "min": 1,
           "max": 6,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "theme",
@@ -97489,7 +97526,8 @@
           "default": 1,
           "min": 1,
           "max": 4,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showLede",
@@ -97573,7 +97611,8 @@
           "default": 1,
           "min": 1,
           "max": 6,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showDeco",
@@ -97635,7 +97674,8 @@
           "default": 4,
           "min": 1,
           "max": 5,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showConnector",
@@ -97835,7 +97875,8 @@
           "default": 2,
           "min": 0,
           "max": 2,
-          "step": 1
+          "step": 1,
+          "dependsOn": "showStats"
         },
         {
           "key": "accent",
@@ -98233,7 +98274,8 @@
               "value": "contain",
               "label": "完整"
             }
-          ]
+          ],
+          "dependsOn": "mediaCount"
         },
         {
           "key": "showCaption",
@@ -98294,6 +98336,36 @@
               "label": "上传"
             }
           ]
+        },
+        {
+          "key": "unicornScene",
+          "label": "动态场景",
+          "type": "select",
+          "default": "tech",
+          "options": [
+            {
+              "value": "tech",
+              "label": "科技"
+            },
+            {
+              "value": "automations",
+              "label": "自动化"
+            },
+            {
+              "value": "moving",
+              "label": "流动"
+            },
+            {
+              "value": "goey",
+              "label": "黏球"
+            },
+            {
+              "value": "donut",
+              "label": "蓝环"
+            }
+          ],
+          "dependsOn": "backgroundMode",
+          "dependsOnValue": "unicorn"
         },
         {
           "key": "overlayPosition",
@@ -98360,7 +98432,8 @@
           "default": 3,
           "min": 0,
           "max": 3,
-          "step": 1
+          "step": 1,
+          "dependsOn": "showStats"
         },
         {
           "key": "accent",
@@ -98409,6 +98482,36 @@
               "label": "上传"
             }
           ]
+        },
+        {
+          "key": "unicornScene",
+          "label": "动态场景",
+          "type": "select",
+          "default": "tech",
+          "options": [
+            {
+              "value": "tech",
+              "label": "科技"
+            },
+            {
+              "value": "automations",
+              "label": "自动化"
+            },
+            {
+              "value": "moving",
+              "label": "流动"
+            },
+            {
+              "value": "goey",
+              "label": "黏球"
+            },
+            {
+              "value": "donut",
+              "label": "蓝环"
+            }
+          ],
+          "dependsOn": "backgroundMode",
+          "dependsOnValue": "unicorn"
         },
         {
           "key": "mediaFit",
@@ -98482,6 +98585,36 @@
               "label": "上传"
             }
           ]
+        },
+        {
+          "key": "unicornScene",
+          "label": "动态场景",
+          "type": "select",
+          "default": "tech",
+          "options": [
+            {
+              "value": "tech",
+              "label": "科技"
+            },
+            {
+              "value": "automations",
+              "label": "自动化"
+            },
+            {
+              "value": "moving",
+              "label": "流动"
+            },
+            {
+              "value": "goey",
+              "label": "黏球"
+            },
+            {
+              "value": "donut",
+              "label": "蓝环"
+            }
+          ],
+          "dependsOn": "backgroundMode",
+          "dependsOnValue": "unicorn"
         },
         {
           "key": "cardCorner",
@@ -98659,7 +98792,8 @@
           "default": 3,
           "min": 2,
           "max": 3,
-          "step": 1
+          "step": 1,
+          "dependsOn": "showMeta"
         },
         {
           "key": "showCaption",
@@ -98810,7 +98944,8 @@
           "key": "showPostmark",
           "label": "邮戳",
           "type": "toggle",
-          "default": true
+          "default": true,
+          "dependsOn": "showStamp"
         },
         {
           "key": "showDivider",
@@ -99247,7 +99382,8 @@
           "default": 1,
           "min": 1,
           "max": 4,
-          "step": 1
+          "step": 1,
+          "dependsOn": "highlight"
         },
         {
           "key": "zebra",
@@ -99399,7 +99535,8 @@
           "default": 1,
           "min": 1,
           "max": 7,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "accent",
@@ -99524,7 +99661,8 @@
           "default": 1,
           "min": 1,
           "max": 4,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showMilestones",
@@ -99779,7 +99917,8 @@
           "default": 1,
           "min": 1,
           "max": 6,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "theme",
@@ -100024,7 +100163,8 @@
           "default": 1,
           "min": 1,
           "max": 4,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showIntro",
@@ -100099,7 +100239,8 @@
           "key": "showCenter",
           "label": "中心总计",
           "type": "toggle",
-          "default": true
+          "default": true,
+          "dependsOn": "chartType"
         },
         {
           "key": "focus",
@@ -100114,7 +100255,8 @@
           "default": 1,
           "min": 1,
           "max": 5,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "accent",
@@ -100170,7 +100312,8 @@
           "default": 1,
           "min": 1,
           "max": 6,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showShare",
@@ -100223,7 +100366,8 @@
           "default": 1,
           "min": 1,
           "max": 5,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showValues",
@@ -100297,7 +100441,8 @@
           "default": 3,
           "min": 1,
           "max": 5,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "accent",
@@ -100491,7 +100636,8 @@
           "default": 1,
           "min": 1,
           "max": 6,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showGrid",
@@ -100556,7 +100702,8 @@
           "default": 4,
           "min": 1,
           "max": 5,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showNotes",
@@ -100633,7 +100780,8 @@
           "default": 1,
           "min": 1,
           "max": 4,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "accent",
@@ -100680,7 +100828,8 @@
           "default": 4,
           "min": 1,
           "max": 7,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showGrid",
@@ -100773,7 +100922,8 @@
           "default": 6,
           "min": 1,
           "max": 8,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showValues",
@@ -100861,7 +101011,8 @@
           "default": 1,
           "min": 1,
           "max": 7,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "accent",
@@ -100998,7 +101149,8 @@
           "default": 1,
           "min": 1,
           "max": 5,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "accent",
@@ -101067,7 +101219,8 @@
           "default": 2,
           "min": 1,
           "max": 6,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "accent",
@@ -101340,7 +101493,8 @@
           "default": 3,
           "min": 0,
           "max": 3,
-          "step": 1
+          "step": 1,
+          "dependsOn": "showSupporting"
         },
         {
           "key": "showDecorations",
@@ -101772,7 +101926,8 @@
           "default": 3,
           "min": 1,
           "max": 10,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "mediaFit",
@@ -101873,7 +102028,8 @@
           "default": 4,
           "min": 3,
           "max": 6,
-          "step": 1
+          "step": 1,
+          "dependsOn": "showTracklist"
         },
         {
           "key": "mediaFit",
@@ -102406,7 +102562,8 @@
           "default": 5,
           "min": 1,
           "max": 5,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showSpine",
@@ -102467,6 +102624,36 @@
               "label": "上传"
             }
           ]
+        },
+        {
+          "key": "unicornScene",
+          "label": "动态场景",
+          "type": "select",
+          "default": "tech",
+          "options": [
+            {
+              "value": "tech",
+              "label": "科技"
+            },
+            {
+              "value": "automations",
+              "label": "自动化"
+            },
+            {
+              "value": "moving",
+              "label": "流动"
+            },
+            {
+              "value": "goey",
+              "label": "黏球"
+            },
+            {
+              "value": "donut",
+              "label": "蓝环"
+            }
+          ],
+          "dependsOn": "backgroundMode",
+          "dependsOnValue": "unicorn"
         },
         {
           "key": "tint",
@@ -102777,7 +102964,8 @@
           "default": 4,
           "min": 1,
           "max": 5,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "showProgress",
@@ -103105,7 +103293,8 @@
           "default": 1,
           "min": 1,
           "max": 4,
-          "step": 1
+          "step": 1,
+          "dependsOn": "focus"
         },
         {
           "key": "accent",
@@ -103152,7 +103341,8 @@
           "default": 4,
           "min": 2,
           "max": 4,
-          "step": 1
+          "step": 1,
+          "dependsOn": "showDirectory"
         },
         {
           "key": "showMarquee",
@@ -103167,7 +103357,8 @@
           "default": 20,
           "min": 8,
           "max": 40,
-          "step": 1
+          "step": 1,
+          "dependsOn": "showMarquee"
         },
         {
           "key": "showDecorations",

@@ -10,7 +10,7 @@
 import React from 'react';
 import { swTheme } from './swTheme.js';
 import { injectBaseStyles, useSwReveal } from './swBase.jsx';
-import { SwBackgroundLayer, SW_UNICORN_BACKGROUND_CONTROL } from './SwUnicornBackground.jsx';
+import { SwBackgroundLayer, SW_UNICORN_BACKGROUND_CONTROL, SW_UNICORN_SCENE_CONTROL } from './SwUnicornBackground.jsx';
 
 const C = swTheme.color, F = swTheme.font;
 
@@ -19,6 +19,7 @@ export const meta = { id: 'cover', index: 17, label: '杂志封面 / Cover' };
 export const defaultProps = {
   accent: C.orange,
   backgroundMode: 'unicorn',
+  unicornScene: 'tech',
   mediaFit: 'cover',
   showCoverLines: true,
   showBarcode: true,
@@ -44,6 +45,7 @@ export const defaultProps = {
 
 export const controls = [
   SW_UNICORN_BACKGROUND_CONTROL,
+  SW_UNICORN_SCENE_CONTROL,
   { key: 'mediaFit', label: '图片填充', type: 'segment', def: 'cover',
     options: [{ value: 'cover', label: '裁切' }, { value: 'contain', label: '完整' }], desc: '封面大图填充方式' },
   { key: 'showCoverLines', label: '封面导语', type: 'toggle', def: true, desc: '显示/隐藏两侧封面文案' },
@@ -68,7 +70,7 @@ export default function SwSlideCover(props) {
       {/* full-bleed image */}
       <div data-sw-no-reveal="" style={{ position: 'absolute', inset: 0 }}>
         <SwBackgroundLayer mode={p.backgroundMode} media={p.media} onMediaChange={p.onMediaChange}
-          fit={p.mediaFit} accent={accent} placeholder={p.mediaPlaceholder} />
+          scene={p.unicornScene} fit={p.mediaFit} accent={accent} placeholder={p.mediaPlaceholder} />
       </div>
       {/* legibility gradients */}
       <div aria-hidden="true" style={{ position: 'absolute', inset: 0, pointerEvents: 'none',
