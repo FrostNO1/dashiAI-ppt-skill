@@ -523,6 +523,7 @@ let allSlides=collectDeckSlides();
 let slides=[...allSlides];
 const nav=document.getElementById('nav');
 let idx=0,total=0,lock=false;
+let pendingNavigationDirection=0;
 let deckW=innerWidth;
 let deckH=innerHeight;
 let deckLeft=0;
@@ -531,6 +532,7 @@ let deckScale=1;
 let activeThemePack=document.documentElement.dataset.themePack || '';
 let deckMode='edit';
 var overviewGrid=null;
+let adjacentPreloadTimer=null;
 const CURRENT_SLIDE_STORE='dashi-ppt-current-slide';
 const DECK_ASPECT_W=16;
 const DECK_ASPECT_H=9;
@@ -774,7 +776,11 @@ function preloadAdjacentSlides(activeIndex=idx, opts={}){
   const run = () => targets.forEach(slide => prepareSlideForTransition(slide));
   const delay = Number(opts.delay || 0);
   if(delay > 0){
-    setTimeout(() => preloadAdjacentSlides(activeIndex), delay);
+    if(adjacentPreloadTimer !== null) clearTimeout(adjacentPreloadTimer);
+    adjacentPreloadTimer = setTimeout(() => {
+      adjacentPreloadTimer=null;
+      if(activeIndex === idx) preloadAdjacentSlides(activeIndex);
+    }, delay);
     return;
   }
   if('requestIdleCallback' in window) requestIdleCallback(run, {timeout: 260});
@@ -1164,16 +1170,29 @@ function commitSlideIndex(nextIndex, opts={}){
   }
 }
 
+function releaseDeckNavigationLock(){
+  lock=false;
+  if(!pendingNavigationDirection) return;
+  const direction = pendingNavigationDirection;
+  pendingNavigationDirection=0;
+  if(isEditMode()) go(idx + direction, {scrollRail:false});
+}
+
 function go(n, opts={}){
   blurActiveEditableText();
   if(window.__deckExportLocked && !opts.force) return;
-  if(lock)return;
+  if(lock){
+    if(isEditMode() && !opts.force){
+      pendingNavigationDirection = n > idx ? 1 : n < idx ? -1 : pendingNavigationDirection;
+    }
+    return;
+  }
   if(isEditMode()) pauseOverviewThumbs();
   refreshSlideList();
   if(total <= 0){
     lock=true;
     commitSlideIndex(0, opts);
-    requestAnimationFrame(()=>lock=false);
+    requestAnimationFrame(releaseDeckNavigationLock);
     return;
   }
   const nextIndex=Math.max(0,Math.min(total-1,n));
@@ -1195,13 +1214,13 @@ function go(n, opts={}){
       .catch(error => console.warn('[page transition]', error))
       .finally(() => {
         commit();
-        requestAnimationFrame(()=>lock=false);
+        requestAnimationFrame(releaseDeckNavigationLock);
       });
     return;
   }
   lock=true;
   commitSlideIndex(nextIndex, opts);
-  requestAnimationFrame(()=>lock=false);
+  requestAnimationFrame(releaseDeckNavigationLock);
 }
 
 function moveSlide(fromIndex, insertIndex){
@@ -2627,7 +2646,7 @@ function refreshRailCatalog(){
     updateOverviewProgress();
   }
   scrollOverviewToCurrent();
-  requestOverviewThumbRefresh(true);
+  requestOverviewThumbRefresh(false);
   recordOverviewStage('refresh-rail-catalog', startAt, {cardCount:overviewGrid ? getOverviewCards(overviewGrid).length : 0});
 }
 window.__refreshRailCatalog = refreshRailCatalog;

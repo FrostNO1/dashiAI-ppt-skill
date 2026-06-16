@@ -33,9 +33,31 @@ let page;
 try {
   page = await browser.newPage({ viewport: { width: 1440, height: 900 }, ignoreHTTPSErrors: true });
   page.setDefaultTimeout(30000);
+  await page.addInitScript(() => {
+    window.__defaultRailLoadLongTasks = [];
+    window.__defaultRailLoadFrameGaps = [];
+    window.__defaultRailLoadNavStart = performance.now();
+    try {
+      window.__defaultRailLoadLongTaskObserver = new PerformanceObserver(list => {
+        window.__defaultRailLoadLongTasks.push(...list.getEntries().map(entry => ({
+          startTime: entry.startTime,
+          duration: entry.duration,
+        })));
+      });
+      window.__defaultRailLoadLongTaskObserver.observe({ entryTypes: ['longtask'] });
+    } catch {}
+    let lastFrameAt = performance.now();
+    const sample = now => {
+      window.__defaultRailLoadFrameGaps.push(now - lastFrameAt);
+      lastFrameAt = now;
+      if (now - window.__defaultRailLoadNavStart < 3200) requestAnimationFrame(sample);
+    };
+    requestAnimationFrame(sample);
+  });
   await page.goto(`${url}?editor_presenter_modes=${Date.now()}`, { waitUntil: 'domcontentloaded' });
   await page.waitForSelector('#deck > .slide.active, #deck > .slide[data-deck-active]');
 
+  const defaultRailFirstScreen = await runDefaultRailFirstScreenLoadValidation(page);
   const defaultEdit = await readEditorPresenterState(page);
   const layoutWidths = [];
   for (const width of [1280, 1440, 1920]) {
@@ -60,6 +82,7 @@ try {
     url,
     passed: false,
     staticChecks,
+    defaultRailFirstScreen,
     defaultEdit,
     layoutWidths,
     editNavigation,
@@ -282,6 +305,120 @@ async function runRailValidation(page) {
   return { initial, clickJump, afterClick, afterScrollTarget, drag, afterDrag, context, dirty };
 }
 
+async function runDefaultRailFirstScreenLoadValidation(page) {
+  await page.evaluate(() => {
+    window.__resetOverviewPerfMarks?.();
+    window.__defaultRailLoadLongTasks = [];
+    window.__defaultRailLoadFrameGaps = [];
+    window.__defaultRailLoadLongTaskObserver?.disconnect?.();
+    try {
+      window.__defaultRailLoadLongTaskObserver = new PerformanceObserver(list => {
+        window.__defaultRailLoadLongTasks.push(...list.getEntries().map(entry => ({
+          startTime: entry.startTime,
+          duration: entry.duration,
+        })));
+      });
+      window.__defaultRailLoadLongTaskObserver.observe({ entryTypes: ['longtask'] });
+    } catch {}
+    window.__defaultRailLoadStart = performance.now();
+    let lastFrameAt = performance.now();
+    const sample = now => {
+      window.__defaultRailLoadFrameGaps.push(now - lastFrameAt);
+      lastFrameAt = now;
+      if (now - window.__defaultRailLoadStart < 3000) requestAnimationFrame(sample);
+    };
+    requestAnimationFrame(sample);
+  });
+  const startAt = Date.now();
+  const initial = await readVisibleRailThumbState(page);
+  let firstVisibleThumbReadyMs = initial.visibleRenderedCount > 0 ? 0 : null;
+  let allVisibleThumbsReadyMs = initial.visibleRailCount > 0 && initial.visibleRenderedCount === initial.visibleRailCount ? 0 : null;
+  let final = initial;
+  const deadline = Date.now() + 2800;
+  while (Date.now() < deadline) {
+    await page.waitForTimeout(80);
+    final = await readVisibleRailThumbState(page);
+    const elapsed = Date.now() - startAt;
+    if (firstVisibleThumbReadyMs === null && final.visibleRenderedCount > 0) firstVisibleThumbReadyMs = elapsed;
+    if (
+      allVisibleThumbsReadyMs === null
+      && final.visibleRailCount > 0
+      && final.visibleRenderedCount === final.visibleRailCount
+    ) {
+      allVisibleThumbsReadyMs = elapsed;
+      break;
+    }
+  }
+  const perf = await page.evaluate(() => {
+    const state = window.__getRailPerfState?.() || window.__getOverviewPerfState?.() || {};
+    const marks = state.marks || {};
+    const stages = (marks.stages || []).filter(stage => /queue-nearby-overview-thumbs|dom-preview-thumbnail|render-overview-thumb|fit-overview-thumbnails|observe-overview-thumbnails/.test(stage.type || ''));
+    const longTasks = window.__defaultRailLoadLongTasks || [];
+    const frameGaps = window.__defaultRailLoadFrameGaps || [];
+    window.__defaultRailLoadLongTaskObserver?.disconnect?.();
+    return {
+      queueLength: state.queueLength ?? null,
+      visibleOrNearCount: state.visibleOrNearCount ?? null,
+      thumbnailStages: stages.map(stage => ({
+        type: stage.type,
+        duration: Number(stage.duration || 0),
+        count: Number(stage.count || 0),
+        queued: Number(stage.queued || 0),
+      })),
+      longTasksOver50: longTasks.filter(task => Number(task.duration || 0) > 50).length,
+      maxLongTaskMs: Number(longTasks.reduce((max, task) => Math.max(max, Number(task.duration || 0)), 0).toFixed(1)),
+      maxFrameGapMs: Number(frameGaps.reduce((max, gap) => Math.max(max, Number(gap || 0)), 0).toFixed(1)),
+    };
+  });
+  return {
+    initial,
+    final,
+    visibleRailCount: final.visibleRailCount,
+    visibleRenderedCount: final.visibleRenderedCount,
+    visiblePlaceholderCount: final.visiblePlaceholderCount,
+    firstVisibleThumbReadyMs,
+    allVisibleThumbsReadyMs,
+    ...perf,
+  };
+}
+
+async function readVisibleRailThumbState(page) {
+  return page.evaluate(() => {
+    const scroller = document.querySelector('[data-rail-scroll="true"],#slide-rail-list');
+    const railRect = scroller?.getBoundingClientRect();
+    const cards = [...document.querySelectorAll('[data-rail-card="true"],[data-slide-rail-card="true"]')];
+    const visibleCards = cards.filter(card => {
+      const rect = card.getBoundingClientRect();
+      return railRect
+        && rect.bottom > railRect.top + 1
+        && rect.top < railRect.bottom - 1
+        && rect.width > 0
+        && rect.height > 0;
+    });
+    const sampleCards = visibleCards.map(card => {
+      const thumb = card.querySelector('[data-rail-thumb="true"],[data-overview-thumb="true"]');
+      const rendered = thumb?.dataset.railRendered === 'true' || thumb?.dataset.overviewRendered === 'true';
+      const queued = thumb?.dataset.railQueued === 'true' || thumb?.dataset.overviewQueued === 'true';
+      const placeholder = Boolean(thumb?.querySelector('[data-overview-placeholder="true"],[data-rail-placeholder="true"]'));
+      return {
+        index: Number(card.dataset.index || 0),
+        slideId: card.dataset.slideId || '',
+        rendered,
+        queued,
+        placeholder,
+        key: thumb?.dataset.overviewKey || thumb?.dataset.railKey || '',
+      };
+    });
+    return {
+      visibleRailCount: visibleCards.length,
+      visibleRenderedCount: sampleCards.filter(card => card.rendered).length,
+      visiblePlaceholderCount: sampleCards.filter(card => card.placeholder || !card.rendered).length,
+      visibleQueuedCount: sampleCards.filter(card => card.queued).length,
+      sampleCards,
+    };
+  });
+}
+
 async function runRailPerformanceValidation(page) {
   await ensureEditMode(page);
   await page.evaluate(() => {
@@ -377,6 +514,12 @@ async function runPageNavigationLatencyValidation(page) {
     const locator = page.locator('[data-rail-card="true"][data-index="3"],[data-slide-rail-card="true"][data-index="3"]').first();
     await locator.click();
   });
+  await page.evaluate(() => {
+    window.__setPageTransition?.('liquidMorph');
+    window.go?.(0, { animate: false, force: true });
+  });
+  await settle(page);
+  edit.rapidArrowDown = await runRapidEditNavigationValidation(page);
 
   const present = {};
   await enterPresentAtIndex(page, 0);
@@ -462,6 +605,8 @@ async function runNavigationActionWindow(page, action) {
       indexChangedAt: null,
       activeChangedAt: null,
       transitionStartedAt: null,
+      transitionStageVisibleAt: null,
+      firstVisualChangeAt: null,
       transitionMode: '',
     };
     window.__navLatencyProbe = probe;
@@ -475,6 +620,17 @@ async function runNavigationActionWindow(page, action) {
         return window.__navLatencyOriginalTransition.apply(this, arguments);
       };
     }
+    const observeTransitionStage = () => {
+      const stage = document.querySelector('.page-transition-stage');
+      const style = stage ? getComputedStyle(stage) : null;
+      const rect = stage?.getBoundingClientRect();
+      const visible = Boolean(stage && style && style.display !== 'none' && style.visibility !== 'hidden' && Number(style.opacity || 0) > 0.01 && rect?.width > 1 && rect?.height > 1);
+      const activeState = stage?.dataset.state || stage?.dataset.active || stage?.getAttribute('aria-hidden') === 'false';
+      if(probe.transitionStageVisibleAt === null && (visible || activeState)) probe.transitionStageVisibleAt = performance.now();
+      if(probe.firstVisualChangeAt === null && (visible || activeState)) probe.firstVisualChangeAt = performance.now();
+      if(performance.now() - startAt < 520) requestAnimationFrame(observeTransitionStage);
+    };
+    requestAnimationFrame(observeTransitionStage);
     window.__navLatencyProbeHandler = () => {
       const nextActive = document.querySelector('#deck > .slide.active');
       if(probe.indexChangedAt === null && (window.__currentSlideIndex || 0) !== probe.startIndex) probe.indexChangedAt = performance.now();
@@ -527,6 +683,8 @@ async function runNavigationActionWindow(page, action) {
       indexChangeMs: probe.indexChangedAt === null ? null : Number((probe.indexChangedAt - start).toFixed(1)),
       activeChangeMs: probe.activeChangedAt === null ? null : Number((probe.activeChangedAt - start).toFixed(1)),
       transitionStartMs: probe.transitionStartedAt === null ? null : Number((probe.transitionStartedAt - start).toFixed(1)),
+      transitionStageVisibleMs: probe.transitionStageVisibleAt === null ? null : Number((probe.transitionStageVisibleAt - start).toFixed(1)),
+      firstVisualChangeMs: probe.firstVisualChangeAt === null ? null : Number((probe.firstVisualChangeAt - start).toFixed(1)),
       transitionMode: probe.transitionMode || '',
       longTasksOver50: longTasks.filter(task => Number(task.duration || 0) > 50).length,
       maxLongTaskMs: Number(longTasks.reduce((max, task) => Math.max(max, Number(task.duration || 0)), 0).toFixed(1)),
@@ -541,6 +699,113 @@ async function runNavigationActionWindow(page, action) {
       layoutReadCount: layoutReads.reduce((sum, read) => sum + Number(read.count || 0), 0),
     };
   }, actionElapsedMs);
+}
+
+async function runRapidEditNavigationValidation(page) {
+  const start = await page.evaluate(() => {
+    window.__resetOverviewPerfMarks?.();
+    window.__rapidNavLongTasks = [];
+    window.__rapidNavFrameGaps = [];
+    window.__rapidNavObserver?.disconnect?.();
+    const active = document.querySelector('#deck > .slide.active');
+    const startAt = performance.now();
+    const probe = {
+      startAt,
+      startIndex: window.__currentSlideIndex || 0,
+      startActiveId: active?.dataset.vmSlideId || active?.dataset.slideId || '',
+      transitionStarts: [],
+      transitionStageVisibleAt: null,
+      acceptedChanges: [],
+    };
+    window.__rapidNavProbe = probe;
+    window.__rapidNavOriginalTransition = window.__playPageTransition;
+    if(typeof window.__playPageTransition === 'function'){
+      window.__playPageTransition = function patchedRapidTransition(mode){
+        probe.transitionStarts.push({ at: performance.now(), mode: mode || '' });
+        return window.__rapidNavOriginalTransition.apply(this, arguments);
+      };
+    }
+    window.__rapidNavHandler && removeEventListener('swiss-slide-change', window.__rapidNavHandler);
+    window.__rapidNavHandler = () => {
+      probe.acceptedChanges.push({ at: performance.now(), index: window.__currentSlideIndex || 0 });
+    };
+    addEventListener('swiss-slide-change', window.__rapidNavHandler);
+    const observeTransitionStage = () => {
+      const stage = document.querySelector('.page-transition-stage');
+      const style = stage ? getComputedStyle(stage) : null;
+      const rect = stage?.getBoundingClientRect();
+      const visible = Boolean(stage && style && style.display !== 'none' && style.visibility !== 'hidden' && Number(style.opacity || 0) > 0.01 && rect?.width > 1 && rect?.height > 1);
+      const activeState = stage?.dataset.state || stage?.dataset.active || stage?.getAttribute('aria-hidden') === 'false';
+      if(probe.transitionStageVisibleAt === null && (visible || activeState)) probe.transitionStageVisibleAt = performance.now();
+      if(performance.now() - startAt < 1200) requestAnimationFrame(observeTransitionStage);
+    };
+    requestAnimationFrame(observeTransitionStage);
+    try {
+      window.__rapidNavObserver = new PerformanceObserver(list => {
+        window.__rapidNavLongTasks.push(...list.getEntries().map(entry => ({
+          startTime: entry.startTime,
+          duration: entry.duration,
+        })));
+      });
+      window.__rapidNavObserver.observe({ entryTypes: ['longtask'] });
+    } catch {}
+    let lastFrame = performance.now();
+    const tick = now => {
+      window.__rapidNavFrameGaps.push(now - lastFrame);
+      lastFrame = now;
+      if(now - startAt < 1200) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    return { startAt, startIndex: probe.startIndex };
+  });
+  const pressCount = 5;
+  for (let i = 0; i < pressCount; i += 1) {
+    await page.keyboard.press('ArrowDown');
+    await page.waitForTimeout(150);
+  }
+  await settle(page, 760);
+  return page.evaluate(({ pressCount }) => {
+    const probe = window.__rapidNavProbe || {};
+    const startAt = Number(probe.startAt || 0);
+    const perf = window.__getRailPerfState?.() || window.__getOverviewPerfState?.() || {};
+    const marks = perf.marks || {};
+    const stages = (marks.stages || []).filter(stage => Number(stage.startAt || 0) >= startAt);
+    const captures = (marks.captures || []).filter(capture => Number(capture.startedAt || 0) >= startAt);
+    const longTasks = (window.__rapidNavLongTasks || []).filter(task => Number(task.startTime || 0) >= startAt);
+    const frameGaps = (window.__rapidNavFrameGaps || []).filter(gap => Number.isFinite(gap));
+    window.__rapidNavObserver?.disconnect?.();
+    if(window.__rapidNavHandler) removeEventListener('swiss-slide-change', window.__rapidNavHandler);
+    if(window.__rapidNavOriginalTransition){
+      window.__playPageTransition = window.__rapidNavOriginalTransition;
+      window.__rapidNavOriginalTransition = null;
+    }
+    return {
+      pressCount,
+      startIndex: probe.startIndex,
+      endIndex: window.__currentSlideIndex || 0,
+      acceptedCount: (probe.acceptedChanges || []).length,
+      ignoredCount: Math.max(0, pressCount - (probe.acceptedChanges || []).length),
+      firstTransitionStartMs: probe.transitionStarts?.[0] ? Number((probe.transitionStarts[0].at - startAt).toFixed(1)) : null,
+      transitionStageVisibleMs: probe.transitionStageVisibleAt === null ? null : Number((probe.transitionStageVisibleAt - startAt).toFixed(1)),
+      transitionStarts: (probe.transitionStarts || []).map(item => ({
+        atMs: Number((item.at - startAt).toFixed(1)),
+        mode: item.mode,
+      })),
+      acceptedChanges: (probe.acceptedChanges || []).map(item => ({
+        atMs: Number((item.at - startAt).toFixed(1)),
+        index: item.index,
+      })),
+      longTasksOver50: longTasks.filter(task => Number(task.duration || 0) > 50).length,
+      maxLongTaskMs: Number(longTasks.reduce((max, task) => Math.max(max, Number(task.duration || 0)), 0).toFixed(1)),
+      maxFrameGapMs: Number(frameGaps.reduce((max, gap) => Math.max(max, Number(gap || 0)), 0).toFixed(1)),
+      captureStarts: captures.length,
+      scheduled: Boolean(perf.scheduled),
+      queueLength: perf.queueLength ?? null,
+      thumbnailStages: stages
+        .filter(stage => /queue-nearby-overview-thumbs|fit-overview-thumbnails|observe-overview-thumbnails|dom-preview-thumbnail|overview-thumb-task|closed-rail-thumb-prewarm/.test(stage.type || ''))
+        .map(stage => stage.type),
+    };
+  }, { pressCount });
 }
 
 async function runEditableTextCaretValidation(page) {
@@ -1136,7 +1401,7 @@ async function runRailContextValidation(page) {
   await settle(page);
 
   const beforeCopy = await readRailCatalogState(page);
-  const copyTarget = await chooseRailMutationTarget(page, { excludeSlideIds: [beforeCopy.activeSlideId], preferIndex: 4 });
+  const copyTarget = await chooseRailMutationTarget(page, { excludeSlideIds: [beforeCopy.activeSlideId], preferIndex: 4, requireEditable: true });
   const copy = copyTarget ? await clickRailContextAction(page, copyTarget.slideId, /复制页面|复制/) : { hasTarget: false };
   const afterCopy = await readRailCatalogState(page);
   await page.evaluate(() => window.__refreshRailCatalog?.());
@@ -1286,18 +1551,23 @@ async function clickRailContextAction(page, slideId, label) {
   return { hasTarget: true, clicked: true };
 }
 
-async function chooseRailMutationTarget(page, { excludeSlideIds = [], preferIndex = 1 } = {}) {
-  return page.evaluate(({ excludeSlideIds, preferIndex }) => {
+async function chooseRailMutationTarget(page, { excludeSlideIds = [], preferIndex = 1, requireEditable = false } = {}) {
+  return page.evaluate(({ excludeSlideIds, preferIndex, requireEditable }) => {
     const excluded = new Set(excludeSlideIds);
+    const visibleSlides = window.__getVisibleSlides?.() || [];
+    const hasEditableText = slideId => {
+      const slide = visibleSlides.find(item => (item.dataset.vmSlideId || item.dataset.slideId || '') === slideId);
+      return Boolean(slide?.querySelector('[data-editable-id]'));
+    };
     const cards = [...document.querySelectorAll('[data-rail-card="true"],[data-slide-rail-card="true"]')]
       .map(card => ({
         index: Number(card.dataset.index || -1),
         slideId: card.dataset.slideId || card.dataset.slideKey || '',
         active: card.getAttribute('aria-current') === 'true' || card.dataset.railActive === 'true',
       }))
-      .filter(card => card.slideId && !card.active && !excluded.has(card.slideId));
+      .filter(card => card.slideId && !card.active && !excluded.has(card.slideId) && (!requireEditable || hasEditableText(card.slideId)));
     return cards.find(card => card.index >= preferIndex) || cards[0] || null;
-  }, { excludeSlideIds, preferIndex });
+  }, { excludeSlideIds, preferIndex, requireEditable });
 }
 
 async function readRailCatalogState(page) {
@@ -1372,6 +1642,25 @@ function validateResult(result) {
   if (!defaultEdit.canEdit || defaultEdit.editableCount < 1) failures.push('Edit mode should enable text editing independently of panel-open state.');
   if (!defaultEdit.presentButtonExists) failures.push('Play/present button is missing.');
 
+  const defaultRail = result.defaultRailFirstScreen || {};
+  if ((defaultRail.visibleRailCount || 0) < 4) failures.push(`Default rail first-screen validation did not find enough visible rail cards: ${JSON.stringify(defaultRail)}`);
+  if (defaultRail.firstVisibleThumbReadyMs === null || defaultRail.firstVisibleThumbReadyMs > 800) {
+    failures.push(`Default rail should load the first visible thumbnail within 800ms without manual queue calls: ${JSON.stringify(defaultRail)}`);
+  }
+  if (defaultRail.allVisibleThumbsReadyMs === null || defaultRail.allVisibleThumbsReadyMs > 2500) {
+    failures.push(`Default rail should load all visible first-screen thumbnails within 2500ms without manual queue calls: ${JSON.stringify(defaultRail)}`);
+  }
+  if ((defaultRail.visiblePlaceholderCount || 0) > 0) failures.push(`Default rail first-screen thumbnails still show placeholders: ${JSON.stringify(defaultRail)}`);
+  if (defaultRail.longTasksOver50 > 0 || defaultRail.maxLongTaskMs > 50) failures.push(`Default rail first-screen load caused a long task: ${JSON.stringify(defaultRail)}`);
+  if (defaultRail.maxFrameGapMs > 120) failures.push(`Default rail first-screen load caused a large frame gap: ${JSON.stringify(defaultRail)}`);
+  if (
+    defaultRail.queueLength !== null
+    && defaultRail.visibleOrNearCount !== null
+    && defaultRail.queueLength > defaultRail.visibleOrNearCount + 2
+  ) {
+    failures.push(`Default rail first-screen load queued beyond visible/near range: ${JSON.stringify(defaultRail)}`);
+  }
+
   for (const layout of result.layoutWidths) {
     if (layout.mode !== 'edit') failures.push(`Layout ${layout.viewportWidth}: expected edit mode.`);
     if (!layout.railVisible || !layout.panelVisible || !layout.deckVisible) failures.push(`Layout ${layout.viewportWidth}: rail, panel, and deck must all be visible.`);
@@ -1410,9 +1699,12 @@ function validateResult(result) {
   }
 
   for (const [name, perf] of Object.entries(result.pageNavigationLatency?.edit || {})) {
+    if (name === 'rapidArrowDown') continue;
     const shouldAnimate = name === 'arrowDown' || name === 'arrowUp';
     if (shouldAnimate) {
       if (perf.transitionStartMs === null || perf.transitionStartMs > 80) failures.push(`Edit navigation ${name} should start page transition within 80ms: ${JSON.stringify(perf)}`);
+      if (perf.transitionStageVisibleMs === null || perf.transitionStageVisibleMs > 100) failures.push(`Edit navigation ${name} should make the transition stage visible within 100ms: ${JSON.stringify(perf)}`);
+      if (perf.firstVisualChangeMs === null || perf.firstVisualChangeMs > 100) failures.push(`Edit navigation ${name} should show a visible response within 100ms: ${JSON.stringify(perf)}`);
       if (perf.transitionMode !== 'liquidMorph') failures.push(`Edit navigation ${name} should use the configured page transition: ${JSON.stringify(perf)}`);
     } else {
       if (perf.indexChangeMs === null || perf.indexChangeMs > 80) failures.push(`Edit navigation ${name} changed index too slowly: ${JSON.stringify(perf)}`);
@@ -1422,6 +1714,19 @@ function validateResult(result) {
     if (perf.maxFrameGapMs > 100) failures.push(`Edit navigation ${name} caused a large frame gap: ${JSON.stringify(perf)}`);
     if (perf.captureStarts > 0 || perf.scheduled || perf.thumbnailStages?.length || perf.queueLength > 0) {
       failures.push(`Edit navigation ${name} should not trigger thumbnail refresh/prewarm work: ${JSON.stringify(perf)}`);
+    }
+  }
+  const rapid = result.pageNavigationLatency?.edit?.rapidArrowDown;
+  if (!rapid) failures.push('Missing rapid edit ArrowDown navigation validation.');
+  else {
+    if (rapid.firstTransitionStartMs === null || rapid.firstTransitionStartMs > 80) failures.push(`Rapid edit navigation should start the first transition quickly: ${JSON.stringify(rapid)}`);
+    if (rapid.transitionStageVisibleMs === null || rapid.transitionStageVisibleMs > 100) failures.push(`Rapid edit navigation should show a visible response quickly: ${JSON.stringify(rapid)}`);
+    if (rapid.acceptedCount < 2) failures.push(`Rapid edit navigation swallowed too many ArrowDown presses: ${JSON.stringify(rapid)}`);
+    if (rapid.endIndex <= rapid.startIndex) failures.push(`Rapid edit navigation did not advance from the starting page: ${JSON.stringify(rapid)}`);
+    if (rapid.longTasksOver50 > 0 || rapid.maxLongTaskMs > 50) failures.push(`Rapid edit navigation caused a long task: ${JSON.stringify(rapid)}`);
+    if (rapid.maxFrameGapMs > 120) failures.push(`Rapid edit navigation caused a large frame gap: ${JSON.stringify(rapid)}`);
+    if (rapid.captureStarts > 0 || rapid.scheduled || rapid.thumbnailStages?.length || rapid.queueLength > 0) {
+      failures.push(`Rapid edit navigation should not trigger thumbnail/prewarm work: ${JSON.stringify(rapid)}`);
     }
   }
   for (const [name, perf] of Object.entries(result.pageNavigationLatency?.present || {})) {
