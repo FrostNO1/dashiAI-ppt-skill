@@ -162,6 +162,8 @@
   .overview-context-menu button[disabled]{opacity:.42;cursor:not-allowed}
   .overview-context-menu button[disabled]:hover{background:transparent}
   .overview-skip-badge{position:absolute;right:8px;top:8px;z-index:3;padding:5px 8px;border-radius:999px;background:rgba(10,10,10,.72);color:#fff;font:600 11px/1 var(--sans-zh);letter-spacing:0;pointer-events:none}
+  body.overview-on #deck-viewport{visibility:hidden;content-visibility:hidden}
+  body.overview-on #deck *{animation-play-state:paused!important;transition:none!important}
   .deck-export-overlay{position:fixed;inset:0;z-index:220;display:none;align-items:center;justify-content:center;background:rgba(6,7,10,.78);backdrop-filter:blur(16px);color:#fff;pointer-events:auto}
   body.exporting-deck .deck-export-overlay{display:flex}
   .deck-export-card{width:min(360px,calc(100vw - 48px));display:grid;gap:16px;padding:22px 24px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(20,22,27,.9);box-shadow:0 22px 70px rgba(0,0,0,.42)}
@@ -529,7 +531,8 @@ function isSlideSkipped(slide, index=allSlides.indexOf(slide)){
 
 function getCatalogSlides(){
   allSlides=collectDeckSlides();
-  return allSlides.filter((slide, index) => !isSlideHiddenByThemePack(slide) && !isSlideDeleted(slide, index));
+  const deleted = getSlideStateSet('deletedSlides');
+  return allSlides.filter((slide, index) => !isSlideHiddenByThemePack(slide) && !deleted.has(getSlideVmId(slide, index)));
 }
 
 function persistCatalogSlideOrder(){
@@ -806,9 +809,11 @@ function playTheme10Motion(slide){
 }
 
 function syncTheme10Motion(activeSlide=getActiveSlide()){
+  if(overviewOn) return;
   if(!activeSlide?.querySelector?.('.ds-slidewrap')) return;
   let tries = 0;
   function attempt(){
+    if(overviewOn) return;
     if(!activeSlide?.isConnected || !activeSlide.hasAttribute('data-deck-active')) return;
     if(playTheme10Motion(activeSlide)) return;
     if(tries++ < 15) requestAnimationFrame(attempt);
@@ -866,6 +871,7 @@ function chartMotionRole(el, boundary){
 }
 
 function syncChartGrowthMotion(activeSlide=getActiveSlide(), tries=0){
+  if(overviewOn) return;
   if(!activeSlide?.isConnected || !activeSlide.hasAttribute('data-deck-active')) return;
   const root = activeSlide?.querySelector?.('.imported-theme-root');
   if(!root) return;
@@ -894,6 +900,7 @@ function restoreEffectIframes(scope=document){
 }
 
 function syncActiveEffects(activeSlide=getActiveSlide()){
+  if(overviewOn) return;
   syncAmbientGrid(activeSlide);
   syncVideoActivity(activeSlide);
   syncIframeActivity(activeSlide);
@@ -949,6 +956,7 @@ function commitSlideIndex(nextIndex){
   writeStoredSlideIndex(idx);
   dispatchEvent(new CustomEvent('swiss-slide-change', {detail:{index:idx, slide:el}}));
   preloadAdjacentSlides(idx);
+  requestOverviewClosedPrewarm();
   if(window.__playSlide && !transitionEntered) window.__playSlide(idx);
   if(transitionEntered){
     delete activeSlide.dataset.transitionEnterStarted;
@@ -1098,20 +1106,24 @@ function toggleCatalogSlideSkipped(catalogIndex){
 }
 
 /* =============== Overview View =============== */
-let overviewOn=false;
+var overviewOn=false;
 let overviewDragFrom=null, overviewDidDrag=false, overviewDropIndex=null;
 let overviewSuppressClickUntil=0;
 let overviewThumbObserver=null;
 let overviewThumbQueue=[];
 let overviewThumbScheduled=false;
 let overviewThumbProcessing=false;
-let overviewThumbIdleHandle=null;
+let overviewThumbQueueHandle=null;
 let overviewThumbRunId=0;
 let overviewThumbPauseUntil=0;
 let overviewScrollQueued=false;
 let overviewThumbRefreshQueued=false;
 let overviewCardUid=0;
 let overviewProgress=null;
+let overviewProgressUpdateHandle=null;
+let overviewProgressThumbs=[];
+var overviewClosedPrewarmTimer=null;
+var overviewClosedPrewarmRunId=0;
 let overviewGrid=null;
 let overviewBuiltSignature='';
 let overviewDragRects=[];
@@ -1120,21 +1132,25 @@ let overviewPendingDragEvent=null;
 let overviewPendingDropMarker=null;
 let overviewPendingDropGrid=null;
 let overviewPendingDeckCommit=null;
+let overviewDropSequence=0;
+let overviewOpenedAt=0;
+let overviewFullCacheRestoreUntil=0;
 let overviewPerfMarks=createOverviewPerfMarks();
 const overviewThumbBitmapCache=new Map();
-const OVERVIEW_THUMB_WIDTH=192;
-const OVERVIEW_THUMB_HEIGHT=108;
+const OVERVIEW_THUMB_WIDTH=128;
+const OVERVIEW_THUMB_HEIGHT=72;
 const OVERVIEW_CARD_WIDTH=256;
 const OVERVIEW_CARD_PADDING=8;
 const OVERVIEW_CARD_GAP=18;
 const OVERVIEW_THUMB_NEAR_MARGIN=720;
 const OVERVIEW_THUMB_CACHE_LIMIT=160;
+const OVERVIEW_THUMB_QUEUE_DELAY=80;
+const OVERVIEW_SYNC_RESTORE_LIMIT=8;
 const OVERVIEW_ASPECT_W=16;
 const OVERVIEW_ASPECT_H=9;
-let overviewThumbCaptureScriptPromise=null;
 const ov=document.createElement('div');
 ov.id='overview';
-ov.style.cssText='position:fixed;inset:0;z-index:100;background:rgba(250,250,248,.96);backdrop-filter:blur(12px);display:none;overflow-y:auto;padding:4vh 4vw';
+ov.style.cssText='position:fixed;inset:0;z-index:100;background:rgba(250,250,248,.98);display:none;overflow-y:auto;padding:4vh 4vw';
 document.body.appendChild(ov);
 const overviewMenu=document.createElement('div');
 overviewMenu.className='overview-context-menu';
@@ -1185,6 +1201,7 @@ function showOverviewContextMenu(event, catalogIndex){
 }
 
 function getOverviewCards(grid){
+  if(!grid) return [];
   return Array.from(grid.querySelectorAll('[data-overview-card="true"]'));
 }
 
@@ -1244,7 +1261,7 @@ function getOverviewThumbRange(grid=overviewGrid, {includeNear=false}={}){
     const top = ov.scrollTop - margin;
     const bottom = ov.scrollTop + ov.clientHeight + margin;
     const startRow = Math.max(0, Math.floor((top - metrics.gridTop) / metrics.rowHeight));
-    const endRow = Math.max(startRow, Math.ceil((bottom - metrics.gridTop) / metrics.rowHeight));
+    const endRow = Math.max(startRow, Math.floor((bottom - metrics.gridTop - 1) / metrics.rowHeight));
     const start = Math.max(0, startRow * metrics.columns);
     const end = Math.min(cards.length, (endRow + 1) * metrics.columns);
     return cards.slice(start, end);
@@ -1256,12 +1273,29 @@ function getOverviewThumbRange(grid=overviewGrid, {includeNear=false}={}){
 
 function getOverviewPerfState(){
   const cacheKeys = [...overviewThumbBitmapCache.keys()];
-  const cacheApproxChars = cacheKeys.reduce((sum, key) => sum + String(overviewThumbBitmapCache.get(key)?.src || '').length, 0);
+  let cacheDomNodeCount = 0;
+  let cacheDomEntryCount = 0;
+  const visibleCards = overviewOn && overviewGrid ? getOverviewThumbRange(overviewGrid, {includeNear:false}).visibleCards : [];
+  const visibleThumbs = visibleCards
+    .map(card => card.querySelector('[data-overview-thumb="true"]'))
+    .filter(Boolean);
+  const visibleRenderedCount = visibleThumbs.filter(wrap => wrap.dataset.overviewRendered === 'true').length;
+  const cacheApproxChars = cacheKeys.reduce((sum, key) => {
+    const entry = overviewThumbBitmapCache.get(key);
+    if(entry?.children?.length){
+      cacheDomEntryCount += 1;
+      cacheDomNodeCount += Number(entry?.nodeCount || 0);
+    }
+    return sum + Number(entry?.bytes || entry?.nodeCount || String(entry?.src || '').length);
+  }, 0);
   const activeSlide = slides[idx];
   return {
     overviewOn,
     cardCount: overviewGrid ? getOverviewCards(overviewGrid).length : 0,
     renderedCount: ov.querySelectorAll('[data-overview-thumb="true"][data-overview-rendered="true"]').length,
+    visibleCount: visibleThumbs.length,
+    visibleRenderedCount,
+    visibleMissingCount: visibleThumbs.length - visibleRenderedCount,
     visibleOrNearCount: getOverviewVisibleOrNearCount(),
     queueLength: overviewThumbQueue.length,
     queuedKeys: overviewThumbQueue.map(wrap => wrap.dataset.overviewKey || ''),
@@ -1273,6 +1307,8 @@ function getOverviewPerfState(){
     cacheLimit: OVERVIEW_THUMB_CACHE_LIMIT,
     cacheKeys,
     cacheApproxChars,
+    cacheDomNodeCount,
+    cacheDomEntryCount,
     activeSlideId: activeSlide ? getOverviewStableSlideId(activeSlide) : '',
     catalogOrder: getOverviewOrderFromCards(),
     deckOrder: getOverviewDeckOrder(),
@@ -1419,28 +1455,26 @@ function hideOverviewDropMarker(marker){
 }
 
 function getOverviewSourceSize(){
-  const width = Math.max(320, deckW || innerWidth);
-  const height = Math.max(180, deckH || width * OVERVIEW_ASPECT_H / OVERVIEW_ASPECT_W);
-  return {
-    width,
-    height,
-  };
+  return {width:1920, height:1080};
 }
 
 function fitOverviewThumb(wrap, sourceSize=getOverviewSourceSize()){
     const clone = wrap.firstElementChild;
     if(!clone) return;
-    if(clone.matches?.('[data-overview-thumb-image="true"]')) return;
-    const {width, height} = sourceSize;
+    const width = Number(clone.dataset.overviewSourceWidth || 0) || sourceSize.width;
+    const height = Number(clone.dataset.overviewSourceHeight || 0) || sourceSize.height;
+    const targetWidth = OVERVIEW_CARD_WIDTH;
+    const targetHeight = OVERVIEW_CARD_WIDTH * OVERVIEW_ASPECT_H / OVERVIEW_ASPECT_W;
+    const fitSignature = `${width}x${height}:${targetWidth}x${targetHeight}`;
+    if(clone.dataset.overviewFitSignature === fitSignature) return;
     wrap.style.aspectRatio = `${OVERVIEW_ASPECT_W} / ${OVERVIEW_ASPECT_H}`;
     clone.style.width = `${width}px`;
     clone.style.height = `${height}px`;
-    const rect = wrap.getBoundingClientRect();
-    if(!rect.width || !rect.height) return;
-    const scale = Math.min(rect.width / width, rect.height / height);
-    const x = (rect.width - width * scale) / 2;
-    const y = (rect.height - height * scale) / 2;
+    const scale = Math.min(targetWidth / width, targetHeight / height);
+    const x = (targetWidth - width * scale) / 2;
+    const y = (targetHeight - height * scale) / 2;
     clone.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+    clone.dataset.overviewFitSignature = fitSignature;
 }
 
 function fitOverviewThumbnails(cards=null){
@@ -1467,10 +1501,9 @@ function cancelOverviewThumbQueue(){
   });
   overviewThumbQueue=[];
   overviewThumbScheduled=false;
-  if(overviewThumbIdleHandle !== null){
-    if('cancelIdleCallback' in window) cancelIdleCallback(overviewThumbIdleHandle);
-    else clearTimeout(overviewThumbIdleHandle);
-    overviewThumbIdleHandle=null;
+  if(overviewThumbQueueHandle !== null){
+    clearTimeout(overviewThumbQueueHandle);
+    overviewThumbQueueHandle=null;
   }
 }
 window.__cancelOverviewThumbQueue = cancelOverviewThumbQueue;
@@ -1490,108 +1523,74 @@ function pauseOverviewThumbs(){
 
 function teardownOverviewThumbs(){
   pauseOverviewThumbs();
+  if(overviewProgressUpdateHandle !== null){
+    clearTimeout(overviewProgressUpdateHandle);
+    overviewProgressUpdateHandle=null;
+  }
   overviewProgress=null;
+  overviewProgressThumbs=[];
 }
 
-function loadOverviewThumbCaptureRuntime(){
-  if(window.htmlToImage?.toJpeg || window.htmlToImage?.toPng) return Promise.resolve(window.htmlToImage);
-  if(overviewThumbCaptureScriptPromise) return overviewThumbCaptureScriptPromise;
-  overviewThumbCaptureScriptPromise = new Promise((resolve, reject) => {
-    const done = () => {
-      if(window.htmlToImage?.toJpeg || window.htmlToImage?.toPng) resolve(window.htmlToImage);
-      else reject(new Error('html-to-image unavailable'));
-    };
-    const existing = [...document.scripts].find(script => /html-to-image\.js/.test(script.src || ''));
-    if(existing){
-      existing.addEventListener('load', done, {once:true});
-      existing.addEventListener('error', () => reject(new Error('html-to-image failed')), {once:true});
-      if(window.htmlToImage?.toJpeg || window.htmlToImage?.toPng) done();
-      return;
-    }
-    const script = document.createElement('script');
-    script.src = 'assets/vendor/html-to-image.js';
-    script.onload = done;
-    script.onerror = () => reject(new Error('html-to-image failed'));
-    document.head.appendChild(script);
-  });
-  return overviewThumbCaptureScriptPromise;
+async function renderOverviewThumbDomPreview(wrap, slide){
+  const preview = createOverviewDomPreview(slide);
+  wrap.replaceChildren(preview);
+  wrap.dataset.overviewMode='dom-clone';
+  wrap.dataset.overviewRendered='true';
+  rememberOverviewThumbFromDom(slide, preview);
 }
 
-function nextOverviewFrame(){
-  return new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
-}
-
-function getOverviewThumbBackground(slide){
-  return slideUsesDarkChrome(slide) ? '#02040c' : '#fafaf8';
-}
-
-function absolutizeOverviewThumbUrls(root){
-  root.querySelectorAll('[src],[href],[poster]').forEach(node => {
-    ['src','href','poster'].forEach(name => {
-      const value = node.getAttribute(name);
-      if(!value || /^(data:|blob:|https?:|#)/i.test(value)) return;
-      try { node.setAttribute(name, new URL(value, location.href).href); } catch {}
-    });
-  });
-}
-
-function makeOverviewThumbSvg(slide){
-  const sourceSize = getOverviewSourceSize();
+function createOverviewDomPreview(slide){
+  const derivedStartAt = performance.now();
+  ensureRuntimeSlideRendered(slide);
+  const {width, height} = getOverviewSourceSize();
   const clone = slide.cloneNode(true);
+  clone.dataset.overviewSourceWidth=String(width);
+  clone.dataset.overviewSourceHeight=String(height);
   clone.hidden=false;
   clone.classList.add('active');
   clone.setAttribute('data-deck-active', '');
-  clone.style.width = `${sourceSize.width}px`;
-  clone.style.height = `${sourceSize.height}px`;
-  clone.style.margin = '0';
-  clone.style.transform = 'none';
-  absolutizeOverviewThumbUrls(clone);
-  const rootStyle = getComputedStyle(document.documentElement);
-  const vars = ['--paper','--ink','--muted','--line','--focus-mark','--sans-zh','--mono']
-    .map(name => `${name}:${rootStyle.getPropertyValue(name) || ''};`).join('');
-  const styles = `:root{${vars}}.slide{position:relative;overflow:hidden;box-sizing:border-box}.slide *{box-sizing:border-box}`.replaceAll(']]>', ']]]]><![CDATA[>');
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${OVERVIEW_THUMB_WIDTH}" height="${OVERVIEW_THUMB_HEIGHT}" viewBox="0 0 ${sourceSize.width} ${sourceSize.height}"><foreignObject width="${sourceSize.width}" height="${sourceSize.height}"><div xmlns="http://www.w3.org/1999/xhtml"><style><![CDATA[${styles}]]></style>${clone.outerHTML}</div></foreignObject></svg>`;
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+  const targetWidth = OVERVIEW_CARD_WIDTH;
+  const targetHeight = OVERVIEW_CARD_WIDTH * OVERVIEW_ASPECT_H / OVERVIEW_ASPECT_W;
+  const scale = Math.min(targetWidth / width, targetHeight / height);
+  const x = (targetWidth - width * scale) / 2;
+  const y = (targetHeight - height * scale) / 2;
+  clone.dataset.overviewFitSignature = `${width}x${height}:${targetWidth}x${targetHeight}`;
+  clone.style.cssText=`width:${width}px;height:${height}px;--deck-w:${width}px;--deck-h:${height}px;--deck-scale:1;transform-origin:top left;position:absolute;top:0;left:0;margin:0;pointer-events:none;transform:translate(${x}px, ${y}px) scale(${scale});contain:layout paint style`;
+  clone.querySelectorAll('script,style,template,noscript').forEach(node => node.remove());
+  clone.querySelectorAll('iframe,video').forEach(node => {
+    const placeholder = document.createElement('div');
+    placeholder.style.cssText='position:absolute;inset:0;background:rgba(0,0,0,.08)';
+    node.replaceWith(placeholder);
+  });
+  clone.querySelectorAll('*').forEach(node => {
+    node.removeAttribute('contenteditable');
+    node.removeAttribute('tabindex');
+    node.removeAttribute('aria-describedby');
+    node.style.animation='none';
+    node.style.animationDelay='0s';
+    node.style.animationDuration='0s';
+    node.style.animationPlayState='paused';
+    node.style.transition='none';
+    if(node.hasAttribute('data-chart-motion')){
+      node.style.opacity='1';
+      node.style.transform='none';
+      node.style.strokeDashoffset='0';
+    }
+  });
+  recordOverviewStage('dom-derived-preview', derivedStartAt, {
+    slideId:getOverviewStableSlideId(slide),
+    candidateCount:clone.querySelectorAll('*').length,
+    rectReadCount:0,
+    styleReadCount:0,
+    count:1,
+  });
+  return clone;
 }
 
-function makeOverviewThumbImage(src){
-  const img = document.createElement('img');
-  img.setAttribute('data-overview-thumb-image', 'true');
-  img.alt = '';
-  img.draggable = false;
-  img.width = OVERVIEW_THUMB_WIDTH;
-  img.height = OVERVIEW_THUMB_HEIGHT;
-  img.src = src;
-  img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;background:var(--paper)';
-  return img;
-}
-
-async function captureOverviewThumbBitmap(slide){
-  const svgThumb = makeOverviewThumbSvg(slide);
-  if(svgThumb.length < 900000) return svgThumb;
-  const htmlToImage = await loadOverviewThumbCaptureRuntime();
-  const sourceSize = getOverviewSourceSize();
-  const scale = Math.min(OVERVIEW_THUMB_WIDTH / Math.max(1, sourceSize.width), OVERVIEW_THUMB_HEIGHT / Math.max(1, sourceSize.height));
-  await new Promise(resolve => requestAnimationFrame(resolve));
-  const options = {
-    width: OVERVIEW_THUMB_WIDTH,
-    height: OVERVIEW_THUMB_HEIGHT,
-    pixelRatio: 1,
-    style: {
-      width: `${sourceSize.width}px`,
-      height: `${sourceSize.height}px`,
-      transform: `scale(${scale})`,
-      transformOrigin: 'top left',
-    },
-    skipFonts: true,
-    cacheBust: false,
-    backgroundColor: getOverviewThumbBackground(slide),
-  };
-  return htmlToImage.toJpeg ? htmlToImage.toJpeg(slide, {...options, quality:.76}) : htmlToImage.toPng(slide, options);
-}
-
-function rememberOverviewThumb(slide, src){
-  overviewThumbBitmapCache.set(getOverviewThumbCacheKey(slide), {src, usedAt: Date.now()});
+function rememberOverviewThumb(slide, value){
+  const entry = {...(value || {})};
+  const key = getOverviewThumbCacheKey(slide);
+  overviewThumbBitmapCache.set(key, {...entry, usedAt: Date.now()});
   while(overviewThumbBitmapCache.size > OVERVIEW_THUMB_CACHE_LIMIT){
     let oldestKey=null;
     let oldestTime=Infinity;
@@ -1607,14 +1606,68 @@ function rememberOverviewThumb(slide, src){
   }
 }
 
-function renderOverviewThumbFallback(wrap, slide){
-  const {width, height} = getOverviewSourceSize();
-  const clone=slide.cloneNode(true);
-  clone.style.cssText='width:'+width+'px;height:'+height+'px;transform-origin:top left;position:absolute;top:0;left:0;pointer-events:none';
-  wrap.replaceChildren(clone);
-  wrap.dataset.overviewMode='dom-fallback';
-  wrap.dataset.overviewRendered='true';
-  fitOverviewThumb(wrap, {width, height});
+function rememberOverviewThumbFromDom(slide, node){
+  rememberOverviewThumb(slide, {
+    children:[node.cloneNode(true)],
+    nodeCount:node.querySelectorAll('*').length + 1,
+  });
+}
+
+function requestOverviewClosedPrewarm(delay=900){
+  if(overviewClosedPrewarmTimer !== null) clearTimeout(overviewClosedPrewarmTimer);
+  overviewClosedPrewarmTimer = setTimeout(() => {
+    overviewClosedPrewarmTimer=null;
+    runOverviewClosedPrewarm();
+  }, delay);
+}
+
+function runOverviewClosedPrewarm(){
+  const runId = ++overviewClosedPrewarmRunId;
+  if(overviewOn) return;
+  const catalogSlides = getCatalogSlides();
+  const activeIndex = Math.max(0, catalogSlides.indexOf(slides[idx]));
+  const start = Math.max(0, activeIndex - 2);
+  const targets = catalogSlides.slice(start, start + 24);
+  targets.forEach((slide, order) => {
+    setTimeout(() => {
+      if(overviewOn || runId !== overviewClosedPrewarmRunId) return;
+      predecodeOverviewSlideResources(slide);
+    }, order * 24);
+  });
+}
+
+function predecodeOverviewSlideResources(slide){
+  const urls = new Set();
+  slide.querySelectorAll('img[src],video[poster],[style*="url("]').forEach(node => {
+    const src = node.getAttribute('src') || node.getAttribute('poster');
+    if(src) urls.add(src);
+    const style = node.getAttribute('style') || '';
+    [...style.matchAll(/url\((['"]?)(.*?)\1\)/g)].forEach(match => {
+      if(match[2]) urls.add(match[2]);
+    });
+  });
+  [...urls].slice(0, 24).forEach(value => {
+    if(!value || /^(data:|blob:)/i.test(value)) return;
+    const img = new Image();
+    try { img.src = new URL(value, location.href).href; } catch { img.src = value; }
+    img.decode?.().catch(() => {});
+  });
+}
+
+function getOverviewPreviewCost(slide){
+  if(!slide) return 0;
+  const elementCount = slide.querySelectorAll('*').length;
+  const mediaCount = slide.querySelectorAll('img,svg,canvas,video,iframe,[style*="url("]').length;
+  return elementCount + mediaCount * 8;
+}
+
+function deferOverviewThumbUntilQuiet(wrap, delay){
+  if(!wrap || wrap.dataset.overviewRendered === 'true') return;
+  delete wrap.dataset.overviewQueued;
+  setTimeout(() => {
+    if(!overviewOn || !wrap.isConnected || wrap.dataset.overviewRendered === 'true') return;
+    queueOverviewThumb(wrap, false);
+  }, delay);
 }
 
 async function renderOverviewThumb(wrap, runId=overviewThumbRunId){
@@ -1623,27 +1676,36 @@ async function renderOverviewThumb(wrap, runId=overviewThumbRunId){
   const card = wrap.closest('[data-overview-card="true"]');
   const slide = card?.__overviewSlide || getCatalogSlides()[Number(card?.dataset.index)];
   if(!slide || runId !== overviewThumbRunId) return;
-  const prepareStartAt = performance.now();
-  prepareSlideForTransition(slide);
-  recordOverviewStage('runtime-slide-prepare', prepareStartAt, {slideId:getOverviewStableSlideId(slide)});
-  const captureMark = recordOverviewCaptureStart(slide, wrap.dataset.overviewTrigger || 'queue');
+  const previewStartAt = performance.now();
+  const trigger = wrap.dataset.overviewTrigger || 'queue';
   try {
-    const src = await captureOverviewThumbBitmap(slide);
-    captureMark.endedAt = performance.now();
     if(runId !== overviewThumbRunId || !overviewOn || !wrap.isConnected) return;
-    wrap.replaceChildren(makeOverviewThumbImage(src));
-    wrap.dataset.overviewMode='bitmap';
-    wrap.dataset.overviewRendered='true';
-    rememberOverviewThumb(slide, src);
+    const cachedThumb = overviewThumbBitmapCache.get(getOverviewThumbCacheKey(slide));
+    if(restoreOverviewThumb(wrap, cachedThumb)){
+      fitOverviewThumb(wrap);
+      recordOverviewStage('dom-cache-restore', previewStartAt, {slideId:getOverviewStableSlideId(slide)});
+      return;
+    }
+    await renderOverviewThumbDomPreview(wrap, slide);
+    recordOverviewStage('dom-preview-thumbnail', previewStartAt, {slideId:getOverviewStableSlideId(slide)});
   } catch (error) {
-    captureMark.endedAt = performance.now();
-    captureMark.error = String(error?.message || error);
     if(runId !== overviewThumbRunId || !overviewOn || !wrap.isConnected) return;
     console.warn('[overview thumb]', error);
-    renderOverviewThumbFallback(wrap, slide);
+    delete wrap.dataset.overviewRendered;
+    wrap.dataset.overviewMode='placeholder';
+    wrap.dataset.overviewError='true';
+    if(!wrap.querySelector('[data-overview-placeholder="true"]')) wrap.replaceChildren(createOverviewThumbPlaceholder());
+    recordOverviewStage('overview-thumb-error', previewStartAt, {
+      slideId:getOverviewStableSlideId(slide),
+      count:1,
+    });
   } finally {
+    recordOverviewStage('overview-thumb-task', previewStartAt, {
+      slideId:getOverviewStableSlideId(slide),
+      trigger,
+    });
     if(slide !== slides[idx]) window.__releaseRuntimeSlide?.(slide);
-    updateOverviewProgress();
+    requestOverviewProgressUpdate();
   }
 }
 
@@ -1651,24 +1713,21 @@ function scheduleOverviewThumbQueue(){
   if(overviewThumbScheduled || overviewThumbProcessing || !overviewOn) return;
   overviewThumbScheduled=true;
   const runId = overviewThumbRunId;
-  const schedule = 'requestIdleCallback' in window
-    ? callback => requestIdleCallback(callback)
-    : callback => setTimeout(() => callback({timeRemaining:() => 16, didTimeout:false}), 120);
-  overviewThumbIdleHandle = schedule(async (deadline) => {
-    overviewThumbIdleHandle=null;
+  overviewThumbQueueHandle = setTimeout(async () => {
+    overviewThumbQueueHandle=null;
     overviewThumbScheduled=false;
     if(!overviewOn || runId !== overviewThumbRunId) return;
-    let remaining = typeof deadline?.timeRemaining === 'function' ? deadline.timeRemaining() : 16;
-    overviewPerfMarks.queueRuns.push({at:performance.now(), remaining, queueLength:overviewThumbQueue.length});
-    if(performance.now() < overviewThumbPauseUntil || remaining < 12){
+    const sliceStartAt = performance.now();
+    const budgetMs = 10;
+    overviewPerfMarks.queueRuns.push({at:sliceStartAt, scheduler:'time-sliced', budgetMs, queueLength:overviewThumbQueue.length});
+    if(performance.now() < overviewThumbPauseUntil){
       if(overviewThumbQueue.length) scheduleOverviewThumbQueue();
       return;
     }
     let processed=0;
     while(overviewThumbQueue.length && overviewOn && runId === overviewThumbRunId){
       if(performance.now() < overviewThumbPauseUntil) break;
-      remaining = typeof deadline?.timeRemaining === 'function' ? deadline.timeRemaining() : 16;
-      if(processed > 0 && remaining < 4) break;
+      if(processed > 0 || performance.now() - sliceStartAt >= budgetMs) break;
       const wrap = overviewThumbQueue.shift();
       if(wrap?.dataset) delete wrap.dataset.overviewQueued;
       if(wrap?.isConnected && wrap.dataset.overviewRendered !== 'true'){
@@ -1680,10 +1739,10 @@ function scheduleOverviewThumbQueue(){
         }
       }
       processed += 1;
-      if(processed >= 12) break;
+      if(processed >= 1) break;
     }
     if(overviewOn && runId === overviewThumbRunId && overviewThumbQueue.length) scheduleOverviewThumbQueue();
-  });
+  }, OVERVIEW_THUMB_QUEUE_DELAY);
 }
 
 function queueOverviewThumb(wrap, priority=false){
@@ -1729,8 +1788,8 @@ function queueNearbyOverviewThumbs(){
   if(!overviewOn) return;
   const startAt = performance.now();
   const range = getOverviewThumbRange(overviewGrid, {includeNear:true});
-  const visibleWraps = range.visibleCards.map(card => card.querySelector('[data-overview-thumb="true"]')).filter(Boolean);
-  const nearWraps = range.nearCards.map(card => card.querySelector('[data-overview-thumb="true"]')).filter(Boolean);
+  const visibleWraps = getOverviewViewportThumbs();
+  overviewProgressThumbs = visibleWraps;
   let activeWrap = null;
   const activeKey = getOverviewSlideKey(slides[idx]);
   range.cards.forEach(card => {
@@ -1739,8 +1798,22 @@ function queueNearbyOverviewThumbs(){
   });
   const items = [];
   if(activeWrap) items.push({wrap:activeWrap, trigger:'active'});
-  visibleWraps.forEach(wrap => items.push({wrap, trigger:'visible'}));
-  nearWraps.forEach(wrap => items.push({wrap, trigger:'near'}));
+  const visibleEntries = visibleWraps
+    .map(wrap => {
+      const card = wrap.closest('[data-overview-card="true"]');
+      return {wrap, trigger:'visible', cost:getOverviewPreviewCost(card?.__overviewSlide)};
+    })
+    .sort((a, b) => a.cost - b.cost);
+  const hasHeavyVisible = activeThemePack !== 'theme01' && visibleEntries.length > 16;
+  const quietDelay = Math.max(0, overviewOpenedAt + 5200 - performance.now());
+  const immediateVisibleLimit = hasHeavyVisible ? Math.max(1, Math.ceil(visibleEntries.length * 0.8)) : visibleEntries.length;
+  visibleEntries.forEach((item, index) => {
+    if(hasHeavyVisible && index >= immediateVisibleLimit){
+      deferOverviewThumbUntilQuiet(item.wrap, quietDelay);
+      return;
+    }
+    items.push(item);
+  });
   setOverviewThumbQueue(items);
   recordOverviewLayoutRead('queue-nearby', 'range-card-metrics', range.cards.length);
   recordOverviewStage('queue-nearby-overview-thumbs', startAt, {count:range.cards.length, queued:items.length});
@@ -1792,26 +1865,26 @@ function scrollOverviewToCurrent(){
 }
 
 function cloneOverviewThumb(wrap){
-  const image = wrap?.querySelector?.('[data-overview-thumb-image="true"]');
-  if(image?.src) return {src: image.src};
+  if(wrap?.dataset?.overviewRendered === 'true'){
+    const children = [...(wrap?.children || [])].map(child => child.cloneNode(true));
+    return {
+      children,
+      nodeCount: children.reduce((sum, child) => sum + 1 + (child.querySelectorAll?.('*').length || 0), 0),
+    };
+  }
   return {
     children: [...(wrap?.children || [])].map(child => child.cloneNode(true)),
   };
 }
 
 function restoreOverviewThumb(wrap, cached){
-  if(cached?.src){
-    wrap.replaceChildren(makeOverviewThumbImage(cached.src));
-    wrap.dataset.overviewMode='bitmap';
+  if(cached?.children?.length){
+    wrap.replaceChildren(...cached.children.map(child => child.cloneNode(true)));
+    wrap.dataset.overviewMode='dom-clone';
     wrap.dataset.overviewRendered='true';
     return true;
   }
-  const children = cached?.children;
-  if(!children?.length) return false;
-  wrap.replaceChildren(...children.map(child => child.cloneNode(true)));
-  wrap.dataset.overviewMode='dom-fallback';
-  wrap.dataset.overviewRendered='true';
-  return true;
+  return false;
 }
 
 function getOverviewThumbCacheKey(slide){
@@ -1828,31 +1901,26 @@ function markOverviewThumbDirty(slide){
   [...overviewThumbBitmapCache.keys()].forEach(cacheKey => {
     if(cacheKey.includes(`|${key}|`)) overviewThumbBitmapCache.delete(cacheKey);
   });
-  let freshThumb = null;
-  try {
-    const src = makeOverviewThumbSvg(slide);
-    if(src.length < 900000){
-      rememberOverviewThumb(slide, src);
-      freshThumb = {src};
-    }
-  } catch {}
+  let needsRefresh=false;
   ov.querySelectorAll(`[data-overview-card="true"][data-slide-key="${key}"] [data-overview-thumb="true"]`).forEach(wrap => {
     delete wrap.dataset.overviewRendered;
     delete wrap.dataset.overviewMode;
-    if(freshThumb && restoreOverviewThumb(wrap, freshThumb)){
-      delete wrap.dataset.overviewQueued;
-    }else{
-      wrap.replaceChildren(createOverviewThumbPlaceholder());
-      if(overviewOn) queueOverviewThumb(wrap, true);
-    }
+    delete wrap.dataset.overviewQueued;
+    wrap.replaceChildren(createOverviewThumbPlaceholder());
+    needsRefresh=true;
   });
-  updateOverviewProgress();
+  if(overviewOn && needsRefresh){
+    deferOverviewThumbs(650, 'dirty');
+    requestOverviewThumbRefresh(true);
+  }
+  requestOverviewProgressUpdate();
 }
 window.__markOverviewThumbDirty = markOverviewThumbDirty;
 
 function createOverviewThumbPlaceholder(){
   const fragment = document.createDocumentFragment();
   const placeholder=document.createElement('div');
+  placeholder.setAttribute('data-overview-placeholder', 'true');
   placeholder.style.cssText='position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(0,0,0,.08)),repeating-linear-gradient(135deg,rgba(0,0,0,.08) 0 1px,transparent 1px 12px);opacity:.55';
   const placeholderText=document.createElement('div');
   placeholderText.style.cssText='position:absolute;left:10px;top:10px;padding:4px 7px;border-radius:999px;background:rgba(255,255,255,.72);color:rgba(0,0,0,.58);font:600 11px/1 var(--sans-zh);letter-spacing:0';
@@ -1862,9 +1930,11 @@ function createOverviewThumbPlaceholder(){
 }
 
 function getOverviewStructureSignature(catalogSlides=getCatalogSlides()){
+  const skipped = getSlideStateSet('skippedSlides');
   return catalogSlides.map((slide, index) => {
     const allIndex = allSlides.indexOf(slide);
-    return `${getSlideVmId(slide, allIndex)}:${isSlideSkipped(slide, allIndex) ? 'skip' : 'show'}:${index}`;
+    const slideId = getSlideVmId(slide, allIndex);
+    return `${slideId}:${skipped.has(slideId) ? 'skip' : 'show'}:${index}`;
   }).join('|');
 }
 
@@ -1873,10 +1943,11 @@ function refreshOverviewCards(grid=overviewGrid){
   refreshSlideList();
   const catalogSlides = getCatalogSlides();
   const catalogTotal = catalogSlides.length;
+  const playableIndexBySlide = new Map(slides.map((slide, index) => [slide, index]));
   getOverviewCards(grid).forEach((card, index) => {
     const slide = card.__overviewSlide || catalogSlides[index];
     if(!slide) return;
-    const playableIndex = slides.indexOf(slide);
+    const playableIndex = playableIndexBySlide.get(slide) ?? -1;
     const active = playableIndex === idx;
     card.dataset.index = index;
     card.dataset.slideKey = getOverviewSlideKey(slide);
@@ -1923,18 +1994,35 @@ function scheduleOverviewDeckCommit(grid, previousActiveSlide, preferredIndex, d
   overviewPendingDeckCommit = setTimeout(() => {
     overviewPendingDeckCommit=null;
     const commitStartAt = performance.now();
-    orderedSlides.forEach(slide => deck.appendChild(slide));
+    const movedSlide = orderedSlides[detail.to] || null;
+    const referenceSlide = orderedSlides[detail.to + 1] || null;
+    let deckMoveCount = 0;
+    if(movedSlide){
+      deck.insertBefore(movedSlide, referenceSlide);
+      deckMoveCount = 1;
+    }
     const appendEndAt = performance.now();
-    updateAfterCatalogMutation(previousActiveSlide, preferredIndex, {...detail, skipOverviewRebuild:true});
+    refreshSlideList();
+    const activeIndex = previousActiveSlide ? slides.indexOf(previousActiveSlide) : -1;
+    idx = total > 0
+      ? (activeIndex >= 0 ? activeIndex : Math.max(0, Math.min(total - 1, preferredIndex || 0)))
+      : 0;
+    window.__currentSlideIndex = idx;
+    syncNav();
+    layoutDeck();
+    writeStoredSlideIndex(idx);
+    persistCatalogSlideOrder();
     const mutationEndAt = performance.now();
     dispatchEvent(new CustomEvent('swiss-slide-reorder', {detail:{from:detail.from, to:detail.to, index:idx}}));
+    dispatchEvent(new CustomEvent('swiss-slide-catalog-change', {detail:{...detail, skipOverviewRebuild:true}}));
     dropMark.deckCommittedAt = performance.now();
     dropMark.deckCommitDurationMs = dropMark.deckCommittedAt - commitStartAt;
     dropMark.deckAppendDurationMs = appendEndAt - commitStartAt;
     dropMark.deckMutationDurationMs = mutationEndAt - appendEndAt;
+    dropMark.deckMoveCount = deckMoveCount;
     dropMark.deckOrderAfterCommit = getOverviewDeckOrder();
     recordOverviewStage('deck-commit', commitStartAt, {
-      count:orderedSlides.length,
+      count:deckMoveCount,
       appendMs:dropMark.deckAppendDurationMs,
       mutationMs:dropMark.deckMutationDurationMs,
     });
@@ -1978,8 +2066,7 @@ function createOverviewProgress(total){
 function updateOverviewProgress(){
   if(!overviewProgress) return;
   const startAt = performance.now();
-  const visibleCards = overviewOn && overviewGrid ? getOverviewThumbRange(overviewGrid).visibleCards : [];
-  const wraps = visibleCards.map(card => card.querySelector('[data-overview-thumb="true"]')).filter(Boolean);
+  const wraps = overviewOn ? getOverviewViewportThumbs() : [];
   const total = wraps.length;
   const done = wraps.filter(wrap => wrap.dataset.overviewRendered === 'true').length;
   const pct = total ? Math.round(done / total * 100) : 100;
@@ -1993,11 +2080,29 @@ function updateOverviewProgress(){
   recordOverviewStage('overview-progress-update', startAt, {done, total});
 }
 
+function requestOverviewProgressUpdate(){
+  if(!overviewProgress || overviewProgressUpdateHandle !== null) return;
+  overviewProgressUpdateHandle = setTimeout(() => {
+    overviewProgressUpdateHandle = null;
+    updateOverviewProgress();
+  }, 120);
+}
+
+function getOverviewViewportThumbs(){
+  if(!overviewGrid) return [];
+  return getOverviewThumbRange(overviewGrid, {includeNear:false}).visibleCards
+    .map(card => card.querySelector('[data-overview-thumb="true"]'))
+    .filter(Boolean);
+}
+
 function buildOverview(fromRects=null, fromThumbs=null){
   const startAt = performance.now();
   refreshSlideList();
   const catalogSlides = getCatalogSlides();
   const catalogTotal = catalogSlides.length;
+  const skippedSlides = getSlideStateSet('skippedSlides');
+  const allIndexBySlide = new Map(allSlides.map((slide, index) => [slide, index]));
+  const playableIndexBySlide = new Map(slides.map((slide, index) => [slide, index]));
   overviewBuiltSignature = getOverviewStructureSignature(catalogSlides);
   teardownOverviewThumbs();
   ov.innerHTML='';
@@ -2008,23 +2113,26 @@ function buildOverview(fromRects=null, fromThumbs=null){
   const dropMarker=document.createElement('div');
   dropMarker.dataset.overviewDropMarker='true';
   dropMarker.style.cssText='position:absolute;z-index:5;display:none;pointer-events:none;background:var(--focus-mark);border-radius:999px;box-shadow:0 0 0 4px rgba(0,0,0,.08)';
+  let restoredThumbCount=0;
+  const fullCacheRestore = performance.now() < overviewFullCacheRestoreUntil;
+  const syncRestoreLimit = fullCacheRestore ? Infinity : (activeThemePack === 'theme01' ? OVERVIEW_SYNC_RESTORE_LIMIT : 0);
   catalogSlides.forEach((s,i)=>{
-    const skipped = isSlideSkipped(s, allSlides.indexOf(s));
-    const playableIndex = slides.indexOf(s);
+    const allIndex = allIndexBySlide.get(s) ?? allSlides.indexOf(s);
+    const slideId = getSlideVmId(s, allIndex);
+    const skipped = skippedSlides.has(slideId);
+    const playableIndex = playableIndexBySlide.get(s) ?? -1;
     const card=document.createElement('div');
     card.draggable=true;
     card.__overviewSlide=s;
     card.dataset.index=i;
     card.dataset.overviewCard='true';
     card.dataset.overviewActive=playableIndex===idx?'true':'false';
-    card.dataset.slideKey=getOverviewSlideKey(s);
-    card.dataset.slideId=getOverviewStableSlideId(s);
-    card.style.cssText=`cursor:grab;overflow:visible;position:relative;width:${OVERVIEW_CARD_WIDTH + OVERVIEW_CARD_PADDING * 2}px;padding:${OVERVIEW_CARD_PADDING}px ${OVERVIEW_CARD_PADDING}px 0;border-radius:7px;outline:${playableIndex===idx?'3px':'1px'} solid ${playableIndex===idx?'var(--focus-mark)':'rgba(0,0,0,.16)'};outline-offset:0;transition:outline-color .2s,opacity .2s,transform .2s,filter .2s;background:rgba(255,255,255,.68);opacity:${skipped?'.56':'1'};filter:${skipped?'saturate(.62)':'none'}`;
+    card.dataset.slideKey=slideId;
+    card.dataset.slideId=slideId;
+    card.style.cssText=`cursor:grab;overflow:visible;position:relative;width:${OVERVIEW_CARD_WIDTH + OVERVIEW_CARD_PADDING * 2}px;padding:${OVERVIEW_CARD_PADDING}px ${OVERVIEW_CARD_PADDING}px 0;border-radius:7px;outline:${playableIndex===idx?'3px':'1px'} solid ${playableIndex===idx?'var(--focus-mark)':'rgba(0,0,0,.16)'};outline-offset:0;transition:opacity .2s,transform .2s,filter .2s;background:rgba(255,255,255,.68);opacity:${skipped?'.56':'1'};filter:${skipped?'saturate(.62)':'none'};content-visibility:auto;contain:layout paint style;contain-intrinsic-size:${OVERVIEW_CARD_WIDTH + OVERVIEW_CARD_PADDING * 2}px ${Math.round((OVERVIEW_CARD_WIDTH / OVERVIEW_ASPECT_W * OVERVIEW_ASPECT_H) + 42)}px`;
     card.onmouseenter=()=>{
       deferOverviewThumbs(650, 'hover');
-      card.style.outlineColor='rgba(0,0,0,.46)';
     };
-    card.onmouseleave=()=>card.style.outlineColor=card.dataset.overviewActive==='true'?'var(--focus-mark)':'rgba(0,0,0,.16)';
     card.addEventListener('contextmenu', e => showOverviewContextMenu(e, Number(card.dataset.index)));
     card.addEventListener('dragstart', e=>{
       pauseOverviewThumbs();
@@ -2053,11 +2161,13 @@ function buildOverview(fromRects=null, fromThumbs=null){
     const frame=document.createElement('div');
     frame.setAttribute('data-overview-frame', 'true');
     const isDark = slideUsesDarkChrome(s);
-    frame.style.cssText='position:relative;width:100%;aspect-ratio:'+OVERVIEW_ASPECT_W+'/'+OVERVIEW_ASPECT_H+';overflow:hidden;background:'+(isDark?'var(--ink)':'var(--paper)');
+    frame.style.cssText='position:relative;width:100%;aspect-ratio:'+OVERVIEW_ASPECT_W+'/'+OVERVIEW_ASPECT_H+';overflow:hidden;background:'+(isDark?'var(--ink)':'var(--paper)')+';contain:layout paint style';
     wrap.dataset.overviewThumb='true';
-    wrap.style.cssText='position:absolute;inset:0;width:100%;height:100%;aspect-ratio:'+OVERVIEW_ASPECT_W+'/'+OVERVIEW_ASPECT_H+';overflow:hidden;pointer-events:none;background:'+(isDark?'var(--ink)':'var(--paper)');
+    wrap.style.cssText='position:absolute;inset:0;width:100%;height:100%;aspect-ratio:'+OVERVIEW_ASPECT_W+'/'+OVERVIEW_ASPECT_H+';overflow:hidden;pointer-events:none;background:'+(isDark?'var(--ink)':'var(--paper)')+';contain:layout paint style';
     const cachedThumb = fromThumbs?.[card.dataset.slideKey] || overviewThumbBitmapCache.get(getOverviewThumbCacheKey(s));
-    if(restoreOverviewThumb(wrap, cachedThumb)){
+    const canRestoreNow = cachedThumb && (fromThumbs?.[card.dataset.slideKey] || restoredThumbCount < syncRestoreLimit);
+    if(canRestoreNow && restoreOverviewThumb(wrap, cachedThumb)){
+      restoredThumbCount += 1;
       fitOverviewThumb(wrap);
     }else{
       wrap.appendChild(createOverviewThumbPlaceholder());
@@ -2113,6 +2223,7 @@ function buildOverview(fromRects=null, fromThumbs=null){
     const previousActiveSlide = slides[idx];
     const preferredIndex = idx;
     const dropMark = {
+      id:++overviewDropSequence,
       dropStartAt:performance.now(),
       from:overviewDragFrom,
       requestedTo:slot.index,
@@ -2123,6 +2234,7 @@ function buildOverview(fromRects=null, fromThumbs=null){
     const targetIndex = applyOverviewReorderLocally(grid, overviewDragFrom, slot.index, beforeRects);
     overviewDidDrag=targetIndex !== null;
     if(overviewDidDrag){
+      overviewFullCacheRestoreUntil = performance.now() + 15000;
       dropMark.to=targetIndex;
       dropMark.localDomCommittedAt = performance.now();
       dropMark.overviewOrderAfterLocalDom = getOverviewOrderFromCards(grid);
@@ -2148,6 +2260,7 @@ function buildOverview(fromRects=null, fromThumbs=null){
 
 function openOverview(){
   const startAt = performance.now();
+  overviewOpenedAt=startAt;
   overviewOn=true;
   document.body.classList.add('overview-on');
   ov.style.display='block';

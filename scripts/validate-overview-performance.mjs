@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { spawn } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import https from 'node:https';
 import net from 'node:net';
 import path from 'node:path';
@@ -46,7 +46,33 @@ const THRESHOLDS = {
   interactionLongTaskMaxMs: 90,
   interactionLongTaskCount: 1,
   backgroundLongTaskMaxMs: 140,
+  theme03OpenLongTaskCount: 2,
+  theme03OpenLongTaskMaxMs: 90,
+  theme03FrameGapMaxMs: 140,
+  theme03FrameGapOver100MaxCount: 2,
   cacheApproxChars: 18 * 1024 * 1024,
+  frameGapMaxMs: 180,
+  frameGapHardMaxMs: 220,
+  frameGapOver180MaxCount: 1,
+  theme03VisualReadyMs: 5000,
+  theme03PlaceholderFillMs: 13000,
+  theme03VisibleValidRatio: 0.75,
+  theme03ForeignObjectImages: 0,
+  theme03SimilaritySampleCount: 8,
+  theme03SimilarityMinScore: 0.82,
+  theme03SimilarityMaxMeanAbs: 0.18,
+  theme03SimilarityMaxEdgeAbs: 0.18,
+  theme02AnimationSampleCount: 8,
+  theme02SimilarityMinScore: 0.72,
+  theme02BlackRatioMax: 0.58,
+  theme02VisualReadyMs: 5000,
+  fullFrameFitSampleCount: 8,
+  fullFrameFitMinScore: 0.82,
+  fullFrameFitMaxMeanAbs: 0.2,
+  fullFrameFitMaxBorderAbs: 0.24,
+  dirtyImmediateMs: 80,
+  deckCommitMoveCount: 2,
+  cacheDomNodeCount: 16000,
 };
 
 const cliUrl = getArg('--url');
@@ -200,6 +226,15 @@ try {
   const stateAfterClose = await getState(page);
   const repeatedOpen = await runRepeatedOpenValidation(page);
   const repeatedDrop = await runRepeatedDropValidation(page);
+  const sortReturnCache = await runSortReturnCacheValidation(page);
+  const fullFrameFit = await runFullFrameFitValidation(page);
+  await page.goto(`${url}?overview_perf=${Date.now()}&phase=visual`, { waitUntil: 'domcontentloaded' });
+  await page.waitForSelector('#deck > .slide');
+  await installLongTaskObserver(page);
+  await assertPerfApi(page);
+  const theme03Visual = await runTheme03VisualValidation(page);
+  const theme02Visual = await runTheme02AnimationValidation(page);
+  const staticChecks = runStaticImplementationChecks();
 
   const result = {
     url,
@@ -264,6 +299,11 @@ try {
     dragOverSamples,
     repeatedOpen,
     repeatedDrop,
+    sortReturnCache,
+    fullFrameFit,
+    theme03Visual,
+    theme02Visual,
+    staticChecks,
   };
 
   const failures = validateResult(result, stateAfterReopen);
@@ -495,6 +535,8 @@ function pickState(state) {
     cacheSize: state.cacheSize,
     cacheLimit: state.cacheLimit,
     cacheApproxChars: state.cacheApproxChars,
+    cacheDomNodeCount: state.cacheDomNodeCount,
+    cacheDomEntryCount: state.cacheDomEntryCount,
     activeSlideId: state.activeSlideId,
     cacheKeys: state.cacheKeys,
     queuedKeys: state.queuedKeys,
@@ -511,6 +553,9 @@ async function getOverviewLoadedState(page) {
     if (!overview) {
       return {
         fullLoaded: false,
+        visibleViewportLoaded: false,
+        visibleViewportRendered: 0,
+        visibleViewportCount: 0,
         visibleOrNearLoaded: false,
         visibleOrNearRendered: 0,
         visibleOrNearCount: 0,
@@ -518,14 +563,22 @@ async function getOverviewLoadedState(page) {
     }
     const rootRect = overview.getBoundingClientRect();
     const nearMargin = 720;
+    const viewportWraps = [...overview.querySelectorAll('[data-overview-thumb="true"]')].filter(wrap => {
+      const rect = wrap.getBoundingClientRect();
+      return rect.bottom >= rootRect.top && rect.top <= rootRect.bottom;
+    });
     const nearWraps = [...overview.querySelectorAll('[data-overview-thumb="true"]')].filter(wrap => {
       const rect = wrap.getBoundingClientRect();
       return rect.bottom >= rootRect.top - nearMargin && rect.top <= rootRect.bottom + nearMargin;
     });
+    const visibleViewportRendered = viewportWraps.filter(wrap => wrap.dataset.overviewRendered === 'true').length;
     const visibleOrNearRendered = nearWraps.filter(wrap => wrap.dataset.overviewRendered === 'true').length;
     const queueEmpty = Number(state.queueLength || 0) === 0 && !state.processing && !state.scheduled;
     return {
       fullLoaded: Number(state.renderedCount || 0) === Number(state.cardCount || 0) && queueEmpty,
+      visibleViewportLoaded: viewportWraps.length > 0 && visibleViewportRendered === viewportWraps.length && queueEmpty,
+      visibleViewportRendered,
+      visibleViewportCount: viewportWraps.length,
       visibleOrNearLoaded: nearWraps.length > 0 && visibleOrNearRendered === nearWraps.length && queueEmpty,
       visibleOrNearRendered,
       visibleOrNearCount: nearWraps.length,
@@ -566,20 +619,424 @@ async function measureVisibleThumbReadiness(page, openStart, timeoutMs) {
 
 async function getVisibleThumbStats(page) {
   return page.evaluate(() => {
+    const state = window.__getOverviewPerfState?.();
+    return {
+      visibleCount: Number(state?.visibleCount || 0),
+      visibleRenderedCount: Number(state?.visibleRenderedCount || 0),
+      visibleMissingCount: Number(state?.visibleMissingCount || 0),
+      renderedCount: Number(state?.visibleRenderedCount || 0),
+    };
+  });
+}
+
+async function getVisibleThumbVisualStats(page) {
+  return page.evaluate(() => {
     const overview = document.getElementById('overview');
-    if (!overview) return { visibleCount: 0, visibleRenderedCount: 0, visibleMissingCount: 0 };
+    if (!overview) return { visibleCount: 0, validCount: 0, invalidCount: 0, brokenCount: 0, svgImageCount: 0, foreignObjectImageCount: 0, samples: [] };
     const rootRect = overview.getBoundingClientRect();
     const visibleWraps = [...overview.querySelectorAll('[data-overview-thumb="true"]')].filter(wrap => {
       const rect = wrap.getBoundingClientRect();
       return rect.bottom >= rootRect.top && rect.top <= rootRect.bottom;
     });
-    const visibleRenderedCount = visibleWraps.filter(wrap => wrap.dataset.overviewRendered === 'true').length;
+    const samples = visibleWraps.map((wrap, index) => inspectOverviewThumb(wrap, index));
     return {
-      visibleCount: visibleWraps.length,
-      visibleRenderedCount,
-      visibleMissingCount: visibleWraps.length - visibleRenderedCount,
+      visibleCount: samples.length,
+      validCount: samples.filter(sample => sample.valid).length,
+      invalidCount: samples.filter(sample => !sample.valid).length,
+      brokenCount: samples.filter(sample => sample.broken).length,
+      svgImageCount: samples.filter(sample => sample.svgImage).length,
+      foreignObjectImageCount: samples.filter(sample => sample.foreignObjectImage).length,
+      samples,
     };
+
+    function inspectOverviewThumb(wrap, index) {
+      const img = wrap.querySelector('img');
+      const src = img?.currentSrc || img?.src || '';
+      if (!img) {
+        const mode = wrap.dataset.overviewMode || '';
+        const canvas = wrap.querySelector('[data-overview-thumb-canvas="true"]');
+        if (canvas) {
+          return inspectCanvasThumb(canvas, index, mode);
+        }
+        if (mode === 'dom-preview') {
+          const images = [...wrap.querySelectorAll('img')];
+          const loadedImages = images.filter(image => image.complete && image.naturalWidth > 0 && image.naturalHeight > 0).length;
+          const textLength = (wrap.textContent || '').replace(/\s+/g, '').length;
+          const elementCount = wrap.querySelectorAll('*').length;
+          return { index, valid: false, reason: 'summary-card-rejected', mode, loadedImages, imageCount: images.length, textLength, elementCount };
+        }
+        if (mode === 'dom-clone' || mode === 'dom-fallback' || mode === 'dom-derived') {
+          const images = [...wrap.querySelectorAll('img')];
+          const loadedImages = images.filter(image => image.complete && image.naturalWidth > 0 && image.naturalHeight > 0).length;
+          const textLength = (wrap.textContent || '').replace(/\s+/g, '').length;
+          const elementCount = wrap.querySelectorAll('*').length;
+          const hasDerivedPreview = !!wrap.querySelector('[data-overview-derived="true"]');
+          const hasRuntimeRoot = hasDerivedPreview || !!wrap.querySelector('.imported-theme-root, .theme03-theme-shell, .rd-slide');
+          const svgCount = wrap.querySelectorAll('svg').length;
+          const visualElementCount = wrap.querySelectorAll('img,svg,canvas,video,[style*="background"],[style*="gradient"],[class*="chart"],[class*="visual"],[class*="image"],[class*="hero"],[class*="figure"],[class*="scene"]').length;
+          const visualBoxCount = [...wrap.querySelectorAll('*')].filter(node => {
+            const style = getComputedStyle(node);
+            const hasPaint = style.backgroundImage !== 'none'
+              || (style.backgroundColor && style.backgroundColor !== 'rgba(0, 0, 0, 0)' && style.backgroundColor !== 'transparent')
+              || parseFloat(style.borderTopWidth) > 0
+              || parseFloat(style.borderLeftWidth) > 0;
+            const rect = node.getBoundingClientRect();
+            return hasPaint && rect.width >= 8 && rect.height >= 8;
+          }).length;
+          const valid = hasRuntimeRoot && elementCount >= 12 && (loadedImages > 0 || svgCount > 0 || visualElementCount >= 4 || visualBoxCount >= 6);
+          return { index, valid, reason: valid ? 'dom-preview-ok' : 'dom-preview-low-detail', mode, loadedImages, imageCount: images.length, svgCount, hasRuntimeRoot, hasDerivedPreview, visualElementCount, visualBoxCount, textLength, elementCount };
+        }
+        return { index, valid: false, reason: 'missing-img', mode };
+      }
+      const svgImage = /^data:image\/svg\+xml/i.test(src);
+      const foreignObjectImage = svgImage && /foreignObject/i.test(safeDecode(src.slice(0, 8000)));
+      if (!img.complete || img.naturalWidth <= 0 || img.naturalHeight <= 0) {
+        return { index, valid: false, broken: true, reason: 'not-loaded', svgImage, foreignObjectImage, mode: wrap.dataset.overviewMode || '' };
+      }
+      try {
+        const canvas = document.createElement('canvas');
+        const width = 96;
+        const height = 54;
+        canvas.width = width;
+        canvas.height = height;
+        const context = canvas.getContext('2d', { willReadFrequently: true });
+        context.drawImage(img, 0, 0, width, height);
+        const data = context.getImageData(0, 0, width, height).data;
+        let nonWhite = 0;
+        let nonTransparent = 0;
+        let min = 255;
+        let max = 0;
+        for (let offset = 0; offset < data.length; offset += 16) {
+          const r = data[offset];
+          const g = data[offset + 1];
+          const b = data[offset + 2];
+          const a = data[offset + 3];
+          if (a > 8) nonTransparent += 1;
+          const value = (r + g + b) / 3;
+          min = Math.min(min, value);
+          max = Math.max(max, value);
+          if (a > 8 && !(r > 246 && g > 246 && b > 246)) nonWhite += 1;
+        }
+        const nonWhiteRatio = nonTransparent ? nonWhite / nonTransparent : 0;
+        const contrast = max - min;
+        const valid = !foreignObjectImage && nonTransparent > 100 && nonWhiteRatio >= 0.025 && contrast >= 18;
+        return {
+          index,
+          valid,
+          reason: valid ? 'ok' : 'blank-or-low-detail',
+          broken: false,
+          svgImage,
+          foreignObjectImage,
+          nonWhiteRatio: Math.round(nonWhiteRatio * 1000) / 1000,
+          contrast: Math.round(contrast * 10) / 10,
+          mode: wrap.dataset.overviewMode || '',
+        };
+      } catch (error) {
+        return {
+          index,
+          valid: false,
+          broken: true,
+          reason: `pixel-read-failed:${String(error?.message || error)}`,
+          svgImage,
+          foreignObjectImage,
+          mode: wrap.dataset.overviewMode || '',
+        };
+      }
+    }
+
+    function inspectCanvasThumb(canvas, index, mode) {
+      try {
+        const width = Math.min(96, canvas.width || 96);
+        const height = Math.min(54, canvas.height || 54);
+        const sample = document.createElement('canvas');
+        sample.width = width;
+        sample.height = height;
+        const context = sample.getContext('2d', { willReadFrequently: true });
+        context.drawImage(canvas, 0, 0, width, height);
+        const data = context.getImageData(0, 0, width, height).data;
+        let nonWhite = 0;
+        let nonTransparent = 0;
+        let min = 255;
+        let max = 0;
+        for (let offset = 0; offset < data.length; offset += 16) {
+          const r = data[offset];
+          const g = data[offset + 1];
+          const b = data[offset + 2];
+          const a = data[offset + 3];
+          if (a > 8) nonTransparent += 1;
+          const value = (r + g + b) / 3;
+          min = Math.min(min, value);
+          max = Math.max(max, value);
+          if (a > 8 && !(r > 246 && g > 246 && b > 246)) nonWhite += 1;
+        }
+        const nonWhiteRatio = nonTransparent ? nonWhite / nonTransparent : 0;
+        const contrast = max - min;
+        const valid = nonTransparent > 100 && nonWhiteRatio >= 0.025 && contrast >= 18;
+        return {
+          index,
+          valid,
+          reason: valid ? 'canvas-ok' : 'canvas-blank-or-low-detail',
+          broken: false,
+          svgImage: false,
+          foreignObjectImage: false,
+          nonWhiteRatio: Math.round(nonWhiteRatio * 1000) / 1000,
+          contrast: Math.round(contrast * 10) / 10,
+          mode,
+        };
+      } catch (error) {
+        return {
+          index,
+          valid: false,
+          broken: true,
+          reason: `canvas-read-failed:${String(error?.message || error)}`,
+          svgImage: false,
+          foreignObjectImage: false,
+          mode,
+        };
+      }
+    }
+
+    function safeDecode(value) {
+      try {
+        return decodeURIComponent(value);
+      } catch {
+        return value;
+      }
+    }
   });
+}
+
+async function waitForVisibleThumbVisualStats(page, timeoutMs) {
+  const deadline = Date.now() + timeoutMs;
+  let stats = await getVisibleThumbVisualStats(page);
+  while (Date.now() < deadline) {
+    stats = await getVisibleThumbVisualStats(page);
+    if (stats.visibleCount > 0 && stats.validCount === stats.visibleCount) break;
+    await page.waitForTimeout(120);
+  }
+  return getVisibleThumbVisualStats(page);
+}
+
+async function waitForVisibleThumbsRendered(page, timeoutMs) {
+  return page.evaluate(timeout => new Promise(resolve => {
+    if (!window.__getOverviewPerfState) {
+      resolve({ visibleCount: 0, renderedCount: 0 });
+      return;
+    }
+    const snapshot = () => {
+      const state = window.__getOverviewPerfState?.() || {};
+      return {
+        visibleCount: Number(state.visibleCount || 0),
+        renderedCount: Number(state.visibleRenderedCount || 0),
+      };
+    };
+    const finish = value => {
+      clearInterval(interval);
+      clearTimeout(timer);
+      resolve(value);
+    };
+    const check = () => {
+      const state = snapshot();
+      if (state.visibleCount > 0 && state.renderedCount === state.visibleCount) finish(state);
+    };
+    const interval = setInterval(check, 80);
+    const timer = setTimeout(() => finish(snapshot()), timeout);
+    check();
+  }), timeoutMs);
+}
+
+async function runTheme03SimilarityValidation(page, sampleCount = THRESHOLDS.theme03SimilaritySampleCount) {
+  const result = await runThemeSimilarityValidation(page, { sampleCount, stableWaitMs: 220 });
+  const failed = result.samples.filter(sample =>
+    sample.score < THRESHOLDS.theme03SimilarityMinScore
+    || sample.meanAbs > THRESHOLDS.theme03SimilarityMaxMeanAbs
+    || sample.edgeAbs > THRESHOLDS.theme03SimilarityMaxEdgeAbs
+  );
+  return { ...result, failedCount: failed.length, failed };
+}
+
+async function runThemeSimilarityValidation(page, { sampleCount, stableWaitMs = 220 } = {}) {
+  const indices = await page.evaluate((limit) => {
+    const overview = document.getElementById('overview');
+    if (!overview) return [];
+    const rootRect = overview.getBoundingClientRect();
+    return [...overview.querySelectorAll('[data-overview-card="true"]')]
+      .filter(card => {
+        const frame = card.querySelector('[data-overview-frame="true"]');
+        if (!frame) return false;
+        const rect = frame.getBoundingClientRect();
+        return rect.bottom >= rootRect.top && rect.top <= rootRect.bottom;
+      })
+      .slice(0, limit)
+      .map(card => Number(card.dataset.index))
+      .filter(Number.isFinite);
+  }, sampleCount || THRESHOLDS.theme03SimilaritySampleCount);
+
+  const samples = [];
+  for (const index of indices) {
+    await ensureOverviewClosed(page);
+    await page.evaluate((slideIndex) => {
+      window.go?.(slideIndex, { animate: false, force: true });
+    }, index);
+    await page.waitForFunction((slideIndex) => {
+      const active = document.querySelector('#deck > .slide.active');
+      return active && window.__currentSlideIndex === slideIndex;
+    }, index);
+    await page.waitForTimeout(stableWaitMs);
+    const slideBuffer = await page.locator('#deck > .slide.active').screenshot({ type: 'png' });
+
+    await ensureOverviewOpen(page);
+    await page.waitForFunction((slideIndex) => {
+      const card = document.querySelector(`[data-overview-card="true"][data-index="${slideIndex}"]`);
+      const wrap = card?.querySelector('[data-overview-thumb="true"]');
+      return wrap?.dataset.overviewRendered === 'true';
+    }, index);
+    const thumbBuffer = await page.locator(`[data-overview-card="true"][data-index="${index}"] [data-overview-frame="true"]`).screenshot({ type: 'png' });
+    const metrics = await comparePngBuffers(page, slideBuffer, thumbBuffer);
+    samples.push({ index, ...metrics });
+  }
+  const averageScore = samples.length ? samples.reduce((sum, sample) => sum + sample.score, 0) / samples.length : 0;
+  return {
+    sampleCount: samples.length,
+    averageScore: round(averageScore),
+    minScore: round(samples.reduce((min, sample) => Math.min(min, sample.score), samples.length ? 1 : 0)),
+    maxMeanAbs: round(samples.reduce((max, sample) => Math.max(max, sample.meanAbs), 0)),
+    maxEdgeAbs: round(samples.reduce((max, sample) => Math.max(max, sample.edgeAbs), 0)),
+    maxBorderAbs: round(samples.reduce((max, sample) => Math.max(max, sample.borderAbs || 0), 0)),
+    maxCandidateBlackRatio: round(samples.reduce((max, sample) => Math.max(max, sample.candidateBlackRatio || 0), 0)),
+    samples,
+  };
+}
+
+async function comparePngBuffers(page, referenceBuffer, candidateBuffer) {
+  const reference = `data:image/png;base64,${referenceBuffer.toString('base64')}`;
+  const candidate = `data:image/png;base64,${candidateBuffer.toString('base64')}`;
+  return page.evaluate(async ({ reference, candidate }) => {
+    const width = 96;
+    const height = 54;
+    const ref = await imageDataFromUrl(reference, width, height);
+    const cand = await imageDataFromUrl(candidate, width, height);
+    const refGray = grayscale(ref.data);
+    const candGray = grayscale(cand.data);
+    const referenceBlackRatio = blackRatio(ref.data);
+    const candidateBlackRatio = blackRatio(cand.data);
+    let meanAbs = 0;
+    for (let index = 0; index < refGray.length; index += 1) {
+      meanAbs += Math.abs(refGray[index] - candGray[index]);
+    }
+    meanAbs /= refGray.length * 255;
+    const refEdge = edgeMap(refGray, width, height);
+    const candEdge = edgeMap(candGray, width, height);
+    let edgeAbs = 0;
+    for (let index = 0; index < refEdge.length; index += 1) {
+      edgeAbs += Math.abs(refEdge[index] - candEdge[index]);
+    }
+    edgeAbs /= refEdge.length * 255;
+    let borderAbs = 0;
+    let borderCount = 0;
+    const borderX = 10;
+    const borderY = 6;
+    for (let y = 0; y < height; y += 1) {
+      for (let x = 0; x < width; x += 1) {
+        if (x >= borderX && x < width - borderX && y >= borderY && y < height - borderY) continue;
+        const index = y * width + x;
+        borderAbs += Math.abs(refGray[index] - candGray[index]);
+        borderCount += 1;
+      }
+    }
+    borderAbs = borderCount ? borderAbs / (borderCount * 255) : 0;
+    const score = Math.max(0, 1 - (meanAbs * 0.62 + edgeAbs * 0.38));
+    return {
+      score: roundLocal(score),
+      meanAbs: roundLocal(meanAbs),
+      edgeAbs: roundLocal(edgeAbs),
+      borderAbs: roundLocal(borderAbs),
+      referenceBlackRatio: roundLocal(referenceBlackRatio),
+      candidateBlackRatio: roundLocal(candidateBlackRatio),
+    };
+
+    async function imageDataFromUrl(url, targetWidth, targetHeight) {
+      const image = new Image();
+      image.decoding = 'sync';
+      image.src = url;
+      await image.decode();
+      const canvas = document.createElement('canvas');
+      canvas.width = targetWidth;
+      canvas.height = targetHeight;
+      const context = canvas.getContext('2d', { willReadFrequently: true });
+      context.fillStyle = '#fff';
+      context.fillRect(0, 0, targetWidth, targetHeight);
+      context.drawImage(image, 0, 0, targetWidth, targetHeight);
+      return context.getImageData(0, 0, targetWidth, targetHeight);
+    }
+
+    function grayscale(data) {
+      const out = new Float32Array(data.length / 4);
+      for (let offset = 0, index = 0; offset < data.length; offset += 4, index += 1) {
+        out[index] = data[offset] * 0.299 + data[offset + 1] * 0.587 + data[offset + 2] * 0.114;
+      }
+      return out;
+    }
+
+    function blackRatio(data) {
+      let black = 0;
+      let total = 0;
+      for (let offset = 0; offset < data.length; offset += 4) {
+        if (data[offset + 3] <= 8) continue;
+        total += 1;
+        if (data[offset] < 24 && data[offset + 1] < 24 && data[offset + 2] < 24) black += 1;
+      }
+      return total ? black / total : 1;
+    }
+
+    function edgeMap(gray, width, height) {
+      const out = new Float32Array(gray.length);
+      for (let y = 1; y < height - 1; y += 1) {
+        for (let x = 1; x < width - 1; x += 1) {
+          const index = y * width + x;
+          const gx = -gray[index - width - 1] - 2 * gray[index - 1] - gray[index + width - 1]
+            + gray[index - width + 1] + 2 * gray[index + 1] + gray[index + width + 1];
+          const gy = -gray[index - width - 1] - 2 * gray[index - width] - gray[index - width + 1]
+            + gray[index + width - 1] + 2 * gray[index + width] + gray[index + width + 1];
+          out[index] = Math.min(255, Math.sqrt(gx * gx + gy * gy) / 4);
+        }
+      }
+      return out;
+    }
+
+    function roundLocal(value) {
+      return Math.round(value * 1000) / 1000;
+    }
+  }, { reference, candidate });
+}
+
+async function sampleFrameGaps(page, durationMs) {
+  return page.evaluate((duration) => new Promise(resolve => {
+    const gaps = [];
+    const samples = [];
+    const start = performance.now();
+    let last = start;
+    function step(now) {
+      const gap = now - last;
+      gaps.push(gap);
+      samples.push({ at: now - start, gap });
+      last = now;
+      if (now - start >= duration) {
+        const maxSample = samples.reduce((best, sample) => !best || sample.gap > best.gap ? sample : best, null);
+        resolve({
+          durationMs: Math.round((now - start) * 10) / 10,
+          maxGapMs: gaps.length ? Math.round(Math.max(...gaps) * 10) / 10 : 0,
+          maxGapAtMs: maxSample ? Math.round(maxSample.at * 10) / 10 : 0,
+          over100Count: gaps.filter(gap => gap >= 100).length,
+          over180Count: gaps.filter(gap => gap >= 180).length,
+          sampleCount: gaps.length,
+        });
+        return;
+      }
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }), durationMs);
 }
 
 async function getOverviewProgressState(page) {
@@ -618,7 +1075,8 @@ async function runDirtyValidation(page) {
       && state.cacheKeys.some(key => !key.includes(activeKeyPart));
   }, undefined, { timeout: 5000 });
 
-  return page.evaluate(() => {
+  const start = await now(page);
+  const dirtyState = await page.evaluate(() => {
     const before = window.__getOverviewPerfState();
     const activeId = before.activeSlideId;
     const activeKeyPart = `|${activeId}|`;
@@ -638,8 +1096,22 @@ async function runDirtyValidation(page) {
       otherKeysBefore,
       removed,
       otherKeysStillPresent: otherKeysBefore.every(key => afterKeys.includes(key)),
+      captureCountBefore: before.marks?.captures?.length || 0,
+      captureCountAfter: after.marks?.captures?.length || 0,
+      stageCountBefore: before.marks?.stages?.length || 0,
+      stageCountAfter: after.marks?.stages?.length || 0,
     };
   });
+  const immediateEnd = await now(page);
+  await page.waitForTimeout(THRESHOLDS.interactionWindowMs);
+  const windowEnd = await now(page);
+  return {
+    ...dirtyState,
+    immediateMs: round(immediateEnd - start),
+    frameGaps: await sampleFrameGaps(page, 350),
+    longTasks: summarizeLongTasks(await longTasksInWindow(page, start, windowEnd)),
+    captureStarts: await captureStartsInWindow(page, start, windowEnd),
+  };
 }
 
 async function runRepeatedOpenValidation(page) {
@@ -710,6 +1182,7 @@ async function runRepeatedDropValidation(page) {
   });
   await page.waitForFunction((minimumCards) => window.__getOverviewPerfState?.().cardCount >= minimumCards, THRESHOLDS.minCards);
   await nextFrame(page);
+  const dropCountBefore = await page.evaluate(() => window.__getOverviewPerfState?.().marks?.drops?.length || 0);
 
   const sourceBox = await page.locator('[data-overview-card="true"][data-index="3"]').boundingBox();
   const targetBox = await page.locator('[data-overview-card="true"][data-index="9"]').boundingBox();
@@ -722,6 +1195,7 @@ async function runRepeatedDropValidation(page) {
   await nextFrame(page);
 
   const dropStart = await now(page);
+  const frameGapsDuringDrop = sampleFrameGaps(page, THRESHOLDS.postDropWindowMs);
   await page.mouse.up();
   await nextFrame(page);
   const immediateEnd = await now(page);
@@ -731,12 +1205,14 @@ async function runRepeatedDropValidation(page) {
     await page.mouse.move(immediateHoverBox.x + immediateHoverBox.width / 2, immediateHoverBox.y + immediateHoverBox.height / 2);
     await nextFrame(page);
   });
-  await page.waitForFunction(() => {
+  await page.waitForFunction((expectedIndex) => {
     const state = window.__getOverviewPerfState?.();
-    return state?.lastDrop?.deckCommittedAt && state.lastDrop.deckCommittedAt > state.lastDrop.localDomCommittedAt;
-  }, undefined, { timeout: 3000 });
+    const targetDrop = state?.marks?.drops?.[expectedIndex];
+    return targetDrop?.deckCommittedAt && targetDrop.deckCommittedAt > targetDrop.localDomCommittedAt;
+  }, dropCountBefore, { timeout: 3000 });
   const committedState = await getState(page);
-  const commitAt = Number(committedState.lastDrop?.deckCommittedAt || 0);
+  const targetDropAfterCommit = committedState.marks?.drops?.[dropCountBefore] || committedState.lastDrop || {};
+  const commitAt = Number(targetDropAfterCommit.deckCommittedAt || 0);
 
   const immediateDragProbeBox = await page.locator('[data-overview-card="true"][data-index="4"]').boundingBox();
   if (!immediateDragProbeBox) throw new Error('Immediate post-drop drag probe card box missing');
@@ -745,6 +1221,7 @@ async function runRepeatedDropValidation(page) {
     await page.mouse.down();
     await page.mouse.move(immediateDragProbeBox.x + immediateDragProbeBox.width / 2 + 8, immediateDragProbeBox.y + immediateDragProbeBox.height / 2 + 8, { steps: 1 });
     await nextFrame(page);
+    await page.keyboard.press('Escape').catch(() => {});
     await page.mouse.up();
     await nextFrame(page);
   });
@@ -752,6 +1229,7 @@ async function runRepeatedDropValidation(page) {
   await page.waitForTimeout(THRESHOLDS.postDropWindowMs);
   const windowEnd = await now(page);
   const stateAfterWindow = await getState(page);
+  const targetDropAfterWindow = stateAfterWindow.marks?.drops?.[dropCountBefore] || targetDropAfterCommit;
 
   const hoverBox = await page.locator('[data-overview-card="true"]').first().boundingBox();
   if (!hoverBox) throw new Error('Post-drop hover card box missing');
@@ -767,17 +1245,25 @@ async function runRepeatedDropValidation(page) {
     await page.mouse.down();
     await page.mouse.move(dragProbeBox.x + dragProbeBox.width / 2 + 8, dragProbeBox.y + dragProbeBox.height / 2 + 8, { steps: 1 });
     await nextFrame(page);
+    await page.keyboard.press('Escape').catch(() => {});
     await page.mouse.up();
     await nextFrame(page);
   });
 
   const stages = await stagesInWindow(page, dropStart, windowEnd);
+  const dropCountAfterProbes = await page.evaluate(() => window.__getOverviewPerfState?.().marks?.drops?.length || 0);
   return {
     dropImmediateMs: round(immediateEnd - dropStart),
     commitDelayMs: round(commitAt - dropStart),
-    deckCommitDurationMs: round(committedState.lastDrop?.deckCommitDurationMs || 0),
-    deckAppendDurationMs: round(committedState.lastDrop?.deckAppendDurationMs || 0),
-    deckMutationDurationMs: round(committedState.lastDrop?.deckMutationDurationMs || 0),
+    deckCommitDurationMs: round(targetDropAfterCommit.deckCommitDurationMs || 0),
+    deckAppendDurationMs: round(targetDropAfterCommit.deckAppendDurationMs || 0),
+    deckMutationDurationMs: round(targetDropAfterCommit.deckMutationDurationMs || 0),
+    deckMoveCount: Number(targetDropAfterWindow.deckMoveCount ?? targetDropAfterCommit.deckMoveCount ?? NaN),
+    targetDropIndex: dropCountBefore,
+    dropCountBefore,
+    dropCountAfterProbes,
+    targetDropAfterCommit,
+    targetDropAfterWindow,
     postDropWindowMs: round(windowEnd - dropStart),
     postDropImmediateHoverMs: postDropImmediateHover.durationMs,
     postDropImmediateHoverLongTasks: postDropImmediateHover.longTasks,
@@ -788,10 +1274,275 @@ async function runRepeatedDropValidation(page) {
     postDropHoverMs: postDropHover.durationMs,
     postDropDragStartMs: postDropDrag.durationMs,
     longTasks: summarizeLongTasks(await longTasksInWindow(page, dropStart, windowEnd)),
+    frameGaps: await frameGapsDuringDrop,
     captureStarts: await captureStartsInWindow(page, dropStart, windowEnd),
     stateAfterWindow: pickState(stateAfterWindow),
     stages: summarizeStages(stages),
     layoutReads: layoutReadsInWindow(stateAfterWindow, dropStart, windowEnd),
+  };
+}
+
+async function runSortReturnCacheValidation(page) {
+  await ensureOverviewOpen(page);
+  await page.waitForFunction(() => {
+    const overview = document.getElementById('overview');
+    if (!overview) return false;
+    const rootRect = overview.getBoundingClientRect();
+    const visibleWraps = [...overview.querySelectorAll('[data-overview-thumb="true"]')].filter(wrap => {
+      const rect = wrap.getBoundingClientRect();
+      return rect.bottom >= rootRect.top && rect.top <= rootRect.bottom;
+    });
+    return visibleWraps.length > 0 && visibleWraps.every(wrap => wrap.dataset.overviewRendered === 'true');
+  }, undefined, { timeout: 10000 });
+  const before = await page.evaluate(() => {
+    const overview = document.getElementById('overview');
+    const rootRect = overview.getBoundingClientRect();
+    const cards = [...overview.querySelectorAll('[data-overview-card="true"]')];
+    const visibleCards = cards.filter(card => {
+      const frame = card.querySelector('[data-overview-frame="true"]');
+      const rect = frame?.getBoundingClientRect();
+      return rect && rect.bottom >= rootRect.top && rect.top <= rootRect.bottom;
+    });
+    const state = window.__getOverviewPerfState?.();
+    return {
+      visibleCount: visibleCards.length,
+      renderedCount: visibleCards.filter(card => card.querySelector('[data-overview-thumb="true"]')?.dataset.overviewRendered === 'true').length,
+      placeholderCount: visibleCards.filter(card => card.querySelector('[data-overview-placeholder="true"]')).length,
+      order: cards.slice(0, 12).map(card => card.dataset.slideId || card.dataset.slideKey || ''),
+      activeSlideId: state?.activeSlideId || '',
+      cacheKeys: state?.cacheKeys || [],
+    };
+  });
+  await page.evaluate(() => {
+    window.__resetOverviewPerfMarks?.();
+    window.__overviewPerfLongTasks = [];
+  });
+  const clickStart = await now(page);
+  await page.locator('[data-overview-card="true"]').first().click();
+  await page.waitForFunction(() => !window.__getOverviewPerfState?.().overviewOn);
+  await nextFrame(page);
+  const previewState = await getState(page);
+  await page.evaluate(() => window.__toggleOverview?.());
+  await page.waitForFunction(() => window.__getOverviewPerfState?.().overviewOn);
+  await nextFrame(page);
+  const reopenAt = await now(page);
+  const immediate = await page.evaluate(() => {
+    const overview = document.getElementById('overview');
+    const rootRect = overview.getBoundingClientRect();
+    const cards = [...overview.querySelectorAll('[data-overview-card="true"]')];
+    const visibleCards = cards.filter(card => {
+      const frame = card.querySelector('[data-overview-frame="true"]');
+      const rect = frame?.getBoundingClientRect();
+      return rect && rect.bottom >= rootRect.top && rect.top <= rootRect.bottom;
+    });
+    const active = cards.find(card => card.style.outline.includes('3px') || card.matches('[aria-current="true"]'));
+    const state = window.__getOverviewPerfState?.();
+    return {
+      visibleCount: visibleCards.length,
+      renderedCount: visibleCards.filter(card => card.querySelector('[data-overview-thumb="true"]')?.dataset.overviewRendered === 'true').length,
+      placeholderCount: visibleCards.filter(card => card.querySelector('[data-overview-placeholder="true"]')).length,
+      order: cards.slice(0, 12).map(card => card.dataset.slideId || card.dataset.slideKey || ''),
+      activeCardSlideId: active?.dataset.slideId || active?.dataset.slideKey || '',
+      activeSlideId: state?.activeSlideId || '',
+      cacheKeys: state?.cacheKeys || [],
+      queueLength: state?.queueLength || 0,
+      processing: !!state?.processing,
+      scheduled: !!state?.scheduled,
+    };
+  });
+  await page.waitForTimeout(500);
+  const windowEnd = await now(page);
+  const afterWindowState = await getState(page);
+  return {
+    clickToReopenMs: round(reopenAt - clickStart),
+    before,
+    previewState: pickState(previewState),
+    immediate,
+    afterWindow: pickState(afterWindowState),
+    captureStarts: await captureStartsInWindow(page, reopenAt, windowEnd),
+    longTasks: summarizeLongTasks(await longTasksInWindow(page, reopenAt, windowEnd)),
+    stages: summarizeStages(await stagesInWindow(page, reopenAt, windowEnd)),
+  };
+}
+
+async function runFullFrameFitValidation(page) {
+  const themes = ['theme01', 'theme02', 'theme03'];
+  const results = [];
+  for (const theme of themes) {
+    await ensureOverviewClosed(page);
+    await page.evaluate(async (themePack) => {
+      window.__setActiveThemePack?.(themePack);
+      window.go?.(0, { animate: false, force: true });
+      await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      await new Promise(resolve => setTimeout(resolve, 1200));
+      window.__resetOverviewPerfMarks?.();
+      window.__overviewPerfLongTasks = [];
+    }, theme);
+    await ensureOverviewOpen(page);
+    await page.waitForFunction(() => window.__getOverviewPerfState?.().overviewOn);
+    await page.waitForTimeout(THRESHOLDS.theme03VisualReadyMs);
+    const similarity = await runThemeSimilarityValidation(page, {
+      sampleCount: THRESHOLDS.fullFrameFitSampleCount,
+      stableWaitMs: theme === 'theme02' ? 2500 : 250,
+    });
+    const failed = similarity.samples.filter(sample =>
+      sample.score < THRESHOLDS.fullFrameFitMinScore
+      || sample.meanAbs > THRESHOLDS.fullFrameFitMaxMeanAbs
+      || sample.borderAbs > THRESHOLDS.fullFrameFitMaxBorderAbs
+    );
+    results.push({ theme, ...similarity, failedCount: failed.length, failed });
+  }
+  return results;
+}
+
+async function runTheme03VisualValidation(page) {
+  await ensureOverviewClosed(page);
+  await page.evaluate(async () => {
+    window.__setActiveThemePack?.('theme03');
+    window.go?.(0, { animate: false, force: true });
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    await new Promise(resolve => setTimeout(resolve, 2500));
+    window.__resetOverviewPerfMarks?.();
+    window.__overviewPerfLongTasks = [];
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  });
+  const openStart = await now(page);
+  const openWindowEnd = openStart + 5000;
+  const frameGapsDuringOpen = sampleFrameGaps(page, 5000);
+  await page.evaluate(() => window.__toggleOverview?.());
+  const frameGaps = await frameGapsDuringOpen;
+  const renderedState = await getVisibleThumbStats(page);
+  const visualStats = await getVisibleThumbVisualStats(page);
+  const end = await now(page);
+  const placeholderFill = await waitForVisibleThumbFill(page, openStart, THRESHOLDS.theme03PlaceholderFillMs);
+  const progress = await getOverviewProgressState(page);
+  const stages = await stagesInWindow(page, openStart, openWindowEnd);
+  const longTaskEntries = await longTasksInWindow(page, openStart, openWindowEnd);
+  const similarity = await runTheme03SimilarityValidation(page);
+  return {
+    openToVisualCheckMs: round(end - openStart),
+    renderedState,
+    visualStats,
+    placeholderFill,
+    similarity,
+    progress,
+    longTasks: summarizeLongTasks(longTaskEntries),
+    longTaskEntries: longTaskEntries.map(task => ({
+      startMs: round(task.startTime - openStart),
+      durationMs: round(task.duration),
+    })),
+    frameGaps,
+    captureStarts: await captureStartsInWindow(page, openStart, openWindowEnd),
+    stages: summarizeStages(stages),
+    thumbnailTasks: summarizeStageTasks(stages, ['overview-thumb-task', 'runtime-slide-prepare', 'dom-derived-preview', 'dom-preview-thumbnail']),
+    state: pickState(await getState(page)),
+  };
+}
+
+async function waitForVisibleThumbFill(page, openStart, timeoutMs) {
+  const deadline = Date.now() + timeoutMs;
+  let filledAt = null;
+  let stats = await getVisibleThumbStats(page);
+  while (Date.now() < deadline) {
+    stats = await getVisibleThumbStats(page);
+    if (stats.visibleCount > 0 && stats.visibleRenderedCount === stats.visibleCount) {
+      filledAt = await now(page);
+      break;
+    }
+    await page.waitForTimeout(160);
+  }
+  stats = await getVisibleThumbStats(page);
+  return {
+    visibleCount: stats.visibleCount,
+    renderedCount: stats.visibleRenderedCount,
+    missingCount: stats.visibleMissingCount,
+    renderedRatio: stats.visibleCount ? round(stats.visibleRenderedCount / stats.visibleCount) : 0,
+    allVisibleFilledMs: filledAt ? round(filledAt - openStart) : null,
+    timeoutMs,
+  };
+}
+
+async function runTheme02AnimationValidation(page) {
+  await ensureOverviewClosed(page);
+  await page.evaluate(async () => {
+    window.__setActiveThemePack?.('theme02');
+    window.go?.(0, { animate: false, force: true });
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    await new Promise(resolve => setTimeout(resolve, 2500));
+    window.__resetOverviewPerfMarks?.();
+    window.__overviewPerfLongTasks = [];
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  });
+  const openStart = await now(page);
+  const openWindowEnd = openStart + 5000;
+  const frameGapsDuringOpen = sampleFrameGaps(page, 5000);
+  await page.evaluate(() => window.__toggleOverview?.());
+  const frameGaps = await frameGapsDuringOpen;
+  const renderedState = await getVisibleThumbStats(page);
+  const visualStats = await getVisibleThumbVisualStats(page);
+  const similarity = await runThemeSimilarityValidation(page, {
+    sampleCount: THRESHOLDS.theme02AnimationSampleCount,
+    stableWaitMs: 2500,
+  });
+  const failed = similarity.samples.filter(sample =>
+    sample.score < THRESHOLDS.theme02SimilarityMinScore
+    || (
+      sample.candidateBlackRatio > THRESHOLDS.theme02BlackRatioMax
+      && sample.candidateBlackRatio > (sample.referenceBlackRatio || 0) + 0.18
+    )
+  );
+  return {
+    renderedState,
+    visualStats,
+    similarity: { ...similarity, failedCount: failed.length, failed },
+    longTasks: summarizeLongTasks(await longTasksInWindow(page, openStart, openWindowEnd)),
+    frameGaps,
+    captureStarts: await captureStartsInWindow(page, openStart, openWindowEnd),
+    stages: summarizeStages(await stagesInWindow(page, openStart, openWindowEnd)),
+    state: pickState(await getState(page)),
+  };
+}
+
+function runStaticImplementationChecks() {
+  const templatePath = path.join(ROOT, 'assets/template-swiss.html');
+  const template = readFileSync(templatePath, 'utf8');
+  const dirtyStart = template.indexOf('function markOverviewThumbDirty');
+  const dirtyEnd = dirtyStart >= 0 ? template.indexOf('function createOverviewThumbPlaceholder', dirtyStart) : -1;
+  const dirtySource = dirtyStart >= 0 && dirtyEnd > dirtyStart ? template.slice(dirtyStart, dirtyEnd) : '';
+  const commitStart = template.indexOf('function scheduleOverviewDeckCommit');
+  const commitEnd = commitStart >= 0 ? template.indexOf('function processOverviewDragOver', commitStart) : -1;
+  const commitSource = commitStart >= 0 && commitEnd > commitStart ? template.slice(commitStart, commitEnd) : '';
+  const renderStart = template.indexOf('async function renderOverviewThumbDomPreview');
+  const renderEnd = renderStart >= 0 ? template.indexOf('function getOverviewPreviewCost', renderStart) : -1;
+  const renderSource = renderStart >= 0 && renderEnd > renderStart ? template.slice(renderStart, renderEnd) : '';
+  const fallbackStart = template.indexOf('function renderOverviewThumbFallback');
+  const fallbackEnd = fallbackStart >= 0 ? template.indexOf('async function renderOverviewThumb', fallbackStart) : -1;
+  const fallbackSource = fallbackStart >= 0 && fallbackEnd > fallbackStart ? template.slice(fallbackStart, fallbackEnd) : '';
+  const scheduleStart = template.indexOf('function scheduleOverviewThumbQueue');
+  const scheduleEnd = scheduleStart >= 0 ? template.indexOf('function queueOverviewThumb', scheduleStart) : -1;
+  const scheduleSource = scheduleStart >= 0 && scheduleEnd > scheduleStart ? template.slice(scheduleStart, scheduleEnd) : '';
+  const placeholderStart = template.indexOf('function createOverviewThumbPlaceholder');
+  const placeholderEnd = placeholderStart >= 0 ? template.indexOf('function getOverviewStructureSignature', placeholderStart) : -1;
+  const placeholderSource = placeholderStart >= 0 && placeholderEnd > placeholderStart ? template.slice(placeholderStart, placeholderEnd) : '';
+  const sourceSizeStart = template.indexOf('function getOverviewSourceSize');
+  const sourceSizeEnd = sourceSizeStart >= 0 ? template.indexOf('function fitOverviewThumb', sourceSizeStart) : -1;
+  const sourceSizeSource = sourceSizeStart >= 0 && sourceSizeEnd > sourceSizeStart ? template.slice(sourceSizeStart, sourceSizeEnd) : '';
+  return {
+    dirtyCallsSyncSvg: /makeOverviewThumbSvg\s*\(/.test(dirtySource),
+    captureUsesForeignObjectSvgFastPath: /makeOverviewThumbSvg\s*\(/.test(renderSource) || /foreignObject/.test(renderSource),
+    commitUsesFullAppendLoop: /orderedSlides\.forEach\s*\(\s*slide\s*=>\s*deck\.appendChild\(slide\)/.test(commitSource),
+    litePreviewDisablesImages: /const\s+imageUrl\s*=\s*['"]{2}/.test(renderSource),
+    syntheticOverviewThumbPath: /visualSlots|textSlots|fillText\s*\(/.test(renderSource),
+    placeholderMarkedRendered: /overviewRendered\s*=\s*['"]true['"]/.test(placeholderSource),
+    domCloneMissingScriptRemoval: !/querySelectorAll\(['"]script,style,template,noscript['"]\)/.test(renderSource),
+    domCloneMissingMediaStatic: !/querySelectorAll\(['"]iframe,video['"]\)/.test(renderSource),
+    domCloneMissingAnimationStatic: !/style\.animation\s*=\s*['"]none['"]/.test(renderSource) || !/style\.transition\s*=\s*['"]none['"]/.test(renderSource),
+    domCloneMissingContainment: !/contain:layout paint style/.test(renderSource),
+    domCloneMissingCache: !/rememberOverviewThumbFromDom/.test(renderSource),
+    fallbackUsesRawRenderedClone: /cloneNode\(true\)/.test(fallbackSource) && /overviewRendered\s*=\s*['"]true['"]/.test(fallbackSource),
+    fakeIdleDeadline: /timeRemaining\s*:\s*\(\)\s*=>\s*16/.test(scheduleSource),
+    overviewQueueClaimsIdle: /requestIdleCallback/.test(scheduleSource) && !/time-sliced/.test(scheduleSource),
+    overviewSourceCapsImportedCanvas: /Math\.min\(\s*deckW\s*\|\|\s*innerWidth\s*,\s*960\s*\)/.test(sourceSizeSource),
   };
 }
 
@@ -831,17 +1582,45 @@ function summarizeStages(stages) {
       totalMs: 0,
       maxMs: 0,
       maxItemCount: 0,
+      maxCandidateCount: 0,
+      maxRectReadCount: 0,
+      maxStyleReadCount: 0,
+      slowestSlideId: '',
+      slowestDurationMs: 0,
     };
     const duration = Number(stage.duration || 0);
     summary.count += 1;
     summary.totalMs = round(summary.totalMs + duration);
     summary.maxMs = Math.max(summary.maxMs, round(duration));
     summary.maxItemCount = Math.max(summary.maxItemCount, Number(stage.count || 0));
+    summary.maxCandidateCount = Math.max(summary.maxCandidateCount, Number(stage.candidateCount || 0));
+    summary.maxRectReadCount = Math.max(summary.maxRectReadCount, Number(stage.rectReadCount || 0));
+    summary.maxStyleReadCount = Math.max(summary.maxStyleReadCount, Number(stage.styleReadCount || 0));
+    if (duration > summary.slowestDurationMs) {
+      summary.slowestDurationMs = round(duration);
+      summary.slowestSlideId = stage.slideId || '';
+    }
     if (stage.appendMs !== undefined) summary.maxAppendMs = Math.max(summary.maxAppendMs || 0, round(Number(stage.appendMs || 0)));
     if (stage.mutationMs !== undefined) summary.maxMutationMs = Math.max(summary.maxMutationMs || 0, round(Number(stage.mutationMs || 0)));
     byType[type] = summary;
   }
   return byType;
+}
+
+function summarizeStageTasks(stages, types) {
+  return stages
+    .filter(stage => types.includes(stage.type || ''))
+    .map(stage => ({
+      type: stage.type || '',
+      slideId: stage.slideId || '',
+      durationMs: round(Number(stage.duration || 0)),
+      candidateCount: Number(stage.candidateCount || 0),
+      rectReadCount: Number(stage.rectReadCount || 0),
+      styleReadCount: Number(stage.styleReadCount || 0),
+      trigger: stage.trigger || '',
+      startAt: round(Number(stage.startAt || 0)),
+      endAt: round(Number(stage.endAt || 0)),
+    }));
 }
 
 function layoutReadsInWindow(state, start, end) {
@@ -900,7 +1679,7 @@ function validateResult(result, finalState) {
   if (s.afterScrollStable.cacheSize < Math.min(THRESHOLDS.cachedInteractionMin, Math.max(1, s.afterScrollStable.visibleOrNearCount))) {
     failures.push(`post-scroll interactions were not tested with enough cached thumbnails: cacheSize=${s.afterScrollStable.cacheSize}`);
   }
-  if (s.afterScrollStable.queueLength === 0 && !result.loadedStateAfterScroll.fullLoaded && !result.loadedStateAfterScroll.visibleOrNearLoaded) {
+  if (s.afterScrollStable.queueLength === 0 && !result.loadedStateAfterScroll.fullLoaded && !result.loadedStateAfterScroll.visibleViewportLoaded) {
     failures.push(`loaded/stable state is not well defined: ${JSON.stringify(result.loadedStateAfterScroll)}`);
   }
   if (result.progressAfterBackground?.blocksViewport) {
@@ -936,6 +1715,9 @@ function validateResult(result, finalState) {
   if (invalidKeys.length) failures.push(`cache keys are not stable: ${invalidKeys.slice(0, 5).join(', ')}`);
   if (finalState.cacheSize > finalState.cacheLimit) failures.push('cache exceeds LRU limit');
   if (finalState.cacheApproxChars > THRESHOLDS.cacheApproxChars) failures.push(`cache approx size too high: ${finalState.cacheApproxChars}`);
+  if ((finalState.cacheDomNodeCount || 0) > THRESHOLDS.cacheDomNodeCount) {
+    failures.push(`DOM thumbnail cache node count too high: ${finalState.cacheDomNodeCount}`);
+  }
 
   const visibleThumbs = result.coldVisibleThumbs;
   if (!visibleThumbs.visibleCount) {
@@ -1036,6 +1818,144 @@ function validateResult(result, finalState) {
   if (!dirty.removed.length) failures.push('dirty invalidation removed no cache keys');
   if (dirty.removed.some(key => !key.includes(`|${dirty.activeId}|`))) failures.push(`dirty invalidation removed other slides: ${dirty.removed.join(', ')}`);
   if (!dirty.otherKeysStillPresent) failures.push('dirty invalidation did not preserve non-active slide cache keys');
+  if (dirty.immediateMs > THRESHOLDS.dirtyImmediateMs) failures.push(`dirty invalidation blocked immediate interaction: ${dirty.immediateMs}ms`);
+  if (dirty.longTasks.countOver50 > THRESHOLDS.interactionLongTaskCount || dirty.longTasks.maxMs > THRESHOLDS.interactionLongTaskMaxMs) {
+    failures.push(`dirty invalidation caused long tasks: ${JSON.stringify(dirty.longTasks)}`);
+  }
+  if (dirty.captureStarts.length || dirty.captureCountAfter > dirty.captureCountBefore) {
+    failures.push('dirty invalidation synchronously started thumbnail capture');
+  }
+  if (dirty.frameGaps.maxGapMs > THRESHOLDS.frameGapMaxMs) {
+    failures.push(`dirty invalidation caused frame gap: ${JSON.stringify(dirty.frameGaps)}`);
+  }
+
+  if (Number.isNaN(repeatedDrop.deckMoveCount)) {
+    failures.push('post-drop validation did not record deckMoveCount');
+  } else if (repeatedDrop.deckMoveCount > THRESHOLDS.deckCommitMoveCount) {
+    failures.push(`post-drop deck commit moved too many slides: ${repeatedDrop.deckMoveCount}`);
+  }
+  if (repeatedDrop.dropCountAfterProbes !== repeatedDrop.dropCountBefore + 1) {
+    failures.push(`post-drop probes polluted drop records: before=${repeatedDrop.dropCountBefore}, after=${repeatedDrop.dropCountAfterProbes}`);
+  }
+  const postDropCommit = repeatedDrop.stages['deck-commit'];
+  if (postDropCommit?.maxItemCount > THRESHOLDS.deckCommitMoveCount) {
+    failures.push(`post-drop deck commit still records full deck work: ${postDropCommit.maxItemCount}`);
+  }
+  if (repeatedDrop.frameGaps.maxGapMs > THRESHOLDS.frameGapMaxMs) {
+    failures.push(`post-drop frame gap too high: ${JSON.stringify(repeatedDrop.frameGaps)}`);
+  }
+
+  const sortCache = result.sortReturnCache;
+  if (!sortCache?.before?.visibleCount || !sortCache?.immediate?.visibleCount) {
+    failures.push('sort-return cache validation had no visible cards');
+  } else {
+    if (sortCache.immediate.renderedCount < sortCache.immediate.visibleCount) {
+      failures.push(`sort-return overview did not restore visible thumbnails from cache: rendered=${sortCache.immediate.renderedCount}/${sortCache.immediate.visibleCount}`);
+    }
+    if (sortCache.immediate.placeholderCount > 0) {
+      failures.push(`sort-return overview showed placeholders after cached thumbnails existed: ${sortCache.immediate.placeholderCount}`);
+    }
+    if (sortCache.immediate.order.join('|') !== sortCache.before.order.join('|')) {
+      failures.push(`sort-return overview order changed unexpectedly: before=${sortCache.before.order.join(',')}, after=${sortCache.immediate.order.join(',')}`);
+    }
+  }
+  if ((sortCache?.stages?.['dom-preview-thumbnail']?.count || 0) > 1 || (sortCache?.stages?.['overview-thumb-task']?.count || 0) > 1) {
+    failures.push(`sort-return overview regenerated cached thumbnails: ${JSON.stringify(sortCache.stages)}`);
+  }
+  if (sortCache?.captureStarts?.length) {
+    failures.push('sort-return overview started thumbnail capture despite cache');
+  }
+
+  for (const fit of result.fullFrameFit || []) {
+    if (!fit.sampleCount) {
+      failures.push(`${fit.theme} full-frame fit validation had no samples`);
+      continue;
+    }
+    if (fit.failedCount > 0) {
+      failures.push(`${fit.theme} thumbnails do not show the complete 16:9 slide frame: ${JSON.stringify({
+        failedCount: fit.failedCount,
+        minScore: fit.minScore,
+        maxMeanAbs: fit.maxMeanAbs,
+        maxBorderAbs: fit.maxBorderAbs,
+        failed: fit.failed,
+      })}`);
+    }
+  }
+
+  const theme03 = result.theme03Visual;
+  const theme03Stats = theme03.visualStats;
+  if (!theme03Stats.visibleCount) {
+    failures.push('theme03 visual validation found no visible thumbnails');
+  } else {
+    const validRatio = theme03Stats.validCount / theme03Stats.visibleCount;
+    if (validRatio < THRESHOLDS.theme03VisibleValidRatio) {
+      failures.push(`theme03 visible thumbnails are blank/broken: valid=${theme03Stats.validCount}/${theme03Stats.visibleCount}`);
+    }
+  }
+  if (theme03Stats.brokenCount) failures.push(`theme03 has broken thumbnail images: ${theme03Stats.brokenCount}`);
+  if (theme03Stats.foreignObjectImageCount > THRESHOLDS.theme03ForeignObjectImages) {
+    failures.push(`theme03 rendered thumbnails still use SVG foreignObject images: ${theme03Stats.foreignObjectImageCount}`);
+  }
+  if (!theme03.similarity?.sampleCount) {
+    failures.push('theme03 similarity validation had no samples');
+  } else if (theme03.similarity.failedCount > 0) {
+    failures.push(`theme03 thumbnails do not match real slide screenshots: ${JSON.stringify(theme03.similarity)}`);
+  }
+  if (theme03.longTasks.countOver50 > THRESHOLDS.theme03OpenLongTaskCount || theme03.longTasks.maxMs > THRESHOLDS.theme03OpenLongTaskMaxMs) {
+    failures.push(`theme03 overview open keeps main thread busy: longTasks=${JSON.stringify(theme03.longTasks)}, stages=${JSON.stringify(theme03.stages)}`);
+  }
+  if (theme03.frameGaps.over100Count > THRESHOLDS.theme03FrameGapOver100MaxCount || theme03.frameGaps.maxGapMs > THRESHOLDS.theme03FrameGapMaxMs) {
+    failures.push(`theme03 overview open has visible frame gaps: ${JSON.stringify(theme03.frameGaps)}`);
+  }
+  const theme03HeavyTasks = (theme03.thumbnailTasks || [])
+    .filter(task => (task.type === 'runtime-slide-prepare' || task.type === 'dom-derived-preview') && task.durationMs >= 50);
+  if (theme03HeavyTasks.length > THRESHOLDS.theme03OpenLongTaskCount) {
+    failures.push(`theme03 generated too many heavy thumbnails during open: ${JSON.stringify(theme03HeavyTasks.slice(0, 8))}`);
+  }
+  const theme03RuntimePrepare = theme03.stages?.['runtime-slide-prepare'];
+  const theme03Derived = theme03.stages?.['dom-derived-preview'];
+  if ((theme03RuntimePrepare?.count || 0) >= theme03.renderedState.renderedCount && theme03RuntimePrepare?.maxMs >= 50) {
+    failures.push(`theme03 prepared visible slides on the open path: ${JSON.stringify(theme03RuntimePrepare)}`);
+  }
+  if ((theme03Derived?.count || 0) >= theme03.renderedState.renderedCount && theme03Derived?.maxMs >= 50) {
+    failures.push(`theme03 derived visible thumbnails on the open path: ${JSON.stringify(theme03Derived)}`);
+  }
+  if (theme03.frameGaps.maxGapMs > THRESHOLDS.frameGapHardMaxMs || theme03.frameGaps.over180Count > THRESHOLDS.frameGapOver180MaxCount) {
+    failures.push(`theme03 overview open caused frame gap: ${JSON.stringify(theme03.frameGaps)}`);
+  }
+  if (theme03.progress?.blocksViewport) {
+    failures.push(`theme03 overview progress blocks viewport: ${JSON.stringify(theme03.progress)}`);
+  }
+  if (!theme03.placeholderFill?.visibleCount) {
+    failures.push('theme03 placeholder fill validation had no visible cards');
+  } else if (theme03.placeholderFill.allVisibleFilledMs === null) {
+    failures.push(`theme03 placeholders did not finish filling: ${JSON.stringify(theme03.placeholderFill)}`);
+  }
+
+  const theme02 = result.theme02Visual;
+  if (!theme02?.similarity?.sampleCount) {
+    failures.push('theme02 animation-state validation had no samples');
+  } else if (theme02.similarity.failedCount > 0) {
+    failures.push(`theme02 thumbnails are black/initial animation frames or do not match stable slides: ${JSON.stringify(theme02.similarity)}`);
+  }
+  if (theme02?.visualStats?.brokenCount) failures.push(`theme02 has broken thumbnail images: ${theme02.visualStats.brokenCount}`);
+
+  const staticChecks = result.staticChecks;
+  if (staticChecks.captureUsesForeignObjectSvgFastPath) failures.push('thumbnail capture still uses SVG foreignObject as the fast path');
+  if (staticChecks.dirtyCallsSyncSvg) failures.push('dirty invalidation still synchronously creates SVG thumbnails');
+  if (staticChecks.commitUsesFullAppendLoop) failures.push('drop commit still uses a full deck appendChild loop');
+  if (staticChecks.litePreviewDisablesImages) failures.push('thumbnail preview still disables page imagery with imageUrl=""');
+  if (staticChecks.syntheticOverviewThumbPath) failures.push('overview thumbnail main path still synthesizes thumbnails with fixed visual/text slots instead of real page rendering');
+  if (staticChecks.placeholderMarkedRendered) failures.push('overview placeholder can be marked as a rendered thumbnail');
+  if (staticChecks.domCloneMissingScriptRemoval) failures.push('DOM clone thumbnail path does not remove script/style/template nodes');
+  if (staticChecks.domCloneMissingMediaStatic) failures.push('DOM clone thumbnail path does not staticize iframe/video content');
+  if (staticChecks.domCloneMissingAnimationStatic) failures.push('DOM clone thumbnail path does not force animation/transition static state');
+  if (staticChecks.domCloneMissingContainment) failures.push('DOM clone thumbnail path does not contain layout/paint/style work');
+  if (staticChecks.domCloneMissingCache) failures.push('DOM clone thumbnail path is not cached for reuse');
+  if (staticChecks.fallbackUsesRawRenderedClone) failures.push('overview fallback can mark an unsanitized raw DOM clone as rendered');
+  if (staticChecks.fakeIdleDeadline) failures.push('overview thumbnail queue fakes an idle deadline with timeRemaining() => 16');
+  if (staticChecks.overviewQueueClaimsIdle) failures.push('overview thumbnail queue claims requestIdleCallback semantics without using the time-sliced queue contract');
+  if (staticChecks.overviewSourceCapsImportedCanvas) failures.push('overview thumbnail source size still caps imported theme canvas to 960px and can crop full-frame slides');
 
   return failures;
 }

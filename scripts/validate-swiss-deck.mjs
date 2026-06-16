@@ -84,12 +84,39 @@ const overviewThumbEnd = overviewThumbStart >= 0 ? html.indexOf('function schedu
 const overviewThumbSource = overviewThumbStart >= 0 && overviewThumbEnd > overviewThumbStart
   ? html.slice(overviewThumbStart, overviewThumbEnd)
   : '';
-if (!/overviewThumbBitmapCache/.test(html) || !/captureOverviewThumbBitmap/.test(html) || !/data-overview-thumb-image/.test(html)) {
-  errors.push('Overview thumbnails must use bitmap image thumbnails as the main path, not persistent full slide DOM clones.');
+const overviewDomPreviewStart = html.indexOf('function createOverviewDomPreview');
+const overviewDomPreviewEnd = overviewDomPreviewStart >= 0 ? html.indexOf('function getOverviewPreviewCost', overviewDomPreviewStart) : -1;
+const overviewDomPreviewSource = overviewDomPreviewStart >= 0 && overviewDomPreviewEnd > overviewDomPreviewStart
+  ? html.slice(overviewDomPreviewStart, overviewDomPreviewEnd)
+  : '';
+const overviewSourceSizeStart = html.indexOf('function getOverviewSourceSize');
+const overviewSourceSizeEnd = overviewSourceSizeStart >= 0 ? html.indexOf('function fitOverviewThumb', overviewSourceSizeStart) : -1;
+const overviewSourceSizeSource = overviewSourceSizeStart >= 0 && overviewSourceSizeEnd > overviewSourceSizeStart
+  ? html.slice(overviewSourceSizeStart, overviewSourceSizeEnd)
+  : '';
+if (!/renderOverviewThumbDomPreview/.test(overviewThumbSource) || !/rememberOverviewThumbFromDom/.test(html)) {
+  errors.push('Overview thumbnails must use the controlled DOM clone thumbnail path with stable cache reuse.');
 }
 
-if (/cloneNode\(true\)/.test(overviewThumbSource) && !/captureOverviewThumbBitmap/.test(overviewThumbSource)) {
-  errors.push('renderOverviewThumb still renders a DOM clone as its main thumbnail path.');
+if (!/cloneNode\(true\)/.test(overviewDomPreviewSource)
+  || !/querySelectorAll\(['"]script,style,template,noscript['"]\)/.test(overviewDomPreviewSource)
+  || !/querySelectorAll\(['"]iframe,video['"]\)/.test(overviewDomPreviewSource)
+  || !/style\.animation\s*=\s*['"]none['"]/.test(overviewDomPreviewSource)
+  || !/style\.transition\s*=\s*['"]none['"]/.test(overviewDomPreviewSource)
+  || !/contain:layout paint style/.test(overviewDomPreviewSource)) {
+  errors.push('Overview DOM clone thumbnails must be clipped, staticized, animation-free, and paint-contained.');
+}
+
+if (/visualSlots|textSlots|fillText\s*\(|foreignObject|makeOverviewThumbSvg/.test(overviewDomPreviewSource)) {
+  errors.push('Overview thumbnail main path must not synthesize summary cards or use SVG foreignObject.');
+}
+
+if (/Math\.min\(\s*deckW\s*\|\|\s*innerWidth\s*,\s*960\s*\)/.test(overviewSourceSizeSource)
+  || !/width\s*:\s*1920/.test(overviewSourceSizeSource)
+  || !/height\s*:\s*1080/.test(overviewSourceSizeSource)
+  || !/--deck-scale:1/.test(overviewDomPreviewSource)
+  || !/overviewSourceWidth/.test(overviewDomPreviewSource)) {
+  errors.push('Overview DOM clone thumbnails must use the full 1920x1080 source canvas instead of a cropped viewport-sized source.');
 }
 
 const commitSlideStart = html.indexOf('function commitSlideIndex');
@@ -183,6 +210,11 @@ const overviewScheduleEnd = overviewScheduleStart >= 0 ? html.indexOf('function 
 const overviewScheduleSource = overviewScheduleStart >= 0 && overviewScheduleEnd > overviewScheduleStart
   ? html.slice(overviewScheduleStart, overviewScheduleEnd)
   : '';
+const overviewFallbackStart = html.indexOf('function renderOverviewThumbFallback');
+const overviewFallbackEnd = overviewFallbackStart >= 0 ? html.indexOf('async function renderOverviewThumb', overviewFallbackStart) : -1;
+const overviewFallbackSource = overviewFallbackStart >= 0 && overviewFallbackEnd > overviewFallbackStart
+  ? html.slice(overviewFallbackStart, overviewFallbackEnd)
+  : '';
 const overviewCacheKeyStart = html.indexOf('function getOverviewThumbCacheKey');
 const overviewCacheKeyEnd = overviewCacheKeyStart >= 0 ? html.indexOf('function markOverviewThumbDirty', overviewCacheKeyStart) : -1;
 const overviewCacheKeySource = overviewCacheKeyStart >= 0 && overviewCacheKeyEnd > overviewCacheKeyStart
@@ -206,7 +238,7 @@ if (/position:absolute;left:0;bottom:0/.test(overviewBuildSource)) {
 }
 
 if (!/dataset\.overviewProgress\s*=\s*['"]true['"]/.test(html)
-  || !/const visibleCards = overviewOn && overviewGrid \? getOverviewThumbRange\(overviewGrid\)\.visibleCards : \[\]/.test(html)
+  || !/const wraps = overviewOn \? getOverviewViewportThumbs\(\) : \[\]/.test(html)
   || !/overviewProgress\.box\.hidden\s*=\s*!show/.test(html)) {
   errors.push('Overview progress must be lazy-aware and hide once the current viewport thumbnails are ready.');
 }
@@ -231,8 +263,8 @@ if (!/overviewThumbRunId/.test(html) || !/cancelOverviewThumbQueue\(/.test(html)
   errors.push('Overview thumbnail generation must have a cancellation token so stale background work can be abandoned.');
 }
 
-if (!/requestIdleCallback/.test(html) || /Promise\.allSettled\(tasks\)/.test(html) || /count\s*<\s*2/.test(html)) {
-  errors.push('Overview thumbnail queue must run one low-priority idle task at a time, not concurrent browser captures.');
+if (!/time-sliced/.test(overviewScheduleSource) || /timeRemaining\s*:\s*\(\)\s*=>\s*16/.test(overviewScheduleSource) || /requestIdleCallback/.test(overviewScheduleSource) || /Promise\.allSettled\(tasks\)/.test(html) || /count\s*<\s*2/.test(html)) {
+  errors.push('Overview thumbnail queue must use an honest time-sliced deferred queue, not fake idle deadlines or concurrent browser captures.');
 }
 
 if (!/queueNearbyOverviewThumbs\(/.test(html) || !/OVERVIEW_THUMB_NEAR_MARGIN/.test(html)) {
@@ -259,8 +291,12 @@ if (/requestIdleCallback[\s\S]{0,160}\{\s*timeout\s*:/.test(overviewScheduleSour
   errors.push('Overview thumbnail queue must not use requestIdleCallback timeout to force screenshot work during interaction windows.');
 }
 
-if (!/timeRemaining\(\)/.test(overviewScheduleSource) || !/overviewThumbPauseUntil/.test(overviewScheduleSource)) {
-  errors.push('Overview thumbnail queue must check idle timeRemaining() and the interaction pause window before starting a capture.');
+if (/cloneNode\(true\)/.test(overviewFallbackSource) && /overviewRendered\s*=\s*['"]true['"]/.test(overviewFallbackSource)) {
+  errors.push('Overview thumbnail fallback must not mark an unsanitized raw DOM clone as rendered.');
+}
+
+if (!/budgetMs/.test(overviewScheduleSource) || !/sliceStartAt/.test(overviewScheduleSource) || !/overviewThumbPauseUntil/.test(overviewScheduleSource)) {
+  errors.push('Overview thumbnail queue must enforce a time-sliced budget and the interaction pause window before thumbnail work.');
 }
 
 if (!/activeThemePack/.test(overviewCacheKeySource) || !/(getSlideVmId|dataset\.vmSlideId)/.test(overviewCacheKeySource) || !/overviewThumbRevision/.test(overviewCacheKeySource) || !/OVERVIEW_THUMB_WIDTH/.test(overviewCacheKeySource) || !/OVERVIEW_THUMB_HEIGHT/.test(overviewCacheKeySource)) {
