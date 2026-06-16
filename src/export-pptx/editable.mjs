@@ -409,6 +409,7 @@ function renderText(slide, node, slideRect, warnings, totals) {
   const fontFace = firstFont(style.fontFamily);
   const weight = String(style.fontWeight || '');
   const singleLine = node.singleLine && !/[\r\n]/.test(value);
+  const align = normalizeAlign(style.textAlign);
   const options = {
     x: c.x,
     y: c.y,
@@ -424,13 +425,20 @@ function renderText(slide, node, slideRect, warnings, totals) {
     italic: style.fontStyle === 'italic',
     underline: String(style.textDecorationLine || '').includes('underline'),
     strike: String(style.textDecorationLine || '').includes('line-through'),
-    align: normalizeAlign(style.textAlign),
+    align,
     valign: normalizeValign(style.verticalAlign),
     rotate: rotateFromTransform(style.transform) || 0,
     transparency: combinedTransparency(color.alpha, style.opacity),
     charSpacing: letterSpacing(style.letterSpacing),
   };
-  if (!singleLine) options.w = Math.max(0.08, c.w + 0.04);
+  if (!singleLine) {
+    options.w = Math.max(0.08, c.w + 0.04);
+  } else if (align !== 'left') {
+    const extra = 0.12;
+    options.w = Math.max(0.08, c.w + extra);
+    if (align === 'right') options.x = Math.max(0, c.x - extra);
+    if (align === 'center') options.x = Math.max(0, c.x - extra / 2);
+  }
   try {
     slide.addText(value, options);
     totals.textObjects += 1;

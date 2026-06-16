@@ -17,6 +17,31 @@ const THEME_FILTER_EXPECTED_SLIDES = 2;
 const VISUAL_RMSE_LIMIT = 0.162;
 const VISUAL_EDGE_RMSE_LIMIT = 0.17;
 const VISUAL_MAE_LIMIT = 0.072;
+const EMU_PER_IN = 914400;
+const SAMPLE_TEXT_LAYOUT_ANCHORS = new Map([
+  [16, [
+    { text: '43.3%', align: 'r', maxWidth: 1.2 },
+    { text: '25.3%', align: 'r', maxWidth: 1.2 },
+    { text: '16.3%', align: 'r', maxWidth: 1.2 },
+    { text: '10.0%', align: 'r', maxWidth: 1.2 },
+    { text: '5.1%', align: 'r', maxWidth: 1.2 },
+    { text: '420', align: 'r', maxWidth: 0.8 },
+    { text: '245', align: 'r', maxWidth: 0.8 },
+    { text: '158', align: 'r', maxWidth: 0.8 },
+    { text: '97', align: 'r', maxWidth: 0.6 },
+    { text: '50', align: 'r', maxWidth: 0.6 },
+  ]],
+  [18, [
+    { text: '科技巨头', align: 'r', maxWidth: 1.6 },
+    { text: '风险投资', align: 'r', maxWidth: 1.6 },
+    { text: '主权 / 私募', align: 'r', maxWidth: 2.0 },
+    { text: '企业风投', align: 'r', maxWidth: 1.6 },
+    { text: 'STRATEGIC', align: 'r', maxWidth: 1.4 },
+    { text: 'VC', align: 'r', maxWidth: 0.6 },
+    { text: 'SOVEREIGN · PE', align: 'r', maxWidth: 1.8 },
+    { text: 'CVC', align: 'r', maxWidth: 0.8 },
+  ]],
+]);
 const EDITED_TEXT = 'JAD-64 editable text sentinel';
 const INITIAL_IMAGE_BYTES = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="24"><rect width="32" height="24" fill="#e11d48"/><text x="4" y="16" font-size="8" fill="#ffffff">old</text></svg>');
 const REPLACEMENT_IMAGE_BYTES = Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="24"><rect width="32" height="24" fill="#2563eb"/><text x="4" y="16" font-size="8" fill="#ffffff">new</text></svg>');
@@ -313,10 +338,12 @@ async function collectSampleVisualComparisons(page, expectations, visualDir) {
     await activeSlide.screenshot({ path: htmlScreenshot });
     const pptx = inspectPptx(pptxFile);
     const visual = runQuickLookVisualComparison(pptxFile, htmlScreenshot, sampleDir);
+    const textLayoutFailures = validateSampleTextLayout(sample, pptx);
     out.push({
       ...sample,
       pptx: summarizeInspection(pptx),
       quickLook: visual,
+      textLayoutFailures,
       htmlScreenshot,
       pptxFile,
       reportFile,
@@ -416,6 +443,27 @@ function validateSampleVisuals(samples) {
     if (visual.normalizedRmse > VISUAL_RMSE_LIMIT) failures.push(`${label} RMSE ${visual.normalizedRmse.toFixed(4)} exceeds ${VISUAL_RMSE_LIMIT.toFixed(4)}.`);
     if (visual.edgeRmse > VISUAL_EDGE_RMSE_LIMIT) failures.push(`${label} edge RMSE ${visual.edgeRmse.toFixed(4)} exceeds ${VISUAL_EDGE_RMSE_LIMIT.toFixed(4)}.`);
     if (visual.meanAbsoluteError > VISUAL_MAE_LIMIT) failures.push(`${label} MAE ${visual.meanAbsoluteError.toFixed(4)} exceeds ${VISUAL_MAE_LIMIT.toFixed(4)}.`);
+    for (const textFailure of sample.textLayoutFailures || []) failures.push(`${label} ${textFailure}`);
+  }
+  return failures;
+}
+
+function validateSampleTextLayout(sample, pptx) {
+  const anchors = SAMPLE_TEXT_LAYOUT_ANCHORS.get(sample.index) || [];
+  const slide = pptx.slides[0];
+  const failures = [];
+  for (const anchor of anchors) {
+    const box = slide?.textBoxes?.find(item => item.text === anchor.text);
+    if (!box) {
+      failures.push(`is missing text box "${anchor.text}".`);
+      continue;
+    }
+    if (anchor.align && box.align !== anchor.align) {
+      failures.push(`text "${anchor.text}" has align ${box.align || 'none'}, expected ${anchor.align}.`);
+    }
+    if (box.w > anchor.maxWidth) {
+      failures.push(`text "${anchor.text}" box is too wide (${box.w.toFixed(2)}in > ${anchor.maxWidth.toFixed(2)}in), which can push aligned text out of position.`);
+    }
   }
   return failures;
 }
@@ -846,6 +894,9 @@ function inspectPptx(file) {
 
 function inspectSlideXml(xml, index, relsXml, mediaByEntry) {
   const text = [...xml.matchAll(/<a:t>([\s\S]*?)<\/a:t>/g)].map(match => decodeXml(match[1]));
+  const textBoxes = [...xml.matchAll(/<p:sp\b[\s\S]*?<\/p:sp>/g)]
+    .map(match => inspectTextBoxShape(match[0]))
+    .filter(Boolean);
   const shapeCount = (xml.match(/<p:sp\b/g) || []).length;
   const autoFitTextCount = (xml.match(/<a:spAutoFit\/>/g) || []).length;
   const pictureCount = (xml.match(/<p:pic\b/g) || []).length;
@@ -865,6 +916,7 @@ function inspectSlideXml(xml, index, relsXml, mediaByEntry) {
   return {
     index,
     text,
+    textBoxes,
     autoFitTextCount,
     shapeCount,
     pictureCount,
@@ -872,6 +924,22 @@ function inspectSlideXml(xml, index, relsXml, mediaByEntry) {
     pictureMediaHashes,
     fullSlideImageOnly: text.length === 0 && shapeCount <= 1 && pictures.length === 1 && pictures[0].nearFullSlide,
     hash: createHash('sha256').update(xml.replace(/id="\d+"/g, 'id=""')).digest('hex'),
+  };
+}
+
+function inspectTextBoxShape(xml) {
+  const runs = [...xml.matchAll(/<a:t>([\s\S]*?)<\/a:t>/g)].map(match => decodeXml(match[1]));
+  if (!runs.length) return null;
+  const xfrm = xml.match(/<a:xfrm\b[\s\S]*?<a:off x="(\d+)" y="(\d+)"[\s\S]*?<a:ext cx="(\d+)" cy="(\d+)"/);
+  if (!xfrm) return null;
+  const align = xml.match(/<a:pPr\b[^>]*\balgn="([^"]+)"/)?.[1] || 'l';
+  return {
+    text: runs.join(''),
+    align,
+    x: Number(xfrm[1]) / EMU_PER_IN,
+    y: Number(xfrm[2]) / EMU_PER_IN,
+    w: Number(xfrm[3]) / EMU_PER_IN,
+    h: Number(xfrm[4]) / EMU_PER_IN,
   };
 }
 
