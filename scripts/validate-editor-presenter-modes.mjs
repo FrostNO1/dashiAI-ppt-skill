@@ -625,7 +625,7 @@ async function readPresentEditGuards(page) {
 }
 
 async function runPresentClickTargetsValidation(page) {
-  const kinds = ['background', 'text', 'slot', 'media'];
+  const kinds = ['background', 'text', 'slot', 'slotInner', 'media', 'mediaInner'];
   const results = {};
   for (const kind of kinds) {
     results[kind] = await runPresentClickTargetValidation(page, kind);
@@ -671,6 +671,7 @@ async function runPresentClickTargetValidation(page, kind) {
     afterRight,
     cursor,
     filePickerClicks,
+    consumedEventsProbe: targetBox.consumedEventsProbe || false,
   };
 }
 
@@ -679,7 +680,9 @@ async function preparePresentClickTarget(page, kind) {
     const selectorMap = {
       text: '[data-editable-id]',
       slot: '[data-dashi-host-image-slot],image-slot,.gxn-slot,.pulse-imgframe,.acl-slot,.kx-imgslot,.dslot,.bt-image-slot',
+      slotInner: '[data-dashi-host-image-slot],image-slot,.gxn-slot,.pulse-imgframe,.acl-slot,.kx-imgslot,.dslot,.bt-image-slot',
       media: 'video,iframe,canvas,.bt-unicorn-frame,[data-unicorn-json-file-path],[data-unicorn-project-id]',
+      mediaInner: 'video,iframe,canvas,.bt-unicorn-frame,[data-unicorn-json-file-path],[data-unicorn-project-id]',
       background: '',
     };
     const selector = selectorMap[kind] || '';
@@ -716,10 +719,25 @@ async function getCurrentPresentTargetBox(page, kind) {
     const selectorMap = {
       text: '[data-editable-id]',
       slot: '[data-dashi-host-image-slot],image-slot,.gxn-slot,.pulse-imgframe,.acl-slot,.kx-imgslot,.dslot,.bt-image-slot',
+      slotInner: '[data-dashi-host-image-slot],image-slot,.gxn-slot,.pulse-imgframe,.acl-slot,.kx-imgslot,.dslot,.bt-image-slot',
       media: 'video,iframe,canvas,.bt-unicorn-frame,[data-unicorn-json-file-path],[data-unicorn-project-id]',
+      mediaInner: 'video,iframe,canvas,.bt-unicorn-frame,[data-unicorn-json-file-path],[data-unicorn-project-id]',
     };
     let target = kind === 'background' ? slide : slide.querySelector(selectorMap[kind] || '');
     if(!target) return { found: false };
+    if(kind === 'slotInner' || kind === 'mediaInner'){
+      const visibleChildren = [...target.querySelectorAll('*')].filter(child => {
+        const rect = child.getBoundingClientRect();
+        const style = getComputedStyle(child);
+        return rect.width > 4 && rect.height > 4 && style.display !== 'none' && style.visibility !== 'hidden';
+      });
+      if(visibleChildren.length) target = visibleChildren[visibleChildren.length - 1];
+      if(!target.__presentConsumedEventsProbe){
+        target.addEventListener('mousedown', event => event.stopPropagation());
+        target.addEventListener('click', event => event.stopPropagation());
+        target.__presentConsumedEventsProbe = true;
+      }
+    }
     const inputClick = HTMLInputElement.prototype.click;
     if(!HTMLInputElement.prototype.__dashiPickerProbe){
       HTMLInputElement.prototype.click = function patchedClick(){
@@ -731,7 +749,14 @@ async function getCurrentPresentTargetBox(page, kind) {
     const rect = target.getBoundingClientRect();
     const x = Math.max(rect.left + Math.min(rect.width / 2, Math.max(8, rect.width - 8)), rect.left + 2);
     const y = Math.max(rect.top + Math.min(rect.height / 2, Math.max(8, rect.height - 8)), rect.top + 2);
-    return { found: rect.width > 1 && rect.height > 1, x, y, width: rect.width, height: rect.height };
+    return {
+      found: rect.width > 1 && rect.height > 1,
+      x,
+      y,
+      width: rect.width,
+      height: rect.height,
+      consumedEventsProbe: kind === 'slotInner' || kind === 'mediaInner',
+    };
   }, kind);
 }
 
