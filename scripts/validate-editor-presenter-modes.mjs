@@ -276,11 +276,12 @@ async function runPresentValidation(page) {
   await settle(page);
   const afterClick = await currentIndex(page);
   const presentEditing = await readPresentEditGuards(page);
+  const editBypass = await runPresentEditBypassValidation(page);
   await page.keyboard.press('Escape');
   await settle(page, 250);
   const afterEsc = await readEditorPresenterState(page);
   const afterEscIndex = await currentIndex(page);
-  return { entered, before, presentState, presentLayout, afterRight, afterClick, presentEditing, afterEsc, afterEscIndex };
+  return { entered, before, presentState, presentLayout, afterRight, afterClick, presentEditing, editBypass, afterEsc, afterEscIndex };
 }
 
 async function readPresentEditGuards(page) {
@@ -306,6 +307,27 @@ async function readPresentEditGuards(page) {
       const rect = el.getBoundingClientRect();
       return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 2 && rect.height > 2;
     }
+  });
+}
+
+async function runPresentEditBypassValidation(page) {
+  return page.evaluate(async () => {
+    const active = document.querySelector('#deck > .slide.active');
+    const beforeEditableCount = active?.querySelectorAll('[contenteditable="true"]').length || 0;
+    window.__setEditableTextMode?.(true);
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    const afterForceEditableCount = active?.querySelectorAll('[contenteditable="true"]').length || 0;
+    const target = active?.querySelector('[data-editable-id]');
+    target?.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, cancelable: true }));
+    target?.focus?.();
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    return {
+      mode: document.body.dataset.mode || '',
+      canEdit: Boolean(window.__canEditDeck?.()),
+      beforeEditableCount,
+      afterForceEditableCount,
+      focusedEditable: Boolean(document.activeElement?.closest?.('[contenteditable="true"]')),
+    };
   });
 }
 
@@ -373,14 +395,15 @@ async function dragRailCard(page, fromIndex, toIndex) {
 }
 
 async function runRailContextValidation(page) {
-  const card = page.locator('[data-rail-card="true"][aria-current="true"],[data-slide-rail-card="true"][aria-current="true"],[data-rail-card="true"],[data-slide-rail-card="true"]').first();
-  if (!(await card.count())) return { hasCard: false };
-  await card.scrollIntoViewIfNeeded();
-  const box = await card.boundingBox();
-  if (!box) return { hasCard: false };
-  await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2, { button: 'right' });
+  await page.evaluate(() => {
+    window.__deckViewModel?.setSkippedSlides?.([]);
+    window.__deckViewModel?.setDeletedSlides?.([]);
+    window.__refreshRailCatalog?.();
+  });
   await settle(page);
-  return page.evaluate(() => {
+  const menuProbe = await openRailContextMenu(page, { preferIndex: 6 });
+  if (!menuProbe.hasCard) return { hasCard: false };
+  const menuState = await page.evaluate(() => {
     const menu = document.querySelector('.rail-context-menu,.overview-context-menu');
     const buttons = [...(menu?.querySelectorAll('button') || [])].map(button => button.textContent?.trim() || '');
     return {
@@ -388,6 +411,109 @@ async function runRailContextValidation(page) {
       menuVisible: Boolean(menu && getComputedStyle(menu).display !== 'none'),
       hasSkip: buttons.some(text => /跳过|取消跳过/.test(text)),
       hasDelete: buttons.some(text => /删除/.test(text)),
+    };
+  });
+  await page.keyboard.press('Escape').catch(() => {});
+  await settle(page);
+
+  const beforeSkip = await readRailCatalogState(page);
+  const skipTarget = await chooseRailMutationTarget(page, { excludeSlideIds: [beforeSkip.activeSlideId], preferIndex: 6 });
+  const skip = skipTarget ? await clickRailContextAction(page, skipTarget.slideId, /跳过页面/) : { hasTarget: false };
+  const afterSkip = await readRailCatalogState(page);
+  await page.evaluate(() => window.__refreshRailCatalog?.());
+  await settle(page);
+  const afterSkipRefresh = await readRailCatalogState(page);
+
+  const deleteTarget = await chooseRailMutationTarget(page, {
+    excludeSlideIds: [afterSkip.activeSlideId, skipTarget?.slideId].filter(Boolean),
+    preferIndex: 8,
+  });
+  const beforeDelete = await readRailCatalogState(page);
+  const deletion = deleteTarget ? await clickRailContextAction(page, deleteTarget.slideId, /删除页面/) : { hasTarget: false };
+  const afterDelete = await readRailCatalogState(page);
+  await page.evaluate(() => window.__refreshRailCatalog?.());
+  await settle(page);
+  const afterDeleteRefresh = await readRailCatalogState(page);
+
+  return {
+    ...menuState,
+    skip: {
+      target: skipTarget,
+      action: skip,
+      before: beforeSkip,
+      after: afterSkip,
+      afterRefresh: afterSkipRefresh,
+    },
+    delete: {
+      target: deleteTarget,
+      action: deletion,
+      before: beforeDelete,
+      after: afterDelete,
+      afterRefresh: afterDeleteRefresh,
+    },
+  };
+}
+
+async function openRailContextMenu(page, { preferIndex = 1, slideId = '' } = {}) {
+  const selector = slideId
+    ? `[data-rail-card="true"][data-slide-id="${slideId}"],[data-slide-rail-card="true"][data-slide-id="${slideId}"]`
+    : `[data-rail-card="true"][data-index="${preferIndex}"],[data-slide-rail-card="true"][data-index="${preferIndex}"]`;
+  const fallback = '[data-rail-card="true"]:not([aria-current="true"]),[data-slide-rail-card="true"]:not([aria-current="true"])';
+  let card = page.locator(selector).first();
+  if (!(await card.count())) card = page.locator(fallback).first();
+  if (!(await card.count())) return { hasCard: false };
+  await card.scrollIntoViewIfNeeded();
+  const box = await card.boundingBox();
+  if (!box) return { hasCard: false };
+  await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2, { button: 'right' });
+  await settle(page);
+  return { hasCard: true };
+}
+
+async function clickRailContextAction(page, slideId, label) {
+  const opened = await openRailContextMenu(page, { slideId });
+  if (!opened.hasCard) return { hasTarget: false, clicked: false };
+  const button = page.locator('.rail-context-menu button,.overview-context-menu button').filter({ hasText: label }).first();
+  const count = await button.count();
+  if (!count) return { hasTarget: true, clicked: false };
+  await button.click();
+  await settle(page);
+  return { hasTarget: true, clicked: true };
+}
+
+async function chooseRailMutationTarget(page, { excludeSlideIds = [], preferIndex = 1 } = {}) {
+  return page.evaluate(({ excludeSlideIds, preferIndex }) => {
+    const excluded = new Set(excludeSlideIds);
+    const cards = [...document.querySelectorAll('[data-rail-card="true"],[data-slide-rail-card="true"]')]
+      .map(card => ({
+        index: Number(card.dataset.index || -1),
+        slideId: card.dataset.slideId || card.dataset.slideKey || '',
+        active: card.getAttribute('aria-current') === 'true' || card.dataset.railActive === 'true',
+      }))
+      .filter(card => card.slideId && !card.active && !excluded.has(card.slideId));
+    return cards.find(card => card.index >= preferIndex) || cards[0] || null;
+  }, { excludeSlideIds, preferIndex });
+}
+
+async function readRailCatalogState(page) {
+  return page.evaluate(() => {
+    const state = window.__deckViewModel?.getState?.() || {};
+    const cards = [...document.querySelectorAll('[data-rail-card="true"],[data-slide-rail-card="true"]')].map(card => ({
+      index: Number(card.dataset.index || -1),
+      slideId: card.dataset.slideId || card.dataset.slideKey || '',
+      active: card.getAttribute('aria-current') === 'true' || card.dataset.railActive === 'true',
+      skippedBadge: Boolean(card.querySelector('.rail-skip-badge,.overview-skip-badge')),
+    }));
+    const visibleSlides = window.__getVisibleSlides?.() || [];
+    const visibleSlideIds = visibleSlides.map((slide, index) => slide.dataset.vmSlideId || slide.dataset.slideId || slide.dataset.layout || `slide-${index + 1}`);
+    return {
+      cardCount: cards.length,
+      playableCount: visibleSlides.length,
+      skippedSlides: [...(state.skippedSlides || [])],
+      deletedSlides: [...(state.deletedSlides || [])],
+      activeSlideId: (window.__getRailPerfState?.() || window.__getOverviewPerfState?.() || null)?.activeSlideId || '',
+      visibleSlideIds,
+      cards,
     };
   });
 }
@@ -467,6 +593,23 @@ function validateResult(result) {
   if (!rail.afterScrollTarget.activeVisible) failures.push('Rail should scroll the active card into view.');
   if (!rail.drag.attempted || Number(rail.drag.lastDrop?.deckMoveCount || 0) !== 1) failures.push('Rail drag reorder should commit the real deck with one moved slide.');
   if (!rail.context.menuVisible || !rail.context.hasSkip || !rail.context.hasDelete) failures.push('Rail context menu should expose skip and delete actions.');
+  if (!rail.context.skip?.target || !rail.context.skip?.action?.clicked) failures.push('Rail context skip action was not exercised.');
+  else {
+    const skippedId = rail.context.skip.target.slideId;
+    if (!rail.context.skip.after.skippedSlides.includes(skippedId)) failures.push('Rail skip action did not persist skippedSlides.');
+    if (rail.context.skip.after.playableCount !== rail.context.skip.before.playableCount - 1) failures.push('Rail skip action did not reduce playable slide count.');
+    if (rail.context.skip.after.visibleSlideIds.includes(skippedId)) failures.push('Skipped slide remains reachable through playable slide navigation.');
+    const skippedCard = rail.context.skip.afterRefresh.cards.find(card => card.slideId === skippedId);
+    if (!skippedCard?.skippedBadge) failures.push('Rail skip action did not show a skipped badge after rail refresh.');
+  }
+  if (!rail.context.delete?.target || !rail.context.delete?.action?.clicked) failures.push('Rail context delete action was not exercised.');
+  else {
+    const deletedId = rail.context.delete.target.slideId;
+    if (!rail.context.delete.after.deletedSlides.includes(deletedId)) failures.push('Rail delete action did not persist deletedSlides.');
+    if (rail.context.delete.after.cardCount !== rail.context.delete.before.cardCount - 1) failures.push('Rail delete action did not remove one rail card.');
+    if (rail.context.delete.after.visibleSlideIds.includes(deletedId)) failures.push('Deleted slide remains reachable through playable slide navigation.');
+    if (rail.context.delete.afterRefresh.cards.some(card => card.slideId === deletedId)) failures.push('Rail delete action did not survive rail refresh.');
+  }
   if (!rail.dirty.hasDirtyApi || rail.dirty.removedCount < 1) failures.push('Rail dirty invalidation should expose rail API and invalidate only the active slide cache.');
 
   const present = result.present;
@@ -474,6 +617,7 @@ function validateResult(result) {
   if (present.presentState.mode !== 'present') failures.push(`Clicking play should enter present mode, got "${present.presentState.mode || '(empty)'}".`);
   if (present.presentState.railVisible || present.presentState.panelVisible) failures.push('Present mode should hide rail and right panel.');
   if (present.presentState.canEdit || present.presentEditing.canEdit || present.presentEditing.editableCount > 0) failures.push('Present mode must disable text editing.');
+  if (present.editBypass.afterForceEditableCount > 0 || present.editBypass.focusedEditable) failures.push('Present mode editable text guard can be bypassed through __setEditableTextMode(true).');
   if (present.presentEditing.enabledPanelControlCount > 0 && present.presentEditing.panelVisible) failures.push('Present mode must not expose enabled panel controls.');
   if (Math.abs(present.presentLayout.aspect - 16 / 9) > 0.025) failures.push('Present mode deck stage must remain 16:9.');
   if (present.presentLayout.deckRect && (present.presentLayout.deckRect.width < 1200 || present.presentLayout.deckRect.height < 675)) failures.push('Present mode deck should use the full viewport fit.');

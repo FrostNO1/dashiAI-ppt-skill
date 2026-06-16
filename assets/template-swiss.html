@@ -3875,7 +3875,7 @@ refreshRailCatalog();
 
   function syncEditableMode(scope = deck, on){
     const root = scope instanceof Element ? scope : deck;
-    const enabled = on ?? canEditDeck();
+    const enabled = Boolean(on ?? canEditDeck()) && canEditDeck();
     const editable = [
       ...(root.dataset?.editableId ? [root] : []),
       ...(root.querySelectorAll?.('[data-editable-id]') || []),
