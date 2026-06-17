@@ -125,8 +125,7 @@ async function runJad64AcceptanceRegressionValidation() {
   const outDir = path.join(OUT_DIR, 'jad64-acceptance-regressions');
   rmSync(outDir, { recursive: true, force: true });
   mkdirSync(outDir, { recursive: true });
-  const originalDir = '/Users/jadon7/Downloads/theme-20-pptx-export-20260617T215810';
-  const selectionSummary = '/Users/jadon7/Documents/SynologyDrive/code/项目研究/dashi-ppt-skill-main/output/theme-20-pptx-export-20260617T215810/selection-summary.json';
+  const selectionSummary = path.join('output', 'theme-20-pptx-export-20260617T215810', 'selection-summary.json');
   const failureScreenshots = path.join(ROOT, 'output/jad64-user-acceptance-fail-20260617T2234');
   const samples = [
     {
@@ -135,7 +134,7 @@ async function runJad64AcceptanceRegressionValidation() {
       themePack: 'theme02',
       key: 'theme02_page074',
       selectedSlide: 20,
-      originalPptx: path.join(originalDir, 'theme02-20-pages.pptx'),
+      sourcePptx: 'theme02-20-pages.pptx',
       coverage: 'large closing title must not duplicate/stack styled statement layers',
       probes: ['text-stacking'],
       textProbes: ['AI 融资盛宴仍在继续', '但音乐节奏正在变化'],
@@ -147,7 +146,7 @@ async function runJad64AcceptanceRegressionValidation() {
       themePack: 'theme02',
       key: 'theme02_page016',
       selectedSlide: 5,
-      originalPptx: path.join(originalDir, 'theme02-20-pages.pptx'),
+      sourcePptx: 'theme02-20-pages.pptx',
       coverage: 'glass list cards should keep rounded outlines without square border or crop artifacts',
       probes: ['rounded-cards'],
       textProbes: ['OpenAI', 'Anthropic', 'Google DeepMind', 'Mistral'],
@@ -158,7 +157,7 @@ async function runJad64AcceptanceRegressionValidation() {
       themePack: 'theme02',
       key: 'theme02_page016',
       selectedSlide: 5,
-      originalPptx: path.join(originalDir, 'theme02-20-pages.pptx'),
+      sourcePptx: 'theme02-20-pages.pptx',
       coverage: 'radar SVG should preserve its rendered bbox/aspect and not stretch/shift',
       probes: ['svg-aspect'],
       textProbes: ['模型能力', '商业化', '算力储备', '数据壁垒', '安全对齐', '资本厚度'],
@@ -169,7 +168,7 @@ async function runJad64AcceptanceRegressionValidation() {
       themePack: 'theme04',
       key: 'theme04_page001',
       selectedSlide: 1,
-      originalPptx: path.join(originalDir, 'theme04-20-pages.pptx'),
+      sourcePptx: 'theme04-20-pages.pptx',
       coverage: 'glass highlight pill should retain local material bbox and readable editable text',
       probes: ['material-highlight'],
       textProbes: ['资本，正在', '重新分配'],
@@ -181,7 +180,7 @@ async function runJad64AcceptanceRegressionValidation() {
       themePack: 'theme07',
       key: 'theme07_page023',
       selectedSlide: 7,
-      originalPptx: path.join(originalDir, 'theme07-20-pages.pptx'),
+      sourcePptx: 'theme07-20-pages.pptx',
       coverage: 'waterfall SVG/text should stay inside slide bounds with no left/bottom crop',
       probes: ['crop-bounds'],
       textProbes: ['融资额贡献瀑布', '全年合计', '基础设施', 'AI 芯片'],
@@ -283,7 +282,6 @@ async function runJad64AcceptanceRegressionValidation() {
     url: cliUrl,
     outDir,
     selectionSummary,
-    originalDir,
     contactSheet,
     rootCauseMatrix: path.join(outDir, 'root-cause-matrix.json'),
     passed: failures.length === 0,
