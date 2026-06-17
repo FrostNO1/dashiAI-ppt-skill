@@ -10,7 +10,7 @@ description: 根据用户目标随机组合已接入主题页面,生成可离线
 
 ## 版本
 
-当前版本: `0.1.1`
+当前版本: `0.1.2`
 
 每次完成用户请求、准备最终回复前,运行:
 
@@ -47,52 +47,52 @@ node <skill-root>/scripts/check_latest_version.mjs
 ## 使用规则
 
 - 运行生成器需要 Node.js 18+ 和 npm;首次生成时渲染脚本会在 Skill 内置 `project/` 目录安装依赖。
-- 开始阶段先确认用户想要的风格。用户没有明确指定时,先列出全部可选风格并询问,不要直接生成。
-- 当前可选风格:
-  - `theme01`: 01-轻拟态质感
-  - `theme02`: 02-炫光紫绿
-  - `theme03`: 03-深浅代码风
-  - `theme04`: 04-玻璃糖果
-  - `theme05`: 05-PULSE 色谱图表
-  - `theme06`: 06-深色数据图谱
-  - `theme07`: 07-冷白调研图谱
-  - `theme08`: 08-黑金实验质感
-  - `theme09`: 09-深蓝杂志
-  - `theme10`: 10-金色指数图表
-  - `theme11`: 11-高能增长图谱
-  - `theme12`: 12-声波霓虹
+- 开始阶段先确认用户想要的风格。用户没有明确指定时,如果当前环境支持图片展示,风格选择提问的用户可见回复必须嵌入 `assets/skill/theme-style-grid.png`;发送前把 Skill 根目录展开成绝对路径,例如 `![风格选择参考](<skill-root>/assets/skill/theme-style-grid.png)`。不能只在内部进度提示中提到这张图,不要只发文字编号让用户选。默认风格选择回复必须包含风格图、12 个风格短名称和极简“适合/人群”提示;只有用户需要详细解释时再读取 `references/options.md`。
+- 当前可选风格: `theme01` 轻拟态风、`theme02` 炫光紫绿风、`theme03` 深浅代码风、`theme04` 玻璃糖果风、`theme05` 色谱图表风、`theme06` 深色图谱风、`theme07` 冷白调研风、`theme08` 黑金实验风、`theme09` 深蓝杂志风、`theme10` 金色指数风、`theme11` 高能增长风、`theme12` 声波霓虹风。
+<!-- theme-choice-hints:start -->
+  - `theme01` 轻拟态风 | 适合: 产品介绍 / 企业汇报 | 人群: 创业团队 / 产品经理
+  - `theme02` 炫光紫绿风 | 适合: 科技发布会 / AI/自动驾驶/机器人主题 | 人群: 科技公司创始人 / 技术负责人
+  - `theme03` 深浅代码风 | 适合: 技术方案 / 开发者大会 | 人群: 工程师 / 技术管理者
+  - `theme04` 玻璃糖果风 | 适合: 年轻化品牌 / 消费产品 | 人群: 品牌团队 / 设计师
+  - `theme05` 色谱图表风 | 适合: 数据报告 / 市场分析 | 人群: 数据分析师 / 咨询顾问
+  - `theme06` 深色图谱风 | 适合: 高密度数据展示 / 战略分析 | 人群: 战略团队 / 投资人
+  - `theme07` 冷白调研风 | 适合: 调研报告 / 白皮书 | 人群: 研究机构 / 咨询团队
+  - `theme08` 黑金实验风 | 适合: 高端发布 / 品牌提案 | 人群: 高端品牌 / 创意总监
+  - `theme09` 深蓝杂志风 | 适合: 品牌故事 / 人物访谈 | 人群: 公关团队 / 媒体编辑
+  - `theme10` 金色指数风 | 适合: 金融数据 / 投资报告 | 人群: 投资机构 / 金融分析师
+  - `theme11` 高能增长风 | 适合: 增长复盘 / 商业计划 | 人群: 创业者 / 增长团队
+  - `theme12` 声波霓虹风 | 适合: 音乐娱乐 / 潮流活动 | 人群: 娱乐品牌 / 活动策划
+<!-- theme-choice-hints:end -->
 - 不使用旧 token、旧主题、旧图片 slot、旧风格分支或旧入场动画控制。
+- 普通生成不要直接打开大型 `layout-manifest.json` 或 `generated-metadata.js`。选页先运行 `npm run layout:query -- --theme <themePack> --role <role> --limit 8`;需要图片槽时加 `--needs-media`、`--planned-images <n>`、`--provided-images <n>` 或 `--image-gen`。`layout:query` 已输出候选页的 `copyKeys` 和 `mediaSlots`;不要为每一页机械运行 `inspect:layout`。
+- 只有选中页面字段不清楚、需要数组/count、或要写图片/媒体时,才运行 `npm run inspect:layout -- <layout>`;只有写复杂数组或图片 props 时,才运行 `npm run props:safe -- <layout> '<props-json>' [--images <path...>]`。
+- 图片和视频的真实写入点是页面 `props.images` / `props.media`;不要写顶层 `media` 或 `slides[].media`。用户未提供图片时,如果任务类型可能需要视觉素材,例如作品集、品牌、产品、案例、活动、发布、社媒、设计、人物、团队、方案展示等,必须先询问是否预留图片槽;用户确认不需要时才选纯文案页或隐藏图片槽。不能默认把图片 slot 数量设为 0。用户说要预留图片时使用 `--planned-images <n>`,用户提供图片时使用 `--provided-images <n>`,需要 image-gen 时先询问用户是否同意并使用 `--image-gen`。
 - 元素出现动画使用 Claude Design 页面组件自带的原生效果。
 - 页面切换动画可以在预览控制面板里调整。
-- 如果当前是在 Codex 环境中执行,且页面有插图/图片槽位或用户主题明显需要插图,必须先询问用户是否同意通过 image-gen 生图并插入 PPT。用户同意后,在对应插图位置/图片槽位写入生成图片;需要多张图时,把每张图拆成独立 subagent 子任务并行生成,完成后再统一写入对应槽位。单个 subagent 失败时只标记对应 slot,不要丢弃其它已生成图片。用户不同意或未回复时,不要生成图片,也不要替换图片槽位。
 - 面向用户交付的 deck 默认不显示风格/主题切换选项;风格切换只保留在内部调试 demo 页面。用户明确要求保留主题切换时,在 goal 顶层写 `preview: {"themeSwitcher": true}`。
 - 不手写自由 HTML slide;面向用户交付的每页必须写 `layout` + `props`。`role` 只允许在草稿阶段辅助选页,渲染前必须换成具体 `layout`。
 - 每套主题的前 5 页 `themeXX_page001` 到 `themeXX_page005` 都是封面候选。一个 deck 只能从前 5 页中选择 1 页作为封面,不要同时使用多个封面页;正文页从第 6 页以后选择。
 - 面向用户交付的 deck 不能只写 `role` 后依赖页面默认文案。除非用户明确要默认 demo,每一页都必须写和用户主题对应的 `props` 文案。
-- 页眉、页脚、角标、右上角标签、收尾标签也算正文可见文案。组件支持 `head`、`brand`、`reportLabel` 等字段时必须一起覆盖,不要只改卡片正文。
-- 不要默认填写页面 `controls`。`accent`、`tone`、`variant`、`theme`、`style`、`color`、`align`、`columns`、`focus`、`highlight`、`show*`、`*Count`、`chart*`、`image*`、`media*` 等字段都视为模板结构/样式字段,用户没有明确要求时不要写。
-- 用户内容超过模板默认承载量时,优先压缩文字、拆成另一页或换一个更合适的 layout,不要改卡片数量、图表类型、显隐开关或重点高亮来适配。
-- 只有用户明确要求“增加卡片数量/切换图表/调整颜色/突出第几个/隐藏某元素”等页面属性变化时,才读取 `layout-manifest.json` 的 `controls` 和 `countBindings` 并填写对应 props。
-- 数量变化必须通过 `cardCount`、`itemCount`、`stepCount` 等 count 参数控制显示数量。不要通过截短 `cards`、`items`、`steps`、`stats` 等数组来隐藏元素。
-- 写数组内容时,数组是模板内容池,不是页面结构。只改需要显示的前 N 项文案/数据;后续未显示项必须保留模板默认项或可恢复占位,让用户后续在控制面板把数量加回去仍然有内容。
+- 优先只写 `layout:query` 或 `inspect:layout` 暴露的文案字段。用户明确要求调整数量、显隐、强调、颜色、图表或图片槽时,才写对应 control props,并用 `props:safe` 保留数组默认尾部。
 - 不要改页面元数据、组件源码、className、CSS、样式字段或默认视觉结构来完成内容填充。只在 `props` 内填写内容和用户明确要求的页面属性。
 - 允许用顶层 `text` 覆盖可见文字槽位,但只用于替换文字内容。不要在普通生成中启动浏览器批量抽取全页面文本槽位;只有用户明确要求“彻底清除所有模板默认文案/逐页校对可见文案”时才做运行时槽位抽取。
 - 禁止复用 `output/` 里已有的旧 `goal.json` 或旧 HTML。每次请求都新建本次输出目录和本次 JSON 计划。
-- 最终返回给用户的必须是本次请求的 `output/<deck-name>/ppt/index.html`,不要返回 `theme-preview` 或其它调试页。
+- 最终交付必须给本次请求的本地 HTTPS 预览地址,例如 `https://jadon.local:<port>/`;本地 HTML 路径只能作为备用定位信息,不要只返回 `file://` 或只返回 `output/<deck-name>/ppt/index.html`。不要返回 `theme-preview` 或其它调试页。
 - 如果输出正文里出现与用户主题无关的默认文案,例如 AI Capital / 投融资 / SoundWave / 声浪 / Key Metrics / Roadmap / End of Report 等,必须重写 JSON 后重新渲染,不能交付。
 
 ## 工作流
 
 1. 提炼用户目标: `title`、`goal`、`audience`、`owner`、页数和内容重点。
 2. 确认 `themePack`。用户未指定时先询问风格;用户选定后生成 `randomSeed`,例如 `<主题>-<日期>-<3位随机词>`,保证随机选页可复现。
-3. 根据用户内容拆出页面结构。先从该主题前 5 页中选 1 页作为封面,后续正文页从第 6 页以后选定具体 `layout`。
-4. 为每页填写文字内容字段;普通生成保持页面默认结构,不要为了内容适配改 controls。
-5. 每页只承载一个主要信息角色,并覆盖能通过文案字段安全覆盖的页眉、标签、收尾文案。无法安全覆盖的页面优先换 layout,不要改样式字段硬凑。
-6. 把 JSON 写入本次工作目录的 `output/<deck-name>/goal.json`;不要使用 Skill 项目里遗留的旧 JSON。
+3. 判断图片意图:用户已给图片用 `--provided-images <n>`;用户计划后续配图用 `--planned-images <n>`;需要生图用 `--image-gen` 并先询问。用户未提供图片但任务天然需要视觉素材时,先问是否预留图片槽,不要默认把图片 slot 设为 0。
+4. 快路径:用 `layout:query` 选候选,直接用其 `copyKeys` 写普通文字 props。只有字段不清楚、数组/count 或图片/媒体时,再用 `inspect:layout` / `props:safe`。
+5. 每页只承载一个主要信息角色。无法安全覆盖的页面优先换 layout,不要改样式字段硬凑。
+6. 把 JSON 写入本次工作目录的 `output/<deck-name>/goal.json`;渲染前必须通过 goal spec 校验。
 7. 运行渲染脚本输出 `output/<deck-name>/ppt/index.html`;脚本会使用 Skill 内置生成器,不要切回外部项目目录。
 8. 确认脚本完成 `validate:swiss` 和 `validate:goal-copy`。
 9. 运行 `node <skill-root>/scripts/check_latest_version.mjs` 做静默版本检查。
-10. 两项校验通过后把本地 HTML 路径或预览地址返回给用户;只有版本检查脚本有输出时才附加更新提醒。
+10. 渲染脚本会启动本地 HTTPS 预览服务并输出 `https://jadon.local:<port>/`;需要指定端口时设置 `DASHI_PPT_PREVIEW_PORT` 后再运行脚本。
+11. 最终回复必须给该 `https://jadon.local:<port>/` 地址;本地 HTML 路径只作为备用定位信息,不要只返回 `file://`。只有版本检查脚本有输出时才附加更新提醒。
 
 ## 返工与浏览器检查
 
@@ -137,46 +137,14 @@ node <skill-root>/scripts/check_latest_version.mjs
 
 ## 页面角色
 
-`role` 会按 `themePack` 从对应主题候选池中按 `randomSeed` 可复现抽取页面。同一套 deck 内会尽量避免重复使用同一个 layout。
+`role` 只用于草稿选页,最终 JSON 必须落成具体 `layout`。角色说明见 `references/layout-roles.md`;真实候选以 `layout:query` 输出为准。
 
-| role | 候选页面用途 |
-|---|---|
-| `cover` | 主题封面,只能从 `themeXX_page001` 到 `themeXX_page005` 中选 1 页 |
-| `statement` | 摘要、论点、金句、核心判断 |
-| `breakdown` | 目录、结构拆解、篇章卡、问答结构 |
-| `transition` | 章节分隔、附录分隔 |
-| `context` | 市场背景、定位矩阵、区域画像、批注说明 |
-| `metrics` | 点阵计数、核心数字、计量条、关键指标、数字海报、计分榜 |
-| `trend` | 资金流、时间线、日历、阶段、季度走势、编年 |
-| `comparison` | 交叉透视、同比、对决、表格、双联、区间、多维对比 |
-| `distribution` | 比例带、轮次、漏斗、市占、梯队、瀑布、分布、结构演变 |
-| `relationship` | 联投、层级、弧网、网络、交集、径向、冰柱 |
-| `case` | 典型案例、分屏、分镜、特写、影像速写、影像便当、人物证言 |
-| `image` | 全景、杂志封面、拼贴、陈列、长卷、瀑布、卡集、圆窗、画廊 |
-| `process` | 产业链、流向、用途、阶段、方案、阶梯、路线、实施路径 |
-| `risks` | 风险研判、景气仪表、预测、关键问答 |
-| `observation` | 投资展望、核心结论、观点引述、批注、评分、专题洞察 |
-| `actions` | 应用落地、方案、阶梯、路线、实施路径 |
-| `result` | 核心结论、数字海报、核心要点、专题洞察 |
-| `team` | 研究团队、关于我们 |
-| `closing` | 主题结语 |
+`cover` 只能从当前主题前 5 页选择。`image` / `media` 候选基于真实 `mediaSlots`,不是页面标题关键词。
 
-也可以直接指定页面:
+可以直接指定页面:
 
 ```json
-{"layout": "theme01_page030", "props": {"focusIndex": 1}}
-```
-
-也可以直接指定其它已接入主题页面:
-
-```json
-{"themePack": "theme08", "slides": [{"layout": "theme08_page001"}]}
-```
-
-也可以限制候选池:
-
-```json
-{"role": "metrics", "layouts": ["theme01_page006", "theme01_page020"]}
+{"layout": "theme01_page030", "props": {"title": "典型案例"}}
 ```
 
 ## 交付能力
@@ -185,28 +153,18 @@ node <skill-root>/scripts/check_latest_version.mjs
 
 ## 页面属性契约
 
-`layout-manifest.json` 由 `npm run manifest:update` 生成,记录每个页面的 `controls` 和数量参数绑定关系。普通生成不需要读取或填写这些 controls;只有用户明确要求调整页面属性时才使用。
+普通生成不要读 `layout-manifest.json`。先用 `layout:query` 输出的候选摘要。只有需要更细契约时,再用 `inspect:layout` 看单页契约:
 
-典型规则:
+- `copyKeys`: 可安全改写的文案/数据字段。
+- `mediaSlots`: 图片/视频写入字段、count key、默认数量和最大数量。
+- `countBindings`: 数量参数与数组字段的绑定。
+- `controlKeys`: 右侧面板可操作字段。
 
-- `cardCount` 绑定 `cards`
-- `statCount` 绑定 `stats`
-- `itemCount` 绑定 `items` / `stats` / `data`
-- `stepCount` 绑定 `steps`
-- `laneCount` 绑定 `lanes`
-- `phaseCount` 绑定 `phases`,且每条 lane 的 `items` 数量要一致
-
-如果用户明确要求调整数量,优先填写 count 参数。只填写数组不填写 count 时项目会按数组中用户填写的数量补齐 count;同时会保留模板默认数组尾部,避免控制面板后续加回数量时无内容。
-
-数量参数的正确写法:
-
-- 要显示 4 个卡片,写 `cardCount: 4`。
-- 如果同时写 `cards`,只覆盖前 4 个卡片的内容;不要把原本可选的第 5-7 个卡片从数组里删除。
-- 需要保留后续卡片的默认对象、图片槽、颜色、标签类型和其它视觉字段;没有用户内容时保留模板默认项即可。
-- 校验标准是数组长度至少覆盖当前 count。数组可以比 count 长,因为长出来的项是控制面板后续加回数量时要使用的内容池。
+需要写数组、数量或图片时,用 `props:safe` 输出归一化 props。它会保留数组默认尾部,并根据 `props.images` / `props.media` 派生对应 count。
 
 ## 校验
 
+- 渲染前必须运行 `validate:goal-spec`。
 - 输出后必须运行 `validate:swiss`。
 - 输出后必须运行 `validate:goal-copy`。
 - 改动展示 demo 后运行 `npm run showcase:update`。

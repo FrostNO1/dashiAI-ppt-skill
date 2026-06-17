@@ -39,7 +39,7 @@ const rawPages = sourcePages.map(entry => ({
 export const runtimePages = normalizeRuntimePages(rawPages, { themeKey: 'theme03', layoutPrefix: 'THEME03' });
 
 function withTheme03Controls(controls) {
-  const filtered = controls.filter(control => control.key !== 'forceDark' && control.key !== 'accent');
+  const filtered = controls.filter(control => control.key !== 'forceDark' && control.key !== 'accent' && control.key !== 'theme');
   const backgroundControls = filtered.filter(control => control.key === 'backgroundMode' || control.key === 'unicornScene');
   const rest = filtered.filter(control => control.key !== 'backgroundMode' && control.key !== 'unicornScene');
   if (backgroundControls.length) return [
@@ -132,10 +132,9 @@ function theme03ShouldShowToggle() {
   if (typeof document === 'undefined') return false;
   if (document.body?.classList.contains('overview-on') || document.body?.classList.contains('exporting-deck')) return false;
   try {
-    const options = JSON.parse(document.getElementById('preview-options')?.textContent || '{}');
     const activeThemePack = document.documentElement.dataset.themePack;
     const activeSlide = document.querySelector('[data-theme-pack="theme03"][data-deck-active]');
-    return Boolean(options.themePacks?.theme03 && (activeThemePack === 'theme03' || activeSlide));
+    return activeThemePack === 'theme03' || Boolean(activeSlide);
   } catch {
     return false;
   }
@@ -290,4 +289,11 @@ function theme03RemoveToggleButton() {
     window.removeEventListener('storage', theme03SyncToggleButton);
     theme03ToggleEventsBound = false;
   }
+}
+
+if (typeof window !== 'undefined') {
+  window.__getTheme03GlobalDark = () => theme03GlobalDark;
+  window.__setTheme03GlobalDark = theme03SetGlobalDark;
+  window.__getTheme03GlobalAccent = () => theme03GlobalAccent;
+  window.__setTheme03GlobalAccent = theme03SetGlobalAccent;
 }

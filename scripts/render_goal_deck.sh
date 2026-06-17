@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(cd "$SCRIPT_DIR/../project" && pwd)"
+PROJECT_ROOT="${DASHI_PPT_PROJECT_ROOT:-$(cd "$SCRIPT_DIR/../project" && pwd)}"
 CALLER_CWD="$(pwd)"
 
 if [[ $# -ne 2 ]]; then
@@ -26,6 +26,10 @@ if [[ ! -d node_modules || package.json -nt node_modules/.package-lock.json || p
   npm install
 fi
 mkdir -p "$(dirname "$OUT_PATH")"
+npm run validate:goal-spec -- "$SPEC_PATH"
 npm run render:goal -- "$SPEC_PATH" "$OUT_PATH"
 npm run validate:swiss -- "$OUT_PATH"
 npm run validate:goal-copy -- "$SPEC_PATH" "$OUT_PATH"
+OUT_DIR="$(dirname "$OUT_PATH")"
+PREVIEW_PORT="${DASHI_PPT_PREVIEW_PORT:-4178}"
+npm run preview:start -- "$OUT_DIR" "$PREVIEW_PORT"

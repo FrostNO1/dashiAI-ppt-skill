@@ -1,11 +1,18 @@
 {
   "name": "dashi-ppt-skill-runtime",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "type": "module",
   "scripts": {
+    "layout:query": "node scripts/layout-query.mjs",
+    "inspect:layout": "node scripts/inspect-layout.mjs",
+    "media:stage": "node scripts/stage-media.mjs",
+    "props:safe": "node scripts/write-safe-props.mjs",
+    "validate:goal-spec": "node scripts/validate-goal-spec.mjs",
+    "validate:skill-workflow-tools": "node scripts/validate-skill-workflow-tools.mjs",
     "render:goal": "tsx scripts/render-goal-deck.jsx",
     "preview:https": "node scripts/serve-preview-https.mjs",
+    "preview:start": "node scripts/start-preview-server.mjs",
     "validate:swiss": "node scripts/validate-swiss-deck.mjs",
     "validate:goal-copy": "node scripts/validate-goal-copy.mjs"
   },

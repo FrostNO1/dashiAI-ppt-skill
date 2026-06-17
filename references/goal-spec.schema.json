@@ -49,9 +49,7 @@
         "type": "string"
       }
     },
-    "media": {
-      "type": "object"
-    },
+    "media": false,
     "props": {
       "type": "object"
     },
@@ -81,11 +79,37 @@
           "props": {
             "type": "object"
           },
-          "media": {
-            "type": "object"
-          },
+          "media": false,
           "copy": {
             "type": "object"
+          },
+          "needsVisual": {
+            "type": "boolean"
+          },
+          "imageGen": {
+            "type": "boolean"
+          },
+          "needsImageGen": {
+            "type": "boolean"
+          },
+          "plannedImages": {
+            "type": [
+              "boolean",
+              "number"
+            ]
+          },
+          "providedImages": {
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
           }
         },
         "additionalProperties": true
