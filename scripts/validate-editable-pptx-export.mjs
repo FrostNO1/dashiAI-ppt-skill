@@ -25,6 +25,8 @@ const MATRIX_THEME_PACKS = [
 ];
 const FALLBACK_TEXT_RISK_THEME_PACKS = MATRIX_THEME_PACKS;
 const EMU_PER_IN = 914400;
+const PPT_W = 16;
+const PPT_H = 9;
 const SAMPLE_TEXT_LAYOUT_ANCHORS = new Map([
   [16, [
     { text: '43.3%', align: 'r', maxWidth: 1.2 },
@@ -80,6 +82,7 @@ const fallbackTextRisk = args.has('--fallback-text-risk');
 const fallbackTextRiskMatrix = args.has('--fallback-text-risk-matrix');
 const theme10UserRegressions = args.has('--theme10-user-regressions');
 const jad64FollowupRegressions = args.has('--jad64-followup-regressions');
+const jad64AcceptanceRegressions = args.has('--jad64-acceptance-regressions');
 const cliUrl = getArg('--url');
 const cliThemePack = getArg('--theme-pack');
 const cliSamplesPerTheme = Math.max(DEFAULT_VISUAL_SAMPLE_COUNT, Number(getArg('--samples-per-theme') || DEFAULT_VISUAL_SAMPLE_COUNT));
@@ -109,10 +112,191 @@ if (legacyRed) {
   await runFallbackTextRiskValidation();
 } else if (jad64FollowupRegressions) {
   await runJad64FollowupRegressionValidation();
+} else if (jad64AcceptanceRegressions) {
+  await runJad64AcceptanceRegressionValidation();
 } else if (theme10UserRegressions) {
   await runTheme10UserRegressionValidation();
 } else {
   await runEditableExportValidation();
+}
+
+async function runJad64AcceptanceRegressionValidation() {
+  if (!cliUrl) throw new Error('Usage: node scripts/validate-editable-pptx-export.mjs --jad64-acceptance-regressions --url <preview-url>');
+  const outDir = path.join(OUT_DIR, 'jad64-acceptance-regressions');
+  rmSync(outDir, { recursive: true, force: true });
+  mkdirSync(outDir, { recursive: true });
+  const originalDir = '/Users/jadon7/Downloads/theme-20-pptx-export-20260617T215810';
+  const selectionSummary = '/Users/jadon7/Documents/SynologyDrive/code/项目研究/dashi-ppt-skill-main/output/theme-20-pptx-export-20260617T215810/selection-summary.json';
+  const failureScreenshots = path.join(ROOT, 'output/jad64-user-acceptance-fail-20260617T2234');
+  const samples = [
+    {
+      id: '01-text-stacking',
+      screenshot: path.join(failureScreenshots, '01-text-stacking.png'),
+      themePack: 'theme02',
+      key: 'theme02_page074',
+      selectedSlide: 20,
+      originalPptx: path.join(originalDir, 'theme02-20-pages.pptx'),
+      coverage: 'large closing title must not duplicate/stack styled statement layers',
+      probes: ['text-stacking'],
+      textProbes: ['AI 融资盛宴仍在继续', '但音乐节奏正在变化'],
+      positionProbes: ['但音乐节奏正在'],
+    },
+    {
+      id: '02-rounded-corner-mismatch',
+      screenshot: path.join(failureScreenshots, '02-rounded-corner-mismatch.png'),
+      themePack: 'theme02',
+      key: 'theme02_page016',
+      selectedSlide: 5,
+      originalPptx: path.join(originalDir, 'theme02-20-pages.pptx'),
+      coverage: 'glass list cards should keep rounded outlines without square border or crop artifacts',
+      probes: ['rounded-cards'],
+      textProbes: ['OpenAI', 'Anthropic', 'Google DeepMind', 'Mistral'],
+    },
+    {
+      id: '03-aspect-stretch',
+      screenshot: path.join(failureScreenshots, '03-aspect-stretch.png'),
+      themePack: 'theme02',
+      key: 'theme02_page016',
+      selectedSlide: 5,
+      originalPptx: path.join(originalDir, 'theme02-20-pages.pptx'),
+      coverage: 'radar SVG should preserve its rendered bbox/aspect and not stretch/shift',
+      probes: ['svg-aspect'],
+      textProbes: ['模型能力', '商业化', '算力储备', '数据壁垒', '安全对齐', '资本厚度'],
+    },
+    {
+      id: '04-material-mismatch',
+      screenshot: path.join(failureScreenshots, '04-material-mismatch.png'),
+      themePack: 'theme04',
+      key: 'theme04_page001',
+      selectedSlide: 1,
+      originalPptx: path.join(originalDir, 'theme04-20-pages.pptx'),
+      coverage: 'glass highlight pill should retain local material bbox and readable editable text',
+      probes: ['material-highlight'],
+      textProbes: ['资本，正在', '重新分配'],
+      positionProbes: ['重新分配'],
+    },
+    {
+      id: '05-incomplete-crop',
+      screenshot: path.join(failureScreenshots, '05-incomplete-crop.png'),
+      themePack: 'theme07',
+      key: 'theme07_page023',
+      selectedSlide: 7,
+      originalPptx: path.join(originalDir, 'theme07-20-pages.pptx'),
+      coverage: 'waterfall SVG/text should stay inside slide bounds with no left/bottom crop',
+      probes: ['crop-bounds'],
+      textProbes: ['融资额贡献瀑布', '全年合计', '基础设施', 'AI 芯片'],
+    },
+  ];
+  const rootCauseMatrix = [
+    {
+      cluster: 'text stacking',
+      samples: ['01-text-stacking'],
+      sharedMechanism: 'editable text and local image/material fallbacks can both carry the same visible glyphs, or large transformed text can be exported twice at the same position',
+    },
+    {
+      cluster: 'rounded border/material mismatch',
+      samples: ['02-rounded-corner-mismatch', '04-material-mismatch'],
+      sharedMechanism: 'rounded gradient/shadow boxes need mutually exclusive native lines and clipped local material fallbacks at the element bbox',
+    },
+    {
+      cluster: 'aspect stretch',
+      samples: ['03-aspect-stretch'],
+      sharedMechanism: 'SVG fallback images must use the browser-rendered visual bbox and preserve the DOM aspect ratio in the PPT image object',
+    },
+    {
+      cluster: 'incomplete crop',
+      samples: ['05-incomplete-crop'],
+      sharedMechanism: 'complex SVG/text fallbacks must not emit negative or off-slide object boxes after clipping and coordinate conversion',
+    },
+  ];
+  writeFileSync(path.join(outDir, 'root-cause-matrix.json'), JSON.stringify(rootCauseMatrix, null, 2) + '\n');
+
+  const browser = await chromium.launch({ headless: true, executablePath: CHROME_PATH });
+  let context;
+  let page;
+  const results = [];
+  const failures = [];
+  try {
+    context = await browser.newContext({ viewport: { width: 1920, height: 1080 }, ignoreHTTPSErrors: true });
+    page = await context.newPage();
+    page.setDefaultTimeout(180000);
+    await page.goto(`${cliUrl}${cliUrl.includes('?') ? '&' : '?'}jad64_acceptance=${Date.now()}`, { waitUntil: 'domcontentloaded' });
+    await page.waitForSelector('#deck > .slide.active, #deck > .slide[data-deck-active]');
+    await installValidationHelpers(page);
+    const mod = await import(pathToFileURL(path.join(ROOT, 'src/export-pptx/editable.mjs')));
+
+    for (const sample of samples) {
+      const sampleDir = path.join(outDir, sample.id);
+      mkdirSync(sampleDir, { recursive: true });
+      const nav = await navigateValidationSample(page, sample);
+      if (!nav.found) {
+        failures.push(`${sample.id} could not find ${sample.key} in ${sample.themePack}; available keys: ${nav.availableKeys.slice(0, 10).join(', ')}`);
+        results.push({ ...sample, found: false, availableKeys: nav.availableKeys });
+        continue;
+      }
+      const activeSlide = await page.$('#deck > .slide.active, #deck > .slide[data-deck-active]');
+      const htmlScreenshot = path.join(sampleDir, 'html-slide.png');
+      if (activeSlide) await activeSlide.screenshot({ path: htmlScreenshot });
+      const dom = await collectJad64AcceptanceDomProbe(page, sample);
+      writeFileSync(path.join(sampleDir, 'dom-probe.json'), JSON.stringify(dom, null, 2) + '\n');
+      const pptxFile = path.join(sampleDir, `${sample.id}.pptx`);
+      const reportFile = path.join(sampleDir, `${sample.id}-report.json`);
+      await mod.exportEditablePptxFromPage(page, {
+        outFile: pptxFile,
+        reportFile,
+        title: `JAD-64 acceptance ${sample.id}`,
+        slideIndexes: [nav.index],
+      });
+      const pptx = inspectPptx(pptxFile);
+      const visual = runQuickLookVisualComparison(pptxFile, htmlScreenshot, sampleDir);
+      const pairImage = createSamplePairImage(sample, visual, sampleDir);
+      if (sample.screenshot && existsSync(sample.screenshot) && pairImage && commandAvailable('magick')) {
+        spawnSync('magick', [sample.screenshot, '-resize', '480x270>', pairImage, '-resize', '960x270!', '-append', path.join(sampleDir, 'failure-vs-current-pair.png')], { encoding: 'utf8' });
+      }
+      const checks = validateJad64AcceptanceSample(sample, dom, pptx, visual);
+      failures.push(...checks.failures);
+      if (!visual?.available || !pairImage) failures.push(`${sample.id} did not produce Quick Look visual evidence (${visual?.reason || 'missing-pair'}).`);
+      results.push({
+        ...sample,
+        found: true,
+        index: nav.index,
+        htmlScreenshot,
+        pptxFile,
+        reportFile,
+        pairImage,
+        failureVsCurrentPair: path.join(sampleDir, 'failure-vs-current-pair.png'),
+        quickLook: visual,
+        dom,
+        pptx: summarizeInspection(pptx),
+        pptxSlide: summarizeSlideForAcceptance(pptx.slides[0]),
+        checks,
+      });
+    }
+  } finally {
+    await closePage(page);
+    await context?.close().catch(() => {});
+    await closeBrowser(browser);
+  }
+  const contactSheet = createSampleContactSheet(results, outDir);
+  const result = {
+    mode: 'jad64-acceptance-regressions',
+    url: cliUrl,
+    outDir,
+    selectionSummary,
+    originalDir,
+    contactSheet,
+    rootCauseMatrix: path.join(outDir, 'root-cause-matrix.json'),
+    passed: failures.length === 0,
+    samples: results,
+    failures,
+  };
+  writeFileSync(path.join(outDir, 'jad64-acceptance-regressions.json'), JSON.stringify(result, null, 2) + '\n');
+  if (failures.length) {
+    console.error(JSON.stringify(result, null, 2));
+    process.exit(1);
+  }
+  console.log(JSON.stringify(result, null, 2));
+  process.exit(0);
 }
 
 async function runJad64FollowupRegressionValidation() {
@@ -1810,6 +1994,314 @@ async function collectJad64FollowupDomProbe(page) {
       inlineHighlights,
     };
   });
+}
+
+async function collectJad64AcceptanceDomProbe(page, sample) {
+  return await page.evaluate(({ textProbes }) => {
+    const slide = document.querySelector('#deck > .slide.active, #deck > .slide[data-deck-active]');
+    if (!slide) return { key: '', text: '', slide: null, textAnchors: [], rounded: [], svgs: [], inlineHighlights: [] };
+    const slideRect = slide.getBoundingClientRect();
+    const localRect = rect => ({
+      x: rect.left - slideRect.left,
+      y: rect.top - slideRect.top,
+      w: rect.width,
+      h: rect.height,
+    });
+    const isVisible = (el, style = getComputedStyle(el)) => {
+      if (!el || style.display === 'none' || style.visibility === 'hidden' || Number(style.opacity || 1) <= 0.01) return false;
+      const rect = el.getBoundingClientRect();
+      return rect.width > 1 && rect.height > 1
+        && rect.right >= slideRect.left && rect.left <= slideRect.right
+        && rect.bottom >= slideRect.top && rect.top <= slideRect.bottom;
+    };
+    const colorVisible = value => {
+      const raw = String(value || '').trim();
+      return raw && raw !== 'transparent' && !/^rgba?\(\s*0\s*,\s*0\s*,\s*0\s*,\s*0\s*\)$/i.test(raw);
+    };
+    const normalize = value => String(value || '').replace(/[^\p{L}\p{N}%]+/gu, '').toLowerCase();
+    const textAnchors = (textProbes || []).map(probe => {
+      const target = normalize(probe);
+      const matches = [];
+      const walker = document.createTreeWalker(slide, NodeFilter.SHOW_TEXT);
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+        const text = node.textContent || '';
+        if (!normalize(text).includes(target)) continue;
+        const parent = node.parentElement;
+        if (!isVisible(parent)) continue;
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        const rects = [...range.getClientRects()].filter(rect => rect.width > 1 && rect.height > 1);
+        const bounds = range.getBoundingClientRect();
+        range.detach?.();
+        const rect = rects.length ? rects[0] : bounds;
+        if (rect.width <= 1 || rect.height <= 1) continue;
+        const style = getComputedStyle(parent);
+        matches.push({
+          text: text.trim().replace(/\s+/g, ' '),
+          rect: localRect(rect),
+          fontSize: parseFloat(style.fontSize || '0') || 0,
+          color: style.color,
+          backgroundColor: style.backgroundColor,
+          backgroundImage: style.backgroundImage,
+          transform: style.transform,
+        });
+      }
+      return { probe, count: matches.length, matches };
+    });
+    const rounded = [...slide.querySelectorAll('*')]
+      .filter(el => {
+        const style = getComputedStyle(el);
+        if (!isVisible(el, style)) return false;
+        const rect = el.getBoundingClientRect();
+        const radii = [
+          parseFloat(style.borderTopLeftRadius || '0') || 0,
+          parseFloat(style.borderTopRightRadius || '0') || 0,
+          parseFloat(style.borderBottomRightRadius || '0') || 0,
+          parseFloat(style.borderBottomLeftRadius || '0') || 0,
+        ];
+        return rect.width * rect.height >= 900 && Math.max(...radii) >= 8;
+      })
+      .sort((a, b) => (b.getBoundingClientRect().width * b.getBoundingClientRect().height) - (a.getBoundingClientRect().width * a.getBoundingClientRect().height))
+      .slice(0, 32)
+      .map(el => {
+        const style = getComputedStyle(el);
+        return {
+          tag: el.tagName.toLowerCase(),
+          className: String(el.className || ''),
+          rect: localRect(el.getBoundingClientRect()),
+          radius: Math.max(
+            parseFloat(style.borderTopLeftRadius || '0') || 0,
+            parseFloat(style.borderTopRightRadius || '0') || 0,
+            parseFloat(style.borderBottomRightRadius || '0') || 0,
+            parseFloat(style.borderBottomLeftRadius || '0') || 0,
+          ),
+          backgroundColor: style.backgroundColor,
+          backgroundImage: String(style.backgroundImage || '').slice(0, 180),
+          boxShadow: String(style.boxShadow || '').slice(0, 180),
+        };
+      });
+    const svgs = [...slide.querySelectorAll('svg')]
+      .filter(el => isVisible(el))
+      .map(el => {
+        const rect = el.getBoundingClientRect();
+        return {
+          tag: 'svg',
+          className: String(el.getAttribute('class') || ''),
+          rect: localRect(rect),
+          area: rect.width * rect.height,
+          aspect: rect.height ? rect.width / rect.height : 0,
+          viewBox: el.getAttribute('viewBox') || '',
+          preserveAspectRatio: el.getAttribute('preserveAspectRatio') || '',
+          textCount: el.querySelectorAll('text').length,
+        };
+      })
+      .sort((a, b) => b.area - a.area)
+      .slice(0, 12);
+    const inlineHighlights = [...slide.querySelectorAll('span,b,strong,em')]
+      .filter(el => {
+        const style = getComputedStyle(el);
+        const bg = style.backgroundImage || '';
+        return isVisible(el, style)
+          && ((bg && bg !== 'none') || colorVisible(style.backgroundColor) || style.boxShadow !== 'none')
+          && (el.textContent || '').trim().length >= 2;
+      })
+      .slice(0, 24)
+      .map(el => ({
+        tag: el.tagName.toLowerCase(),
+        className: String(el.className || ''),
+        text: (el.textContent || '').trim().replace(/\s+/g, ' '),
+        rect: localRect(el.getBoundingClientRect()),
+        backgroundImage: String(getComputedStyle(el).backgroundImage || '').slice(0, 180),
+        backgroundColor: getComputedStyle(el).backgroundColor,
+        boxShadow: String(getComputedStyle(el).boxShadow || '').slice(0, 180),
+        transform: getComputedStyle(el).transform,
+      }));
+    return {
+      key: slide.dataset.vmSlideId || slide.dataset.layoutKey || slide.id || '',
+      slide: { w: slideRect.width, h: slideRect.height },
+      text: (slide.innerText || '').trim().replace(/\s+/g, ' '),
+      textAnchors,
+      rounded,
+      svgs,
+      inlineHighlights,
+    };
+  }, sample);
+}
+
+function validateJad64AcceptanceSample(sample, dom, pptx, visual) {
+  const failures = [];
+  const slide = pptx.slides[0] || {};
+  const details = slide.shapeDetails || [];
+  const textBoxes = slide.textBoxes || [];
+  const pictures = slide.pictures || [];
+  const normalizedPptText = normalizeSearchText(pptx.allText || '');
+  const thinRectArtifacts = details.filter(shape => {
+    if (shape.geom !== 'rect') return false;
+    const minSide = Math.min(shape.w || 0, shape.h || 0);
+    const maxSide = Math.max(shape.w || 0, shape.h || 0);
+    return minSide > 0 && minSide <= 0.045 && maxSide >= 0.45;
+  });
+  const roundedGeomCount = details.filter(shape => ['roundRect', 'ellipse'].includes(shape.geom)).length;
+  const objectBoundsFailures = acceptanceObjectBounds(slide).filter(item =>
+    item.x < -0.03 || item.y < -0.03 || item.x + item.w > PPT_W + 0.03 || item.y + item.h > PPT_H + 0.03);
+
+  for (const probe of sample.textProbes || []) {
+    if (!normalizedPptText.includes(normalizeSearchText(probe))) {
+      failures.push(`${sample.id} is missing text probe "${probe}" in PPTX text.`);
+    }
+  }
+  const positionFailures = compareTextProbePositions(sample, dom, textBoxes);
+  failures.push(...positionFailures);
+  if (sample.probes.includes('text-stacking')) {
+    const duplicates = findOverlappingDuplicateTextBoxes(textBoxes, sample.textProbes || []);
+    if (duplicates.length) {
+      failures.push(`${sample.id} has overlapping duplicate text boxes: ${duplicates.map(item => item.probe).join(', ')}`);
+    }
+    const largeTextBoxes = textBoxes.filter(box => (box.h || 0) > 0.55 && (box.w || 0) > 1.5);
+    if (largeTextBoxes.length > 4) failures.push(`${sample.id} exported ${largeTextBoxes.length} large statement text boxes, indicating stacked title layers.`);
+  }
+  if (sample.probes.includes('rounded-cards')) {
+    const roundedDom = (dom.rounded || []).filter(item => item.rect.w > 300 && item.rect.h > 60);
+    if (roundedDom.length >= 3 && roundedGeomCount < Math.min(roundedDom.length, 5)) {
+      failures.push(`${sample.id} exported ${roundedGeomCount} rounded PPT geometries for ${roundedDom.length} rounded DOM card candidates.`);
+    }
+    if (thinRectArtifacts.length > 4) failures.push(`${sample.id} exported ${thinRectArtifacts.length} long thin rect artifacts around rounded cards.`);
+  }
+  if (sample.probes.includes('svg-aspect')) {
+    const domSvg = (dom.svgs || [])[0];
+    const matchingPicture = domSvg ? findPictureMatchingDomRect(domSvg.rect, dom.slide, pictures) : null;
+    if (!domSvg) failures.push(`${sample.id} did not find a visible SVG radar in the DOM.`);
+    if (!matchingPicture) failures.push(`${sample.id} did not export a local image object for the radar SVG.`);
+    if (domSvg && matchingPicture) {
+      const pptAspect = matchingPicture.h ? matchingPicture.w / matchingPicture.h : 0;
+      const delta = Math.abs(pptAspect - domSvg.aspect);
+      if (delta > 0.08) {
+        failures.push(`${sample.id} changed SVG aspect ratio from ${domSvg.aspect.toFixed(3)} to ${pptAspect.toFixed(3)}.`);
+      }
+    }
+  }
+  if (sample.probes.includes('material-highlight')) {
+    const highlights = dom.inlineHighlights || [];
+    if (!highlights.some(item => normalizeSearchText(item.text).includes(normalizeSearchText('重新分配')))) {
+      failures.push(`${sample.id} did not capture the glass highlight DOM anchor.`);
+    }
+    const highlightDuplicates = findOverlappingDuplicateTextBoxes(textBoxes, ['重新分配']);
+    if (highlightDuplicates.length) failures.push(`${sample.id} duplicated the highlight text box.`);
+    if (pictures.length < 1) failures.push(`${sample.id} did not export any local image/material fallback object for complex glow/gradient material.`);
+  }
+  if (sample.probes.includes('crop-bounds')) {
+    if (objectBoundsFailures.length) {
+      failures.push(`${sample.id} exported ${objectBoundsFailures.length} object(s) outside slide bounds.`);
+    }
+    if ((slide.text || []).length < 10) failures.push(`${sample.id} lost too much editable chart text (${(slide.text || []).length} text runs).`);
+  }
+  if (visual?.available) {
+    const rmseLimit = sample.probes.includes('material-highlight') ? 0.31 : 0.28;
+    const edgeLimit = sample.probes.includes('material-highlight') ? 0.34 : 0.31;
+    if (visual.normalizedRmse > rmseLimit) failures.push(`${sample.id} visual RMSE ${visual.normalizedRmse.toFixed(4)} exceeds ${rmseLimit.toFixed(4)}.`);
+    if (visual.edgeRmse > edgeLimit) failures.push(`${sample.id} edge RMSE ${visual.edgeRmse.toFixed(4)} exceeds ${edgeLimit.toFixed(4)}.`);
+  }
+  return {
+    passed: failures.length === 0,
+    textBoxCount: textBoxes.length,
+    roundedDomCount: (dom.rounded || []).length,
+    roundedGeomCount,
+    thinRectArtifactCount: thinRectArtifacts.length,
+    pictureCount: pictures.length,
+    positionFailures,
+    objectBoundsFailures,
+    failures,
+  };
+}
+
+function compareTextProbePositions(sample, dom, textBoxes) {
+  const failures = [];
+  const anchors = dom.textAnchors || [];
+  for (const probe of sample.positionProbes || []) {
+    const anchor = anchors.find(item => normalizeSearchText(item.probe) === normalizeSearchText(probe));
+    const domMatch = anchor?.matches?.[0];
+    if (!domMatch?.rect || !dom.slide) continue;
+    const pptMatches = textBoxes.filter(box => normalizeSearchText(box.text || '').includes(normalizeSearchText(probe)));
+    if (!pptMatches.length) continue;
+    const expected = {
+      x: domMatch.rect.x / dom.slide.w * PPT_W,
+      y: domMatch.rect.y / dom.slide.h * PPT_H,
+      w: domMatch.rect.w / dom.slide.w * PPT_W,
+      h: domMatch.rect.h / dom.slide.h * PPT_H,
+    };
+    const best = pptMatches
+      .map(box => ({ box, dx: Math.abs((box.x || 0) - expected.x), dy: Math.abs((box.y || 0) - expected.y) }))
+      .sort((a, b) => (a.dx + a.dy) - (b.dx + b.dy))[0];
+    if (!best) continue;
+    const tolerance = sample.probes.includes('material-highlight') ? 0.65 : 0.35;
+    if (best.dx > tolerance || best.dy > tolerance) {
+      failures.push(`${sample.id} text probe "${probe}" is misplaced in PPTX (dx ${best.dx.toFixed(2)}in, dy ${best.dy.toFixed(2)}in).`);
+    }
+  }
+  return failures;
+}
+
+function findPictureMatchingDomRect(rect, slide, pictures) {
+  if (!rect || !slide) return null;
+  const expected = {
+    x: rect.x / slide.w * PPT_W,
+    y: rect.y / slide.h * PPT_H,
+    w: rect.w / slide.w * PPT_W,
+    h: rect.h / slide.h * PPT_H,
+  };
+  return pictures
+    .filter(picture => !picture.nearFullSlide)
+    .map(picture => ({
+      picture,
+      score: Math.abs((picture.x || 0) - expected.x)
+        + Math.abs((picture.y || 0) - expected.y)
+        + Math.abs((picture.w || 0) - expected.w)
+        + Math.abs((picture.h || 0) - expected.h),
+    }))
+    .sort((a, b) => a.score - b.score)[0]?.picture || null;
+}
+
+function findOverlappingDuplicateTextBoxes(textBoxes, probes) {
+  const duplicates = [];
+  for (const probe of probes) {
+    const target = normalizeSearchText(probe);
+    if (!target) continue;
+    const matches = textBoxes.filter(box => normalizeSearchText(box.text || '').includes(target));
+    for (let i = 0; i < matches.length; i += 1) {
+      for (let j = i + 1; j < matches.length; j += 1) {
+        if (rectOverlapRatio(matches[i], matches[j]) > 0.18) {
+          duplicates.push({ probe, a: matches[i], b: matches[j] });
+        }
+      }
+    }
+  }
+  return duplicates;
+}
+
+function rectOverlapRatio(a, b) {
+  const left = Math.max(a.x || 0, b.x || 0);
+  const top = Math.max(a.y || 0, b.y || 0);
+  const right = Math.min((a.x || 0) + (a.w || 0), (b.x || 0) + (b.w || 0));
+  const bottom = Math.min((a.y || 0) + (a.h || 0), (b.y || 0) + (b.h || 0));
+  const area = Math.max(0, right - left) * Math.max(0, bottom - top);
+  const minArea = Math.max(0.0001, Math.min((a.w || 0) * (a.h || 0), (b.w || 0) * (b.h || 0)));
+  return area / minArea;
+}
+
+function acceptanceObjectBounds(slide = {}) {
+  return [
+    ...(slide.textBoxes || []).map(item => ({ kind: 'text', text: item.text, x: item.x, y: item.y, w: item.w, h: item.h })),
+    ...(slide.shapeDetails || []).map(item => ({ kind: `shape:${item.geom}`, x: item.x, y: item.y, w: item.w, h: item.h })),
+    ...(slide.pictures || []).map(item => ({ kind: 'picture', x: item.x, y: item.y, w: item.w, h: item.h })),
+  ].filter(item => Number.isFinite(item.x) && Number.isFinite(item.y) && Number.isFinite(item.w) && Number.isFinite(item.h));
+}
+
+function summarizeSlideForAcceptance(slide = {}) {
+  return {
+    textBoxes: (slide.textBoxes || []).slice(0, 80),
+    shapeDetails: (slide.shapeDetails || []).slice(0, 80),
+    pictures: (slide.pictures || []).slice(0, 40),
+  };
 }
 
 function validateJad64FollowupSample(sample, dom, pptx) {
@@ -3704,11 +4196,22 @@ function inspectSlideXml(xml, index, relsXml, mediaByEntry) {
   const shapeGeoms = shapeDetails.map(item => item.geom);
   const pictureCount = (xml.match(/<p:pic\b/g) || []).length;
   const pictures = [...xml.matchAll(/<p:pic\b[\s\S]*?<\/p:pic>/g)].map(match => {
-    const ext = match[0].match(/<a:ext[^>]*\bcx="(\d+)"[^>]*\bcy="(\d+)"/);
+    const xfrm = match[0].match(/<a:xfrm\b[^>]*>[\s\S]*?<a:off x="(-?\d+)" y="(-?\d+)"[\s\S]*?<a:ext cx="(\d+)" cy="(\d+)"/);
     const embed = match[0].match(/r:embed="([^"]+)"/);
-    const cx = Number(ext?.[1] || 0);
-    const cy = Number(ext?.[2] || 0);
-    return { cx, cy, rId: embed?.[1] || '', nearFullSlide: cx >= 0.9 * 16 * 914400 && cy >= 0.9 * 9 * 914400 };
+    const x = Number(xfrm?.[1] || 0);
+    const y = Number(xfrm?.[2] || 0);
+    const cx = Number(xfrm?.[3] || 0);
+    const cy = Number(xfrm?.[4] || 0);
+    return {
+      x: x / EMU_PER_IN,
+      y: y / EMU_PER_IN,
+      w: cx / EMU_PER_IN,
+      h: cy / EMU_PER_IN,
+      cx,
+      cy,
+      rId: embed?.[1] || '',
+      nearFullSlide: cx >= 0.9 * 16 * 914400 && cy >= 0.9 * 9 * 914400,
+    };
   });
   const relTargets = parseSlideRelationships(relsXml);
   const pictureMediaHashes = pictures

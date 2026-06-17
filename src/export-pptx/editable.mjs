@@ -478,6 +478,10 @@ async function installBrowserCollector(page) {
         ${isInlineTextChild.toString()}
         ${hasInlineVisualTreatment.toString()}
         ${captureTextNode.toString()}
+        ${splitWrappedTextNode.toString()}
+        ${groupLineRects.toString()}
+        ${lineIndexForRect.toString()}
+        ${rangeBoundsForOffsets.toString()}
         ${effectiveTextStyle.toString()}
         ${elementRenderRect.toString()}
         ${transparentCssPaint.toString()}
@@ -1013,7 +1017,8 @@ async function captureElement(el, slideRect, warnings, depth, slideIndex) {
     for (const child of childNodes) {
       if (child.nodeType === Node.TEXT_NODE) {
         const textNode = captureTextNode(child, el, slideRect, style, slideIndex);
-        if (textNode) node.children.push(textNode);
+        if (Array.isArray(textNode)) node.children.push(...textNode);
+        else if (textNode) node.children.push(textNode);
       } else if (child.nodeType === Node.ELEMENT_NODE) {
         const childNode = await captureElement(child, slideRect, warnings, depth + 1, slideIndex);
         if (childNode) node.children.push(childNode);
@@ -1134,9 +1139,27 @@ function captureTextNode(textNode, parent, slideRect, style, slideIndex) {
   range.selectNodeContents(textNode);
   const lineRects = [...range.getClientRects()].filter(rect => rect.width > 1 && rect.height > 1);
   const singleLine = lineRects.length <= 1 && !/[\r\n]/.test(value);
-  let clipped = clippedRect(range.getBoundingClientRect(), slideRect);
-  range.detach?.();
   const tag = parent.tagName.toLowerCase();
+  const wrappedFragments = splitWrappedTextNode(textNode, lineRects, slideRect, keepWhitespace);
+  if (wrappedFragments.length > 1) {
+    range.detach?.();
+    const parentStyle = effectiveTextStyle(parent, slideRect);
+    return wrappedFragments.map(fragment => ({
+      tag: '#text',
+      slideIndex,
+      rect: fragment.rect,
+      style: parentStyle,
+      text: fragment.text,
+      singleLine: true,
+      parentTag: tag,
+      requiredText: parent.hasAttribute('data-editable-pptx-required-text'),
+      href: parent.closest('a')?.href || undefined,
+      children: [],
+    }));
+  }
+  const bounds = range.getBoundingClientRect();
+  let clipped = clippedRect(lineRects.length === 1 ? lineRects[0] : bounds, slideRect);
+  range.detach?.();
   const textNodeCount = [...parent.childNodes]
     .filter(child => child.nodeType === Node.TEXT_NODE && normalizeText(child.textContent || ''))
     .length;
@@ -1160,6 +1183,104 @@ function captureTextNode(textNode, parent, slideRect, style, slideIndex) {
     href: parent.closest('a')?.href || undefined,
     children: [],
   };
+}
+
+function splitWrappedTextNode(textNode, lineRects, slideRect, keepWhitespace) {
+  if (lineRects.length <= 1) return [];
+  const raw = textNode.textContent || '';
+  if (!raw.trim() || raw.length > 600) return [];
+  const lines = groupLineRects(lineRects);
+  if (lines.length <= 1 || lines.length > 20) return [];
+  const chars = Array.from(raw);
+  const offsets = [];
+  let offset = 0;
+  for (const char of chars) {
+    const end = offset + char.length;
+    offsets.push({ char, start: offset, end });
+    offset = end;
+  }
+  const spans = lines.map(() => ({ start: Infinity, end: -Infinity }));
+  for (const item of offsets) {
+    const rect = rangeBoundsForOffsets(textNode, item.start, item.end);
+    if (!rect || rect.width <= 0.25 || rect.height <= 0.25) continue;
+    const lineIndex = lineIndexForRect(rect, lines);
+    if (lineIndex < 0) continue;
+    spans[lineIndex].start = Math.min(spans[lineIndex].start, item.start);
+    spans[lineIndex].end = Math.max(spans[lineIndex].end, item.end);
+  }
+  const fragments = [];
+  for (const span of spans) {
+    if (!Number.isFinite(span.start) || span.end <= span.start) continue;
+    const text = keepWhitespace ? raw.slice(span.start, span.end) : normalizeText(raw.slice(span.start, span.end));
+    if (!text.trim()) continue;
+    const rect = rangeBoundsForOffsets(textNode, span.start, span.end);
+    const clipped = rect ? clippedRect(rect, slideRect) : null;
+    if (!clipped || clipped.width < 1 || clipped.height < 1) continue;
+    fragments.push({ text, rect: rectObject(clipped) });
+  }
+  return fragments.length > 1 ? fragments : [];
+}
+
+function groupLineRects(rects) {
+  const lines = [];
+  for (const rect of [...rects].sort((a, b) => a.top - b.top || a.left - b.left)) {
+    const centerY = rect.top + rect.height / 2;
+    const line = lines.find(item => {
+      const overlap = Math.min(item.bottom, rect.bottom) - Math.max(item.top, rect.top);
+      return overlap > Math.min(item.height, rect.height) * 0.5
+        || Math.abs(centerY - item.centerY) <= Math.max(2, Math.min(item.height, rect.height) * 0.35);
+    });
+    if (!line) {
+      lines.push({
+        left: rect.left,
+        right: rect.right,
+        top: rect.top,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        centerY,
+      });
+      continue;
+    }
+    line.left = Math.min(line.left, rect.left);
+    line.right = Math.max(line.right, rect.right);
+    line.top = Math.min(line.top, rect.top);
+    line.bottom = Math.max(line.bottom, rect.bottom);
+    line.width = line.right - line.left;
+    line.height = line.bottom - line.top;
+    line.centerY = line.top + line.height / 2;
+  }
+  return lines.sort((a, b) => a.top - b.top || a.left - b.left);
+}
+
+function lineIndexForRect(rect, lines) {
+  let best = -1;
+  let bestScore = Infinity;
+  const centerY = rect.top + rect.height / 2;
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+    const overlap = Math.max(0, Math.min(line.bottom, rect.bottom) - Math.max(line.top, rect.top));
+    const score = Math.abs(centerY - line.centerY) - overlap;
+    if (score < bestScore) {
+      best = index;
+      bestScore = score;
+    }
+  }
+  return best;
+}
+
+function rangeBoundsForOffsets(textNode, start, end) {
+  if (end <= start) return null;
+  const range = document.createRange();
+  try {
+    range.setStart(textNode, start);
+    range.setEnd(textNode, end);
+    const rects = [...range.getClientRects()].filter(rect => rect.width > 0.25 && rect.height > 0.25);
+    if (!rects.length) return range.getBoundingClientRect();
+    return rects.length === 1 ? rects[0] : range.getBoundingClientRect();
+  } finally {
+    range.detach?.();
+  }
 }
 
 function effectiveTextStyle(parent, slideRect) {
@@ -1875,7 +1996,8 @@ function collectDomFallbackTextNodes(root, slideRect, slideIndex) {
         const parent = child.parentElement;
         if (!parent || !isVisibleElement(parent, slideRect)) continue;
         const textNode = captureTextNode(child, parent, slideRect, readStyle(parent), slideIndex);
-        if (textNode) nodes.push(textNode);
+        if (Array.isArray(textNode)) nodes.push(...textNode);
+        else if (textNode) nodes.push(textNode);
       } else if (child.nodeType === Node.ELEMENT_NODE && isVisibleElement(child, slideRect)) {
         walk(child);
       }
