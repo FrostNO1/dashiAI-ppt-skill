@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { spawn } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import https from 'node:https';
 import net from 'node:net';
 import path from 'node:path';
@@ -10,6 +10,7 @@ import { chromium } from 'playwright-core';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const PREVIEW_INDEX = path.join(ROOT, 'output/theme-preview/ppt/index.html');
+const TEMPLATE = path.join(ROOT, 'assets/template-swiss.html');
 const CHROME_PATH = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const cliUrl = getArg('--url');
 const EXPECTED_PANEL_COLLAPSE_ICON = 'assets/ui-icons/sidebar.svg';
@@ -64,6 +65,8 @@ try {
     activeStates: {},
     colorControls: null,
     themedPropControls: null,
+    panelTextControls: null,
+    templateTextControlRenderers: readTemplateTextControlRenderers(),
     theme03GlobalDark: null,
     railGutterBalance: null,
     railProgrammaticThumbs: null,
@@ -101,6 +104,7 @@ try {
   result.activeStates.afterDrag = await runActiveDragValidation(page);
   result.colorControls = await findAndReadColorControls(page);
   result.themedPropControls = await runThemedPropControlValidation(page);
+  result.panelTextControls = await runPanelTextControlValidation(page);
   result.theme03GlobalDark = await runTheme03GlobalDarkValidation(page);
   result.railGutterBalance = await readRailGutterBalance(page);
   result.railProgrammaticThumbs = await runRailProgrammaticThumbValidation(page);
@@ -667,6 +671,143 @@ async function runTheme03GlobalDarkValidation(page) {
     next,
     global,
   };
+}
+
+async function runPanelTextControlValidation(page) {
+  await ensureEditMode(page);
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await settle(page);
+  const themeKeys = await page.evaluate(() => [...document.querySelectorAll('#preview-theme-pack option:not(:disabled)')]
+    .map(option => option.value)
+    .filter(Boolean));
+  const targets = themeKeys.length ? themeKeys : [''];
+  const textMatches = [];
+  const scannedSamples = [];
+  const nonTextControls = {
+    range: 0,
+    toggle: 0,
+    choice: 0,
+    iconChoice: 0,
+    imagePicker: 0,
+    filePicker: 0,
+  };
+  let scannedCount = 0;
+
+  for (const theme of targets) {
+    if (theme) await page.selectOption('#preview-theme-pack', theme).catch(() => {});
+    await settle(page, 260);
+    const count = await page.evaluate(() => window.__getVisibleSlides?.().length || document.querySelectorAll('#deck > .slide:not([hidden])').length);
+    for (const index of panelTextControlScanIndices(count)) {
+      await page.evaluate(targetIndex => window.go?.(targetIndex, { animate: false, force: true }), index);
+      await settle(page, 45);
+      const state = await readPanelTextControlState(page, { theme, index });
+      scannedCount += 1;
+      if (scannedSamples.length < 12) scannedSamples.push({
+        theme: state.theme,
+        index: state.index,
+        slideId: state.slideId,
+        label: state.label,
+        propRows: state.propRows,
+        nonTextTotal: Object.values(state.nonTextControls).reduce((sum, value) => sum + value, 0),
+      });
+      for (const [key, value] of Object.entries(state.nonTextControls)) {
+        nonTextControls[key] += value;
+      }
+      if (state.textElements.length) {
+        textMatches.push({
+          theme: state.theme,
+          index: state.index,
+          slideId: state.slideId,
+          label: state.label,
+          propRows: state.propRows,
+          textElements: state.textElements,
+        });
+      }
+    }
+  }
+
+  return {
+    themes: targets,
+    scannedCount,
+    scannedSamples,
+    textMatchCount: textMatches.reduce((sum, item) => sum + item.textElements.length, 0),
+    textMatches: textMatches.slice(0, 12),
+    nonTextControls,
+    hasNonTextControl: Object.values(nonTextControls).some(value => value > 0),
+  };
+}
+
+function panelTextControlScanIndices(count) {
+  const max = Math.max(0, Number(count) || 0);
+  if (!max) return [];
+  return [...new Set([
+    0,
+    1,
+    2,
+    3,
+    Math.floor(max * 0.25),
+    Math.floor(max * 0.5),
+    Math.floor(max * 0.75),
+    max - 4,
+    max - 3,
+    max - 2,
+    max - 1,
+  ].filter(index => index >= 0 && index < max))];
+}
+
+function readTemplateTextControlRenderers() {
+  const source = readFileSync(TEMPLATE, 'utf8');
+  const markers = [
+    '.pp-text{',
+    '.pp-textarea{',
+    '.pp-json{',
+    "input.className = controlType === 'textarea' ? 'pp-textarea' : 'pp-text'",
+    "textarea.className = 'pp-json'",
+  ];
+  const matches = markers.filter(marker => source.includes(marker));
+  return {
+    checkedFile: path.relative(ROOT, TEMPLATE),
+    matches,
+    matchCount: matches.length,
+  };
+}
+
+async function readPanelTextControlState(page, location) {
+  return page.evaluate(({ theme, index }) => {
+    const panel = document.getElementById('preview-panel');
+    const props = document.getElementById('preview-props');
+    const slide = window.__getVisibleSlides?.()[window.__currentSlideIndex || 0] || document.querySelector('#deck > .slide[data-deck-active]');
+    const textElements = [...(props?.querySelectorAll('input[type="text"],textarea,[role="textbox"],.pp-text,.pp-textarea,.pp-json') || [])]
+      .map(element => {
+        const row = element.closest('.preview-prop-row');
+        return {
+          tag: element.tagName.toLowerCase(),
+          type: element.getAttribute('type') || '',
+          role: element.getAttribute('role') || '',
+          className: element.className || '',
+          label: (row?.querySelector(':scope > span')?.textContent || '').trim(),
+        };
+      });
+    const nonTextControls = {
+      range: props?.querySelectorAll('input[type="range"],.pp-slider').length || 0,
+      toggle: props?.querySelectorAll('input[type="checkbox"],.pp-switch').length || 0,
+      choice: props?.querySelectorAll('.preview-prop-choice').length || 0,
+      iconChoice: props?.querySelectorAll('.preview-prop-icon-choice').length || 0,
+      imagePicker: props?.querySelectorAll('.pp-image-preview,.pp-image-slot-btn').length || 0,
+      filePicker: props?.querySelectorAll('input[type="file"]').length || 0,
+    };
+    return {
+      theme: theme || slide?.dataset.themePack || '',
+      index,
+      slideId: slide?.dataset.vmSlideId || '',
+      label: slide?.dataset.label || '',
+      panelExists: Boolean(panel),
+      propsExists: Boolean(props),
+      propRows: props?.querySelectorAll('.preview-prop-row').length || 0,
+      textElements,
+      nonTextControls,
+    };
+  }, location);
 }
 
 async function readTheme03DarkSwitch(page) {
@@ -1402,6 +1543,17 @@ function validateResult(result) {
     if (!control.hasActive) failures.push(`${name} should expose the selected swatch: ${JSON.stringify(control)}`);
     if (!control.allHaveLabels) failures.push(`${name} swatches should keep accessible labels/tooltips: ${JSON.stringify(control)}`);
     if (control.hasVisibleTextButtons) failures.push(`${name} should use swatches, not visible text choice buttons: ${JSON.stringify(control)}`);
+  }
+
+  const panelText = result.panelTextControls || {};
+  if ((panelText.textMatchCount || 0) > 0) {
+    failures.push(`Right panel property controls should not render text-like inputs: ${JSON.stringify(panelText)}`);
+  }
+  if (!panelText.hasNonTextControl) {
+    failures.push(`Right panel property controls should keep non-text controls available: ${JSON.stringify(panelText)}`);
+  }
+  if ((result.templateTextControlRenderers?.matchCount || 0) > 0) {
+    failures.push(`Swiss template should not keep right-panel text editor renderers: ${JSON.stringify(result.templateTextControlRenderers)}`);
   }
 
   const dark = result.theme03GlobalDark || {};
