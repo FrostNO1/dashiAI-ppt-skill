@@ -514,7 +514,43 @@ function composeAlphaMattePng(blackBytes, whiteBytes) {
     out.data[i + 2] = clampByte(Math.round(bb * scale));
     out.data[i + 3] = alpha;
   }
+  bleedTransparentRgb(out);
   return PNG.sync.write(out);
+}
+
+function bleedTransparentRgb(image) {
+  const { width, height, data } = image;
+  const total = width * height;
+  const seen = new Uint8Array(total);
+  const queue = new Int32Array(total);
+  let head = 0;
+  let tail = 0;
+  for (let index = 0; index < total; index += 1) {
+    if (data[index * 4 + 3] <= 12) continue;
+    seen[index] = 1;
+    queue[tail++] = index;
+  }
+  while (head < tail) {
+    const index = queue[head++];
+    const x = index % width;
+    const y = Math.floor(index / width);
+    const base = index * 4;
+    const neighbors = [
+      x > 0 ? index - 1 : -1,
+      x < width - 1 ? index + 1 : -1,
+      y > 0 ? index - width : -1,
+      y < height - 1 ? index + width : -1,
+    ];
+    for (const neighbor of neighbors) {
+      if (neighbor < 0 || seen[neighbor]) continue;
+      const target = neighbor * 4;
+      data[target] = data[base];
+      data[target + 1] = data[base + 1];
+      data[target + 2] = data[base + 2];
+      seen[neighbor] = 1;
+      queue[tail++] = neighbor;
+    }
+  }
 }
 
 function clampByte(value) {
@@ -1032,7 +1068,7 @@ function renderNodeImage(slide, node, slideRect, warnings, totals) {
   for (const item of items) {
     try {
       slide.addImage({
-        data: item.data,
+        data: normalizeTransparentPngDataUrl(item.data),
         x: c.x,
         y: c.y,
         w: c.w,
@@ -1046,6 +1082,26 @@ function renderNodeImage(slide, node, slideRect, warnings, totals) {
     } catch {
       warnings.push({ slide: node.slideIndex, type: 'render-image-failed', tag: node.tag, kind: item.kind });
     }
+  }
+}
+
+function normalizeTransparentPngDataUrl(dataUrl) {
+  const raw = String(dataUrl || '');
+  const match = raw.match(/^data:image\/png;base64,(.+)$/i);
+  if (!match) return dataUrl;
+  try {
+    const image = PNG.sync.read(Buffer.from(match[1], 'base64'));
+    let hasTransparentPixels = false;
+    for (let i = 3; i < image.data.length; i += 4) {
+      if (image.data[i] !== 0) continue;
+      hasTransparentPixels = true;
+      break;
+    }
+    if (!hasTransparentPixels) return dataUrl;
+    bleedTransparentRgb(image);
+    return pngBufferToDataUrl(PNG.sync.write(image));
+  } catch {
+    return dataUrl;
   }
 }
 
