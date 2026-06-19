@@ -526,7 +526,6 @@ async function installBrowserCollector(page) {
         ${shouldUseNativeGradientShape.toString()}
         ${patternBackgroundImageData.toString()}
         ${parseRepeatingGradient.toString()}
-        ${backgroundCropForClippedRect.toString()}
         ${gradientBackgroundImageData.toString()}
         ${drawLinearGradient.toString()}
         ${drawRadialGradient.toString()}
@@ -744,7 +743,7 @@ function renderText(slide, node, slideRect, warnings, totals) {
     c.x += symbolWidth;
     c.w = Math.max(0.08, c.w - symbolWidth);
   }
-  const fontFace = fontFaceForText(style.fontFamily, value);
+  const fontFace = firstFont(style.fontFamily);
   const weight = String(style.fontWeight || '');
   const singleLine = node.singleLine && !/[\r\n]/.test(value);
   const verticalText = isVerticalWritingMode(style);
@@ -759,7 +758,7 @@ function renderText(slide, node, slideRect, warnings, totals) {
     fit: autoWidth ? 'resize' : 'shrink',
     wrap: autoWidth ? false : !isNoWrap(style.whiteSpace),
     fontFace,
-    fontSize: pptFontSize(fontSizePx, fontFace, style, value),
+    fontSize: pptFontSize(fontSizePx, fontFace, style),
     color: color.color,
     bold: weight === 'bold' || Number.parseInt(weight, 10) >= 600,
     italic: style.fontStyle === 'italic',
@@ -771,17 +770,13 @@ function renderText(slide, node, slideRect, warnings, totals) {
     transparency: combinedTransparency(color.alpha, style.opacity),
     charSpacing: letterSpacing(style.letterSpacing),
   };
-  const lineSpacing = pptLineSpacing(style.lineHeight, fontSizePx, fontFace, style, value);
-  if (lineSpacing) {
-    options.lineSpacing = lineSpacing;
-  }
   if (verticalText) {
     options.vert = 'eaVert';
   }
-  if (/Songti SC/i.test(fontStack(style, fontFace)) && fontSizePx >= 80 && node.parentTag === 'span') {
+  if (/Songti SC/i.test(fontFace) && fontSizePx >= 80 && node.parentTag === 'span') {
     options.y = Math.max(0, options.y - c.h * 0.28);
   }
-  if (style.materialBackground === 'true' && fontSizePx >= 72 && /PingFang SC|Songti SC/i.test(fontStack(style, fontFace))) {
+  if (style.materialBackground === 'true' && fontSizePx >= 72 && /PingFang SC|Songti SC/i.test(fontFace)) {
     options.y += c.h * 0.12;
   }
   if (!autoWidth) {
@@ -886,7 +881,7 @@ function shouldUseAutoWidthText(value, fontSizePx, box, node) {
 }
 
 function singleLineWidth(value, fontSizePx, box, fontFace, style = {}) {
-  const fontPt = pptFontSize(fontSizePx, fontFace, style, value);
+  const fontPt = pptFontSize(fontSizePx, fontFace, style);
   const units = textUnits(value);
   const spacing = Math.max(0, letterSpacing(style.letterSpacing)) * Math.max(0, Array.from(String(value || '')).length - 1) / 72 * 1.75;
   const estimated = units * fontPt / 72 + spacing;
@@ -978,8 +973,7 @@ async function captureElement(el, slideRect, warnings, depth, slideIndex) {
   if (!(el instanceof Element) || isMediaChrome(el)) return null;
   const style = styleWithCumulativeRotation(readStyle(el), el);
   if (!isVisibleElement(el, slideRect, style)) return null;
-  const rawRect = el.getBoundingClientRect();
-  const clipped = clippedRect(rawRect, slideRect);
+  const clipped = clippedRect(el.getBoundingClientRect(), slideRect);
   if (!clipped) return null;
   const tag = el.tagName.toLowerCase();
   const node = {
@@ -1083,13 +1077,7 @@ async function captureElement(el, slideRect, warnings, depth, slideIndex) {
     node.patternImageData = patternBackgroundImageData(style.backgroundImage, clipped.width, clipped.height, maxCssRadius(style, clipped.width, clipped.height));
     if (node.patternImageData) warnings.push({ slide: slideIndex, type: 'node-image-fallback', node: 'css-pattern-background', count: 1 });
   } else if (!isTextClippedBackground(style) && String(style.backgroundImage || '').includes('gradient') && !shouldSkipDecorativeGradientFallback(el, style, clipped, slideRect) && !shouldUseNativeGradientShape(style, clipped.width, clipped.height) && !shouldUseNativeGradientShape(style, (el.offsetWidth || clipped.width) * (slideRect.w || 1920) / 1920, (el.offsetHeight || clipped.height) * (slideRect.h || 1080) / 1080) && !String(style.clipPath || '').includes('polygon(')) {
-    node.backgroundImageData = gradientBackgroundImageData(
-      style.backgroundImage,
-      rawRect.width || clipped.width,
-      rawRect.height || clipped.height,
-      maxCssRadius(style, rawRect.width || clipped.width, rawRect.height || clipped.height),
-      backgroundCropForClippedRect(rawRect, clipped),
-    );
+    node.backgroundImageData = gradientBackgroundImageData(style.backgroundImage, clipped.width, clipped.height, maxCssRadius(style, clipped.width, clipped.height));
     if (node.backgroundImageData) warnings.push({ slide: slideIndex, type: 'node-image-fallback', node: 'css-gradient-background', count: 1 });
   }
 
@@ -1523,12 +1511,12 @@ function shouldUseLocalMaterialFallback(el, style, clipped, slideRect) {
   const background = String(style.backgroundImage || '');
   if (!background.includes('gradient') && !background.includes('url(')) return false;
   if (backgroundUrl(background)) return false;
-  if (style.mixBlendMode && style.mixBlendMode !== 'normal') return false;
   if (shouldUseNativeGradientShape(style, clipped.width, clipped.height)) return false;
   const areaRatio = clipped.width * clipped.height / Math.max(1, slideRect.w * slideRect.h);
   if (areaRatio <= 0.0002 || areaRatio > 0.12) return false;
   const hasDepth = (style.boxShadow && style.boxShadow !== 'none')
     || (style.filter && style.filter !== 'none')
+    || (style.mixBlendMode && style.mixBlendMode !== 'normal')
     || maxCssRadius(style, clipped.width, clipped.height) >= 10
     || splitCssLayers(background).filter(layer => layer.includes('gradient')).length > 1;
   return Boolean(hasDepth);
@@ -1837,16 +1825,7 @@ function parseRepeatingGradient(backgroundImage) {
   };
 }
 
-function backgroundCropForClippedRect(rawRect, clipped) {
-  const width = rawRect.width || clipped.width;
-  const height = rawRect.height || clipped.height;
-  const x = Math.max(0, clipped.left - rawRect.left);
-  const y = Math.max(0, clipped.top - rawRect.top);
-  if (Math.abs(x) < 0.5 && Math.abs(y) < 0.5 && Math.abs(clipped.width - width) < 0.5 && Math.abs(clipped.height - height) < 0.5) return null;
-  return { x, y, width: clipped.width, height: clipped.height };
-}
-
-function gradientBackgroundImageData(backgroundImage, width, height, radius = 0, crop = null) {
+function gradientBackgroundImageData(backgroundImage, width, height, radius = 0) {
   const layers = splitCssLayers(backgroundImage).filter(layer => /(?:linear|radial)-gradient/i.test(layer));
   if (!layers.length) return null;
   const scale = Math.max(1, Math.min(2, Math.ceil(900 / Math.max(width, height))));
@@ -1865,25 +1844,6 @@ function gradientBackgroundImageData(backgroundImage, width, height, radius = 0,
     else drawLinearGradient(ctx, layer, w, h);
   }
   ctx.restore();
-  if (crop) {
-    const cropCanvas = document.createElement('canvas');
-    cropCanvas.width = Math.max(1, Math.round(crop.width * scale));
-    cropCanvas.height = Math.max(1, Math.round(crop.height * scale));
-    const cropCtx = cropCanvas.getContext('2d');
-    if (!cropCtx) return null;
-    cropCtx.drawImage(
-      canvas,
-      Math.round(crop.x * scale),
-      Math.round(crop.y * scale),
-      cropCanvas.width,
-      cropCanvas.height,
-      0,
-      0,
-      cropCanvas.width,
-      cropCanvas.height,
-    );
-    return cropCanvas.toDataURL('image/png');
-  }
   return canvas.toDataURL('image/png');
 }
 
@@ -2709,54 +2669,24 @@ function letterSpacing(value) {
   return Number.isFinite(n) ? Math.max(-2, Math.min(12, n * PX_TO_PT)) : 0;
 }
 
-function fontFamilies(value) {
-  return String(value || 'Arial')
+function firstFont(value) {
+  const families = String(value || 'Arial')
     .split(',')
-    .map(item => item.trim().replace(/^["']|["']$/g, ''))
+    .map(item => item.replace(/^["']|["']$/g, '').trim())
     .filter(Boolean);
-}
-
-function fontFaceForText(fontFamily, text = '') {
-  const families = fontFamilies(fontFamily);
-  if (hasCjkText(text)) {
-    const cjk = families.find(isCjkFontFamily);
-    if (cjk) return cjk;
+  for (const family of families) {
+    if (/space mono|monospace/i.test(family)) return 'Menlo';
+    if (/noto sans sc|pingfang|system-ui|-apple-system|blinkmacsystemfont|sans-serif/i.test(family)) return 'PingFang SC';
+    if (/noto serif sc|songti|serif/i.test(family)) return 'Songti SC';
   }
   return families[0] || 'Arial';
 }
 
-function isCjkFontFamily(value) {
-  return /Noto Sans SC|PingFang SC|Songti SC|Microsoft YaHei|Source Han|思源|黑体|宋体/i.test(String(value || ''));
-}
-
-function fontStack(style = {}, fontFace = '') {
-  return [fontFace, style.fontFamily].filter(Boolean).join(',');
-}
-
-function pptFontSize(px, fontFace, style = {}, text = '') {
-  const scale = pptFontScale(fontFace, style, text);
+function pptFontSize(px, fontFace, style = {}) {
+  const scale = /PingFang SC|Songti SC/i.test(fontFace) ? 0.60
+    : /Menlo/i.test(fontFace) ? 0.66
+      : PX_TO_PT;
   return px * scale;
-}
-
-function pptFontScale(fontFace, style = {}, text = '') {
-  const stack = fontStack(style, fontFace);
-  if (/Space Mono|IBM Plex Mono|SFMono|ui-monospace|monospace|Menlo/i.test(stack)) return 0.66;
-  if (hasCjkText(text) || /Noto Sans SC|PingFang SC|Songti SC|Microsoft YaHei|Source Han|思源|黑体|宋体|sans-serif|system-ui|-apple-system/i.test(stack)) return 0.60;
-  return PX_TO_PT;
-}
-
-function hasCjkText(value) {
-  return /[\u2e80-\u9fff]/.test(String(value || ''));
-}
-
-function pptLineSpacing(value, fontSizePx, fontFace, style = {}, text = '') {
-  const raw = String(value || '').trim();
-  if (!raw || raw === 'normal') return null;
-  const n = parseFloat(raw);
-  if (!Number.isFinite(n) || n <= 0) return null;
-  const lineHeightPx = raw.endsWith('px') ? n : n <= 4 ? n * fontSizePx : n;
-  if (!Number.isFinite(lineHeightPx) || lineHeightPx <= 0) return null;
-  return pptFontSize(lineHeightPx, fontFace, style, text);
 }
 
 function normalizeAlign(value) {
