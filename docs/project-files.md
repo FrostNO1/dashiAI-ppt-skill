@@ -41,6 +41,7 @@
 |   |-- check_latest_version.mjs - 本地命令脚本。
 |   |-- control-naming-allowlist.json - 本地命令脚本。
 |   |-- export-editable-pptx.mjs - 本地命令脚本。
+|   |-- goal-scaffold.mjs - 本地命令脚本。
 |   |-- import-claude-themes.jsx - 本地命令脚本。
 |   |-- inspect-layout.mjs - 本地命令脚本。
 |   |-- layout-query.mjs - 本地命令脚本。
@@ -1097,7 +1098,8 @@
 |   |   |   |   |   |-- Slide83CoverPoster.jsx - Claude Design 导入主题组件、运行时、素材或登记元数据。
 |   |   |   |   |   |-- Slide84CoverHero.jsx - Claude Design 导入主题组件、运行时、素材或登记元数据。
 |   |   |   |   |   |-- Slide85CoverStatement.jsx - Claude Design 导入主题组件、运行时、素材或登记元数据。
-|   |   |   |   |   `-- Slide86CoverSplit.jsx - Claude Design 导入主题组件、运行时、素材或登记元数据。
+|   |   |   |   |   |-- Slide86CoverSplit.jsx - Claude Design 导入主题组件、运行时、素材或登记元数据。
+|   |   |   |   |   `-- Slide87Icebreaker.jsx - Claude Design 导入主题组件、运行时、素材或登记元数据。
 |   |   |   |   |-- metadata.js - Claude Design 导入主题组件、运行时、素材或登记元数据。
 |   |   |   |   `-- runtime.jsx - Claude Design 导入主题组件、运行时、素材或登记元数据。
 |   |   |   |-- theme12/
@@ -1209,13 +1211,15 @@
 |   |-- view-model/
 |   |   |-- context.jsx - Deck ViewModel 构建层和 React Context。
 |   |   `-- index.jsx - Deck ViewModel 构建层和 React Context。
+|   |-- accepted-themes.mjs - 项目源码或配置文件。
 |   |-- control-naming.mjs - 项目源码或配置文件。
 |   |-- deckComposer.jsx - 目标 deck 编排器,把用户目标 JSON 计划映射为当前已验收主题页面。
 |   |-- options.jsx - 布局选项注册表,只登记当前已验收主题页面。
 |   |-- prop-contract-core.mjs - 项目源码或配置文件。
 |   |-- propContracts.jsx - 项目源码或配置文件。
 |   |-- react-shim.js - 项目源码或配置文件。
-|   `-- renderDeck.jsx - 核心渲染器,构建 Deck ViewModel 并把 React slides 注入 HTML 模板。
+|   |-- renderDeck.jsx - 核心渲染器,构建 Deck ViewModel 并把 React slides 注入 HTML 模板。
+|   `-- runtime-assets.mjs - 项目源码或配置文件。
 |-- .gitignore - 项目源码或配置文件。
 |-- AGENTS.md - 项目源码或配置文件。
 |-- layout-manifest.json - 项目源码或配置文件。

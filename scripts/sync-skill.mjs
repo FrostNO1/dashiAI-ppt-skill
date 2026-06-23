@@ -1,6 +1,12 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { PNG } from 'pngjs';
+import {
+  filterAcceptedThemePacks,
+  filterAcceptedThemePages,
+} from '../src/accepted-themes.mjs';
+import { RUNTIME_ASSET_PATHS } from '../src/runtime-assets.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const MACHINE_ID = 'dashiai-ppt';
@@ -17,7 +23,7 @@ const source = renderThemeChoiceHints(renderThemeList(fs.readFileSync(sourcePath
 const preservedSkillAssets = preserveSkillAssets();
 
 writeIfChanged(sourcePath, source);
-fs.rmSync(SKILL_ROOT, { recursive: true, force: true });
+fs.mkdirSync(SKILL_ROOT, { recursive: true });
 syncProjectFiles();
 syncReferences();
 syncRunnerScript();
@@ -25,6 +31,7 @@ syncVersionCheckScript();
 syncDistributionFiles();
 syncSkillAssets(preservedSkillAssets);
 writeIfChanged(rootSkillPath, renderInstalledSkill(source));
+cleanupSyncManifestArtifact();
 cleanupLegacySkillRoot();
 
 console.log(`Synced SKILL.md to ${SKILL_ROOT}`);
@@ -35,14 +42,16 @@ function syncProjectFiles() {
   const runtimePackage = renderRuntimePackage();
   writeIfChanged(path.join(projectRoot, 'package.json'), JSON.stringify(runtimePackage, null, 2) + '\n');
   writeIfChanged(path.join(projectRoot, 'package-lock.json'), JSON.stringify(renderRuntimePackageLock(runtimePackage), null, 2) + '\n');
-  copyPath(path.join(ROOT, 'layout-manifest.json'), path.join(projectRoot, 'layout-manifest.json'));
-  copyPath(path.join(ROOT, 'assets/template-swiss.html'), path.join(projectRoot, 'assets/template-swiss.html'));
+  syncLayoutManifest(projectRoot);
+  syncRuntimeAssets(projectRoot);
   copyPath(path.join(ROOT, 'src'), path.join(projectRoot, 'src'));
+  syncProjectThemeMetadata(projectRoot);
   copyPath(path.join(ROOT, 'scripts/skill-workflow-utils.mjs'), path.join(projectRoot, 'scripts/skill-workflow-utils.mjs'));
   copyPath(path.join(ROOT, 'scripts/layout-query.mjs'), path.join(projectRoot, 'scripts/layout-query.mjs'));
   copyPath(path.join(ROOT, 'scripts/inspect-layout.mjs'), path.join(projectRoot, 'scripts/inspect-layout.mjs'));
   copyPath(path.join(ROOT, 'scripts/stage-media.mjs'), path.join(projectRoot, 'scripts/stage-media.mjs'));
   copyPath(path.join(ROOT, 'scripts/write-safe-props.mjs'), path.join(projectRoot, 'scripts/write-safe-props.mjs'));
+  copyPath(path.join(ROOT, 'scripts/goal-scaffold.mjs'), path.join(projectRoot, 'scripts/goal-scaffold.mjs'));
   copyPath(path.join(ROOT, 'scripts/validate-goal-spec.mjs'), path.join(projectRoot, 'scripts/validate-goal-spec.mjs'));
   copyPath(path.join(ROOT, 'scripts/validate-skill-workflow-tools.mjs'), path.join(projectRoot, 'scripts/validate-skill-workflow-tools.mjs'));
   copyPath(path.join(ROOT, 'scripts/render-goal-deck.jsx'), path.join(projectRoot, 'scripts/render-goal-deck.jsx'));
@@ -50,6 +59,39 @@ function syncProjectFiles() {
   copyPath(path.join(ROOT, 'scripts/serve-preview-https.mjs'), path.join(projectRoot, 'scripts/serve-preview-https.mjs'));
   copyPath(path.join(ROOT, 'scripts/validate-swiss-deck.mjs'), path.join(projectRoot, 'scripts/validate-swiss-deck.mjs'));
   copyPath(path.join(ROOT, 'scripts/validate-goal-copy.mjs'), path.join(projectRoot, 'scripts/validate-goal-copy.mjs'));
+}
+
+function syncRuntimeAssets(projectRoot) {
+  for (const assetPath of RUNTIME_ASSET_PATHS) {
+    copyPath(path.join(ROOT, assetPath), path.join(projectRoot, assetPath));
+  }
+}
+
+function syncLayoutManifest(projectRoot) {
+  const sourceManifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'layout-manifest.json'), 'utf8'));
+  const acceptedKeys = new Set(themeMetadata.packs.map(theme => theme.key));
+  const layouts = Object.fromEntries(
+    Object.entries(sourceManifest.layouts || {}).filter(([layoutKey, record]) => {
+      const themeKey = record?.themePack || record?.themeKey || layoutKey.split('_')[0];
+      return acceptedKeys.has(themeKey);
+    }),
+  );
+  writeIfChanged(path.join(projectRoot, 'layout-manifest.json'), JSON.stringify({
+    ...sourceManifest,
+    layouts,
+  }, null, 2) + '\n');
+}
+
+function syncProjectThemeMetadata(projectRoot) {
+  writeIfChanged(
+    path.join(projectRoot, 'src/components/themes/generated-metadata.js'),
+    [
+      `export const GENERATED_THEME_PACKS = ${JSON.stringify(themeMetadata.packs, null, 2)};`,
+      '',
+      `export const GENERATED_THEME_PAGES = ${JSON.stringify(themeMetadata.pages, null, 2)};`,
+      '',
+    ].join('\n'),
+  );
 }
 
 function renderRuntimePackage() {
@@ -64,6 +106,7 @@ function renderRuntimePackage() {
       'inspect:layout': 'node scripts/inspect-layout.mjs',
       'media:stage': 'node scripts/stage-media.mjs',
       'props:safe': 'node scripts/write-safe-props.mjs',
+      'goal:scaffold': 'node scripts/goal-scaffold.mjs',
       'validate:goal-spec': 'node scripts/validate-goal-spec.mjs',
       'validate:skill-workflow-tools': 'node scripts/validate-skill-workflow-tools.mjs',
       'render:goal': 'tsx scripts/render-goal-deck.jsx',
@@ -76,6 +119,7 @@ function renderRuntimePackage() {
     devDependencies: {
       tsx: sourcePackage.devDependencies?.tsx || '^4.20.0',
       esbuild: '^0.28.0',
+      pngjs: sourcePackage.devDependencies?.pngjs || '^7.0.0',
       'playwright-core': sourcePackage.devDependencies?.['playwright-core'] || '^1.60.0',
     },
   };
@@ -115,8 +159,8 @@ function syncReferences() {
     goal: '面向管理层说明 AI 产品组合的优先级、投入节奏和落地路径',
     audience: '管理层',
     owner: '产品策略团队',
-    themePack: 'theme10',
-    layouts: ['theme10_page001', 'theme10_page006', 'theme10_page021', 'theme10_page044', 'theme10_page095'],
+    themePack: 'theme02',
+    layouts: ['theme02_page001', 'theme02_page006', 'theme02_page021', 'theme02_page044', 'theme02_page074'],
   }), null, 2) + '\n');
   writeIfChanged(path.join(refsRoot, 'options.md'), renderOptionsReference(themeMetadata));
   writeIfChanged(path.join(refsRoot, 'layout-pool.md'), renderLayoutPoolReference(themeMetadata));
@@ -141,6 +185,7 @@ function syncReferences() {
 | \`process\` | 产业链、流向、用途、阶段、实施路径 |
 | \`risks\` | 风险研判、预测、关键问答 |
 | \`observation\` | 投资展望、核心结论、观点引述、专题洞察 |
+| \`ambient\` | 动态背景、氛围页、视觉章节页 |
 | \`actions\` | 应用落地、方案、路线、下一步 |
 | \`result\` | 核心结论、数字海报、核心要点 |
 | \`team\` | 团队、关于我们 |
@@ -208,15 +253,45 @@ function renderExampleGoal({ title, goal, audience, owner, themePack, layouts })
     themePack,
     slides: layouts.map((layout, index) => ({
       layout,
-      props: {
-        kicker: index === 0 ? '示例封面' : `示例页面 ${index + 1}`,
-        title: index === 0 ? title : `${title} · ${index + 1}`,
-        subtitle: goal,
-        lead: goal,
-        note: `${audience} / ${owner}`,
-      },
+      props: renderExampleProps(layout, { title, goal, audience, owner, index }),
     })),
   };
+}
+
+function renderExampleProps(layout, { title, goal, audience, owner, index }) {
+  const page = themeMetadata.pages.find(item => item.key === layout);
+  const defaults = page?.defaultProps || {};
+  const pageTitle = index === 0 ? title : `${title} · ${index + 1}`;
+  const candidates = {
+    kicker: index === 0 ? '示例封面' : `示例页面 ${index + 1}`,
+    eyebrow: index === 0 ? '示例封面' : `示例页面 ${index + 1}`,
+    title: pageTitle,
+    headline: pageTitle,
+    headlineLine1: title,
+    headlineHl: pageTitle,
+    headlineTail: '',
+    subtitle: goal,
+    subheadline: goal,
+    summary: goal,
+    lead: goal,
+    note: `${audience} / ${owner}`,
+    cn: goal,
+    en: 'Example Deck',
+    yearTag: '2026',
+    goldenLine: goal,
+    handNote: `${audience} / ${owner}`,
+    label: '示例页面',
+    source: 'DashAI PPT example',
+    sealTop: 'DASHAI',
+    sealBottom: 'PPT',
+  };
+  return Object.fromEntries(
+    Object.entries(candidates).filter(([key, value]) => (
+      Object.prototype.hasOwnProperty.call(defaults, key)
+      && typeof defaults[key] === 'string'
+      && value !== ''
+    )),
+  );
 }
 
 function renderInstalledSkill(content) {
@@ -240,14 +315,14 @@ function renderInstalledSkill(content) {
       '8. 运行 `npm run validate:swiss -- output/<deck-name>/ppt/index.html`。',
       '9. 运行 `npm run validate:goal-copy -- output/<deck-name>/goal.json output/<deck-name>/ppt/index.html`。',
       '10. 从项目目录启动本地 HTTP/HTTPS 预览服务: `npm run preview:start -- output/<deck-name>/ppt <port>`。',
-      '11. 根据最终产物格式交付:HTML 交付时给本机 HTTP 导出地址、HTTPS/局域网备用预览地址和 HTML 文件路径,并说明本机 HTTP 链接可用于导出 PPT/PPTX,`http://jadon.local:<port>/` 这类 HTTP LAN/jadon.local 地址可能导致下载失败且不作为导出主入口,直接打开本地 HTML 或 `file://` 不能导出可编辑 PPTX;PPT/PPTX 交付时先调用本机 HTTP 导出服务输出可编辑 PPTX,最终只给 PPT/PPTX 文件路径或下载结果,不呈现 HTML 预览地址或 HTML 文件路径。',
+      '11. 按交付格式回复:HTML 给本机 HTTP、HTTPS 备用、HTML 文件路径;PPTX 只给文件路径或下载结果。',
     ].join('\n'),
     [
       '7. 运行渲染脚本输出 `output/<deck-name>/ppt/index.html`;脚本会使用 Skill 内置生成器,不要切回外部项目目录。',
       '8. 确认脚本完成 `validate:swiss` 和 `validate:goal-copy`。',
       '9. 运行 `node <skill-root>/scripts/check_latest_version.mjs` 做静默版本检查。',
       '10. 渲染脚本会启动本地 HTTP/HTTPS 预览服务并输出本机 HTTP 导出地址 `http://127.0.0.1:<port>/`、HTTPS 预览地址 `https://jadon.local:<port>/` 和 HTTP LAN 备用地址;需要指定端口时设置 `DASHI_PPT_PREVIEW_PORT` 后再运行脚本。',
-      '11. 根据最终产物格式交付:HTML 交付时给本机 HTTP 导出地址、HTTPS/局域网备用预览地址和 HTML 文件路径,并说明本机 HTTP 链接可用于导出 PPT/PPTX,不要把 `http://jadon.local:<port>/` 作为最终 HTTP 导出地址,HTTP LAN/jadon.local 可能导致下载失败,直接打开本地 HTML 或 `file://` 不能导出可编辑 PPTX;PPT/PPTX 交付时调用本机 HTTP 导出服务 `/api/export-editable-pptx` 输出可编辑 PPTX,最终只给 PPT/PPTX 文件路径或下载结果,不呈现 HTML 预览地址或 HTML 文件路径。只有版本检查脚本有输出时才附加更新提醒。',
+      '11. 按交付格式回复:HTML 给本机 HTTP、HTTPS 备用、HTML 文件路径;PPTX 调用 `/api/export-editable-pptx` 后只给文件路径或下载结果。只有版本检查脚本有输出时才附加更新提醒。',
     ].join('\n')
   );
 
@@ -271,10 +346,10 @@ function syncDistributionFiles() {
 function renderAgentMetadata() {
   return `interface:
   display_name: "DashAI PPT"
-  short_description: "Generate editable HTML/PPTX decks"
+  short_description: "Generate editable HTML presentation decks"
   icon_small: "./assets/skill/dashiai-ppt-small.png"
   icon_large: "./assets/skill/dashiai-ppt.png"
-  default_prompt: "Use $dashiai-ppt to turn my presentation goal into an editable HTML or PPTX deck."
+  default_prompt: "Use $dashiai-ppt to turn my presentation goal into an editable HTML deck."
 `;
 }
 
@@ -292,11 +367,56 @@ function syncSkillAssets(preservedAssets) {
   const sourceAsset = path.join(ROOT, STYLE_GRID_ASSET);
   const targetAsset = path.join(SKILL_ROOT, STYLE_GRID_ASSET);
   if (fs.existsSync(sourceAsset)) {
-    copyPath(sourceAsset, targetAsset);
+    writeBufferIfChanged(targetAsset, renderAcceptedThemeStyleGrid(fs.readFileSync(sourceAsset)));
     return;
   }
   const preserved = preservedAssets.get(STYLE_GRID_ASSET);
-  if (preserved) writeBufferIfChanged(targetAsset, preserved);
+  if (preserved) writeBufferIfChanged(targetAsset, renderAcceptedThemeStyleGrid(preserved));
+}
+
+function renderAcceptedThemeStyleGrid(sourceBuffer) {
+  const source = PNG.sync.read(sourceBuffer);
+  const rects = themeMetadata.packs.map(theme => styleGridRect(source, theme.key));
+  const width = rects.reduce((sum, rect) => sum + rect.width, 0);
+  const height = Math.max(...rects.map(rect => rect.height));
+  const output = new PNG({ width, height });
+  for (let index = 0; index < output.data.length; index += 4) {
+    output.data[index + 3] = 255;
+  }
+  let destX = 0;
+  for (const rect of rects) {
+    copyPngRect(source, output, rect, destX, 0);
+    destX += rect.width;
+  }
+  return PNG.sync.write(output);
+}
+
+function styleGridRect(source, themeKey) {
+  const number = Number(String(themeKey).replace(/^\D+/, ''));
+  const index = Math.max(0, number - 1);
+  const col = index % 3;
+  const row = Math.floor(index / 3);
+  const x = Math.round(source.width * col / 3);
+  const y = Math.round(source.height * row / 4);
+  return {
+    x,
+    y,
+    width: Math.round(source.width * (col + 1) / 3) - x,
+    height: Math.round(source.height * (row + 1) / 4) - y,
+  };
+}
+
+function copyPngRect(source, output, rect, destX, destY) {
+  for (let y = 0; y < rect.height; y += 1) {
+    for (let x = 0; x < rect.width; x += 1) {
+      const sourceIndex = ((rect.y + y) * source.width + rect.x + x) * 4;
+      const outputIndex = ((destY + y) * output.width + destX + x) * 4;
+      output.data[outputIndex] = source.data[sourceIndex];
+      output.data[outputIndex + 1] = source.data[sourceIndex + 1];
+      output.data[outputIndex + 2] = source.data[sourceIndex + 2];
+      output.data[outputIndex + 3] = source.data[sourceIndex + 3];
+    }
+  }
 }
 
 function cleanupLegacySkillRoot() {
@@ -307,6 +427,10 @@ function cleanupLegacySkillRoot() {
   if (!/^name:\s*dashi-ppt-skill\s*$/m.test(legacySkill)) return;
   fs.rmSync(legacySkillPath, { force: true });
   console.log(`Removed legacy Skill metadata at ${legacySkillPath}`);
+}
+
+function cleanupSyncManifestArtifact() {
+  fs.rmSync(path.join(SKILL_ROOT, '.sync-manifest.json'), { force: true });
 }
 
 function renderReadme({ packs }) {
@@ -429,9 +553,10 @@ fi
 
 cd "$PROJECT_ROOT"
 if [[ ! -d node_modules || package.json -nt node_modules/.package-lock.json || package-lock.json -nt node_modules/.package-lock.json ]]; then
-  npm install
+npm install
 fi
 mkdir -p "$(dirname "$OUT_PATH")"
+npm run props:safe -- --goal "$SPEC_PATH"
 npm run validate:goal-spec -- "$SPEC_PATH"
 npm run render:goal -- "$SPEC_PATH" "$OUT_PATH"
 npm run validate:swiss -- "$OUT_PATH"
@@ -452,9 +577,11 @@ function syncVersionCheckScript() {
 function loadThemeMetadata() {
   const file = path.join(ROOT, 'src/components/themes/generated-metadata.js');
   const text = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';
+  const packs = filterAcceptedThemePacks(parseExportedJson(text, 'GENERATED_THEME_PACKS'));
+  const pages = filterAcceptedThemePages(parseExportedJson(text, 'GENERATED_THEME_PAGES'));
   return {
-    packs: parseExportedJson(text, 'GENERATED_THEME_PACKS'),
-    pages: parseExportedJson(text, 'GENERATED_THEME_PAGES'),
+    packs,
+    pages,
   };
 }
 
@@ -497,13 +624,15 @@ ${themeHints}
 
 每套主题的前 5 页都是封面候选。一个 deck 只能使用其中 1 页作为封面,正文页从第 6 页以后选择。
 
-选页先使用 \`npm run layout:query -- --theme <themePack> --role <role> --limit 8\`。需要图片槽时加 \`--needs-media\`、\`--planned-images <n>\`、\`--provided-images <n>\` 或 \`--image-gen\`,候选会基于真实 \`mediaSlots\`。
+选页先使用 \`npm run layout:query -- --theme <themePack> --role <role> --limit 8\`。动态背景页用 \`--role ambient\`。需要图片槽时加 \`--needs-media\`、\`--planned-images <n>\`、\`--provided-images <n>\` 或 \`--image-gen\`,候选会基于真实 \`mediaSlots\`;用户给素材时只用 \`canPresetMedia: true\` 的槽,按 \`presetProp\` 写路径。
 
-单页契约使用 \`npm run inspect:layout -- <layout>\`。写数组、数量或图片时使用 \`npm run props:safe -- <layout> '<props-json>' [--images <path...>]\`。
+长 deck 先用 \`npm run goal:scaffold -- --title <title> --goal <goal> --theme <themePack> --pages <n> --chunk-size 5 --out output/<deck-name>/goal.json\` 生成唯一 layout 骨架,再分段补 \`props\`。输出目录写在当前会话工作目录,不要写入 \`<skill-root>/project/output\`。
 
-图片/视频只写入页面 \`props.images\` / \`props.media\`。不要写 \`slides[].media\`;用户提供图片时先用 \`props:safe --images\` 写入真实 slot。需要 image-gen 时先询问用户,用户只计划后续插图时选择并保留带 media slot 的页面。
+单页契约优先使用 \`npm run inspect:layout -- --compact <layout...>\`,一次传多个 layout 或多次 \`--layout\`。\`copyBudgets\` 给出文案长度预算;\`propShapes\` 给出 \`copy\`、对象数组和嵌套数组的内部 key。写 \`copy\`、\`cells\`、\`items\`、\`rows\` 等对象字段时只使用 \`propShapes\` 列出的 key,不要凭字段名猜测。写数组、数量或图片时使用 \`npm run props:safe -- <layout> '<props-json>' [--images <path...>]\`;写完整 \`goal.json\` 后使用 \`npm run props:safe -- --goal <goal-json>\` 做整份 props 检查。
 
-需要调整卡片/条目数量时,用 \`cardCount\`、\`itemCount\`、\`stepCount\` 等 count 参数控制显示数量。数组字段是模板内容池,不要为了隐藏元素而截短 \`cards\`、\`items\`、\`steps\`、\`stats\` 等数组;只覆盖当前显示的前 N 项,保留后续默认项供控制面板加回。
+图片/视频只写入页面 \`props.images\` / \`props.media\`。不要写 \`slides[].media\`;用户提供本地素材时先运行 \`npm run media:stage -- <deck-output-dir-or-ppt-dir> <media-file...>\`,再把返回的 \`relative\` 路径交给 \`props:safe --images\` 或写入真实 media slot。每个素材最多使用一次。用户明确要求原创视觉图/生图时用 image-gen;未明确生图时先询问用户。需要 image-gen 生成 2 张以上独立图片时,用多个 subagent 并行,不要串行逐张等待;每张图独立生成,不要用一张拼图/素材板再拆分。subagent 只用于生图。用户只计划后续插图时选择并保留带 media slot 的页面。
+
+需要调整卡片/条目数量时,用 \`cardCount\`、\`itemCount\`、\`stepCount\` 等 count 参数控制显示数量。数组字段是模板内容池;只覆盖当前显示的前 N 项。被 count/显隐控制隐藏的尾项可保留“请输入文本”占位。
 
 不要使用旧的 \`theme\`、\`fontSet\`、\`fontWeight\`、\`typeScale\`、\`styleVariant\`、token 或开发者模式字段。
 `;
@@ -550,19 +679,29 @@ function writeIfChanged(filePath, content) {
   fs.writeFileSync(filePath, content);
 }
 
-function writeBufferIfChanged(filePath, content) {
+function writeBufferIfChanged(filePath, content, mode) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   if (fs.existsSync(filePath) && fs.readFileSync(filePath).equals(content)) return;
   fs.writeFileSync(filePath, content);
+  if (mode) fs.chmodSync(filePath, mode & 0o777);
 }
 
 function copyPath(from, to) {
   if (!fs.existsSync(from)) return;
-  fs.mkdirSync(path.dirname(to), { recursive: true });
-  fs.cpSync(from, to, {
-    recursive: true,
-    filter: source => !source.split(path.sep).some(part => MIGRATION_ONLY_DIRS.has(part.toLowerCase())),
-  });
+  if (shouldSkipSyncPath(from)) return;
+  const stat = fs.statSync(from);
+  if (stat.isDirectory()) {
+    fs.mkdirSync(to, { recursive: true });
+    for (const entry of fs.readdirSync(from)) {
+      copyPath(path.join(from, entry), path.join(to, entry));
+    }
+    return;
+  }
+  if (stat.isFile()) writeBufferIfChanged(to, fs.readFileSync(from), stat.mode);
+}
+
+function shouldSkipSyncPath(filePath) {
+  return filePath.split(path.sep).some(part => MIGRATION_ONLY_DIRS.has(part.toLowerCase()));
 }
 
 function themeDisplayName(theme) {
