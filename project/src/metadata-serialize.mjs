@@ -2,7 +2,7 @@
 // JAD-174:此前 update-generated-metadata.mjs(完整:含 clamp + theme09 修正)与
 // import-claude-themes.jsx(只 normalizePublicControls)各写一份 generated-metadata.js,
 // 导致导入产物不经第二遍 metadata:update 就不合 CI。两个 writer 现共用本模块,杜绝漂移。
-import { normalizePublicControls } from './control-naming.mjs';
+import { normalizePublicControls, sanitizeImportedControls } from './control-naming.mjs';
 import {
   clampCountControlLimits,
   clampDefaultCountProps,
@@ -24,14 +24,23 @@ export function serializePage(page) {
     staticHtml: page.staticHtml || undefined,
     controls,
     defaultProps: clampDefaultCountProps(defaultProps, controls),
+    // Carried through so createContract() below can see it; overwritten right after with the
+    // normalized/validated form (same round-trip pattern as lengthBindings) so a bad hand-authored
+    // entry (non-finite min/max) is dropped rather than silently round-tripped.
+    ...(page.numberBounds ? { numberBounds: page.numberBounds } : {}),
   };
   const contract = createContract(serialized, page.themeKey);
   if (contract.lengthBindings?.length) serialized.lengthBindings = contract.lengthBindings;
+  if (contract.numberBounds && Object.keys(contract.numberBounds).length) {
+    serialized.numberBounds = contract.numberBounds;
+  } else {
+    delete serialized.numberBounds;
+  }
   return serialized;
 }
 
 export function normalizePageControls(page, defaultProps) {
-  const controls = normalizePublicControls(page.controls || [], { layout: page.key, themeKey: page.themeKey })
+  const controls = normalizePublicControls(sanitizeImportedControls(page.controls || []), { layout: page.key, themeKey: page.themeKey })
     .map(control => page.themeKey === 'theme09' ? normalizeTheme09Control(control, page) : control);
   return clampCountControlLimits(controls, defaultProps)
     .map(control => Object.fromEntries(Object.entries(control).filter(([, value]) => value !== undefined)));

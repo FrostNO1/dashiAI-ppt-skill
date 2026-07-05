@@ -2,6 +2,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import {
+
   compactJson,
   isCoverCandidate,
   isCoverLikeLayout,
@@ -10,6 +11,9 @@ import {
   parseArgs,
 } from './skill-workflow-utils.mjs';
 import { validateGoalSpec } from './validate-goal-spec.mjs';
+
+// 相对路径按调用方目录解析:npm run(含 --prefix)会把脚本 cwd 切到项目根,INIT_CWD 才是用户所在目录。
+const CALLER_CWD = process.env.INIT_CWD || process.cwd();
 
 const DEFAULT_BODY_ROLES = [
   'statement',
@@ -71,7 +75,7 @@ function run() {
   const fillPlanOut = writeFillPlan(out, spec);
   writeChunks(out, spec, chunkSize);
   process.stdout.write(compactJson({
-    out: path.resolve(out),
+    out: path.resolve(CALLER_CWD, out),
     fillPlanOut,
     themePack,
     pageCount,
@@ -191,14 +195,15 @@ function writeChunks(out, spec, chunkSize) {
 }
 
 function writeJson(file, value) {
-  mkdirSync(path.dirname(path.resolve(file)), { recursive: true });
-  writeFileSync(file, compactJson(value));
+  const target = path.resolve(CALLER_CWD, file);
+  mkdirSync(path.dirname(target), { recursive: true });
+  writeFileSync(target, compactJson(value));
 }
 
 function writeFillPlan(goalPath, spec) {
   const out = fillPlanPath(goalPath);
   writeJson(out, {
-    goal: path.resolve(goalPath),
+    goal: path.resolve(CALLER_CWD, goalPath),
     themePack: spec.themePack,
     slideCount: spec.slides.length,
     ...(spec.part ? { part: spec.part } : {}),
@@ -213,7 +218,7 @@ function writeFillPlan(goalPath, spec) {
       };
     }),
   });
-  return path.resolve(out);
+  return path.resolve(CALLER_CWD, out);
 }
 
 function fillPlanPath(goalPath) {

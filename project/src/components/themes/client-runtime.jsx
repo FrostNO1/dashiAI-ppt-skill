@@ -7,6 +7,7 @@ import {
   isPrunedContractOmit,
   normalizeSlidePropsForContract,
   pruneContractValue,
+  isCssColorLike,
 } from '../../prop-contract-core.mjs';
 // JAD-201:主题注册表(runtimePages + 图片槽 Provider 包裹)从可注入模块取。
 // renderDeck 打包时把 `@dashi/theme-registry` 别名指向「全主题」或「按 deck 实际用到的主题裁剪版」。
@@ -279,7 +280,16 @@ function createMediaApi(slide, baseProps, entry, defaults) {
     const nextList = toArray(sourceProps[key]);
     const previousValue = nextList[index] || null;
     nextList[index] = value || null;
-    const nextProps = sanitizeExternalStateValues(entry, defaults, stripRuntimeProps({ ...safeCurrentProps, [key]: nextList }));
+    // Persist from `sourceProps` (baseProps + live overrides), not just
+    // `safeCurrentProps` (live overrides alone) — baseProps carries the
+    // slide's authored goal.json control props (e.g. backgroundMode:'media')
+    // that haven't yet been promoted into vmState. Persisting only
+    // safeCurrentProps drops any such authored-but-untouched prop back to
+    // the component's hardcoded default on the very next render, which for
+    // a prop gating a media slot's visibility (as here) silently unmounts
+    // the slot — the media a user just dropped renders once, then the
+    // background/media control reverts and the video disappears.
+    const nextProps = sanitizeExternalStateValues(entry, defaults, stripRuntimeProps({ ...sourceProps, [key]: nextList }));
     window.__dashiUndo?.push?.({
       label: 'media',
       undo: () => updateList(key, index, previousValue),
@@ -762,7 +772,7 @@ function isAllowedPrunedControlValue(entry, key, value) {
   const type = String(control.type || '').toLowerCase();
   if (['toggle', 'boolean', 'checkbox'].includes(type)) return typeof value === 'boolean';
   if (['slider', 'range', 'number', 'stepper'].includes(type)) return typeof value === 'number' && Number.isFinite(value);
-  if (type === 'color') return isRuntimeCssColorLike(value);
+  if (type === 'color') return isCssColorLike(value);
   return false;
 }
 
@@ -778,14 +788,6 @@ function controlOptionValue(option) {
   return option;
 }
 
-function isRuntimeCssColorLike(value) {
-  if (typeof value !== 'string') return false;
-  const text = value.trim();
-  return /^#[0-9a-fA-F]{3,8}$/.test(text)
-    || /^(rgb|rgba|hsl|hsla)\(/i.test(text)
-    || /^var\(--[A-Za-z0-9_-]+\)$/.test(text)
-    || /^(transparent|currentColor|black|white)$/i.test(text);
-}
 
 function changedExternalValues(baseline, values) {
   const next = {};

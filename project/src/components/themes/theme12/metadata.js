@@ -35,9 +35,7 @@ export const pages = [
           }
         ],
         "desc": "整版底色：腮红浅底 / 深色板",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "整版底色：腮红浅底 / 深色板"
+        "publicKey": "theme"
       },
       {
         "key": "showCoverLines",
@@ -45,9 +43,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏右栏封面导语",
-        "publicKey": "showCoverLines",
-        "publicLabel": "封面导语",
-        "description": "显示/隐藏右栏封面导语"
+        "publicKey": "showCoverLines"
       },
       {
         "key": "lineCount",
@@ -59,9 +55,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "showCoverLines",
         "desc": "封面导语条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "导语条数",
-        "description": "封面导语条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showSeal",
@@ -69,9 +63,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏 CREATOR-OWNED 圆章",
-        "publicKey": "showSeal",
-        "publicLabel": "身份印章",
-        "description": "显示/隐藏 CREATOR-OWNED 圆章"
+        "publicKey": "showSeal"
       },
       {
         "key": "showGhost",
@@ -79,9 +71,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏出血的巨型刊号数字",
-        "publicKey": "showGhost",
-        "publicLabel": "巨型刊号",
-        "description": "显示/隐藏出血的巨型刊号数字"
+        "publicKey": "showGhost"
       },
       {
         "key": "showBarcode",
@@ -89,9 +79,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏角落刊号条码",
-        "publicKey": "showBarcode",
-        "publicLabel": "刊号条码",
-        "description": "显示/隐藏角落刊号条码"
+        "publicKey": "showBarcode"
       },
       {
         "key": "showShapes",
@@ -99,18 +87,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏漂浮几何装饰",
-        "publicKey": "showShapes",
-        "publicLabel": "几何装饰",
-        "description": "显示/隐藏漂浮几何装饰"
+        "publicKey": "showShapes"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -118,7 +104,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -127,13 +113,11 @@ export const pages = [
           }
         ],
         "desc": "主字高亮 / 编号 / 印章强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "主字高亮 / 编号 / 印章强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "showCoverLines": true,
       "lineCount": 3,
@@ -142,6 +126,7 @@ export const pages = [
       "showBarcode": true,
       "showShapes": true,
       "barMeta": "创刊号 / Premiere Issue · Vol. 01",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "The Sound of Sovereignty",
       "title": "声[[浪]]",
       "titleEn": "SOUNDWAVE",
@@ -172,7 +157,8 @@ export const pages = [
       },
       "barcodeLabel": "SW 01 · 2026",
       "page": "01",
-      "total": "86"
+      "total": "86",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -200,9 +186,7 @@ export const pages = [
           }
         ],
         "desc": "标题与文案的排版对齐",
-        "publicKey": "align",
-        "publicLabel": "对齐",
-        "description": "标题与文案的排版对齐"
+        "publicKey": "align"
       },
       {
         "key": "barCount",
@@ -213,9 +197,7 @@ export const pages = [
         "max": 52,
         "step": 1,
         "desc": "频谱分析条的数量",
-        "publicKey": "barCount",
-        "publicLabel": "频谱条数",
-        "description": "频谱分析条的数量"
+        "publicKey": "barCount"
       },
       {
         "key": "showReflection",
@@ -223,9 +205,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏频谱下方的倒影",
-        "publicKey": "showReflection",
-        "publicLabel": "镜面倒影",
-        "description": "显示/隐藏频谱下方的倒影"
+        "publicKey": "showReflection"
       },
       {
         "key": "showAxis",
@@ -233,9 +213,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏基线与频率刻度",
-        "publicKey": "showAxis",
-        "publicLabel": "频率刻度",
-        "description": "显示/隐藏基线与频率刻度"
+        "publicKey": "showAxis"
       },
       {
         "key": "showPlayhead",
@@ -243,9 +221,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏扫过频谱的进度游标",
-        "publicKey": "showPlayhead",
-        "publicLabel": "进度游标",
-        "description": "显示/隐藏扫过频谱的进度游标"
+        "publicKey": "showPlayhead"
       },
       {
         "key": "showTagline",
@@ -253,9 +229,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏一行副标语",
-        "publicKey": "showTagline",
-        "publicLabel": "副标语",
-        "description": "显示/隐藏一行副标语"
+        "publicKey": "showTagline"
       },
       {
         "key": "theme",
@@ -273,9 +247,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
@@ -288,22 +260,20 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
-            "value": "#5f7f00",
+            "value": "#baf04f",
             "label": "颜色 4"
           }
         ],
         "desc": "主高亮 / 频谱主色 / 游标色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "主高亮 / 频谱主色 / 游标色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -316,6 +286,7 @@ export const pages = [
       "showPlayhead": true,
       "showTagline": true,
       "barMeta": "正在直播 / On Air · Vol. 01",
+      "brandLabel": "CREATIVE SYSTEM",
       "badge": "LIVE · 声浪电台",
       "title": "每一道[[声浪]]，\n都被听见。",
       "tagline": "发行、结算、版权与听众，收拢进同一处——为独立音乐人打造的操作系统。",
@@ -329,7 +300,8 @@ export const pages = [
         "20k"
       ],
       "page": "02",
-      "total": "86"
+      "total": "86",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -357,9 +329,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -387,9 +357,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "mediaFit",
@@ -407,9 +375,7 @@ export const pages = [
           }
         ],
         "desc": "封面大图的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "封面大图的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "scrim",
@@ -427,9 +393,7 @@ export const pages = [
           }
         ],
         "desc": "叠加渐变蒙版的明暗",
-        "publicKey": "scrim",
-        "publicLabel": "蒙版",
-        "description": "叠加渐变蒙版的明暗"
+        "publicKey": "scrim"
       },
       {
         "key": "showSpine",
@@ -437,9 +401,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏左缘竖排书脊文字",
-        "publicKey": "showSpine",
-        "publicLabel": "书脊标",
-        "description": "显示/隐藏左缘竖排书脊文字"
+        "publicKey": "showSpine"
       },
       {
         "key": "showCoverLines",
@@ -447,9 +409,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏右侧封面导语",
-        "publicKey": "showCoverLines",
-        "publicLabel": "封面导语",
-        "description": "显示/隐藏右侧封面导语"
+        "publicKey": "showCoverLines"
       },
       {
         "key": "lineCount",
@@ -461,9 +421,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "showCoverLines",
         "desc": "封面导语条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "导语条数",
-        "description": "封面导语条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showBarcode",
@@ -471,9 +429,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏右下角刊号条码",
-        "publicKey": "showBarcode",
-        "publicLabel": "刊号条码",
-        "description": "显示/隐藏右下角刊号条码"
+        "publicKey": "showBarcode"
       },
       {
         "key": "showCredit",
@@ -481,18 +437,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏封面人物署名",
-        "publicKey": "showCredit",
-        "publicLabel": "封面署名",
-        "description": "显示/隐藏封面人物署名"
+        "publicKey": "showCredit"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -500,22 +454,20 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
-            "value": "#5f7f00",
+            "value": "#baf04f",
             "label": "颜色 4"
           }
         ],
         "desc": "规线 / 导语高亮 / 条码强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "规线 / 导语高亮 / 条码强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "backgroundMode": "unicorn",
       "unicornScene": "tech",
       "mediaFit": "cover",
@@ -547,7 +499,7 @@ export const pages = [
         }
       ],
       "creditLabel": "封面人物 / Cover:",
-      "creditName": "Nova Lin",
+      "creditName": "＿＿＿＿",
       "barcodeLabel": "SW 01 · 2026",
       "mediaPlaceholder": "拖入封面大图 / Cover image",
       "page": "03",
@@ -579,9 +531,7 @@ export const pages = [
           }
         ],
         "desc": "左侧面板底色",
-        "publicKey": "theme",
-        "publicLabel": "面板配色",
-        "description": "左侧面板底色"
+        "publicKey": "theme"
       },
       {
         "key": "itemCount",
@@ -592,9 +542,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "右栏目录条目数",
-        "publicKey": "itemCount",
-        "publicLabel": "目录条目",
-        "description": "右栏目录条目数"
+        "publicKey": "itemCount"
       },
       {
         "key": "focus",
@@ -602,9 +550,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "高亮某一目录条目，弱化其余",
-        "publicKey": "focus",
-        "publicLabel": "重点强调",
-        "description": "高亮某一目录条目，弱化其余"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -616,9 +562,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被强调条目的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "强调第几个",
-        "description": "被强调条目的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showStats",
@@ -626,9 +570,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏底部数据标签",
-        "publicKey": "showStats",
-        "publicLabel": "数据标签",
-        "description": "显示/隐藏底部数据标签"
+        "publicKey": "showStats"
       },
       {
         "key": "statCount",
@@ -640,9 +582,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "showStats",
         "desc": "数据标签的数量",
-        "publicKey": "statCount",
-        "publicLabel": "标签数量",
-        "description": "数据标签的数量"
+        "publicKey": "statCount"
       },
       {
         "key": "showSeal",
@@ -650,9 +590,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏 CREATOR-OWNED 圆章",
-        "publicKey": "showSeal",
-        "publicLabel": "身份印章",
-        "description": "显示/隐藏 CREATOR-OWNED 圆章"
+        "publicKey": "showSeal"
       },
       {
         "key": "showGhost",
@@ -660,9 +598,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏面板内出血的巨型刊号",
-        "publicKey": "showGhost",
-        "publicLabel": "巨型刊号",
-        "description": "显示/隐藏面板内出血的巨型刊号"
+        "publicKey": "showGhost"
       },
       {
         "key": "colorfulRows",
@@ -670,9 +606,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "每条目录使用不同的品牌色编号",
-        "publicKey": "colorfulRows",
-        "publicLabel": "彩色目录",
-        "description": "每条目录使用不同的品牌色编号"
+        "publicKey": "colorfulRows"
       },
       {
         "key": "accent",
@@ -685,11 +619,11 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -698,9 +632,7 @@ export const pages = [
           }
         ],
         "desc": "面板 / 编号 / 高亮强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "面板 / 编号 / 高亮强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -808,18 +740,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -827,7 +757,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -836,9 +766,7 @@ export const pages = [
           }
         ],
         "desc": "主强调色，作用于编号、页脚、装饰条",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "主强调色，作用于编号、页脚、装饰条"
+        "publicKey": "accent"
       },
       {
         "key": "mediaCount",
@@ -849,9 +777,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "desc": "右栏图片槽数量；0 时显示文字说明卡，1 时图片完整显示",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片数量",
-        "description": "右栏图片槽数量；0 时显示文字说明卡，1 时图片完整显示"
+        "publicKey": "mediaCount"
       },
       {
         "key": "mediaFit",
@@ -870,9 +796,7 @@ export const pages = [
         ],
         "dependsOn": "mediaCount",
         "desc": "多图时图片的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "多图时图片的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "indexCount",
@@ -883,9 +807,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "底部目录展示的条目数",
-        "publicKey": "itemCount",
-        "publicLabel": "目录条目",
-        "description": "底部目录展示的条目数"
+        "publicKey": "itemCount"
       },
       {
         "key": "focus",
@@ -893,9 +815,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "高亮某一目录条目，弱化其余",
-        "publicKey": "focus",
-        "publicLabel": "重点强调",
-        "description": "高亮某一目录条目，弱化其余"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -907,9 +827,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被强调条目的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "强调第几个",
-        "description": "被强调条目的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showKicker",
@@ -917,9 +835,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏标题上方的小标签",
-        "publicKey": "showKicker",
-        "publicLabel": "显示导语",
-        "description": "显示/隐藏标题上方的小标签"
+        "publicKey": "showKicker"
       },
       {
         "key": "showDecorations",
@@ -927,13 +843,11 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏几何装饰图形",
-        "publicKey": "showDecorations",
-        "publicLabel": "显示装饰",
-        "description": "显示/隐藏几何装饰图形"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "showDecorations": true,
       "showKicker": true,
@@ -944,6 +858,7 @@ export const pages = [
       "focusIndex": 1,
       "media": [],
       "barMeta": "Independent Music OS — Vol. 01 / 2026",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "01 — 宣言 / Manifesto",
       "title": "声音的主权，\n属于[[创作者]]。",
       "titleEn": "Ownership of sound\nbelongs to the maker.",
@@ -958,13 +873,13 @@ export const pages = [
           "t": "宣言",
           "e": "Manifesto",
           "d": "主权，为何比流量更重要。",
-          "c": "#d44718"
+          "c": "#f15a29"
         },
         {
           "n": "02",
           "t": "产品矩阵",
           "e": "The Stack",
-          "d": "发行·直连·结算·护盾。",
+          "d": "发行 · 直连 · 结算 · 护盾。",
           "c": "#d61fb5"
         },
         {
@@ -972,7 +887,7 @@ export const pages = [
           "t": "为什么是现在",
           "e": "Why Now",
           "d": "独立发行的拐点已到来。",
-          "c": "#0077a8"
+          "c": "#3bb6ec"
         },
         {
           "n": "04",
@@ -982,8 +897,9 @@ export const pages = [
           "c": "#1f6b2a"
         }
       ],
-      "page": "05",
-      "total": "86"
+      "page": "01",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -1011,9 +927,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "align",
@@ -1031,9 +945,7 @@ export const pages = [
           }
         ],
         "desc": "引文与署名的排版对齐",
-        "publicKey": "align",
-        "publicLabel": "对齐",
-        "description": "引文与署名的排版对齐"
+        "publicKey": "align"
       },
       {
         "key": "showMark",
@@ -1041,9 +953,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏大引号符号",
-        "publicKey": "showMark",
-        "publicLabel": "引号装饰",
-        "description": "显示/隐藏大引号符号"
+        "publicKey": "showMark"
       },
       {
         "key": "showAttribution",
@@ -1051,9 +961,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏引文署名",
-        "publicKey": "showAttribution",
-        "publicLabel": "署名",
-        "description": "显示/隐藏引文署名"
+        "publicKey": "showAttribution"
       },
       {
         "key": "showDecorations",
@@ -1061,18 +969,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏几何装饰图形",
-        "publicKey": "showDecorations",
-        "publicLabel": "显示装饰",
-        "description": "显示/隐藏几何装饰图形"
+        "publicKey": "showDecorations"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -1080,7 +986,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -1089,25 +995,25 @@ export const pages = [
           }
         ],
         "desc": "引号 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "引号 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "align": "left",
       "showMark": true,
       "showAttribution": true,
       "showDecorations": true,
       "barMeta": "02 — In Their Words",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "金句 / In Their Words",
       "quote": "把发行权[[还给创作者]]，不是行业的让步——\n而是它[[本该有]]的默认。",
       "authorName": "李声 · 声浪创始人",
       "authorEn": "Li Sheng — Founder, SoundWave",
-      "page": "06",
-      "total": "86"
+      "page": "02",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -1128,9 +1034,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "目录中的章节条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "章节数量",
-        "description": "目录中的章节条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "columns",
@@ -1148,9 +1052,7 @@ export const pages = [
           }
         ],
         "desc": "目录条目的列数",
-        "publicKey": "columns",
-        "publicLabel": "栏数",
-        "description": "目录条目的列数"
+        "publicKey": "columns"
       },
       {
         "key": "focus",
@@ -1158,9 +1060,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "把某一章提升为强调色块",
-        "publicKey": "focus",
-        "publicLabel": "重点强调",
-        "description": "把某一章提升为强调色块"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -1172,9 +1072,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被强调章节的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "强调第几章",
-        "description": "被强调章节的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "theme",
@@ -1192,9 +1090,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "showLede",
@@ -1202,18 +1098,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏标题区导语",
-        "publicKey": "showLede",
-        "publicLabel": "显示导语",
-        "description": "显示/隐藏标题区导语"
+        "publicKey": "showLede"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -1221,7 +1115,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -1230,13 +1124,11 @@ export const pages = [
           }
         ],
         "desc": "焦点 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "焦点 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "chapterCount": 6,
       "columns": 2,
@@ -1244,6 +1136,7 @@ export const pages = [
       "focusIndex": 1,
       "showLede": true,
       "barMeta": "03 — Agenda",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "本场内容 / Agenda",
       "title": "接下来，[[六个章节]]。",
       "chapters": [
@@ -1278,8 +1171,9 @@ export const pages = [
           "s": "轮到你，发出声浪。"
         }
       ],
-      "page": "07",
-      "total": "86"
+      "page": "03",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -1311,9 +1205,7 @@ export const pages = [
           }
         ],
         "desc": "整版底色：强调色 / 深色 / 浅色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "整版底色：强调色 / 深色 / 浅色"
+        "publicKey": "theme"
       },
       {
         "key": "align",
@@ -1331,9 +1223,7 @@ export const pages = [
           }
         ],
         "desc": "标语排版对齐方式",
-        "publicKey": "align",
-        "publicLabel": "对齐",
-        "description": "标语排版对齐方式"
+        "publicKey": "align"
       },
       {
         "key": "showKicker",
@@ -1341,9 +1231,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏顶部小标题",
-        "publicKey": "showKicker",
-        "publicLabel": "显示眉标",
-        "description": "显示/隐藏顶部小标题"
+        "publicKey": "showKicker"
       },
       {
         "key": "showGhost",
@@ -1351,9 +1239,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏出血的巨型页码",
-        "publicKey": "showGhost",
-        "publicLabel": "巨型数字",
-        "description": "显示/隐藏出血的巨型页码"
+        "publicKey": "showGhost"
       },
       {
         "key": "showShapes",
@@ -1361,18 +1247,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏漂浮的几何装饰",
-        "publicKey": "showShapes",
-        "publicLabel": "几何装饰",
-        "description": "显示/隐藏漂浮的几何装饰"
+        "publicKey": "showShapes"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -1380,7 +1264,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -1389,24 +1273,24 @@ export const pages = [
           }
         ],
         "desc": "底色 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "底色 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
       "theme": "accent",
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "align": "left",
       "showGhost": true,
       "showShapes": true,
       "showKicker": true,
       "barMeta": "04 — Statement",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "我们的主张 / What We Stand For",
       "title": "创作者，\n理应[[掌握]]自己的\n声浪。",
       "lede": "发行、结算、版权与听众——本该握在做音乐的人手里，而不是散落在十几个看不懂的后台。",
-      "page": "08",
-      "total": "86"
+      "page": "04",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -1427,9 +1311,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "展示的产品卡片数量",
-        "publicKey": "cardCount",
-        "publicLabel": "卡片数量",
-        "description": "展示的产品卡片数量"
+        "publicKey": "cardCount"
       },
       {
         "key": "columns",
@@ -1451,9 +1333,7 @@ export const pages = [
           }
         ],
         "desc": "卡片网格的列数",
-        "publicKey": "columns",
-        "publicLabel": "栏数",
-        "description": "卡片网格的列数"
+        "publicKey": "columns"
       },
       {
         "key": "focus",
@@ -1461,9 +1341,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "高亮某一张卡片，弱化其余",
-        "publicKey": "focus",
-        "publicLabel": "重点强调",
-        "description": "高亮某一张卡片，弱化其余"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -1475,9 +1353,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被强调卡片的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "强调第几个",
-        "description": "被强调卡片的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showLede",
@@ -1485,9 +1361,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏顶部高亮短句",
-        "publicKey": "showLede",
-        "publicLabel": "显示导语",
-        "description": "显示/隐藏顶部高亮短句"
+        "publicKey": "showLede"
       },
       {
         "key": "showDeco",
@@ -1495,9 +1369,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏卡片内的图形装饰",
-        "publicKey": "showDeco",
-        "publicLabel": "显示装饰",
-        "description": "显示/隐藏卡片内的图形装饰"
+        "publicKey": "showDeco"
       },
       {
         "key": "theme",
@@ -1515,18 +1387,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -1534,7 +1404,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -1543,13 +1413,11 @@ export const pages = [
           }
         ],
         "desc": "页脚等强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "页脚等强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "cardCount": 4,
       "columns": 2,
@@ -1558,6 +1426,7 @@ export const pages = [
       "showLede": true,
       "showDeco": true,
       "barMeta": "05 — The Stack",
+      "brandLabel": "CREATIVE SYSTEM",
       "lede": "你只管[[写歌]]，发行 · 结算 · [[维权]]，[[声浪全包了]]。",
       "cards": [
         {
@@ -1589,8 +1458,9 @@ export const pages = [
           "tag": "全网监测"
         }
       ],
-      "page": "09",
-      "total": "86"
+      "page": "05",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -1618,9 +1488,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "tileCount",
@@ -1631,9 +1499,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "便当网格中的格子数量",
-        "publicKey": "tileCount",
-        "publicLabel": "便当格数",
-        "description": "便当网格中的格子数量"
+        "publicKey": "tileCount"
       },
       {
         "key": "focus",
@@ -1641,9 +1507,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "高亮某一格，弱化其余",
-        "publicKey": "focus",
-        "publicLabel": "重点强调",
-        "description": "高亮某一格，弱化其余"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -1655,9 +1519,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被强调格子的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "强调第几格",
-        "description": "被强调格子的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDeco",
@@ -1665,18 +1527,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏格子内几何装饰",
-        "publicKey": "showDeco",
-        "publicLabel": "显示装饰",
-        "description": "显示/隐藏格子内几何装饰"
+        "publicKey": "showDeco"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -1684,7 +1544,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -1693,19 +1553,18 @@ export const pages = [
           }
         ],
         "desc": "导语 / 焦点 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语 / 焦点 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "tileCount": 6,
       "focus": false,
       "focusIndex": 1,
       "showDeco": true,
       "barMeta": "06 — Capabilities",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "能力便当 / Capabilities",
       "title": "一个工作台，[[全链路]]覆盖。",
       "lede": "从母带到结算，从听众到维权——把分散在十几个后台里的事，收进同一块面板。",
@@ -1717,7 +1576,7 @@ export const pages = [
         {
           "cn": "一键发行",
           "en": "Release",
-          "d": "一次上传，全球分发，自动校验元数据。",
+          "d": "一次上传，自动分发到全球 30+ 流媒体平台，元数据代为校验。",
           "kind": "hero"
         },
         {
@@ -1752,8 +1611,9 @@ export const pages = [
           "kind": "plain"
         }
       ],
-      "page": "10",
-      "total": "86"
+      "page": "06",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -1774,9 +1634,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "流程展示的步骤数量",
-        "publicKey": "stepCount",
-        "publicLabel": "步骤数量",
-        "description": "流程展示的步骤数量"
+        "publicKey": "stepCount"
       },
       {
         "key": "focus",
@@ -1784,9 +1642,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "把某一步提升为强调色卡片",
-        "publicKey": "focus",
-        "publicLabel": "重点强调",
-        "description": "把某一步提升为强调色卡片"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -1798,9 +1654,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被强调步骤的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "强调第几步",
-        "description": "被强调步骤的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showConnector",
@@ -1808,9 +1662,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏步骤间的箭头",
-        "publicKey": "showConnector",
-        "publicLabel": "连接箭头",
-        "description": "显示/隐藏步骤间的箭头"
+        "publicKey": "showConnector"
       },
       {
         "key": "showLede",
@@ -1818,9 +1670,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏标题区导语",
-        "publicKey": "showLede",
-        "publicLabel": "显示导语",
-        "description": "显示/隐藏标题区导语"
+        "publicKey": "showLede"
       },
       {
         "key": "theme",
@@ -1838,18 +1688,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -1857,7 +1705,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -1866,13 +1714,11 @@ export const pages = [
           }
         ],
         "desc": "焦点卡 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "焦点卡 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "stepCount": 4,
       "focus": true,
@@ -1880,6 +1726,7 @@ export const pages = [
       "showConnector": true,
       "showLede": true,
       "barMeta": "07 — How It Works",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "工作流 / How It Works",
       "title": "从一条 demo，到一笔[[到账]]。",
       "steps": [
@@ -1909,8 +1756,9 @@ export const pages = [
           "d": "全网监测盗用，一键存证与维权。"
         }
       ],
-      "page": "11",
-      "total": "86"
+      "page": "07",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -1931,9 +1779,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "环绕中枢的能力节点数量",
-        "publicKey": "nodeCount",
-        "publicLabel": "节点数量",
-        "description": "环绕中枢的能力节点数量"
+        "publicKey": "nodeCount"
       },
       {
         "key": "showConnectors",
@@ -1941,9 +1787,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏中枢到各节点的连线",
-        "publicKey": "showConnectors",
-        "publicLabel": "连接线",
-        "description": "显示/隐藏中枢到各节点的连线"
+        "publicKey": "showConnectors"
       },
       {
         "key": "showCenter",
@@ -1951,9 +1795,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏中央中枢说明",
-        "publicKey": "showCenter",
-        "publicLabel": "中枢标签",
-        "description": "显示/隐藏中央中枢说明"
+        "publicKey": "showCenter"
       },
       {
         "key": "showNodeEn",
@@ -1961,9 +1803,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏节点上的英文副标题",
-        "publicKey": "showNodeEn",
-        "publicLabel": "英文副标",
-        "description": "显示/隐藏节点上的英文副标题"
+        "publicKey": "showNodeEn"
       },
       {
         "key": "theme",
@@ -1981,18 +1821,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -2000,7 +1838,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -2009,19 +1847,18 @@ export const pages = [
           }
         ],
         "desc": "中枢 / 连线 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "中枢 / 连线 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "nodeCount": 6,
       "showConnectors": true,
       "showCenter": true,
       "showNodeEn": true,
       "barMeta": "08 — Ecosystem",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "生态网络 / Ecosystem",
       "title": "一个账户，\n接管[[每一环]]。",
       "intro": "分发、结算、粉丝、版权——不再散落在十几个后台。声浪把它们收进同一个中枢，彼此打通。",
@@ -2055,8 +1892,9 @@ export const pages = [
           "en": "Live"
         }
       ],
-      "page": "12",
-      "total": "86"
+      "page": "08",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -2076,30 +1914,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "countArrays": [
-          "branches"
-        ],
         "desc": "第二层分支节点数量",
-        "publicKey": "childCount",
-        "publicLabel": "分支数量",
-        "description": "第二层分支节点数量"
-      },
-      {
-        "key": "leafCount",
-        "label": "叶子数量",
-        "type": "slider",
-        "def": 2,
-        "min": 1,
-        "max": 2,
-        "step": 1,
-        "countArrays": [
-          "branches[].leaves"
-        ],
-        "dependsOn": "showLevel3",
-        "desc": "每个分支下方的叶子节点数量",
-        "publicKey": "leafCount",
-        "publicLabel": "叶子数量",
-        "description": "每个分支下方的叶子节点数量"
+        "publicKey": "childCount"
       },
       {
         "key": "showLevel3",
@@ -2107,9 +1923,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏第三层叶子节点",
-        "publicKey": "showLevel3",
-        "publicLabel": "第三层",
-        "description": "显示/隐藏第三层叶子节点"
+        "publicKey": "showLevel3"
       },
       {
         "key": "showLeafDesc",
@@ -2117,9 +1931,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏叶子节点下方说明",
-        "publicKey": "showLeafDesc",
-        "publicLabel": "叶子说明",
-        "description": "显示/隐藏叶子节点下方说明"
+        "publicKey": "showLeafDesc"
       },
       {
         "key": "theme",
@@ -2137,9 +1949,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
@@ -2152,11 +1962,11 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -2165,19 +1975,17 @@ export const pages = [
           }
         ],
         "desc": "根节点 / 连线 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "根节点 / 连线 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
       "accent": "#5a138e",
       "theme": "light",
       "childCount": 3,
-      "leafCount": 2,
       "showLevel3": true,
       "showLeafDesc": true,
       "barMeta": "09 — Structure",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "组织架构 / Structure",
       "title": "一个内核，[[四面延展]]。",
       "rootTitle": "声浪 OS",
@@ -2186,16 +1994,16 @@ export const pages = [
         {
           "t": "创作者中台",
           "s": "CREATORS",
-          "c": "#0077a8",
+          "c": "#3bb6ec",
           "leaves": [
-            {
-              "label": "发行",
-              "desc": "一键多平台"
-            },
-            {
-              "label": "结算",
-              "desc": "72h 到账"
-            }
+            [
+              "发行",
+              "一键多平台"
+            ],
+            [
+              "结算",
+              "72h 到账"
+            ]
           ]
         },
         {
@@ -2203,29 +2011,29 @@ export const pages = [
           "s": "RIGHTS",
           "c": "#1f6b2a",
           "leaves": [
-            {
-              "label": "存证",
-              "desc": "链上确权"
-            },
-            {
-              "label": "授权",
-              "desc": "全球清算"
-            }
+            [
+              "存证",
+              "链上确权"
+            ],
+            [
+              "授权",
+              "全球清算"
+            ]
           ]
         },
         {
           "t": "听众网络",
           "s": "AUDIENCE",
-          "c": "#d44718",
+          "c": "#f15a29",
           "leaves": [
-            {
-              "label": "订阅",
-              "desc": "粉丝直连"
-            },
-            {
-              "label": "现场",
-              "desc": "票务联动"
-            }
+            [
+              "订阅",
+              "粉丝直连"
+            ],
+            [
+              "现场",
+              "票务联动"
+            ]
           ]
         },
         {
@@ -2233,19 +2041,20 @@ export const pages = [
           "s": "PARTNERS",
           "c": "#c44ee0",
           "leaves": [
-            {
-              "label": "平台",
-              "desc": "30+ 渠道"
-            },
-            {
-              "label": "品牌",
-              "desc": "联合企划"
-            }
+            [
+              "平台",
+              "30+ 渠道"
+            ],
+            [
+              "品牌",
+              "联合企划"
+            ]
           ]
         }
       ],
-      "page": "13",
-      "total": "86"
+      "page": "09",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -2273,9 +2082,7 @@ export const pages = [
           }
         ],
         "desc": "文字栏的明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "文字栏的明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "imageSide",
@@ -2293,9 +2100,7 @@ export const pages = [
           }
         ],
         "desc": "大图位于左侧或右侧",
-        "publicKey": "imageSide",
-        "publicLabel": "图片位置",
-        "description": "大图位于左侧或右侧"
+        "publicKey": "imageSide"
       },
       {
         "key": "showCaption",
@@ -2303,9 +2108,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏跨缝的图注小标签",
-        "publicKey": "showCaption",
-        "publicLabel": "骑缝图注",
-        "description": "显示/隐藏跨缝的图注小标签"
+        "publicKey": "showCaption"
       },
       {
         "key": "showStats",
@@ -2313,9 +2116,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏标题下的数据小行",
-        "publicKey": "showStats",
-        "publicLabel": "数据小行",
-        "description": "显示/隐藏标题下的数据小行"
+        "publicKey": "showStats"
       },
       {
         "key": "statCount",
@@ -2327,18 +2128,16 @@ export const pages = [
         "step": 1,
         "dependsOn": "showStats",
         "desc": "标题下数据条目的数量",
-        "publicKey": "itemCount",
-        "publicLabel": "数据数量",
-        "description": "标题下数据条目的数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -2346,7 +2145,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -2355,13 +2154,11 @@ export const pages = [
           }
         ],
         "desc": "导语 / 图注 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语 / 图注 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "dark",
       "imageSide": "left",
       "showCaption": true,
@@ -2385,8 +2182,9 @@ export const pages = [
           "lb": "已发版税"
         }
       ],
-      "page": "14",
-      "total": "86"
+      "page": "10",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -2406,13 +2204,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "countArrays": [
-          "media"
-        ],
         "desc": "竖向人像画框的数量",
-        "publicKey": "frameCount",
-        "publicLabel": "画框数量",
-        "description": "竖向人像画框的数量"
+        "publicKey": "frameCount"
       },
       {
         "key": "panelSide",
@@ -2430,9 +2223,7 @@ export const pages = [
           }
         ],
         "desc": "实色标题面板的位置",
-        "publicKey": "panelSide",
-        "publicLabel": "标题面板",
-        "description": "实色标题面板的位置"
+        "publicKey": "panelSide"
       },
       {
         "key": "theme",
@@ -2450,9 +2241,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "showCaptions",
@@ -2460,9 +2249,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每框下方图注",
-        "publicKey": "showCaptions",
-        "publicLabel": "图注",
-        "description": "显示/隐藏每框下方图注"
+        "publicKey": "showCaptions"
       },
       {
         "key": "showIndex",
@@ -2470,9 +2257,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏画框序号",
-        "publicKey": "showIndex",
-        "publicLabel": "序号角标",
-        "description": "显示/隐藏画框序号"
+        "publicKey": "showIndex"
       },
       {
         "key": "mediaFit",
@@ -2490,18 +2275,16 @@ export const pages = [
           }
         ],
         "desc": "图片填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "图片填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -2509,7 +2292,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -2518,13 +2301,11 @@ export const pages = [
           }
         ],
         "desc": "标题面板 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "标题面板 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "frameCount": 3,
       "panelSide": "left",
@@ -2533,6 +2314,7 @@ export const pages = [
       "mediaFit": "cover",
       "media": [],
       "barMeta": "11 — Triptych",
+      "brandLabel": "CREATIVE SYSTEM",
       "panelKicker": "影像 / Faces",
       "panelTitle": "每一帧，\n都是一条[[声浪]]。",
       "panelText": "从录音棚的深夜，到结算页的那笔到账——创作的每个瞬间，都被同一块工作台接住。",
@@ -2556,8 +2338,9 @@ export const pages = [
           "en": "Backstage · Live"
         }
       ],
-      "page": "15",
-      "total": "86"
+      "page": "11",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -2578,9 +2361,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "叠放的照片数量",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片数量",
-        "description": "叠放的照片数量"
+        "publicKey": "mediaCount"
       },
       {
         "key": "spread",
@@ -2592,9 +2373,7 @@ export const pages = [
         "step": 2,
         "unit": "px",
         "desc": "相邻照片之间的错位距离",
-        "publicKey": "spread",
-        "publicLabel": "错位间距",
-        "description": "相邻照片之间的错位距离"
+        "publicKey": "spread"
       },
       {
         "key": "tilt",
@@ -2606,9 +2385,7 @@ export const pages = [
         "step": 1,
         "unit": "°",
         "desc": "照片的倾斜强度",
-        "publicKey": "tilt",
-        "publicLabel": "倾斜角度",
-        "description": "照片的倾斜强度"
+        "publicKey": "tilt"
       },
       {
         "key": "showFrame",
@@ -2616,9 +2393,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "为照片添加白色相纸边框",
-        "publicKey": "showFrame",
-        "publicLabel": "白边相纸",
-        "description": "为照片添加白色相纸边框"
+        "publicKey": "showFrame"
       },
       {
         "key": "showCaptions",
@@ -2626,9 +2401,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏照片编号角标",
-        "publicKey": "showCaptions",
-        "publicLabel": "编号角标",
-        "description": "显示/隐藏照片编号角标"
+        "publicKey": "showCaptions"
       },
       {
         "key": "theme",
@@ -2646,9 +2419,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "mediaFit",
@@ -2666,18 +2437,16 @@ export const pages = [
           }
         ],
         "desc": "图片的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "图片的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -2685,7 +2454,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -2694,13 +2463,11 @@ export const pages = [
           }
         ],
         "desc": "标题 / 角标强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "标题 / 角标强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "dark",
       "mediaCount": 3,
       "spread": 64,
@@ -2716,8 +2483,8 @@ export const pages = [
       "hint": "Drag to fill",
       "frameBrand": "SOUNDWAVE",
       "mediaPlaceholder": "拖入图片",
-      "page": "16",
-      "total": "86"
+      "page": "12",
+      "total": "82"
     }
   },
   {
@@ -2745,9 +2512,7 @@ export const pages = [
           }
         ],
         "desc": "特写大图所在的一侧",
-        "publicKey": "imageSide",
-        "publicLabel": "图片位置",
-        "description": "特写大图所在的一侧"
+        "publicKey": "imageSide"
       },
       {
         "key": "theme",
@@ -2765,9 +2530,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "showDropCap",
@@ -2775,9 +2538,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "正文首字母放大下沉",
-        "publicKey": "showDropCap",
-        "publicLabel": "首字下沉",
-        "description": "正文首字母放大下沉"
+        "publicKey": "showDropCap"
       },
       {
         "key": "showPullQuote",
@@ -2785,9 +2546,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏彩色引文条",
-        "publicKey": "showPullQuote",
-        "publicLabel": "引文条",
-        "description": "显示/隐藏彩色引文条"
+        "publicKey": "showPullQuote"
       },
       {
         "key": "mediaFit",
@@ -2805,18 +2564,16 @@ export const pages = [
           }
         ],
         "desc": "图片填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "图片填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -2824,7 +2581,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -2833,13 +2590,11 @@ export const pages = [
           }
         ],
         "desc": "首字 / 引文 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "首字 / 引文 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "imageSide": "left",
       "showDropCap": true,
@@ -2847,15 +2602,17 @@ export const pages = [
       "mediaFit": "cover",
       "media": [],
       "barMeta": "13 — Magazine",
+      "brandLabel": "CREATIVE SYSTEM",
       "imageTag": "FEATURE · 2026",
       "kicker": "封面故事 / Cover Story",
       "title": "一个人，\n也能撑起\n一座厂牌。",
       "dropCap": "声",
-      "body": "浪把发行、结算、版权和粉丝运营收进同一块工作台。",
+      "body": "浪把发行、结算、版权与粉丝运营收拢进同一块工作台。曾经需要一整个团队、十几个后台才能跑通的事，如今一个人、一块屏幕就能完成——而且每一分收益的来处，都看得见。",
       "pullQuote": "“工具退场，创作者才是主角。”",
       "mediaPlaceholder": "拖入特写大图 / Feature image",
-      "page": "17",
-      "total": "86"
+      "page": "13",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -2876,9 +2633,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "desc": "交错的图文段落数量",
-        "publicKey": "rowCount",
-        "publicLabel": "段落数",
-        "description": "交错的图文段落数量"
+        "publicKey": "rowCount"
       },
       {
         "key": "imageSide",
@@ -2896,9 +2651,7 @@ export const pages = [
           }
         ],
         "desc": "第一段图片在左还是右（逐段交替）",
-        "publicKey": "imageSide",
-        "publicLabel": "首段图片侧",
-        "description": "第一段图片在左还是右（逐段交替）"
+        "publicKey": "imageSide"
       },
       {
         "key": "showNumbers",
@@ -2906,9 +2659,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每段的大编号",
-        "publicKey": "showNumbers",
-        "publicLabel": "段落编号",
-        "description": "显示/隐藏每段的大编号"
+        "publicKey": "showNumbers"
       },
       {
         "key": "showCaption",
@@ -2916,9 +2667,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每段说明文字",
-        "publicKey": "showCaption",
-        "publicLabel": "段落正文",
-        "description": "显示/隐藏每段说明文字"
+        "publicKey": "showCaption"
       },
       {
         "key": "theme",
@@ -2936,18 +2685,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -2955,7 +2702,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -2964,13 +2711,11 @@ export const pages = [
           }
         ],
         "desc": "导语 / 编号 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语 / 编号 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "rowCount": 3,
       "imageSide": "left",
@@ -2978,6 +2723,7 @@ export const pages = [
       "showCaption": true,
       "media": [],
       "barMeta": "14 — Editorial",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "创作日常 / A Day in the Work",
       "title": "一首歌的[[三个现场]]，同一块屏幕。",
       "bands": [
@@ -2997,8 +2743,9 @@ export const pages = [
           "d": "全网版税 72 小时透明到账，每一分钱都能追溯到那一首歌、那一场演出。"
         }
       ],
-      "page": "18",
-      "total": "86"
+      "page": "14",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -3019,9 +2766,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "图片槽数量；0=纯文字版式，1=按原图比例自适应主图，2–5=自动排布的画廊",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片数量",
-        "description": "图片槽数量；0=纯文字版式，1=按原图比例自适应主图，2–5=自动排布的画廊"
+        "publicKey": "mediaCount"
       },
       {
         "key": "mediaFit",
@@ -3040,9 +2785,7 @@ export const pages = [
         ],
         "dependsOn": "mediaCount",
         "desc": "多图时图片的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "多图时图片的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showCaption",
@@ -3050,9 +2793,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏左栏图注说明",
-        "publicKey": "showCaption",
-        "publicLabel": "显示图注",
-        "description": "显示/隐藏左栏图注说明"
+        "publicKey": "showCaption"
       },
       {
         "key": "showDecorations",
@@ -3060,9 +2801,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏编号角标装饰",
-        "publicKey": "showDecorations",
-        "publicLabel": "显示装饰",
-        "description": "显示/隐藏编号角标装饰"
+        "publicKey": "showDecorations"
       },
       {
         "key": "theme",
@@ -3080,18 +2819,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -3099,7 +2836,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -3108,13 +2845,11 @@ export const pages = [
           }
         ],
         "desc": "导语 / 角标 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语 / 角标 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "mediaCount": 3,
       "mediaFit": "cover",
@@ -3122,14 +2857,16 @@ export const pages = [
       "showDecorations": true,
       "media": [],
       "barMeta": "15 — In Context",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "现场 / In Context",
       "title": "声浪，长在\n创作者的[[日常]]里。",
       "caption": "从录音棚到结算页，从一条 demo 到一笔到账——把创作的每一个现场，收进同一块屏幕。",
       "hint": "/ Frames · drag to fill",
       "mediaPlaceholderHero": "拖入主图 / Hero image",
       "mediaPlaceholder": "拖入图片",
-      "page": "19",
-      "total": "86"
+      "page": "15",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -3157,9 +2894,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -3187,9 +2922,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "overlayPosition",
@@ -3211,9 +2944,7 @@ export const pages = [
           }
         ],
         "desc": "叠加文案面板的位置",
-        "publicKey": "overlayPosition",
-        "publicLabel": "文案位置",
-        "description": "叠加文案面板的位置"
+        "publicKey": "overlayPosition"
       },
       {
         "key": "scrim",
@@ -3231,9 +2962,7 @@ export const pages = [
           }
         ],
         "desc": "叠加渐变蒙版的明暗",
-        "publicKey": "scrim",
-        "publicLabel": "蒙版",
-        "description": "叠加渐变蒙版的明暗"
+        "publicKey": "scrim"
       },
       {
         "key": "mediaFit",
@@ -3251,9 +2980,7 @@ export const pages = [
           }
         ],
         "desc": "整版大图的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "整版大图的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showStats",
@@ -3261,9 +2988,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏底部数据标签",
-        "publicKey": "showStats",
-        "publicLabel": "数据标签",
-        "description": "显示/隐藏底部数据标签"
+        "publicKey": "showStats"
       },
       {
         "key": "statCount",
@@ -3275,18 +3000,16 @@ export const pages = [
         "step": 1,
         "dependsOn": "showStats",
         "desc": "数据标签的数量",
-        "publicKey": "statCount",
-        "publicLabel": "标签数量",
-        "description": "数据标签的数量"
+        "publicKey": "statCount"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -3294,7 +3017,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -3303,13 +3026,11 @@ export const pages = [
           }
         ],
         "desc": "高亮 / 标签 / 页码强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "高亮 / 标签 / 页码强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "backgroundMode": "unicorn",
       "unicornScene": "automations",
       "mediaFit": "cover",
@@ -3338,8 +3059,8 @@ export const pages = [
           "lb": "首季分成"
         }
       ],
-      "page": "20",
-      "total": "86"
+      "page": "16",
+      "total": "82"
     }
   },
   {
@@ -3367,9 +3088,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -3397,9 +3116,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "mediaFit",
@@ -3417,9 +3134,7 @@ export const pages = [
           }
         ],
         "desc": "封面大图填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "封面大图填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showCoverLines",
@@ -3427,9 +3142,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏两侧封面文案",
-        "publicKey": "showCoverLines",
-        "publicLabel": "封面导语",
-        "description": "显示/隐藏两侧封面文案"
+        "publicKey": "showCoverLines"
       },
       {
         "key": "showBarcode",
@@ -3437,9 +3150,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏角落刊号条码",
-        "publicKey": "showBarcode",
-        "publicLabel": "刊号条码",
-        "description": "显示/隐藏角落刊号条码"
+        "publicKey": "showBarcode"
       },
       {
         "key": "mastheadFill",
@@ -3447,18 +3158,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "刊头使用实色块或描边样式",
-        "publicKey": "mastheadFill",
-        "publicLabel": "刊头实底",
-        "description": "刊头使用实色块或描边样式"
+        "publicKey": "mastheadFill"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -3466,22 +3175,20 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
-            "value": "#5f7f00",
+            "value": "#baf04f",
             "label": "颜色 4"
           }
         ],
         "desc": "刊头 / 导语高亮 / 条码强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "刊头 / 导语高亮 / 条码强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "backgroundMode": "unicorn",
       "unicornScene": "moving",
       "mediaFit": "cover",
@@ -3510,8 +3217,8 @@ export const pages = [
           "small": "小场地里，正在发生的大事"
         }
       ],
-      "page": "21",
-      "total": "86"
+      "page": "17",
+      "total": "82"
     }
   },
   {
@@ -3539,9 +3246,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -3569,9 +3274,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "cardCorner",
@@ -3597,9 +3300,7 @@ export const pages = [
           }
         ],
         "desc": "实色文字卡所在的画面角落",
-        "publicKey": "cardCorner",
-        "publicLabel": "文字卡位置",
-        "description": "实色文字卡所在的画面角落"
+        "publicKey": "cardCorner"
       },
       {
         "key": "showScrim",
@@ -3607,9 +3308,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "文字卡后的压暗渐变，提升可读性",
-        "publicKey": "showScrim",
-        "publicLabel": "压暗渐变",
-        "description": "文字卡后的压暗渐变，提升可读性"
+        "publicKey": "showScrim"
       },
       {
         "key": "showCaption",
@@ -3617,9 +3316,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏卡片副文案",
-        "publicKey": "showCaption",
-        "publicLabel": "副文案",
-        "description": "显示/隐藏卡片副文案"
+        "publicKey": "showCaption"
       },
       {
         "key": "mediaFit",
@@ -3637,18 +3334,16 @@ export const pages = [
           }
         ],
         "desc": "图片填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "图片填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -3656,7 +3351,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -3665,13 +3360,11 @@ export const pages = [
           }
         ],
         "desc": "文字卡 / 高亮 / 角标强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "文字卡 / 高亮 / 角标强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "cardCorner": "bl",
       "showScrim": true,
       "showCaption": true,
@@ -3685,8 +3378,8 @@ export const pages = [
       "title": "声音发生的\n[[地方]]。",
       "caption": "每一张照片背后，是一个正在用声浪经营自己事业的创作者。",
       "mediaPlaceholder": "拖入整版大图 / Full-bleed image",
-      "page": "22",
-      "total": "86"
+      "page": "18",
+      "total": "82"
     }
   },
   {
@@ -3714,9 +3407,7 @@ export const pages = [
           }
         ],
         "desc": "海报图填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "海报图填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showSpotlights",
@@ -3724,9 +3415,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏顶部射灯与光晕",
-        "publicKey": "showSpotlights",
-        "publicLabel": "射灯",
-        "description": "显示/隐藏顶部射灯与光晕"
+        "publicKey": "showSpotlights"
       },
       {
         "key": "showBrandStrip",
@@ -3734,9 +3423,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏灯箱顶部品牌条",
-        "publicKey": "showBrandStrip",
-        "publicLabel": "品牌条",
-        "description": "显示/隐藏灯箱顶部品牌条"
+        "publicKey": "showBrandStrip"
       },
       {
         "key": "showCaption",
@@ -3744,9 +3431,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏底部投放位置说明",
-        "publicKey": "showCaption",
-        "publicLabel": "位置说明",
-        "description": "显示/隐藏底部投放位置说明"
+        "publicKey": "showCaption"
       },
       {
         "key": "theme",
@@ -3764,18 +3449,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -3783,7 +3466,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -3792,13 +3475,11 @@ export const pages = [
           }
         ],
         "desc": "灯箱边框 / 品牌条 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "灯箱边框 / 品牌条 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "dark",
       "mediaFit": "cover",
       "showSpotlights": true,
@@ -3806,12 +3487,14 @@ export const pages = [
       "showCaption": true,
       "media": [],
       "barMeta": "19 — Lightbox",
+      "brandLabel": "CREATIVE SYSTEM",
       "brand": "声浪 SOUNDWAVE",
       "brandTag": "NOW PLAYING · 2026",
       "caption": "城市中心 · 户外灯箱 6m × 3m · OUT-OF-HOME",
       "mediaPlaceholder": "拖入投放主视觉 / Campaign key visual",
-      "page": "23",
-      "total": "86"
+      "page": "19",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -3832,9 +3515,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "desc": "1=单张全景，2=左右拼接全景",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片数量",
-        "description": "1=单张全景，2=左右拼接全景"
+        "publicKey": "mediaCount"
       },
       {
         "key": "mediaFit",
@@ -3852,9 +3533,7 @@ export const pages = [
           }
         ],
         "desc": "图片填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "图片填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showMeta",
@@ -3862,9 +3541,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏图片下方的事实条",
-        "publicKey": "showMeta",
-        "publicLabel": "信息条",
-        "description": "显示/隐藏图片下方的事实条"
+        "publicKey": "showMeta"
       },
       {
         "key": "metaCount",
@@ -3876,9 +3553,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "showMeta",
         "desc": "事实条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "事实条数",
-        "description": "事实条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showCaption",
@@ -3886,9 +3561,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏图片下方图注",
-        "publicKey": "showCaption",
-        "publicLabel": "图注",
-        "description": "显示/隐藏图片下方图注"
+        "publicKey": "showCaption"
       },
       {
         "key": "theme",
@@ -3906,22 +3579,20 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#0077a8",
+        "def": "#3bb6ec",
         "options": [
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
@@ -3934,13 +3605,11 @@ export const pages = [
           }
         ],
         "desc": "标题侧栏 / 事实 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "标题侧栏 / 事实 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#0077a8",
+      "accent": "#3bb6ec",
       "theme": "dark",
       "mediaCount": 1,
       "mediaFit": "cover",
@@ -3949,6 +3618,7 @@ export const pages = [
       "showCaption": true,
       "media": [],
       "barMeta": "20 — Panorama",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "巡演现场 / On Tour",
       "title": "一整片\n[[声浪]]，\n铺满全场。",
       "caption": "把横跨数城的现场，收进同一条时间线。",
@@ -3967,8 +3637,9 @@ export const pages = [
           "u": "场地抽成 Venue cut"
         }
       ],
-      "page": "24",
-      "total": "86"
+      "page": "20",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -3989,9 +3660,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "拍立得照片的数量",
-        "publicKey": "photoCount",
-        "publicLabel": "照片数量",
-        "description": "拍立得照片的数量"
+        "publicKey": "photoCount"
       },
       {
         "key": "scatter",
@@ -3999,9 +3668,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "开启倾斜散落 / 关闭则整齐排布",
-        "publicKey": "scatter",
-        "publicLabel": "随意散落",
-        "description": "开启倾斜散落 / 关闭则整齐排布"
+        "publicKey": "scatter"
       },
       {
         "key": "theme",
@@ -4019,9 +3686,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "showCaptions",
@@ -4029,9 +3694,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏照片下方说明",
-        "publicKey": "showCaptions",
-        "publicLabel": "手写图注",
-        "description": "显示/隐藏照片下方说明"
+        "publicKey": "showCaptions"
       },
       {
         "key": "mediaFit",
@@ -4049,18 +3712,16 @@ export const pages = [
           }
         ],
         "desc": "图片填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "图片填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -4068,7 +3729,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -4077,13 +3738,11 @@ export const pages = [
           }
         ],
         "desc": "标题块 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "标题块 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "photoCount": 4,
       "scatter": true,
@@ -4091,6 +3750,7 @@ export const pages = [
       "mediaFit": "cover",
       "media": [],
       "barMeta": "21 — Polaroid",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "影像手账 / Snapshots",
       "title": "把高光\n一张张[[钉]]下来。",
       "intro": "不是冷冰冰的数据，而是一个个真实的瞬间——这才是创作者经营事业的样子。",
@@ -4103,8 +3763,9 @@ export const pages = [
         "排练室"
       ],
       "mediaPlaceholder": "拖入",
-      "page": "25",
-      "total": "86"
+      "page": "21",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -4132,9 +3793,7 @@ export const pages = [
           }
         ],
         "desc": "照片所在的一侧",
-        "publicKey": "imageSide",
-        "publicLabel": "照片位置",
-        "description": "照片所在的一侧"
+        "publicKey": "imageSide"
       },
       {
         "key": "showStamp",
@@ -4142,9 +3801,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏邮票占位（可拖入图片）",
-        "publicKey": "showStamp",
-        "publicLabel": "邮票槽",
-        "description": "显示/隐藏邮票占位（可拖入图片）"
+        "publicKey": "showStamp"
       },
       {
         "key": "showPostmark",
@@ -4153,9 +3810,7 @@ export const pages = [
         "def": true,
         "dependsOn": "showStamp",
         "desc": "邮票上的圆形邮戳",
-        "publicKey": "showPostmark",
-        "publicLabel": "邮戳",
-        "description": "邮票上的圆形邮戳"
+        "publicKey": "showPostmark"
       },
       {
         "key": "showDivider",
@@ -4163,9 +3818,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "信息区与地址区之间的竖线",
-        "publicKey": "showDivider",
-        "publicLabel": "分隔竖线",
-        "description": "信息区与地址区之间的竖线"
+        "publicKey": "showDivider"
       },
       {
         "key": "mediaFit",
@@ -4183,9 +3836,7 @@ export const pages = [
           }
         ],
         "desc": "照片的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "照片的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "theme",
@@ -4203,18 +3854,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -4222,7 +3871,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -4231,13 +3880,11 @@ export const pages = [
           }
         ],
         "desc": "邮戳 / 标记 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "邮戳 / 标记 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "imageSide": "left",
       "showStamp": true,
@@ -4246,6 +3893,7 @@ export const pages = [
       "mediaFit": "cover",
       "media": [],
       "barMeta": "22 — Postcard",
+      "brandLabel": "CREATIVE SYSTEM",
       "photoTag": "Greetings from 现场",
       "eyebrow": "Post Card",
       "title": "每一站都想\n写信告诉你。",
@@ -4262,8 +3910,9 @@ export const pages = [
         "声浪邮局 · 独立音乐 OS",
         "中国 · 任何有现场的地方"
       ],
-      "page": "26",
-      "total": "86"
+      "page": "22",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -4291,9 +3940,7 @@ export const pages = [
           }
         ],
         "desc": "票面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "票面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "mediaFit",
@@ -4311,9 +3958,7 @@ export const pages = [
           }
         ],
         "desc": "主图的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "主图的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showPerforation",
@@ -4321,9 +3966,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏票根之间的撕裂虚线",
-        "publicKey": "showPerforation",
-        "publicLabel": "撕裂齿孔",
-        "description": "显示/隐藏票根之间的撕裂虚线"
+        "publicKey": "showPerforation"
       },
       {
         "key": "showBarcode",
@@ -4331,18 +3974,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏存根下方的条形码",
-        "publicKey": "showBarcode",
-        "publicLabel": "条形码",
-        "description": "显示/隐藏存根下方的条形码"
+        "publicKey": "showBarcode"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -4350,7 +3991,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -4359,19 +4000,18 @@ export const pages = [
           }
         ],
         "desc": "票面边条 / 存根 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "票面边条 / 存根 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "dark",
       "mediaFit": "cover",
       "showPerforation": true,
       "showBarcode": true,
       "media": [],
       "barMeta": "23 — Ticket Stub",
+      "brandLabel": "CREATIVE SYSTEM",
       "admitLabel": "ADMIT ONE · 声浪现场",
       "title": "声浪巡演\n2026 夏",
       "stubLabel": "STUB · 存根",
@@ -4400,8 +4040,9 @@ export const pages = [
           "v": "GA — STANDING"
         }
       ],
-      "page": "27",
-      "total": "86"
+      "page": "23",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -4421,14 +4062,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "countArrays": [
-          "captions",
-          "media"
-        ],
         "desc": "胶片中的画格数量",
-        "publicKey": "mediaCount",
-        "publicLabel": "画格数量",
-        "description": "胶片中的画格数量"
+        "publicKey": "mediaCount"
       },
       {
         "key": "mediaFit",
@@ -4446,9 +4081,7 @@ export const pages = [
           }
         ],
         "desc": "图片的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "图片的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showSprockets",
@@ -4456,9 +4089,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏胶片齿孔轨",
-        "publicKey": "showSprockets",
-        "publicLabel": "齿孔",
-        "description": "显示/隐藏胶片齿孔轨"
+        "publicKey": "showSprockets"
       },
       {
         "key": "showCaptions",
@@ -4466,9 +4097,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每格下方的编号图注",
-        "publicKey": "showCaptions",
-        "publicLabel": "画格图注",
-        "description": "显示/隐藏每格下方的编号图注"
+        "publicKey": "showCaptions"
       },
       {
         "key": "theme",
@@ -4486,18 +4115,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -4505,7 +4132,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -4514,13 +4141,11 @@ export const pages = [
           }
         ],
         "desc": "导语 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "mediaCount": 4,
       "mediaFit": "cover",
@@ -4528,6 +4153,7 @@ export const pages = [
       "showCaptions": true,
       "media": [],
       "barMeta": "24 — Contact Sheet",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "胶片样张 / Contact Sheet",
       "title": "一卷胶片，[[一段路]]。",
       "metaLine": "ISO 400",
@@ -4555,8 +4181,9 @@ export const pages = [
           "s": "CROWD"
         }
       ],
-      "page": "28",
-      "total": "86"
+      "page": "24",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -4576,16 +4203,8 @@ export const pages = [
         "min": 4,
         "max": 8,
         "step": 1,
-        "countArrays": [
-          "media",
-          "postLabels",
-          "denoms",
-          "stampTint"
-        ],
         "desc": "邮票张上的邮票数量",
-        "publicKey": "mediaCount",
-        "publicLabel": "邮票数量",
-        "description": "邮票张上的邮票数量"
+        "publicKey": "mediaCount"
       },
       {
         "key": "cols",
@@ -4596,9 +4215,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "每行排布的邮票数",
-        "publicKey": "cols",
-        "publicLabel": "每行列数",
-        "description": "每行排布的邮票数"
+        "publicKey": "cols"
       },
       {
         "key": "mediaFit",
@@ -4616,9 +4233,7 @@ export const pages = [
           }
         ],
         "desc": "邮票图填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "邮票图填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showDenom",
@@ -4626,9 +4241,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每枚邮票的面值",
-        "publicKey": "showDenom",
-        "publicLabel": "面值",
-        "description": "显示/隐藏每枚邮票的面值"
+        "publicKey": "showDenom"
       },
       {
         "key": "theme",
@@ -4646,18 +4259,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -4665,7 +4276,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -4674,13 +4285,11 @@ export const pages = [
           }
         ],
         "desc": "导语 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "mediaCount": 6,
       "mediaFit": "cover",
@@ -4688,20 +4297,24 @@ export const pages = [
       "cols": 4,
       "media": [],
       "barMeta": "25 — Stamps",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "邮票张 / Stamps",
       "title": "每张作品，[[值得收藏]]。",
       "intro": "把现场、封面与样带，做成一枚枚可寄出的邮票——独立音乐，也能盖上自己的邮戳。",
-      "postLabels": [
-        "首枚邮政",
-        "二枚邮政",
-        "三枚邮政",
-        "四枚邮政",
-        "五枚邮政",
-        "六枚邮政",
-        "七枚邮政",
-        "八枚邮政"
+      "postLabel": "声浪邮政",
+      "metaPrefix": "声浪邮政 ·",
+      "mediaPlaceholder": "拖入",
+      "stampTint": [
+        "#f15a29",
+        "#3bb6ec",
+        "#c44ee0",
+        "#1f6b2a",
+        "#fbb24d",
+        "#d61fb5",
+        "#74d2f0",
+        "#baf04f"
       ],
-      "denoms": [
+      "denom": [
         "¥1.2",
         "¥2.0",
         "¥0.8",
@@ -4711,20 +4324,9 @@ export const pages = [
         "¥2.4",
         "¥1.0"
       ],
-      "metaPrefix": "声浪邮政 ·",
-      "mediaPlaceholder": "拖入",
-      "stampTint": [
-        "#d44718",
-        "#0077a8",
-        "#c44ee0",
-        "#1f6b2a",
-        "#b56000",
-        "#d61fb5",
-        "#0077a8",
-        "#5f7f00"
-      ],
-      "page": "29",
-      "total": "86"
+      "page": "25",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -4745,9 +4347,7 @@ export const pages = [
         "max": 7,
         "step": 1,
         "desc": "封面流中的封面数量",
-        "publicKey": "mediaCount",
-        "publicLabel": "封面数量",
-        "description": "封面流中的封面数量"
+        "publicKey": "mediaCount"
       },
       {
         "key": "focusIndex",
@@ -4758,9 +4358,7 @@ export const pages = [
         "max": 7,
         "step": 1,
         "desc": "居中竖立放大的封面（第几张）",
-        "publicKey": "focusIndex",
-        "publicLabel": "聚焦封面",
-        "description": "居中竖立放大的封面（第几张）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "mediaFit",
@@ -4778,9 +4376,7 @@ export const pages = [
           }
         ],
         "desc": "封面图填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "封面图填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showReflection",
@@ -4788,9 +4384,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏封面下方倒影",
-        "publicKey": "showReflection",
-        "publicLabel": "倒影",
-        "description": "显示/隐藏封面下方倒影"
+        "publicKey": "showReflection"
       },
       {
         "key": "showCaption",
@@ -4798,9 +4392,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏焦点封面的条目标签",
-        "publicKey": "showCaption",
-        "publicLabel": "焦点图注",
-        "description": "显示/隐藏焦点封面的条目标签"
+        "publicKey": "showCaption"
       },
       {
         "key": "theme",
@@ -4818,22 +4410,20 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#0077a8",
+        "def": "#3bb6ec",
         "options": [
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
@@ -4846,13 +4436,11 @@ export const pages = [
           }
         ],
         "desc": "导语 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#0077a8",
+      "accent": "#3bb6ec",
       "theme": "dark",
       "mediaCount": 5,
       "focusIndex": 3,
@@ -4861,6 +4449,7 @@ export const pages = [
       "showCaption": true,
       "media": [],
       "barMeta": "26 — Coverflow",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "封面流 / Coverflow",
       "title": "每张封面，[[一个世界]]。",
       "hint": "releases",
@@ -4895,8 +4484,9 @@ export const pages = [
           "s": "NIGHT TRAIN"
         }
       ],
-      "page": "30",
-      "total": "86"
+      "page": "26",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -4924,9 +4514,7 @@ export const pages = [
           }
         ],
         "desc": "两图的排布方向",
-        "publicKey": "orientation",
-        "publicLabel": "排布方向",
-        "description": "两图的排布方向"
+        "publicKey": "orientation"
       },
       {
         "key": "showLabels",
@@ -4934,9 +4522,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏 BEFORE / AFTER 标签",
-        "publicKey": "showLabels",
-        "publicLabel": "前后标签",
-        "description": "显示/隐藏 BEFORE / AFTER 标签"
+        "publicKey": "showLabels"
       },
       {
         "key": "showHandle",
@@ -4944,9 +4530,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏接缝处的圆形手柄",
-        "publicKey": "showHandle",
-        "publicLabel": "中缝手柄",
-        "description": "显示/隐藏接缝处的圆形手柄"
+        "publicKey": "showHandle"
       },
       {
         "key": "showStat",
@@ -4954,9 +4538,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏底部变化数据条",
-        "publicKey": "showStat",
-        "publicLabel": "变化数据",
-        "description": "显示/隐藏底部变化数据条"
+        "publicKey": "showStat"
       },
       {
         "key": "theme",
@@ -4974,9 +4556,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "mediaFit",
@@ -4994,18 +4574,16 @@ export const pages = [
           }
         ],
         "desc": "图片的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "图片的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -5013,7 +4591,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -5022,13 +4600,11 @@ export const pages = [
           }
         ],
         "desc": "标签 / 手柄 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "标签 / 手柄 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "dark",
       "orientation": "horizontal",
       "showLabels": true,
@@ -5037,6 +4613,7 @@ export const pages = [
       "mediaFit": "cover",
       "media": [],
       "barMeta": "27 — Before · After",
+      "brandLabel": "CREATIVE SYSTEM",
       "title": "同一个你，[[换一种活法]]。",
       "beforeLabel": "BEFORE",
       "afterLabel": "AFTER",
@@ -5061,8 +4638,9 @@ export const pages = [
           "e": "Middlemen"
         }
       ],
-      "page": "31",
-      "total": "86"
+      "page": "27",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -5082,14 +4660,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "countArrays": [
-          "plans",
-          "rows[].vals"
-        ],
         "desc": "参与对比的方案列数",
-        "publicKey": "columnCount",
-        "publicLabel": "对比列数",
-        "description": "参与对比的方案列数"
+        "publicKey": "columnCount"
       },
       {
         "key": "rowCount",
@@ -5100,9 +4672,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "展示的对比维度行数",
-        "publicKey": "rowCount",
-        "publicLabel": "对比项数",
-        "description": "展示的对比维度行数"
+        "publicKey": "rowCount"
       },
       {
         "key": "highlight",
@@ -5110,9 +4680,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "突出显示某一方案列",
-        "publicKey": "highlight",
-        "publicLabel": "高亮某列",
-        "description": "突出显示某一方案列"
+        "publicKey": "highlight"
       },
       {
         "key": "highlightIndex",
@@ -5124,9 +4692,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "highlight",
         "desc": "被突出列的序号（1 起）",
-        "publicKey": "highlightIndex",
-        "publicLabel": "高亮第几列",
-        "description": "被突出列的序号（1 起）"
+        "publicKey": "highlightIndex"
       },
       {
         "key": "zebra",
@@ -5134,9 +4700,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "行间隔底色，便于横向阅读",
-        "publicKey": "zebra",
-        "publicLabel": "斑马纹",
-        "description": "行间隔底色，便于横向阅读"
+        "publicKey": "zebra"
       },
       {
         "key": "showLede",
@@ -5144,9 +4708,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏表格上方说明句",
-        "publicKey": "showLede",
-        "publicLabel": "显示导语",
-        "description": "显示/隐藏表格上方说明句"
+        "publicKey": "showLede"
       },
       {
         "key": "theme",
@@ -5164,18 +4726,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -5183,7 +4743,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -5192,13 +4752,11 @@ export const pages = [
           }
         ],
         "desc": "高亮列 / 对勾 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "高亮列 / 对勾 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "columnCount": 3,
       "rowCount": 6,
@@ -5207,6 +4765,7 @@ export const pages = [
       "zebra": true,
       "showLede": true,
       "barMeta": "28 — Compare",
+      "brandLabel": "CREATIVE SYSTEM",
       "lede": "同样一首歌，[[在声浪]]能多拿回多少？",
       "featureLabel": "对比维度 / Feature",
       "plans": [
@@ -5289,8 +4848,9 @@ export const pages = [
           ]
         }
       ],
-      "page": "32",
-      "total": "86"
+      "page": "28",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -5311,25 +4871,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "规格分组的数量",
-        "publicKey": "groupCount",
-        "publicLabel": "分组数",
-        "description": "规格分组的数量"
-      },
-      {
-        "key": "rowCount",
-        "label": "每组行数",
-        "type": "slider",
-        "def": 4,
-        "min": 2,
-        "max": 4,
-        "step": 1,
-        "countArrays": [
-          "groups[].rows"
-        ],
-        "desc": "每个规格分组展示的明细行数",
-        "publicKey": "rowCount",
-        "publicLabel": "每组行数",
-        "description": "每个规格分组展示的明细行数"
+        "publicKey": "groupCount"
       },
       {
         "key": "columns",
@@ -5340,9 +4882,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "desc": "分组排布的列数",
-        "publicKey": "columns",
-        "publicLabel": "栏数",
-        "description": "分组排布的列数"
+        "publicKey": "columns"
       },
       {
         "key": "showLeaders",
@@ -5350,9 +4890,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏项与值之间的虚线引导",
-        "publicKey": "showLeaders",
-        "publicLabel": "引导点",
-        "description": "显示/隐藏项与值之间的虚线引导"
+        "publicKey": "showLeaders"
       },
       {
         "key": "showLede",
@@ -5360,9 +4898,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏标题区说明",
-        "publicKey": "showLede",
-        "publicLabel": "显示导语",
-        "description": "显示/隐藏标题区说明"
+        "publicKey": "showLede"
       },
       {
         "key": "theme",
@@ -5380,9 +4916,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
@@ -5395,11 +4929,11 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -5408,20 +4942,18 @@ export const pages = [
           }
         ],
         "desc": "分组标号 / 重点值 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "分组标号 / 重点值 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
       "accent": "#5a138e",
       "theme": "light",
       "groupCount": 4,
-      "rowCount": 4,
       "columns": 2,
       "showLeaders": true,
       "showLede": true,
       "barMeta": "29 — Spec Sheet",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "规格清单 / The Fine Print",
       "title": "把[[每一条]]都写明白。",
       "metaLine": "SoundWave OS\nSpec · v2.6",
@@ -5511,8 +5043,9 @@ export const pages = [
           ]
         }
       ],
-      "page": "33",
-      "total": "86"
+      "page": "29",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -5533,9 +5066,7 @@ export const pages = [
         "max": 7,
         "step": 1,
         "desc": "名录中展示的条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "名录行数",
-        "description": "名录中展示的条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showRank",
@@ -5543,9 +5074,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏左侧排名序号",
-        "publicKey": "showRank",
-        "publicLabel": "排名序号",
-        "description": "显示/隐藏左侧排名序号"
+        "publicKey": "showRank"
       },
       {
         "key": "showBar",
@@ -5553,9 +5082,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏数值内联条形",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数据条",
-        "description": "显示/隐藏数值内联条形"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "focus",
@@ -5563,9 +5090,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "突出其中一行，其余常态",
-        "publicKey": "focus",
-        "publicLabel": "聚焦高亮",
-        "description": "突出其中一行，其余常态"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -5577,9 +5102,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "高亮的行序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "聚焦第几行",
-        "description": "高亮的行序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "theme",
@@ -5597,22 +5120,20 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#0077a8",
+        "def": "#3bb6ec",
         "options": [
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
@@ -5625,13 +5146,11 @@ export const pages = [
           }
         ],
         "desc": "聚焦行 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "聚焦行 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#0077a8",
+      "accent": "#3bb6ec",
       "theme": "light",
       "rowCount": 6,
       "showRank": true,
@@ -5639,6 +5158,7 @@ export const pages = [
       "focus": false,
       "focusIndex": 1,
       "barMeta": "30 — Directory",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "名录榜 / Directory",
       "title": "本季[[领跑]]的声音。",
       "metaLine": "Q2 2026 · TOP",
@@ -5704,8 +5224,9 @@ export const pages = [
           "s": "2.8M"
         }
       ],
-      "page": "34",
-      "total": "86"
+      "page": "30",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -5726,9 +5247,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "日历上高亮的发布节点数量",
-        "publicKey": "eventCount",
-        "publicLabel": "排期数量",
-        "description": "日历上高亮的发布节点数量"
+        "publicKey": "eventCount"
       },
       {
         "key": "showWeekdays",
@@ -5736,9 +5255,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏星期表头行",
-        "publicKey": "showWeekdays",
-        "publicLabel": "星期表头",
-        "description": "显示/隐藏星期表头行"
+        "publicKey": "showWeekdays"
       },
       {
         "key": "showLegend",
@@ -5746,9 +5263,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏右上角事件图例",
-        "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "description": "显示/隐藏右上角事件图例"
+        "publicKey": "showLegend"
       },
       {
         "key": "markToday",
@@ -5756,9 +5271,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "在“今日”加圆环标记",
-        "publicKey": "markToday",
-        "publicLabel": "今日标记",
-        "description": "在“今日”加圆环标记"
+        "publicKey": "markToday"
       },
       {
         "key": "theme",
@@ -5776,18 +5289,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -5795,7 +5306,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -5804,19 +5315,18 @@ export const pages = [
           }
         ],
         "desc": "主事件 / 今日 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "主事件 / 今日 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "eventCount": 4,
       "showWeekdays": true,
       "showLegend": true,
       "markToday": true,
       "barMeta": "31 — Schedule",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "发布排期 / Schedule",
       "title": "一张图，看清[[整月节奏]]。",
       "monthTitle": "2026 · 三月",
@@ -5865,8 +5375,9 @@ export const pages = [
           "ci": 0
         }
       ],
-      "page": "35",
-      "total": "86"
+      "page": "31",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -5887,9 +5398,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "并行工作线（泳道）的数量",
-        "publicKey": "laneCount",
-        "publicLabel": "泳道数量",
-        "description": "并行工作线（泳道）的数量"
+        "publicKey": "laneCount"
       },
       {
         "key": "quarterCount",
@@ -5900,9 +5409,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "时间轴上的时间列数",
-        "publicKey": "timeColumnCount",
-        "publicLabel": "时间列数",
-        "description": "时间轴上的时间列数"
+        "publicKey": "timeColumnCount"
       },
       {
         "key": "focus",
@@ -5910,9 +5417,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "突出其中一条泳道，其余淡化",
-        "publicKey": "focus",
-        "publicLabel": "聚焦泳道",
-        "description": "突出其中一条泳道，其余淡化"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -5924,9 +5429,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "高亮的泳道序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "聚焦第几条",
-        "description": "高亮的泳道序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showMilestones",
@@ -5934,9 +5437,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏菱形里程碑标记",
-        "publicKey": "showMilestones",
-        "publicLabel": "里程碑",
-        "description": "显示/隐藏菱形里程碑标记"
+        "publicKey": "showMilestones"
       },
       {
         "key": "theme",
@@ -5954,22 +5455,20 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#0077a8",
+        "def": "#3bb6ec",
         "options": [
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
@@ -5982,13 +5481,11 @@ export const pages = [
           }
         ],
         "desc": "当前时间段 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "当前时间段 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#0077a8",
+      "accent": "#3bb6ec",
       "theme": "light",
       "laneCount": 3,
       "quarterCount": 4,
@@ -5996,6 +5493,7 @@ export const pages = [
       "focusIndex": 1,
       "showMilestones": true,
       "barMeta": "32 — Roadmap",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "路线图 / Roadmap",
       "title": "未来四季，[[齐头并进]]。",
       "nowLabel": "当前 NOW",
@@ -6012,78 +5510,79 @@ export const pages = [
         {
           "t": "平台 Platform",
           "s": "CORE",
-          "c": "#0077a8",
-          "workItems": [
+          "c": "#3bb6ec",
+          "bars": [
             {
-              "startQuarter": 0,
-              "endQuarter": 1,
-              "label": "结算引擎 2.0"
+              "s": 0,
+              "e": 1,
+              "t": "结算引擎 2.0"
             },
             {
-              "startQuarter": 2,
-              "endQuarter": 3,
-              "label": "开放 API"
+              "s": 2,
+              "e": 3,
+              "t": "开放 API"
             }
           ],
-          "milestoneQuarter": 1
+          "ms": 1
         },
         {
           "t": "创作者 Creators",
           "s": "GROWTH",
-          "c": "#d44718",
-          "workItems": [
+          "c": "#f15a29",
+          "bars": [
             {
-              "startQuarter": 0,
-              "endQuarter": 0,
-              "label": "入驻自助化"
+              "s": 0,
+              "e": 0,
+              "t": "入驻自助化"
             },
             {
-              "startQuarter": 1,
-              "endQuarter": 3,
-              "label": "万人扶持计划"
+              "s": 1,
+              "e": 3,
+              "t": "万人扶持计划"
             }
           ],
-          "milestoneQuarter": 3
+          "ms": 3
         },
         {
           "t": "版权 Rights",
           "s": "TRUST",
           "c": "#1f6b2a",
-          "workItems": [
+          "bars": [
             {
-              "startQuarter": 1,
-              "endQuarter": 2,
-              "label": "链上存证"
+              "s": 1,
+              "e": 2,
+              "t": "链上存证"
             },
             {
-              "startQuarter": 3,
-              "endQuarter": 4,
-              "label": "全球清算"
+              "s": 3,
+              "e": 4,
+              "t": "全球清算"
             }
           ],
-          "milestoneQuarter": 4
+          "ms": 4
         },
         {
           "t": "生态 Ecosystem",
           "s": "REACH",
           "c": "#c44ee0",
-          "workItems": [
+          "bars": [
             {
-              "startQuarter": 0,
-              "endQuarter": 2,
-              "label": "30+ 平台同步"
+              "s": 0,
+              "e": 2,
+              "t": "30+ 平台同步"
             },
             {
-              "startQuarter": 3,
-              "endQuarter": 5,
-              "label": "海外发行"
+              "s": 3,
+              "e": 5,
+              "t": "海外发行"
             }
           ],
-          "milestoneQuarter": 5
+          "ms": 5
         }
       ],
-      "page": "36",
-      "total": "86"
+      "page": "32",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -6104,9 +5603,7 @@ export const pages = [
         "max": 16,
         "step": 1,
         "desc": "热力网格的列数（周）",
-        "publicKey": "weeks",
-        "publicLabel": "周数",
-        "description": "热力网格的列数（周）"
+        "publicKey": "weeks"
       },
       {
         "key": "showLegend",
@@ -6114,9 +5611,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏 少→多 强度图例",
-        "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "description": "显示/隐藏 少→多 强度图例"
+        "publicKey": "showLegend"
       },
       {
         "key": "showSidebar",
@@ -6124,9 +5619,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏右侧统计侧栏",
-        "publicKey": "showSidebar",
-        "publicLabel": "侧栏数据",
-        "description": "显示/隐藏右侧统计侧栏"
+        "publicKey": "showSidebar"
       },
       {
         "key": "theme",
@@ -6144,18 +5637,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -6167,23 +5658,22 @@ export const pages = [
             "label": "颜色 3"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 4"
           }
         ],
         "desc": "热力 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "热力 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "weeks": 14,
       "showLegend": true,
       "showSidebar": true,
       "barMeta": "33 — Heatmap",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "热力网格 / Heatmap",
       "title": "发行的[[节奏]]，一目了然。",
       "weekdays": [
@@ -6208,8 +5698,9 @@ export const pages = [
       "sidebarLabel": "近 {weeks} 周 · 发行总量",
       "sidebarText": "颜色越深、那天越热闹。周末（{peak}）是上新与开演的高峰。",
       "sidebarFoot": "峰值 +38% · 周末效应",
-      "page": "37",
-      "total": "86"
+      "page": "33",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -6230,9 +5721,7 @@ export const pages = [
         "max": 7,
         "step": 1,
         "desc": "对照的能力条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "特性行数",
-        "description": "对照的能力条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "columnCount",
@@ -6243,9 +5732,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "desc": "除声浪外的对照列数量",
-        "publicKey": "columnCount",
-        "publicLabel": "对手列数",
-        "description": "除声浪外的对照列数量"
+        "publicKey": "columnCount"
       },
       {
         "key": "showLegend",
@@ -6253,9 +5740,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏底部符号图例",
-        "publicKey": "showLegend",
-        "publicLabel": "显示图例",
-        "description": "显示/隐藏底部符号图例"
+        "publicKey": "showLegend"
       },
       {
         "key": "showLede",
@@ -6263,9 +5748,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏标题区导语",
-        "publicKey": "showLede",
-        "publicLabel": "显示导语",
-        "description": "显示/隐藏标题区导语"
+        "publicKey": "showLede"
       },
       {
         "key": "theme",
@@ -6283,18 +5766,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -6302,7 +5783,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -6311,13 +5792,11 @@ export const pages = [
           }
         ],
         "desc": "声浪列 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "声浪列 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "rowCount": 6,
       "columnCount": 3,
@@ -6325,6 +5804,7 @@ export const pages = [
       "showLegend": true,
       "showLede": true,
       "barMeta": "34 — Feature Matrix",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "横向对照 / Why SoundWave",
       "title": "同一张清单，[[差距]]一目了然。",
       "lede": "把分散在不同方案里的能力，摆进同一张表里——谁真的站在创作者这边。",
@@ -6410,8 +5890,9 @@ export const pages = [
           ]
         }
       ],
-      "page": "38",
-      "total": "86"
+      "page": "34",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -6432,9 +5913,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "每侧列出的对照条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "对照条目",
-        "description": "每侧列出的对照条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showStat",
@@ -6442,9 +5921,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每侧顶部的对比数字",
-        "publicKey": "showStat",
-        "publicLabel": "对照大数",
-        "description": "显示/隐藏每侧顶部的对比数字"
+        "publicKey": "showStat"
       },
       {
         "key": "showBadge",
@@ -6452,9 +5929,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏中间的 VS 徽标",
-        "publicKey": "showBadge",
-        "publicLabel": "中缝徽标",
-        "description": "显示/隐藏中间的 VS 徽标"
+        "publicKey": "showBadge"
       },
       {
         "key": "theme",
@@ -6472,18 +5947,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -6491,7 +5964,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -6500,18 +5973,17 @@ export const pages = [
           }
         ],
         "desc": "“有声浪”一侧 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "“有声浪”一侧 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "pointCount": 4,
       "showStat": true,
       "showBadge": true,
       "barMeta": "35 — Before · After",
+      "brandLabel": "CREATIVE SYSTEM",
       "badgeLabel": "VS",
       "beforeSide": "没有声浪 / Without",
       "afterSide": "有了声浪 / With",
@@ -6535,8 +6007,9 @@ export const pages = [
           "全网监测，一键维权"
         ]
       },
-      "page": "39",
-      "total": "86"
+      "page": "35",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -6557,9 +6030,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "问答条目的数量",
-        "publicKey": "itemCount",
-        "publicLabel": "问题数量",
-        "description": "问答条目的数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "columns",
@@ -6577,9 +6048,7 @@ export const pages = [
           }
         ],
         "desc": "问答条目的列数",
-        "publicKey": "columns",
-        "publicLabel": "栏数",
-        "description": "问答条目的列数"
+        "publicKey": "columns"
       },
       {
         "key": "focus",
@@ -6587,9 +6056,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "把某一条提升为强调色卡片",
-        "publicKey": "focus",
-        "publicLabel": "重点强调",
-        "description": "把某一条提升为强调色卡片"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -6601,9 +6068,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被强调条目的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "强调第几条",
-        "description": "被强调条目的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "theme",
@@ -6621,9 +6086,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "showLede",
@@ -6631,18 +6094,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏标题区导语",
-        "publicKey": "showLede",
-        "publicLabel": "显示导语",
-        "description": "显示/隐藏标题区导语"
+        "publicKey": "showLede"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -6650,7 +6111,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -6659,13 +6120,11 @@ export const pages = [
           }
         ],
         "desc": "焦点 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "焦点 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "itemCount": 4,
       "columns": 2,
@@ -6673,6 +6132,7 @@ export const pages = [
       "focusIndex": 1,
       "showLede": true,
       "barMeta": "36 — FAQ",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "常见问题 / FAQ",
       "title": "你大概想问的[[几件事]]。",
       "lede": "把签约前最常被追问的问题，提前摊开讲清楚。",
@@ -6702,8 +6162,9 @@ export const pages = [
           "a": "不需要。复杂留给系统，你只管做音乐。"
         }
       ],
-      "page": "40",
-      "total": "86"
+      "page": "36",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -6724,25 +6185,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "展示的价格方案数量",
-        "publicKey": "planCount",
-        "publicLabel": "方案数量",
-        "description": "展示的价格方案数量"
-      },
-      {
-        "key": "itemCount",
-        "label": "功能条目",
-        "type": "slider",
-        "def": 4,
-        "min": 3,
-        "max": 4,
-        "step": 1,
-        "countArrays": [
-          "plans[].feats"
-        ],
-        "desc": "每个价格方案展示的功能条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "功能条目",
-        "description": "每个价格方案展示的功能条目数量"
+        "publicKey": "planCount"
       },
       {
         "key": "highlightIndex",
@@ -6753,9 +6196,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "被突出为推荐的方案序号（1 起）",
-        "publicKey": "highlightIndex",
-        "publicLabel": "推荐方案",
-        "description": "被突出为推荐的方案序号（1 起）"
+        "publicKey": "highlightIndex"
       },
       {
         "key": "billing",
@@ -6773,9 +6214,7 @@ export const pages = [
           }
         ],
         "desc": "切换月付 / 年付价格",
-        "publicKey": "billing",
-        "publicLabel": "计费周期",
-        "description": "切换月付 / 年付价格"
+        "publicKey": "billing"
       },
       {
         "key": "showFeatures",
@@ -6783,9 +6222,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每个方案的功能清单",
-        "publicKey": "showFeatures",
-        "publicLabel": "功能清单",
-        "description": "显示/隐藏每个方案的功能清单"
+        "publicKey": "showFeatures"
       },
       {
         "key": "theme",
@@ -6803,18 +6240,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -6822,7 +6257,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -6831,20 +6266,18 @@ export const pages = [
           }
         ],
         "desc": "推荐卡 / 对勾 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "推荐卡 / 对勾 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "planCount": 3,
-      "itemCount": 4,
       "highlightIndex": 2,
       "billing": "monthly",
       "showFeatures": true,
       "barMeta": "37 — Plans",
+      "brandLabel": "CREATIVE SYSTEM",
       "title": "选一个[[起点]]，随成长升级。",
       "billMonthly": "按月",
       "billYearly": "按年省 25%",
@@ -6863,7 +6296,6 @@ export const pages = [
           "feats": [
             "全球 30+ 平台分发",
             "基础结算面板",
-            "基础数据报表",
             "社区支持"
           ]
         },
@@ -6910,8 +6342,9 @@ export const pages = [
           ]
         }
       ],
-      "page": "41",
-      "total": "86"
+      "page": "37",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -6939,9 +6372,7 @@ export const pages = [
           }
         ],
         "desc": "间章底色：深色 / 强调色铺底",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "间章底色：深色 / 强调色铺底"
+        "publicKey": "theme"
       },
       {
         "key": "numeral",
@@ -6959,9 +6390,7 @@ export const pages = [
           }
         ],
         "desc": "大编号的呈现方式",
-        "publicKey": "numeral",
-        "publicLabel": "编号样式",
-        "description": "大编号的呈现方式"
+        "publicKey": "numeral"
       },
       {
         "key": "showIndex",
@@ -6969,9 +6398,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏背景巨大编号",
-        "publicKey": "showIndex",
-        "publicLabel": "巨大编号",
-        "description": "显示/隐藏背景巨大编号"
+        "publicKey": "showIndex"
       },
       {
         "key": "showTag",
@@ -6979,9 +6406,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏“接下来”标签",
-        "publicKey": "showTag",
-        "publicLabel": "下一幕标签",
-        "description": "显示/隐藏“接下来”标签"
+        "publicKey": "showTag"
       },
       {
         "key": "showDecorations",
@@ -6989,18 +6414,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏几何装饰",
-        "publicKey": "showDecorations",
-        "publicLabel": "显示装饰",
-        "description": "显示/隐藏几何装饰"
+        "publicKey": "showDecorations"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -7008,7 +6431,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -7017,25 +6440,25 @@ export const pages = [
           }
         ],
         "desc": "高亮 / 编号 / 铺底强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "高亮 / 编号 / 铺底强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "dark",
       "numeral": "arabic",
       "showIndex": true,
       "showTag": true,
       "showDecorations": true,
       "barMeta": "38 — Interlude",
+      "brandLabel": "CREATIVE SYSTEM",
       "act": 2,
       "kicker": "第二幕 / Act",
       "title": "光有热爱不够，\n还得[[算得清]]。",
       "tag": "接下来 · 用数据说话 / By the numbers",
-      "page": "42",
-      "total": "86"
+      "page": "38",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -7056,9 +6479,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "展示的数据指标数量",
-        "publicKey": "statCount",
-        "publicLabel": "指标数量",
-        "description": "展示的数据指标数量"
+        "publicKey": "statCount"
       },
       {
         "key": "chartType",
@@ -7080,9 +6501,7 @@ export const pages = [
           }
         ],
         "desc": "每个指标的可视化形式",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型",
-        "description": "每个指标的可视化形式"
+        "publicKey": "chartType"
       },
       {
         "key": "focus",
@@ -7090,9 +6509,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "高亮某一指标，弱化其余",
-        "publicKey": "focus",
-        "publicLabel": "重点强调",
-        "description": "高亮某一指标，弱化其余"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -7104,9 +6521,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被强调指标的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "强调第几个",
-        "description": "被强调指标的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showIntro",
@@ -7114,9 +6529,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏右上引言段落",
-        "publicKey": "showIntro",
-        "publicLabel": "显示引言",
-        "description": "显示/隐藏右上引言段落"
+        "publicKey": "showIntro"
       },
       {
         "key": "showArgument",
@@ -7124,9 +6537,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏底部现状/解法两栏",
-        "publicKey": "showArgument",
-        "publicLabel": "显示论述",
-        "description": "显示/隐藏底部现状/解法两栏"
+        "publicKey": "showArgument"
       },
       {
         "key": "theme",
@@ -7144,18 +6555,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -7163,7 +6572,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -7172,13 +6581,11 @@ export const pages = [
           }
         ],
         "desc": "导语/页脚等强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语/页脚等强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "statCount": 4,
       "chartType": "number",
@@ -7187,6 +6594,7 @@ export const pages = [
       "showIntro": true,
       "showArgument": true,
       "barMeta": "39 — Why Now",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "为什么是现在",
       "title": "独立发行的拐点，\n已经到来。",
       "intro": "流媒体把听众带到每个人面前，却把分成层层稀释。当工具足够成熟、成本足够低，[[音乐人不必再让渡主动权]]——声浪要做的，是把这件事彻底变简单。",
@@ -7224,8 +6632,9 @@ export const pages = [
           "pct": 0.92
         }
       ],
-      "page": "43",
-      "total": "86"
+      "page": "39",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -7246,9 +6655,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "收益构成的分段数量",
-        "publicKey": "segmentCount",
-        "publicLabel": "分段数量",
-        "description": "收益构成的分段数量"
+        "publicKey": "segmentCount"
       },
       {
         "key": "chartType",
@@ -7266,9 +6673,7 @@ export const pages = [
           }
         ],
         "desc": "环形或实心扇形",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型",
-        "description": "环形或实心扇形"
+        "publicKey": "chartType"
       },
       {
         "key": "showCenter",
@@ -7277,9 +6682,7 @@ export const pages = [
         "def": true,
         "dependsOn": "chartType",
         "desc": "环形中心显示总计（仅环形）",
-        "publicKey": "showCenter",
-        "publicLabel": "中心总计",
-        "description": "环形中心显示总计（仅环形）"
+        "publicKey": "showCenter"
       },
       {
         "key": "focus",
@@ -7287,9 +6690,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "放大并高亮某一分段",
-        "publicKey": "focus",
-        "publicLabel": "重点强调",
-        "description": "放大并高亮某一分段"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -7301,9 +6702,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被强调分段的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "强调第几段",
-        "description": "被强调分段的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "theme",
@@ -7321,18 +6720,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -7340,7 +6737,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -7349,13 +6746,11 @@ export const pages = [
           }
         ],
         "desc": "主分段 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "主分段 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "segmentCount": 5,
       "chartType": "donut",
@@ -7363,6 +6758,7 @@ export const pages = [
       "focus": false,
       "focusIndex": 1,
       "barMeta": "40 — Composition",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "收益构成 / Composition",
       "title": "版税之外，收入更[[多元]]。",
       "ghost": "31",
@@ -7395,8 +6791,9 @@ export const pages = [
           "v": 6
         }
       ],
-      "page": "44",
-      "total": "86"
+      "page": "40",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -7417,9 +6814,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "占比方块（收入来源）的数量",
-        "publicKey": "blockCount",
-        "publicLabel": "方块数量",
-        "description": "占比方块（收入来源）的数量"
+        "publicKey": "blockCount"
       },
       {
         "key": "focus",
@@ -7427,9 +6822,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "突出其中一个方块，其余淡化",
-        "publicKey": "focus",
-        "publicLabel": "聚焦高亮",
-        "description": "突出其中一个方块，其余淡化"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -7441,9 +6834,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "高亮的方块（按占比从大到小）",
-        "publicKey": "focusIndex",
-        "publicLabel": "聚焦第几块",
-        "description": "高亮的方块（按占比从大到小）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showShare",
@@ -7451,9 +6842,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每块的占比百分比",
-        "publicKey": "showShare",
-        "publicLabel": "占比数字",
-        "description": "显示/隐藏每块的占比百分比"
+        "publicKey": "showShare"
       },
       {
         "key": "theme",
@@ -7471,9 +6860,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
@@ -7486,7 +6873,7 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
@@ -7494,14 +6881,12 @@ export const pages = [
             "label": "颜色 3"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 4"
           }
         ],
         "desc": "聚焦方块 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "聚焦方块 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -7512,6 +6897,7 @@ export const pages = [
       "focusIndex": 1,
       "showShare": true,
       "barMeta": "41 — Treemap",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "占比方块 / Treemap",
       "title": "收入从\n哪里[[长出来]]。",
       "intro": "每个方块的面积，就是它在创作者总收入中的占比。流媒体仍是底盘，而现场与周边正快速变厚。",
@@ -7530,9 +6916,9 @@ export const pages = [
           "t": "现场演出",
           "s": "Live Shows",
           "v": 23,
-          "c": "#0077a8",
-          "fg": "#fff",
-          "sub": "#d8f0fa"
+          "c": "#3bb6ec",
+          "fg": "#143049",
+          "sub": "#1c5b82"
         },
         {
           "t": "周边电商",
@@ -7540,23 +6926,23 @@ export const pages = [
           "v": 16,
           "c": "#1f6b2a",
           "fg": "#fff",
-          "sub": "#d7ff84"
+          "sub": "#baf04f"
         },
         {
           "t": "粉丝订阅",
           "s": "Memberships",
           "v": 12,
-          "c": "#d44718",
+          "c": "#f15a29",
           "fg": "#fff",
-          "sub": "#fff2e8"
+          "sub": "#fdddc6"
         },
         {
           "t": "版权授权",
           "s": "Sync / License",
           "v": 7,
-          "c": "#b56000",
-          "fg": "#fff",
-          "sub": "#fff2d2"
+          "c": "#fbb24d",
+          "fg": "#3a2607",
+          "sub": "#7a3a18"
         },
         {
           "t": "众筹预售",
@@ -7564,11 +6950,12 @@ export const pages = [
           "v": 5,
           "c": "#c44ee0",
           "fg": "#fff",
-          "sub": "#fff2ff"
+          "sub": "#f3b8ec"
         }
       ],
-      "page": "45",
-      "total": "86"
+      "page": "41",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -7589,9 +6976,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "资金分配的去向数量",
-        "publicKey": "bucketCount",
-        "publicLabel": "去向数量",
-        "description": "资金分配的去向数量"
+        "publicKey": "bucketCount"
       },
       {
         "key": "focus",
@@ -7599,9 +6984,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "突出其中一条资金流，其余淡化",
-        "publicKey": "focus",
-        "publicLabel": "聚焦高亮",
-        "description": "突出其中一条资金流，其余淡化"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -7613,9 +6996,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "高亮的资金流序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "聚焦第几条",
-        "description": "高亮的资金流序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showValues",
@@ -7623,9 +7004,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每条流向的占比",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值占比",
-        "description": "显示/隐藏每条流向的占比"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "theme",
@@ -7643,9 +7022,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
@@ -7658,11 +7035,11 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -7671,9 +7048,7 @@ export const pages = [
           }
         ],
         "desc": "聚焦流 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "聚焦流 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -7684,6 +7059,7 @@ export const pages = [
       "focusIndex": 1,
       "showValues": true,
       "barMeta": "42 — Flow",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "资金流向 / Flow",
       "title": "每 100 元，[[70 元]]回到创作者。",
       "totalValue": "¥2.4亿",
@@ -7701,7 +7077,7 @@ export const pages = [
           "t": "平台运营",
           "s": "Platform",
           "v": 14,
-          "c": "#0077a8"
+          "c": "#3bb6ec"
         },
         {
           "t": "版权清算",
@@ -7713,17 +7089,18 @@ export const pages = [
           "t": "生态再投资",
           "s": "Reinvest",
           "v": 5,
-          "c": "#d44718"
+          "c": "#f15a29"
         },
         {
           "t": "公益基金",
           "s": "Fund",
           "v": 2,
-          "c": "#b56000"
+          "c": "#fbb24d"
         }
       ],
-      "page": "46",
-      "total": "86"
+      "page": "42",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -7744,9 +7121,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "总收入与到手之间的增减项数量",
-        "publicKey": "stepCount",
-        "publicLabel": "变动项数",
-        "description": "总收入与到手之间的增减项数量"
+        "publicKey": "stepCount"
       },
       {
         "key": "showConnectors",
@@ -7754,9 +7129,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏柱顶之间的虚线",
-        "publicKey": "showConnectors",
-        "publicLabel": "连接线",
-        "description": "显示/隐藏柱顶之间的虚线"
+        "publicKey": "showConnectors"
       },
       {
         "key": "showValues",
@@ -7764,9 +7137,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每根柱的增减数值",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
-        "description": "显示/隐藏每根柱的增减数值"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "focus",
@@ -7774,9 +7145,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "突出某一增减项",
-        "publicKey": "focus",
-        "publicLabel": "高亮某项",
-        "description": "突出某一增减项"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -7788,9 +7157,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被突出增减项的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "高亮第几项",
-        "description": "被突出增减项的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "theme",
@@ -7808,18 +7175,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -7827,7 +7192,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -7836,13 +7201,11 @@ export const pages = [
           }
         ],
         "desc": "到手总额 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "到手总额 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "stepCount": 4,
       "showConnectors": true,
@@ -7850,6 +7213,7 @@ export const pages = [
       "focus": true,
       "focusIndex": 3,
       "barMeta": "43 — Waterfall",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "收入桥 / The Bridge",
       "base": 100,
       "grossLabel": {
@@ -7888,8 +7252,9 @@ export const pages = [
           "d": 3
         }
       ],
-      "page": "47",
-      "total": "86"
+      "page": "43",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -7921,9 +7286,7 @@ export const pages = [
           }
         ],
         "desc": "增长曲线的呈现形式",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型",
-        "description": "增长曲线的呈现形式"
+        "publicKey": "chartType"
       },
       {
         "key": "seriesCount",
@@ -7934,16 +7297,14 @@ export const pages = [
         "max": 2,
         "step": 1,
         "desc": "同时展示的数据系列数（指标 / 成员）",
-        "publicKey": "seriesCount",
-        "publicLabel": "数据系列",
-        "description": "同时展示的数据系列数（指标 / 成员）"
+        "publicKey": "seriesCount"
       },
       {
         "key": "quarterCount",
-        "label": "时间点数",
+        "label": "时间列数",
         "type": "slider",
         "def": 8,
-        "min": 2,
+        "min": 4,
         "max": 8,
         "step": 1,
         "countArrays": [
@@ -7951,10 +7312,8 @@ export const pages = [
           "seriesA",
           "seriesB"
         ],
-        "desc": "横轴时间段与两组数值的共同点数",
-        "publicKey": "timeColumnCount",
-        "publicLabel": "时间点数",
-        "description": "横轴时间段与两组数值的共同点数"
+        "desc": "时间轴上展示的时间列数",
+        "publicKey": "timeColumnCount"
       },
       {
         "key": "showGrid",
@@ -7962,9 +7321,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏背景网格与刻度",
-        "publicKey": "showGrid",
-        "publicLabel": "网格线",
-        "description": "显示/隐藏背景网格与刻度"
+        "publicKey": "showGrid"
       },
       {
         "key": "showLegend",
@@ -7972,9 +7329,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏系列图例",
-        "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "description": "显示/隐藏系列图例"
+        "publicKey": "showLegend"
       },
       {
         "key": "showCallout",
@@ -7982,9 +7337,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "高亮并标注最新一季",
-        "publicKey": "showCallout",
-        "publicLabel": "终点标注",
-        "description": "高亮并标注最新一季"
+        "publicKey": "showCallout"
       },
       {
         "key": "theme",
@@ -8002,18 +7355,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -8021,7 +7372,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -8030,13 +7381,11 @@ export const pages = [
           }
         ],
         "desc": "主系列 / 标注 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "主系列 / 标注 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "chartType": "area",
       "seriesCount": 2,
@@ -8045,6 +7394,7 @@ export const pages = [
       "showLegend": true,
       "showCallout": true,
       "barMeta": "44 — Growth",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "增长曲线 / Growth",
       "title": "八个季度，[[指数级]]放大。",
       "quarters": [
@@ -8085,8 +7435,9 @@ export const pages = [
       "railText": "发放给独立音乐人的版税，在过去一年里增长超三倍。",
       "legendA": "累计版税 Royalties",
       "legendB": "入驻音乐人 Artists",
-      "page": "48",
-      "total": "86"
+      "page": "44",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -8107,9 +7458,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "desc": "堆叠的收入构成系列数",
-        "publicKey": "seriesCount",
-        "publicLabel": "数据系列",
-        "description": "堆叠的收入构成系列数"
+        "publicKey": "seriesCount"
       },
       {
         "key": "showGrid",
@@ -8117,9 +7466,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏背景网格与刻度",
-        "publicKey": "showGrid",
-        "publicLabel": "网格线",
-        "description": "显示/隐藏背景网格与刻度"
+        "publicKey": "showGrid"
       },
       {
         "key": "showLegend",
@@ -8127,9 +7474,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏系列图例",
-        "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "description": "显示/隐藏系列图例"
+        "publicKey": "showLegend"
       },
       {
         "key": "showEndLabels",
@@ -8137,9 +7482,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏右端各层占比标注",
-        "publicKey": "showEndLabels",
-        "publicLabel": "终值标注",
-        "description": "显示/隐藏右端各层占比标注"
+        "publicKey": "showEndLabels"
       },
       {
         "key": "theme",
@@ -8157,18 +7500,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -8176,7 +7517,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -8185,19 +7526,18 @@ export const pages = [
           }
         ],
         "desc": "主系列 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "主系列 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "seriesCount": 3,
       "showGrid": true,
       "showLegend": true,
       "showEndLabels": true,
       "barMeta": "45 — Stacked Area",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "堆叠面积 / Stacked Area",
       "title": "收入结构，[[越长越宽]]。",
       "axisLabel": "创作者季度总收入构成 · ¥百万 / QUARTER",
@@ -8215,7 +7555,7 @@ export const pages = [
         {
           "t": "流媒体版税",
           "s": "Streaming",
-          "c": "#d44718",
+          "c": "#f15a29",
           "v": [
             22,
             28,
@@ -8230,7 +7570,7 @@ export const pages = [
         {
           "t": "现场演出",
           "s": "Live",
-          "c": "#0077a8",
+          "c": "#3bb6ec",
           "v": [
             8,
             10,
@@ -8245,7 +7585,7 @@ export const pages = [
         {
           "t": "周边电商",
           "s": "Merch",
-          "c": "#5f7f00",
+          "c": "#baf04f",
           "v": [
             3,
             4,
@@ -8258,8 +7598,9 @@ export const pages = [
           ]
         }
       ],
-      "page": "49",
-      "total": "86"
+      "page": "45",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -8280,9 +7621,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "参与对比的指标线数量",
-        "publicKey": "lineCount",
-        "publicLabel": "指标数量",
-        "description": "参与对比的指标线数量"
+        "publicKey": "lineCount"
       },
       {
         "key": "focus",
@@ -8290,9 +7629,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "突出其中一条指标线，其余淡化",
-        "publicKey": "focus",
-        "publicLabel": "聚焦高亮",
-        "description": "突出其中一条指标线，其余淡化"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -8304,9 +7641,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "高亮的指标线（自上而下）",
-        "publicKey": "focusIndex",
-        "publicLabel": "聚焦第几条",
-        "description": "高亮的指标线（自上而下）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showGrid",
@@ -8314,9 +7649,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏两端刻度与基线",
-        "publicKey": "showGrid",
-        "publicLabel": "刻度网格",
-        "description": "显示/隐藏两端刻度与基线"
+        "publicKey": "showGrid"
       },
       {
         "key": "showDelta",
@@ -8324,9 +7657,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每条线的变化百分比",
-        "publicKey": "showDelta",
-        "publicLabel": "变化标注",
-        "description": "显示/隐藏每条线的变化百分比"
+        "publicKey": "showDelta"
       },
       {
         "key": "theme",
@@ -8344,18 +7675,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -8363,7 +7692,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -8372,13 +7701,11 @@ export const pages = [
           }
         ],
         "desc": "聚焦线 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "聚焦线 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "lineCount": 5,
       "focus": true,
@@ -8386,6 +7713,7 @@ export const pages = [
       "showGrid": true,
       "showDelta": true,
       "barMeta": "46 — Slope",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "斜率图 / Slope",
       "title": "两年之间，[[格局翻转]]。",
       "periodLeft": {
@@ -8429,8 +7757,9 @@ export const pages = [
           "b": 63
         }
       ],
-      "page": "50",
-      "total": "86"
+      "page": "46",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -8451,9 +7780,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "漏斗的阶段数量",
-        "publicKey": "stageCount",
-        "publicLabel": "阶段数量",
-        "description": "漏斗的阶段数量"
+        "publicKey": "stageCount"
       },
       {
         "key": "showRates",
@@ -8461,9 +7788,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏阶段间转化率",
-        "publicKey": "showRates",
-        "publicLabel": "转化率",
-        "description": "显示/隐藏阶段间转化率"
+        "publicKey": "showRates"
       },
       {
         "key": "focus",
@@ -8471,9 +7796,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "高亮某个阶段、弱化其余",
-        "publicKey": "focus",
-        "publicLabel": "高亮阶段",
-        "description": "高亮某个阶段、弱化其余"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -8485,9 +7808,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被高亮阶段的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "高亮第几个",
-        "description": "被高亮阶段的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showNotes",
@@ -8495,9 +7816,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏右侧文字说明",
-        "publicKey": "showNotes",
-        "publicLabel": "右侧说明",
-        "description": "显示/隐藏右侧文字说明"
+        "publicKey": "showNotes"
       },
       {
         "key": "theme",
@@ -8515,18 +7834,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -8534,7 +7851,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -8543,13 +7860,11 @@ export const pages = [
           }
         ],
         "desc": "末段 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "末段 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "stageCount": 4,
       "showRates": true,
@@ -8557,6 +7872,7 @@ export const pages = [
       "focusIndex": 4,
       "showNotes": true,
       "barMeta": "47 — Funnel",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "从听见到留下 / Funnel",
       "title": "把路人，\n变成[[铁粉]]。",
       "notes": "每往下一层，都是一次真实的选择。声浪把每一步的转化都摆给你看——知道粉丝在哪一环流失，才知道下一步该往哪使劲。",
@@ -8600,8 +7916,9 @@ export const pages = [
         "22%",
         "41%"
       ],
-      "page": "51",
-      "total": "86"
+      "page": "47",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -8622,9 +7939,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "参与对比的类目数量",
-        "publicKey": "categoryCount",
-        "publicLabel": "类目数量",
-        "description": "参与对比的类目数量"
+        "publicKey": "categoryCount"
       },
       {
         "key": "dotValue",
@@ -8636,9 +7951,7 @@ export const pages = [
         "step": 5,
         "unit": "万",
         "desc": "每个圆点代表的数量（万）",
-        "publicKey": "dotValue",
-        "publicLabel": "每点单位",
-        "description": "每个圆点代表的数量（万）"
+        "publicKey": "dotValue"
       },
       {
         "key": "showValues",
@@ -8646,9 +7959,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每行右侧数值",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
-        "description": "显示/隐藏每行右侧数值"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "focus",
@@ -8656,9 +7967,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "高亮某一类目、弱化其余",
-        "publicKey": "focus",
-        "publicLabel": "高亮某行",
-        "description": "高亮某一类目、弱化其余"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -8670,9 +7979,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被高亮类目的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "高亮第几行",
-        "description": "被高亮类目的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "theme",
@@ -8690,18 +7997,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -8709,7 +8014,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -8718,13 +8023,11 @@ export const pages = [
           }
         ],
         "desc": "高亮行 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "高亮行 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "categoryCount": 4,
       "dotValue": 20,
@@ -8732,6 +8035,7 @@ export const pages = [
       "focus": true,
       "focusIndex": 1,
       "barMeta": "48 — Units",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "互动构成 / Engagement",
       "title": "每个点，都是[[真实的人]]。",
       "unit": "万",
@@ -8757,8 +8061,9 @@ export const pages = [
           "value": 90
         }
       ],
-      "page": "52",
-      "total": "86"
+      "page": "48",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -8779,9 +8084,7 @@ export const pages = [
         "max": 7,
         "step": 1,
         "desc": "散点中的气泡（对象类型）数量",
-        "publicKey": "bubbleCount",
-        "publicLabel": "气泡数量",
-        "description": "散点中的气泡（对象类型）数量"
+        "publicKey": "bubbleCount"
       },
       {
         "key": "focus",
@@ -8789,9 +8092,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "突出其中一个气泡，其余淡化",
-        "publicKey": "focus",
-        "publicLabel": "聚焦高亮",
-        "description": "突出其中一个气泡，其余淡化"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -8803,9 +8104,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "高亮的气泡序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "聚焦第几个",
-        "description": "高亮的气泡序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showGrid",
@@ -8813,9 +8112,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏坐标轴与网格",
-        "publicKey": "showGrid",
-        "publicLabel": "坐标网格",
-        "description": "显示/隐藏坐标轴与网格"
+        "publicKey": "showGrid"
       },
       {
         "key": "showLabels",
@@ -8823,9 +8120,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏气泡上的名称标签",
-        "publicKey": "showLabels",
-        "publicLabel": "气泡标签",
-        "description": "显示/隐藏气泡上的名称标签"
+        "publicKey": "showLabels"
       },
       {
         "key": "theme",
@@ -8843,9 +8138,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
@@ -8858,11 +8151,11 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -8871,9 +8164,7 @@ export const pages = [
           }
         ],
         "desc": "聚焦气泡 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "聚焦气泡 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -8885,6 +8176,7 @@ export const pages = [
       "showGrid": true,
       "showLabels": true,
       "barMeta": "49 — Bubble",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "气泡图 / Bubble",
       "title": "谁在[[高效]]地变现？",
       "axisX": "← 月均播放量 STREAMS →",
@@ -8945,8 +8237,9 @@ export const pages = [
           "r": 0.4
         }
       ],
-      "page": "53",
-      "total": "86"
+      "page": "49",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -8967,9 +8260,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "desc": "横轴上的周期（时间段）数量",
-        "publicKey": "periodCount",
-        "publicLabel": "周期数量",
-        "description": "横轴上的周期（时间段）数量"
+        "publicKey": "periodCount"
       },
       {
         "key": "seriesCount",
@@ -8980,9 +8271,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "desc": "每根柱子堆叠的收入分项数量",
-        "publicKey": "seriesCount",
-        "publicLabel": "分项数量",
-        "description": "每根柱子堆叠的收入分项数量"
+        "publicKey": "seriesCount"
       },
       {
         "key": "chartType",
@@ -9000,9 +8289,7 @@ export const pages = [
           }
         ],
         "desc": "堆叠柱 或 分组柱",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型",
-        "description": "堆叠柱 或 分组柱"
+        "publicKey": "chartType"
       },
       {
         "key": "focus",
@@ -9010,9 +8297,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "高亮某个周期、弱化其余",
-        "publicKey": "focus",
-        "publicLabel": "高亮周期",
-        "description": "高亮某个周期、弱化其余"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -9024,9 +8309,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被高亮周期的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "高亮第几个",
-        "description": "被高亮周期的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showValues",
@@ -9034,9 +8317,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每柱顶部合计",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
-        "description": "显示/隐藏每柱顶部合计"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showGrid",
@@ -9044,9 +8325,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏背景横向网格线",
-        "publicKey": "showGrid",
-        "publicLabel": "网格线",
-        "description": "显示/隐藏背景横向网格线"
+        "publicKey": "showGrid"
       },
       {
         "key": "theme",
@@ -9064,18 +8343,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -9083,7 +8360,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -9092,13 +8369,11 @@ export const pages = [
           }
         ],
         "desc": "主分项 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "主分项 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "periodCount": 6,
       "seriesCount": 3,
@@ -9108,6 +8383,7 @@ export const pages = [
       "showValues": true,
       "showGrid": true,
       "barMeta": "50 — Stacked Bars",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "收入结构 / Revenue Mix",
       "title": "不止增长，而是[[越来越稳]]。",
       "periods": [
@@ -9176,8 +8452,9 @@ export const pages = [
           30
         ]
       ],
-      "page": "54",
-      "total": "86"
+      "page": "50",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -9198,9 +8475,7 @@ export const pages = [
         "max": 7,
         "step": 1,
         "desc": "排行展示的平台条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "description": "排行展示的平台条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showValue",
@@ -9208,9 +8483,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每条末端的数值",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
-        "description": "显示/隐藏每条末端的数值"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showAxis",
@@ -9218,9 +8491,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏背景刻度网格",
-        "publicKey": "showAxis",
-        "publicLabel": "刻度网格",
-        "description": "显示/隐藏背景刻度网格"
+        "publicKey": "showAxis"
       },
       {
         "key": "focus",
@@ -9228,9 +8499,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "高亮某一条，弱化其余",
-        "publicKey": "focus",
-        "publicLabel": "重点强调",
-        "description": "高亮某一条，弱化其余"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -9242,9 +8511,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被强调条目的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "强调第几条",
-        "description": "被强调条目的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "theme",
@@ -9262,18 +8529,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -9281,7 +8546,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -9290,13 +8555,11 @@ export const pages = [
           }
         ],
         "desc": "榜首 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "榜首 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "barCount": 6,
       "showValue": true,
@@ -9304,6 +8567,7 @@ export const pages = [
       "focus": true,
       "focusIndex": 1,
       "barMeta": "51 — Ranking",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "平台排行 / By Platform",
       "title": "收入来自[[哪里]]，一目了然。",
       "caption": "近 12 个月\n版税占比",
@@ -9352,8 +8616,9 @@ export const pages = [
           "share": "1%"
         }
       ],
-      "page": "55",
-      "total": "86"
+      "page": "51",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -9374,9 +8639,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "环形仪表的数量",
-        "publicKey": "gaugeCount",
-        "publicLabel": "仪表数量",
-        "description": "环形仪表的数量"
+        "publicKey": "gaugeCount"
       },
       {
         "key": "showTrack",
@@ -9384,9 +8647,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏环形底色轨道",
-        "publicKey": "showGuide",
-        "publicLabel": "底环轨道",
-        "description": "显示/隐藏环形底色轨道"
+        "publicKey": "showGuide"
       },
       {
         "key": "theme",
@@ -9404,9 +8665,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "showLede",
@@ -9414,18 +8673,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏标题区导语",
-        "publicKey": "showLede",
-        "publicLabel": "显示导语",
-        "description": "显示/隐藏标题区导语"
+        "publicKey": "showLede"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -9433,7 +8690,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -9442,18 +8699,17 @@ export const pages = [
           }
         ],
         "desc": "首个仪表 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "首个仪表 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "gaugeCount": 3,
       "showTrack": true,
       "showLede": true,
       "theme": "light",
       "barMeta": "52 — Gauges",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "健康度 / Health",
       "title": "几个我们[[最在意]]的数。",
       "lede": "不是越大越好，而是越透明越好——这些环，量的是创作者对平台的信任。",
@@ -9483,8 +8739,9 @@ export const pages = [
           "note": "多币种实时"
         }
       ],
-      "page": "56",
-      "total": "86"
+      "page": "52",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -9505,9 +8762,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "子弹图的指标行数",
-        "publicKey": "rowCount",
-        "publicLabel": "指标数量",
-        "description": "子弹图的指标行数"
+        "publicKey": "rowCount"
       },
       {
         "key": "showBands",
@@ -9515,9 +8770,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏差/中/好的区间底色",
-        "publicKey": "showBands",
-        "publicLabel": "区间底色",
-        "description": "显示/隐藏差/中/好的区间底色"
+        "publicKey": "showBands"
       },
       {
         "key": "showTarget",
@@ -9525,9 +8778,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏目标值竖线",
-        "publicKey": "showTarget",
-        "publicLabel": "目标刻度",
-        "description": "显示/隐藏目标值竖线"
+        "publicKey": "showTarget"
       },
       {
         "key": "focus",
@@ -9535,9 +8786,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "突出其中一行，其余淡化",
-        "publicKey": "focus",
-        "publicLabel": "聚焦高亮",
-        "description": "突出其中一行，其余淡化"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -9549,9 +8798,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "高亮的指标行序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "聚焦第几行",
-        "description": "高亮的指标行序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "theme",
@@ -9569,9 +8816,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
@@ -9584,11 +8829,11 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -9597,9 +8842,7 @@ export const pages = [
           }
         ],
         "desc": "达成条 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "达成条 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -9611,6 +8854,7 @@ export const pages = [
       "focus": false,
       "focusIndex": 1,
       "barMeta": "53 — Bullet",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "子弹图 / Bullet",
       "title": "目标对账，[[一条看清]]。",
       "legendDone": "达成",
@@ -9659,8 +8903,9 @@ export const pages = [
           "good": false
         }
       ],
-      "page": "57",
-      "total": "86"
+      "page": "53",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -9681,9 +8926,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "受众年龄分层的数量",
-        "publicKey": "tierCount",
-        "publicLabel": "分层数量",
-        "description": "受众年龄分层的数量"
+        "publicKey": "tierCount"
       },
       {
         "key": "showValues",
@@ -9691,9 +8934,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每条占比数值",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
-        "description": "显示/隐藏每条占比数值"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showAxis",
@@ -9701,9 +8942,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "显示/隐藏中央分隔轴",
-        "publicKey": "showAxis",
-        "publicLabel": "中轴线",
-        "description": "显示/隐藏中央分隔轴"
+        "publicKey": "showAxis"
       },
       {
         "key": "focus",
@@ -9711,9 +8950,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "高亮某一分层、弱化其余",
-        "publicKey": "focus",
-        "publicLabel": "高亮某层",
-        "description": "高亮某一分层、弱化其余"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -9725,9 +8962,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "被高亮分层的序号（自上而下，1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "高亮第几层",
-        "description": "被高亮分层的序号（自上而下，1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "theme",
@@ -9745,18 +8980,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -9764,7 +8997,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -9773,13 +9006,11 @@ export const pages = [
           }
         ],
         "desc": "左列 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "左列 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "tierCount": 5,
       "showValues": true,
@@ -9787,6 +9018,7 @@ export const pages = [
       "focus": true,
       "focusIndex": 2,
       "barMeta": "54 — Pyramid",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "受众分层 / Audience",
       "title": "线上线下，[[同一批人]]。",
       "legendLeft": {
@@ -9830,8 +9062,9 @@ export const pages = [
           "r": 2
         }
       ],
-      "page": "58",
-      "total": "86"
+      "page": "54",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -9852,9 +9085,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "雷达图的能力维度数量",
-        "publicKey": "axisCount",
-        "publicLabel": "维度数",
-        "description": "雷达图的能力维度数量"
+        "publicKey": "axisCount"
       },
       {
         "key": "seriesCount",
@@ -9865,9 +9096,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "desc": "对比的系列数（声浪 / 传统）",
-        "publicKey": "seriesCount",
-        "publicLabel": "系列数",
-        "description": "对比的系列数（声浪 / 传统）"
+        "publicKey": "seriesCount"
       },
       {
         "key": "showGrid",
@@ -9875,9 +9104,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏背景网格环与刻度",
-        "publicKey": "showGrid",
-        "publicLabel": "网格环",
-        "description": "显示/隐藏背景网格环与刻度"
+        "publicKey": "showGrid"
       },
       {
         "key": "showLabels",
@@ -9885,9 +9112,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏外圈维度名称",
-        "publicKey": "showLabels",
-        "publicLabel": "维度标签",
-        "description": "显示/隐藏外圈维度名称"
+        "publicKey": "showLabels"
       },
       {
         "key": "theme",
@@ -9905,9 +9130,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
@@ -9920,11 +9143,11 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -9933,9 +9156,7 @@ export const pages = [
           }
         ],
         "desc": "主系列 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "主系列 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -9946,6 +9167,7 @@ export const pages = [
       "showGrid": true,
       "showLabels": true,
       "barMeta": "55 — Radar",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "能力雷达 / Capability",
       "title": "同一把尺子，\n[[六个维度]]全面领先。",
       "intro": "把发行、版权、结算与数据放在一张图上比较——声浪几乎贴着外环，传统路径仍困在中心。",
@@ -9989,8 +9211,9 @@ export const pages = [
           "b": 0.5
         }
       ],
-      "page": "59",
-      "total": "86"
+      "page": "55",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -10011,9 +9234,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "矩阵中除声浪外的对照点数量",
-        "publicKey": "pointCount",
-        "publicLabel": "对手数量",
-        "description": "矩阵中除声浪外的对照点数量"
+        "publicKey": "pointCount"
       },
       {
         "key": "showQuadrants",
@@ -10021,9 +9242,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏象限底色与标签",
-        "publicKey": "showQuadrants",
-        "publicLabel": "象限标注",
-        "description": "显示/隐藏象限底色与标签"
+        "publicKey": "showQuadrants"
       },
       {
         "key": "showGrid",
@@ -10031,9 +9250,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏坐标轴与网格",
-        "publicKey": "showGrid",
-        "publicLabel": "坐标网格",
-        "description": "显示/隐藏坐标轴与网格"
+        "publicKey": "showGrid"
       },
       {
         "key": "showRivalLabels",
@@ -10041,9 +9258,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏对照点名称",
-        "publicKey": "showRivalLabels",
-        "publicLabel": "对手标签",
-        "description": "显示/隐藏对照点名称"
+        "publicKey": "showRivalLabels"
       },
       {
         "key": "theme",
@@ -10061,18 +9276,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -10080,7 +9293,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -10089,19 +9302,18 @@ export const pages = [
           }
         ],
         "desc": "声浪点 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "声浪点 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "pointCount": 5,
       "showQuadrants": true,
       "showGrid": true,
       "showRivalLabels": true,
       "barMeta": "56 — Positioning",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "市场定位 / Where We Sit",
       "title": "把创作者放回\n[[坐标原点]]。",
       "intro": "越往右上，越透明、越属于创作者本人。大多数方案挤在左下——而声浪，独自站在那个理应属于你的象限。",
@@ -10155,8 +9367,9 @@ export const pages = [
           "y": 48
         }
       ],
-      "page": "60",
-      "total": "86"
+      "page": "56",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -10181,9 +9394,7 @@ export const pages = [
           "rows[].v"
         ],
         "desc": "参与对比的方案（列）数量",
-        "publicKey": "columnCount",
-        "publicLabel": "方案数量",
-        "description": "参与对比的方案（列）数量"
+        "publicKey": "columnCount"
       },
       {
         "key": "rowCount",
@@ -10194,9 +9405,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "评估维度（行）数量",
-        "publicKey": "rowCount",
-        "publicLabel": "评估维度",
-        "description": "评估维度（行）数量"
+        "publicKey": "rowCount"
       },
       {
         "key": "focusIndex",
@@ -10207,9 +9416,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "高亮强调的方案列",
-        "publicKey": "focusIndex",
-        "publicLabel": "高亮方案",
-        "description": "高亮强调的方案列"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showTotals",
@@ -10217,9 +9424,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏底部合计得分",
-        "publicKey": "showTotals",
-        "publicLabel": "合计得分",
-        "description": "显示/隐藏底部合计得分"
+        "publicKey": "showTotals"
       },
       {
         "key": "theme",
@@ -10237,9 +9442,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
@@ -10252,11 +9455,11 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -10265,9 +9468,7 @@ export const pages = [
           }
         ],
         "desc": "高亮列 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "高亮列 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -10278,6 +9479,7 @@ export const pages = [
       "focusIndex": 1,
       "showTotals": true,
       "barMeta": "57 — Scorecard",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "评分表 / Scorecard",
       "title": "同台评分，[[高下立见]]。",
       "dimensionLabel": "评估维度",
@@ -10362,8 +9564,9 @@ export const pages = [
           ]
         }
       ],
-      "page": "61",
-      "total": "86"
+      "page": "57",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -10391,9 +9594,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "showTrend",
@@ -10401,26 +9602,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏主数字旁的小条形趋势",
-        "publicKey": "showTrend",
-        "publicLabel": "趋势图",
-        "description": "显示/隐藏主数字旁的小条形趋势"
-      },
-      {
-        "key": "trendCount",
-        "label": "趋势数量",
-        "type": "slider",
-        "def": 6,
-        "min": 3,
-        "max": 6,
-        "step": 1,
-        "countArrays": [
-          "trend"
-        ],
-        "dependsOn": "showTrend",
-        "desc": "趋势图展示的数据点数量",
-        "publicKey": "trendCount",
-        "publicLabel": "趋势数量",
-        "description": "趋势图展示的数据点数量"
+        "publicKey": "showTrend"
       },
       {
         "key": "showSupporting",
@@ -10428,9 +9610,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏底部辅助数据行",
-        "publicKey": "showSupporting",
-        "publicLabel": "辅助指标",
-        "description": "显示/隐藏底部辅助数据行"
+        "publicKey": "showSupporting"
       },
       {
         "key": "supportingCount",
@@ -10442,9 +9622,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "showSupporting",
         "desc": "底部辅助指标的数量",
-        "publicKey": "supportingCount",
-        "publicLabel": "辅助数量",
-        "description": "底部辅助指标的数量"
+        "publicKey": "supportingCount"
       },
       {
         "key": "showDecorations",
@@ -10452,22 +9630,20 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏几何装饰图形",
-        "publicKey": "showDecorations",
-        "publicLabel": "显示装饰",
-        "description": "显示/隐藏几何装饰图形"
+        "publicKey": "showDecorations"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#0077a8",
+        "def": "#3bb6ec",
         "options": [
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
@@ -10480,20 +9656,18 @@ export const pages = [
           }
         ],
         "desc": "主数字 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "主数字 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#0077a8",
+      "accent": "#3bb6ec",
       "theme": "dark",
       "showTrend": true,
-      "trendCount": 6,
       "showSupporting": true,
       "supportingCount": 3,
       "showDecorations": true,
       "barMeta": "58 — By the Numbers",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "截至 2026 / To Date",
       "prefix": "¥",
       "figure": "2.4",
@@ -10525,8 +9699,9 @@ export const pages = [
           "ds": "版税平均到账"
         }
       ],
-      "page": "62",
-      "total": "86"
+      "page": "58",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -10554,9 +9729,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "statCount",
@@ -10567,9 +9740,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "desc": "并置的大数字数量",
-        "publicKey": "statCount",
-        "publicLabel": "数字数量",
-        "description": "并置的大数字数量"
+        "publicKey": "statCount"
       },
       {
         "key": "showDividers",
@@ -10577,9 +9748,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏数字之间的竖向分隔线",
-        "publicKey": "showDividers",
-        "publicLabel": "分隔线",
-        "description": "显示/隐藏数字之间的竖向分隔线"
+        "publicKey": "showDividers"
       },
       {
         "key": "showDecorations",
@@ -10587,18 +9756,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏几何装饰图形",
-        "publicKey": "showDecorations",
-        "publicLabel": "显示装饰",
-        "description": "显示/隐藏几何装饰图形"
+        "publicKey": "showDecorations"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -10606,7 +9773,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -10615,18 +9782,17 @@ export const pages = [
           }
         ],
         "desc": "首个数字 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "首个数字 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "statCount": 3,
       "showDividers": true,
       "showDecorations": true,
       "barMeta": "59 — Headline Stats",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "截至 2026 / By the Numbers",
       "title": "三个数字，说清声浪的一年。",
       "stats": [
@@ -10646,8 +9812,9 @@ export const pages = [
           "s": "Average payout time"
         }
       ],
-      "page": "63",
-      "total": "86"
+      "page": "59",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -10668,9 +9835,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "记分牌上的大数字指标数量",
-        "publicKey": "statCount",
-        "publicLabel": "指标数量",
-        "description": "记分牌上的大数字指标数量"
+        "publicKey": "statCount"
       },
       {
         "key": "columns",
@@ -10688,9 +9853,7 @@ export const pages = [
           }
         ],
         "desc": "指标块的排布列数",
-        "publicKey": "columns",
-        "publicLabel": "栏数",
-        "description": "指标块的排布列数"
+        "publicKey": "columns"
       },
       {
         "key": "showDelta",
@@ -10698,9 +9861,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏同比涨跌标记",
-        "publicKey": "showDelta",
-        "publicLabel": "同比",
-        "description": "显示/隐藏同比涨跌标记"
+        "publicKey": "showDelta"
       },
       {
         "key": "showSpark",
@@ -10708,9 +9869,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏迷你趋势线",
-        "publicKey": "showSpark",
-        "publicLabel": "迷你走势",
-        "description": "显示/隐藏迷你趋势线"
+        "publicKey": "showSpark"
       },
       {
         "key": "showLede",
@@ -10718,9 +9877,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏标题区导语",
-        "publicKey": "showLede",
-        "publicLabel": "显示导语",
-        "description": "显示/隐藏标题区导语"
+        "publicKey": "showLede"
       },
       {
         "key": "theme",
@@ -10738,18 +9895,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -10757,7 +9912,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -10766,13 +9921,11 @@ export const pages = [
           }
         ],
         "desc": "导语高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "statCount": 4,
       "columns": 2,
@@ -10780,6 +9933,7 @@ export const pages = [
       "showSpark": true,
       "showLede": true,
       "barMeta": "60 — Scoreboard",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "记分牌 / By The Numbers",
       "title": "数字不会[[说谎]]。",
       "lede": "一块只属于创作者的记分牌——发出去多少、回到谁手里，全摆在台面上。",
@@ -10849,8 +10003,9 @@ export const pages = [
           ]
         }
       ],
-      "page": "64",
-      "total": "86"
+      "page": "60",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -10871,9 +10026,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "拼贴中的图片块数量",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片数量",
-        "description": "拼贴中的图片块数量"
+        "publicKey": "mediaCount"
       },
       {
         "key": "mediaFit",
@@ -10891,9 +10044,7 @@ export const pages = [
           }
         ],
         "desc": "图片的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "图片的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "gap",
@@ -10905,9 +10056,7 @@ export const pages = [
         "step": 2,
         "unit": "px",
         "desc": "拼贴块之间的间距",
-        "publicKey": "gap",
-        "publicLabel": "间距",
-        "description": "拼贴块之间的间距"
+        "publicKey": "gap"
       },
       {
         "key": "showCaptions",
@@ -10915,9 +10064,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏图块上的编号角标",
-        "publicKey": "showCaptions",
-        "publicLabel": "图块编号",
-        "description": "显示/隐藏图块上的编号角标"
+        "publicKey": "showCaptions"
       },
       {
         "key": "theme",
@@ -10935,9 +10082,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
@@ -10954,18 +10099,16 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 3"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 4"
           }
         ],
         "desc": "文字块 / 角标强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "文字块 / 角标强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -10980,8 +10123,8 @@ export const pages = [
       "title": "一帧一帧，\n都是[[现场]]。",
       "hint": "Gallery — drag to fill",
       "mediaPlaceholder": "拖入图片",
-      "page": "65",
-      "total": "86"
+      "page": "61",
+      "total": "82"
     }
   },
   {
@@ -11001,13 +10144,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "countArrays": [
-          "media"
-        ],
         "desc": "拼贴中的照片碎片数量",
-        "publicKey": "scrapCount",
-        "publicLabel": "拼贴张数",
-        "description": "拼贴中的照片碎片数量"
+        "publicKey": "scrapCount"
       },
       {
         "key": "mediaFit",
@@ -11025,9 +10163,7 @@ export const pages = [
           }
         ],
         "desc": "碎片图填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "碎片图填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showTape",
@@ -11035,9 +10171,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏贴在碎片上的胶带",
-        "publicKey": "showTape",
-        "publicLabel": "胶带",
-        "description": "显示/隐藏贴在碎片上的胶带"
+        "publicKey": "showTape"
       },
       {
         "key": "tilt",
@@ -11049,9 +10183,7 @@ export const pages = [
         "step": 1,
         "unit": "°",
         "desc": "碎片随机倾斜的基准角度",
-        "publicKey": "tilt",
-        "publicLabel": "倾斜角度",
-        "description": "碎片随机倾斜的基准角度"
+        "publicKey": "tilt"
       },
       {
         "key": "theme",
@@ -11069,26 +10201,24 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#5f7f00",
+        "def": "#baf04f",
         "options": [
           {
-            "value": "#5f7f00",
+            "value": "#baf04f",
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -11097,13 +10227,11 @@ export const pages = [
           }
         ],
         "desc": "标语高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "标语高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#5f7f00",
+      "accent": "#baf04f",
       "theme": "dark",
       "scrapCount": 3,
       "mediaFit": "cover",
@@ -11111,6 +10239,7 @@ export const pages = [
       "tilt": 5,
       "media": [],
       "barMeta": "62 — Zine",
+      "brandLabel": "CREATIVE SYSTEM",
       "eyebrow": "ISSUE 04 · 自己印",
       "line1": "剪下来，",
       "line2": "贴上去，",
@@ -11118,13 +10247,14 @@ export const pages = [
       "intro": "独立不是风格，是方法。把现场、样带、手写歌词一把抓起，钉成一张属于自己的海报。",
       "mediaPlaceholder": "拖入碎片",
       "scrapTint": [
-        "#0077a8",
-        "#d44718",
-        "#5f7f00",
+        "#3bb6ec",
+        "#f15a29",
+        "#baf04f",
         "#c44ee0"
       ],
-      "page": "66",
-      "total": "86"
+      "page": "62",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -11145,9 +10275,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "灵感板上钉住的照片数量",
-        "publicKey": "mediaCount",
-        "publicLabel": "照片数量",
-        "description": "灵感板上钉住的照片数量"
+        "publicKey": "mediaCount"
       },
       {
         "key": "mediaFit",
@@ -11165,9 +10293,7 @@ export const pages = [
           }
         ],
         "desc": "照片填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "照片填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showSwatches",
@@ -11175,9 +10301,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏右侧配色色卡",
-        "publicKey": "showSwatches",
-        "publicLabel": "色卡",
-        "description": "显示/隐藏右侧配色色卡"
+        "publicKey": "showSwatches"
       },
       {
         "key": "showNote",
@@ -11185,9 +10309,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏右侧手写便签",
-        "publicKey": "showNote",
-        "publicLabel": "便签",
-        "description": "显示/隐藏右侧手写便签"
+        "publicKey": "showNote"
       },
       {
         "key": "theme",
@@ -11205,18 +10327,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -11224,7 +10344,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -11233,13 +10353,11 @@ export const pages = [
           }
         ],
         "desc": "导语 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "mediaCount": 4,
       "mediaFit": "cover",
@@ -11247,6 +10365,7 @@ export const pages = [
       "showNote": true,
       "media": [],
       "barMeta": "63 — Moodboard",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "灵感板 / Moodboard",
       "title": "把氛围，[[先钉下来]]。",
       "metaPrefix": "视觉方向 ·",
@@ -11255,11 +10374,11 @@ export const pages = [
       "noteSign": "— 视觉备忘",
       "mediaPlaceholder": "拖入灵感",
       "pin": [
-        "#d44718",
-        "#0077a8",
+        "#f15a29",
+        "#3bb6ec",
         "#c44ee0",
         "#1f6b2a",
-        "#b56000",
+        "#fbb24d",
         "#d61fb5"
       ],
       "tilt": [
@@ -11271,15 +10390,16 @@ export const pages = [
         1.2
       ],
       "swatches": [
-        "#d44718",
+        "#f15a29",
         "#1c1416",
-        "#0077a8",
-        "#5f7f00",
+        "#3bb6ec",
+        "#baf04f",
         "#f5e1e3",
         "#c44ee0"
       ],
-      "page": "67",
-      "total": "86"
+      "page": "63",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -11300,9 +10420,7 @@ export const pages = [
         "max": 10,
         "step": 1,
         "desc": "条目清单的条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "description": "条目清单的条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showDuration",
@@ -11310,9 +10428,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每首条目的时长",
-        "publicKey": "showDuration",
-        "publicLabel": "时长",
-        "description": "显示/隐藏每首条目的时长"
+        "publicKey": "showDuration"
       },
       {
         "key": "coverSide",
@@ -11330,9 +10446,7 @@ export const pages = [
           }
         ],
         "desc": "封面图所在的一侧",
-        "publicKey": "coverSide",
-        "publicLabel": "封面位置",
-        "description": "封面图所在的一侧"
+        "publicKey": "coverSide"
       },
       {
         "key": "focus",
@@ -11340,9 +10454,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "高亮重点条目",
-        "publicKey": "focus",
-        "publicLabel": "重点高亮",
-        "description": "高亮重点条目"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -11354,9 +10466,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "重点条目的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "重点条目的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "mediaFit",
@@ -11374,9 +10484,7 @@ export const pages = [
           }
         ],
         "desc": "封面的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "封面填充",
-        "description": "封面的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "theme",
@@ -11394,18 +10502,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -11413,7 +10519,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -11422,13 +10528,11 @@ export const pages = [
           }
         ],
         "desc": "重点 / 序号 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "重点 / 序号 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "dark",
       "trackCount": 8,
       "showDuration": true,
@@ -11438,6 +10542,7 @@ export const pages = [
       "mediaFit": "cover",
       "media": [],
       "barMeta": "64 — Tracklist",
+      "brandLabel": "CREATIVE SYSTEM",
       "coverTag": "LP · 2026",
       "albumTitle": "《现场》",
       "albumSub": "声浪首发 · 全网同步上线",
@@ -11497,8 +10602,9 @@ export const pages = [
           "d": "2:05"
         }
       ],
-      "page": "68",
-      "total": "86"
+      "page": "64",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -11526,9 +10632,7 @@ export const pages = [
           }
         ],
         "desc": "黑胶唱片所在的一侧",
-        "publicKey": "visualSide",
-        "publicLabel": "视觉元素位置",
-        "description": "黑胶唱片所在的一侧"
+        "publicKey": "visualSide"
       },
       {
         "key": "theme",
@@ -11546,9 +10650,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "showGrooves",
@@ -11556,9 +10658,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏环形纹理",
-        "publicKey": "showGrooves",
-        "publicLabel": "环形纹理",
-        "description": "显示/隐藏环形纹理"
+        "publicKey": "showGrooves"
       },
       {
         "key": "showTracklist",
@@ -11566,9 +10666,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏右侧条目列表",
-        "publicKey": "showItemList",
-        "publicLabel": "条目表",
-        "description": "显示/隐藏右侧条目列表"
+        "publicKey": "showItemList"
       },
       {
         "key": "trackCount",
@@ -11580,9 +10678,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "showTracklist",
         "desc": "条目列表的行数",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "description": "条目列表的行数"
+        "publicKey": "itemCount"
       },
       {
         "key": "mediaFit",
@@ -11600,9 +10696,7 @@ export const pages = [
           }
         ],
         "desc": "封面图填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "封面图填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "accent",
@@ -11615,11 +10709,11 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -11628,9 +10722,7 @@ export const pages = [
           }
         ],
         "desc": "播放进度 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "播放进度 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -11643,6 +10735,7 @@ export const pages = [
       "trackCount": 4,
       "media": [],
       "barMeta": "65 — Now Playing",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "正在播放 / Now Playing",
       "trackTitle": "潮汐",
       "trackMeta": "午夜电台 Midnight Radio · 2026",
@@ -11683,8 +10776,9 @@ export const pages = [
           "d": "3:29"
         }
       ],
-      "page": "69",
-      "total": "86"
+      "page": "65",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -11705,9 +10799,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "desc": "图墙中的图片格数量（另含一个标题格）",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片数量",
-        "description": "图墙中的图片格数量（另含一个标题格）"
+        "publicKey": "mediaCount"
       },
       {
         "key": "columns",
@@ -11725,9 +10817,7 @@ export const pages = [
           }
         ],
         "desc": "图墙的列数",
-        "publicKey": "columns",
-        "publicLabel": "栏数",
-        "description": "图墙的列数"
+        "publicKey": "columns"
       },
       {
         "key": "theme",
@@ -11745,9 +10835,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "showIndex",
@@ -11755,9 +10843,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏图片序号",
-        "publicKey": "showIndex",
-        "publicLabel": "序号角标",
-        "description": "显示/隐藏图片序号"
+        "publicKey": "showIndex"
       },
       {
         "key": "showCaptions",
@@ -11765,9 +10851,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏图片底部说明条",
-        "publicKey": "showCaptions",
-        "publicLabel": "悬浮图注",
-        "description": "显示/隐藏图片底部说明条"
+        "publicKey": "showCaptions"
       },
       {
         "key": "mediaFit",
@@ -11785,9 +10869,7 @@ export const pages = [
           }
         ],
         "desc": "图片填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "图片填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "accent",
@@ -11800,7 +10882,7 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
@@ -11808,14 +10890,12 @@ export const pages = [
             "label": "颜色 3"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 4"
           }
         ],
         "desc": "标题格 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "标题格 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -11828,6 +10908,7 @@ export const pages = [
       "mediaFit": "cover",
       "media": [],
       "barMeta": "66 — Grid Wall",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "影像墙 / The Wall",
       "title": "一面墙，装下[[整个场景]]。",
       "hint": "frames · drag to fill",
@@ -11842,8 +10923,9 @@ export const pages = [
         "签售 Signing"
       ],
       "mediaPlaceholder": "拖入",
-      "page": "70",
-      "total": "86"
+      "page": "66",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -11864,9 +10946,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "墙上悬挂的画框数量",
-        "publicKey": "mediaCount",
-        "publicLabel": "画框数量",
-        "description": "墙上悬挂的画框数量"
+        "publicKey": "mediaCount"
       },
       {
         "key": "mediaFit",
@@ -11884,9 +10964,7 @@ export const pages = [
           }
         ],
         "desc": "画作填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "画作填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showMat",
@@ -11894,9 +10972,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏画框内的白色卡纸边",
-        "publicKey": "showMat",
-        "publicLabel": "卡纸边",
-        "description": "显示/隐藏画框内的白色卡纸边"
+        "publicKey": "showMat"
       },
       {
         "key": "showPlaque",
@@ -11904,9 +10980,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏画框下方的作品铭牌",
-        "publicKey": "showPlaque",
-        "publicLabel": "铭牌",
-        "description": "显示/隐藏画框下方的作品铭牌"
+        "publicKey": "showPlaque"
       },
       {
         "key": "theme",
@@ -11924,9 +10998,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
@@ -11939,7 +11011,7 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
@@ -11952,9 +11024,7 @@ export const pages = [
           }
         ],
         "desc": "导语 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -11966,6 +11036,7 @@ export const pages = [
       "showPlaque": true,
       "media": [],
       "barMeta": "67 — Gallery Wall",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "画框墙 / Gallery Wall",
       "title": "把每张作品，[[挂上墙]]。",
       "metaPrefix": "声浪典藏 ·",
@@ -12002,8 +11073,9 @@ export const pages = [
           "y": "2026"
         }
       ],
-      "page": "71",
-      "total": "86"
+      "page": "67",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -12024,9 +11096,7 @@ export const pages = [
         "max": 9,
         "step": 1,
         "desc": "组成声波的图片列数",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片列数",
-        "description": "组成声波的图片列数"
+        "publicKey": "mediaCount"
       },
       {
         "key": "mediaFit",
@@ -12044,9 +11114,7 @@ export const pages = [
           }
         ],
         "desc": "图片填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "图片填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "showAxis",
@@ -12054,9 +11122,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏声波中线",
-        "publicKey": "showAxis",
-        "publicLabel": "中线",
-        "description": "显示/隐藏声波中线"
+        "publicKey": "showAxis"
       },
       {
         "key": "showNumbers",
@@ -12064,9 +11130,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每列帧编号",
-        "publicKey": "showNumbers",
-        "publicLabel": "帧编号",
-        "description": "显示/隐藏每列帧编号"
+        "publicKey": "showNumbers"
       },
       {
         "key": "theme",
@@ -12084,26 +11148,24 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#5f7f00",
+        "def": "#baf04f",
         "options": [
           {
-            "value": "#5f7f00",
+            "value": "#baf04f",
             "label": "颜色 1"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 2"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 3"
           },
           {
@@ -12112,13 +11174,11 @@ export const pages = [
           }
         ],
         "desc": "中线 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "中线 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#5f7f00",
+      "accent": "#baf04f",
       "theme": "light",
       "mediaCount": 7,
       "mediaFit": "cover",
@@ -12126,11 +11186,13 @@ export const pages = [
       "showNumbers": true,
       "media": [],
       "barMeta": "68 — Spectrum",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "声波画廊 / Waveform",
       "title": "每一张图，都是一段[[声浪]]。",
       "hint": "Frames",
-      "page": "72",
-      "total": "86"
+      "page": "68",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -12151,13 +11213,10 @@ export const pages = [
         "max": 12,
         "step": 1,
         "countArrays": [
-          "media",
-          "names"
+          "media"
         ],
         "desc": "伙伴墙的 logo 格数量",
-        "publicKey": "logoCount",
-        "publicLabel": "品牌数量",
-        "description": "伙伴墙的 logo 格数量"
+        "publicKey": "logoCount"
       },
       {
         "key": "columns",
@@ -12179,9 +11238,7 @@ export const pages = [
           }
         ],
         "desc": "logo 网格列数",
-        "publicKey": "columns",
-        "publicLabel": "栏数",
-        "description": "logo 网格列数"
+        "publicKey": "columns"
       },
       {
         "key": "theme",
@@ -12199,9 +11256,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "showTitle",
@@ -12209,9 +11264,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏顶部标题区",
-        "publicKey": "showTitle",
-        "publicLabel": "标题条",
-        "description": "显示/隐藏顶部标题区"
+        "publicKey": "showTitle"
       },
       {
         "key": "showCaptions",
@@ -12219,9 +11272,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏 logo 下方名称",
-        "publicKey": "showCaptions",
-        "publicLabel": "伙伴名",
-        "description": "显示/隐藏 logo 下方名称"
+        "publicKey": "showCaptions"
       },
       {
         "key": "mediaFit",
@@ -12239,18 +11290,16 @@ export const pages = [
           }
         ],
         "desc": "Logo 图片的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "Logo 图片的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -12258,7 +11307,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -12267,13 +11316,11 @@ export const pages = [
           }
         ],
         "desc": "高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "logoCount": 10,
       "columns": 5,
@@ -12282,6 +11329,7 @@ export const pages = [
       "mediaFit": "cover",
       "media": [],
       "barMeta": "69 — Logo Wall",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "分发网络 / Everywhere",
       "title": "一次上传，[[处处可听]]。",
       "lede": "声浪已接入全球主流平台——你的作品，会出现在听众本来就在的地方。",
@@ -12300,8 +11348,9 @@ export const pages = [
         "Pandora"
       ],
       "mediaPlaceholder": "拖入 Logo",
-      "page": "73",
-      "total": "86"
+      "page": "69",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -12329,9 +11378,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "mediaCount",
@@ -12342,9 +11389,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "desc": "两侧人像数量；0=纯文字，1=单侧人像，2=对称双联",
-        "publicKey": "mediaCount",
-        "publicLabel": "人像数量",
-        "description": "两侧人像数量；0=纯文字，1=单侧人像，2=对称双联"
+        "publicKey": "mediaCount"
       },
       {
         "key": "showCaptions",
@@ -12352,9 +11397,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏人像角标编号",
-        "publicKey": "showCaptions",
-        "publicLabel": "图块编号",
-        "description": "显示/隐藏人像角标编号"
+        "publicKey": "showCaptions"
       },
       {
         "key": "accent",
@@ -12371,7 +11414,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 3"
           },
           {
@@ -12380,9 +11423,7 @@ export const pages = [
           }
         ],
         "desc": "导语 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -12394,11 +11435,12 @@ export const pages = [
       "ghost": "声",
       "kicker": "创作者群像 / Faces",
       "title": "每一张脸，\n都是一条[[声浪]]。",
-      "body": "从第一支 demo 到更大舞台，系统处理发行、结算与版权。",
+      "body": "从地下室的第一支 demo，到登上更大的舞台——我们把发行、结算与版权交给系统，让更多人能只为创作而活。",
       "footLabel": "12,000+ 独立音乐人 · 声浪",
       "mediaPlaceholder": "拖入人像",
-      "page": "74",
-      "total": "86"
+      "page": "70",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -12426,9 +11468,7 @@ export const pages = [
           }
         ],
         "desc": "大图所在的一侧",
-        "publicKey": "imageSide",
-        "publicLabel": "图片位置",
-        "description": "大图所在的一侧"
+        "publicKey": "imageSide"
       },
       {
         "key": "calloutCount",
@@ -12439,9 +11479,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "标注点与说明条目的数量",
-        "publicKey": "itemCount",
-        "publicLabel": "标注数量",
-        "description": "标注点与说明条目的数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showPins",
@@ -12449,9 +11487,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏图片上的编号标注点",
-        "publicKey": "showPins",
-        "publicLabel": "图上标注点",
-        "description": "显示/隐藏图片上的编号标注点"
+        "publicKey": "showPins"
       },
       {
         "key": "mediaFit",
@@ -12469,9 +11505,7 @@ export const pages = [
           }
         ],
         "desc": "图片的填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "图片的填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "theme",
@@ -12489,18 +11523,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -12508,7 +11540,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -12517,13 +11549,11 @@ export const pages = [
           }
         ],
         "desc": "标注点 / 编号 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "标注点 / 编号 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "imageSide": "right",
       "calloutCount": 4,
@@ -12531,6 +11561,7 @@ export const pages = [
       "mediaFit": "cover",
       "media": [],
       "barMeta": "71 — Feature",
+      "brandLabel": "CREATIVE SYSTEM",
       "ghost": "50",
       "kicker": "功能聚焦 / Feature",
       "title": "一块屏幕，\n管完整条[[链路]]。",
@@ -12573,8 +11604,9 @@ export const pages = [
           }
         }
       ],
-      "page": "75",
-      "total": "86"
+      "page": "71",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -12595,9 +11627,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "旅程节点的数量",
-        "publicKey": "stepCount",
-        "publicLabel": "节点数",
-        "description": "旅程节点的数量"
+        "publicKey": "stepCount"
       },
       {
         "key": "focus",
@@ -12605,9 +11635,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "高亮“此刻”所处的节点",
-        "publicKey": "focus",
-        "publicLabel": "当前节点",
-        "description": "高亮“此刻”所处的节点"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -12619,9 +11647,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "当前节点序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "进行到第几个",
-        "description": "当前节点序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showSpine",
@@ -12629,9 +11655,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏中央脊线与进度填充",
-        "publicKey": "showSpine",
-        "publicLabel": "中轴脊线",
-        "description": "显示/隐藏中央脊线与进度填充"
+        "publicKey": "showSpine"
       },
       {
         "key": "showDescriptions",
@@ -12639,9 +11663,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏节点描述文字",
-        "publicKey": "showDescriptions",
-        "publicLabel": "节点描述",
-        "description": "显示/隐藏节点描述文字"
+        "publicKey": "showDescriptions"
       },
       {
         "key": "theme",
@@ -12659,18 +11681,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -12678,7 +11698,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -12687,13 +11707,11 @@ export const pages = [
           }
         ],
         "desc": "当前节点 / 进度 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "当前节点 / 进度 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "stepCount": 5,
       "focus": true,
@@ -12701,6 +11719,7 @@ export const pages = [
       "showSpine": true,
       "showDescriptions": true,
       "barMeta": "72 — Journey",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "我们的旅程 / The Journey",
       "title": "从一间\n出租屋，\n到[[十万人]]。",
       "intro": "声浪不是凭空出现的——它长在创作者真实的难处里。",
@@ -12732,8 +11751,9 @@ export const pages = [
           "d": "多币种实时透明分账，正式上线。"
         }
       ],
-      "page": "76",
-      "total": "86"
+      "page": "72",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -12761,9 +11781,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -12791,9 +11809,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "tint",
@@ -12811,9 +11827,7 @@ export const pages = [
           }
         ],
         "desc": "图片上的蒙版色调",
-        "publicKey": "tint",
-        "publicLabel": "蒙版色调",
-        "description": "图片上的蒙版色调"
+        "publicKey": "tint"
       },
       {
         "key": "quotePos",
@@ -12831,9 +11845,7 @@ export const pages = [
           }
         ],
         "desc": "金句在画面中的位置",
-        "publicKey": "quotePos",
-        "publicLabel": "金句位置",
-        "description": "金句在画面中的位置"
+        "publicKey": "quotePos"
       },
       {
         "key": "showMark",
@@ -12841,9 +11853,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏大引号符号",
-        "publicKey": "showMark",
-        "publicLabel": "引号装饰",
-        "description": "显示/隐藏大引号符号"
+        "publicKey": "showMark"
       },
       {
         "key": "showAttribution",
@@ -12851,18 +11861,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏引文署名",
-        "publicKey": "showAttribution",
-        "publicLabel": "署名",
-        "description": "显示/隐藏引文署名"
+        "publicKey": "showAttribution"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -12870,7 +11878,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -12879,13 +11887,11 @@ export const pages = [
           }
         ],
         "desc": "蒙版 / 引号 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "蒙版 / 引号 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "backgroundMode": "unicorn",
       "unicornScene": "tech",
       "tint": "dark",
@@ -12899,8 +11905,8 @@ export const pages = [
       "authorEn": "Chen Yu — Indie Artist, 4 yrs on SoundWave",
       "footLabel": "声浪 SOUNDWAVE — Independent Music OS",
       "mediaPlaceholder": "拖入整幅现场 / 人物大图",
-      "page": "77",
-      "total": "86"
+      "page": "73",
+      "total": "82"
     }
   },
   {
@@ -12928,9 +11934,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "align",
@@ -12948,9 +11952,7 @@ export const pages = [
           }
         ],
         "desc": "诗句的对齐方式",
-        "publicKey": "align",
-        "publicLabel": "对齐",
-        "description": "诗句的对齐方式"
+        "publicKey": "align"
       },
       {
         "key": "showEqualizer",
@@ -12958,9 +11960,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏底部声波条装饰",
-        "publicKey": "showEqualizer",
-        "publicLabel": "声波条",
-        "description": "显示/隐藏底部声波条装饰"
+        "publicKey": "showEqualizer"
       },
       {
         "key": "showDecorations",
@@ -12968,9 +11968,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏几何装饰图形",
-        "publicKey": "showDecorations",
-        "publicLabel": "显示装饰",
-        "description": "显示/隐藏几何装饰图形"
+        "publicKey": "showDecorations"
       },
       {
         "key": "accent",
@@ -12983,22 +11981,20 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#b56000",
+            "value": "#fbb24d",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#74d2f0",
             "label": "颜色 3"
           },
           {
-            "value": "#5f7f00",
+            "value": "#bcee54",
             "label": "颜色 4"
           }
         ],
         "desc": "高亮句 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "高亮句 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -13008,6 +12004,7 @@ export const pages = [
       "showEqualizer": true,
       "showDecorations": true,
       "barMeta": "74 — Lyric",
+      "brandLabel": "CREATIVE SYSTEM",
       "eyebrow": "♪ 午夜电台 ·《潮汐》",
       "lines": [
         {
@@ -13028,8 +12025,31 @@ export const pages = [
         }
       ],
       "credit": "— 词 / 曲 林夏 · 声浪原创",
-      "page": "78",
-      "total": "86"
+      "bars": [
+        0.4,
+        0.7,
+        0.5,
+        0.95,
+        0.6,
+        0.85,
+        0.45,
+        0.72,
+        0.55,
+        0.9,
+        0.5,
+        0.78,
+        0.42,
+        0.66,
+        0.58,
+        0.88,
+        0.46,
+        0.7,
+        0.52,
+        0.8
+      ],
+      "page": "74",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -13061,9 +12081,7 @@ export const pages = [
           }
         ],
         "desc": "章节页底色：深色 / 强调色铺底 / 浅色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "章节页底色：深色 / 强调色铺底 / 浅色"
+        "publicKey": "theme"
       },
       {
         "key": "numeral",
@@ -13081,9 +12099,7 @@ export const pages = [
           }
         ],
         "desc": "大编号的呈现方式",
-        "publicKey": "numeral",
-        "publicLabel": "编号样式",
-        "description": "大编号的呈现方式"
+        "publicKey": "numeral"
       },
       {
         "key": "showIndex",
@@ -13091,9 +12107,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏巨大的章节编号",
-        "publicKey": "showIndex",
-        "publicLabel": "章节编号",
-        "description": "显示/隐藏巨大的章节编号"
+        "publicKey": "showIndex"
       },
       {
         "key": "showAgenda",
@@ -13101,9 +12115,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏右侧章节进度列表",
-        "publicKey": "showAgenda",
-        "publicLabel": "章节目录",
-        "description": "显示/隐藏右侧章节进度列表"
+        "publicKey": "showAgenda"
       },
       {
         "key": "showDecorations",
@@ -13111,9 +12123,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏几何装饰图形",
-        "publicKey": "showDecorations",
-        "publicLabel": "显示装饰",
-        "description": "显示/隐藏几何装饰图形"
+        "publicKey": "showDecorations"
       },
       {
         "key": "accent",
@@ -13126,11 +12136,11 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -13139,9 +12149,7 @@ export const pages = [
           }
         ],
         "desc": "编号 / 高亮 / 铺底强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "编号 / 高亮 / 铺底强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -13152,6 +12160,7 @@ export const pages = [
       "showAgenda": true,
       "showDecorations": true,
       "barMeta": "75 — Chapter",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "路线图 / The Road Ahead",
       "title": "接下来，\n我们去[[哪里]]。",
       "intro": "已经跑通的，与正在路上的——一张写给创作者的时间表。",
@@ -13163,8 +12172,9 @@ export const pages = [
         "路线图 Roadmap",
         "加入声浪 Join Us"
       ],
-      "page": "79",
-      "total": "86"
+      "page": "75",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -13192,9 +12202,7 @@ export const pages = [
           }
         ],
         "desc": "间章整体配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "间章整体配色"
+        "publicKey": "theme"
       },
       {
         "key": "align",
@@ -13212,9 +12220,7 @@ export const pages = [
           }
         ],
         "desc": "标题对齐方式",
-        "publicKey": "align",
-        "publicLabel": "对齐",
-        "description": "标题对齐方式"
+        "publicKey": "align"
       },
       {
         "key": "showRule",
@@ -13222,9 +12228,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏标题下方分隔线",
-        "publicKey": "showRule",
-        "publicLabel": "分隔线",
-        "description": "显示/隐藏标题下方分隔线"
+        "publicKey": "showRule"
       },
       {
         "key": "showGhost",
@@ -13232,18 +12236,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏背景超大序号",
-        "publicKey": "showGhost",
-        "publicLabel": "背景大字",
-        "description": "显示/隐藏背景超大序号"
+        "publicKey": "showGhost"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -13251,7 +12253,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -13260,24 +12262,24 @@ export const pages = [
           }
         ],
         "desc": "强调色 / 序号 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "强调色 / 序号 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "accent",
       "sectionLabel": "03",
       "align": "left",
       "showRule": true,
       "showGhost": true,
       "barMeta": "76 — Section",
+      "brandLabel": "CREATIVE SYSTEM",
       "chapterLabel": "CHAPTER",
       "title": "分发与结算，\n一块工作台搞定。",
       "intro": "从上传母带到版税到账——这一章，拆解声浪如何把一整条链路收进同一块屏幕。",
-      "page": "80",
-      "total": "86"
+      "page": "76",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -13298,9 +12300,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "desc": "时间轴上的里程碑数量",
-        "publicKey": "milestoneCount",
-        "publicLabel": "节点数量",
-        "description": "时间轴上的里程碑数量"
+        "publicKey": "milestoneCount"
       },
       {
         "key": "focus",
@@ -13308,9 +12308,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "高亮“当前”所处的里程碑",
-        "publicKey": "focus",
-        "publicLabel": "当前进度",
-        "description": "高亮“当前”所处的里程碑"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -13322,9 +12320,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "当前里程碑的序号（1 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "进行到第几个",
-        "description": "当前里程碑的序号（1 起）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showProgress",
@@ -13332,9 +12328,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "连接线按当前进度着色填充",
-        "publicKey": "showProgress",
-        "publicLabel": "进度填充",
-        "description": "连接线按当前进度着色填充"
+        "publicKey": "showProgress"
       },
       {
         "key": "showDescriptions",
@@ -13342,9 +12336,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏每个节点的描述文字",
-        "publicKey": "showDescriptions",
-        "publicLabel": "节点描述",
-        "description": "显示/隐藏每个节点的描述文字"
+        "publicKey": "showDescriptions"
       },
       {
         "key": "showIntro",
@@ -13352,9 +12344,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏顶部标题与引言",
-        "publicKey": "showIntro",
-        "publicLabel": "显示引言",
-        "description": "显示/隐藏顶部标题与引言"
+        "publicKey": "showIntro"
       },
       {
         "key": "theme",
@@ -13372,18 +12362,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -13391,7 +12379,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -13400,13 +12388,11 @@ export const pages = [
           }
         ],
         "desc": "当前节点 / 进度 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "当前节点 / 进度 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "milestoneCount": 5,
       "focus": true,
@@ -13415,6 +12401,7 @@ export const pages = [
       "showDescriptions": true,
       "showIntro": true,
       "barMeta": "77 — Roadmap",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "路线图 / Roadmap",
       "title": "已经在路上，[[还在加速]]。",
       "nowLabel": "Now",
@@ -13445,8 +12432,9 @@ export const pages = [
           "d": "多币种实时透明分账。"
         }
       ],
-      "page": "81",
-      "total": "86"
+      "page": "77",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -13467,9 +12455,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "展示的信条条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "信条数量",
-        "description": "展示的信条条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "columns",
@@ -13487,9 +12473,7 @@ export const pages = [
           }
         ],
         "desc": "信条卡片的列数",
-        "publicKey": "columns",
-        "publicLabel": "栏数",
-        "description": "信条卡片的列数"
+        "publicKey": "columns"
       },
       {
         "key": "theme",
@@ -13507,9 +12491,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "showLede",
@@ -13517,9 +12499,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏标题区导语",
-        "publicKey": "showLede",
-        "publicLabel": "显示导语",
-        "description": "显示/隐藏标题区导语"
+        "publicKey": "showLede"
       },
       {
         "key": "showDeco",
@@ -13527,18 +12507,16 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏卡片内几何装饰",
-        "publicKey": "showDeco",
-        "publicLabel": "显示装饰",
-        "description": "显示/隐藏卡片内几何装饰"
+        "publicKey": "showDeco"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -13546,7 +12524,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -13555,19 +12533,18 @@ export const pages = [
           }
         ],
         "desc": "导语高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "导语高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "principleCount": 4,
       "columns": 2,
       "theme": "light",
       "showLede": true,
       "showDeco": true,
       "barMeta": "78 — Principles",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "信条 / What We Believe",
       "title": "我们[[相信]]的事。",
       "lede": "这些不是功能列表，而是声浪做每一个决定时，反复回到的几条底线。",
@@ -13603,8 +12580,9 @@ export const pages = [
           "s": "可迁出、可接入，绝不把你锁进围墙。"
         }
       ],
-      "page": "82",
-      "total": "86"
+      "page": "78",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -13625,9 +12603,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "desc": "团队成员卡片的数量",
-        "publicKey": "memberCount",
-        "publicLabel": "成员数量",
-        "description": "团队成员卡片的数量"
+        "publicKey": "memberCount"
       },
       {
         "key": "showRole",
@@ -13635,9 +12611,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏成员职位",
-        "publicKey": "showRole",
-        "publicLabel": "职位",
-        "description": "显示/隐藏成员职位"
+        "publicKey": "showRole"
       },
       {
         "key": "showLede",
@@ -13645,9 +12619,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏标题区导语",
-        "publicKey": "showLede",
-        "publicLabel": "显示导语",
-        "description": "显示/隐藏标题区导语"
+        "publicKey": "showLede"
       },
       {
         "key": "theme",
@@ -13665,9 +12637,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "mediaFit",
@@ -13685,18 +12655,16 @@ export const pages = [
           }
         ],
         "desc": "头像填充方式",
-        "publicKey": "mediaFit",
-        "publicLabel": "图片填充",
-        "description": "头像填充方式"
+        "publicKey": "mediaFit"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -13704,7 +12672,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -13713,13 +12681,11 @@ export const pages = [
           }
         ],
         "desc": "色条 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "色条 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "memberCount": 4,
       "showRole": true,
@@ -13727,6 +12693,7 @@ export const pages = [
       "mediaFit": "cover",
       "media": [],
       "barMeta": "79 — Team",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "团队 / The Crew",
       "title": "一群[[做音乐的人]]，在做工具。",
       "lede": "我们自己也是创作者——所以更懂，把主权还给做音乐的人有多重要。",
@@ -13763,8 +12730,9 @@ export const pages = [
           "role": "设计负责人"
         }
       ],
-      "page": "83",
-      "total": "86"
+      "page": "79",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -13792,9 +12760,7 @@ export const pages = [
           }
         ],
         "desc": "人像所在的一侧",
-        "publicKey": "portraitSide",
-        "publicLabel": "人像位置",
-        "description": "人像所在的一侧"
+        "publicKey": "portraitSide"
       },
       {
         "key": "portraitShape",
@@ -13812,9 +12778,7 @@ export const pages = [
           }
         ],
         "desc": "人像裁切形状",
-        "publicKey": "portraitShape",
-        "publicLabel": "人像形状",
-        "description": "人像裁切形状"
+        "publicKey": "portraitShape"
       },
       {
         "key": "theme",
@@ -13832,9 +12796,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "showWave",
@@ -13842,9 +12804,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏引文下方的声波装饰",
-        "publicKey": "showWave",
-        "publicLabel": "声波装饰",
-        "description": "显示/隐藏引文下方的声波装饰"
+        "publicKey": "showWave"
       },
       {
         "key": "accent",
@@ -13857,7 +12817,7 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
@@ -13870,9 +12830,7 @@ export const pages = [
           }
         ],
         "desc": "声波 / 高亮 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "声波 / 高亮 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -13883,6 +12841,7 @@ export const pages = [
       "showWave": true,
       "media": [],
       "barMeta": "80 — Voices",
+      "brandLabel": "CREATIVE SYSTEM",
       "portraitTag": "VOICES / 01",
       "kicker": "证言 / In Their Words",
       "quote": "“上线半年，我第一次**看清**每一分收入从哪来——也第一次，觉得作品真的**是我的**。”",
@@ -13906,8 +12865,9 @@ export const pages = [
         24,
         42
       ],
-      "page": "84",
-      "total": "86"
+      "page": "80",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -13928,9 +12888,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "desc": "墙上展示的引言数量",
-        "publicKey": "quoteCount",
-        "publicLabel": "引言数量",
-        "description": "墙上展示的引言数量"
+        "publicKey": "quoteCount"
       },
       {
         "key": "showBadge",
@@ -13938,9 +12896,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏发言人首字徽标",
-        "publicKey": "showBadge",
-        "publicLabel": "姓名徽标",
-        "description": "显示/隐藏发言人首字徽标"
+        "publicKey": "showBadge"
       },
       {
         "key": "focus",
@@ -13948,9 +12904,7 @@ export const pages = [
         "type": "toggle",
         "def": false,
         "desc": "突出其中一条引言，其余淡化",
-        "publicKey": "focus",
-        "publicLabel": "聚焦高亮",
-        "description": "突出其中一条引言，其余淡化"
+        "publicKey": "focus"
       },
       {
         "key": "focusIndex",
@@ -13962,9 +12916,7 @@ export const pages = [
         "step": 1,
         "dependsOn": "focus",
         "desc": "高亮的引言序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "聚焦第几条",
-        "description": "高亮的引言序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "theme",
@@ -13982,9 +12934,7 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
@@ -13997,11 +12947,11 @@ export const pages = [
             "label": "颜色 1"
           },
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -14010,9 +12960,7 @@ export const pages = [
           }
         ],
         "desc": "主引言 / 导语 / 页脚强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "主引言 / 导语 / 页脚强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
@@ -14023,6 +12971,7 @@ export const pages = [
       "focus": false,
       "focusIndex": 1,
       "barMeta": "81 — Quote Wall",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "群言 / In Their Words",
       "title": "十二万音乐人，[[同一句话]]。",
       "quotes": [
@@ -14041,7 +12990,7 @@ export const pages = [
           "n": "阿特拉斯乐队",
           "r": "后摇乐队 / 成都",
           "m": "A",
-          "c": "#0077a8",
+          "c": "#3bb6ec",
           "fg": "#143049",
           "sub": "#1c5b82"
         },
@@ -14052,20 +13001,21 @@ export const pages = [
           "m": "M",
           "c": "#1f6b2a",
           "fg": "#fff",
-          "sub": "#5f7f00"
+          "sub": "#baf04f"
         },
         {
           "q": "版权上链之后，合作再也不用靠口头承诺。",
           "n": "老周",
           "r": "厂牌主理人 / 北京",
           "m": "周",
-          "c": "#d44718",
+          "c": "#f15a29",
           "fg": "#fff",
           "sub": "#fdddc6"
         }
       ],
-      "page": "85",
-      "total": "86"
+      "page": "81",
+      "total": "82",
+      "footerTagline": "CREATIVE SYSTEM — Independent Media Kit"
     }
   },
   {
@@ -14083,9 +13033,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏底部链接目录",
-        "publicKey": "showDirectory",
-        "publicLabel": "显示目录",
-        "description": "显示/隐藏底部链接目录"
+        "publicKey": "showDirectory"
       },
       {
         "key": "directoryColumns",
@@ -14095,31 +13043,9 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "countArrays": [
-          "directory"
-        ],
         "dependsOn": "showDirectory",
         "desc": "链接目录的列数",
-        "publicKey": "directoryColumns",
-        "publicLabel": "目录栏数",
-        "description": "链接目录的列数"
-      },
-      {
-        "key": "itemCount",
-        "label": "每栏条目",
-        "type": "slider",
-        "def": 4,
-        "min": 2,
-        "max": 4,
-        "step": 1,
-        "countArrays": [
-          "directory[].items"
-        ],
-        "dependsOn": "showDirectory",
-        "desc": "每个目录栏展示的链接数量",
-        "publicKey": "itemCount",
-        "publicLabel": "每栏条目",
-        "description": "每个目录栏展示的链接数量"
+        "publicKey": "directoryColumns"
       },
       {
         "key": "showMarquee",
@@ -14127,9 +13053,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏底部滚动条",
-        "publicKey": "showMarquee",
-        "publicLabel": "显示跑马灯",
-        "description": "显示/隐藏底部滚动条"
+        "publicKey": "showMarquee"
       },
       {
         "key": "marqueeSpeed",
@@ -14142,9 +13066,7 @@ export const pages = [
         "unit": "s",
         "dependsOn": "showMarquee",
         "desc": "滚动一圈的秒数（越小越快）",
-        "publicKey": "marqueeSpeed",
-        "publicLabel": "跑马灯速度",
-        "description": "滚动一圈的秒数（越小越快）"
+        "publicKey": "marqueeSpeed"
       },
       {
         "key": "showDecorations",
@@ -14152,9 +13074,7 @@ export const pages = [
         "type": "toggle",
         "def": true,
         "desc": "显示/隐藏几何装饰图形",
-        "publicKey": "showDecorations",
-        "publicLabel": "显示装饰",
-        "description": "显示/隐藏几何装饰图形"
+        "publicKey": "showDecorations"
       },
       {
         "key": "theme",
@@ -14172,18 +13092,16 @@ export const pages = [
           }
         ],
         "desc": "页面整体明暗配色",
-        "publicKey": "theme",
-        "publicLabel": "配色",
-        "description": "页面整体明暗配色"
+        "publicKey": "theme"
       },
       {
         "key": "accent",
         "label": "强调色",
         "type": "color",
-        "def": "#d44718",
+        "def": "#f15a29",
         "options": [
           {
-            "value": "#d44718",
+            "value": "#f15a29",
             "label": "颜色 1"
           },
           {
@@ -14191,7 +13109,7 @@ export const pages = [
             "label": "颜色 2"
           },
           {
-            "value": "#0077a8",
+            "value": "#3bb6ec",
             "label": "颜色 3"
           },
           {
@@ -14200,21 +13118,19 @@ export const pages = [
           }
         ],
         "desc": "高亮/按钮等强调色",
-        "publicKey": "accent",
-        "publicLabel": "强调色",
-        "description": "高亮/按钮等强调色"
+        "publicKey": "accent"
       }
     ],
     "defaultProps": {
-      "accent": "#d44718",
+      "accent": "#f15a29",
       "theme": "light",
       "showDirectory": true,
       "directoryColumns": 4,
-      "itemCount": 4,
       "showMarquee": true,
       "marqueeSpeed": 20,
       "showDecorations": true,
-      "barMeta": "86 — Join Us",
+      "barMeta": "82 — Join Us",
+      "brandLabel": "CREATIVE SYSTEM",
       "kicker": "加入声浪 / Join Us",
       "title": "现在，轮到你\n发出[[声浪]]。",
       "subtitle": "Now — make some noise.",
@@ -14225,70 +13141,38 @@ export const pages = [
       "directory": [
         {
           "h": "产品 / Product",
-          "items": [
-            {
-              "label": "一键发行 Release"
-            },
-            {
-              "label": "收益结算 Ledger"
-            },
-            {
-              "label": "版权护盾 Shield"
-            },
-            {
-              "label": "数据洞察 Insights"
-            }
+          "links": [
+            "一键发行 Release",
+            "收益结算 Ledger",
+            "版权护盾 Shield",
+            "数据洞察 Insights"
           ]
         },
         {
           "h": "资源 / Resources",
-          "items": [
-            {
-              "label": "帮助中心 Docs"
-            },
-            {
-              "label": "开发者 API"
-            },
-            {
-              "label": "博客 Journal"
-            },
-            {
-              "label": "价格 Pricing"
-            }
+          "links": [
+            "帮助中心 Docs",
+            "开发者 API",
+            "博客 Journal",
+            "价格 Pricing"
           ]
         },
         {
           "h": "社区 / Community",
-          "items": [
-            {
-              "label": "创作者计划"
-            },
-            {
-              "label": "论坛 Forum"
-            },
-            {
-              "label": "Discord"
-            },
-            {
-              "label": "活动 Live"
-            }
+          "links": [
+            "创作者计划",
+            "论坛 Forum",
+            "Discord",
+            "活动 Live"
           ]
         },
         {
           "h": "关于 / About",
-          "items": [
-            {
-              "label": "团队 Team"
-            },
-            {
-              "label": "招聘 Careers"
-            },
-            {
-              "label": "媒体 Press"
-            },
-            {
-              "label": "联系 Contact"
-            }
+          "links": [
+            "团队 Team",
+            "招聘 Careers",
+            "媒体 Press",
+            "联系 Contact"
           ]
         }
       ]

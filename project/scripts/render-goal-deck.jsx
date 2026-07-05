@@ -5,6 +5,9 @@ import { composeDeck } from '../src/deckComposer.jsx';
 import { renderDeck } from '../src/renderDeck.jsx';
 import { validateGoalSpec } from './validate-goal-spec.mjs';
 
+// 相对路径按调用方目录解析:npm run(含 --prefix)会把脚本 cwd 切到项目根,INIT_CWD 才是用户所在目录。
+const CALLER_CWD = process.env.INIT_CWD || process.cwd();
+
 const [, , specArg, outArg] = process.argv;
 
 if (!specArg || !outArg) {
@@ -13,8 +16,8 @@ if (!specArg || !outArg) {
 }
 
 try {
-  const specPath = path.resolve(specArg);
-  const outFile = path.resolve(outArg);
+  const specPath = path.resolve(CALLER_CWD, specArg);
+  const outFile = path.resolve(CALLER_CWD, outArg);
   const spec = JSON.parse(fs.readFileSync(specPath, 'utf8'));
   const specErrors = validateGoalSpec(spec);
   if (specErrors.length) {
@@ -43,7 +46,7 @@ function copyGoalSpec(from, to) {
 }
 
 function displayPath(file) {
-  const relative = path.relative(process.cwd(), file);
+  const relative = path.relative(CALLER_CWD, file);
   return relative && !relative.startsWith('..') && !path.isAbsolute(relative) ? relative : path.basename(file);
 }
 

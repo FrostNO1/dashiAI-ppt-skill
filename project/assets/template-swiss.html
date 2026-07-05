@@ -3,10 +3,1500 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/skill/dashiai-ppt-favicon.png">
 <title>[必填] 替换为 PPT 标题 · Deck Title</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Caveat:wght@400;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<!-- Self-hosted fonts (no external CDN): Anton, Archivo, Caveat, IBM Plex Mono, IBM Plex Sans, Inter, JetBrains Mono, Newsreader, Space Grotesk, Space Mono. -->
+<!-- Noto Sans SC / Noto Serif SC / Zhi Mang Xing are NOT self-hosted (unicode-range-sharded CJK webfonts exceed size budget); system CJK fonts are used as fallback via the --sans / --sans-zh stacks below. -->
+<style>
+  @font-face{
+    font-family:'Anton';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/anton-400-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Anton';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/anton-400-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Anton';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/anton-400-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-400-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-400-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-400-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-500-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-500-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-500-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-600-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-600-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-600-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-700-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-700-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-700-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-800-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-800-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-800-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:900;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-900-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:900;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-900-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Archivo';
+    font-style:normal;
+    font-weight:900;
+    font-display:swap;
+    src:url('assets/vendor/fonts/archivo-900-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Caveat';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/caveat-400-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'Caveat';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/caveat-400-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'Caveat';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/caveat-400-3.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Caveat';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/caveat-400-4.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Caveat';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/caveat-600-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'Caveat';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/caveat-600-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'Caveat';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/caveat-600-3.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Caveat';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/caveat-600-4.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Caveat';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/caveat-700-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'Caveat';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/caveat-700-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'Caveat';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/caveat-700-3.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Caveat';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/caveat-700-4.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-400-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-400-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-400-3.woff2') format('woff2');
+    unicode-range:U+1F00-1FFF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-400-4.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-400-5.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-400-6.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-400-7.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-500-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-500-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-500-3.woff2') format('woff2');
+    unicode-range:U+1F00-1FFF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-500-4.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-500-5.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-500-6.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-500-7.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-600-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-600-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-600-3.woff2') format('woff2');
+    unicode-range:U+1F00-1FFF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-600-4.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-600-5.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-600-6.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-600-7.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-700-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-700-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-700-3.woff2') format('woff2');
+    unicode-range:U+1F00-1FFF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-700-4.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-700-5.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-700-6.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-700-7.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-800-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-800-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-800-3.woff2') format('woff2');
+    unicode-range:U+1F00-1FFF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-800-4.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-800-5.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-800-6.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-800-7.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:900;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-900-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:900;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-900-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:900;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-900-3.woff2') format('woff2');
+    unicode-range:U+1F00-1FFF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:900;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-900-4.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:900;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-900-5.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:900;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-900-6.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:900;
+    font-display:swap;
+    src:url('assets/vendor/fonts/inter-900-7.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-400-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-400-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-400-3.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-400-4.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-400-5.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-400-6.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-500-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-500-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-500-3.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-500-4.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-500-5.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-500-6.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-600-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-600-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-600-3.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-600-4.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-600-5.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'JetBrains Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/jetbrains-mono-600-6.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Space Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-mono-400-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Space Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-mono-400-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Space Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-mono-400-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Space Mono';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-mono-700-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Space Mono';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-mono-700-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Space Mono';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-mono-700-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-300-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-300-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-300-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-400-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-400-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-400-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-500-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-500-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-500-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-600-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-600-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-600-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-700-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-700-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Space Grotesk';
+    font-style:normal;
+    font-weight:700;
+    font-display:swap;
+    src:url('assets/vendor/fonts/space-grotesk-700-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:italic;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-300-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:italic;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-300-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:italic;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-300-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:italic;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-400-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:italic;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-400-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:italic;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-400-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:italic;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-500-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:italic;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-500-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:italic;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-500-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:italic;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-800-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:italic;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-800-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:italic;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-800-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-normal-500-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-normal-500-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-normal-500-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-normal-800-1.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-normal-800-2.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'Newsreader';
+    font-style:normal;
+    font-weight:800;
+    font-display:swap;
+    src:url('assets/vendor/fonts/newsreader-normal-800-3.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:200;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-200-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:200;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-200-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:200;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-200-3.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:200;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-200-4.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:200;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-200-5.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:200;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-200-6.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-300-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-300-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-300-3.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-300-4.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-300-5.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-300-6.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-400-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-400-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-400-3.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-400-4.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-400-5.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-400-6.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-500-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-500-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-500-3.woff2') format('woff2');
+    unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-500-4.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-500-5.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Sans';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-sans-500-6.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-400-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-400-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-400-3.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-400-4.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-400-5.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-500-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-500-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-500-3.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-500-4.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:500;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-500-5.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:200;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-200-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:200;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-200-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:200;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-200-3.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:200;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-200-4.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:200;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-200-5.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-300-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-300-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-300-3.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-300-4.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:300;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-300-5.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:italic;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-400-italic-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:italic;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-400-italic-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:italic;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-400-italic-3.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:italic;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-400-italic-4.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:italic;
+    font-weight:400;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-400-italic-5.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-600-1.woff2') format('woff2');
+    unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-600-2.woff2') format('woff2');
+    unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-600-3.woff2') format('woff2');
+    unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-600-4.woff2') format('woff2');
+    unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face{
+    font-family:'IBM Plex Mono';
+    font-style:normal;
+    font-weight:600;
+    font-display:swap;
+    src:url('assets/vendor/fonts/ibm-plex-mono-600-5.woff2') format('woff2');
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+</style>
 <style>
   :root{
     --paper:#fafaf8;
@@ -20,8 +1510,8 @@
     --border-strong:rgba(255,255,255,.28);
     --text-secondary:rgba(255,255,255,.66);
     --text-helper:rgba(255,255,255,.46);
-    --sans:"Inter","Noto Sans SC",system-ui,-apple-system,sans-serif;
-    --sans-zh:"Noto Sans SC","PingFang SC",var(--sans);
+    --sans:"Inter","Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    --sans-zh:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",var(--sans);
     --mono:"Space Mono","JetBrains Mono",ui-monospace,monospace;
     --ease-prod:cubic-bezier(.2,0,.38,.9);
     --preview-panel-w:min(380px,92vw);
@@ -450,7 +1940,6 @@
 <script id="deck-view-model" type="application/json">{}</script>
 <script id="embedded-text-state" type="application/json">{}</script>
 <script src="assets/imported-theme-runtime.js"></script>
-<script src="assets/deck-runtime.js"></script>
 <script>
 (function(){
 	  window.__pageTransitionModes = [
@@ -1404,7 +2893,7 @@ function syncDeckPageNumbers(scope=document){
     slide.dataset.dashiPageTotal = String(state.total);
     const signature = `${state.current}/${state.total}`;
     if(slide.dataset.dashiPageNumberSignature && slide.dataset.dashiPageNumberSignature !== signature){
-      slide.dataset.overviewThumbRevision = String(Number(slide.dataset.overviewThumbRevision || 0) + 1);
+      bumpOverviewThumbRevision(slide);
     }
     slide.dataset.dashiPageNumberSignature = signature;
     slide.querySelectorAll('[data-dashi-page-number]').forEach(slot => {
@@ -1470,8 +2959,10 @@ function previewStoreKey(){
 }
 window.__previewStoreKey = previewStoreKey;
 
-function getSlideVmId(slide, index=allSlides.indexOf(slide)){
-  return slide?.dataset?.vmSlideId || slide?.id || slide?.dataset?.layout || `slide-${Math.max(0, index) + 1}`;
+function getSlideVmId(slide, index){
+  // indexOf 是 O(N),必须惰性:正常页都有 vmSlideId,不该为它付全表扫描(1020 卡遍历时会是 O(N²))。
+  return slide?.dataset?.vmSlideId || slide?.id || slide?.dataset?.layout
+    || `slide-${Math.max(0, index ?? allSlides.indexOf(slide)) + 1}`;
 }
 
 let svgCloneIdCounter = 0;
@@ -1536,7 +3027,7 @@ function releaseTemplateVideoElements(root){
 }
 
 function isDuplicatedRuntimeSlide(slide){
-  const id = getSlideVmId(slide, allSlides.indexOf(slide));
+  const id = getSlideVmId(slide);
   return slide?.dataset?.duplicatedSlide === 'true' || /__copy_/.test(id || '');
 }
 
@@ -2313,7 +3804,7 @@ function deleteCatalogSlide(catalogIndex){
   if(!slide) return false;
   const previousActiveSlide = slides[idx];
   const preferredIndex = Math.max(0, slides.indexOf(slide));
-  const slideId = getSlideVmId(slide, allSlides.indexOf(slide));
+  const slideId = getSlideVmId(slide);
   const deleted = getSlideStateSet('deletedSlides');
   const skipped = getSlideStateSet('skippedSlides');
   deleted.add(slideId);
@@ -2364,7 +3855,6 @@ function prepareDuplicatedSlideClone(clone, source, copyId){
   clone.dataset.vmSlideKey = copyId;
   clone.dataset.slideId = copyId;
   clone.dataset.duplicatedSlide = 'true';
-  delete clone.dataset.overviewThumbRevision;
   clone.classList.remove('active');
   clone.removeAttribute('data-deck-active');
   clone.removeAttribute('aria-hidden');
@@ -2398,7 +3888,7 @@ function toggleCatalogSlideSkipped(catalogIndex){
   const catalogSlides = getCatalogSlides();
   const slide = catalogSlides[catalogIndex];
   if(!slide) return false;
-  const slideId = getSlideVmId(slide, allSlides.indexOf(slide));
+  const slideId = getSlideVmId(slide);
   const skipped = getSlideStateSet('skippedSlides');
   const currentlySkipped = skipped.has(slideId);
   if(!currentlySkipped && slides.length <= 1) return false;
@@ -2444,6 +3934,18 @@ let overviewDropSequence=0;
 let overviewRestoreAllCachedThumbsOnNextBuild=false;
 let overviewPerfMarks=createOverviewPerfMarks();
 const overviewThumbBitmapCache=new Map();
+// 缩略图内容修订号:存模块级 Map(key=稳定 slideId)。不能存 slide.dataset——
+// 运行时 slide 会被 releaseRuntimeSlide 销毁重建,dataset 归零会让缓存 key 永久失配。
+const overviewThumbRevisions=new Map();
+function getOverviewThumbRevision(slide){
+  return overviewThumbRevisions.get(getOverviewStableSlideId(slide)) || '0';
+}
+function bumpOverviewThumbRevision(slide){
+  const key = getOverviewStableSlideId(slide);
+  const next = String(Number(overviewThumbRevisions.get(key) || 0) + 1);
+  overviewThumbRevisions.set(key, next);
+  return next;
+}
 const OVERVIEW_THUMB_WIDTH=128;
 const OVERVIEW_THUMB_HEIGHT=72;
 const OVERVIEW_CARD_WIDTH=144;
@@ -2526,7 +4028,7 @@ function resetOverviewPerfMarks(){
 window.__resetOverviewPerfMarks = resetOverviewPerfMarks;
 
 function getOverviewStableSlideId(slide){
-  return getSlideVmId(slide, allSlides.indexOf(slide));
+  return getSlideVmId(slide);
 }
 
 function getOverviewSlideKey(slide){
@@ -2970,7 +4472,7 @@ function createOverviewDomPreview(slide){
 function rememberOverviewThumb(slide, value){
   const entry = {...(value || {})};
   const key = getOverviewThumbCacheKey(slide);
-  overviewThumbBitmapCache.set(key, {...entry, usedAt: Date.now()});
+  overviewThumbBitmapCache.set(key, {...entry, revision: getOverviewThumbRevision(slide), usedAt: Date.now()});
   while(overviewThumbBitmapCache.size > OVERVIEW_THUMB_CACHE_LIMIT){
     let oldestKey=null;
     let oldestTime=Infinity;
@@ -3056,11 +4558,16 @@ function predecodeOverviewSlideResources(slide){
   });
 }
 
+const overviewPreviewCostCache = new WeakMap();
 function getOverviewPreviewCost(slide){
   if(!slide) return 0;
+  const cached = overviewPreviewCostCache.get(slide);
+  if(cached !== undefined) return cached;
   const elementCount = slide.querySelectorAll('*').length;
   const mediaCount = slide.querySelectorAll('img,svg,canvas,video,iframe,[style*="url("]').length;
-  return elementCount + mediaCount * 8;
+  const cost = elementCount + mediaCount * 8;
+  overviewPreviewCostCache.set(slide, cost);
+  return cost;
 }
 
 async function renderOverviewThumb(wrap, runId=overviewThumbRunId, opts={}){
@@ -3075,10 +4582,15 @@ async function renderOverviewThumb(wrap, runId=overviewThumbRunId, opts={}){
   try {
     if(runId !== overviewThumbRunId || !isEditMode() || !wrap.isConnected) return;
     const cachedThumb = overviewThumbBitmapCache.get(getOverviewThumbCacheKey(slide));
-    if(restoreOverviewThumb(wrap, cachedThumb)){
-      fitOverviewThumb(wrap);
-      recordOverviewStage('dom-cache-restore', previewStartAt, {slideId:getOverviewStableSlideId(slide)});
-      return;
+    if(cachedThumb && (cachedThumb.revision || '0') === getOverviewThumbRevision(slide)){
+      if(restoreOverviewThumb(wrap, cachedThumb)){
+        fitOverviewThumb(wrap);
+        recordOverviewStage('dom-cache-restore', previewStartAt, {slideId:getOverviewStableSlideId(slide)});
+        return;
+      }
+    } else if(cachedThumb){
+      // 内容过期(如页码变化):旧图先占位,继续走完整重渲染覆盖,不闪 placeholder。
+      restoreOverviewThumb(wrap, cachedThumb);
     }
     await renderOverviewThumbDomPreview(wrap, slide);
     fitOverviewThumb(wrap);
@@ -3211,13 +4723,14 @@ function queueNearbyOverviewThumbs(opts={}){
     if(card?.dataset.slideKey === activeKey) activeWrap = wrap;
   });
   const items = [];
-  if(activeWrap) items.push({wrap:activeWrap, trigger:'active'});
-  const queued = new Set(items.map(item => item.wrap));
+  const queued = new Set();
   const pushUnique = item => {
     if(!item?.wrap || queued.has(item.wrap)) return;
+    if(item.wrap.dataset.overviewRendered === 'true') return;
     queued.add(item.wrap);
     items.push(item);
   };
+  if(activeWrap) pushUnique({wrap:activeWrap, trigger:'active'});
   const visibleEntries = visibleWraps
     .map(wrap => {
       const card = wrap.closest('[data-overview-card="true"]');
@@ -3229,6 +4742,11 @@ function queueNearbyOverviewThumbs(opts={}){
     const wrap = card.querySelector('[data-overview-thumb="true"]');
     pushUnique({wrap, trigger:'near'});
   });
+  if(!items.length && !overviewThumbQueue.length){
+    // 可见/近邻卡全部就绪且队列为空:本次调用无事可做,不写队列、不记 stage(布局读仍如实记录)。
+    recordOverviewLayoutRead('queue-nearby', 'range-card-metrics', range.cards.length);
+    return;
+  }
   setOverviewThumbQueue(items, {immediate:!!opts.immediate});
   recordOverviewLayoutRead('queue-nearby', 'range-card-metrics', range.cards.length);
   recordOverviewStage('queue-nearby-overview-thumbs', startAt, {count:range.cards.length, queued:items.length});
@@ -3245,7 +4763,13 @@ function requestOverviewThumbRefresh(afterPause=false, opts={}){
     overviewThumbRefreshTimer=null;
     overviewThumbRefreshQueued=false;
     if(runId !== overviewThumbRunId) return;
-    if(isEditMode()) queueNearbyOverviewThumbs({immediate:!!opts.priority});
+    if(!isEditMode()) return;
+    if(performance.now() < overviewThumbPauseUntil){
+      // 排队后 pause 又被后续交互顺延:跟随顺延,不在暂停期内抢主线程。
+      requestOverviewThumbRefresh(true, opts);
+      return;
+    }
+    queueNearbyOverviewThumbs({immediate:!!opts.priority});
   };
   if(afterPause){
     if(overviewThumbRefreshTimer !== null) clearTimeout(overviewThumbRefreshTimer);
@@ -3314,9 +4838,13 @@ function syncRailActiveState(scroll=false, opts={}){
       else overviewProgrammaticThumbRefreshNeeded=false;
     }
     if(opts.refreshThumbs !== false){
-      const range = getOverviewThumbRange(overviewGrid, {includeNear:true});
-      fitOverviewThumbnails(range.cards);
-      observeOverviewThumbs(overviewGrid);
+      const activeWrap = card.querySelector('[data-overview-thumb="true"]');
+      if(activeWrap?.dataset.overviewRendered === 'true'){
+        // 活动卡已在视口内且缩略图就绪:相邻翻页只是高亮移动,无需重跑 fit/observe/排队
+        //(视口变化由 IntersectionObserver 守护,滚动路径走 scrollRailCardIntoView)。
+        return;
+      }
+      // 活动卡未就绪:等导航暂停期结束后统一刷新,连续翻页期间不让缩略图管线抢主线程。
       requestOverviewThumbRefresh(true);
     }
   });
@@ -3370,15 +4898,15 @@ function restoreOverviewThumb(wrap, cached){
 
 function getOverviewThumbCacheKey(slide){
   const themePack = slide?.dataset.themePack || activeThemePack || document.documentElement.dataset.themePack || 'deck';
-  const slideId = getSlideVmId(slide, allSlides.indexOf(slide));
-  const revision = slide?.dataset.overviewThumbRevision || '0';
-  return `${themePack}|${slideId}|r${revision}|${OVERVIEW_THUMB_WIDTH}x${OVERVIEW_THUMB_HEIGHT}`;
+  const slideId = getSlideVmId(slide);
+  // revision 不进 key:内容过期由 entry.revision 判定,旧图可先上屏再后台刷新,避免闪 placeholder。
+  return `${themePack}|${slideId}|${OVERVIEW_THUMB_WIDTH}x${OVERVIEW_THUMB_HEIGHT}`;
 }
 
 function markOverviewThumbDirty(slide){
   if(!slide) return;
   const key = getOverviewStableSlideId(slide);
-  slide.dataset.overviewThumbRevision = String(Number(slide.dataset.overviewThumbRevision || 0) + 1);
+  bumpOverviewThumbRevision(slide);
   [...overviewThumbBitmapCache.keys()].forEach(cacheKey => {
     if(cacheKey.includes(`|${key}|`)) overviewThumbBitmapCache.delete(cacheKey);
   });
@@ -4578,7 +6106,7 @@ refreshRailCatalog();
 
   function isImageCountControl(control){
     const key = String(control?.publicKey || control?.key || '');
-    const label = [control?.label, control?.publicLabel, control?.desc, control?.description].filter(Boolean).join(' ');
+    const label = [control?.label, control?.desc].filter(Boolean).join(' ');
     if(/^(image|images|media|photo|photos|picture|pictures|logo|logos|thumb|thumbs|avatar|avatars|frame|frames)(Slot)?Count$/i.test(key)) return true;
     if(/^(image|media|photo|picture|logo|thumb|avatar|frame).*Count$/i.test(key)) return true;
     return /(图片|照片|配图|主图|背景图|缩略图|头像|画框|画格|画面|封面|邮票|品牌|Logo)/i.test(label)
@@ -4592,9 +6120,7 @@ refreshRailCatalog();
     return {
       ...countControl,
       label: control.label || countControl.label,
-      publicLabel: control.publicLabel || control.label || countControl.publicLabel,
-      desc: control.desc || control.description || countControl.desc,
-      description: control.description || control.desc || countControl.description,
+      desc: control.desc || countControl.desc,
     };
   }
 
@@ -5523,7 +7049,7 @@ refreshRailCatalog();
   }
 
   function staticUnicornRuntime(){
-    const DEFAULT_SDK_URL = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.12/dist/unicornStudio.umd.js';
+    const DEFAULT_SDK_URL = 'assets/vendor/unicornstudio.umd.js';
     let sdkPromise = null;
     let sdkPromiseUrl = '';
     let embeddedAssetMap = null;

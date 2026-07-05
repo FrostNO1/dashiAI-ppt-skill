@@ -17,7 +17,7 @@ import QuadrantSlide, { controls as quadrantControls, defaultProps as quadrantDe
 import ChainSlide, { controls as chainControls, defaultProps as chainDefaults } from "./slides/ChainSlide.jsx";
 import CaseSlide, { controls as caseControls, defaultProps as caseDefaults } from "./slides/CaseSlide.jsx";
 import SectionSlide, { controls as sectionControls, defaultProps as sectionDefaults } from "./slides/SectionSlide.jsx";
-import RoundSlide, { controls as roundControls, defaultProps as roundDefaults } from "./slides/RoundSlide.jsx";
+import RoundSlide, { controls as roundControls, defaultProps as roundDefaults, numberBounds as roundNumberBounds } from "./slides/RoundSlide.jsx";
 import MonthlySlide, { controls as monthlyControls, defaultProps as monthlyDefaults } from "./slides/MonthlySlide.jsx";
 import StatSlide, { controls as statControls, defaultProps as statDefaults } from "./slides/StatSlide.jsx";
 import GeoSlide, { controls as geoControls, defaultProps as geoDefaults } from "./slides/GeoSlide.jsx";
@@ -65,7 +65,7 @@ import EmbodiedSlide, { controls as embodiedControls, defaultProps as embodiedDe
 import RoseSlide, { controls as roseControls, defaultProps as roseDefaults } from "./slides/RoseSlide.jsx";
 import MarimekkoSlide, { controls as marimekkoControls, defaultProps as marimekkoDefaults } from "./slides/MarimekkoSlide.jsx";
 import ConcentrationSlide, { controls as concentrationControls, defaultProps as concentrationDefaults } from "./slides/ConcentrationSlide.jsx";
-import TornadoSlide, { controls as tornadoControls, defaultProps as tornadoDefaults } from "./slides/TornadoSlide.jsx";
+import TornadoSlide, { controls as tornadoControls, defaultProps as tornadoDefaults, numberBounds as tornadoNumberBounds } from "./slides/TornadoSlide.jsx";
 import MoatSlide, { controls as moatControls, defaultProps as moatDefaults } from "./slides/MoatSlide.jsx";
 import SupplyChainSlide, { controls as supplyControls, defaultProps as supplyDefaults } from "./slides/SupplyChainSlide.jsx";
 import ChipsSlide, { controls as chipsControls, defaultProps as chipsDefaults } from "./slides/ChipsSlide.jsx";
@@ -78,7 +78,7 @@ import WaffleSlide, { controls as waffleControls, defaultProps as waffleDefaults
 import PeakSlide, { controls as peakControls, defaultProps as peakDefaults } from "./slides/PeakSlide.jsx";
 import LayerTableSlide, { controls as layerTableControls, defaultProps as layerTableDefaults } from "./slides/LayerTableSlide.jsx";
 import CumulativeSlide, { controls as cumulativeControls, defaultProps as cumulativeDefaults } from "./slides/CumulativeSlide.jsx";
-import HypeCycleSlide, { controls as hypeCycleControls, defaultProps as hypeCycleDefaults } from "./slides/HypeCycleSlide.jsx";
+import HypeCycleSlide, { controls as hypeCycleControls, defaultProps as hypeCycleDefaults, numberBounds as hypeCycleNumberBounds } from "./slides/HypeCycleSlide.jsx";
 import HorizonSlide, { controls as horizonControls, defaultProps as horizonDefaults } from "./slides/HorizonSlide.jsx";
 import StatementSlide, { controls as statementControls, defaultProps as statementDefaults } from "./slides/StatementHeroSlide.jsx";
 
@@ -105,7 +105,7 @@ export const SLIDES = [
   { id: "coreweave", label: "卖铲赢家", title: "CoreWeave 案例",       Component: CoreweaveSlide, controls: coreweaveControls, defaultProps: coreweaveDefaults },
   { id: "casecompare", label: "案例对比", title: "三大案例对比速览", Component: CaseCompareSlide, controls: caseCompareControls, defaultProps: caseCompareDefaults },
   { id: "section", label: "章节页",  title: "结构透视与展望",      Component: SectionSlide,  controls: sectionControls,  defaultProps: sectionDefaults },
-  { id: "round",  label: "轮次结构", title: "融资轮次结构对比",     Component: RoundSlide,    controls: roundControls,    defaultProps: roundDefaults },
+  { id: "round",  label: "轮次结构", title: "融资轮次结构对比",     Component: RoundSlide,    controls: roundControls,    defaultProps: roundDefaults, numberBounds: roundNumberBounds },
   { id: "waffle", label: "轮次单位图", title: "97 笔大额融资 · 轮次构成", Component: WaffleSlide, controls: waffleControls, defaultProps: waffleDefaults },
   { id: "monthly", label: "月度明细", title: "逐月融资额明细",      Component: MonthlySlide,  controls: monthlyControls,  defaultProps: monthlyDefaults },
   { id: "peak",   label: "单月峰值", title: "全年单月峰值 · 双峰节奏", Component: PeakSlide, controls: peakControls, defaultProps: peakDefaults },
@@ -139,7 +139,7 @@ export const SLIDES = [
   { id: "radar",   label: "风险雷达", title: "风险信号雷达图",        Component: RadarSlide,      controls: radarControls,      defaultProps: radarDefaults },
   { id: "register", label: "风险登记册", title: "风险登记册",          Component: RegisterSlide,   controls: registerControls,   defaultProps: registerDefaults },
   { id: "shift",   label: "范式转变", title: "叙事驱动 → 兑现驱动",   Component: ShiftSlide,      controls: shiftControls,      defaultProps: shiftDefaults },
-  { id: "hypecycle", label: "成熟度曲线", title: "技术成熟度曲线", Component: HypeCycleSlide, controls: hypeCycleControls, defaultProps: hypeCycleDefaults },
+  { id: "hypecycle", label: "成熟度曲线", title: "技术成熟度曲线", Component: HypeCycleSlide, controls: hypeCycleControls, defaultProps: hypeCycleDefaults, numberBounds: hypeCycleNumberBounds },
   { id: "betmatrix", label: "决策矩阵", title: "投资标的决策矩阵",     Component: BetMatrixSlide,  controls: betMatrixControls,  defaultProps: betMatrixDefaults },
   { id: "share",   label: "资本大年", title: "AI 占全美风投份额",     Component: ShareSlide,      controls: shareControls,      defaultProps: shareDefaults },
   { id: "waterfall", label: "季度节奏", title: "季度融资节奏 · 桥接", Component: WaterfallSlide,  controls: waterfallControls,  defaultProps: waterfallDefaults },
@@ -154,7 +154,7 @@ export const SLIDES = [
   { id: "marimekko", label: "资金矩阵", title: "产业链资金结构矩阵",   Component: MarimekkoSlide, controls: marimekkoControls, defaultProps: marimekkoDefaults },
   { id: "concentration", label: "三重集中", title: "资本大年 · 三重集中", Component: ConcentrationSlide, controls: concentrationControls, defaultProps: concentrationDefaults },
   { id: "statement", label: "资本主张", title: "全幅影像主张页", Component: StatementSlide, controls: statementControls, defaultProps: statementDefaults },
-  { id: "tornado",  label: "轮次背向", title: "轮次结构 · 笔数 ↔ 金额", Component: TornadoSlide,  controls: tornadoControls,  defaultProps: tornadoDefaults },
+  { id: "tornado",  label: "轮次背向", title: "轮次结构 · 笔数 ↔ 金额", Component: TornadoSlide,  controls: tornadoControls,  defaultProps: tornadoDefaults, numberBounds: tornadoNumberBounds },
   { id: "moat",     label: "护城河",   title: "头部公司护城河剖析",   Component: MoatSlide,      controls: moatControls,      defaultProps: moatDefaults },
   { id: "supply",   label: "算力卡脖", title: "算力供应链的瓶颈",   Component: SupplyChainSlide, controls: supplyControls, defaultProps: supplyDefaults },
   { id: "chips",    label: "AI 芯片", title: "上游硬件 · AI 芯片",     Component: ChipsSlide,     controls: chipsControls,     defaultProps: chipsDefaults },

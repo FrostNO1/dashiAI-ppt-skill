@@ -1,7 +1,19 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import path from 'node:path';
-import PptxGenJS from 'pptxgenjs';
 import { PNG } from 'pngjs';
+
+// pptxgenjs ships a real ESM build (`export { PptxGenJS as default }`) selected via
+// the package's "import" export condition. Under Node's own loader this resolves
+// to a plain constructor, but under loaders that re-wrap ESM/CJS interop (e.g. the
+// tsx runtime used elsewhere in this repo for .jsx entry points) the default
+// binding can come back double-wrapped as a non-constructible namespace object
+// (`{ default: [Function] }` instead of `[Function]`). Loading via `require()`
+// side-steps that interop layer entirely — CommonJS resolution is unambiguous
+// across loaders — so the constructor is reliable regardless of how this module
+// itself was imported.
+const require = createRequire(import.meta.url);
+const PptxGenJS = require('pptxgenjs');
 
 const SOURCE_W = 1920;
 const SOURCE_H = 1080;

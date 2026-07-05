@@ -24,9 +24,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -44,9 +42,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -55,8 +51,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签的显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showFigure",
@@ -64,8 +59,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右侧核心数据是否突出展示",
-        "publicKey": "showFigure",
-        "publicLabel": "重点数字"
+        "publicKey": "showFigure"
       },
       {
         "key": "imageCount",
@@ -76,8 +70,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "封面图片槽数量，0 为纯文字封面",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "showMeta",
@@ -85,8 +78,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部数据口径说明的显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "页脚信息"
+        "publicKey": "showMeta"
       },
       {
         "key": "showDecor",
@@ -94,8 +86,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -165,8 +156,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -177,11 +167,11 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "showFigure": true,
       "accent": "blue",
@@ -224,9 +214,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -244,9 +232,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -255,8 +241,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签的显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "statCount",
@@ -267,8 +252,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "help": "底部数据带的统计条目数量，0 为纯标题封面",
-        "publicKey": "itemCount",
-        "publicLabel": "数据条目"
+        "publicKey": "itemCount"
       },
       {
         "key": "showMeta",
@@ -276,8 +260,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部数据口径说明的显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "页脚信息"
+        "publicKey": "showMeta"
       },
       {
         "key": "showDecor",
@@ -285,8 +268,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -356,8 +338,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -368,8 +349,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -444,9 +424,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -474,18 +452,14 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "forceDark",
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -503,9 +477,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -519,8 +491,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "media",
         "help": "上传模式下的整页背景图槽",
-        "publicKey": "imageCount",
-        "publicLabel": "背景图"
+        "publicKey": "imageCount"
       },
       {
         "key": "showEyebrow",
@@ -528,8 +499,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "居中分类标签的显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "中央标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showFrame",
@@ -537,8 +507,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "海报内描边框与四角标注的显示 / 隐藏",
-        "publicKey": "showFrame",
-        "publicLabel": "描边边框"
+        "publicKey": "showFrame"
       },
       {
         "key": "showFigure",
@@ -546,8 +515,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "标题下方核心数据徽标的显示 / 隐藏",
-        "publicKey": "showFigure",
-        "publicLabel": "核心数字"
+        "publicKey": "showFigure"
       },
       {
         "key": "showMeta",
@@ -555,8 +523,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部数据口径说明的显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "页脚信息"
+        "publicKey": "showMeta"
       },
       {
         "key": "showDecor",
@@ -564,8 +531,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -635,8 +601,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -647,11 +612,11 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "theme": "light",
       "accent": "blue",
@@ -725,9 +690,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -745,9 +708,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -756,8 +717,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签的显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showFigure",
@@ -765,8 +725,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右侧竖向巨型数字模块的显示 / 隐藏",
-        "publicKey": "showFigure",
-        "publicLabel": "巨数模块"
+        "publicKey": "showFigure"
       },
       {
         "key": "showPunch",
@@ -774,8 +733,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "左下荧光绿主张色块的显示 / 隐藏",
-        "publicKey": "showPunch",
-        "publicLabel": "荧光绿块"
+        "publicKey": "showPunch"
       },
       {
         "key": "showMeta",
@@ -783,8 +741,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部等宽元数据模块的显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "元数据块"
+        "publicKey": "showMeta"
       },
       {
         "key": "showDecor",
@@ -792,8 +749,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -863,8 +819,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -875,8 +830,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -941,9 +895,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -971,18 +923,14 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "forceDark",
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -1000,9 +948,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -1011,8 +957,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "左上角分类标签的显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "imageCount",
@@ -1023,8 +968,7 @@ export const pages = [
         "max": 1,
         "step": 1,
         "help": "全幅背景图槽数量（0 为纯色封面）",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "showFigure",
@@ -1032,8 +976,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右上角核心数字徽标的显示 / 隐藏",
-        "publicKey": "showFigure",
-        "publicLabel": "核心数字"
+        "publicKey": "showFigure"
       },
       {
         "key": "showMeta",
@@ -1041,8 +984,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部支撑数据带的显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "底部数据"
+        "publicKey": "showMeta"
       },
       {
         "key": "showDecor",
@@ -1050,8 +992,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -1121,8 +1062,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -1133,11 +1073,11 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "theme": "light",
       "imageCount": 1,
@@ -1191,9 +1131,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -1211,9 +1149,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -1222,8 +1158,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "itemCount",
@@ -1234,8 +1169,7 @@ export const pages = [
         "max": 7,
         "step": 1,
         "help": "展示的章节数量",
-        "publicKey": "itemCount",
-        "publicLabel": "章节数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "columns",
@@ -1253,8 +1187,7 @@ export const pages = [
           }
         ],
         "help": "目录的栏数布局",
-        "publicKey": "columns",
-        "publicLabel": "栏目布局"
+        "publicKey": "columns"
       },
       {
         "key": "showRule",
@@ -1262,8 +1195,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "条目之间的分隔细线显示 / 隐藏",
-        "publicKey": "showRule",
-        "publicLabel": "分隔线"
+        "publicKey": "showRule"
       },
       {
         "key": "focusEnabled",
@@ -1271,8 +1203,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "弱化其它章节以突出某一章",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -1283,8 +1214,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "help": "被突出的章节序号（自动随章节数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -1292,8 +1222,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -1363,8 +1292,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -1375,8 +1303,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -1448,9 +1375,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -1468,9 +1393,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -1479,8 +1402,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "左侧分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "cardCount",
@@ -1491,8 +1413,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "展示的维度卡片数量",
-        "publicKey": "cardCount",
-        "publicLabel": "卡片数量"
+        "publicKey": "cardCount"
       },
       {
         "key": "showDiagram",
@@ -1500,8 +1421,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "卡片中的生成式节点图显示 / 隐藏",
-        "publicKey": "showDiagram",
-        "publicLabel": "装饰图形"
+        "publicKey": "showDiagram"
       },
       {
         "key": "diagramStyle1",
@@ -1541,8 +1461,7 @@ export const pages = [
         "countKey": "cardCount",
         "countIndex": 0,
         "help": "对应从左到右第 1 张卡片的图形样式",
-        "publicKey": "diagramStyle1",
-        "publicLabel": "图形类型 1"
+        "publicKey": "diagramStyle1"
       },
       {
         "key": "diagramStyle2",
@@ -1582,8 +1501,7 @@ export const pages = [
         "countKey": "cardCount",
         "countIndex": 1,
         "help": "对应从左到右第 2 张卡片的图形样式",
-        "publicKey": "diagramStyle2",
-        "publicLabel": "图形类型 2"
+        "publicKey": "diagramStyle2"
       },
       {
         "key": "diagramStyle3",
@@ -1623,8 +1541,7 @@ export const pages = [
         "countKey": "cardCount",
         "countIndex": 2,
         "help": "对应从左到右第 3 张卡片的图形样式",
-        "publicKey": "diagramStyle3",
-        "publicLabel": "图形类型 3"
+        "publicKey": "diagramStyle3"
       },
       {
         "key": "focusEnabled",
@@ -1632,8 +1549,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "弱化其它卡片以突出某一张",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -1644,8 +1560,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "被突出的卡片序号（从 0 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -1653,8 +1568,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -1724,8 +1638,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -1736,8 +1649,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -1796,9 +1708,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -1816,9 +1726,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -1827,8 +1735,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "chartType",
@@ -1850,8 +1757,7 @@ export const pages = [
           }
         ],
         "help": "主数据系列的呈现方式",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型"
+        "publicKey": "chartType"
       },
       {
         "key": "showSecondary",
@@ -1859,8 +1765,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "叠加「事件笔数」次级折线及右轴",
-        "publicKey": "showSecondary",
-        "publicLabel": "次级系列"
+        "publicKey": "showSecondary"
       },
       {
         "key": "showGrid",
@@ -1868,8 +1773,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "图表背景的水平网格线",
-        "publicKey": "showGrid",
-        "publicLabel": "网格线"
+        "publicKey": "showGrid"
       },
       {
         "key": "focusEnabled",
@@ -1877,8 +1781,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某个数据点并显示数值",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -1889,8 +1792,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "被高亮的数据点序号（从 0 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showAnnotation",
@@ -1898,8 +1800,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右侧趋势解读文案显示 / 隐藏",
-        "publicKey": "showAnnotation",
-        "publicLabel": "装饰解读"
+        "publicKey": "showAnnotation"
       },
       {
         "key": "showDecor",
@@ -1907,8 +1808,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -1978,8 +1878,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -1990,8 +1889,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -2055,9 +1953,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -2075,9 +1971,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -2086,8 +1980,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "itemCount",
@@ -2098,8 +1991,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "help": "展示的编年节点数量",
-        "publicKey": "itemCount",
-        "publicLabel": "节点数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showConnector",
@@ -2107,8 +1999,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "时间轴主轨与节点引线显示 / 隐藏",
-        "publicKey": "showConnector",
-        "publicLabel": "连接轨道"
+        "publicKey": "showConnector"
       },
       {
         "key": "showMetric",
@@ -2116,8 +2007,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各节点的关键数字显示 / 隐藏",
-        "publicKey": "showMetric",
-        "publicLabel": "关键数字"
+        "publicKey": "showMetric"
       },
       {
         "key": "focusEnabled",
@@ -2125,8 +2015,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "弱化其它节点以突出某一个",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -2137,8 +2026,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "help": "被突出的节点序号（自动随节点数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showMeta",
@@ -2146,8 +2034,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部数据口径 / 提示显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "底部口径"
+        "publicKey": "showMeta"
       },
       {
         "key": "showDecor",
@@ -2155,8 +2042,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -2226,8 +2112,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -2238,8 +2123,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -2272,14 +2156,14 @@ export const pages = [
           "title": "Anthropic Series G",
           "tag": "估值 600 亿",
           "val": "105",
-          "unit": "亿 · 5 月"
+          "unit": "亿 · 单月"
         },
         {
           "time": "8 月",
           "title": "头部集中关账",
           "tag": "全年最高月",
           "val": "118",
-          "unit": "亿 · 8 月"
+          "unit": "亿 · 单月"
         },
         {
           "time": "11 月",
@@ -2293,7 +2177,7 @@ export const pages = [
           "title": "狂热转向分化",
           "tag": "理性回落",
           "val": "52",
-          "unit": "亿 · 12 月"
+          "unit": "亿 · 单月"
         },
         {
           "time": "全年",
@@ -2324,9 +2208,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -2344,9 +2226,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -2355,8 +2235,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "chartType",
@@ -2378,17 +2257,15 @@ export const pages = [
           }
         ],
         "help": "占比数据的呈现方式",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型"
+        "publicKey": "chartType"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": true,
-        "help": "高亮某一赛道（环形 / 饼图会微微外移）",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一分类（环形 / 饼图会微微外移）",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -2398,18 +2275,16 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "help": "被高亮的赛道序号（从 0 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的分类序号（从 0 起）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "dotFill",
         "label": "点阵填充",
         "type": "toggle",
         "default": true,
-        "help": "高亮赛道叠加点阵 / 半调网点纹理（需开启重点突出）",
-        "publicKey": "dotFill",
-        "publicLabel": "点阵填充"
+        "help": "高亮分类叠加点阵 / 半调网点纹理（需开启重点突出）",
+        "publicKey": "dotFill"
       },
       {
         "key": "showCenter",
@@ -2417,17 +2292,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "环形图中心的合计数值（仅环形）",
-        "publicKey": "showCenter",
-        "publicLabel": "中心数据"
+        "publicKey": "showCenter"
       },
       {
         "key": "showLegend",
         "label": "图例明细",
         "type": "toggle",
         "default": true,
-        "help": "右侧赛道明细列表",
-        "publicKey": "showLegend",
-        "publicLabel": "图例明细"
+        "help": "右侧分类明细列表",
+        "publicKey": "showLegend"
       },
       {
         "key": "showCallout",
@@ -2435,8 +2308,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部核心发现文案显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -2444,8 +2316,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -2515,8 +2386,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -2527,8 +2397,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -2603,9 +2472,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -2623,9 +2490,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -2634,8 +2499,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "itemCount",
@@ -2646,8 +2510,7 @@ export const pages = [
         "max": 10,
         "step": 1,
         "help": "排名展示的公司数量（Top N）",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "chartType",
@@ -2665,8 +2528,7 @@ export const pages = [
           }
         ],
         "help": "排名条的呈现方式",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型"
+        "publicKey": "chartType"
       },
       {
         "key": "focusEnabled",
@@ -2674,8 +2536,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一名公司",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -2686,8 +2547,7 @@ export const pages = [
         "max": 9,
         "step": 1,
         "help": "被高亮的名次（从 0 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -2695,8 +2555,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部集中度解读文案显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -2704,8 +2563,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -2775,8 +2633,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -2787,8 +2644,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -2877,9 +2733,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -2897,9 +2751,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -2908,8 +2760,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "itemCount",
@@ -2920,8 +2771,7 @@ export const pages = [
         "max": 10,
         "step": 1,
         "help": "展示的公司数量（Top N）",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showBar",
@@ -2929,8 +2779,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "「最大单笔」列内嵌数值量级条",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值条"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showSecondary",
@@ -2938,8 +2787,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "「产业链层级」附加列显示 / 隐藏",
-        "publicKey": "showSecondary",
-        "publicLabel": "附加列"
+        "publicKey": "showSecondary"
       },
       {
         "key": "focusEnabled",
@@ -2947,8 +2795,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一行公司",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -2959,8 +2806,7 @@ export const pages = [
         "max": 9,
         "step": 1,
         "help": "被高亮的名次（自动随条目数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -2968,8 +2814,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部集中度解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -2977,8 +2822,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -3048,8 +2892,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -3060,8 +2903,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -3089,71 +2931,61 @@ export const pages = [
           "co": "OpenAI",
           "amt": 66,
           "sector": "通用大模型",
-          "layer": "中游",
-          "layerBadge": "OpenAI 中游"
+          "layer": "中游"
         },
         {
           "co": "Anthropic",
           "amt": 65,
           "sector": "通用大模型",
-          "layer": "中游",
-          "layerBadge": "Claude 中游"
+          "layer": "中游"
         },
         {
           "co": "xAI",
           "amt": 50,
           "sector": "通用大模型",
-          "layer": "中游",
-          "layerBadge": "Grok 中游"
+          "layer": "中游"
         },
         {
-          "co": "Safe SI",
+          "co": "Safe Superintelligence",
           "amt": 10,
           "sector": "通用大模型",
-          "layer": "中游",
-          "layerBadge": "SSI 中游"
+          "layer": "中游"
         },
         {
           "co": "CoreWeave",
           "amt": 11,
           "sector": "AI 基础设施",
-          "layer": "上游",
-          "layerBadge": "基建上游"
+          "layer": "上游"
         },
         {
           "co": "Figure AI",
           "amt": 6.8,
           "sector": "AI 硬件 · 人形机器人",
-          "layer": "下游",
-          "layerBadge": "硬件下游"
+          "layer": "下游"
         },
         {
           "co": "Scale AI",
           "amt": 10,
           "sector": "AI 基础设施 · 数据标注",
-          "layer": "上游",
-          "layerBadge": "数据上游"
+          "layer": "上游"
         },
         {
           "co": "Perplexity AI",
           "amt": 5.2,
           "sector": "垂直应用 · AI 搜索",
-          "layer": "下游",
-          "layerBadge": "搜索下游"
+          "layer": "下游"
         },
         {
           "co": "Databricks",
           "amt": 5,
           "sector": "AI 基础设施 · 数据平台",
-          "layer": "下游",
-          "layerBadge": "数据下游"
+          "layer": "下游"
         },
         {
           "co": "Glean",
           "amt": 2.6,
           "sector": "垂直应用 · 企业搜索",
-          "layer": "下游",
-          "layerBadge": "企业下游"
+          "layer": "下游"
         }
       ],
       "showDecor": false,
@@ -3177,9 +3009,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -3197,9 +3027,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -3208,26 +3036,23 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showValues",
         "label": "数值标注",
         "type": "toggle",
         "default": true,
-        "help": "各气泡的融资额数值显示 / 隐藏",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标注"
+        "help": "各气泡的数值显示 / 隐藏",
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showLegend",
         "label": "分类图例",
         "type": "toggle",
         "default": true,
-        "help": "右上角赛道配色图例显示 / 隐藏",
-        "publicKey": "showLegend",
-        "publicLabel": "分类图例"
+        "help": "右上角分类配色图例显示 / 隐藏",
+        "publicKey": "showLegend"
       },
       {
         "key": "focusEnabled",
@@ -3235,8 +3060,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一家公司气泡",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -3246,9 +3070,8 @@ export const pages = [
         "min": 0,
         "max": 9,
         "step": 1,
-        "help": "被高亮的公司序号（0 = 融资额最大，自动随数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的公司序号（0 = 数值最大，自动随数量收敛）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -3256,8 +3079,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部「赢家通吃」解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "结构解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -3265,8 +3087,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -3336,8 +3157,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -3348,8 +3168,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -3447,9 +3266,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -3467,9 +3284,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -3478,8 +3293,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showAxis",
@@ -3487,17 +3301,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "四周的坐标轴文字显示 / 隐藏",
-        "publicKey": "showAxis",
-        "publicLabel": "坐标轴标注"
+        "publicKey": "showAxis"
       },
       {
         "key": "showChips",
         "label": "对象标签",
         "type": "toggle",
         "default": true,
-        "help": "各象限内代表公司标签显示 / 隐藏",
-        "publicKey": "showChips",
-        "publicLabel": "对象标签"
+        "help": "各象限内代表对象标签显示 / 隐藏",
+        "publicKey": "showChips"
       },
       {
         "key": "focusEnabled",
@@ -3505,8 +3317,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一个象限",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -3517,8 +3328,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "被高亮的象限序号（从 0 起，左上→右上→左下→右下）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -3526,8 +3336,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -3597,8 +3406,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -3609,8 +3417,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -3634,76 +3441,40 @@ export const pages = [
           "name": "叙事泡沫区",
           "tag": "热度高 · 兑现待验证",
           "desc": "通用大模型与 AGI 实验室获得巨额融资，但兑现仍受算力成本、模型差异化与监管约束。",
-          "chipItems": [
-            {
-              "label": "OpenAI",
-              "slot": 0
-            },
-            {
-              "label": "Anthropic",
-              "slot": 1
-            },
-            {
-              "label": "xAI",
-              "slot": 2
-            },
-            {
-              "label": "SSI",
-              "slot": 3
-            }
+          "chips": [
+            "OpenAI",
+            "Anthropic",
+            "xAI",
+            "SSI"
           ]
         },
         {
           "name": "明星兑现区",
           "tag": "热度高 · 兑现高",
           "desc": "基础设施、算力云、数据平台兼具融资热度与收入确定性，典型的「卖铲子」逻辑。",
-          "chipItems": [
-            {
-              "label": "CoreWeave",
-              "slot": 0
-            },
-            {
-              "label": "Databricks",
-              "slot": 1
-            },
-            {
-              "label": "Scale AI",
-              "slot": 2
-            }
+          "chips": [
+            "CoreWeave",
+            "Databricks",
+            "Scale AI"
           ]
         },
         {
           "name": "等待验证区",
           "tag": "热度中低 · 兑现待验证",
           "desc": "长尾工具链、安全与早期硬件「概念成立但规模未证」，更适合作为风险与边缘变量。",
-          "chipItems": [
-            {
-              "label": "工具链",
-              "slot": 0
-            },
-            {
-              "label": "安全",
-              "slot": 1
-            },
-            {
-              "label": "早期硬件",
-              "slot": 2
-            }
+          "chips": [
+            "工具链",
+            "安全",
+            "早期硬件"
           ]
         },
         {
           "name": "隐形价值区",
           "tag": "热度中低 · 兑现高",
           "desc": "垂直应用、企业搜索、工作流自动化单笔不一定最大，但落地路径更清晰。",
-          "chipItems": [
-            {
-              "label": "Glean",
-              "slot": 0
-            },
-            {
-              "label": "Perplexity",
-              "slot": 1
-            }
+          "chips": [
+            "Glean",
+            "Perplexity"
           ]
         }
       ],
@@ -3728,9 +3499,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -3748,9 +3517,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -3759,8 +3526,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "layerCount",
@@ -3771,17 +3537,15 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "展示的产业链层级数量（上游→下游）",
-        "publicKey": "layerCount",
-        "publicLabel": "层级数量"
+        "publicKey": "layerCount"
       },
       {
         "key": "showChips",
         "label": "对象标签",
         "type": "toggle",
         "default": true,
-        "help": "各环节代表公司标签显示 / 隐藏",
-        "publicKey": "showChips",
-        "publicLabel": "对象标签"
+        "help": "各环节代表对象标签显示 / 隐藏",
+        "publicKey": "showChips"
       },
       {
         "key": "focusEnabled",
@@ -3789,8 +3553,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一层级",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -3801,8 +3564,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "被高亮的层级序号（从 0 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -3810,8 +3572,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -3881,8 +3642,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -3893,8 +3653,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -4001,9 +3760,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -4021,9 +3778,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -4032,26 +3787,23 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showCompanies",
         "label": "代表公司",
         "type": "toggle",
         "default": true,
-        "help": "各环节代表公司标签显示 / 隐藏",
-        "publicKey": "showCompanies",
-        "publicLabel": "代表公司"
+        "help": "各环节代表对象标签显示 / 隐藏",
+        "publicKey": "showCompanies"
       },
       {
         "key": "showAmount",
         "label": "层资金量级",
         "type": "toggle",
         "default": true,
-        "help": "各层级融资额（亿美元）显示 / 隐藏",
-        "publicKey": "showAmount",
-        "publicLabel": "层资金量级"
+        "help": "各层级数值（亿美元）显示 / 隐藏",
+        "publicKey": "showAmount"
       },
       {
         "key": "showCertainty",
@@ -4059,8 +3811,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各层级确定性 / 竞争定性标记显示 / 隐藏",
-        "publicKey": "showCertainty",
-        "publicLabel": "确定性标记"
+        "publicKey": "showCertainty"
       },
       {
         "key": "focusEnabled",
@@ -4068,8 +3819,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "弱化其它层级以突出某一层",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -4080,8 +3830,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "被突出的层级序号（0 上游 · 1 中游 · 2 下游）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -4089,8 +3838,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部分层小结显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -4098,8 +3846,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -4169,8 +3916,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -4181,8 +3927,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -4224,7 +3969,7 @@ export const pages = [
           "b": true
         },
         {
-          "t": "——基建稳、模型卷、应用赔率高。"
+          "t": "——\"卖铲子\" 环节最稳，模型层最卷，应用层赔率最高。"
         }
       ],
       "layers": [
@@ -4236,30 +3981,16 @@ export const pages = [
           "rows": [
             {
               "seg": "AI 芯片",
-              "slot": 0,
               "cos": [
-                {
-                  "label": "Cerebras",
-                  "slot": 0
-                },
-                {
-                  "label": "Groq",
-                  "slot": 1
-                }
+                "Cerebras",
+                "Groq"
               ]
             },
             {
               "seg": "算力云 / 数据",
-              "slot": 1,
               "cos": [
-                {
-                  "label": "CoreWeave",
-                  "slot": 0
-                },
-                {
-                  "label": "Scale AI",
-                  "slot": 1
-                }
+                "CoreWeave",
+                "Scale AI"
               ]
             }
           ]
@@ -4272,34 +4003,17 @@ export const pages = [
           "rows": [
             {
               "seg": "通用大模型",
-              "slot": 0,
               "cos": [
-                {
-                  "label": "OpenAI",
-                  "slot": 0
-                },
-                {
-                  "label": "Anthropic",
-                  "slot": 1
-                },
-                {
-                  "label": "xAI",
-                  "slot": 2
-                }
+                "OpenAI",
+                "Anthropic",
+                "xAI"
               ]
             },
             {
               "seg": "开源 / 专用模型",
-              "slot": 1,
               "cos": [
-                {
-                  "label": "Mistral",
-                  "slot": 0
-                },
-                {
-                  "label": "SSI",
-                  "slot": 1
-                }
+                "Mistral",
+                "SSI"
               ]
             }
           ]
@@ -4312,36 +4026,21 @@ export const pages = [
           "rows": [
             {
               "seg": "企业生产力",
-              "slot": 0,
               "cos": [
-                {
-                  "label": "Glean",
-                  "slot": 0
-                },
-                {
-                  "label": "Databricks",
-                  "slot": 1
-                }
+                "Glean",
+                "Databricks"
               ]
             },
             {
               "seg": "消费 / 搜索",
-              "slot": 1,
               "cos": [
-                {
-                  "label": "Perplexity AI",
-                  "slot": 0
-                }
+                "Perplexity AI"
               ]
             },
             {
               "seg": "具身智能 / 机器人",
-              "slot": 2,
               "cos": [
-                {
-                  "label": "Figure AI",
-                  "slot": 0
-                }
+                "Figure AI"
               ]
             }
           ]
@@ -4371,9 +4070,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -4391,9 +4088,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -4402,8 +4097,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "imageCount",
@@ -4414,8 +4108,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "图片槽数量（按真实比例对齐，0 为纯文字）",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "layout",
@@ -4433,17 +4126,26 @@ export const pages = [
           }
         ],
         "help": "图片画廊的排布方式",
-        "publicKey": "layout",
-        "publicLabel": "图片排布"
+        "publicKey": "layout"
       },
       {
         "key": "showFigure",
         "label": "核心数字",
         "type": "toggle",
         "default": true,
-        "help": "垂直应用赛道融资额核心数字显示 / 隐藏",
-        "publicKey": "showFigure",
-        "publicLabel": "核心数字"
+        "help": "垂直应用分类数值核心数字显示 / 隐藏",
+        "publicKey": "showFigure"
+      },
+      {
+        "key": "chipCount",
+        "label": "特征标签",
+        "type": "slider",
+        "default": 3,
+        "min": 0,
+        "max": 3,
+        "step": 1,
+        "help": "底部特征标签数量",
+        "publicKey": "chipCount"
       },
       {
         "key": "showCallout",
@@ -4451,8 +4153,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部「隐形价值」解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -4460,8 +4161,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -4531,8 +4231,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -4543,15 +4242,16 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "imageCount": 2,
       "layout": "row",
       "showFigure": true,
+      "chipCount": 3,
       "showCallout": true,
       "accent": "blue",
       "copy": {
@@ -4597,9 +4297,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -4617,9 +4315,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -4628,8 +4324,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "imageCount",
@@ -4640,17 +4335,15 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "左侧图片槽数量，0 为纯文字案例",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "showTimeline",
         "label": "时间轴",
         "type": "toggle",
         "default": true,
-        "help": "右侧融资里程碑时间轴显示 / 隐藏",
-        "publicKey": "showTimeline",
-        "publicLabel": "时间轴"
+        "help": "右侧里程碑时间轴显示 / 隐藏",
+        "publicKey": "showTimeline"
       },
       {
         "key": "focusEnabled",
@@ -4658,8 +4351,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一个里程碑",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -4670,17 +4362,15 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "被高亮的里程碑序号（从 0 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showQuote",
         "label": "装饰引言",
         "type": "toggle",
         "default": true,
-        "help": "底部创始人引言显示 / 隐藏",
-        "publicKey": "showQuote",
-        "publicLabel": "装饰引言"
+        "help": "底部角色引言显示 / 隐藏",
+        "publicKey": "showQuote"
       },
       {
         "key": "showDecor",
@@ -4688,8 +4378,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -4759,8 +4448,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -4771,11 +4459,11 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "imageCount": 1,
       "showTimeline": true,
@@ -4833,9 +4521,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -4853,9 +4539,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -4864,8 +4548,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "imageCount",
@@ -4876,8 +4559,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "图片槽数量（按真实比例对齐排布，0 为纯文字）",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "layout",
@@ -4895,8 +4577,7 @@ export const pages = [
           }
         ],
         "help": "图片画廊的排布方式",
-        "publicKey": "layout",
-        "publicLabel": "图片排布"
+        "publicKey": "layout"
       },
       {
         "key": "statCount",
@@ -4907,8 +4588,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "展示的关键数字数量",
-        "publicKey": "statCount",
-        "publicLabel": "关键数字"
+        "publicKey": "statCount"
       },
       {
         "key": "focusEnabled",
@@ -4916,8 +4596,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一个关键数字",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -4928,8 +4607,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "被高亮的关键数字序号（自动随关键数字数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -4937,8 +4615,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部差异化优势解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -4946,8 +4623,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -5017,8 +4693,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -5029,11 +4704,11 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "imageCount": 2,
       "layout": "row",
@@ -5093,9 +4768,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -5113,9 +4786,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -5124,8 +4795,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showPivot",
@@ -5133,8 +4803,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "「矿场 → 算力云」转型对比块显示 / 隐藏",
-        "publicKey": "showPivot",
-        "publicLabel": "转型对比"
+        "publicKey": "showPivot"
       },
       {
         "key": "imageCount",
@@ -5145,8 +4814,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "help": "图片槽数量（按真实比例对齐排布，0 为纯文字）",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "layout",
@@ -5164,8 +4832,7 @@ export const pages = [
           }
         ],
         "help": "图片画廊的排布方式",
-        "publicKey": "layout",
-        "publicLabel": "图片排布"
+        "publicKey": "layout"
       },
       {
         "key": "statCount",
@@ -5176,8 +4843,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "展示的关键数字数量",
-        "publicKey": "statCount",
-        "publicLabel": "关键数字"
+        "publicKey": "statCount"
       },
       {
         "key": "focusEnabled",
@@ -5185,8 +4851,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一个关键数字",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -5197,8 +4862,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "被高亮的关键数字序号（自动随关键数字数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -5206,8 +4870,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部「卖铲子」逻辑解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -5215,8 +4878,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -5286,8 +4948,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -5298,11 +4959,11 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "showPivot": true,
       "imageCount": 2,
@@ -5364,9 +5025,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -5384,9 +5043,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -5395,8 +5052,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "itemCount",
@@ -5406,12 +5062,8 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "countArrays": [
-          "companies"
-        ],
         "help": "参与对比的公司数量",
-        "publicKey": "itemCount",
-        "publicLabel": "公司数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showEdge",
@@ -5419,17 +5071,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "「差异化优势」对比行显示 / 隐藏",
-        "publicKey": "showEdge",
-        "publicLabel": "差异化行"
+        "publicKey": "showEdge"
       },
       {
         "key": "showRank",
         "label": "指标标记",
         "type": "toggle",
         "default": true,
-        "help": "表头公司的估值梯队标记显示 / 隐藏",
-        "publicKey": "showRank",
-        "publicLabel": "指标标记"
+        "help": "表头公司的指标梯队标记显示 / 隐藏",
+        "publicKey": "showRank"
       },
       {
         "key": "focusEnabled",
@@ -5437,8 +5087,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一家公司列",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -5449,8 +5098,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "被高亮的公司序号（自动随公司数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -5458,8 +5106,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部对比小结显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -5467,8 +5114,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -5538,8 +5184,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -5550,8 +5195,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -5590,36 +5234,18 @@ export const pages = [
           "metric": "成立年份",
           "en": "FOUNDED",
           "vals": [
-            {
-              "text": "2021",
-              "slot": 0
-            },
-            {
-              "text": "2023",
-              "slot": 1
-            },
-            {
-              "text": "2023 转型",
-              "slot": 2
-            }
+            "2021",
+            "2023",
+            "2023 转型"
           ]
         },
         {
           "metric": "2024 融资",
           "en": "RAISED",
           "vals": [
-            {
-              "text": "累计 650 亿",
-              "slot": 0
-            },
-            {
-              "text": "50 亿",
-              "slot": 1
-            },
-            {
-              "text": "110 亿",
-              "slot": 2
-            }
+            "累计 650 亿",
+            "50 亿",
+            "110 亿"
           ],
           "unit": "亿美元"
         },
@@ -5627,18 +5253,9 @@ export const pages = [
           "metric": "最新估值",
           "en": "VALUATION",
           "vals": [
-            {
-              "text": "9650 亿",
-              "slot": 0
-            },
-            {
-              "text": "500 亿",
-              "slot": 1
-            },
-            {
-              "text": "190 亿+",
-              "slot": 2
-            }
+            "9650 亿",
+            "500 亿",
+            "190 亿+"
           ],
           "unit": "亿美元",
           "strong": true
@@ -5647,36 +5264,18 @@ export const pages = [
           "metric": "主营赛道",
           "en": "SECTOR",
           "vals": [
-            {
-              "text": "通用大模型",
-              "slot": 0
-            },
-            {
-              "text": "通用大模型",
-              "slot": 1
-            },
-            {
-              "text": "AI 算力云",
-              "slot": 2
-            }
+            "通用大模型",
+            "通用大模型",
+            "AI 算力云"
           ]
         },
         {
           "metric": "差异化优势",
           "en": "EDGE",
           "vals": [
-            {
-              "text": "安全对齐 · 企业信任",
-              "slot": 0
-            },
-            {
-              "text": "X 实时数据 · 特斯拉协同",
-              "slot": 1
-            },
-            {
-              "text": "锁定算力 · 卖铲子逻辑",
-              "slot": 2
-            }
+            "安全对齐 · 企业信任",
+            "X 实时数据 · 特斯拉协同",
+            "锁定算力 · 卖铲子逻辑"
           ],
           "edge": true
         }
@@ -5702,9 +5301,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -5722,9 +5319,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -5733,8 +5328,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签的显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showIndex",
@@ -5742,8 +5336,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "超大章节序号的显示 / 隐藏",
-        "publicKey": "showIndex",
-        "publicLabel": "章节序号"
+        "publicKey": "showIndex"
       },
       {
         "key": "imageCount",
@@ -5754,8 +5347,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "右侧图片槽数量，0 为纯文字章节页（改为巨型描边序号）",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "showMeta",
@@ -5763,8 +5355,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部小节索引的显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "页脚信息"
+        "publicKey": "showMeta"
       },
       {
         "key": "showDecor",
@@ -5772,8 +5363,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -5843,8 +5433,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -5855,11 +5444,11 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "theme": "light",
       "accent": "blue",
@@ -5905,9 +5494,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -5925,9 +5512,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -5936,8 +5521,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "chartType",
@@ -5955,17 +5539,15 @@ export const pages = [
           }
         ],
         "help": "主数据系列（事件笔数）的呈现方式",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型"
+        "publicKey": "chartType"
       },
       {
         "key": "showSecondary",
         "label": "次级系列",
         "type": "toggle",
         "default": true,
-        "help": "叠加「平均单笔金额」折线及右轴",
-        "publicKey": "showSecondary",
-        "publicLabel": "次级系列"
+        "help": "叠加「平均单笔数值」折线及右轴",
+        "publicKey": "showSecondary"
       },
       {
         "key": "showGrid",
@@ -5973,17 +5555,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "图表背景的水平网格线",
-        "publicKey": "showGrid",
-        "publicLabel": "网格线"
+        "publicKey": "showGrid"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": true,
-        "help": "高亮某个轮次并显示数值",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某个阶段并显示数值",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -5993,9 +5573,8 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "help": "被高亮的轮次序号（从 0 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的阶段序号（从 0 起）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -6003,8 +5582,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右侧结构解读文案显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -6012,8 +5590,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -6083,8 +5660,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -6095,8 +5671,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -6159,6 +5734,13 @@ export const pages = [
       "decorScale": 1,
       "forceDark": true,
       "accent": "blue"
+    },
+    "numberBounds": {
+      "data[].count": {
+        "min": 0,
+        "max": 24,
+        "semantics": "coordinate"
+      }
     }
   },
   {
@@ -6175,9 +5757,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -6195,9 +5775,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -6206,8 +5784,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "columns",
@@ -6218,35 +5795,31 @@ export const pages = [
         "max": 16,
         "step": 1,
         "help": "单位图每行的方格数量（影响排布密度）",
-        "publicKey": "columns",
-        "publicLabel": "每行格数"
+        "publicKey": "columns"
       },
       {
         "key": "showLegend",
         "label": "阶段图例",
         "type": "toggle",
         "default": true,
-        "help": "右侧各轮次明细（笔数 / 平均单笔）显示 / 隐藏",
-        "publicKey": "showLegend",
-        "publicLabel": "阶段图例"
+        "help": "右侧各阶段明细（笔数 / 平均单笔）显示 / 隐藏",
+        "publicKey": "showLegend"
       },
       {
         "key": "showAvg",
         "label": "平均单笔",
         "type": "toggle",
         "default": true,
-        "help": "图例中各轮平均单笔金额显示 / 隐藏",
-        "publicKey": "showAvg",
-        "publicLabel": "平均单笔"
+        "help": "图例中各轮平均单笔数值显示 / 隐藏",
+        "publicKey": "showAvg"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": true,
-        "help": "高亮某一轮次（其余格子弱化）",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一阶段（其余格子弱化）",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -6256,9 +5829,8 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "help": "被高亮的轮次序号（0 = 种子轮）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的阶段序号（0 = 种子轮）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -6266,8 +5838,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部结构解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "核心发现"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -6275,8 +5846,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -6346,8 +5916,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -6358,8 +5927,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -6461,9 +6029,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -6481,9 +6047,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -6492,8 +6056,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showHeat",
@@ -6501,8 +6064,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "按数值大小为每行铺设热力底色",
-        "publicKey": "showHeat",
-        "publicLabel": "热力底色"
+        "publicKey": "showHeat"
       },
       {
         "key": "showBar",
@@ -6510,8 +6072,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "每行内嵌的数值量级条",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值条"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "focusEnabled",
@@ -6519,8 +6080,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一个月份（峰值）",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -6531,17 +6091,15 @@ export const pages = [
         "max": 11,
         "step": 1,
         "help": "被高亮的月份序号（0 = 1 月）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showSummary",
         "label": "侧栏汇总",
         "type": "toggle",
         "default": true,
-        "help": "右侧季度 / 峰值汇总面板显示 / 隐藏",
-        "publicKey": "showSummary",
-        "publicLabel": "侧栏汇总"
+        "help": "右侧时间段 / 峰值汇总面板显示 / 隐藏",
+        "publicKey": "showSummary"
       },
       {
         "key": "showDecor",
@@ -6549,8 +6107,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -6620,8 +6177,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -6632,8 +6188,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -6706,9 +6261,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -6726,9 +6279,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -6737,8 +6288,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showUnit",
@@ -6746,8 +6296,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "巨型数字后缀单位显示 / 隐藏",
-        "publicKey": "showUnit",
-        "publicLabel": "数字单位"
+        "publicKey": "showUnit"
       },
       {
         "key": "showSupport",
@@ -6755,8 +6304,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右侧辅助解读文案显示 / 隐藏",
-        "publicKey": "showSupport",
-        "publicLabel": "辅助说明"
+        "publicKey": "showSupport"
       },
       {
         "key": "showChart",
@@ -6764,8 +6312,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部 12 个月微型柱条显示 / 隐藏",
-        "publicKey": "showChart",
-        "publicLabel": "月度节奏"
+        "publicKey": "showChart"
       },
       {
         "key": "showSecondPeak",
@@ -6773,8 +6320,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "5 月次峰是否同样以强调色标记",
-        "publicKey": "showSecondPeak",
-        "publicLabel": "次峰标记"
+        "publicKey": "showSecondPeak"
       },
       {
         "key": "showDecor",
@@ -6782,8 +6328,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -6853,8 +6398,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -6865,8 +6409,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -6976,9 +6519,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -6996,9 +6537,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -7007,8 +6546,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "chartType",
@@ -7026,17 +6564,15 @@ export const pages = [
           }
         ],
         "help": "累计主系列呈现方式",
-        "publicKey": "chartType",
-        "publicLabel": "主系列样式"
+        "publicKey": "chartType"
       },
       {
         "key": "showSecondary",
         "label": "月度增量",
         "type": "toggle",
         "default": true,
-        "help": "叠加各月新增融资额 mini 柱（次级尺度）",
-        "publicKey": "showSecondary",
-        "publicLabel": "月度增量"
+        "help": "叠加各月新增数值 mini 柱（次级尺度）",
+        "publicKey": "showSecondary"
       },
       {
         "key": "showGrid",
@@ -7044,8 +6580,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "背景水平网格线显示 / 隐藏",
-        "publicKey": "showGrid",
-        "publicLabel": "网格线"
+        "publicKey": "showGrid"
       },
       {
         "key": "focusEnabled",
@@ -7053,8 +6588,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一个月并显示累计 / 增量数值",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -7065,8 +6599,7 @@ export const pages = [
         "max": 11,
         "step": 1,
         "help": "被高亮的月份序号（0 = 1 月）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -7074,8 +6607,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部累积节奏解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "趋势解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -7083,8 +6615,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -7154,8 +6685,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -7166,8 +6696,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -7255,9 +6784,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -7275,9 +6802,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -7286,8 +6811,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showUnit",
@@ -7295,8 +6819,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "巨型数字后缀单位（如 %）显示 / 隐藏",
-        "publicKey": "showUnit",
-        "publicLabel": "数字单位"
+        "publicKey": "showUnit"
       },
       {
         "key": "showSupport",
@@ -7304,8 +6827,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右侧辅助解读文案显示 / 隐藏",
-        "publicKey": "showSupport",
-        "publicLabel": "辅助说明"
+        "publicKey": "showSupport"
       },
       {
         "key": "statCount",
@@ -7316,8 +6838,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "底部佐证微数据的数量（0 为隐藏）",
-        "publicKey": "statCount",
-        "publicLabel": "佐证数据"
+        "publicKey": "statCount"
       },
       {
         "key": "showDecor",
@@ -7325,8 +6846,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -7396,8 +6916,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -7408,8 +6927,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -7466,9 +6984,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -7486,9 +7002,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -7497,8 +7011,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "itemCount",
@@ -7508,9 +7021,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "help": "展示的地区数量（按融资额排序）",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量"
+        "help": "展示的地区数量（按数值排序）",
+        "publicKey": "itemCount"
       },
       {
         "key": "chartType",
@@ -7528,8 +7040,7 @@ export const pages = [
           }
         ],
         "help": "地区占比的呈现方式",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型"
+        "publicKey": "chartType"
       },
       {
         "key": "focusEnabled",
@@ -7537,8 +7048,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一个地区",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -7549,8 +7059,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "help": "被高亮的地区序号（从 0 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "imageCount",
@@ -7561,8 +7070,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "右侧图片槽数量，0 为纯数据布局",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "showCallout",
@@ -7570,8 +7078,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部集聚效应解读文案显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -7579,8 +7086,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -7650,8 +7156,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -7662,11 +7167,11 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "itemCount": 5,
       "chartType": "bar",
@@ -7742,9 +7247,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -7762,9 +7265,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -7773,8 +7274,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "imageCount",
@@ -7785,8 +7285,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "help": "马赛克图块数量（构图随数量自动重排）",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "showFigure",
@@ -7794,8 +7293,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "焦点图块上的超大占比数字显示 / 隐藏",
-        "publicKey": "showFigure",
-        "publicLabel": "主视觉数字"
+        "publicKey": "showFigure"
       },
       {
         "key": "showMeta",
@@ -7803,8 +7301,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部各地区占比条显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "地区明细"
+        "publicKey": "showMeta"
       },
       {
         "key": "showDecor",
@@ -7812,8 +7309,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -7883,8 +7379,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -7895,11 +7390,11 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "imageCount": 4,
       "showFigure": true,
@@ -7964,9 +7459,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -7984,9 +7477,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -7995,8 +7486,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "chartType",
@@ -8017,18 +7507,16 @@ export const pages = [
             "label": "面积"
           }
         ],
-        "help": "估值主系列的呈现方式",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型"
+        "help": "指标主系列的呈现方式",
+        "publicKey": "chartType"
       },
       {
         "key": "showSecondary",
         "label": "次级系列",
         "type": "toggle",
         "default": true,
-        "help": "叠加「单轮融资额」标记及右轴",
-        "publicKey": "showSecondary",
-        "publicLabel": "次级系列"
+        "help": "叠加「单轮数值」标记及右轴",
+        "publicKey": "showSecondary"
       },
       {
         "key": "showGrid",
@@ -8036,8 +7524,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "图表背景的水平网格线",
-        "publicKey": "showGrid",
-        "publicLabel": "网格线"
+        "publicKey": "showGrid"
       },
       {
         "key": "focusEnabled",
@@ -8045,8 +7532,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一轮并显示数值",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -8056,9 +7542,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "help": "被高亮的轮次序号（从 0 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的阶段序号（从 0 起）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -8066,8 +7551,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右侧反超解读文案显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -8075,8 +7559,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -8146,8 +7629,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -8158,8 +7640,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -8221,9 +7702,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -8241,9 +7720,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -8252,17 +7729,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showInputs",
         "label": "构成项",
         "type": "toggle",
         "default": true,
-        "help": "右侧「估值 / 收入」构成项显示 / 隐藏",
-        "publicKey": "showInputs",
-        "publicLabel": "构成项"
+        "help": "右侧「指标 / 收入」构成项显示 / 隐藏",
+        "publicKey": "showInputs"
       },
       {
         "key": "showBar",
@@ -8270,17 +7745,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "构成项内的量级对比条显示 / 隐藏",
-        "publicKey": "showBar",
-        "publicLabel": "量级条"
+        "publicKey": "showBar"
       },
       {
         "key": "showSupport",
         "label": "辅助说明",
         "type": "toggle",
         "default": true,
-        "help": "底部泡沫风险解读显示 / 隐藏",
-        "publicKey": "showSupport",
-        "publicLabel": "辅助说明"
+        "help": "底部泡沫状态解读显示 / 隐藏",
+        "publicKey": "showSupport"
       },
       {
         "key": "showDecor",
@@ -8288,8 +7761,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -8359,8 +7831,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -8371,8 +7842,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -8443,9 +7913,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -8463,9 +7931,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -8474,8 +7940,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "cardCount",
@@ -8485,9 +7950,8 @@ export const pages = [
         "min": 1,
         "max": 4,
         "step": 1,
-        "help": "展示的风险卡片数量",
-        "publicKey": "cardCount",
-        "publicLabel": "卡片数量"
+        "help": "展示的状态卡片数量",
+        "publicKey": "cardCount"
       },
       {
         "key": "columns",
@@ -8505,8 +7969,7 @@ export const pages = [
           }
         ],
         "help": "卡片网格的列数布局",
-        "publicKey": "columns",
-        "publicLabel": "网格列数"
+        "publicKey": "columns"
       },
       {
         "key": "showIndex",
@@ -8514,17 +7977,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "卡片角标序号显示 / 隐藏",
-        "publicKey": "showIndex",
-        "publicLabel": "卡片序号"
+        "publicKey": "showIndex"
       },
       {
         "key": "showMeter",
         "label": "状态等级",
         "type": "toggle",
         "default": true,
-        "help": "每张卡片的风险等级标记显示 / 隐藏",
-        "publicKey": "showStatusRating",
-        "publicLabel": "状态等级"
+        "help": "每张卡片的状态等级标记显示 / 隐藏",
+        "publicKey": "showStatusRating"
       },
       {
         "key": "focusEnabled",
@@ -8532,8 +7993,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "弱化其它卡片以突出某一张",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -8544,8 +8004,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "被突出的卡片序号（从 0 起）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -8553,8 +8012,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -8624,8 +8082,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -8636,8 +8093,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -8704,9 +8160,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -8724,9 +8178,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -8735,8 +8187,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "chainCount",
@@ -8746,39 +8197,8 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "help": "展示的风险传导链数量",
-        "publicKey": "chainCount",
-        "publicLabel": "链条数量"
-      },
-      {
-        "key": "nodeCount",
-        "label": "每链节点数",
-        "type": "slider",
-        "default": 3,
-        "min": 1,
-        "max": 3,
-        "step": 1,
-        "countArrays": [
-          "chains[].nodes"
-        ],
-        "help": "每条风险链最多展示的传导节点数",
-        "publicKey": "nodeCount",
-        "publicLabel": "每链节点数"
-      },
-      {
-        "key": "outcomeCount",
-        "label": "终局结果数",
-        "type": "slider",
-        "default": 2,
-        "min": 1,
-        "max": 2,
-        "step": 1,
-        "countArrays": [
-          "chains[].outcomes"
-        ],
-        "help": "主链末端最多展示的终局结果数",
-        "publicKey": "outcomeCount",
-        "publicLabel": "终局结果数"
+        "help": "展示的状态传导链数量",
+        "publicKey": "chainCount"
       },
       {
         "key": "showConnector",
@@ -8786,17 +8206,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "节点之间的传导箭头显示 / 隐藏",
-        "publicKey": "showConnector",
-        "publicLabel": "传导箭头"
+        "publicKey": "showConnector"
       },
       {
         "key": "showOutcome",
         "label": "终局结果",
         "type": "toggle",
         "default": true,
-        "help": "主链末端「估值回调 / 倒闭潮」结果分叉显示 / 隐藏",
-        "publicKey": "showOutcome",
-        "publicLabel": "终局结果"
+        "help": "主链末端「指标回调 / 倒闭潮」结果分叉显示 / 隐藏",
+        "publicKey": "showOutcome"
       },
       {
         "key": "focusEnabled",
@@ -8804,8 +8222,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "弱化其它链条以突出某一条",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -8816,8 +8233,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "被突出的链条序号（自动随链条数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -8825,8 +8241,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -8896,8 +8311,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -8908,15 +8322,12 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
       "showEyebrow": true,
       "chainCount": 3,
-      "nodeCount": 3,
-      "outcomeCount": 2,
       "showConnector": true,
       "showOutcome": true,
       "focusEnabled": false,
@@ -8982,9 +8393,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -9002,9 +8411,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -9013,8 +8420,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "itemCount",
@@ -9024,13 +8430,8 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "countArrays": [
-          "favorItems",
-          "cautionItems"
-        ],
         "help": "每栏展示的条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "focusSide",
@@ -9052,8 +8453,7 @@ export const pages = [
           }
         ],
         "help": "弱化另一栏以突出某一栏",
-        "publicKey": "focusSide",
-        "publicLabel": "突出栏目"
+        "publicKey": "focusSide"
       },
       {
         "key": "showTag",
@@ -9061,8 +8461,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "每栏顶部的方向标记（✓ / !）显示 / 隐藏",
-        "publicKey": "showTag",
-        "publicLabel": "栏目标记"
+        "publicKey": "showTag"
       },
       {
         "key": "showCallout",
@@ -9070,8 +8469,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部策略小结文案显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -9079,8 +8477,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -9150,8 +8547,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -9162,8 +8558,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -9179,7 +8574,9 @@ export const pages = [
         "t004": "看好方向",
         "t005": "谨慎对待",
         "t006": "↳ 阶段策略",
-        "t007": "25–26 年观察头部 IPO 表现，警惕破发引发的估值回调；26–27 年优选 ARR 超 1 亿、续约率 >120% 的垂直标的；27 年后若 AGI 未兑现，进入洗牌期可抄底被低估的技术资产。"
+        "t007": "25–26 年观察头部 IPO 表现，警惕破发引发的估值回调；26–27 年优选 ARR 超 1 亿、续约率 >120% 的垂直标的；27 年后若 AGI 未兑现，进入洗牌期可抄底被低估的技术资产。",
+        "t008": "OPPORTUNITIES",
+        "t009": "CAUTIONS"
       },
       "favorItems": [
         {
@@ -9230,9 +8627,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -9250,9 +8645,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -9261,8 +8654,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "orientation",
@@ -9280,8 +8672,7 @@ export const pages = [
           }
         ],
         "help": "时间轴的排布方向",
-        "publicKey": "orientation",
-        "publicLabel": "排布方向"
+        "publicKey": "orientation"
       },
       {
         "key": "itemCount",
@@ -9292,8 +8683,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "展示的阶段数量",
-        "publicKey": "itemCount",
-        "publicLabel": "阶段数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showConnector",
@@ -9301,8 +8691,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "阶段之间的连接轨道与箭头显示 / 隐藏",
-        "publicKey": "showConnector",
-        "publicLabel": "连接轨道"
+        "publicKey": "showConnector"
       },
       {
         "key": "focusEnabled",
@@ -9310,8 +8699,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "弱化其它阶段以突出某一阶段",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -9322,17 +8710,15 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "被突出的阶段序号（自动随阶段数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showMeta",
         "label": "页脚说明",
         "type": "toggle",
         "default": true,
-        "help": "底部数据口径 / 风险提示显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "页脚说明"
+        "help": "底部数据口径 / 状态提示显示 / 隐藏",
+        "publicKey": "showMeta"
       },
       {
         "key": "showDecor",
@@ -9340,8 +8726,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -9411,8 +8796,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -9423,8 +8807,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -9486,9 +8869,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -9506,9 +8887,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -9517,8 +8896,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showEnvelope",
@@ -9526,8 +8904,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "贯穿三视野的虚线包络（整体增长曲线）显示 / 隐藏",
-        "publicKey": "showEnvelope",
-        "publicLabel": "雄心包络"
+        "publicKey": "showEnvelope"
       },
       {
         "key": "showCards",
@@ -9535,23 +8912,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部三个视野说明卡显示 / 隐藏",
-        "publicKey": "showCards",
-        "publicLabel": "视野卡片"
-      },
-      {
-        "key": "laneCount",
-        "label": "分类标签数",
-        "type": "slider",
-        "default": 2,
-        "min": 1,
-        "max": 2,
-        "step": 1,
-        "countArrays": [
-          "horizons[].lanes"
-        ],
-        "help": "每张视野卡展示的赛道标签数量",
-        "publicKey": "categoryCount",
-        "publicLabel": "分类标签数"
+        "publicKey": "showCards"
       },
       {
         "key": "showMeter",
@@ -9559,8 +8920,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "卡片内确定性 / 赔率 / 现金流定性标尺显示 / 隐藏",
-        "publicKey": "showMeter",
-        "publicLabel": "定性标尺"
+        "publicKey": "showMeter"
       },
       {
         "key": "focusEnabled",
@@ -9568,8 +8928,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一个视野（曲线 + 卡片）",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -9580,8 +8939,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "被高亮的视野序号（0 = H1 守正）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -9589,8 +8947,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部组合配置解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "底部小结"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -9598,8 +8955,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -9669,8 +9025,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -9681,15 +9036,13 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
       "showEyebrow": true,
       "showEnvelope": true,
       "showCards": true,
-      "laneCount": 2,
       "showMeter": true,
       "focusEnabled": false,
       "focusIndex": 0,
@@ -9793,9 +9146,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -9813,9 +9164,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -9824,8 +9173,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "itemCount",
@@ -9836,8 +9184,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "展示的核心结论数量",
-        "publicKey": "itemCount",
-        "publicLabel": "结论数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showIndex",
@@ -9845,8 +9192,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "每列的巨型描边序号显示 / 隐藏",
-        "publicKey": "showIndex",
-        "publicLabel": "巨型序号"
+        "publicKey": "showIndex"
       },
       {
         "key": "focusEnabled",
@@ -9854,8 +9200,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "弱化其它结论以突出某一条",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -9866,8 +9211,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "被突出的结论序号（自动随结论数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showMeta",
@@ -9875,8 +9219,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部数据口径 / 出处显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "底部口径"
+        "publicKey": "showMeta"
       },
       {
         "key": "showDecor",
@@ -9884,8 +9227,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -9955,8 +9297,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -9967,8 +9308,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -10030,9 +9370,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -10050,9 +9388,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -10061,8 +9397,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showMark",
@@ -10070,8 +9405,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "巨型装饰引号显示 / 隐藏",
-        "publicKey": "showMark",
-        "publicLabel": "引号装饰"
+        "publicKey": "showMark"
       },
       {
         "key": "align",
@@ -10089,8 +9423,7 @@ export const pages = [
           }
         ],
         "help": "金句的对齐方式",
-        "publicKey": "align",
-        "publicLabel": "对齐方式"
+        "publicKey": "align"
       },
       {
         "key": "showAttribution",
@@ -10098,8 +9431,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部署名 / 出处显示 / 隐藏",
-        "publicKey": "showAttribution",
-        "publicLabel": "署名出处"
+        "publicKey": "showAttribution"
       },
       {
         "key": "showDecor",
@@ -10107,8 +9439,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -10178,8 +9509,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -10190,8 +9520,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -10236,9 +9565,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -10256,9 +9583,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -10267,8 +9592,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "stageCount",
@@ -10279,8 +9603,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "help": "展示的漏斗阶段数量（A→A→R→R→R）",
-        "publicKey": "stageCount",
-        "publicLabel": "阶段数量"
+        "publicKey": "stageCount"
       },
       {
         "key": "showMetric",
@@ -10288,8 +9611,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各阶段样例指标数值显示 / 隐藏",
-        "publicKey": "showValueLabels",
-        "publicLabel": "指标数值"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showRate",
@@ -10297,8 +9619,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "阶段之间的转化率显示 / 隐藏",
-        "publicKey": "showRate",
-        "publicLabel": "转化率"
+        "publicKey": "showRate"
       },
       {
         "key": "showStrategy",
@@ -10306,8 +9627,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右侧各环节优化策略文字显示 / 隐藏",
-        "publicKey": "showStrategy",
-        "publicLabel": "策略解读"
+        "publicKey": "showStrategy"
       },
       {
         "key": "focusEnabled",
@@ -10315,8 +9635,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一个阶段",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -10327,8 +9646,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "help": "被高亮的阶段序号（从 0 起，自动随阶段数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -10336,8 +9654,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -10407,8 +9724,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -10419,8 +9735,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -10508,9 +9823,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -10528,9 +9841,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -10539,8 +9850,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showCube",
@@ -10548,8 +9858,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "左侧 RFM 三维方位立方体显示 / 隐藏",
-        "publicKey": "showCube",
-        "publicLabel": "方位立方体"
+        "publicKey": "showCube"
       },
       {
         "key": "showAxis",
@@ -10557,8 +9866,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "R / F / M 三轴文字标注显示 / 隐藏",
-        "publicKey": "showAxis",
-        "publicLabel": "坐标轴标注"
+        "publicKey": "showAxis"
       },
       {
         "key": "showAction",
@@ -10566,8 +9874,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "每类标的的行动策略一行字显示 / 隐藏",
-        "publicKey": "showAction",
-        "publicLabel": "行动策略"
+        "publicKey": "showAction"
       },
       {
         "key": "showAnalysis",
@@ -10575,8 +9882,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部分析解读条显示 / 隐藏",
-        "publicKey": "showAnalysis",
-        "publicLabel": "模型解读"
+        "publicKey": "showAnalysis"
       },
       {
         "key": "focusEnabled",
@@ -10584,8 +9890,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一类标的（同时点亮其立方体）",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -10596,8 +9901,7 @@ export const pages = [
         "max": 7,
         "step": 1,
         "help": "被高亮的标的序号（0 = 头部吸金兽）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -10605,8 +9909,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -10676,8 +9979,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -10688,8 +9990,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -10813,9 +10114,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -10833,9 +10132,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -10844,17 +10141,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showAxis",
         "label": "坐标轴标注",
         "type": "toggle",
         "default": true,
-        "help": "两轴（赛道吸引力 / 竞争实力）文字标注显示 / 隐藏",
-        "publicKey": "showAxis",
-        "publicLabel": "坐标轴标注"
+        "help": "两轴（分类吸引力 / 竞争实力）文字标注显示 / 隐藏",
+        "publicKey": "showAxis"
       },
       {
         "key": "showZones",
@@ -10862,8 +10157,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "投资 / 选择 / 收获 三个对角区的配色显示 / 隐藏",
-        "publicKey": "showZones",
-        "publicLabel": "三区配色"
+        "publicKey": "showZones"
       },
       {
         "key": "bubbleCount",
@@ -10873,21 +10167,16 @@ export const pages = [
         "min": 1,
         "max": 6,
         "step": 1,
-        "countArrays": [
-          "bubbles"
-        ],
-        "help": "矩阵中展示的赛道气泡数量",
-        "publicKey": "categoryCount",
-        "publicLabel": "分类数量"
+        "help": "矩阵中展示的分类气泡数量",
+        "publicKey": "categoryCount"
       },
       {
         "key": "showReads",
         "label": "分类读解",
         "type": "toggle",
         "default": true,
-        "help": "右侧每个赛道一行投资读解显示 / 隐藏",
-        "publicKey": "showReads",
-        "publicLabel": "分类读解"
+        "help": "右侧每个分类一行投资读解显示 / 隐藏",
+        "publicKey": "showReads"
       },
       {
         "key": "showAnalysis",
@@ -10895,17 +10184,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部重点结论条显示 / 隐藏",
-        "publicKey": "showAnalysis",
-        "publicLabel": "策略解读"
+        "publicKey": "showAnalysis"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": false,
-        "help": "高亮某一个赛道气泡",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一个分类气泡",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -10915,9 +10202,8 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "help": "被高亮的赛道序号（自动随赛道数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的分类序号（自动随分类数量收敛）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -10925,8 +10211,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -10996,8 +10281,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -11008,8 +10292,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -11090,7 +10373,7 @@ export const pages = [
         {
           "label": "投资 / 增长",
           "en": "INVEST",
-          "color": "blue",
+          "color": null,
           "strat": "资源倾斜，抢占市场份额"
         },
         {
@@ -11127,9 +10410,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -11147,9 +10428,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -11158,8 +10437,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "taskCount",
@@ -11170,8 +10448,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "help": "展示的投资执行任务行数",
-        "publicKey": "taskCount",
-        "publicLabel": "任务数量"
+        "publicKey": "taskCount"
       },
       {
         "key": "showGrid",
@@ -11179,8 +10456,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "时间轴竖向网格线显示 / 隐藏",
-        "publicKey": "showGrid",
-        "publicLabel": "网格线"
+        "publicKey": "showGrid"
       },
       {
         "key": "showProgress",
@@ -11188,8 +10464,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "任务条上的配置完成度填充显示 / 隐藏",
-        "publicKey": "showProgress",
-        "publicLabel": "配置进度"
+        "publicKey": "showProgress"
       },
       {
         "key": "showMilestones",
@@ -11197,8 +10472,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "里程碑菱形标记显示 / 隐藏",
-        "publicKey": "showMilestones",
-        "publicLabel": "关键节点"
+        "publicKey": "showMilestones"
       },
       {
         "key": "showToday",
@@ -11206,8 +10480,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "「当前」竖向基准线显示 / 隐藏",
-        "publicKey": "showToday",
-        "publicLabel": "当前基准线"
+        "publicKey": "showToday"
       },
       {
         "key": "showAnalysis",
@@ -11215,8 +10488,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部关键路径 / 节奏解读条显示 / 隐藏",
-        "publicKey": "showAnalysis",
-        "publicLabel": "节奏解读"
+        "publicKey": "showAnalysis"
       },
       {
         "key": "focusEnabled",
@@ -11224,8 +10496,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一个任务条",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -11236,8 +10507,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "help": "被高亮的任务序号（自动随任务数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -11245,8 +10515,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -11316,8 +10585,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -11328,8 +10596,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -11447,9 +10714,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -11467,9 +10732,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -11478,8 +10741,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showSpaces",
@@ -11487,8 +10749,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "「问题空间 / 解决方案空间」顶部括注显示 / 隐藏",
-        "publicKey": "showSpaces",
-        "publicLabel": "空间括注"
+        "publicKey": "showSpaces"
       },
       {
         "key": "showFlow",
@@ -11496,8 +10757,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各阶段「发散 / 收敛」方向标注显示 / 隐藏",
-        "publicKey": "showFlow",
-        "publicLabel": "发散收敛标注"
+        "publicKey": "showFlow"
       },
       {
         "key": "showCards",
@@ -11505,8 +10765,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部四阶段说明卡显示 / 隐藏",
-        "publicKey": "showCards",
-        "publicLabel": "阶段说明"
+        "publicKey": "showCards"
       },
       {
         "key": "showAnalysis",
@@ -11514,8 +10773,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部分析解读条显示 / 隐藏",
-        "publicKey": "showAnalysis",
-        "publicLabel": "模型解读"
+        "publicKey": "showAnalysis"
       },
       {
         "key": "focusEnabled",
@@ -11523,8 +10781,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一个阶段（发现 / 定义 / 开发 / 交付）",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -11535,8 +10792,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "被高亮的阶段序号（0 发现 → 3 交付）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -11544,8 +10800,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -11615,8 +10870,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -11627,8 +10881,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -11662,14 +10915,14 @@ export const pages = [
           "en": "DISCOVER",
           "dir": "发散",
           "desc": "广扫 970 亿融资全景 · 识别热点、拐点与风险信号",
-          "accent": "blue"
+          "accent": null
         },
         {
           "cn": "定义",
           "en": "DEFINE",
           "dir": "收敛",
           "desc": "收敛到兑现确定性高的赛道 · 锁定投资主题",
-          "accent": "blue"
+          "accent": null
         },
         {
           "cn": "构建",
@@ -11707,9 +10960,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -11727,9 +10978,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -11738,8 +10987,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showAxis",
@@ -11747,8 +10995,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "「内部 / 外部 · 增益 / 损害」坐标轴标注显示 / 隐藏",
-        "publicKey": "showAxis",
-        "publicLabel": "坐标轴标注"
+        "publicKey": "showAxis"
       },
       {
         "key": "showLetter",
@@ -11756,8 +11003,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各象限的巨型水印字母 (S / W / O / T) 显示 / 隐藏",
-        "publicKey": "showLetter",
-        "publicLabel": "象限字母"
+        "publicKey": "showLetter"
       },
       {
         "key": "itemCount",
@@ -11768,8 +11014,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "help": "每个象限展示的要点数量",
-        "publicKey": "itemCount",
-        "publicLabel": "每象限条目"
+        "publicKey": "itemCount"
       },
       {
         "key": "showAnalysis",
@@ -11777,8 +11022,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部分析解读条显示 / 隐藏",
-        "publicKey": "showAnalysis",
-        "publicLabel": "模型解读"
+        "publicKey": "showAnalysis"
       },
       {
         "key": "focusEnabled",
@@ -11786,8 +11030,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一个象限",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -11798,8 +11041,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "被高亮的象限序号（0 S → 1 W → 2 O → 3 T）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -11807,8 +11049,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -11878,8 +11119,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -11890,8 +11130,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -11923,8 +11162,8 @@ export const pages = [
           "cn": "优势",
           "en": "STRENGTHS",
           "side": "内部 · 增益",
-          "accent": "blue",
-          "tint": "rgba(39,66,236,0.10)",
+          "accent": null,
+          "tint": null,
           "items": [
             "核心技术壁垒领先",
             "研发团队稳定高效",
@@ -12002,9 +11241,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -12022,9 +11259,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -12033,8 +11268,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showArrows",
@@ -12042,8 +11276,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "四方力量指向中心的箭头显示 / 隐藏",
-        "publicKey": "showArrows",
-        "publicLabel": "传导箭头"
+        "publicKey": "showArrows"
       },
       {
         "key": "showMeter",
@@ -12051,8 +11284,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各力量的强弱标尺（高 / 中 / 低）显示 / 隐藏",
-        "publicKey": "showMeter",
-        "publicLabel": "强度标尺"
+        "publicKey": "showMeter"
       },
       {
         "key": "showAnalysis",
@@ -12060,8 +11292,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部分析解读条显示 / 隐藏",
-        "publicKey": "showAnalysis",
-        "publicLabel": "模型解读"
+        "publicKey": "showAnalysis"
       },
       {
         "key": "focusEnabled",
@@ -12069,8 +11300,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一股力量（含中心同业竞争）",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -12081,8 +11311,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "help": "被高亮的力量序号（0 同业竞争 · 1 新进入者 · 2 替代品 · 3 供应商 · 4 购买方）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -12090,8 +11319,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -12161,8 +11389,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -12173,8 +11400,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -12253,9 +11479,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -12273,9 +11497,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -12284,8 +11506,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showItems",
@@ -12293,23 +11514,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各模块内的要点条目显示 / 隐藏",
-        "publicKey": "showItems",
-        "publicLabel": "要点条目"
-      },
-      {
-        "key": "itemCount",
-        "label": "要点数量",
-        "type": "slider",
-        "default": 2,
-        "min": 1,
-        "max": 2,
-        "step": 1,
-        "countArrays": [
-          "blocks[].items"
-        ],
-        "help": "每个画布模块展示的要点数量",
-        "publicKey": "itemCount",
-        "publicLabel": "要点数量"
+        "publicKey": "showItems"
       },
       {
         "key": "showIndex",
@@ -12317,8 +11522,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "每个模块的序号显示 / 隐藏",
-        "publicKey": "showIndex",
-        "publicLabel": "模块编号"
+        "publicKey": "showIndex"
       },
       {
         "key": "groupColor",
@@ -12326,8 +11530,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "按「效率 / 价值 / 客户」三区给模块上色",
-        "publicKey": "groupColor",
-        "publicLabel": "三区配色"
+        "publicKey": "groupColor"
       },
       {
         "key": "showAnalysis",
@@ -12335,8 +11538,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部分析解读条显示 / 隐藏",
-        "publicKey": "showAnalysis",
-        "publicLabel": "模型解读"
+        "publicKey": "showAnalysis"
       },
       {
         "key": "focusEnabled",
@@ -12344,8 +11546,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一个模块",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -12356,8 +11557,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "help": "被高亮的模块序号（0–8，按画布从左到右、上到下）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -12365,8 +11565,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -12436,8 +11635,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -12448,14 +11646,12 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
       "showEyebrow": true,
       "showItems": true,
-      "itemCount": 2,
       "showIndex": true,
       "groupColor": true,
       "showAnalysis": true,
@@ -12584,9 +11780,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -12604,9 +11798,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -12615,8 +11807,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "stageCount",
@@ -12627,17 +11818,15 @@ export const pages = [
         "max": 5,
         "step": 1,
         "help": "旅程阶段数量",
-        "publicKey": "stageCount",
-        "publicLabel": "阶段数量"
+        "publicKey": "stageCount"
       },
       {
         "key": "showBehaviour",
         "label": "行为",
         "type": "toggle",
         "default": true,
-        "help": "各阶段「用户行为」行显示 / 隐藏",
-        "publicKey": "showBehaviour",
-        "publicLabel": "行为"
+        "help": "各阶段「行为」行显示 / 隐藏",
+        "publicKey": "showBehaviour"
       },
       {
         "key": "showCurve",
@@ -12645,8 +11834,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "贯穿各阶段的情绪曲线显示 / 隐藏",
-        "publicKey": "showCurve",
-        "publicLabel": "情绪曲线"
+        "publicKey": "showCurve"
       },
       {
         "key": "showOpportunity",
@@ -12654,8 +11842,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各阶段「机会点」行显示 / 隐藏",
-        "publicKey": "showOpportunity",
-        "publicLabel": "机会点"
+        "publicKey": "showOpportunity"
       },
       {
         "key": "focusEnabled",
@@ -12663,8 +11850,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一个阶段",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -12675,8 +11861,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "help": "被高亮的阶段序号（自动随阶段数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -12684,8 +11869,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -12755,8 +11939,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -12767,8 +11950,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -12853,9 +12035,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -12873,9 +12053,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -12884,8 +12062,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "layerCount",
@@ -12896,8 +12073,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "help": "金字塔层级数量（自顶向下）",
-        "publicKey": "layerCount",
-        "publicLabel": "层级数量"
+        "publicKey": "layerCount"
       },
       {
         "key": "showSideNote",
@@ -12905,8 +12081,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右侧各层级名称 + 释义面板显示 / 隐藏",
-        "publicKey": "showSideNote",
-        "publicLabel": "层级解读"
+        "publicKey": "showSideNote"
       },
       {
         "key": "showTierTag",
@@ -12914,8 +12089,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "每层左侧层级序号标记显示 / 隐藏",
-        "publicKey": "showTierTag",
-        "publicLabel": "层级序号"
+        "publicKey": "showTierTag"
       },
       {
         "key": "showAnalysis",
@@ -12923,8 +12097,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部分析解读条显示 / 隐藏",
-        "publicKey": "showAnalysis",
-        "publicLabel": "模型解读"
+        "publicKey": "showAnalysis"
       },
       {
         "key": "focusEnabled",
@@ -12932,8 +12105,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一个层级",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -12944,8 +12116,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "help": "被高亮的层级序号（0 = 顶层，自动随层级数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -12953,8 +12124,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -13024,8 +12194,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -13036,8 +12205,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -13110,9 +12278,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -13130,9 +12296,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -13141,8 +12305,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showAxis",
@@ -13150,8 +12313,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "两轴（市场增长率 / 相对市场份额）文字标注显示 / 隐藏",
-        "publicKey": "showAxis",
-        "publicLabel": "坐标轴标注"
+        "publicKey": "showAxis"
       },
       {
         "key": "showQuadLabel",
@@ -13159,8 +12321,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各象限的名称 + 巨型水印符号显示 / 隐藏",
-        "publicKey": "showQuadLabel",
-        "publicLabel": "象限水印"
+        "publicKey": "showQuadLabel"
       },
       {
         "key": "showEmblem",
@@ -13168,8 +12329,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "用 3D 元素作为四象限标识（明星 / 问题 / 现金牛 / 瘦狗）；关闭则用简洁图标（需宿主提供 3D 素材，保持可迁移）",
-        "publicKey": "showEmblem",
-        "publicLabel": "3D 象限元素"
+        "publicKey": "showEmblem"
       },
       {
         "key": "bubbleCount",
@@ -13180,8 +12340,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "help": "矩阵中展示的业务气泡数量",
-        "publicKey": "bubbleCount",
-        "publicLabel": "气泡数量"
+        "publicKey": "bubbleCount"
       },
       {
         "key": "showPanel",
@@ -13189,8 +12348,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右侧四象限策略 + 重点结论显示 / 隐藏",
-        "publicKey": "showPanel",
-        "publicLabel": "策略面板"
+        "publicKey": "showPanel"
       },
       {
         "key": "focusEnabled",
@@ -13198,8 +12356,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一个象限（同时点亮落在其中的气泡）",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -13210,8 +12367,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "被高亮的象限序号（0 明星 · 1 问题 · 2 现金牛 · 3 瘦狗）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -13219,8 +12375,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -13290,8 +12445,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -13302,8 +12456,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -13361,7 +12514,7 @@ export const pages = [
         }
       ],
       "quadDarkAccents": [
-        "#91a2ff",
+        "#6e85ff",
         "#d8a43c",
         "#9ccb3a",
         "#e07a5a"
@@ -13431,9 +12584,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -13451,9 +12602,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -13462,8 +12611,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "stageCount",
@@ -13474,8 +12622,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "help": "飞轮上的环节数量（沿环均匀分布）",
-        "publicKey": "stageCount",
-        "publicLabel": "环节数量"
+        "publicKey": "stageCount"
       },
       {
         "key": "showArrows",
@@ -13483,8 +12630,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "环节之间顺时针的循环箭头显示 / 隐藏",
-        "publicKey": "showArrows",
-        "publicLabel": "传导箭头"
+        "publicKey": "showArrows"
       },
       {
         "key": "showLegend",
@@ -13492,8 +12638,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右侧各环节名称 + 释义列表显示 / 隐藏",
-        "publicKey": "showLegend",
-        "publicLabel": "环节解读"
+        "publicKey": "showLegend"
       },
       {
         "key": "showHub",
@@ -13501,8 +12646,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "飞轮中心的「增长飞轮」枢纽显示 / 隐藏",
-        "publicKey": "showHub",
-        "publicLabel": "中心枢纽"
+        "publicKey": "showHub"
       },
       {
         "key": "showAnalysis",
@@ -13510,8 +12654,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部分析解读条显示 / 隐藏",
-        "publicKey": "showAnalysis",
-        "publicLabel": "模型解读"
+        "publicKey": "showAnalysis"
       },
       {
         "key": "focusEnabled",
@@ -13519,8 +12662,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一个环节",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -13531,8 +12673,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "help": "被高亮的环节序号（自动随环节数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -13540,8 +12681,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -13611,8 +12751,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -13623,8 +12762,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -13700,9 +12838,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -13720,9 +12856,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -13731,8 +12865,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "factorCount",
@@ -13743,8 +12876,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "help": "环境因素维度数量（4 = PEST · 6 = PESTEL）",
-        "publicKey": "factorCount",
-        "publicLabel": "因素维度"
+        "publicKey": "factorCount"
       },
       {
         "key": "itemCount",
@@ -13755,8 +12887,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "help": "每个维度展示的要点数量",
-        "publicKey": "itemCount",
-        "publicLabel": "每维条目"
+        "publicKey": "itemCount"
       },
       {
         "key": "showLetter",
@@ -13764,8 +12895,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各列的巨型水印字母（P / E / S / T …）显示 / 隐藏",
-        "publicKey": "showLetter",
-        "publicLabel": "维度字母"
+        "publicKey": "showLetter"
       },
       {
         "key": "showAnalysis",
@@ -13773,8 +12903,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部分析解读条显示 / 隐藏",
-        "publicKey": "showAnalysis",
-        "publicLabel": "模型解读"
+        "publicKey": "showAnalysis"
       },
       {
         "key": "focusEnabled",
@@ -13782,8 +12911,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一个维度列",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -13794,8 +12922,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "help": "被高亮的维度序号（自动随因素维度数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -13803,8 +12930,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -13874,8 +13000,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -13886,8 +13011,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -13914,7 +13038,7 @@ export const pages = [
           "k": "P",
           "cn": "政治",
           "en": "POLITICAL",
-          "accent": "blue",
+          "accent": null,
           "items": [
             "政策监管走向",
             "政府补贴与扶持",
@@ -14004,9 +13128,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -14024,9 +13146,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -14035,8 +13155,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "chartType",
@@ -14053,18 +13172,16 @@ export const pages = [
             "label": "棒棒糖"
           }
         ],
-        "help": "融资额主系列的呈现方式",
-        "publicKey": "chartType",
-        "publicLabel": "柱样式"
+        "help": "数值主系列的呈现方式",
+        "publicKey": "chartType"
       },
       {
         "key": "showCumulative",
         "label": "累计曲线",
         "type": "toggle",
         "default": true,
-        "help": "叠加各赛道累计占比折线及右轴",
-        "publicKey": "showCumulative",
-        "publicLabel": "累计曲线"
+        "help": "叠加各分类累计占比折线及右轴",
+        "publicKey": "showCumulative"
       },
       {
         "key": "showThreshold",
@@ -14072,8 +13189,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "帕累托 80% 参考线显示 / 隐藏",
-        "publicKey": "showThreshold",
-        "publicLabel": "80% 基准线"
+        "publicKey": "showThreshold"
       },
       {
         "key": "showGrid",
@@ -14081,17 +13197,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "背景水平网格线显示 / 隐藏",
-        "publicKey": "showGrid",
-        "publicLabel": "网格线"
+        "publicKey": "showGrid"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": true,
-        "help": "高亮某一赛道并显示数值",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一分类并显示数值",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -14101,9 +13215,8 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "help": "被高亮的赛道序号（0 = 通用大模型）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的分类序号（0 = 通用大模型）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -14111,8 +13224,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部头部集中度解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "核心发现"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -14120,8 +13232,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -14191,8 +13302,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -14203,8 +13313,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -14304,9 +13413,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -14324,9 +13431,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -14335,8 +13440,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showRings",
@@ -14344,26 +13448,23 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "雷达图同心强度刻度环显示 / 隐藏",
-        "publicKey": "showRings",
-        "publicLabel": "强度刻度环"
+        "publicKey": "showRings"
       },
       {
         "key": "showValue",
         "label": "强度数值",
         "type": "toggle",
         "default": true,
-        "help": "各风险顶点的强度数值显示 / 隐藏",
-        "publicKey": "showValueLabels",
-        "publicLabel": "强度数值"
+        "help": "各状态顶点的强度数值显示 / 隐藏",
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showPanel",
         "label": "状态解读",
         "type": "toggle",
         "default": true,
-        "help": "右侧四类风险释义 + 强度标尺显示 / 隐藏",
-        "publicKey": "showPanel",
-        "publicLabel": "状态解读"
+        "help": "右侧四类状态释义 + 强度标尺显示 / 隐藏",
+        "publicKey": "showPanel"
       },
       {
         "key": "showAnalysis",
@@ -14371,17 +13472,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部分析解读条显示 / 隐藏",
-        "publicKey": "showAnalysis",
-        "publicLabel": "模型解读"
+        "publicKey": "showAnalysis"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": false,
-        "help": "高亮某一类风险（轴 + 释义）",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一类状态（轴 + 释义）",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -14391,9 +13490,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "help": "被高亮的风险序号（0 估值泡沫 · 1 算力卡脖子 · 2 大厂/开源 · 3 监管压力）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的状态序号（0 指标泡沫 · 1 算力卡脖子 · 2 大厂/开源 · 3 监管压力）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -14401,8 +13499,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -14472,8 +13569,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -14484,8 +13580,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -14566,9 +13661,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -14586,9 +13679,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -14597,8 +13688,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "itemCount",
@@ -14608,9 +13698,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "help": "登记册展示的风险条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "状态项数量"
+        "help": "登记册展示的状态条目数量",
+        "publicKey": "itemCount"
       },
       {
         "key": "showLikelihood",
@@ -14618,8 +13707,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "「可能性」评分列显示 / 隐藏",
-        "publicKey": "showLikelihood",
-        "publicLabel": "可能性列"
+        "publicKey": "showLikelihood"
       },
       {
         "key": "showImpact",
@@ -14627,17 +13715,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "「主要影响」列显示 / 隐藏",
-        "publicKey": "showImpact",
-        "publicLabel": "主要影响列"
+        "publicKey": "showImpact"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": true,
-        "help": "高亮某一行风险",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一行状态",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -14647,9 +13733,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "help": "被高亮的风险序号（自动随数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的状态序号（自动随数量收敛）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -14657,8 +13742,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部登记册小结显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "结论解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -14666,8 +13750,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -14737,8 +13820,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -14749,8 +13831,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -14827,9 +13908,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -14847,9 +13926,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -14858,8 +13935,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showCriteria",
@@ -14867,8 +13943,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "每侧底部「判断标准」标签条显示 / 隐藏",
-        "publicKey": "showCriteria",
-        "publicLabel": "判断标准"
+        "publicKey": "showCriteria"
       },
       {
         "key": "showBridge",
@@ -14876,8 +13951,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "中间「→」转变中枢与主线文案显示 / 隐藏",
-        "publicKey": "showBridge",
-        "publicLabel": "转变中枢"
+        "publicKey": "showBridge"
       },
       {
         "key": "focusSide",
@@ -14899,8 +13973,7 @@ export const pages = [
           }
         ],
         "help": "弱化另一侧以突出某一侧",
-        "publicKey": "focusSide",
-        "publicLabel": "重点突出"
+        "publicKey": "focusSide"
       },
       {
         "key": "showMeta",
@@ -14908,8 +13981,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部「内容重点」小结显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "底部小结"
+        "publicKey": "showMeta"
       },
       {
         "key": "showDecor",
@@ -14917,8 +13989,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -14988,8 +14059,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -15000,8 +14070,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -15030,7 +14099,13 @@ export const pages = [
         "t016": "商业闭环",
         "t017": "↳ 内容重点",
         "t018": "前半部分用数据证明资本热度，后半部分用案例与风险证明兑现能力的分化——",
-        "t019": "“融资总量很大”只是起点，“资本从叙事转向兑现”才是这一年的真正主线。"
+        "t019": "“融资总量很大”只是起点，“资本从叙事转向兑现”才是这一年的真正主线。",
+        "t020": "过去 · 叙事驱动 / NARRATIVE",
+        "t021": "押注热度",
+        "t022": "STORY × HYPE",
+        "t023": "现在 · 兑现驱动 / DELIVERY",
+        "t024": "验证兑现",
+        "t025": "REVENUE × MOAT"
       },
       "narrativeItems": [
         {
@@ -15092,9 +14167,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -15112,9 +14185,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -15123,8 +14194,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showPhases",
@@ -15132,35 +14202,31 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "五个成熟阶段的底部色带与名称显示 / 隐藏",
-        "publicKey": "showPhases",
-        "publicLabel": "阶段分区"
+        "publicKey": "showPhases"
       },
       {
         "key": "showReads",
         "label": "分类读解",
         "type": "toggle",
         "default": true,
-        "help": "右侧各赛道一行定位读解显示 / 隐藏",
-        "publicKey": "showReads",
-        "publicLabel": "分类读解"
+        "help": "右侧各分类一行定位读解显示 / 隐藏",
+        "publicKey": "showReads"
       },
       {
         "key": "showValue",
         "label": "量级标注",
         "type": "toggle",
         "default": true,
-        "help": "各赛道融资额量级标注显示 / 隐藏",
-        "publicKey": "showValue",
-        "publicLabel": "量级标注"
+        "help": "各分类数值量级标注显示 / 隐藏",
+        "publicKey": "showValue"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": true,
-        "help": "高亮某一个赛道（曲线点 + 读解）",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一个分类（曲线点 + 读解）",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -15170,9 +14236,8 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "help": "被高亮的赛道序号（0 = 具身智能）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的分类序号（0 = 具身智能）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -15180,8 +14245,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部周期解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "底部小结"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -15189,8 +14253,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -15260,8 +14323,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -15272,8 +14334,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -15389,6 +14450,13 @@ export const pages = [
       "decorScale": 1,
       "forceDark": true,
       "accent": "blue"
+    },
+    "numberBounds": {
+      "phases[].a": {
+        "min": 0,
+        "max": 1,
+        "semantics": "normalized"
+      }
     }
   },
   {
@@ -15405,9 +14473,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -15425,9 +14491,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -15436,8 +14500,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showAxis",
@@ -15445,8 +14508,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "两轴（兑现确定性 / 竞争壁垒）标注显示 / 隐藏",
-        "publicKey": "showAxis",
-        "publicLabel": "坐标轴标注"
+        "publicKey": "showAxis"
       },
       {
         "key": "showZones",
@@ -15454,8 +14516,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "对角「优选区 / 规避区」配色与角标显示 / 隐藏",
-        "publicKey": "showZones",
-        "publicLabel": "优选/规避区"
+        "publicKey": "showZones"
       },
       {
         "key": "showAvoid",
@@ -15463,8 +14524,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "规避类标的（左下）显示 / 隐藏",
-        "publicKey": "showAvoid",
-        "publicLabel": "规避标的"
+        "publicKey": "showAvoid"
       },
       {
         "key": "showCallout",
@@ -15472,8 +14532,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部投资策略小结显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "策略小结"
+        "publicKey": "showCallout"
       },
       {
         "key": "focusEnabled",
@@ -15481,8 +14540,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一个标的",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -15493,8 +14551,7 @@ export const pages = [
         "max": 10,
         "step": 1,
         "help": "被高亮的标的序号（自动随显示数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -15502,8 +14559,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -15573,8 +14629,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -15585,8 +14640,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -15710,9 +14764,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -15730,9 +14782,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -15741,8 +14791,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showRing",
@@ -15750,8 +14799,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "左侧占比圆环显示 / 隐藏（隐藏则仅留巨型数字）",
-        "publicKey": "showRing",
-        "publicLabel": "占比圆环"
+        "publicKey": "showRing"
       },
       {
         "key": "showSupport",
@@ -15759,8 +14807,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右侧支撑性微数据列显示 / 隐藏",
-        "publicKey": "showSupport",
-        "publicLabel": "支撑微数据"
+        "publicKey": "showSupport"
       },
       {
         "key": "statCount",
@@ -15771,8 +14818,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "右侧支撑微数据的条数",
-        "publicKey": "statCount",
-        "publicLabel": "微数据条数"
+        "publicKey": "statCount"
       },
       {
         "key": "showNote",
@@ -15780,8 +14826,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部数据口径注记显示 / 隐藏",
-        "publicKey": "showNote",
-        "publicLabel": "口径注记"
+        "publicKey": "showNote"
       },
       {
         "key": "showDecor",
@@ -15789,8 +14834,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -15860,8 +14904,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -15872,8 +14915,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -15945,9 +14987,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -15965,9 +15005,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -15976,35 +15014,31 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showConnector",
         "label": "桥接连线",
         "type": "toggle",
         "default": true,
-        "help": "相邻季度之间的桥接虚线显示 / 隐藏",
-        "publicKey": "showConnector",
-        "publicLabel": "桥接连线"
+        "help": "相邻时间段之间的桥接虚线显示 / 隐藏",
+        "publicKey": "showConnector"
       },
       {
         "key": "showDelta",
         "label": "环比变化",
         "type": "toggle",
         "default": true,
-        "help": "各季度环比增减数值显示 / 隐藏",
-        "publicKey": "showDelta",
-        "publicLabel": "环比变化"
+        "help": "各时间段环比增减数值显示 / 隐藏",
+        "publicKey": "showDelta"
       },
       {
         "key": "showCount",
         "label": "事件笔数",
         "type": "toggle",
         "default": true,
-        "help": "各季度事件笔数显示 / 隐藏",
-        "publicKey": "showCount",
-        "publicLabel": "事件笔数"
+        "help": "各时间段事件笔数显示 / 隐藏",
+        "publicKey": "showCount"
       },
       {
         "key": "showGrid",
@@ -16012,17 +15046,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "背景水平网格线显示 / 隐藏",
-        "publicKey": "showGrid",
-        "publicLabel": "网格线"
+        "publicKey": "showGrid"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": true,
-        "help": "高亮某一季度",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一时间段",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -16032,9 +15064,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "help": "被高亮的季度序号（0 = Q1）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的时间段序号（0 = Q1）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -16042,8 +15073,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部节奏解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "趋势解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -16051,8 +15081,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -16122,8 +15151,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -16134,8 +15162,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -16218,9 +15245,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -16238,9 +15263,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -16249,26 +15272,23 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showShare",
         "label": "数值/占比",
         "type": "toggle",
         "default": true,
-        "help": "各赛道金额与占比显示 / 隐藏",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值/占比"
+        "help": "各分类数值与占比显示 / 隐藏",
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showCompanies",
         "label": "代表公司",
         "type": "toggle",
         "default": true,
-        "help": "各赛道代表公司标签显示 / 隐藏",
-        "publicKey": "showCompanies",
-        "publicLabel": "代表公司"
+        "help": "各分类代表对象标签显示 / 隐藏",
+        "publicKey": "showCompanies"
       },
       {
         "key": "showCallout",
@@ -16276,17 +15296,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部资金版图解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "核心发现"
+        "publicKey": "showCallout"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": false,
-        "help": "高亮某一赛道块",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一分类块",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -16296,9 +15314,8 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "help": "被高亮的赛道序号（0 = 通用大模型）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的分类序号（0 = 通用大模型）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -16306,8 +15323,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -16377,8 +15393,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -16389,8 +15404,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -16466,9 +15480,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -16486,9 +15498,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -16497,8 +15507,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showStep",
@@ -16506,8 +15515,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "贯穿各柱顶的阶梯连线显示 / 隐藏",
-        "publicKey": "showStep",
-        "publicLabel": "阶梯连线"
+        "publicKey": "showStep"
       },
       {
         "key": "showMultiple",
@@ -16515,8 +15523,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各轮相对种子轮的 ×倍数显示 / 隐藏",
-        "publicKey": "showMultiple",
-        "publicLabel": "放大倍数"
+        "publicKey": "showMultiple"
       },
       {
         "key": "showCount",
@@ -16524,8 +15531,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各轮事件笔数显示 / 隐藏",
-        "publicKey": "showCount",
-        "publicLabel": "事件笔数"
+        "publicKey": "showCount"
       },
       {
         "key": "showGrid",
@@ -16533,17 +15539,15 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "背景水平网格线显示 / 隐藏",
-        "publicKey": "showGrid",
-        "publicLabel": "网格线"
+        "publicKey": "showGrid"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": true,
-        "help": "高亮某一轮次并显示数值",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一阶段并显示数值",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -16553,9 +15557,8 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "help": "被高亮的轮次序号（0 = 种子轮）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的阶段序号（0 = 种子轮）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -16563,8 +15566,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部巨额化解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "结构解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -16572,8 +15574,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -16643,8 +15644,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -16655,8 +15655,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -16734,9 +15733,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -16754,9 +15751,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -16765,8 +15760,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "imageCount",
@@ -16777,8 +15771,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "help": "图片槽数量（按真实比例对齐排布，0 为纯文字）",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "layout",
@@ -16796,8 +15789,7 @@ export const pages = [
           }
         ],
         "help": "图片画廊的排布方式",
-        "publicKey": "layout",
-        "publicLabel": "图片排布"
+        "publicKey": "layout"
       },
       {
         "key": "labCount",
@@ -16808,17 +15800,15 @@ export const pages = [
         "max": 5,
         "step": 1,
         "help": "底部实验室档案条目数量",
-        "publicKey": "labCount",
-        "publicLabel": "实验室数量"
+        "publicKey": "labCount"
       },
       {
         "key": "showValuation",
         "label": "指标标记",
         "type": "toggle",
         "default": true,
-        "help": "各实验室估值 / 定位标记显示 / 隐藏",
-        "publicKey": "showMetricMarker",
-        "publicLabel": "指标标记"
+        "help": "各实验室指标 / 定位标记显示 / 隐藏",
+        "publicKey": "showMetricMarker"
       },
       {
         "key": "focusEnabled",
@@ -16826,8 +15816,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一家实验室",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -16838,8 +15827,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "help": "被高亮的实验室序号（自动随实验室数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecor",
@@ -16847,8 +15835,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -16918,8 +15905,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -16930,11 +15916,11 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "imageCount": 3,
       "layout": "row",
@@ -17001,9 +15987,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -17021,9 +16005,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -17032,35 +16014,31 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showLayers",
         "label": "产业链分层",
         "type": "toggle",
         "default": true,
-        "help": "右侧「上 / 中 / 下游」汇聚列显示 / 隐藏（关闭则仅看赛道分流）",
-        "publicKey": "showLayers",
-        "publicLabel": "产业链分层"
+        "help": "右侧「上 / 中 / 下游」汇聚列显示 / 隐藏（关闭则仅看分类分流）",
+        "publicKey": "showLayers"
       },
       {
         "key": "showValues",
         "label": "数值标注",
         "type": "toggle",
         "default": true,
-        "help": "各节点金额 / 占比显示 / 隐藏",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标注"
+        "help": "各节点数值 / 占比显示 / 隐藏",
+        "publicKey": "showValueLabels"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": true,
-        "help": "高亮某一条赛道流",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一条分类流",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -17070,9 +16048,8 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "help": "被高亮的赛道序号（0 = 通用大模型）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的分类序号（0 = 通用大模型）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -17080,8 +16057,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部流向解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "趋势解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -17089,8 +16065,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -17160,8 +16135,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -17172,8 +16146,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -17285,9 +16258,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -17305,9 +16276,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -17316,8 +16285,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "itemCount",
@@ -17328,8 +16296,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "help": "记分卡展示的公司数量（Top N）",
-        "publicKey": "itemCount",
-        "publicLabel": "公司数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showQuadrant",
@@ -17337,8 +16304,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "「四象限定位」列显示 / 隐藏",
-        "publicKey": "showQuadrant",
-        "publicLabel": "象限定位"
+        "publicKey": "showQuadrant"
       },
       {
         "key": "showBarrier",
@@ -17346,8 +16312,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "「竞争壁垒」评分列显示 / 隐藏",
-        "publicKey": "showBarrier",
-        "publicLabel": "竞争壁垒"
+        "publicKey": "showBarrier"
       },
       {
         "key": "focusEnabled",
@@ -17355,8 +16320,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一行公司",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -17367,8 +16331,7 @@ export const pages = [
         "max": 7,
         "step": 1,
         "help": "被高亮的公司序号（自动随公司数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -17376,8 +16339,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部记分卡小结显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "结论解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -17385,8 +16347,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -17456,8 +16417,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -17468,8 +16428,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -17503,8 +16462,7 @@ export const pages = [
           "heat": 5,
           "deliver": 5,
           "moat": 4,
-          "q": "star",
-          "qLabel": "算力兑现区"
+          "q": "star"
         },
         {
           "name": "Databricks",
@@ -17512,8 +16470,7 @@ export const pages = [
           "heat": 5,
           "deliver": 5,
           "moat": 4,
-          "q": "star",
-          "qLabel": "数据兑现区"
+          "q": "star"
         },
         {
           "name": "Scale AI",
@@ -17521,35 +16478,31 @@ export const pages = [
           "heat": 4,
           "deliver": 4,
           "moat": 4,
-          "q": "star",
-          "qLabel": "标注兑现区"
+          "q": "star"
         },
         {
           "name": "Anthropic",
-          "seg": "中游 · Claude 系列",
+          "seg": "中游 · 通用大模型",
           "heat": 5,
           "deliver": 2,
           "moat": 4,
-          "q": "bubble",
-          "qLabel": "Claude 泡沫区"
+          "q": "bubble"
         },
         {
           "name": "OpenAI",
-          "seg": "中游 · GPT / AGI 平台",
+          "seg": "中游 · 通用大模型",
           "heat": 5,
           "deliver": 2,
           "moat": 4,
-          "q": "bubble",
-          "qLabel": "GPT 泡沫区"
+          "q": "bubble"
         },
         {
           "name": "xAI",
-          "seg": "中游 · Grok 系列",
+          "seg": "中游 · 通用大模型",
           "heat": 4,
           "deliver": 2,
           "moat": 3,
-          "q": "bubble",
-          "qLabel": "Grok 泡沫区"
+          "q": "bubble"
         },
         {
           "name": "Glean",
@@ -17557,8 +16510,7 @@ export const pages = [
           "heat": 3,
           "deliver": 4,
           "moat": 3,
-          "q": "hidden",
-          "qLabel": "企业价值区"
+          "q": "hidden"
         },
         {
           "name": "Perplexity AI",
@@ -17566,8 +16518,7 @@ export const pages = [
           "heat": 3,
           "deliver": 4,
           "moat": 2,
-          "q": "hidden",
-          "qLabel": "搜索价值区"
+          "q": "hidden"
         }
       ],
       "quad": {
@@ -17577,7 +16528,7 @@ export const pages = [
         },
         "bubble": {
           "label": "叙事泡沫区",
-          "c": "blue"
+          "c": null
         },
         "hidden": {
           "label": "隐形价值区",
@@ -17605,9 +16556,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -17625,9 +16574,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -17636,8 +16583,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showZones",
@@ -17645,8 +16591,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "理性 / 偏热 / 过热 / 泡沫 四段色带显示 / 隐藏",
-        "publicKey": "showZones",
-        "publicLabel": "区间色带"
+        "publicKey": "showZones"
       },
       {
         "key": "showTicks",
@@ -17654,26 +16599,23 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "P/S 倍数刻度标注显示 / 隐藏",
-        "publicKey": "showTicks",
-        "publicLabel": "刻度标注"
+        "publicKey": "showTicks"
       },
       {
         "key": "showSupport",
         "label": "佐证数据",
         "type": "toggle",
         "default": true,
-        "help": "右侧估值 / 收入 / 倍数佐证显示 / 隐藏",
-        "publicKey": "showSupport",
-        "publicLabel": "佐证数据"
+        "help": "右侧指标 / 收入 / 倍数佐证显示 / 隐藏",
+        "publicKey": "showSupport"
       },
       {
         "key": "showCallout",
         "label": "状态解读",
         "type": "toggle",
         "default": true,
-        "help": "底部泡沫风险解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "状态解读"
+        "help": "底部泡沫状态解读显示 / 隐藏",
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -17681,8 +16623,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -17752,8 +16693,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -17764,8 +16704,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -17847,9 +16786,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -17867,9 +16804,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -17878,8 +16813,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "imageCount",
@@ -17890,8 +16824,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "图片槽数量（按真实比例对齐排布，0 为纯文字）",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "layout",
@@ -17909,8 +16842,7 @@ export const pages = [
           }
         ],
         "help": "图片画廊的排布方式",
-        "publicKey": "layout",
-        "publicLabel": "图片排布"
+        "publicKey": "layout"
       },
       {
         "key": "showFigure",
@@ -17918,8 +16850,18 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "Figure AI 最大单笔核心数字显示 / 隐藏",
-        "publicKey": "showFigure",
-        "publicLabel": "核心数字"
+        "publicKey": "showFigure"
+      },
+      {
+        "key": "chipCount",
+        "label": "理由标签",
+        "type": "slider",
+        "default": 3,
+        "min": 0,
+        "max": 3,
+        "step": 1,
+        "help": "「看好理由」特征标签数量",
+        "publicKey": "chipCount"
       },
       {
         "key": "showCallout",
@@ -17927,8 +16869,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部看好逻辑解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -17936,8 +16877,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -18007,8 +16947,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -18019,15 +16958,16 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "imageCount": 2,
       "layout": "row",
       "showFigure": true,
+      "chipCount": 3,
       "showCallout": true,
       "accent": "blue",
       "copy": {
@@ -18073,9 +17013,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -18093,9 +17031,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -18104,8 +17040,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showRings",
@@ -18113,26 +17048,23 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "同心刻度环 + 数值标注显示 / 隐藏",
-        "publicKey": "showRings",
-        "publicLabel": "刻度环"
+        "publicKey": "showRings"
       },
       {
         "key": "showValue",
         "label": "花瓣数值",
         "type": "toggle",
         "default": true,
-        "help": "各月融资额数值显示 / 隐藏",
-        "publicKey": "showValueLabels",
-        "publicLabel": "花瓣数值"
+        "help": "各月数值显示 / 隐藏",
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showLegend",
         "label": "时间面板",
         "type": "toggle",
         "default": true,
-        "help": "右侧季度汇总面板显示 / 隐藏",
-        "publicKey": "showLegend",
-        "publicLabel": "时间面板"
+        "help": "右侧时间段汇总面板显示 / 隐藏",
+        "publicKey": "showLegend"
       },
       {
         "key": "focusEnabled",
@@ -18140,8 +17072,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一个月份花瓣",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -18152,8 +17083,7 @@ export const pages = [
         "max": 11,
         "step": 1,
         "help": "被高亮的月份序号（0 = 1 月）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -18161,8 +17091,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部双峰节奏解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "趋势解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -18170,8 +17099,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -18241,8 +17169,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -18253,8 +17180,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -18334,9 +17260,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -18354,9 +17278,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -18365,35 +17287,31 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showValues",
         "label": "数值标注",
         "type": "toggle",
         "default": true,
-        "help": "各赛道金额显示 / 隐藏",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标注"
+        "help": "各分类数值显示 / 隐藏",
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showPercent",
         "label": "占比标注",
         "type": "toggle",
         "default": true,
-        "help": "各赛道占全年总额的百分比显示 / 隐藏",
-        "publicKey": "showPercent",
-        "publicLabel": "占比标注"
+        "help": "各分类占全年总额的百分比显示 / 隐藏",
+        "publicKey": "showPercent"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": true,
-        "help": "高亮某一个赛道块",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一个分类块",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -18403,9 +17321,8 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "help": "被高亮的赛道序号（0 = 通用大模型）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的分类序号（0 = 通用大模型）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -18413,8 +17330,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部资金结构解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "结构解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -18422,8 +17338,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -18493,8 +17408,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -18505,8 +17419,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -18595,9 +17508,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -18615,9 +17526,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -18626,8 +17535,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "ringCount",
@@ -18638,8 +17546,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "展示的集中度圆环数量",
-        "publicKey": "ringCount",
-        "publicLabel": "圆环数量"
+        "publicKey": "ringCount"
       },
       {
         "key": "showArc",
@@ -18647,8 +17554,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "圆环进度弧显示 / 隐藏（关闭则仅留巨型数字）",
-        "publicKey": "showArc",
-        "publicLabel": "环形进度"
+        "publicKey": "showArc"
       },
       {
         "key": "focusEnabled",
@@ -18656,8 +17562,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一个集中度维度",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -18668,8 +17573,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "被高亮的维度序号（自动随圆环数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -18677,8 +17581,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部「赢家通吃」结论显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "结论解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -18686,8 +17589,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -18757,8 +17659,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -18769,8 +17670,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -18796,20 +17696,17 @@ export const pages = [
         {
           "pct": 33,
           "label": "AI 占全美风投",
-          "sub": "近三分之一 · 资本大年",
-          "shareLabel": "占比 / VC SHARE"
+          "sub": "近三分之一 · 资本大年"
         },
         {
           "pct": 43.3,
           "label": "通用大模型",
-          "sub": "占 AI 大额融资 · 赛道集中",
-          "shareLabel": "占比 / MODEL SHARE"
+          "sub": "占 AI 大额融资 · 赛道集中"
         },
         {
           "pct": 63.9,
           "label": "旧金山湾区",
-          "sub": "占 AI 大额融资 · 地理集中",
-          "shareLabel": "占比 / BAY SHARE"
+          "sub": "占 AI 大额融资 · 地理集中"
         }
       ],
       "showDecor": false,
@@ -18843,9 +17740,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -18873,18 +17768,14 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "forceDark",
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -18902,9 +17793,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -18913,8 +17802,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "imageCount",
@@ -18925,8 +17813,7 @@ export const pages = [
         "max": 1,
         "step": 1,
         "help": "全幅背景图槽数量（0 为纯文字主张海报）",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "showFigure",
@@ -18934,8 +17821,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "右下角核心数字（≈1/3）显示 / 隐藏",
-        "publicKey": "showFigure",
-        "publicLabel": "核心数字"
+        "publicKey": "showFigure"
       },
       {
         "key": "showMeta",
@@ -18943,8 +17829,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部支撑微数据条显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "支撑数据"
+        "publicKey": "showMeta"
       },
       {
         "key": "align",
@@ -18962,8 +17847,7 @@ export const pages = [
           }
         ],
         "help": "主张文案的版面位置",
-        "publicKey": "align",
-        "publicLabel": "文案对齐"
+        "publicKey": "align"
       },
       {
         "key": "showDecor",
@@ -18971,8 +17855,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -19042,8 +17925,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -19054,11 +17936,11 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "imageCount": 1,
       "backgroundMode": "unicorn",
@@ -19113,9 +17995,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -19133,9 +18013,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -19144,8 +18022,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showValues",
@@ -19153,26 +18030,23 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "两侧条形末端数值显示 / 隐藏",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标注"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showAxis",
         "label": "两侧轴名",
         "type": "toggle",
         "default": true,
-        "help": "左右两栏「笔数 / 金额」轴名显示 / 隐藏",
-        "publicKey": "showAxis",
-        "publicLabel": "两侧轴名"
+        "help": "左右两栏「笔数 / 数值」轴名显示 / 隐藏",
+        "publicKey": "showAxis"
       },
       {
         "key": "focusEnabled",
         "label": "重点突出",
         "type": "toggle",
         "default": true,
-        "help": "高亮某一个轮次",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "help": "高亮某一个阶段",
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -19182,9 +18056,8 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "help": "被高亮的轮次序号（0 = 种子轮）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "help": "被高亮的阶段序号（0 = 种子轮）",
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -19192,8 +18065,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部「少笔数、多资金」解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "结构解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -19201,8 +18073,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -19272,8 +18143,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -19284,8 +18154,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -19343,6 +18212,13 @@ export const pages = [
       "decorSrc": null,
       "decorScale": 1,
       "forceDark": true
+    },
+    "numberBounds": {
+      "rounds[].cnt": {
+        "min": 0,
+        "max": 22,
+        "semantics": "coordinate"
+      }
     }
   },
   {
@@ -19359,9 +18235,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -19379,9 +18253,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -19390,8 +18262,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "itemCount",
@@ -19401,12 +18272,8 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "countArrays": [
-          "companies"
-        ],
         "help": "参与剖析的公司数量",
-        "publicKey": "itemCount",
-        "publicLabel": "公司数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "showType",
@@ -19414,8 +18281,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "各公司「护城河类型」标记显示 / 隐藏",
-        "publicKey": "showType",
-        "publicLabel": "壁垒类型"
+        "publicKey": "showType"
       },
       {
         "key": "showMeter",
@@ -19423,8 +18289,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "护城河深度量表显示 / 隐藏",
-        "publicKey": "showMeter",
-        "publicLabel": "护城河深度"
+        "publicKey": "showMeter"
       },
       {
         "key": "focusEnabled",
@@ -19432,8 +18297,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "高亮某一家公司列",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -19444,8 +18308,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "被高亮的公司序号（自动随公司数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -19453,8 +18316,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部护城河小结显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "结构解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -19462,8 +18324,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -19533,8 +18394,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -19545,8 +18405,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -19578,20 +18437,10 @@ export const pages = [
           "seg": "中游 · 通用大模型",
           "type": "信任 × 渠道",
           "depth": 4,
-          "meterLabel": "Anthropic 护城河",
           "points": [
-            {
-              "text": "「安全对齐」路线 → 企业客户信任优势",
-              "slot": 0
-            },
-            {
-              "text": "Claude 在代码生成、长文本理解领先",
-              "slot": 1
-            },
-            {
-              "text": "与 Amazon、Google 云深度合作、渠道快覆盖",
-              "slot": 2
-            }
+            "「安全对齐」路线 → 企业客户信任优势",
+            "Claude 在代码生成、长文本理解领先",
+            "与 Amazon、Google 云深度合作、渠道快覆盖"
           ]
         },
         {
@@ -19599,20 +18448,10 @@ export const pages = [
           "seg": "中游 · 通用大模型",
           "type": "数据 × 协同",
           "depth": 3,
-          "meterLabel": "xAI 护城河",
           "points": [
-            {
-              "text": "背靠 X 平台海量实时社交数据",
-              "slot": 0
-            },
-            {
-              "text": "与特斯拉自动驾驶团队协同多模态感知",
-              "slot": 1
-            },
-            {
-              "text": "Grok 主打「幽默 · 实时 · 无审查」差异化",
-              "slot": 2
-            }
+            "背靠 X 平台海量实时社交数据",
+            "与特斯拉自动驾驶团队协同多模态感知",
+            "Grok 主打「幽默 · 实时 · 无审查」差异化"
           ]
         },
         {
@@ -19620,20 +18459,10 @@ export const pages = [
           "seg": "上游 · 算力云",
           "type": "资源锁定",
           "depth": 4,
-          "meterLabel": "CoreWeave 护城河",
           "points": [
-            {
-              "text": "与 NVIDIA 签订长期供应协议",
-              "slot": 0
-            },
-            {
-              "text": "手握数万张 H100 / H200 GPU",
-              "slot": 1
-            },
-            {
-              "text": "OpenAI、Stability 等公司核心算力供应商",
-              "slot": 2
-            }
+            "与 NVIDIA 签订长期供应协议",
+            "手握数万张 H100 / H200 GPU",
+            "OpenAI、Stability 等公司核心算力供应商"
           ]
         }
       ],
@@ -19657,9 +18486,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -19677,9 +18504,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -19688,8 +18513,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "stageCount",
@@ -19699,9 +18523,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "help": "供应链约束环节数量",
-        "publicKey": "stageCount",
-        "publicLabel": "环节数量"
+        "help": "关系链约束环节数量",
+        "publicKey": "stageCount"
       },
       {
         "key": "showConnector",
@@ -19709,8 +18532,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "环节之间的传导箭头显示 / 隐藏",
-        "publicKey": "showConnector",
-        "publicLabel": "传导箭头"
+        "publicKey": "showConnector"
       },
       {
         "key": "showWinner",
@@ -19718,8 +18540,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部「卖铲子赢家 · CoreWeave」条显示 / 隐藏",
-        "publicKey": "showWinner",
-        "publicLabel": "赢家条"
+        "publicKey": "showWinner"
       },
       {
         "key": "focusEnabled",
@@ -19727,8 +18548,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "高亮某一个约束环节（默认瓶颈）",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -19739,8 +18559,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "被高亮的环节序号（自动随环节数量收敛）",
-        "publicKey": "focusIndex",
-        "publicLabel": "突出项"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCallout",
@@ -19748,8 +18567,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部「卖铲子」逻辑解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "结构解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -19757,8 +18575,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -19828,8 +18645,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -19840,8 +18656,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
@@ -19908,9 +18723,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -19928,9 +18741,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -19939,8 +18750,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "imageCount",
@@ -19951,8 +18761,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "图片槽数量（按真实比例对齐，0 为纯文字）",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "layout",
@@ -19970,17 +18779,26 @@ export const pages = [
           }
         ],
         "help": "图片画廊的排布方式",
-        "publicKey": "layout",
-        "publicLabel": "图片排布"
+        "publicKey": "layout"
       },
       {
         "key": "showFigure",
         "label": "核心数字",
         "type": "toggle",
         "default": true,
-        "help": "芯片赛道融资额核心数字显示 / 隐藏",
-        "publicKey": "showFigure",
-        "publicLabel": "核心数字"
+        "help": "芯片分类数值核心数字显示 / 隐藏",
+        "publicKey": "showFigure"
+      },
+      {
+        "key": "chipCount",
+        "label": "特征标签",
+        "type": "slider",
+        "default": 3,
+        "min": 0,
+        "max": 3,
+        "step": 1,
+        "help": "底部特征标签数量",
+        "publicKey": "chipCount"
       },
       {
         "key": "showCallout",
@@ -19988,8 +18806,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部上游确定性解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -19997,8 +18814,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -20068,8 +18884,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -20080,15 +18895,16 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "imageCount": 2,
       "layout": "row",
       "showFigure": true,
+      "chipCount": 3,
       "showCallout": true,
       "accent": "blue",
       "eyebrow": "上游 · 基础设施 / SILICON",
@@ -20131,9 +18947,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -20151,9 +18965,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -20162,8 +18974,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "imageCount",
@@ -20174,8 +18985,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "help": "图片槽数量（按真实比例对齐，0 为纯文字）",
-        "publicKey": "imageCount",
-        "publicLabel": "图片数量"
+        "publicKey": "imageCount"
       },
       {
         "key": "layout",
@@ -20193,17 +19003,26 @@ export const pages = [
           }
         ],
         "help": "图片画廊的排布方式",
-        "publicKey": "layout",
-        "publicLabel": "图片排布"
+        "publicKey": "layout"
       },
       {
         "key": "showFigure",
         "label": "核心数字",
         "type": "toggle",
         "default": true,
-        "help": "基础设施赛道融资额核心数字显示 / 隐藏",
-        "publicKey": "showFigure",
-        "publicLabel": "核心数字"
+        "help": "基础设施分类数值核心数字显示 / 隐藏",
+        "publicKey": "showFigure"
+      },
+      {
+        "key": "chipCount",
+        "label": "特征标签",
+        "type": "slider",
+        "default": 3,
+        "min": 0,
+        "max": 3,
+        "step": 1,
+        "help": "底部特征标签数量",
+        "publicKey": "chipCount"
       },
       {
         "key": "showCallout",
@@ -20211,8 +19030,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部算力卡位解读显示 / 隐藏",
-        "publicKey": "showCallout",
-        "publicLabel": "装饰解读"
+        "publicKey": "showCallout"
       },
       {
         "key": "showDecor",
@@ -20220,8 +19038,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -20291,8 +19108,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -20303,15 +19119,16 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {
+      "images": [],
       "showEyebrow": true,
       "imageCount": 2,
       "layout": "row",
       "showFigure": true,
+      "chipCount": 3,
       "showCallout": true,
       "accent": "blue",
       "eyebrow": "中游 · 基础设施 / COMPUTE",
@@ -20354,9 +19171,7 @@ export const pages = [
         "type": "toggle",
         "label": "全局深色",
         "default": true,
-        "description": "右上角深浅配色切换。",
         "publicKey": "forceDark",
-        "publicLabel": "全局深色",
         "desc": "右上角深浅配色切换。"
       },
       {
@@ -20374,9 +19189,7 @@ export const pages = [
             "label": "荧光绿"
           }
         ],
-        "description": "theme03 全局强调色，作用于该主题所有页面。",
         "publicKey": "accent",
-        "publicLabel": "强调色",
         "desc": "theme03 全局强调色，作用于该主题所有页面。"
       },
       {
@@ -20385,8 +19198,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "顶部分类标签显示 / 隐藏",
-        "publicKey": "showEyebrow",
-        "publicLabel": "装饰标签"
+        "publicKey": "showEyebrow"
       },
       {
         "key": "showSources",
@@ -20394,8 +19206,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "数据口径 / 来源说明列表显示 / 隐藏",
-        "publicKey": "showSources",
-        "publicLabel": "来源说明"
+        "publicKey": "showSources"
       },
       {
         "key": "noteCount",
@@ -20406,8 +19217,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "help": "底部研究提示 / 免责声明条数",
-        "publicKey": "noteCount",
-        "publicLabel": "提示条数"
+        "publicKey": "noteCount"
       },
       {
         "key": "showMeta",
@@ -20415,8 +19225,7 @@ export const pages = [
         "type": "toggle",
         "default": true,
         "help": "底部编制信息显示 / 隐藏",
-        "publicKey": "showMeta",
-        "publicLabel": "页脚信息"
+        "publicKey": "showMeta"
       },
       {
         "key": "showDecor",
@@ -20424,8 +19233,7 @@ export const pages = [
         "type": "toggle",
         "default": false,
         "help": "显示或隐藏页面上的装饰图片元素",
-        "publicKey": "showDecor",
-        "publicLabel": "装饰图片"
+        "publicKey": "showDecor"
       },
       {
         "key": "decorSrc",
@@ -20495,8 +19303,7 @@ export const pages = [
           }
         ],
         "help": "从 theme03 内置装饰元素中选择",
-        "publicKey": "decorSrc",
-        "publicLabel": "装饰元素"
+        "publicKey": "decorSrc"
       },
       {
         "key": "decorScale",
@@ -20507,8 +19314,7 @@ export const pages = [
         "max": 1.6,
         "step": 0.05,
         "help": "装饰图片的缩放比例",
-        "publicKey": "decorScale",
-        "publicLabel": "图片大小"
+        "publicKey": "decorScale"
       }
     ],
     "defaultProps": {

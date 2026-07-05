@@ -46,16 +46,50 @@ export function createLayoutContracts(pages = []) {
   return new Map(pages.map(page => [page.key, createContract(page, page.themeKey)]));
 }
 
+// 与 createLayoutContracts 同接口,但按 key 惰性构建:CLI 单页查询不必为全部主题页付构建成本。
+export function createLazyLayoutContracts(pages = []) {
+  const pageByKey = new Map(pages.map(page => [page.key, page]));
+  const cache = new Map();
+  const get = (key) => {
+    if (cache.has(key)) return cache.get(key);
+    const page = pageByKey.get(key);
+    if (!page) return undefined;
+    const contract = createContract(page, page.themeKey);
+    cache.set(key, contract);
+    return contract;
+  };
+  return {
+    get,
+    has: key => pageByKey.has(key),
+    keys: () => pageByKey.keys(),
+    get size() {
+      return pageByKey.size;
+    },
+    *entries() {
+      for (const key of pageByKey.keys()) yield [key, get(key)];
+    },
+    *[Symbol.iterator]() {
+      yield* this.entries();
+    },
+  };
+}
+
 export function normalizeSlidePropsForContract(layout, props = {}, contract = null) {
   const aliasResult = contract ? resolvePublicPropAliases(props, contract.controls) : { props: props || {} };
   const authoredProps = aliasResult.props || {};
   const authoredCounts = deriveAuthoredCounts(authoredProps, contract?.countBindings || []);
-  const shapeErrors = contract ? validateAuthoredPropShape(authoredProps, contract.defaultProps, contract.propShapes) : [];
+  const shapeResult = contract
+    ? validateAuthoredPropShape(authoredProps, contract.defaultProps, contract.propShapes, contract.controls, contract.numberBounds)
+    : { errors: [], warnings: [] };
   const next = { ...authoredProps };
   if (contract) applyMediaBackgroundMode(next, authoredProps, contract);
   if (!contract) return next;
 
-  const errors = [...shapeErrors];
+  // shapeResult.warnings (non-blocking, inferred numeric ceilings) are intentionally not
+  // surfaced here -- this function's contract is "return normalized props or throw", used by
+  // both the render pipeline and the client-side editing runtime. Callers that want warnings
+  // (props:safe / validate:goal-spec) read them off scripts/skill-workflow-utils.mjs instead.
+  const errors = [...shapeResult.errors];
   for (const binding of contract.countBindings) {
     const derived = deriveCount(next, binding);
     if (!derived) {
@@ -124,7 +158,7 @@ export function createContract(page, themePack) {
     .map(({ control, arrays, explicitArrays }) => ({
       key: control.key,
       publicKey: control.publicKey || control.key,
-      label: control.label || control.publicLabel || control.key,
+      label: control.label || control.key,
       arrays,
       explicitArrays,
       min: control.min,
@@ -158,8 +192,44 @@ export function createContract(page, themePack) {
     controls,
     countBindings,
     lengthBindings,
+    numberBounds: normalizeContractNumberBounds(page.numberBounds),
     propShapes: describePropShapes(defaultProps),
   };
+}
+
+// Explicit, page-declared numeric domains for array-item fields whose values are consumed
+// directly as chart/SVG geometry (fixed-axis scale, normalized 0-1 position, rank index, ...).
+// Keyed by "arrayKey[].field" (single nesting level). Declared on the page (metadata.js
+// `numberBounds`); unlike the generic inferred ceiling below, these stay hard errors because
+// exceeding them visibly breaks the component's geometry, not just its intended data range.
+function normalizeContractNumberBounds(raw) {
+  if (!raw || typeof raw !== 'object') return {};
+  const result = {};
+  for (const [path, bounds] of Object.entries(raw)) {
+    const min = Number(bounds?.min);
+    const max = Number(bounds?.max);
+    if (!Number.isFinite(min) || !Number.isFinite(max)) continue;
+    result[path] = {
+      min,
+      max,
+      ...(typeof bounds?.semantics === 'string' && bounds.semantics ? { semantics: bounds.semantics } : {}),
+    };
+  }
+  return result;
+}
+
+// Narrows a contract's full numberBounds map (dotted paths) down to the fields declared for
+// one specific array key, e.g. "data[].count" -> Map{ count: {...} } when arrayKey === 'data'.
+export function explicitNumberBoundsForArrayKey(numberBoundsConfig, arrayKey) {
+  const prefix = `${arrayKey}[].`;
+  const result = new Map();
+  for (const [path, bounds] of Object.entries(numberBoundsConfig || {})) {
+    if (!path.startsWith(prefix)) continue;
+    const field = path.slice(prefix.length);
+    if (!field || field.includes('.') || field.includes('[')) continue;
+    result.set(field, bounds);
+  }
+  return result.size ? result : null;
 }
 
 function resolveContractBindingArrays(binding, defaultProps = {}, { preserveDeclared = false } = {}) {
@@ -437,7 +507,10 @@ function countControlLimit(control, defaultProps = {}) {
   if (!arrays.length || arrays.some(isMediaCountPath)) return null;
   const counts = arrays.flatMap(pathName => collectArrayCounts(defaultProps, pathName).map(item => item.count));
   if (!counts.length) return null;
-  return Math.min(...counts);
+  // A nested path (e.g. `tiers[].examples`) yields one count per parent item;
+  // authored items are free to vary in length, so the control's capacity must
+  // cover the richest item, not get dragged down to the shortest one.
+  return Math.max(...counts);
 }
 
 function isMediaCountPath(pathName) {
@@ -539,8 +612,10 @@ function manifestMediaDefaults(defaultProps = {}, countBindings = []) {
   );
 }
 
-export function validateAuthoredPropShape(props = {}, defaults = {}, propShapes = null) {
+export function validateAuthoredPropShape(props = {}, defaults = {}, propShapes = null, controls = [], numberBoundsConfig = {}) {
   const errors = [];
+  const warnings = [];
+  const controlByKey = new Map((controls || []).filter(c => c?.key).map(c => [c.key, c]));
   for (const [key, value] of Object.entries(props || {})) {
     if (isMediaArrayKey(key)) continue;
     if (!propShapes?.[key] && isRawMatrixProp(key)) {
@@ -548,12 +623,24 @@ export function validateAuthoredPropShape(props = {}, defaults = {}, propShapes 
       continue;
     }
     if (!Object.prototype.hasOwnProperty.call(defaults || {}, key)) continue;
-    validateValueShape(value, defaults[key], `props.${key}`, errors);
+    // A control with an explicit, enumerated option list (segment/select) is the
+    // source of truth for that key's allowed values — e.g. a `columns` control
+    // can legitimately mix numbers (1, 2) with a string sentinel ('grid'). The
+    // default value's own JS type must not veto a value the control itself offers.
+    if (isValueAmongControlOptions(value, controlByKey.get(key))) continue;
+    const explicitBoundsByField = explicitNumberBoundsForArrayKey(numberBoundsConfig, key);
+    validateValueShape(value, defaults[key], `props.${key}`, errors, warnings, explicitBoundsByField);
   }
-  return errors;
+  return { errors, warnings };
 }
 
-function validateValueShape(value, defaultValue, field, errors) {
+function isValueAmongControlOptions(value, control) {
+  const options = Array.isArray(control?.options) ? control.options : [];
+  if (!options.length) return false;
+  return options.some(option => sameContractValue(option?.value, value));
+}
+
+function validateValueShape(value, defaultValue, field, errors, warnings = [], explicitBoundsByField = null) {
   if (isSerializedReactElementLike(value)) {
     errors.push(`${field}: serialized React element is not allowed; use plain text`);
     return;
@@ -591,7 +678,7 @@ function validateValueShape(value, defaultValue, field, errors) {
             return;
           }
           tuple.items.forEach((itemDefault, itemIndex) => {
-            validateValueShape(item[itemIndex], itemDefault, `${field}[${index}][${itemIndex}]`, errors);
+            validateValueShape(item[itemIndex], itemDefault, `${field}[${index}][${itemIndex}]`, errors, warnings);
           });
         });
         return;
@@ -604,13 +691,13 @@ function validateValueShape(value, defaultValue, field, errors) {
       return;
     }
     const enumFields = enumFieldsForArrayItems(defaultValue);
-    const numberBounds = numberBoundsForArrayItems(defaultValue);
+    const numberBounds = numberBoundsForArrayItems(defaultValue, explicitBoundsByField);
     value.forEach((item, index) => {
       if (!isPlainObject(item)) {
         errors.push(`${field}[${index}]: expected object item`);
         return;
       }
-      validateObjectShape(item, shape, `${field}[${index}]`, errors, enumFields, numberBounds);
+      validateObjectShape(item, shape, `${field}[${index}]`, errors, warnings, enumFields, numberBounds);
     });
     return;
   }
@@ -620,7 +707,7 @@ function validateValueShape(value, defaultValue, field, errors) {
       errors.push(`${field}: expected object`);
       return;
     }
-    validateObjectShape(value, defaultValue, field, errors);
+    validateObjectShape(value, defaultValue, field, errors, warnings);
   }
 }
 
@@ -628,7 +715,7 @@ function isRawMatrixProp(key) {
   return String(key || '') === 'matrix';
 }
 
-function validateObjectShape(value, shape, field, errors, enumFields = new Map(), numberBounds = new Map()) {
+function validateObjectShape(value, shape, field, errors, warnings = [], enumFields = new Map(), numberBounds = new Map()) {
   const allowed = new Set(Object.keys(shape || {}));
   for (const [key, item] of Object.entries(value || {})) {
     if (!allowed.has(key)) {
@@ -641,8 +728,8 @@ function validateObjectShape(value, shape, field, errors, enumFields = new Map()
       continue;
     }
     const bounds = numberBounds.get(key);
-    if (bounds) validateNumberBounds(item, bounds, `${field}.${key}`, errors);
-    validateValueShape(item, shape[key], `${field}.${key}`, errors);
+    if (bounds) validateNumberBounds(item, bounds, `${field}.${key}`, bounds.explicit ? errors : warnings);
+    validateValueShape(item, shape[key], `${field}.${key}`, errors, warnings);
   }
 }
 
@@ -691,15 +778,60 @@ function enumFieldsForArrayItems(items = []) {
   return result;
 }
 
-function numberBoundsForArrayItems(items = []) {
+// Per-field numeric domain for one array's items, keyed by field name. Each entry is
+// { min, max, explicit, semantics }:
+//  - explicit:true  -> a hard domain (page-declared override, or a recognized fixed shape like
+//    the BCG bubble gx/gy/size/q or a %-distribution that sums to ~100). Values outside it are
+//    hard errors: the component consumes the field directly as geometry (position/scale/index)
+//    and overflowing it visibly breaks the render.
+//  - explicit:false -> a ceiling *inferred* from the page's own default sample data (observed
+//    range, padded 10%). This is a hint for "what the shipped example looks like", not a
+//    contract the component enforces -- most charts self-scale to authored data. Violations are
+//    advisory only (see validateNumberBounds).
+// explicitBoundsByField (from a page's declared `numberBounds`) always wins over both the
+// recognized-shape and inferred paths, so page authors can harden any field precisely.
+export function numberBoundsForArrayItems(items = [], explicitBoundsByField = null) {
   const result = new Map();
   const objects = items.filter(isPlainObject);
   const keys = new Set(objects.flatMap(item => Object.keys(item)));
+  const bcgBubbleShape = objects.some(item => ['gx', 'gy', 'size', 'q'].every(key => Object.prototype.hasOwnProperty.call(item, key)));
   for (const key of keys) {
-    const bounds = numberBoundsForValues(objects.map(item => item?.[key]));
-    if (bounds) result.set(key, bounds);
+    const declared = explicitBoundsByField?.get(key);
+    if (declared) {
+      result.set(key, { min: declared.min, max: declared.max, explicit: true, semantics: declared.semantics || null });
+      continue;
+    }
+    if (bcgBubbleShape && (key === 'gx' || key === 'gy')) {
+      result.set(key, { min: 0, max: 1, explicit: true, semantics: 'normalized' });
+      continue;
+    }
+    if (bcgBubbleShape && key === 'size') {
+      result.set(key, { min: 0.2, max: 1.1, explicit: true, semantics: null });
+      continue;
+    }
+    if (bcgBubbleShape && key === 'q') {
+      result.set(key, { min: 0, max: 3, explicit: true, semantics: null });
+      continue;
+    }
+    if (isPercentDistributionField(key, objects)) {
+      result.set(key, { min: 0, max: 100, explicit: true, semantics: null });
+      continue;
+    }
+    const values = objects.map(item => item?.[key]);
+    const bounds = numberBoundsForValues(values);
+    if (bounds) result.set(key, { ...bounds, explicit: false, semantics: inferredNumberSemantics(key, values) });
   }
   return result;
+}
+
+function isPercentDistributionField(key, objects) {
+  const values = objects.map(item => item?.[key]).filter(value => typeof value === 'number' && Number.isFinite(value));
+  if (values.length < 2 || values.some(value => value < 0 || value > 100)) return false;
+  const labelKeys = ['name', 'label', 'category', 'segment', 'title'];
+  const hasLabels = objects.every(item => labelKeys.some(labelKey => typeof item?.[labelKey] === 'string'));
+  if (!hasLabels) return false;
+  const sum = values.reduce((total, value) => total + value, 0);
+  return sum >= 99 && sum <= 101;
 }
 
 function numberBoundsForValues(values = []) {
@@ -713,10 +845,23 @@ function numberBoundsForValues(values = []) {
   };
 }
 
-function validateNumberBounds(value, bounds, field, errors) {
+// Labels a field's likely intent for inspect:layout, reusing the exact same values already
+// classified above -- not a second formula. 'coordinate': the field name itself is a
+// conventional screen-space coordinate (x/y/cx/cy/...). 'normalized': every observed sample is
+// already a 0-1 ratio. Both are hints only; they do not change enforcement.
+function inferredNumberSemantics(key, values) {
+  if (/^(x|y|cx|cy|dx|dy|px|py|lat|lng|lon)$/i.test(String(key || ''))) return 'coordinate';
+  const numbers = values.filter(value => typeof value === 'number' && Number.isFinite(value));
+  if (numbers.length >= 2 && numbers.every(value => value >= 0 && value <= 1)) return 'normalized';
+  return null;
+}
+
+export function validateNumberBounds(value, bounds, field, target) {
   if (typeof value !== 'number' || !Number.isFinite(value)) return;
-  if (value < bounds.min) errors.push(`${field}: expected >= ${formatNumber(bounds.min)}`);
-  if (value > bounds.max) errors.push(`${field}: expected <= ${formatNumber(bounds.max)}`);
+  const range = `[${formatNumber(bounds.min)}, ${formatNumber(bounds.max)}]`;
+  const suffix = bounds.explicit ? '' : ' (inferred from default sample data; not a hard limit, real authored data may exceed it)';
+  if (value < bounds.min) target.push(`${field}: expected >= ${formatNumber(bounds.min)}; allowed range ${range}${suffix}`);
+  if (value > bounds.max) target.push(`${field}: expected <= ${formatNumber(bounds.max)}; allowed range ${range}${suffix}`);
 }
 
 function enumValuesForScalarField(field, defaultValue) {
@@ -742,7 +887,7 @@ function formatNumber(value) {
   return Number.isInteger(value) ? String(value) : String(Number(value.toFixed(2)));
 }
 
-function isCssColorLike(value) {
+export function isCssColorLike(value) {
   if (typeof value !== 'string') return false;
   const text = value.trim();
   return /^#[0-9a-fA-F]{3,8}$/.test(text)
@@ -1219,7 +1364,18 @@ function validateControlRanges(props = {}, controls = [], countBindings = [], de
 function isNumericRangeControl(control) {
   const type = String(control?.type || '').toLowerCase();
   if (['number', 'range', 'slider'].includes(type)) return true;
+  // A segment/select control with an explicit option list is only "numeric" if
+  // every option it offers is actually a number — e.g. a `columns` control
+  // whose options mix 1 | 2 | 'grid' must not be range-validated as a plain
+  // number just because its default happens to be numeric.
+  if (hasNonNumericControlOption(control)) return false;
   return typeof control?.default === 'number' || control?.min !== undefined || control?.max !== undefined || control?.maxFromKey || control?.maxByKey;
+}
+
+function hasNonNumericControlOption(control) {
+  const options = Array.isArray(control?.options) ? control.options : [];
+  if (!options.length) return false;
+  return options.some(option => typeof option?.value !== 'number');
 }
 
 function isNestedArrayPath(pathName) {

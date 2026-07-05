@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, writeFileSync, statSync, realpathSync, createReadStream } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync, statSync, realpathSync, createReadStream, rmSync } from 'node:fs';
+import { createGzip } from 'node:zlib';
 import http from 'node:http';
 import net from 'node:net';
 import os from 'node:os';
@@ -13,7 +14,14 @@ import { safePathname } from './preview-path.mjs';
 import { isExportRequestAllowed, isLoopbackHost } from './preview-export-auth.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
-const SERVE_ROOT = path.resolve(ROOT, process.argv[2] || 'output/theme-preview/ppt');
+// 相对路径按调用方目录解析:npm run(含 --prefix)会把脚本 cwd 切到项目根,INIT_CWD 才是用户所在目录。
+// 未显式传参时的默认值仍锚定项目根(内部调试预览目录),不随调用方目录漂移;绝对路径入参(常见于
+// start-preview-server.mjs 已完成解析后 spawn 传入)不受 CALLER_CWD 影响。
+const CALLER_CWD = process.env.INIT_CWD || process.cwd();
+const SERVE_ROOT_ARG = process.argv[2];
+const SERVE_ROOT = SERVE_ROOT_ARG
+  ? path.resolve(CALLER_CWD, SERVE_ROOT_ARG)
+  : path.resolve(ROOT, 'output/theme-preview/ppt');
 const PORT = Number(process.env.PORT || process.argv[3] || 4178);
 const HOST = process.env.HOST || '0.0.0.0';
 const LOCAL_HOSTNAME = getLocalHostname();
@@ -27,6 +35,52 @@ const EXPORT_PROGRESS = new Map();
 const INTERNAL_PREVIEW_FILES = new Set(['.preview-server.json', '.preview-server.log']);
 const LEXICAL_SERVE_ROOT = path.resolve(SERVE_ROOT);
 const LEXICAL_EXPORT_DIR = path.resolve(EXPORT_DIR);
+
+// 空闲自退:长期无人访问的预览服务不应无限期占用端口/进程。有进行中导出任务时不退。
+// DASHI_PPT_PREVIEW_IDLE_MS 是仅测试用的毫秒级后门,优先于 DASHI_PPT_PREVIEW_IDLE_HOURS。
+// DASHI_PPT_PREVIEW_IDLE_CHECK_MS 同样仅测试用,覆盖检查间隔以加速回归测试。
+const IDLE_LIMIT_MS = resolveIdleLimitMs();
+const IDLE_CHECK_INTERVAL_MS = resolveIdleCheckIntervalMs(IDLE_LIMIT_MS);
+let lastActivityAt = Date.now();
+let activeExportCount = 0;
+
+function resolveIdleLimitMs() {
+  const msOverride = Number(process.env.DASHI_PPT_PREVIEW_IDLE_MS);
+  if (Number.isFinite(msOverride) && msOverride >= 0) return msOverride;
+  const hoursRaw = process.env.DASHI_PPT_PREVIEW_IDLE_HOURS;
+  const hours = hoursRaw === undefined ? 4 : Number(hoursRaw);
+  if (!Number.isFinite(hours) || hours <= 0) return 0;
+  return hours * 60 * 60 * 1000;
+}
+
+function resolveIdleCheckIntervalMs(idleLimitMs) {
+  const override = Number(process.env.DASHI_PPT_PREVIEW_IDLE_CHECK_MS);
+  if (Number.isFinite(override) && override > 0) return override;
+  if (idleLimitMs > 0) return Math.max(1000, Math.min(5 * 60 * 1000, Math.floor(idleLimitMs / 4)));
+  return 5 * 60 * 1000;
+}
+
+function noteActivity() {
+  lastActivityAt = Date.now();
+}
+
+function checkIdleExit() {
+  if (IDLE_LIMIT_MS <= 0) return;
+  if (activeExportCount > 0) return;
+  const idleForMs = Date.now() - lastActivityAt;
+  if (idleForMs < IDLE_LIMIT_MS) return;
+  console.log(`[preview] idle for ${(idleForMs / 60000).toFixed(1)}m (limit ${(IDLE_LIMIT_MS / 60000).toFixed(1)}m); shutting down`);
+  cleanupOwnStateFile();
+  process.exit(0);
+}
+
+function cleanupOwnStateFile() {
+  const stateFile = path.join(SERVE_ROOT, '.preview-server.json');
+  try {
+    const state = JSON.parse(readFileSync(stateFile, 'utf8'));
+    if (Number(state.pid) === process.pid) rmSync(stateFile, { force: true });
+  } catch {}
+}
 
 ensureThemePreviewFresh({ serveRoot: SERVE_ROOT });
 
@@ -107,6 +161,18 @@ const serveRequest = async (req, res) => {
     return;
   }
 
+  // 文本资产按需 gzip:index.html/imported-theme-runtime.js 等可省 70%+ 传输量;字体/图片/视频不压。
+  const compressible = /\.(html|js|mjs|json|css|svg|txt)$/i.test(file);
+  if (compressible && /\bgzip\b/i.test(String(req.headers['accept-encoding'] || ''))) {
+    res.writeHead(200, {
+      'content-type': contentType(file),
+      'cache-control': 'no-store',
+      'content-encoding': 'gzip',
+      vary: 'accept-encoding',
+    });
+    createReadStream(file).pipe(createGzip()).pipe(res);
+    return;
+  }
   res.writeHead(200, {
     'content-type': contentType(file),
     'cache-control': 'no-store',
@@ -116,6 +182,7 @@ const serveRequest = async (req, res) => {
 
 // 顶层兜底:任何处理异常都不得让进程崩溃(请求监听器是 async,未捕获即 unhandledRejection)。
 const requestHandler = async (req, res) => {
+  noteActivity();
   try {
     await serveRequest(req, res);
   } catch (error) {
@@ -145,7 +212,14 @@ server.listen(PORT, HOST, () => {
   if (!isLoopbackHost(HOST)) {
     console.warn(`[preview] 警告:绑定在 ${HOST}(非回环),预览/导出对局域网可达。导出端点要求请求带允许的 Origin。`);
   }
+  if (IDLE_LIMIT_MS > 0) {
+    console.log(`[preview] idle auto-exit enabled: ${(IDLE_LIMIT_MS / 60000).toFixed(1)}m`);
+  }
 });
+
+// unref:空闲检查定时器不应阻止进程在其他条件下正常退出(例如收到信号)。
+const idleCheckTimer = IDLE_LIMIT_MS > 0 ? setInterval(checkIdleExit, IDLE_CHECK_INTERVAL_MS) : null;
+idleCheckTimer?.unref?.();
 
 function createHttpHttpsMuxServer(plainServer, context) {
   return net.createServer(socket => {
@@ -282,10 +356,10 @@ function contentType(file) {
 
 async function handleEditablePptxExport(req, res) {
   let progressId = null;
+  activeExportCount += 1;
   try {
     if (!isAllowedExportRequest(req)) {
-      res.writeHead(403, { 'content-type': 'application/json;charset=utf-8', 'cache-control': 'no-store' });
-      res.end(JSON.stringify({ error: 'Forbidden export origin' }));
+      writeForbiddenExportResponse(res);
       return;
     }
     const payload = await readJsonBody(req);
@@ -331,15 +405,17 @@ async function handleEditablePptxExport(req, res) {
     console.error('[editable pptx export]', error);
     res.writeHead(500, { 'content-type': 'application/json;charset=utf-8', 'cache-control': 'no-store' });
     res.end(JSON.stringify({ error: message }));
+  } finally {
+    activeExportCount -= 1;
   }
 }
 
 async function handlePdfExport(req, res) {
   let progressId = null;
+  activeExportCount += 1;
   try {
     if (!isAllowedExportRequest(req)) {
-      res.writeHead(403, { 'content-type': 'application/json;charset=utf-8', 'cache-control': 'no-store' });
-      res.end(JSON.stringify({ error: 'Forbidden export origin' }));
+      writeForbiddenExportResponse(res);
       return;
     }
     const payload = await readJsonBody(req);
@@ -392,13 +468,14 @@ async function handlePdfExport(req, res) {
     console.error('[pdf export]', error);
     res.writeHead(500, { 'content-type': 'application/json;charset=utf-8', 'cache-control': 'no-store' });
     res.end(JSON.stringify({ error: message }));
+  } finally {
+    activeExportCount -= 1;
   }
 }
 
 function handlePdfProgress(req, res, requestUrl) {
   if (!isAllowedExportRequest(req)) {
-    res.writeHead(403, { 'content-type': 'application/json;charset=utf-8', 'cache-control': 'no-store' });
-    res.end(JSON.stringify({ error: 'Forbidden export origin' }));
+    writeForbiddenExportResponse(res);
     return;
   }
   const id = safeProgressId(requestUrl.searchParams.get('id'));
@@ -412,8 +489,7 @@ function handlePdfProgress(req, res, requestUrl) {
 
 function handlePdfDownload(req, res, requestUrl) {
   if (!isAllowedExportRequest(req)) {
-    res.writeHead(403, { 'content-type': 'application/json;charset=utf-8', 'cache-control': 'no-store' });
-    res.end(JSON.stringify({ error: 'Forbidden export origin' }));
+    writeForbiddenExportResponse(res);
     return;
   }
   const name = path.basename(requestUrl.searchParams.get('file') || '');
@@ -453,8 +529,7 @@ function handlePdfDownload(req, res, requestUrl) {
 
 function handleEditablePptxProgress(req, res, requestUrl) {
   if (!isAllowedExportRequest(req)) {
-    res.writeHead(403, { 'content-type': 'application/json;charset=utf-8', 'cache-control': 'no-store' });
-    res.end(JSON.stringify({ error: 'Forbidden export origin' }));
+    writeForbiddenExportResponse(res);
     return;
   }
   const id = safeProgressId(requestUrl.searchParams.get('id'));
@@ -468,8 +543,7 @@ function handleEditablePptxProgress(req, res, requestUrl) {
 
 function handleEditablePptxDownload(req, res, requestUrl) {
   if (!isAllowedExportRequest(req)) {
-    res.writeHead(403, { 'content-type': 'application/json;charset=utf-8', 'cache-control': 'no-store' });
-    res.end(JSON.stringify({ error: 'Forbidden export origin' }));
+    writeForbiddenExportResponse(res);
     return;
   }
   const name = path.basename(requestUrl.searchParams.get('file') || '');
@@ -533,7 +607,7 @@ function isAllowedExportRequest(req) {
     `http://${host}:${PORT}`,
     `https://${host}:${PORT}`,
   ]));
-  return isExportRequestAllowed({ origin: req.headers.origin, host: HOST, allowedOrigins: allowed });
+  return isExportRequestAllowed({ origin: req.headers.origin, referer: req.headers.referer, host: HOST, allowedOrigins: allowed });
 }
 
 function buildInternalPreviewUrl(req, sourcePath, config = {}) {
@@ -671,6 +745,15 @@ function updateExportProgress(id, update = {}) {
   if (next.done) {
     setTimeout(() => EXPORT_PROGRESS.delete(id), 15 * 60 * 1000).unref?.();
   }
+}
+
+// 403 时给可行动的提示,而不是让调用方去猜:说明鉴权要求,并指出脚本化调用的替代路径。
+function writeForbiddenExportResponse(res) {
+  res.writeHead(403, { 'content-type': 'application/json;charset=utf-8', 'cache-control': 'no-store' });
+  res.end(JSON.stringify({
+    error: 'Forbidden export origin',
+    hint: '导出接口要求同源 Origin 或 Referer 头(从预览页面里点导出即可);脚本化/无头调用请改用 `npm run export:pptx -- <deck>/ppt <out.pptx>`(PDF 用 `export:pdf`),无需先起浏览器会话。',
+  }));
 }
 
 function publicErrorMessage(error, fallback) {

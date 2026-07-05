@@ -358,7 +358,9 @@ const ENGLISH_OPTION_LABELS = {
   zigzag: '折线',
 };
 
-export function normalizeControlText(value) {
+// 导入期清洗:把外部设计源的历史词汇替换为规范文案。只在 themes:import / metadata:update
+// 的生成链路调用;生成产物(generated-metadata.js)里的文本已是清洗结果,运行时无需重复。
+export function sanitizeImportedControlText(value) {
   if (typeof value !== 'string') return value;
   let next = value;
   for (const [from, to] of TEXT_REPLACEMENTS) {
@@ -368,6 +370,24 @@ export function normalizeControlText(value) {
     next = next.replaceAll(from, to);
   }
   return next.replace(/\s+/g, ' ').trim();
+}
+
+// 深度清洗 controls 的 UI 文案(string 叶子)。value/image/default 是数据而非文案:
+// default 与 defaultProps 同源,清洗它会造成两个 default surface 漂移(contract-risk-audit 会报 mismatch)。
+export function sanitizeImportedControls(value) {
+  if (typeof value === 'string') return sanitizeImportedControlText(value);
+  if (Array.isArray(value)) return value.map(sanitizeImportedControls);
+  if (!value || typeof value !== 'object') return value;
+  return Object.fromEntries(Object.entries(value).map(([key, item]) => [
+    key,
+    key === 'value' || key === 'image' || key === 'default' ? item : sanitizeImportedControls(item),
+  ]));
+}
+
+// 运行时归一化:数据在生成期已清洗(130 条导入替换在全量 controls 上实测零命中),只保留空白归一化。
+export function normalizeControlText(value) {
+  if (typeof value !== 'string') return value;
+  return value.replace(/\s+/g, ' ').trim();
 }
 
 export function normalizeControlValue(value) {
@@ -475,14 +495,14 @@ export function normalizePublicControl(control, context = {}) {
   const label = normalizeControlText(control.label || key);
   const desc = normalizeControlText(control.desc || control.description || control.describe);
   const publicKey = normalizePublicKey(key, { ...control, label, desc }, context);
+  // description/describe/publicLabel 是源 metadata 的别名字段,归一化为 label/desc 后不再重复输出。
+  const { description, describe, publicLabel, ...rest } = control;
   return {
-    ...control,
+    ...rest,
     key,
     publicKey,
-    publicLabel: label,
     label,
     desc,
-    description: desc,
     options: normalizeControlOptions(control.options),
   };
 }

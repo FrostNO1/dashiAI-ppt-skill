@@ -14,11 +14,12 @@ export const RUNTIME_ASSET_PATHS = [
   'assets/unicorn/automations_remix_scene.json',
   'assets/unicorn/moving_into_remix_scene.json',
   'assets/unicorn/goey_balls_remix_scene.json',
+  'assets/vendor/unicornstudio.umd.js',
+  'assets/vendor/fonts',
 ];
 
 export const GENERATED_RUNTIME_OUTPUT_ASSETS = [
   'assets/imported-theme-runtime.js',
-  'assets/deck-runtime.js',
 ];
 
 export const VENDOR_RUNTIME_OUTPUT_ASSETS = [

@@ -6,13 +6,18 @@ import {
   REQUIRED_OUTPUT_ASSETS,
 } from '../src/runtime-assets.mjs';
 
-const file = process.argv[2];
+// 相对路径按调用方目录解析:npm run(含 --prefix)会把脚本 cwd 切到项目根,INIT_CWD 才是用户所在目录。
+const CALLER_CWD = process.env.INIT_CWD || process.cwd();
+
+const fileArg = process.argv[2];
 const allowExperimental = process.argv.includes('--allow-experimental');
 
-if (!file) {
+if (!fileArg) {
   console.error('Usage: node scripts/validate-swiss-deck.mjs <index.html> [--allow-experimental]');
   process.exit(2);
 }
+
+const file = path.resolve(CALLER_CWD, fileArg);
 
 const html = readFileSync(file, 'utf8');
 const htmlForSlides = html.replace(/<!--[\s\S]*?-->/g, '');
@@ -562,8 +567,13 @@ if (!/budgetMs/.test(overviewScheduleSource) || !/sliceStartAt/.test(overviewSch
   errors.push('Overview thumbnail queue must enforce a time-sliced budget and the interaction pause window before thumbnail work.');
 }
 
-if (!/activeThemePack/.test(overviewCacheKeySource) || !/(getSlideVmId|dataset\.vmSlideId)/.test(overviewCacheKeySource) || !/overviewThumbRevision/.test(overviewCacheKeySource) || !/OVERVIEW_THUMB_WIDTH/.test(overviewCacheKeySource) || !/OVERVIEW_THUMB_HEIGHT/.test(overviewCacheKeySource)) {
-  errors.push('Overview thumbnail cache key must include theme pack, stable slide id, revision, and thumbnail size.');
+if (!/activeThemePack/.test(overviewCacheKeySource) || !/(getSlideVmId|dataset\.vmSlideId)/.test(overviewCacheKeySource) || !/OVERVIEW_THUMB_WIDTH/.test(overviewCacheKeySource) || !/OVERVIEW_THUMB_HEIGHT/.test(overviewCacheKeySource)) {
+  errors.push('Overview thumbnail cache key must include theme pack, stable slide id, and thumbnail size.');
+}
+
+// revision 不进 key(旧图先上屏、后台刷新),但过期判定机制必须存在。
+if (!/getOverviewThumbRevision/.test(html) || !/bumpOverviewThumbRevision/.test(html)) {
+  errors.push('Overview thumbnail staleness must be tracked via thumb revisions (getOverviewThumbRevision/bumpOverviewThumbRevision).');
 }
 
 if (/getOverviewSlideKey\(slide\)/.test(overviewCacheKeySource) || /overview-\s*\+/.test(overviewCacheKeySource)) {

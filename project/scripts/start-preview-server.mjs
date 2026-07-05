@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { createHash } from 'node:crypto';
-import { spawn } from 'node:child_process';
-import { closeSync, existsSync, mkdirSync, openSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { execFileSync, spawn } from 'node:child_process';
+import { closeSync, existsSync, mkdirSync, openSync, readdirSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import http from 'node:http';
 import https from 'node:https';
 import net from 'node:net';
@@ -10,7 +10,13 @@ import path from 'node:path';
 import { ensureThemePreviewFresh } from './preview-freshness.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
-const serveRoot = path.resolve(process.argv[2] || 'output/theme-preview/ppt');
+// 相对路径按调用方目录解析:npm run(含 --prefix)会把脚本 cwd 切到项目根,INIT_CWD 才是用户所在目录。
+// 未显式传参时的默认值仍锚定项目根(内部调试预览目录),不随调用方目录漂移。
+const CALLER_CWD = process.env.INIT_CWD || process.cwd();
+const serveRootArg = process.argv[2];
+const serveRoot = serveRootArg
+  ? path.resolve(CALLER_CWD, serveRootArg)
+  : path.resolve(ROOT, 'output/theme-preview/ppt');
 const requestedPort = Number(process.env.DASHI_PPT_PREVIEW_PORT || process.argv[3] || 4178);
 const host = process.env.DASHI_PPT_PREVIEW_HOST || process.env.HOST || '0.0.0.0';
 const localName = process.env.DASHI_PPT_PREVIEW_NAME || os.hostname().split('.')[0] || 'localhost';
@@ -18,12 +24,17 @@ const portScanLimit = Math.max(40, Number(process.env.DASHI_PPT_PREVIEW_PORT_SCA
 const lockDir = process.env.DASHI_PPT_PREVIEW_LOCK_DIR || path.join(os.tmpdir(), 'dashiai-ppt-preview-ports');
 const incompleteStartLockStaleMs = 1000;
 
-process.on('uncaughtException', error => exitWithError(error));
-process.on('unhandledRejection', error => exitWithError(error));
+const isDirectRun = Boolean(process.argv[1]) && path.resolve(process.argv[1]) === path.resolve(import.meta.filename);
 
-main().catch(error => exitWithError(error));
+if (isDirectRun) {
+  process.on('uncaughtException', error => exitWithError(error));
+  process.on('unhandledRejection', error => exitWithError(error));
+  main().catch(error => exitWithError(error));
+}
 
 async function main() {
+  reclaimStaleLockDir(lockDir);
+
   if (!existsSync(path.join(serveRoot, 'index.html'))) {
     ensureThemePreviewFresh({ serveRoot });
   }
@@ -315,7 +326,16 @@ async function isStalePortLock(lockFile, bindHost) {
   }
 }
 
-function isPidAlive(pid) {
+// 身份校验:PID 存活只是必要条件——同一 PID 可能已被 OS 复用给完全无关的进程(观测到的复用误判)。
+// 命令行含 start-preview-server.mjs 或 serve-preview-https.mjs 才认定为“属于本预览工具链”:
+// 覆盖已提交的 serve-preview-https.mjs 守护进程,也覆盖端口锁 state:'starting' 阶段(此时 pid
+// 是尚未 spawn 子进程的 start-preview-server.mjs 启动器自身)。
+export function isPidAlive(pid) {
+  if (!isProcessAlive(pid)) return false;
+  return isPreviewToolingCommandLine(processCommandLine(pid));
+}
+
+function isProcessAlive(pid) {
   if (!Number.isInteger(pid) || pid <= 0) return false;
   try {
     process.kill(pid, 0);
@@ -323,6 +343,55 @@ function isPidAlive(pid) {
   } catch {
     return false;
   }
+}
+
+function processCommandLine(pid) {
+  try {
+    return execFileSync('ps', ['-p', String(pid), '-o', 'command='], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+  } catch {
+    return '';
+  }
+}
+
+function isPreviewToolingCommandLine(commandLine) {
+  return /(?:start-preview-server|serve-preview-https)\.mjs/.test(String(commandLine || ''));
+}
+
+// 启动时全锁目录扫描回收:清理死 PID、PID 复用误判(活着但不是本工具链进程)、
+// 或 serveRoot 已从磁盘消失的孤儿端口锁(及同名 .log)。纯函数,便于单测直接调用。
+export function reclaimStaleLockDir(targetLockDir) {
+  const removed = [];
+  let entries = [];
+  try {
+    entries = readdirSync(targetLockDir);
+  } catch {
+    return removed;
+  }
+  for (const entry of entries) {
+    if (!/^preview-\d+\.lock$/.test(entry)) continue;
+    const lockFile = path.join(targetLockDir, entry);
+    let data = null;
+    try {
+      data = JSON.parse(readFileSync(lockFile, 'utf8'));
+    } catch {
+      continue;
+    }
+    const pid = Number.isInteger(data.pid) && data.pid > 0 ? data.pid : null;
+    const lockRoot = data.serveRoot ? path.resolve(String(data.serveRoot)) : null;
+    const orphaned = !pid || !isPidAlive(pid) || (lockRoot !== null && !existsSync(lockRoot));
+    if (!orphaned) continue;
+    try {
+      rmSync(lockFile, { force: true });
+      removed.push(entry);
+    } catch {}
+    const logFile = `${lockFile.slice(0, -'.lock'.length)}.log`;
+    if (existsSync(logFile)) {
+      try {
+        rmSync(logFile, { force: true });
+      } catch {}
+    }
+  }
+  return removed;
 }
 
 function isPortAvailable(port, bindHost) {

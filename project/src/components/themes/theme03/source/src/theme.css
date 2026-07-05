@@ -9,9 +9,9 @@
    - Every class is prefixed `.rd-` so it can't collide after migration.
    - Slides are pure: they only use these classes + inline styles. The deck
      navigation chrome (deck-stage) and the Tweaks panel are separate.
+   Fonts (Archivo, Space Mono, Noto Sans SC) are self-hosted by the host
+   document — no runtime webfont import here.
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
 
 /* ---- token scope ---------------------------------------------------------- */
 .rd-slide {
@@ -22,7 +22,7 @@
   --rd-ink-3:   #908f8a;
   --rd-line:    rgba(22,21,19,0.20);
   --rd-line-2:  rgba(22,21,19,0.10);
-  --rd-blue:    #1834d6;
+  --rd-blue:    #2742ec;
   --rd-blue-ink:#f3f5ff;
   --rd-lime:    #c2f53d;
   --rd-panel:   #1a1916;     /* dark surface */
@@ -68,8 +68,6 @@
   --rd-ink-3:  #84827c;
   --rd-line:   rgba(243,242,238,0.22);
   --rd-line-2: rgba(243,242,238,0.10);
-  --rd-blue:   #91a2ff;
-  --rd-blue-ink:#0d1330;
   --rd-panel:  #f3f2ee;
 }
 
@@ -123,7 +121,7 @@
   font-family: var(--rd-sans);
   font-weight: 900;
   font-size: var(--rd-display);
-  line-height: 1.12;
+  line-height: 1.07;
   letter-spacing: -0.02em;
   margin: 0;
   text-wrap: balance;

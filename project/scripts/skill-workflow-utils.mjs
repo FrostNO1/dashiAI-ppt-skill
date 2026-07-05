@@ -4,7 +4,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   MEDIA_ARRAY_KEYS,
-  createLayoutContracts,
+  createLazyLayoutContracts,
+  explicitNumberBoundsForArrayKey,
   isContractContentArray,
   isMediaArrayKey,
   isNonContentContractValue,
@@ -12,8 +13,10 @@ import {
   isPrunedContractOmit,
   isSerializedReactElementLike,
   normalizeSlidePropsForContract,
+  numberBoundsForArrayItems,
   pruneContractValue,
   reactElementText,
+  validateNumberBounds,
 } from '../src/prop-contract-core.mjs';
 import {
   normalizePublicControls,
@@ -87,12 +90,13 @@ const ROLE_ALIASES = {
   dynamic: 'ambient',
 };
 
-const contracts = createLayoutContracts(THEME_PAGES);
+const contracts = createLazyLayoutContracts(THEME_PAGES);
 const pagesByKey = new Map(THEME_PAGES.map(page => [page.key, page]));
 const themePacksByKey = new Map(THEME_PACKS.map(theme => [theme.key, theme]));
-const manifest = readManifest();
+let manifestCache;
+const getManifest = () => (manifestCache ??= readManifest());
 const HOST_MEDIA_ARRAY_THEMES = new Set(['theme03', 'theme04', 'theme05', 'theme06', 'theme07', 'theme08', 'theme09', 'theme10']);
-const NEUTRAL_PLACEHOLDERS = ['请输入文本', '请输入', '请输'];
+export const NEUTRAL_PLACEHOLDERS = ['请输入文本', '请输入', '请输'];
 
 export function parseArgs(argv) {
   const args = { _: [] };
@@ -347,12 +351,14 @@ export function inspectLayout(layout, { compact = false } = {}) {
   const copyBudgets = getCopyBudgets(defaultProps, copyKeyRoots);
   // count 绑定解析到真实数组键(修正 items/stats/data 等静态错配)。
   const resolvedBindings = (countBindings || []).map(binding => ({ ...binding, arrays: resolveBindingArrays(binding, defaultProps, controls) }));
+  // propShapes 提前算出,供 arrayMeta 过滤掉未进入可填契约的私有视觉字段(如颜色)。
+  const propShapesForArrayMeta = buildFillablePropShapes(defaultProps, copyKeys, [...copyKeyRoots, ...arrayKeys]);
   // JAD-213:arrayMeta 含语义 role;JAD-212:覆盖 copy 内数组并匹配其 count 控件。
-  const arrayMeta = buildArrayMeta(defaultProps, countBindings, controls, { withItemRoles: true });
+  const arrayMeta = buildArrayMeta(defaultProps, countBindings, controls, { withItemRoles: true, propShapes: propShapesForArrayMeta });
   const copyRoles = buildCopyRoles(copyKeys);
   const fieldContracts = buildFieldContracts({ copyKeys, copyRoles, arrayMeta, decorativeKeys, mediaSlots });
-  const fillPlan = buildFillPlan({ copyKeys, copyBudgets, copyRoles, arrayMeta, mediaSlots, defaultProps, controls, countBindings, lengthBindings });
-  const propShapes = buildFillablePropShapes(defaultProps, copyKeys, [...copyKeyRoots, ...arrayKeys]);
+  const fillPlan = buildFillPlan({ copyKeys, copyBudgets, copyRoles, arrayMeta, mediaSlots, defaultProps, controls, countBindings, lengthBindings, numberBoundsConfig: contract?.numberBounds });
+  const propShapes = propShapesForArrayMeta;
   // JAD-212:正文全由组件硬编码(count 指向的数组缺席且无可填正文)时标记 contentLocked。
   const contentLockedReason = detectContentLocked({ copyKeys, copyRoles, arrayMeta, resolvedBindings, defaultProps });
   const palette = paletteColorsForLayout(defaultProps);
@@ -482,13 +488,14 @@ export function normalizeProps(layout, props = {}) {
     };
   }
   const aliasResult = resolvePublicPropAliases(props, record.controls);
-  const warnings = unknownPropKeys(record, props).map(key => unknownPropWarning(record, key));
+  const unknownWarnings = unknownPropKeys(record, props).map(key => unknownPropWarning(record, key));
   const mediaSlots = getMediaSlots(record);
   try {
-    const authoredShapeErrors = validateAuthoredFillableProps(aliasResult.props, record, mediaSlots);
-    if (authoredShapeErrors.length) {
-      throw new Error(`Slide props mismatch for "${layout}": ${authoredShapeErrors.join('; ')}`);
+    const authoredShape = validateAuthoredFillableProps(aliasResult.props, record, mediaSlots);
+    if (authoredShape.errors.length) {
+      throw new Error(`Slide props mismatch for "${layout}": ${authoredShape.errors.join('; ')}`);
     }
+    const warnings = [...unknownWarnings, ...authoredShape.warnings];
     const propsWithAuthoredMediaCounts = backfillMediaCountKeys(props, mediaSlots);
     const propsWithCountSafety = normalizeSlidePropsForContract(layout, propsWithAuthoredMediaCounts, record.contract);
     const propsWithDefaults = mergeDefaultArrayTails(propsWithCountSafety, record.defaultProps, aliasResult.props, record.countBindings);
@@ -507,7 +514,7 @@ export function normalizeProps(layout, props = {}) {
       props: props || {},
       publicProps: toPublicProps(props || {}, record.controls),
       appliedAliases: aliasResult.appliedAliases,
-      warnings,
+      warnings: unknownWarnings,
       errors: [publicErrorMessage(error.message, record.controls)],
     };
   }
@@ -526,16 +533,31 @@ function validateAuthoredFillableProps(props = {}, record, mediaSlots = getMedia
   );
   const countBoundLengths = countBoundLengthsForProps(props, record.countBindings);
   const countBoundPaths = new Set((record.countBindings || []).flatMap(binding => binding.arrays || []));
+  const nestedArrayLens = buildNestedArrayLensMap(record.defaultProps, allowedNestedArrays);
   const errors = [];
+  const warnings = [];
   for (const [key, value] of Object.entries(props || {})) {
     if (!Object.prototype.hasOwnProperty.call(propShapes, key)) continue;
     if (isPrivateDefaultRoundTrip(value, record.defaultProps?.[key]) && !containsPrivatePosToneField(value)) continue;
-    validateFillableValueShape(value, propShapes[key], `props.${key}`, errors, record.defaultProps?.[key], allowedNestedArrays, countBoundLengths, countBoundPaths);
+    const explicitBoundsByField = explicitNumberBoundsForArrayKey(record.contract?.numberBounds, key);
+    validateFillableValueShape(value, propShapes[key], `props.${key}`, errors, warnings, record.defaultProps?.[key], allowedNestedArrays, countBoundLengths, countBoundPaths, undefined, nestedArrayLens, explicitBoundsByField);
   }
-  return errors;
+  return { errors, warnings };
 }
 
-function validateFillableValueShape(value, shape, field, errors, defaultValue = undefined, allowedNestedArrays = new Set(), countBoundLengths = new Map(), countBoundPaths = new Set(), numberBounds = new Map()) {
+// 逐下标期望长度:与 inspect:layout 暴露的 fixedLength/fixedLengths 同一来源
+// (arraysAtPath 按父级数组原始顺序取每项的嵌套数组长度),供报错时一次性列出。
+function buildNestedArrayLensMap(defaultProps, allowedNestedArrays) {
+  const map = new Map();
+  for (const pathName of allowedNestedArrays) {
+    if (isFreeListField(pathFieldName(pathName))) continue;
+    const lens = arraysAtPath(defaultProps, pathName).map(item => (Array.isArray(item) ? item.length : 0));
+    if (lens.length) map.set(pathName, lens);
+  }
+  return map;
+}
+
+function validateFillableValueShape(value, shape, field, errors, warnings = [], defaultValue = undefined, allowedNestedArrays = new Set(), countBoundLengths = new Map(), countBoundPaths = new Set(), numberBounds = new Map(), nestedArrayLens = new Map(), explicitBoundsByField = null) {
   if (!isPrivatePosToneField(pathFieldName(field)) && !Array.isArray(value) && !isPlainObject(value) && isPrivateDefaultRoundTrip(value, defaultValue)) return;
   if (Array.isArray(shape)) {
     if (!Array.isArray(value)) {
@@ -548,8 +570,17 @@ function validateFillableValueShape(value, shape, field, errors, defaultValue = 
       errors.push(`countBinding mismatch ${countBound.key}=${countBound.count}; ${String(field).replace(/^props\./, '')} has ${value.length}`);
       return;
     }
-    if (countBound == null && !countBoundPaths.has(contractPath) && allowedNestedArrays.has(contractPath) && Array.isArray(defaultValue) && value.length !== defaultValue.length) {
-      errors.push(`${String(field).replace(/^props\./, '')}: fixed nested array length ${value.length} does not match default ${defaultValue.length}`);
+    if (
+      countBound == null
+      && !countBoundPaths.has(contractPath)
+      && allowedNestedArrays.has(contractPath)
+      && Array.isArray(defaultValue)
+      && value.length !== defaultValue.length
+      && !isFreeListField(pathFieldName(field))
+    ) {
+      const lens = nestedArrayLens.get(contractPath);
+      const lensText = lens && lens.length > 1 ? `; expected lengths by index: [${lens.join(', ')}]` : '';
+      errors.push(`${String(field).replace(/^props\./, '')}: fixed nested array length ${value.length} does not match default ${defaultValue.length}${lensText}`);
       return;
     }
     if (
@@ -564,7 +595,7 @@ function validateFillableValueShape(value, shape, field, errors, defaultValue = 
       errors.push(`${String(field).replace(/^props\./, '')}: expected tuple length ${shape.length}`);
       return;
     }
-    const itemNumberBounds = Array.isArray(defaultValue) ? numberBoundsForArrayItems(defaultValue) : new Map();
+    const itemNumberBounds = Array.isArray(defaultValue) ? numberBoundsForArrayItems(defaultValue, explicitBoundsByField) : new Map();
     value.forEach((item, index) => {
       const itemShape = isTupleShape ? shape[index] : shape[0];
       validateFillableValueShape(
@@ -572,11 +603,13 @@ function validateFillableValueShape(value, shape, field, errors, defaultValue = 
         itemShape,
         `${field}[${index}]`,
         errors,
+        warnings,
         Array.isArray(defaultValue) ? defaultValue[index] : undefined,
         allowedNestedArrays,
         countBoundLengths,
         countBoundPaths,
         itemNumberBounds,
+        nestedArrayLens,
       );
     });
     return;
@@ -594,9 +627,9 @@ function validateFillableValueShape(value, shape, field, errors, defaultValue = 
         errors.push(`${field}.${key}: unknown nested prop; expected ${formatExpectedKeys(allowed)}`);
         continue;
       }
-      validateFillableValueShape(item, shape[key], `${field}.${key}`, errors, defaultValue?.[key], allowedNestedArrays, countBoundLengths, countBoundPaths);
+      validateFillableValueShape(item, shape[key], `${field}.${key}`, errors, warnings, defaultValue?.[key], allowedNestedArrays, countBoundLengths, countBoundPaths, undefined, nestedArrayLens);
       const bounds = numberBounds.get(key);
-      if (bounds) validateNumberBounds(item, bounds, `${field}.${key}`, errors);
+      if (bounds) validateNumberBounds(item, bounds, `${field}.${key}`, bounds.explicit ? errors : warnings);
     }
     return;
   }
@@ -623,64 +656,10 @@ function isPrivatePosToneField(key) {
   return /^(pos|tone)$/i.test(String(key || ''));
 }
 
-function numberBoundsForArrayItems(items = []) {
-  const result = new Map();
-  const objects = items.filter(isPlainObject);
-  const keys = new Set(objects.flatMap(item => Object.keys(item)));
-  const bcgBubbleShape = objects.some(item => ['gx', 'gy', 'size', 'q'].every(key => Object.prototype.hasOwnProperty.call(item, key)));
-  for (const key of keys) {
-    if (bcgBubbleShape && (key === 'gx' || key === 'gy')) {
-      result.set(key, { min: 0, max: 1 });
-      continue;
-    }
-    if (bcgBubbleShape && key === 'size') {
-      result.set(key, { min: 0.2, max: 1.1 });
-      continue;
-    }
-    if (bcgBubbleShape && key === 'q') {
-      result.set(key, { min: 0, max: 3 });
-      continue;
-    }
-    if (isPercentDistributionField(key, objects)) {
-      result.set(key, { min: 0, max: 100 });
-      continue;
-    }
-    const bounds = numberBoundsForValues(objects.map(item => item?.[key]));
-    if (bounds) result.set(key, bounds);
-  }
-  return result;
-}
-
-function isPercentDistributionField(key, objects) {
-  const values = objects.map(item => item?.[key]).filter(value => typeof value === 'number' && Number.isFinite(value));
-  if (values.length < 2 || values.some(value => value < 0 || value > 100)) return false;
-  const labelKeys = ['name', 'label', 'category', 'segment', 'title'];
-  const hasLabels = objects.every(item => labelKeys.some(labelKey => typeof item?.[labelKey] === 'string'));
-  if (!hasLabels) return false;
-  const sum = values.reduce((total, value) => total + value, 0);
-  return sum >= 99 && sum <= 101;
-}
-
-function numberBoundsForValues(values = []) {
-  const numbers = values.filter(value => typeof value === 'number' && Number.isFinite(value));
-  if (numbers.length < 2) return null;
-  const min = Math.min(...numbers);
-  const max = Math.max(...numbers);
-  return {
-    min: min >= 0 ? 0 : min * 1.1,
-    max: max <= 0 ? 0 : max * 1.1,
-  };
-}
-
-function validateNumberBounds(value, bounds, field, errors) {
-  if (typeof value !== 'number' || !Number.isFinite(value)) return;
-  if (value < bounds.min) errors.push(`${field}: expected >= ${formatNumber(bounds.min)}`);
-  if (value > bounds.max) errors.push(`${field}: expected <= ${formatNumber(bounds.max)}`);
-}
-
-function formatNumber(value) {
-  return Number.isInteger(value) ? String(value) : String(Number(value.toFixed(2)));
-}
+// numberBoundsForArrayItems / validateNumberBounds live in src/prop-contract-core.mjs and are
+// imported above -- this is the same derivation the render-time contract and the client-side
+// editing runtime use, so inspect:layout / props:safe / validate:goal-spec never drift from
+// what actually gets enforced (see explicitNumberBoundsForArrayKey for page-declared overrides).
 
 function countBoundLengthsForProps(props = {}, countBindings = []) {
   const result = new Map();
@@ -831,7 +810,7 @@ function publicControl(control) {
   return {
     key: control.key,
     publicKey: control.publicKey || control.key,
-    label: control.label || control.publicLabel || control.key,
+    label: control.label || control.key,
     type: control.type,
     default: control.default,
     min: control.min,
@@ -1121,7 +1100,7 @@ export function getLayoutRecord(layout) {
   const page = pagesByKey.get(layout);
   if (!page) return null;
   const baseContract = contracts.get(layout);
-  const manifestLayout = manifest.layouts?.[layout] || {};
+  const manifestLayout = getManifest().layouts?.[layout] || {};
   const controls = normalizePublicControls(manifestLayout.controls || baseContract?.controls || [], { layout, themeKey: page.themeKey });
   const rawCountBindings = mergeCountBindings(manifestLayout.countBindings, baseContract?.countBindings);
   const countBindings = resolveCountBindings(rawCountBindings, baseContract?.defaultProps || {}, controls);
@@ -1535,11 +1514,15 @@ function paletteColorsForLayout(defaultProps = {}) {
   return null;
 }
 
-function arrayItemColors(items = []) {
+// allowedKeys: null = no extra filtering (legacy callers); a Set (possibly
+// empty) restricts which color-like keys are allowed to surface, so callers
+// that know the field's public propShape can suppress private visual colors.
+function arrayItemColors(items = [], allowedKeys = null) {
   const colors = [];
   for (const item of items) {
     if (!isPlainObject(item)) continue;
     for (const [key, value] of Object.entries(item)) {
+      if (allowedKeys && !allowedKeys.has(key)) continue;
       if (/colou?r|tone|accent|fill|tint|hex|swatch/i.test(key) && isColorString(value)) colors.push(value);
     }
   }
@@ -1630,10 +1613,10 @@ function dedupeFieldContracts(rows) {
   return result;
 }
 
-function buildFillPlan({ copyKeys = [], copyBudgets = {}, copyRoles = {}, arrayMeta = [], mediaSlots = [], defaultProps = {}, controls = [], countBindings = [], lengthBindings = [] } = {}) {
+function buildFillPlan({ copyKeys = [], copyBudgets = {}, copyRoles = {}, arrayMeta = [], mediaSlots = [], defaultProps = {}, controls = [], countBindings = [], lengthBindings = [], numberBoundsConfig = {} } = {}) {
   return {
     text: buildFillPlanText(copyKeys, copyBudgets, copyRoles, defaultProps),
-    arrays: buildFillPlanArrays(arrayMeta, copyBudgets, copyRoles, defaultProps, controls, countBindings, lengthBindings),
+    arrays: buildFillPlanArrays(arrayMeta, copyBudgets, copyRoles, defaultProps, controls, countBindings, lengthBindings, numberBoundsConfig),
     media: buildFillPlanMedia(mediaSlots),
   };
 }
@@ -1650,13 +1633,14 @@ function buildFillPlanText(copyKeys, copyBudgets, copyRoles, defaultProps) {
     .filter(item => item.type !== 'object' && item.type !== 'array');
 }
 
-function buildFillPlanArrays(arrayMeta, copyBudgets, copyRoles, defaultProps, controls, countBindings, lengthBindings) {
+function buildFillPlanArrays(arrayMeta, copyBudgets, copyRoles, defaultProps, controls, countBindings, lengthBindings, numberBoundsConfig = {}) {
   const resolvedBindings = (countBindings || []).map(binding => ({ ...binding, arrays: resolveBindingArrays(binding, defaultProps, controls) }));
   return (arrayMeta || [])
     .map(meta => {
       const items = itemsForArrayPath(defaultProps, meta.key);
       const fieldItems = items;
-      const itemFields = fillPlanItemFields(meta.key, fieldItems.length ? fieldItems : items, copyBudgets, copyRoles);
+      const explicitBoundsByField = explicitNumberBoundsForArrayKey(numberBoundsConfig, meta.key);
+      const itemFields = fillPlanItemFields(meta.key, fieldItems.length ? fieldItems : items, copyBudgets, copyRoles, explicitBoundsByField);
       const nestedArrays = fillPlanNestedArrays(meta.key, items, copyBudgets, copyRoles, defaultProps, controls, resolvedBindings, lengthBindings);
       const itemShape = fillPlanArrayItemShape(items, meta.key);
       const itemBudget = fillPlanStringArrayItem(meta.key, itemShape, copyBudgets, copyRoles);
@@ -1716,10 +1700,15 @@ function buildFillPlanMedia(mediaSlots = []) {
     }));
 }
 
-function fillPlanItemFields(arrayKey, items, copyBudgets, copyRoles) {
+function fillPlanItemFields(arrayKey, items, copyBudgets, copyRoles, explicitBoundsByField = null) {
   const prunedItems = pruneContractItems(items, arrayKey);
   const shape = prunedItems.find(isPlainObject);
   if (!shape) return {};
+  // 与 validateFillableValueShape 校验时同一推导(numberBoundsForArrayItems,来自
+  // src/prop-contract-core.mjs,单一实现):只有数组项的直接标量字段(无点号的顶层 key)
+  // 才会被数值上下限拦截,深一层嵌套字段目前不在校验范围内,因此这里也只对顶层字段算
+  // numericBounds,避免暴露一个实际并不会被拦的假契约。
+  const itemNumberBounds = numberBoundsForArrayItems(items.filter(isPlainObject), explicitBoundsByField);
   const fields = {};
   function collect(value, fieldPath) {
     if (Array.isArray(value)) return;
@@ -1729,15 +1718,35 @@ function fillPlanItemFields(arrayKey, items, copyBudgets, copyRoles) {
     }
     const pathName = `${arrayKey}[].${fieldPath}`;
     if (!isFillableCopyLeaf(pathName, value)) return;
+    const bounds = fieldPath.includes('.') ? null : itemNumberBounds.get(fieldPath);
     fields[fieldPath] = {
       role: normalizeFieldContractRole(copyRoles[pathName] || copyRoleForField(pathName)),
       type: simpleValueType(value),
       ...(simpleValueType(value) === 'number' ? { numericRange: numericRangeForValues(items.map(item => valueAtPath(item, fieldPath))) } : {}),
+      // numericBounds:props:safe/validate:goal-spec/render 实际执行数值上下限校验时的同一
+      // 推导(numberBoundsForArrayItems)。enforced:false 表示这是从默认示例数据反推的提示性
+      // 范围,不是硬限制——真实业务数值可以超出;enforced:true(显式声明或识别出的几何/坐标
+      // 形状)才会被拦截。semantics 标注该字段更像比例(normalized,0-1)还是屏幕坐标
+      // (coordinate),帮助判断该填比例还是真实值。
+      ...(bounds ? { numericBounds: roundNumberBounds(bounds) } : {}),
       ...(copyBudgets[pathName]?.maxChars ? { maxChars: copyBudgets[pathName].maxChars } : {}),
     };
   }
   for (const [field, value] of Object.entries(shape)) collect(value, field);
   return fields;
+}
+
+function roundNumberBounds(bounds) {
+  return {
+    min: roundBoundNumber(bounds.min),
+    max: roundBoundNumber(bounds.max),
+    enforced: bounds.explicit === true,
+    ...(bounds.semantics ? { semantics: bounds.semantics } : {}),
+  };
+}
+
+function roundBoundNumber(value) {
+  return Number.isInteger(value) ? value : Number(value.toFixed(2));
 }
 
 function fillPlanNestedArrays(arrayKey, items, copyBudgets, copyRoles, defaultProps, controls, resolvedBindings, lengthBindings) {
@@ -1776,29 +1785,37 @@ function fillPlanNestedArrays(arrayKey, items, copyBudgets, copyRoles, defaultPr
   return nested;
 }
 
+// 与 validateFillableValueShape 的定长嵌套数组判定同口径:只要不是自由列表字段
+// (isFreeListField),该嵌套数组在鉴权时就必须逐下标匹配默认长度——不限于数值内容
+// (如 quadrants[].dirs 是字符串数组,仍会被拦)。之前这里额外要求数值内容
+// (isFixedCapacityArray) 会漏报字符串类的定长嵌套数组,导致契约不透明。
+function lengthLockedArrayLens(field, arrays = []) {
+  if (isFreeListField(field)) return null;
+  const lengths = arrays.filter(Array.isArray).map(value => value.length);
+  if (!lengths.length) return null;
+  const unique = new Set(lengths);
+  return unique.size === 1 ? { fixedLength: lengths[0] } : { fixedLengths: lengths };
+}
+
 function fixedLengthForNestedArray(items, field) {
   const arrays = (items || [])
     .map(item => item?.[field])
     .filter(Array.isArray);
-  if (!isFixedCapacityArray(field, arrays)) return null;
-  const lengths = arrays.map(value => value.length);
-  if (!lengths.length || lengths.some(length => length <= 0)) return null;
-  const unique = new Set(lengths);
-  return unique.size === 1 ? { fixedLength: lengths[0] } : { fixedLengths: lengths };
+  return lengthLockedArrayLens(field, arrays);
 }
 
 function fixedLengthForArrayPath(defaultProps, pathName) {
   if (!String(pathName || '').includes('[].')) return null;
   const arrays = arraysAtPath(defaultProps, pathName);
-  if (!isFixedCapacityArray(arrayFieldName(pathName), arrays)) return null;
-  const lengths = arrays.map(value => value.length);
-  if (!lengths.length || lengths.some(length => length <= 0)) return null;
-  const unique = new Set(lengths);
-  return unique.size === 1 ? { fixedLength: lengths[0] } : { fixedLengths: lengths };
+  return lengthLockedArrayLens(arrayFieldName(pathName), arrays);
+}
+
+function isFreeListField(field) {
+  return /^(tags?|chips?|bullets?|labels?)$/i.test(String(field || ''));
 }
 
 function isFixedCapacityArray(field, arrays = []) {
-  if (/^(tags?|chips?|bullets?|labels?)$/i.test(String(field || ''))) return false;
+  if (isFreeListField(field)) return false;
   return arrays.some(array => Array.isArray(array) && array.some(isFixedCapacityArrayItem));
 }
 
@@ -2179,7 +2196,7 @@ function collectNumbers(value) {
 }
 
 // 每个内容数组的填充元数据:默认条目数、绑定的 count 控件、范围、默认配色、语义角色、字段角色。
-function buildArrayMeta(defaultProps = {}, countBindings = [], controls = [], { withItemRoles = false } = {}) {
+function buildArrayMeta(defaultProps = {}, countBindings = [], controls = [], { withItemRoles = false, propShapes = null } = {}) {
   const paths = discoverContentArrayPaths(defaultProps);
   const resolvedBindings = (countBindings || []).map(binding => ({ ...binding, arrays: resolveBindingArrays(binding, defaultProps, controls) }));
   return paths.slice(0, 8).map(pathName => {
@@ -2189,7 +2206,16 @@ function buildArrayMeta(defaultProps = {}, countBindings = [], controls = [], { 
     const nested = isNestedArrayPath(pathName);
     const fixedCapacity = nested && isFixedCapacityArray(arrayFieldName(pathName), [items]);
     const maxCount = countKey || !nested || fixedCapacity ? maxCountForArray(max, items) : undefined;
-    const colors = [...new Set(arrayItemColors(items))];
+    // Only surface a color as an inspect-facing default when the array's
+    // item shape actually keeps that field in the fillable propShapes --
+    // otherwise it is a private visual field the contract layer already
+    // excludes from authoring, and arrayMeta should not leak it back out.
+    const shapeArray = propShapes ? valueAtPath(propShapes, pathName) : undefined;
+    const itemShape = Array.isArray(shapeArray) ? shapeArray[0] : undefined;
+    const publicColorKeys = isPlainObject(itemShape)
+      ? new Set(Object.keys(itemShape).filter(key => /colou?r|tone|accent|fill|tint|hex|swatch/i.test(key)))
+      : null;
+    const colors = [...new Set(arrayItemColors(items, publicColorKeys))];
     const meta = {
       key: pathName,
       role: arrayRole(pathName, items),
@@ -2277,7 +2303,7 @@ export function copyBudget(pathName, value) {
     // 刊头 mono 标语(panelEn 等):单行不换行,约束在 ~14。
     tagline: Math.min(14, Math.max(12, Math.ceil(base * 1.1))),
     display: Math.max(18, Math.min(36, Math.ceil(base * 1.8))),
-    compact: Math.max(16, Math.min(42, Math.ceil(base * 1.8))),
+    compact: Math.max(18, Math.min(42, Math.ceil(base * 1.8))),
     brief: Math.max(36, Math.min(80, Math.ceil(base * 1.6))),
     body: Math.max(36, Math.min(120, Math.ceil(base * 2.2))),
   }[density];
@@ -2293,7 +2319,7 @@ export function inferCopyDensity(pathName) {
   if (!nested && /^(panelen|panelsub|paneltag)$/.test(field)) return 'tagline';
   if (isMetricFieldName(field)) return 'metric';
   if (!nested && /^(title|titletop|titlebottom|headline|headlinehl|headlinetail|statement|quote|word|brand|kicker)$/.test(field)) return 'display';
-  if (/^(lead|subtitle|sub|desc|description|summary|note|caption|detail|footnote)$/.test(field)) return 'brief';
+  if (/^(lead|subtitle|sub|desc|description|summary|note|caption|detail|footnote|intro|insight|excerpt|takeaway|reason|conclusion)$/.test(field)) return 'brief';
   if (/^(body|copy|paragraph)$/.test(field)) return 'body';
   if (/^(title|headline|label|name|kicker|tag|chip|pill|category)$/.test(field)) return 'compact';
   return 'compact';

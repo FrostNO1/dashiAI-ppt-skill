@@ -27,10 +27,8 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "unit": " 行",
-        "description": "右侧玻璃面板中竖排元信息的行数。",
+        "unit": "行",
         "publicKey": "metaCount",
-        "publicLabel": "元信息行数",
         "desc": "右侧玻璃面板中竖排元信息的行数。"
       },
       {
@@ -41,10 +39,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 枚",
-        "description": "导语下方贴纸化关键词的数量。",
+        "unit": "枚",
         "publicKey": "chipCount",
-        "publicLabel": "关键词贴纸",
         "desc": "导语下方贴纸化关键词的数量。"
       },
       {
@@ -52,9 +48,7 @@ export const pages = [
         "label": "导语",
         "type": "boolean",
         "default": true,
-        "description": "标题下方一句话导语的显示。",
         "publicKey": "showLead",
-        "publicLabel": "导语",
         "desc": "标题下方一句话导语的显示。"
       },
       {
@@ -62,9 +56,7 @@ export const pages = [
         "label": "柔光光斑",
         "type": "boolean",
         "default": true,
-        "description": "背景柔光 bokeh 光斑的显示。",
         "publicKey": "showBokeh",
-        "publicLabel": "柔光光斑",
         "desc": "背景柔光 bokeh 光斑的显示。"
       },
       {
@@ -94,9 +86,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "kicker、荧光高亮、光球与面板序号的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "kicker、荧光高亮、光球与面板序号的主题色。"
       },
       {
@@ -104,9 +94,7 @@ export const pages = [
         "label": "脚注说明",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* mono 脚注的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "脚注说明",
         "desc": "底部 */ … /* mono 脚注的显示。"
       }
     ],
@@ -163,10 +151,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 枚",
-        "description": "副标下方贴纸化关键词药丸的数量。",
+        "unit": "枚",
         "publicKey": "pillCount",
-        "publicLabel": "关键词药丸",
         "desc": "副标下方贴纸化关键词药丸的数量。"
       },
       {
@@ -174,9 +160,7 @@ export const pages = [
         "label": "玻璃光球",
         "type": "boolean",
         "default": true,
-        "description": "标题上方招牌玻璃高光球体的显示。",
         "publicKey": "showOrb",
-        "publicLabel": "玻璃光球",
         "desc": "标题上方招牌玻璃高光球体的显示。"
       },
       {
@@ -184,9 +168,7 @@ export const pages = [
         "label": "副标题",
         "type": "boolean",
         "default": true,
-        "description": "主标题下方副标题的显示。",
         "publicKey": "showSubtitle",
-        "publicLabel": "副标题",
         "desc": "主标题下方副标题的显示。"
       },
       {
@@ -194,9 +176,7 @@ export const pages = [
         "label": "柔光光斑",
         "type": "boolean",
         "default": true,
-        "description": "四角散落柔光 bokeh 光斑的显示。",
         "publicKey": "showBokeh",
-        "publicLabel": "柔光光斑",
         "desc": "四角散落柔光 bokeh 光斑的显示。"
       },
       {
@@ -226,9 +206,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "光球、荧光高亮、光斑与首枚药丸的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "光球、荧光高亮、光斑与首枚药丸的主题色。"
       },
       {
@@ -236,9 +214,7 @@ export const pages = [
         "label": "脚注说明",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* mono 脚注的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "脚注说明",
         "desc": "底部 */ … /* mono 脚注的显示。"
       }
     ],
@@ -279,10 +255,8 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "unit": " 块",
-        "description": "底排元信息瓦片的数量（按数量均分整行宽度）。",
+        "unit": "块",
         "publicKey": "tileCount",
-        "publicLabel": "元信息瓦",
         "desc": "底排元信息瓦片的数量（按数量均分整行宽度）。"
       },
       {
@@ -290,9 +264,7 @@ export const pages = [
         "label": "数字瓦",
         "type": "boolean",
         "default": true,
-        "description": "右上 accent 数字瓦的显示；关闭时标题瓦横向铺满。",
         "publicKey": "showBigTile",
-        "publicLabel": "数字瓦",
         "desc": "右上 accent 数字瓦的显示；关闭时标题瓦横向铺满。"
       },
       {
@@ -322,9 +294,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "kicker、数字瓦与徽章的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "kicker、数字瓦与徽章的主题色。"
       },
       {
@@ -332,9 +302,7 @@ export const pages = [
         "label": "脚注说明",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* mono 脚注的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "脚注说明",
         "desc": "底部 */ … /* mono 脚注的显示。"
       }
     ],
@@ -383,10 +351,8 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "unit": " 项",
-        "description": "刊头牌底部内嵌规格指标条的项数（自动均分）。",
+        "unit": "项",
         "publicKey": "statCount",
-        "publicLabel": "规格指标",
         "desc": "刊头牌底部内嵌规格指标条的项数（自动均分）。"
       },
       {
@@ -394,9 +360,7 @@ export const pages = [
         "label": "贴纸标签",
         "type": "boolean",
         "default": true,
-        "description": "刊头牌右上角贴纸化标签的显示。",
         "publicKey": "showSticker",
-        "publicLabel": "贴纸标签",
         "desc": "刊头牌右上角贴纸化标签的显示。"
       },
       {
@@ -404,9 +368,7 @@ export const pages = [
         "label": "柔光光斑",
         "type": "boolean",
         "default": true,
-        "description": "牌体背后满版柔光 bokeh 光斑的显示。",
         "publicKey": "showBokeh",
-        "publicLabel": "柔光光斑",
         "desc": "牌体背后满版柔光 bokeh 光斑的显示。"
       },
       {
@@ -436,9 +398,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "kicker、荧光高亮、贴纸与首项指标的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "kicker、荧光高亮、贴纸与首项指标的主题色。"
       },
       {
@@ -446,9 +406,7 @@ export const pages = [
         "label": "脚注说明",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* mono 脚注的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "脚注说明",
         "desc": "底部 */ … /* mono 脚注的显示。"
       }
     ],
@@ -499,10 +457,8 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "封面展示的关键指标卡片数量。",
+        "unit": "张",
         "publicKey": "statCount",
-        "publicLabel": "指标卡数量",
         "desc": "封面展示的关键指标卡片数量。"
       },
       {
@@ -510,9 +466,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": false,
-        "description": "是否高亮强调其中某一张指标卡。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中某一张指标卡。"
       },
       {
@@ -523,9 +477,7 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "description": "被强调的指标卡序号（从 0 开始），仅在「重点强调」开启时生效。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几张",
         "desc": "被强调的指标卡序号（从 0 开始），仅在「重点强调」开启时生效。"
       },
       {
@@ -555,9 +507,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "光球与强调卡片的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "光球与强调卡片的主题色。"
       },
       {
@@ -565,9 +515,7 @@ export const pages = [
         "label": "脚注说明",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部数据口径脚注。",
         "publicKey": "showCaption",
-        "publicLabel": "脚注说明",
         "desc": "是否显示底部数据口径脚注。"
       }
     ],
@@ -618,10 +566,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 个",
-        "description": "主数字下方的副统计卡数量。",
+        "unit": "个",
         "publicKey": "secondaryCount",
-        "publicLabel": "副指标数量",
         "desc": "主数字下方的副统计卡数量。"
       },
       {
@@ -651,9 +597,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "主数字与荧光高亮的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "主数字与荧光高亮的颜色。"
       },
       {
@@ -661,9 +605,7 @@ export const pages = [
         "label": "荧光高亮",
         "type": "boolean",
         "default": true,
-        "description": "是否给说明句中的关键词加荧光底纹。",
         "publicKey": "showHighlighter",
-        "publicLabel": "荧光高亮",
         "desc": "是否给说明句中的关键词加荧光底纹。"
       },
       {
@@ -671,9 +613,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮其中一个副指标。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮其中一个副指标。"
       },
       {
@@ -684,9 +624,7 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "description": "被强调的副指标序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的副指标序号（从 0 开始）。"
       },
       {
@@ -704,9 +642,7 @@ export const pages = [
             "label": "左对齐"
           }
         ],
-        "description": "整页内容的对齐方式。",
         "publicKey": "align",
-        "publicLabel": "对齐方式",
         "desc": "整页内容的对齐方式。"
       },
       {
@@ -714,9 +650,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -770,10 +704,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "unit": " 个",
-        "description": "展示的关键数字卡数量。",
+        "unit": "个",
         "publicKey": "itemCount",
-        "publicLabel": "数字卡数量",
         "desc": "展示的关键数字卡数量。"
       },
       {
@@ -791,9 +723,7 @@ export const pages = [
             "label": "一行排开"
           }
         ],
-        "description": "数字卡的网格列数。",
         "publicKey": "columns",
-        "publicLabel": "每行列数",
         "desc": "数字卡的网格列数。"
       },
       {
@@ -801,9 +731,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一个数字卡渲染成荧光「印章」贴纸。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一个数字卡渲染成荧光「印章」贴纸。"
       },
       {
@@ -814,9 +742,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的数字卡序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的数字卡序号（从 0 开始）。"
       },
       {
@@ -850,9 +776,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "被强调数字卡的荧光贴纸颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "强调色",
         "desc": "被强调数字卡的荧光贴纸颜色。"
       },
       {
@@ -860,9 +784,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -927,10 +849,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "右侧影像区图片数（0 数据区铺满 / 1 满版 / 2 上下 / 3 一大两小），按比例自适应。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "右侧影像区图片数（0 数据区铺满 / 1 满版 / 2 上下 / 3 一大两小），按比例自适应。"
       },
       {
@@ -948,9 +868,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "裁剪填满铺满拼块，或完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "裁剪填满铺满拼块，或完整自适应按原始比例显示。"
       },
       {
@@ -958,9 +876,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传影像，槽位自适应图片比例。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传影像，槽位自适应图片比例。"
       },
       {
@@ -971,10 +887,8 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "unit": " 条",
-        "description": "榜单拼块展示的条目数量。",
+        "unit": "条",
         "publicKey": "itemCount",
-        "publicLabel": "榜单条目",
         "desc": "榜单拼块展示的条目数量。"
       },
       {
@@ -982,9 +896,7 @@ export const pages = [
         "label": "占比环块",
         "type": "boolean",
         "default": true,
-        "description": "集中度占比环形拼块的显示。",
         "publicKey": "showRatio",
-        "publicLabel": "占比环块",
         "desc": "集中度占比环形拼块的显示。"
       },
       {
@@ -992,9 +904,7 @@ export const pages = [
         "label": "金句块",
         "type": "boolean",
         "default": true,
-        "description": "底部金句拼块的显示。",
         "publicKey": "showQuote",
-        "publicLabel": "金句块",
         "desc": "底部金句拼块的显示。"
       },
       {
@@ -1028,9 +938,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "荧光、占比环与强调元素的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "荧光、占比环与强调元素的颜色。"
       },
       {
@@ -1038,9 +946,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -1056,6 +962,7 @@ export const pages = [
         "label": "2024 美国 AI 大额融资总额 · 美元",
         "sub": "单笔 ≥ 1 亿美元口径"
       },
+      "heroKicker": "Total Capital",
       "listTitle": "单笔融资 Top 3",
       "list": [
         {
@@ -1079,6 +986,7 @@ export const pages = [
         "unit": "%",
         "label": "旧金山湾区占比"
       },
+      "ratioKicker": "Concentration",
       "quote": {
         "text": "资本正从「赌叙事」转向「看兑现」。",
         "mark": "看兑现"
@@ -1115,10 +1023,8 @@ export const pages = [
         "min": 3,
         "max": 7,
         "step": 1,
-        "unit": " 章",
-        "description": "目录展示的章节卡数量。",
+        "unit": "章",
         "publicKey": "chapterCount",
-        "publicLabel": "章节数量",
         "desc": "目录展示的章节卡数量。"
       },
       {
@@ -1126,9 +1032,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": false,
-        "description": "是否高亮强调其中一个章节（如「当前所在」）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一个章节（如「当前所在」）。"
       },
       {
@@ -1139,9 +1043,7 @@ export const pages = [
         "min": 0,
         "max": 6,
         "step": 1,
-        "description": "被强调的章节序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几章",
         "desc": "被强调的章节序号（从 0 开始）。"
       },
       {
@@ -1171,9 +1073,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "序号与高亮的统一强调色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "序号与高亮的统一强调色。"
       },
       {
@@ -1181,9 +1081,7 @@ export const pages = [
         "label": "章节简介",
         "type": "boolean",
         "default": true,
-        "description": "是否在每张卡上显示一句话简介。",
         "publicKey": "showDesc",
-        "publicLabel": "章节简介",
         "desc": "是否在每张卡上显示一句话简介。"
       },
       {
@@ -1191,9 +1089,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -1287,9 +1183,7 @@ export const pages = [
             "label": "颜色 4"
           }
         ],
-        "description": "横向（空间维度）卡片配色。",
         "publicKey": "colorA",
-        "publicLabel": "横向 颜色",
         "desc": "横向（空间维度）卡片配色。"
       },
       {
@@ -1315,9 +1209,7 @@ export const pages = [
             "label": "颜色 4"
           }
         ],
-        "description": "纵向（时间维度）卡片配色。",
         "publicKey": "colorB",
-        "publicLabel": "纵向 颜色",
         "desc": "纵向（时间维度）卡片配色。"
       },
       {
@@ -1343,9 +1235,7 @@ export const pages = [
             "label": "颜色 4"
           }
         ],
-        "description": "交叉节点与结果条的强调色。",
         "publicKey": "accentColor",
-        "publicLabel": "交叉 强调色",
         "desc": "交叉节点与结果条的强调色。"
       },
       {
@@ -1367,9 +1257,7 @@ export const pages = [
             "label": "⊗"
           }
         ],
-        "description": "两个维度之间的运算符号。",
         "publicKey": "operator",
-        "publicLabel": "交叉符号",
         "desc": "两个维度之间的运算符号。"
       },
       {
@@ -1381,9 +1269,7 @@ export const pages = [
         "max": 24,
         "step": 1,
         "unit": "°",
-        "description": "两张卡片向中心汇聚的 3D 倾斜角度（左卡向右、右卡向左）；0° 为平面。",
         "publicKey": "tiltAngle",
-        "publicLabel": "倾斜角度",
         "desc": "两张卡片向中心汇聚的 3D 倾斜角度（左卡向右、右卡向左）；0° 为平面。"
       },
       {
@@ -1391,9 +1277,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       }
     ],
@@ -1441,10 +1325,8 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "unit": " 条",
-        "description": "展示的分主题贴纸数量（0 时只显示标题）。",
+        "unit": "条",
         "publicKey": "topicCount",
-        "publicLabel": "主线数量",
         "desc": "展示的分主题贴纸数量（0 时只显示标题）。"
       },
       {
@@ -1452,9 +1334,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮其中一条主线贴纸。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮其中一条主线贴纸。"
       },
       {
@@ -1465,9 +1345,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的主线序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几条",
         "desc": "被强调的主线序号（从 0 开始）。"
       },
       {
@@ -1475,9 +1353,7 @@ export const pages = [
         "label": "背景巨字",
         "type": "boolean",
         "default": true,
-        "description": "是否显示背景的超大序号（无图片时生效）。",
         "publicKey": "showGhost",
-        "publicLabel": "背景巨字",
         "desc": "是否显示背景的超大序号（无图片时生效）。"
       },
       {
@@ -1507,9 +1383,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "本章主题色（序号、贴纸、高亮）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "本章主题色（序号、贴纸、高亮）。"
       },
       {
@@ -1520,10 +1394,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "unit": " 张",
-        "description": "右侧图片槽数量（0 时背景巨字铺满，布局自动适配）。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "右侧图片槽数量（0 时背景巨字铺满，布局自动适配）。"
       },
       {
@@ -1541,9 +1413,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式。"
       },
       {
@@ -1551,9 +1421,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传图片（数量由「图片数量」控制），槽位自适应图片比例。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传图片（数量由「图片数量」控制），槽位自适应图片比例。"
       },
       {
@@ -1561,9 +1429,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -1634,9 +1500,7 @@ export const pages = [
             "label": "面积"
           }
         ],
-        "description": "时间段走势的图表呈现形式。",
         "publicKey": "chartType",
-        "publicLabel": "图表类型",
         "desc": "时间段走势的图表呈现形式。"
       },
       {
@@ -1644,9 +1508,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调某一个时间段（如峰值）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调某一个时间段（如峰值）。"
       },
       {
@@ -1657,9 +1519,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的时间段序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的时间段序号（从 0 开始）。"
       },
       {
@@ -1667,9 +1527,7 @@ export const pages = [
         "label": "汇总面板",
         "type": "boolean",
         "default": true,
-        "description": "是否显示右侧全年汇总玻璃卡。",
         "publicKey": "showSummary",
-        "publicLabel": "汇总面板",
         "desc": "是否显示右侧全年汇总玻璃卡。"
       },
       {
@@ -1677,9 +1535,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       },
       {
@@ -1687,9 +1543,7 @@ export const pages = [
         "label": "evilcharts 模式",
         "type": "boolean",
         "default": false,
-        "description": "切换为 evilcharts 风格：点阵底纹 + 柱面 45° 斜纹 + 霓虹辉光（折线/面积为发光线）。",
         "publicKey": "evil",
-        "publicLabel": "evilcharts 模式",
         "desc": "切换为 evilcharts 风格：点阵底纹 + 柱面 45° 斜纹 + 霓虹辉光（折线/面积为发光线）。"
       }
     ],
@@ -1770,10 +1624,8 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "unit": " 条",
-        "description": "展示的分主题贴纸数量（0 时只显示标题）。",
+        "unit": "条",
         "publicKey": "topicCount",
-        "publicLabel": "主线数量",
         "desc": "展示的分主题贴纸数量（0 时只显示标题）。"
       },
       {
@@ -1781,9 +1633,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮其中一条主线贴纸。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮其中一条主线贴纸。"
       },
       {
@@ -1794,9 +1644,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的主线序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几条",
         "desc": "被强调的主线序号（从 0 开始）。"
       },
       {
@@ -1804,9 +1652,7 @@ export const pages = [
         "label": "背景巨字",
         "type": "boolean",
         "default": true,
-        "description": "是否显示背景的超大序号（无图片时生效）。",
         "publicKey": "showGhost",
-        "publicLabel": "背景巨字",
         "desc": "是否显示背景的超大序号（无图片时生效）。"
       },
       {
@@ -1836,9 +1682,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "本章主题色（序号、贴纸、高亮）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "本章主题色（序号、贴纸、高亮）。"
       },
       {
@@ -1849,10 +1693,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "unit": " 张",
-        "description": "右侧图片槽数量（0 时背景巨字铺满，布局自动适配）。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "右侧图片槽数量（0 时背景巨字铺满，布局自动适配）。"
       },
       {
@@ -1870,9 +1712,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式。"
       },
       {
@@ -1880,9 +1720,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传图片（数量由「图片数量」控制），槽位自适应图片比例。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传图片（数量由「图片数量」控制），槽位自适应图片比例。"
       },
       {
@@ -1890,9 +1728,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -1991,9 +1827,7 @@ export const pages = [
             "color": "linear-gradient(135deg, #3a3a42 0% 33.33333333333333%, #6b6b78 33.33333333333333% 66.66666666666666%, #a0a0ad 66.66666666666666% 100%)"
           }
         ],
-        "description": "各层级的配色方案。",
         "publicKey": "palette",
-        "publicLabel": "分层配色",
         "desc": "各层级的配色方案。"
       },
       {
@@ -2004,44 +1838,20 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "unit": " 层",
-        "description": "展示的产业链层级数量。",
+        "unit": "层",
         "publicKey": "groupCount",
-        "publicLabel": "层级数量",
         "desc": "展示的产业链层级数量。"
       },
       {
-        "key": "segmentCount",
-        "label": "每层环节数",
-        "type": "number",
-        "default": 3,
-        "min": 1,
-        "max": 3,
-        "step": 1,
-        "unit": " 个",
-        "countArrays": [
-          "layers[].segments"
-        ],
-        "description": "每个产业链层级最多展示的细分环节数量。",
-        "publicKey": "segmentCount",
-        "publicLabel": "每层环节数",
-        "desc": "每个产业链层级最多展示的细分环节数量。"
-      },
-      {
-        "key": "itemCount",
+        "key": "itemsPerGroup",
         "label": "每格公司数",
         "type": "number",
         "default": 4,
         "min": 1,
         "max": 4,
         "step": 1,
-        "unit": " 个",
-        "countArrays": [
-          "layers[].segments[].items"
-        ],
-        "description": "每个细分环节最多展示的公司数量。",
-        "publicKey": "itemCount",
-        "publicLabel": "每格公司数",
+        "unit": "个",
+        "publicKey": "itemsPerGroup",
         "desc": "每个细分环节最多展示的公司数量。"
       },
       {
@@ -2049,9 +1859,7 @@ export const pages = [
         "label": "英文标签",
         "type": "boolean",
         "default": true,
-        "description": "是否显示各层级的英文副标题。",
         "publicKey": "showSubLabel",
-        "publicLabel": "英文标签",
         "desc": "是否显示各层级的英文副标题。"
       },
       {
@@ -2059,9 +1867,7 @@ export const pages = [
         "label": "等距视角",
         "type": "boolean",
         "default": true,
-        "description": "是否对层级堆叠应用轻微的等距透视。",
         "publicKey": "perspective",
-        "publicLabel": "等距视角",
         "desc": "是否对层级堆叠应用轻微的等距透视。"
       },
       {
@@ -2069,9 +1875,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": false,
-        "description": "是否高亮强调其中某一层。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中某一层。"
       },
       {
@@ -2082,9 +1886,7 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "description": "被强调的层级序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几层",
         "desc": "被强调的层级序号（从 0 开始）。"
       },
       {
@@ -2092,9 +1894,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       }
     ],
@@ -2125,15 +1925,6 @@ export const pages = [
                 "Lambda",
                 "Together AI"
               ]
-            },
-            {
-              "label": "数据工具",
-              "items": [
-                "Labelbox",
-                "Databricks",
-                "Pinecone",
-                "Hugging Face"
-              ]
             }
           ]
         },
@@ -2158,15 +1949,6 @@ export const pages = [
                 "Adept",
                 "Runway"
               ]
-            },
-            {
-              "label": "多模态 / Agent",
-              "items": [
-                "Inflection",
-                "Character AI",
-                "Pika",
-                "ElevenLabs"
-              ]
             }
           ]
         },
@@ -2178,7 +1960,7 @@ export const pages = [
               "label": "企业生产力",
               "items": [
                 "Glean",
-                "Notion AI",
+                "Databricks",
                 "Harvey",
                 "Writer"
               ]
@@ -2187,7 +1969,7 @@ export const pages = [
               "label": "消费 / 搜索",
               "items": [
                 "Perplexity",
-                "You.com",
+                "Character AI",
                 "Suno",
                 "Midjourney"
               ]
@@ -2211,8 +1993,7 @@ export const pages = [
         "#e0a23a"
       ],
       "groupCount": 3,
-      "segmentCount": 3,
-      "itemCount": 4,
+      "itemsPerGroup": 4,
       "showSubLabel": true,
       "perspective": true,
       "highlight": false,
@@ -2237,10 +2018,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "特写图片槽数量（0 时自动切换为纯文字大留白构图）；常规与拼贴版式都会按数量重排。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "特写图片槽数量（0 时自动切换为纯文字大留白构图）；常规与拼贴版式都会按数量重排。"
       },
       {
@@ -2258,9 +2037,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满铺满版面，完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满铺满版面，完整自适应按原始比例显示。"
       },
       {
@@ -2278,9 +2055,7 @@ export const pages = [
             "label": "叠放拼贴"
           }
         ],
-        "description": "常规：整齐特写排布；叠放拼贴：多张图片倾斜叠压、白边浮起的拼贴效果。",
         "publicKey": "imageLayout",
-        "publicLabel": "图片版式",
         "desc": "常规：整齐特写排布；叠放拼贴：多张图片倾斜叠压、白边浮起的拼贴效果。"
       },
       {
@@ -2288,14 +2063,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传特写图片，槽位自适应图片比例不变形。",
-        "default": [
-          "",
-          "",
-          ""
-        ],
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传特写图片，槽位自适应图片比例不变形。"
       },
       {
@@ -2317,9 +2085,7 @@ export const pages = [
             "label": "满版叠字"
           }
         ],
-        "description": "图文版式：左右分栏或满版图片叠加文字。",
         "publicKey": "layout",
-        "publicLabel": "版式",
         "desc": "图文版式：左右分栏或满版图片叠加文字。"
       },
       {
@@ -2330,10 +2096,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 个",
-        "description": "主数字下方的副统计贴纸数量。",
+        "unit": "个",
         "publicKey": "statCount",
-        "publicLabel": "副指标数量",
         "desc": "主数字下方的副统计贴纸数量。"
       },
       {
@@ -2341,9 +2105,7 @@ export const pages = [
         "label": "主数字强调",
         "type": "boolean",
         "default": true,
-        "description": "是否给主数字加荧光描边强调。",
         "publicKey": "highlight",
-        "publicLabel": "主数字强调",
         "desc": "是否给主数字加荧光描边强调。"
       },
       {
@@ -2351,16 +2113,14 @@ export const pages = [
         "label": "荧光高亮",
         "type": "boolean",
         "default": true,
-        "description": "是否给说明句关键词加荧光底纹。",
         "publicKey": "showHighlighter",
-        "publicLabel": "荧光高亮",
         "desc": "是否给说明句关键词加荧光底纹。"
       },
       {
         "key": "accentColor",
         "label": "主题色",
         "type": "color",
-        "default": "#e0a23a",
+        "default": "#5b8def",
         "options": [
           {
             "value": "#5b8def",
@@ -2387,9 +2147,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "主数字、荧光与强调描边的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "主数字、荧光与强调描边的颜色。"
       },
       {
@@ -2397,9 +2155,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -2476,9 +2232,7 @@ export const pages = [
             "label": "条形"
           }
         ],
-        "description": "分类占比的图表呈现形式。",
         "publicKey": "chartType",
-        "publicLabel": "图表类型",
         "desc": "分类占比的图表呈现形式。"
       },
       {
@@ -2489,10 +2243,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 类",
-        "description": "展示的分类数量（其余并入末项）。",
+        "unit": "类",
         "publicKey": "segmentCount",
-        "publicLabel": "分类数量",
         "desc": "展示的分类数量（其余并入末项）。"
       },
       {
@@ -2500,9 +2252,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一个分类。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一个分类。"
       },
       {
@@ -2513,9 +2263,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的分类序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几类",
         "desc": "被强调的分类序号（从 0 开始）。"
       },
       {
@@ -2523,9 +2271,7 @@ export const pages = [
         "label": "环形中心合计",
         "type": "boolean",
         "default": true,
-        "description": "环形图中心是否显示合计数值（仅环形模式）。",
         "publicKey": "showValueLabels",
-        "publicLabel": "环形中心合计",
         "desc": "环形图中心是否显示合计数值（仅环形模式）。"
       },
       {
@@ -2537,9 +2283,7 @@ export const pages = [
         "max": 24,
         "step": 1,
         "unit": "°",
-        "description": "图表向右的 3D 倾斜角度（仅环形/饼图模式）；0° 为平面。",
         "publicKey": "tiltAngle",
-        "publicLabel": "倾斜角度",
         "desc": "图表向右的 3D 倾斜角度（仅环形/饼图模式）；0° 为平面。"
       },
       {
@@ -2551,9 +2295,7 @@ export const pages = [
         "max": 40,
         "step": 1,
         "unit": "px",
-        "description": "环形/饼图扇段的圆角半径，evilcharts 圆角扇段观感（仅环形/饼图模式）。",
         "publicKey": "cornerRadius",
-        "publicLabel": "扇段圆角",
         "desc": "环形/饼图扇段的圆角半径，evilcharts 圆角扇段观感（仅环形/饼图模式）。"
       },
       {
@@ -2565,9 +2307,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "unit": "°",
-        "description": "相邻扇段之间的留白角度（仅环形/饼图模式）。",
         "publicKey": "paddingAngle",
-        "publicLabel": "扇段间隙",
         "desc": "相邻扇段之间的留白角度（仅环形/饼图模式）。"
       },
       {
@@ -2575,9 +2315,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       },
       {
@@ -2585,9 +2323,7 @@ export const pages = [
         "label": "霓虹辉光增强",
         "type": "boolean",
         "default": false,
-        "description": "增强高亮扇段的霓虹辉光强度；条形模式下叠加 45° 斜纹纹理。",
         "publicKey": "evil",
-        "publicLabel": "霓虹辉光增强",
         "desc": "增强高亮扇段的霓虹辉光强度；条形模式下叠加 45° 斜纹纹理。"
       }
     ],
@@ -2666,10 +2402,8 @@ export const pages = [
         "min": 2,
         "max": 5,
         "step": 1,
-        "unit": " 块",
-        "description": "参与树图的板块数量；布局会按数量自动平铺，2–6 块都保持美观。",
+        "unit": "块",
         "publicKey": "itemCount",
-        "publicLabel": "板块数量",
         "desc": "参与树图的板块数量；布局会按数量自动平铺，2–6 块都保持美观。"
       },
       {
@@ -2677,9 +2411,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否强调其中一个板块（上浮 + 阴影，其余板块转为浅色）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否强调其中一个板块（上浮 + 阴影，其余板块转为浅色）。"
       },
       {
@@ -2690,9 +2422,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的板块序号（从 0 开始，按原始数据顺序）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的板块序号（从 0 开始，按原始数据顺序）。"
       },
       {
@@ -2700,9 +2430,7 @@ export const pages = [
         "label": "占比数字",
         "type": "boolean",
         "default": true,
-        "description": "是否在板块中显示百分比。",
         "publicKey": "showPercent",
-        "publicLabel": "占比数字",
         "desc": "是否在板块中显示百分比。"
       },
       {
@@ -2710,9 +2438,7 @@ export const pages = [
         "label": "数值标注",
         "type": "boolean",
         "default": true,
-        "description": "是否在板块中显示数值。",
         "publicKey": "showValueLabels",
-        "publicLabel": "数值标注",
         "desc": "是否在板块中显示数值。"
       },
       {
@@ -2720,9 +2446,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -2794,10 +2518,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "unit": " 类",
-        "description": "左侧来源节点数量；去向占比按保留的流量自动重算。",
+        "unit": "类",
         "publicKey": "sourceCount",
-        "publicLabel": "来源数量",
         "desc": "左侧来源节点数量；去向占比按保留的流量自动重算。"
       },
       {
@@ -2805,9 +2527,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把某一类来源点亮成荧光主线、其余淡出。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把某一类来源点亮成荧光主线、其余淡出。"
       },
       {
@@ -2818,9 +2538,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被点亮的来源序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几类",
         "desc": "被点亮的来源序号（从 0 开始）。"
       },
       {
@@ -2828,9 +2546,7 @@ export const pages = [
         "label": "数值标签",
         "type": "boolean",
         "default": true,
-        "description": "节点上的数值标签显示。",
         "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
         "desc": "节点上的数值标签显示。"
       },
       {
@@ -2864,9 +2580,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "荧光主线的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "强调色",
         "desc": "荧光主线的颜色。"
       },
       {
@@ -2874,9 +2588,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -2885,31 +2597,29 @@ export const pages = [
       "title": "资金流向 · 谁出钱，钱去哪",
       "en": "Capital Flow — Sources → Sectors",
       "cn": "一张桑基图看清资本的来路与去向",
+      "sourceColumnLabel": "资本来源 · SOURCES",
+      "targetColumnLabel": "赛道流向 · DESTINATIONS",
       "unit": "亿",
       "sources": [
         {
-          "id": "strategic",
           "name": "科技巨头",
           "en": "STRATEGIC",
           "value": 370,
           "color": "#7a5ae0"
         },
         {
-          "id": "vc",
           "name": "风险投资",
           "en": "VC",
           "value": 330,
           "color": "#5b8def"
         },
         {
-          "id": "sovereign-pe",
           "name": "主权 / 私募",
           "en": "SOVEREIGN · PE",
           "value": 175,
           "color": "#46b083"
         },
         {
-          "id": "cvc",
           "name": "企业风投",
           "en": "CVC",
           "value": 95,
@@ -2918,101 +2628,97 @@ export const pages = [
       ],
       "targets": [
         {
-          "id": "foundation",
           "name": "通用大模型",
           "en": "FOUNDATION",
           "color": "#5b8def"
         },
         {
-          "id": "infra-compute",
           "name": "AI 基础设施",
           "en": "INFRA · COMPUTE",
           "color": "#46b083"
         },
         {
-          "id": "applications",
           "name": "垂直应用",
           "en": "APPLICATIONS",
           "color": "#e0a23a"
         },
         {
-          "id": "hardware",
           "name": "AI 硬件 · 机器人",
           "en": "HARDWARE",
           "color": "#e8503a"
         }
       ],
       "flows": [
-        [
-          0,
-          0,
-          230
-        ],
-        [
-          0,
-          1,
-          120
-        ],
-        [
-          0,
-          3,
-          20
-        ],
-        [
-          1,
-          0,
-          120
-        ],
-        [
-          1,
-          1,
-          70
-        ],
-        [
-          1,
-          2,
-          110
-        ],
-        [
-          1,
-          3,
-          30
-        ],
-        [
-          2,
-          0,
-          80
-        ],
-        [
-          2,
-          1,
-          70
-        ],
-        [
-          2,
-          3,
-          25
-        ],
-        [
-          3,
-          0,
-          16
-        ],
-        [
-          3,
-          1,
-          2
-        ],
-        [
-          3,
-          2,
-          65
-        ],
-        [
-          3,
-          3,
-          12
-        ]
+        {
+          "from": "科技巨头",
+          "to": "通用大模型",
+          "value": 230
+        },
+        {
+          "from": "科技巨头",
+          "to": "AI 基础设施",
+          "value": 120
+        },
+        {
+          "from": "科技巨头",
+          "to": "AI 硬件 · 机器人",
+          "value": 20
+        },
+        {
+          "from": "风险投资",
+          "to": "通用大模型",
+          "value": 120
+        },
+        {
+          "from": "风险投资",
+          "to": "AI 基础设施",
+          "value": 70
+        },
+        {
+          "from": "风险投资",
+          "to": "垂直应用",
+          "value": 110
+        },
+        {
+          "from": "风险投资",
+          "to": "AI 硬件 · 机器人",
+          "value": 30
+        },
+        {
+          "from": "主权 / 私募",
+          "to": "通用大模型",
+          "value": 80
+        },
+        {
+          "from": "主权 / 私募",
+          "to": "AI 基础设施",
+          "value": 70
+        },
+        {
+          "from": "主权 / 私募",
+          "to": "AI 硬件 · 机器人",
+          "value": 25
+        },
+        {
+          "from": "企业风投",
+          "to": "通用大模型",
+          "value": 16
+        },
+        {
+          "from": "企业风投",
+          "to": "AI 基础设施",
+          "value": 2
+        },
+        {
+          "from": "企业风投",
+          "to": "垂直应用",
+          "value": 65
+        },
+        {
+          "from": "企业风投",
+          "to": "AI 硬件 · 机器人",
+          "value": 12
+        }
       ],
       "caption": "桑基图 · 战略资本主攻大模型，VC 更广撒于应用",
       "sourceCount": 4,
@@ -3040,10 +2746,8 @@ export const pages = [
         "min": 3,
         "max": 10,
         "step": 1,
-        "unit": " 名",
-        "description": "榜单展示的公司数量。",
+        "unit": "名",
         "publicKey": "itemCount",
-        "publicLabel": "展示数量",
         "desc": "榜单展示的公司数量。"
       },
       {
@@ -3051,9 +2755,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一名（如榜首）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一名（如榜首）。"
       },
       {
@@ -3064,9 +2766,7 @@ export const pages = [
         "min": 0,
         "max": 9,
         "step": 1,
-        "description": "被强调的公司排名序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几名",
         "desc": "被强调的公司排名序号（从 0 开始）。"
       },
       {
@@ -3074,9 +2774,7 @@ export const pages = [
         "label": "数值标签",
         "type": "boolean",
         "default": true,
-        "description": "是否在条形末端显示数值指标。",
         "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
         "desc": "是否在条形末端显示数值指标。"
       },
       {
@@ -3084,9 +2782,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       },
       {
@@ -3094,9 +2790,7 @@ export const pages = [
         "label": "evilcharts 模式",
         "type": "boolean",
         "default": false,
-        "description": "切换为 evilcharts 风格：点阵底纹绘图区 + 条面 45° 斜纹 + 条形霓虹辉光。",
         "publicKey": "evil",
-        "publicLabel": "evilcharts 模式",
         "desc": "切换为 evilcharts 风格：点阵底纹绘图区 + 条面 45° 斜纹 + 条形霓虹辉光。"
       }
     ],
@@ -3184,10 +2878,8 @@ export const pages = [
         "min": 1,
         "max": 5,
         "step": 1,
-        "unit": " 张",
-        "description": "图片槽数量；构图会按数量自动重排，1–5 张都保持美观。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "图片槽数量；构图会按数量自动重排，1–5 张都保持美观。"
       },
       {
@@ -3205,9 +2897,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满构图统一，完整自适应按原始比例显示不裁切。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满构图统一，完整自适应按原始比例显示不裁切。"
       },
       {
@@ -3225,9 +2915,7 @@ export const pages = [
             "label": "叠放拼贴"
           }
         ],
-        "description": "整齐：网格拼图；叠放拼贴：图片倾斜叠压、白边浮起的拼贴效果。",
         "publicKey": "imageLayout",
-        "publicLabel": "图片版式",
         "desc": "整齐：网格拼图；叠放拼贴：图片倾斜叠压、白边浮起的拼贴效果。"
       },
       {
@@ -3235,9 +2923,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传图片（数量由「图片数量」控制），槽位自适应图片比例。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传图片（数量由「图片数量」控制），槽位自适应图片比例。"
       },
       {
@@ -3245,9 +2931,7 @@ export const pages = [
         "label": "贴纸标签",
         "type": "boolean",
         "default": true,
-        "description": "是否在每张图片上叠加「名称 + 数值」贴纸标签。",
         "publicKey": "showValueLabels",
-        "publicLabel": "贴纸标签",
         "desc": "是否在每张图片上叠加「名称 + 数值」贴纸标签。"
       },
       {
@@ -3255,9 +2939,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否给其中一个槽位加荧光描边强调。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否给其中一个槽位加荧光描边强调。"
       },
       {
@@ -3268,9 +2950,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的槽位序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的槽位序号（从 0 开始）。"
       },
       {
@@ -3304,9 +2984,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "强调描边与数值贴纸的荧光色。",
         "publicKey": "accentColor",
-        "publicLabel": "荧光色",
         "desc": "强调描边与数值贴纸的荧光色。"
       },
       {
@@ -3314,9 +2992,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -3388,14 +3064,12 @@ export const pages = [
         "key": "rowCount",
         "label": "数据行数",
         "type": "number",
-        "default": 10,
+        "default": 6,
         "min": 1,
         "max": 10,
         "step": 1,
-        "unit": " 行",
-        "description": "展示的数据行数量（不含表头与合计行）；行高随行数自适应，不会溢出。",
+        "unit": "行",
         "publicKey": "rowCount",
-        "publicLabel": "数据行数",
         "desc": "展示的数据行数量（不含表头与合计行）；行高随行数自适应，不会溢出。"
       },
       {
@@ -3417,9 +3091,7 @@ export const pages = [
             "label": "第 3 列"
           }
         ],
-        "description": "被着重显示的数值列（着色，可叠加迷你条）。",
         "publicKey": "emphasizeCol",
-        "publicLabel": "强调列",
         "desc": "被着重显示的数值列（着色，可叠加迷你条）。"
       },
       {
@@ -3427,9 +3099,7 @@ export const pages = [
         "label": "迷你条形",
         "type": "boolean",
         "default": true,
-        "description": "是否在强调列的单元格内叠加比例条。",
         "publicKey": "showBars",
-        "publicLabel": "迷你条形",
         "desc": "是否在强调列的单元格内叠加比例条。"
       },
       {
@@ -3437,22 +3107,18 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮其中一行。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮其中一行。"
       },
       {
         "key": "highlightIndex",
         "label": "强调第几行",
         "type": "number",
-        "default": 0,
+        "default": 4,
         "min": 0,
         "max": 5,
         "step": 1,
-        "description": "被强调的数据行序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几行",
         "desc": "被强调的数据行序号（从 0 开始）。"
       },
       {
@@ -3460,26 +3126,22 @@ export const pages = [
         "label": "斑马纹",
         "type": "boolean",
         "default": true,
-        "description": "隔行底色，便于横向阅读。",
         "publicKey": "striped",
-        "publicLabel": "斑马纹",
         "desc": "隔行底色，便于横向阅读。"
       },
       {
         "key": "showFooter",
         "label": "合计行",
         "type": "boolean",
-        "default": false,
-        "description": "是否显示底部合计 / 汇总行。",
+        "default": true,
         "publicKey": "showFooter",
-        "publicLabel": "合计行",
         "desc": "是否显示底部合计 / 汇总行。"
       },
       {
         "key": "accentColor",
         "label": "主题色",
         "type": "color",
-        "default": "#46b083",
+        "default": "#5b8def",
         "options": [
           {
             "value": "#5b8def",
@@ -3502,9 +3164,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "表头、强调列与高亮行的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "表头、强调列与高亮行的颜色。"
       },
       {
@@ -3512,9 +3172,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -3528,62 +3186,60 @@ export const pages = [
         "主营赛道",
         "融资额 / 亿美元"
       ],
-      "columnKeys": [
-        "label",
-        "category",
-        "value"
+      "textCols": [
+        1
       ],
       "rows": [
-        {
-          "label": "1 · OpenAI",
-          "category": "通用大模型",
-          "value": "66"
-        },
-        {
-          "label": "2 · Anthropic",
-          "category": "通用大模型",
-          "value": "65"
-        },
-        {
-          "label": "3 · xAI",
-          "category": "通用大模型",
-          "value": "50"
-        },
-        {
-          "label": "5 · CoreWeave",
-          "category": "算力基础设施",
-          "value": "11"
-        },
-        {
-          "label": "7 · Scale AI",
-          "category": "数据基础设施",
-          "value": "10"
-        },
-        {
-          "label": "4 · Safe Superintelligence",
-          "category": "通用大模型",
-          "value": "10"
-        },
-        {
-          "label": "6 · Figure AI",
-          "category": "AI 硬件 · 机器人",
-          "value": "6.8"
-        },
-        {
-          "label": "8 · Perplexity AI",
-          "category": "垂直应用 · 搜索",
-          "value": "5.2"
-        },
-        {
-          "label": "9 · Databricks",
-          "category": "数据 + AI 平台",
-          "value": "5.0"
-        },
-        {
-          "label": "10 · Glean",
-          "category": "垂直应用 · 企业搜索",
-          "value": "2.6"
-        }
+        [
+          "1 · OpenAI",
+          "通用大模型",
+          "66"
+        ],
+        [
+          "2 · Anthropic",
+          "通用大模型",
+          "65"
+        ],
+        [
+          "3 · xAI",
+          "通用大模型",
+          "50"
+        ],
+        [
+          "5 · CoreWeave",
+          "AI 基础设施",
+          "11"
+        ],
+        [
+          "7 · Scale AI",
+          "AI 基础设施",
+          "10"
+        ],
+        [
+          "4 · Safe Superintelligence",
+          "通用大模型",
+          "10"
+        ],
+        [
+          "6 · Figure AI",
+          "AI 硬件 · 机器人",
+          "6.8"
+        ],
+        [
+          "8 · Perplexity AI",
+          "垂直应用 · 搜索",
+          "5.2"
+        ],
+        [
+          "9 · Databricks",
+          "AI 基础设施",
+          "5.0"
+        ],
+        [
+          "10 · Glean",
+          "垂直应用 · 企业搜索",
+          "2.6"
+        ]
       ],
       "footer": null,
       "caption": "表格 · 前三均为通用大模型，单笔规模断层领先",
@@ -3615,10 +3271,8 @@ export const pages = [
         "min": 3,
         "max": 4,
         "step": 1,
-        "unit": " 层",
-        "description": "漏斗自上而下展示的收口层数。",
+        "unit": "层",
         "publicKey": "itemCount",
-        "publicLabel": "漏斗层数",
         "desc": "漏斗自上而下展示的收口层数。"
       },
       {
@@ -3626,9 +3280,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一层渲染成实色荧光「印章」。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一层渲染成实色荧光「印章」。"
       },
       {
@@ -3639,9 +3291,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的漏斗层序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几层",
         "desc": "被强调的漏斗层序号（从 0 开始）。"
       },
       {
@@ -3649,9 +3299,7 @@ export const pages = [
         "label": "占比标签",
         "type": "boolean",
         "default": true,
-        "description": "每层右侧的占比胶囊标签的显示。",
         "publicKey": "showValues",
-        "publicLabel": "占比标签",
         "desc": "每层右侧的占比胶囊标签的显示。"
       },
       {
@@ -3659,9 +3307,7 @@ export const pages = [
         "label": "解读面板",
         "type": "boolean",
         "default": true,
-        "description": "右侧磨砂玻璃「集中度」解读面板的显示。",
         "publicKey": "showInsight",
-        "publicLabel": "解读面板",
         "desc": "右侧磨砂玻璃「集中度」解读面板的显示。"
       },
       {
@@ -3695,9 +3341,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "漏斗与强调印章的主题色（单一色家族，逐层递减透明度）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "漏斗与强调印章的主题色（单一色家族，逐层递减透明度）。"
       },
       {
@@ -3705,9 +3349,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -3717,6 +3359,7 @@ export const pages = [
       "title": "资金集中度 · 赢家通吃",
       "en": "Winner Takes All",
       "cn": "资金如何向头部集中",
+      "insightKicker": "CONCENTRATION",
       "stages": [
         {
           "label": "全年单笔大额融资",
@@ -3750,7 +3393,7 @@ export const pages = [
       "insight": {
         "stat": "24%",
         "head": "头部 10 家 = 全市场近 1/4",
-        "body": "巨额追加不断流向少数独角兽，资金加速向金字塔尖集中。"
+        "body": "少数独角兽反复获得巨额追加投资，单笔大额融资额高度向金字塔尖收口——“赢家通吃”格局已然确立。"
       },
       "caption": "漏斗图 · 资金逐层向头部集中",
       "itemCount": 4,
@@ -3779,10 +3422,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "unit": " 层",
-        "description": "展示的指标梯队层数（从顶端起）。",
+        "unit": "层",
         "publicKey": "tierCount",
-        "publicLabel": "梯队层数",
         "desc": "展示的指标梯队层数（从顶端起）。"
       },
       {
@@ -3790,9 +3431,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把某一层渲染成荧光「印章」。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把某一层渲染成荧光「印章」。"
       },
       {
@@ -3803,9 +3442,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的梯队序号（0 = 顶端）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几层",
         "desc": "被强调的梯队序号（0 = 顶端）。"
       },
       {
@@ -3813,27 +3450,22 @@ export const pages = [
         "label": "代表公司",
         "type": "boolean",
         "default": true,
-        "description": "右侧每层的代表公司贴纸显示。",
         "publicKey": "showExamples",
-        "publicLabel": "代表公司",
         "desc": "右侧每层的代表公司贴纸显示。"
       },
       {
         "key": "exampleCount",
-        "label": "代表公司数",
+        "label": "代表公司数量",
         "type": "number",
         "default": 4,
         "min": 1,
         "max": 4,
         "step": 1,
-        "unit": " 个",
         "countArrays": [
           "tiers[].examples"
         ],
-        "description": "每层最多展示的代表公司数量。",
         "publicKey": "exampleCount",
-        "publicLabel": "代表公司数",
-        "desc": "每层最多展示的代表公司数量。"
+        "desc": "每层最多展示的代表公司贴纸数量。"
       },
       {
         "key": "accentColor",
@@ -3866,9 +3498,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "被强调层的荧光颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "强调色",
         "desc": "被强调层的荧光颜色。"
       },
       {
@@ -3876,9 +3506,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -3893,56 +3521,53 @@ export const pages = [
           "en": "DECACORN+",
           "count": "3",
           "unit": "家",
-          "color": "#6549c2",
           "desc": "通用大模型三巨头，估值断层领先",
           "examples": [
             "OpenAI",
             "Anthropic",
-            "xAI",
-            "SSI"
-          ]
+            "xAI"
+          ],
+          "color": "#7a5ae0"
         },
         {
           "band": "100 – 1000 亿",
           "en": "GIANT",
           "count": "9",
           "unit": "家",
-          "color": "#356ed6",
           "desc": "基建与应用龙头，紧追第一梯队",
           "examples": [
             "Databricks",
             "CoreWeave",
             "SSI",
             "Perplexity"
-          ]
+          ],
+          "color": "#5b8def"
         },
         {
           "band": "10 – 100 亿",
           "en": "UNICORN",
           "count": "34",
           "unit": "家",
-          "color": "#2f7f61",
           "desc": "细分赛道独角兽，估值快速爬升",
           "examples": [
             "Figure AI",
             "Scale AI",
-            "Glean",
-            "Harvey"
-          ]
+            "Glean"
+          ],
+          "color": "#46b083"
         },
         {
           "band": "< 10 亿",
           "en": "EMERGING",
           "count": "200+",
           "unit": "家",
-          "color": "#9b6417",
           "desc": "早期种子 / A 轮新锐，长尾基本盘",
           "examples": [
             "种子轮",
             "A 轮",
-            "早期",
-            "天使轮"
-          ]
+            "早期"
+          ],
+          "color": "#e0a23a"
         }
       ],
       "caption": "金字塔 · 顶端三家公司的估值合计超过其后数十家之和",
@@ -3972,10 +3597,8 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "unit": " 条",
-        "description": "展示的分主题贴纸数量（0 时只显示标题）。",
+        "unit": "条",
         "publicKey": "topicCount",
-        "publicLabel": "主线数量",
         "desc": "展示的分主题贴纸数量（0 时只显示标题）。"
       },
       {
@@ -3983,9 +3606,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮其中一条主线贴纸。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮其中一条主线贴纸。"
       },
       {
@@ -3996,9 +3617,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的主线序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几条",
         "desc": "被强调的主线序号（从 0 开始）。"
       },
       {
@@ -4006,16 +3625,14 @@ export const pages = [
         "label": "背景巨字",
         "type": "boolean",
         "default": true,
-        "description": "是否显示背景的超大序号（无图片时生效）。",
         "publicKey": "showGhost",
-        "publicLabel": "背景巨字",
         "desc": "是否显示背景的超大序号（无图片时生效）。"
       },
       {
         "key": "accentColor",
         "label": "主题色",
         "type": "color",
-        "default": "#7a5ae0",
+        "default": "#5b8def",
         "options": [
           {
             "value": "#5b8def",
@@ -4038,9 +3655,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "本章主题色（序号、贴纸、高亮）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "本章主题色（序号、贴纸、高亮）。"
       },
       {
@@ -4051,10 +3666,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "unit": " 张",
-        "description": "右侧图片槽数量（0 时背景巨字铺满，布局自动适配）。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "右侧图片槽数量（0 时背景巨字铺满，布局自动适配）。"
       },
       {
@@ -4072,9 +3685,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式。"
       },
       {
@@ -4082,13 +3693,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传图片（数量由「图片数量」控制），槽位自适应图片比例。",
-        "default": [
-          "",
-          ""
-        ],
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传图片（数量由「图片数量」控制），槽位自适应图片比例。"
       },
       {
@@ -4096,9 +3701,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -4158,14 +3761,8 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "unit": " 个",
-        "countArrays": [
-          "companies",
-          "attributes[].values"
-        ],
-        "description": "参与横向对比的对象（公司）数量。",
+        "unit": "个",
         "publicKey": "itemCount",
-        "publicLabel": "对比对象数量",
         "desc": "参与横向对比的对象（公司）数量。"
       },
       {
@@ -4176,10 +3773,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "unit": " 项",
-        "description": "对比的属性行数量。",
+        "unit": "项",
         "publicKey": "rowCount",
-        "publicLabel": "对比维度数量",
         "desc": "对比的属性行数量。"
       },
       {
@@ -4187,9 +3782,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一个对象（整列着色）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一个对象（整列着色）。"
       },
       {
@@ -4200,9 +3793,7 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "description": "被强调的对象序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的对象序号（从 0 开始）。"
       },
       {
@@ -4232,9 +3823,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "被强调列的着色。",
         "publicKey": "accentColor",
-        "publicLabel": "强调色",
         "desc": "被强调列的着色。"
       },
       {
@@ -4245,10 +3834,8 @@ export const pages = [
         "min": 0,
         "max": 1,
         "step": 1,
-        "unit": " 个",
-        "description": "表头 logo 图片槽数量（0 时用首字母色块代替）。",
+        "unit": "个",
         "publicKey": "imageSlotCount",
-        "publicLabel": "Logo 数量",
         "desc": "表头 logo 图片槽数量（0 时用首字母色块代替）。"
       },
       {
@@ -4266,9 +3853,7 @@ export const pages = [
             "label": "裁剪填满"
           }
         ],
-        "description": "logo 填充方式（通常用「完整自适应」避免裁切）。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "logo 填充方式（通常用「完整自适应」避免裁切）。"
       },
       {
@@ -4276,9 +3861,7 @@ export const pages = [
         "label": "Logo 图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传各对象的 logo，槽位自适应比例不变形。",
         "publicKey": "images",
-        "publicLabel": "Logo 图片",
         "desc": "上传各对象的 logo，槽位自适应比例不变形。"
       },
       {
@@ -4286,9 +3869,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -4381,10 +3962,8 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "unit": " 项",
-        "description": "展示的里程碑卡片数量。",
+        "unit": "项",
         "publicKey": "milestoneCount",
-        "publicLabel": "里程碑数量",
         "desc": "展示的里程碑卡片数量。"
       },
       {
@@ -4392,9 +3971,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一个里程碑。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一个里程碑。"
       },
       {
@@ -4405,9 +3982,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的里程碑序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几项",
         "desc": "被强调的里程碑序号（从 0 开始）。"
       },
       {
@@ -4418,10 +3993,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "右侧图片槽数量（0 时文字占满整页，布局自动适配）。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "右侧图片槽数量（0 时文字占满整页，布局自动适配）。"
       },
       {
@@ -4439,9 +4012,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满构图统一，完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满构图统一，完整自适应按原始比例显示。"
       },
       {
@@ -4459,9 +4030,7 @@ export const pages = [
             "label": "叠放拼贴"
           }
         ],
-        "description": "常规：整齐排布；叠放拼贴：图片倾斜叠压、白边浮起的拼贴效果。",
         "publicKey": "imageLayout",
-        "publicLabel": "图片版式",
         "desc": "常规：整齐排布；叠放拼贴：图片倾斜叠压、白边浮起的拼贴效果。"
       },
       {
@@ -4469,9 +4038,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传图片（数量由「图片数量」控制），槽位会自适应图片比例。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传图片（数量由「图片数量」控制），槽位会自适应图片比例。"
       },
       {
@@ -4479,9 +4046,7 @@ export const pages = [
         "label": "引言",
         "type": "boolean",
         "default": true,
-        "description": "是否显示角色引言。",
         "publicKey": "showQuote",
-        "publicLabel": "引言",
         "desc": "是否显示角色引言。"
       }
     ],
@@ -4489,7 +4054,7 @@ export const pages = [
       "kicker": "# 典型案例",
       "title": "典型案例 · Anthropic",
       "en": "From Challenger to Frontrunner",
-      "intro": "前 OpenAI 高管创立 Anthropic，2024 年估值跃居头部。",
+      "intro": "2021 年由 OpenAI 前研究副总裁 Dario Amodei 创立。2024 年连续完成三轮大额融资，累计超 650 亿美元，估值突破 9650 亿美元，超越 OpenAI 成为全球估值最高的 AI 初创企业。",
       "milestones": [
         {
           "date": "2024 · 05",
@@ -4520,7 +4085,7 @@ export const pages = [
           "color": "#7a5ae0"
         }
       ],
-      "quote": "安全对齐强调可解释、可控，而非单纯追求规模。",
+      "quote": "通过 Constitutional AI 等方法构建可解释、可控的系统，比单纯追求规模更符合长远利益。",
       "quoteBy": "Dario Amodei · CEO",
       "images": [
         "",
@@ -4576,9 +4141,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "荧光贴纸与高亮的颜色（参考图的荧光高亮）。",
         "publicKey": "accentColor",
-        "publicLabel": "荧光色",
         "desc": "荧光贴纸与高亮的颜色（参考图的荧光高亮）。"
       },
       {
@@ -4589,10 +4152,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "unit": " 个",
-        "description": "右上角倾斜便签贴纸的数量（装饰性回声标签）。",
+        "unit": "个",
         "publicKey": "noteCount",
-        "publicLabel": "便签贴纸",
         "desc": "右上角倾斜便签贴纸的数量（装饰性回声标签）。"
       },
       {
@@ -4600,9 +4161,7 @@ export const pages = [
         "label": "关键词贴纸",
         "type": "boolean",
         "default": true,
-        "description": "是否把金句中的对立关键词渲染成「黑色印章 + 荧光」贴纸。",
         "publicKey": "showHighlighter",
-        "publicLabel": "关键词贴纸",
         "desc": "是否把金句中的对立关键词渲染成「黑色印章 + 荧光」贴纸。"
       },
       {
@@ -4610,9 +4169,7 @@ export const pages = [
         "label": "巨型引号",
         "type": "boolean",
         "default": true,
-        "description": "是否显示背景的超大引号。",
         "publicKey": "showQuoteMark",
-        "publicLabel": "巨型引号",
         "desc": "是否显示背景的超大引号。"
       },
       {
@@ -4620,9 +4177,7 @@ export const pages = [
         "label": "署名",
         "type": "boolean",
         "default": true,
-        "description": "是否显示出处 / 署名。",
         "publicKey": "showAttribution",
-        "publicLabel": "署名",
         "desc": "是否显示出处 / 署名。"
       },
       {
@@ -4640,9 +4195,7 @@ export const pages = [
             "label": "居中"
           }
         ],
-        "description": "整页内容的对齐方式。",
         "publicKey": "align",
-        "publicLabel": "对齐方式",
         "desc": "整页内容的对齐方式。"
       },
       {
@@ -4650,9 +4203,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -4699,10 +4250,8 @@ export const pages = [
         "min": 2,
         "max": 5,
         "step": 1,
-        "unit": " 个",
-        "description": "时间轴上展示的节点数量。",
+        "unit": "个",
         "publicKey": "itemCount",
-        "publicLabel": "节点数量",
         "desc": "时间轴上展示的节点数量。"
       },
       {
@@ -4710,9 +4259,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一个节点渲染成荧光「印章」贴纸。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一个节点渲染成荧光「印章」贴纸。"
       },
       {
@@ -4723,9 +4270,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的节点序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的节点序号（从 0 开始）。"
       },
       {
@@ -4759,9 +4304,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "被强调节点的荧光贴纸颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "强调色",
         "desc": "被强调节点的荧光贴纸颜色。"
       },
       {
@@ -4779,9 +4322,7 @@ export const pages = [
             "label": "全部在下"
           }
         ],
-        "description": "节点相对中轴线的排布方式。",
         "publicKey": "layout",
-        "publicLabel": "节点排布",
         "desc": "节点相对中轴线的排布方式。"
       },
       {
@@ -4789,9 +4330,7 @@ export const pages = [
         "label": "连接轴线",
         "type": "boolean",
         "default": true,
-        "description": "是否显示贯穿的中轴线与节点圆点。",
         "publicKey": "showConnector",
-        "publicLabel": "连接轴线",
         "desc": "是否显示贯穿的中轴线与节点圆点。"
       },
       {
@@ -4799,9 +4338,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -4879,10 +4416,8 @@ export const pages = [
         "min": 1,
         "max": 4,
         "step": 1,
-        "unit": " 条",
-        "description": "展示的要点卡数量。",
+        "unit": "条",
         "publicKey": "pointCount",
-        "publicLabel": "要点数量",
         "desc": "展示的要点卡数量。"
       },
       {
@@ -4890,9 +4425,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一条要点。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一条要点。"
       },
       {
@@ -4903,9 +4436,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的要点序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几条",
         "desc": "被强调的要点序号（从 0 开始）。"
       },
       {
@@ -4916,10 +4447,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "unit": " 张",
-        "description": "图片槽数量（0 时要点占满整页，布局自动适配）。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "图片槽数量（0 时要点占满整页，布局自动适配）。"
       },
       {
@@ -4937,9 +4466,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满构图统一，完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满构图统一，完整自适应按原始比例显示。"
       },
       {
@@ -4947,9 +4474,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传图片（数量由「图片数量」控制），槽位自适应图片比例。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传图片（数量由「图片数量」控制），槽位自适应图片比例。"
       },
       {
@@ -4967,9 +4492,7 @@ export const pages = [
             "label": "图右文左"
           }
         ],
-        "description": "图片相对要点的位置。",
         "publicKey": "imageSide",
-        "publicLabel": "图片位置",
         "desc": "图片相对要点的位置。"
       },
       {
@@ -4987,9 +4510,7 @@ export const pages = [
             "label": "叠放拼贴"
           }
         ],
-        "description": "常规：整齐排布；叠放拼贴：图片倾斜叠压、白边浮起的拼贴效果。",
         "publicKey": "imageLayout",
-        "publicLabel": "图片版式",
         "desc": "常规：整齐排布；叠放拼贴：图片倾斜叠压、白边浮起的拼贴效果。"
       },
       {
@@ -5019,9 +4540,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "序号徽标与强调要点的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "序号徽标与强调要点的颜色。"
       },
       {
@@ -5029,9 +4548,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -5103,9 +4620,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -5133,9 +4648,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "imageSlotCount",
@@ -5145,10 +4658,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "unit": " 张",
-        "description": "满版图片槽数量：0 显示条纹占位、1 单张满版、2 左右双图（各自按比例自适应，不变形）。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "满版图片槽数量：0 显示条纹占位、1 单张满版、2 左右双图（各自按比例自适应，不变形）。"
       },
       {
@@ -5166,9 +4677,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满铺满版面，完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满铺满版面，完整自适应按原始比例显示。"
       },
       {
@@ -5176,9 +4685,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传满版图片，槽位自适应图片比例不变形。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传满版图片，槽位自适应图片比例不变形。"
       },
       {
@@ -5200,9 +4707,7 @@ export const pages = [
             "label": "左侧居中"
           }
         ],
-        "description": "浮层玻璃信息卡在画面中的落位。",
         "publicKey": "plate",
-        "publicLabel": "信息卡位置",
         "desc": "浮层玻璃信息卡在画面中的落位。"
       },
       {
@@ -5213,10 +4718,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 个",
-        "description": "信息卡底部统计胶囊的数量。",
+        "unit": "个",
         "publicKey": "statCount",
-        "publicLabel": "指标数量",
         "desc": "信息卡底部统计胶囊的数量。"
       },
       {
@@ -5224,9 +4727,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一个指标渲染成实色荧光「印章」胶囊。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一个指标渲染成实色荧光「印章」胶囊。"
       },
       {
@@ -5237,9 +4738,7 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "description": "被强调的指标序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的指标序号（从 0 开始）。"
       },
       {
@@ -5247,9 +4746,7 @@ export const pages = [
         "label": "荧光高亮",
         "type": "boolean",
         "default": true,
-        "description": "是否给说明句关键词加荧光底纹。",
         "publicKey": "showHighlighter",
-        "publicLabel": "荧光高亮",
         "desc": "是否给说明句关键词加荧光底纹。"
       },
       {
@@ -5283,9 +4780,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "信息卡强调元素与荧光的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "信息卡强调元素与荧光的颜色。"
       },
       {
@@ -5293,9 +4788,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -5355,9 +4848,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一个象限。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一个象限。"
       },
       {
@@ -5368,9 +4859,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的象限序号（阅读顺序：左上 0 / 右上 1 / 左下 2 / 右下 3）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几象限",
         "desc": "被强调的象限序号（阅读顺序：左上 0 / 右上 1 / 左下 2 / 右下 3）。"
       },
       {
@@ -5378,9 +4867,7 @@ export const pages = [
         "label": "坐标轴标签",
         "type": "boolean",
         "default": true,
-        "description": "是否显示横纵坐标轴的高低标签。",
         "publicKey": "showAxisLabels",
-        "publicLabel": "坐标轴标签",
         "desc": "是否显示横纵坐标轴的高低标签。"
       },
       {
@@ -5391,10 +4878,8 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "unit": " 个",
-        "description": "每个象限展示的对象标签数量（0 时仅显示文字描述）。",
+        "unit": "个",
         "publicKey": "chipCount",
-        "publicLabel": "每象限公司数",
         "desc": "每个象限展示的对象标签数量（0 时仅显示文字描述）。"
       },
       {
@@ -5402,9 +4887,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       }
     ],
@@ -5489,9 +4972,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一个阶段。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一个阶段。"
       },
       {
@@ -5502,9 +4983,7 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "description": "被强调的阶段序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的阶段序号（从 0 开始）。"
       },
       {
@@ -5512,9 +4991,7 @@ export const pages = [
         "label": "平均单笔曲线",
         "type": "boolean",
         "default": true,
-        "description": "是否叠加“平均单笔数值”折线（次坐标）。",
         "publicKey": "showValueLabels",
-        "publicLabel": "平均单笔曲线",
         "desc": "是否叠加“平均单笔数值”折线（次坐标）。"
       },
       {
@@ -5540,9 +5017,7 @@ export const pages = [
             "label": "颜色 4"
           }
         ],
-        "description": "事件笔数柱状的颜色。",
         "publicKey": "barColor",
-        "publicLabel": "柱状颜色",
         "desc": "事件笔数柱状的颜色。"
       },
       {
@@ -5568,9 +5043,7 @@ export const pages = [
             "label": "颜色 4"
           }
         ],
-        "description": "平均单笔折线的颜色。",
         "publicKey": "lineColor",
-        "publicLabel": "折线颜色",
         "desc": "平均单笔折线的颜色。"
       },
       {
@@ -5578,9 +5051,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       },
       {
@@ -5588,9 +5059,7 @@ export const pages = [
         "label": "evilcharts 模式",
         "type": "boolean",
         "default": false,
-        "description": "切换为 evilcharts 风格：点阵底纹绘图区 + 柱面 45° 斜纹 + 柱/线霓虹辉光。",
         "publicKey": "evil",
-        "publicLabel": "evilcharts 模式",
         "desc": "切换为 evilcharts 风格：点阵底纹绘图区 + 柱面 45° 斜纹 + 柱/线霓虹辉光。"
       }
     ],
@@ -5599,6 +5068,8 @@ export const pages = [
       "title": "轮次结构 · 笔数与单笔",
       "en": "Rounds — Count vs Avg Ticket",
       "cn": "不同轮次的事件笔数与平均单笔",
+      "barLegendLabel": "事件笔数",
+      "lineLegendLabel": "平均单笔（亿美元）",
       "rounds": [
         {
           "label": "种子轮",
@@ -5664,10 +5135,8 @@ export const pages = [
         "min": 1,
         "max": 6,
         "step": 1,
-        "unit": " 行",
-        "description": "展示的数据行数量（不含表头与合计行）；行高随行数自适应，不会溢出。",
+        "unit": "行",
         "publicKey": "rowCount",
-        "publicLabel": "数据行数",
         "desc": "展示的数据行数量（不含表头与合计行）；行高随行数自适应，不会溢出。"
       },
       {
@@ -5689,9 +5158,7 @@ export const pages = [
             "label": "第 3 列"
           }
         ],
-        "description": "被着重显示的数值列（着色，可叠加迷你条）。",
         "publicKey": "emphasizeCol",
-        "publicLabel": "强调列",
         "desc": "被着重显示的数值列（着色，可叠加迷你条）。"
       },
       {
@@ -5699,9 +5166,7 @@ export const pages = [
         "label": "迷你条形",
         "type": "boolean",
         "default": true,
-        "description": "是否在强调列的单元格内叠加比例条。",
         "publicKey": "showBars",
-        "publicLabel": "迷你条形",
         "desc": "是否在强调列的单元格内叠加比例条。"
       },
       {
@@ -5709,9 +5174,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮其中一行。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮其中一行。"
       },
       {
@@ -5722,9 +5185,7 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "description": "被强调的数据行序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几行",
         "desc": "被强调的数据行序号（从 0 开始）。"
       },
       {
@@ -5732,9 +5193,7 @@ export const pages = [
         "label": "斑马纹",
         "type": "boolean",
         "default": true,
-        "description": "隔行底色，便于横向阅读。",
         "publicKey": "striped",
-        "publicLabel": "斑马纹",
         "desc": "隔行底色，便于横向阅读。"
       },
       {
@@ -5742,9 +5201,7 @@ export const pages = [
         "label": "合计行",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部合计 / 汇总行。",
         "publicKey": "showFooter",
-        "publicLabel": "合计行",
         "desc": "是否显示底部合计 / 汇总行。"
       },
       {
@@ -5774,9 +5231,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "表头、强调列与高亮行的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "表头、强调列与高亮行的颜色。"
       },
       {
@@ -5784,9 +5239,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -5800,48 +5253,43 @@ export const pages = [
         "事件笔数",
         "平均单笔 / 亿美元"
       ],
-      "columnKeys": [
-        "label",
-        "deals",
-        "value"
-      ],
       "rows": [
-        {
-          "label": "种子轮 Seed",
-          "deals": "8",
-          "value": "1.2"
-        },
-        {
-          "label": "A 轮 Series A",
-          "deals": "12",
-          "value": "1.8"
-        },
-        {
-          "label": "B 轮 Series B",
-          "deals": "18",
-          "value": "3.5"
-        },
-        {
-          "label": "C 轮 Series C",
-          "deals": "15",
-          "value": "6.8"
-        },
-        {
-          "label": "D 轮及以后 Series D+",
-          "deals": "22",
-          "value": "15.2"
-        },
-        {
-          "label": "未标明轮次 Undisclosed",
-          "deals": "22",
-          "value": "18.6"
-        }
+        [
+          "种子轮 Seed",
+          "8",
+          "1.2"
+        ],
+        [
+          "A 轮 Series A",
+          "12",
+          "1.8"
+        ],
+        [
+          "B 轮 Series B",
+          "18",
+          "3.5"
+        ],
+        [
+          "C 轮 Series C",
+          "15",
+          "6.8"
+        ],
+        [
+          "D 轮及以后 Series D+",
+          "22",
+          "15.2"
+        ],
+        [
+          "未标明轮次 Undisclosed",
+          "22",
+          "18.6"
+        ]
       ],
-      "footer": {
-        "label": "全年合计",
-        "deals": "97",
-        "value": "10.0"
-      },
+      "footer": [
+        "全年合计",
+        "97",
+        "10.0"
+      ],
       "textCols": [],
       "caption": "表格 · 越到后轮，单笔越大——“赢家通吃”",
       "rowCount": 6,
@@ -5872,10 +5320,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 个",
-        "description": "展示的地区数量（其余并入末项）。",
+        "unit": "个",
         "publicKey": "segmentCount",
-        "publicLabel": "地区数量",
         "desc": "展示的地区数量（其余并入末项）。"
       },
       {
@@ -5883,9 +5329,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一个地区。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一个地区。"
       },
       {
@@ -5896,9 +5340,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的地区序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的地区序号（从 0 开始）。"
       },
       {
@@ -5906,9 +5348,7 @@ export const pages = [
         "label": "集聚度卡片",
         "type": "boolean",
         "default": true,
-        "description": "是否显示左侧集聚度大数字卡片。",
         "publicKey": "showCallout",
-        "publicLabel": "集聚度卡片",
         "desc": "是否显示左侧集聚度大数字卡片。"
       },
       {
@@ -5916,9 +5356,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       }
     ],
@@ -5927,6 +5365,7 @@ export const pages = [
       "title": "地区分布 · 高度集聚",
       "en": "Funding by Region",
       "cn": "融资高度集中在少数科技枢纽",
+      "calloutKicker": "CONCENTRATION",
       "regions": [
         {
           "label": "旧金山湾区",
@@ -5969,7 +5408,7 @@ export const pages = [
         "label": "旧金山湾区",
         "note": "独占六成以上 · 人才、资本、算力虹吸效应进一步强化"
       },
-      "caption": "“地理护城河”短期内难以撼动 · 湾区独占六成以上份额",
+      "caption": "“地理护城河”短期内难以撼动 · 旧金山湾区独占六成以上份额",
       "segmentCount": 5,
       "highlight": true,
       "highlightIndex": 0,
@@ -5994,10 +5433,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "特写图片槽数量（0 时自动切换为纯文字大留白构图）；常规与拼贴版式都会按数量重排。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "特写图片槽数量（0 时自动切换为纯文字大留白构图）；常规与拼贴版式都会按数量重排。"
       },
       {
@@ -6015,9 +5452,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满铺满版面，完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满铺满版面，完整自适应按原始比例显示。"
       },
       {
@@ -6035,9 +5470,7 @@ export const pages = [
             "label": "叠放拼贴"
           }
         ],
-        "description": "常规：整齐特写排布；叠放拼贴：多张图片倾斜叠压、白边浮起的拼贴效果。",
         "publicKey": "imageLayout",
-        "publicLabel": "图片版式",
         "desc": "常规：整齐特写排布；叠放拼贴：多张图片倾斜叠压、白边浮起的拼贴效果。"
       },
       {
@@ -6045,9 +5478,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传特写图片，槽位自适应图片比例不变形。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传特写图片，槽位自适应图片比例不变形。"
       },
       {
@@ -6069,9 +5500,7 @@ export const pages = [
             "label": "满版叠字"
           }
         ],
-        "description": "图文版式：左右分栏或满版图片叠加文字。",
         "publicKey": "layout",
-        "publicLabel": "版式",
         "desc": "图文版式：左右分栏或满版图片叠加文字。"
       },
       {
@@ -6082,10 +5511,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 个",
-        "description": "主数字下方的副统计贴纸数量。",
+        "unit": "个",
         "publicKey": "statCount",
-        "publicLabel": "副指标数量",
         "desc": "主数字下方的副统计贴纸数量。"
       },
       {
@@ -6093,9 +5520,7 @@ export const pages = [
         "label": "主数字强调",
         "type": "boolean",
         "default": true,
-        "description": "是否给主数字加荧光描边强调。",
         "publicKey": "highlight",
-        "publicLabel": "主数字强调",
         "desc": "是否给主数字加荧光描边强调。"
       },
       {
@@ -6103,9 +5528,7 @@ export const pages = [
         "label": "荧光高亮",
         "type": "boolean",
         "default": true,
-        "description": "是否给说明句关键词加荧光底纹。",
         "publicKey": "showHighlighter",
-        "publicLabel": "荧光高亮",
         "desc": "是否给说明句关键词加荧光底纹。"
       },
       {
@@ -6139,9 +5562,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "主数字、荧光与强调描边的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "主数字、荧光与强调描边的颜色。"
       },
       {
@@ -6149,9 +5570,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -6217,10 +5636,8 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "unit": " 条",
-        "description": "展示的分主题贴纸数量（0 时只显示标题）。",
+        "unit": "条",
         "publicKey": "topicCount",
-        "publicLabel": "主线数量",
         "desc": "展示的分主题贴纸数量（0 时只显示标题）。"
       },
       {
@@ -6228,9 +5645,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮其中一条主线贴纸。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮其中一条主线贴纸。"
       },
       {
@@ -6241,9 +5656,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的主线序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几条",
         "desc": "被强调的主线序号（从 0 开始）。"
       },
       {
@@ -6251,16 +5664,14 @@ export const pages = [
         "label": "背景巨字",
         "type": "boolean",
         "default": true,
-        "description": "是否显示背景的超大序号（无图片时生效）。",
         "publicKey": "showGhost",
-        "publicLabel": "背景巨字",
         "desc": "是否显示背景的超大序号（无图片时生效）。"
       },
       {
         "key": "accentColor",
         "label": "主题色",
         "type": "color",
-        "default": "#e8503a",
+        "default": "#5b8def",
         "options": [
           {
             "value": "#5b8def",
@@ -6283,9 +5694,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "本章主题色（序号、贴纸、高亮）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "本章主题色（序号、贴纸、高亮）。"
       },
       {
@@ -6296,10 +5705,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "unit": " 张",
-        "description": "右侧图片槽数量（0 时背景巨字铺满，布局自动适配）。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "右侧图片槽数量（0 时背景巨字铺满，布局自动适配）。"
       },
       {
@@ -6317,9 +5724,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式。"
       },
       {
@@ -6327,13 +5732,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传图片（数量由「图片数量」控制），槽位自适应图片比例。",
-        "default": [
-          "",
-          ""
-        ],
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传图片（数量由「图片数量」控制），槽位自适应图片比例。"
       },
       {
@@ -6341,9 +5740,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -6403,10 +5800,8 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "unit": " 张",
-        "description": "主数字四周的贴纸标签数量（0 时只显示主数字）。",
+        "unit": "张",
         "publicKey": "stickerCount",
-        "publicLabel": "贴纸数量",
         "desc": "主数字四周的贴纸标签数量（0 时只显示主数字）。"
       },
       {
@@ -6414,9 +5809,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一张贴纸渲染成荧光强调款。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一张贴纸渲染成荧光强调款。"
       },
       {
@@ -6427,9 +5820,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的贴纸序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几张",
         "desc": "被强调的贴纸序号（从 0 开始）。"
       },
       {
@@ -6459,9 +5850,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "主数字、荧光高亮与强调贴纸的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "主数字、荧光高亮与强调贴纸的颜色。"
       },
       {
@@ -6469,9 +5858,7 @@ export const pages = [
         "label": "荧光高亮",
         "type": "boolean",
         "default": true,
-        "description": "是否给标题关键词加荧光底纹。",
         "publicKey": "showHighlighter",
-        "publicLabel": "荧光高亮",
         "desc": "是否给标题关键词加荧光底纹。"
       },
       {
@@ -6479,9 +5866,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -6538,13 +5923,8 @@ export const pages = [
         "min": 1,
         "max": 4,
         "step": 1,
-        "unit": " 张",
-        "countArrays": [
-          "risks"
-        ],
-        "description": "展示的状态主题卡片数量。",
+        "unit": "张",
         "publicKey": "cardCount",
-        "publicLabel": "状态卡数量",
         "desc": "展示的状态主题卡片数量。"
       },
       {
@@ -6552,9 +5932,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": false,
-        "description": "是否高亮强调其中一张状态卡。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一张状态卡。"
       },
       {
@@ -6565,9 +5943,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的状态卡序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几张",
         "desc": "被强调的状态卡序号（从 0 开始）。"
       },
       {
@@ -6575,26 +5951,21 @@ export const pages = [
         "label": "传导链",
         "type": "boolean",
         "default": true,
-        "description": "是否显示每张卡的状态传导链（关闭则仅显示结论）。",
         "publicKey": "showChain",
-        "publicLabel": "传导链",
         "desc": "是否显示每张卡的状态传导链（关闭则仅显示结论）。"
       },
       {
         "key": "chainCount",
-        "label": "传导节点数",
+        "label": "传导链节点数",
         "type": "number",
         "default": 4,
         "min": 1,
         "max": 4,
         "step": 1,
-        "unit": " 个",
         "countArrays": [
           "risks[].chain"
         ],
-        "description": "每张卡最多展示的传导链节点数量。",
         "publicKey": "chainCount",
-        "publicLabel": "传导节点数",
         "desc": "每张卡最多展示的传导链节点数量。"
       },
       {
@@ -6602,9 +5973,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       }
     ],
@@ -6617,6 +5986,7 @@ export const pages = [
         {
           "title": "估值泡沫与盈利困境",
           "en": "VALUATION BUBBLE",
+          "tone": "red",
           "chain": [
             "高估值泡沫",
             "盈利未验证",
@@ -6628,33 +5998,33 @@ export const pages = [
         {
           "title": "监管压力加大",
           "en": "REGULATION",
+          "tone": "amber",
           "chain": [
             "监管收紧",
             "AI 安全法案",
-            "合规成本激增",
-            "上线周期拉长"
+            "合规成本激增"
           ],
           "impact": "欧盟 AI Act、美国各州隐私法相继生效，技术标准尚未统一。"
         },
         {
           "title": "大厂挤压与开源冲击",
           "en": "BIG-TECH & OSS",
+          "tone": "violet",
           "chain": [
             "大厂自研",
             "开源逼近闭源",
-            "商业壁垒降低",
-            "价格战加剧"
+            "商业壁垒降低"
           ],
-          "impact": "Google、Meta、Microsoft 与开源模型压低 API 溢价。"
+          "impact": "Google / Meta / Microsoft 降维打击，Llama / Mistral 削弱 API 收费。"
         },
         {
           "title": "算力供应链卡脖子",
           "en": "COMPUTE SUPPLY",
+          "tone": "blue",
           "chain": [
             "GPU 供应紧张",
             "出口管制加码",
-            "算力成本高企",
-            "交付节奏受限"
+            "算力成本高企"
           ],
           "impact": "NVIDIA 供应紧张叠加对华出口管制，中小公司难承受长期烧钱。"
         }
@@ -6685,10 +6055,8 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "unit": " 条",
-        "description": "“看好”与“谨慎”每栏展示的条目数量。",
+        "unit": "条",
         "publicKey": "itemCount",
-        "publicLabel": "每栏条目数",
         "desc": "“看好”与“谨慎”每栏展示的条目数量。"
       },
       {
@@ -6710,9 +6078,7 @@ export const pages = [
             "label": "谨慎"
           }
         ],
-        "description": "强调“看好”或“谨慎”某一栏（另一栏淡化）。",
         "publicKey": "highlightColumn",
-        "publicLabel": "重点强调",
         "desc": "强调“看好”或“谨慎”某一栏（另一栏淡化）。"
       },
       {
@@ -6720,9 +6086,7 @@ export const pages = [
         "label": "阶段时间轴",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部的阶段性策略时间轴。",
         "publicKey": "showTimeline",
-        "publicLabel": "阶段时间轴",
         "desc": "是否显示底部的阶段性策略时间轴。"
       },
       {
@@ -6730,9 +6094,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部一句话总结。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部一句话总结。"
       }
     ],
@@ -6813,41 +6175,20 @@ export const pages = [
         "key": "itemCount",
         "label": "阶段数量",
         "type": "number",
-        "default": 4,
+        "default": 3,
         "min": 2,
         "max": 4,
         "step": 1,
-        "unit": " 段",
-        "description": "路线图展示的阶段数量。",
+        "unit": "段",
         "publicKey": "itemCount",
-        "publicLabel": "阶段数量",
         "desc": "路线图展示的阶段数量。"
-      },
-      {
-        "key": "pointCount",
-        "label": "每段要点数",
-        "type": "number",
-        "default": 2,
-        "min": 1,
-        "max": 2,
-        "step": 1,
-        "unit": " 条",
-        "countArrays": [
-          "phases[].points"
-        ],
-        "description": "每个阶段最多展示的行动要点数量。",
-        "publicKey": "pointCount",
-        "publicLabel": "每段要点数",
-        "desc": "每个阶段最多展示的行动要点数量。"
       },
       {
         "key": "highlight",
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一个阶段渲染成荧光「当前焦点」款。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一个阶段渲染成荧光「当前焦点」款。"
       },
       {
@@ -6858,9 +6199,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的阶段序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几段",
         "desc": "被强调的阶段序号（从 0 开始）。"
       },
       {
@@ -6890,9 +6229,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "被强调阶段与轨道高亮的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "强调色",
         "desc": "被强调阶段与轨道高亮的颜色。"
       },
       {
@@ -6900,9 +6237,7 @@ export const pages = [
         "label": "贯穿轨道",
         "type": "boolean",
         "default": true,
-        "description": "是否显示贯穿各阶段的轨道与站点圆点。",
         "publicKey": "showRail",
-        "publicLabel": "贯穿轨道",
         "desc": "是否显示贯穿各阶段的轨道与站点圆点。"
       },
       {
@@ -6910,9 +6245,7 @@ export const pages = [
         "label": "结论贴纸",
         "type": "boolean",
         "default": true,
-        "description": "是否显示每个阶段底部的动作结论贴纸。",
         "publicKey": "showVerdict",
-        "publicLabel": "结论贴纸",
         "desc": "是否显示每个阶段底部的动作结论贴纸。"
       },
       {
@@ -6920,15 +6253,13 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
     "defaultProps": {
       "kicker": "# 投资展望",
-      "title": "阶段性策略 · 四步走路线图",
+      "title": "阶段性策略 · 三步走路线图",
       "en": "Phased Strategy Roadmap",
       "cn": "从观察到优选，再到逆周期布局",
       "phases": [
@@ -6940,7 +6271,8 @@ export const pages = [
             "持续跟踪头部公司 IPO 表现",
             "若 Anthropic / OpenAI 破发，警惕全行业估值回调"
           ],
-          "verdict": "保持观望"
+          "verdict": "保持观望",
+          "color": "#5b8def"
         },
         {
           "period": "2026 — 2027",
@@ -6950,7 +6282,8 @@ export const pages = [
             "关注垂直应用的收入增长曲线",
             "优选 ARR ≥ 1 亿美元、续约率 > 120% 的标的"
           ],
-          "verdict": "精选加仓"
+          "verdict": "精选加仓",
+          "color": "#46b083"
         },
         {
           "period": "2027 年后",
@@ -6960,7 +6293,8 @@ export const pages = [
             "若 AGI 突破未兑现，行业进入洗牌期",
             "逆周期抄底被低估的优质技术资产"
           ],
-          "verdict": "逆周期布局"
+          "verdict": "逆周期布局",
+          "color": "#7a5ae0"
         },
         {
           "period": "退出窗口",
@@ -6970,12 +6304,12 @@ export const pages = [
             "跟踪监管框架与并购窗口变化",
             "在流动性改善时分批兑现头部仓位"
           ],
-          "verdict": "动态兑现"
+          "verdict": "动态兑现",
+          "color": "#e0a23a"
         }
       ],
       "caption": "路线图 · 不同阶段，资本动作各不相同",
-      "itemCount": 4,
-      "pointCount": 2,
+      "itemCount": 3,
       "highlight": true,
       "highlightIndex": 1,
       "accentColor": "#46b083",
@@ -7009,10 +6343,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "default": "unicorn",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -7040,10 +6371,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "default": "tech",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "imageSlotCount",
@@ -7053,10 +6381,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "unit": " 张",
-        "description": "满版图片槽数量：0 显示条纹占位、1 单张满版、2 左右双图（各自按比例自适应，不变形）。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "满版图片槽数量：0 显示条纹占位、1 单张满版、2 左右双图（各自按比例自适应，不变形）。"
       },
       {
@@ -7074,9 +6400,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满铺满版面，完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满铺满版面，完整自适应按原始比例显示。"
       },
       {
@@ -7084,20 +6408,14 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传满版图片，槽位自适应图片比例不变形。",
-        "default": [
-          "",
-          ""
-        ],
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传满版图片，槽位自适应图片比例不变形。"
       },
       {
         "key": "plate",
         "label": "信息卡位置",
         "type": "select",
-        "default": "bottom-right",
+        "default": "bottom-left",
         "options": [
           {
             "value": "bottom-left",
@@ -7112,9 +6430,7 @@ export const pages = [
             "label": "左侧居中"
           }
         ],
-        "description": "浮层玻璃信息卡在画面中的落位。",
         "publicKey": "plate",
-        "publicLabel": "信息卡位置",
         "desc": "浮层玻璃信息卡在画面中的落位。"
       },
       {
@@ -7125,10 +6441,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 个",
-        "description": "信息卡底部统计胶囊的数量。",
+        "unit": "个",
         "publicKey": "statCount",
-        "publicLabel": "指标数量",
         "desc": "信息卡底部统计胶囊的数量。"
       },
       {
@@ -7136,22 +6450,18 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一个指标渲染成实色荧光「印章」胶囊。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一个指标渲染成实色荧光「印章」胶囊。"
       },
       {
         "key": "highlightIndex",
         "label": "强调第几个",
         "type": "number",
-        "default": 2,
+        "default": 0,
         "min": 0,
         "max": 2,
         "step": 1,
-        "description": "被强调的指标序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的指标序号（从 0 开始）。"
       },
       {
@@ -7159,16 +6469,14 @@ export const pages = [
         "label": "荧光高亮",
         "type": "boolean",
         "default": true,
-        "description": "是否给说明句关键词加荧光底纹。",
         "publicKey": "showHighlighter",
-        "publicLabel": "荧光高亮",
         "desc": "是否给说明句关键词加荧光底纹。"
       },
       {
         "key": "accentColor",
         "label": "主题色",
         "type": "color",
-        "default": "#e8503a",
+        "default": "#7a5ae0",
         "options": [
           {
             "value": "#7a5ae0",
@@ -7195,9 +6503,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "信息卡强调元素与荧光的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "信息卡强调元素与荧光的颜色。"
       },
       {
@@ -7205,9 +6511,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -7270,10 +6574,8 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "并排展示的数字卡片数量。",
+        "unit": "张",
         "publicKey": "cardCount",
-        "publicLabel": "卡片数量",
         "desc": "并排展示的数字卡片数量。"
       },
       {
@@ -7281,9 +6583,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一张卡片抬升为发光强调卡。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一张卡片抬升为发光强调卡。"
       },
       {
@@ -7294,9 +6594,7 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "description": "被强调的卡片序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几张",
         "desc": "被强调的卡片序号（从 0 开始）。"
       },
       {
@@ -7304,9 +6602,7 @@ export const pages = [
         "label": "点阵底纹",
         "type": "boolean",
         "default": false,
-        "description": "evilcharts 标志性的点阵网格背景（默认关闭，净色图表）。",
         "publicKey": "showDots",
-        "publicLabel": "点阵底纹",
         "desc": "evilcharts 标志性的点阵网格背景（默认关闭，净色图表）。"
       },
       {
@@ -7314,9 +6610,7 @@ export const pages = [
         "label": "参考网格",
         "type": "boolean",
         "default": true,
-        "description": "绘图区参考线 / 刻度的显示。",
         "publicKey": "showGrid",
-        "publicLabel": "参考网格",
         "desc": "绘图区参考线 / 刻度的显示。"
       },
       {
@@ -7324,9 +6618,7 @@ export const pages = [
         "label": "趋势角标",
         "type": "boolean",
         "default": true,
-        "description": "每张卡片底部趋势胶囊角标的显示。",
         "publicKey": "showTrend",
-        "publicLabel": "趋势角标",
         "desc": "每张卡片底部趋势胶囊角标的显示。"
       },
       {
@@ -7376,9 +6668,7 @@ export const pages = [
             "color": "linear-gradient(135deg, #5b8def 0% 33.33333333333333%, #46b083 33.33333333333333% 66.66666666666666%, #e0a23a 66.66666666666666% 100%)"
           }
         ],
-        "description": "三张卡片的主题色（依次对应）。",
         "publicKey": "palette",
-        "publicLabel": "三卡配色",
         "desc": "三张卡片的主题色（依次对应）。"
       },
       {
@@ -7386,9 +6676,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -7400,13 +6688,13 @@ export const pages = [
       "cn": "行业 · 赛道 · 地理 —— 资本同时向头部收口",
       "cards": [
         {
-          "chartType": "bars",
           "tag": "行业层面",
           "tagTone": "blue",
           "label": "AI 占全美风险投资",
           "en": "Share of All US VC",
           "value": 33,
           "unit": "%",
+          "chartType": "bars",
           "trend": "三分天下有其一",
           "bars": [
             {
@@ -7433,25 +6721,25 @@ export const pages = [
           ]
         },
         {
-          "chartType": "radial",
           "tag": "赛道层面",
           "tagTone": "green",
           "label": "大模型独占 AI 融资",
           "en": "Foundation-Model Layer",
           "value": 43,
           "unit": "%",
+          "chartType": "radial",
           "trend": "模型层最吸金",
           "restLabel": "其余赛道",
           "restValue": 57
         },
         {
-          "chartType": "area",
           "tag": "地理层面",
           "tagTone": "violet",
           "label": "资金虹吸旧金山湾区",
           "en": "Siphoned to the Bay Area",
           "value": 64,
           "unit": "%",
+          "chartType": "area",
           "trend": "虹吸效应持续强化",
           "points": [
             {
@@ -7505,10 +6793,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "unit": " 张",
-        "description": "0 = 双占位 · 1 = 左图 + 右占位 · 2 = 双图。两侧均按上传图比例自适应。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片槽数量",
         "desc": "0 = 双占位 · 1 = 左图 + 右占位 · 2 = 双图。两侧均按上传图比例自适应。"
       },
       {
@@ -7526,9 +6812,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "上传图按裁剪填满或保留完整画面。",
         "publicKey": "imageFit",
-        "publicLabel": "图片裁切",
         "desc": "上传图按裁剪填满或保留完整画面。"
       },
       {
@@ -7536,9 +6820,7 @@ export const pages = [
         "label": "上传图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "左 / 右两侧的画面。",
         "publicKey": "images",
-        "publicLabel": "上传图片",
         "desc": "左 / 右两侧的画面。"
       },
       {
@@ -7546,9 +6828,7 @@ export const pages = [
         "label": "角标贴纸",
         "type": "boolean",
         "default": true,
-        "description": "两侧角标贴纸的显示。",
         "publicKey": "showTags",
-        "publicLabel": "角标贴纸",
         "desc": "两侧角标贴纸的显示。"
       },
       {
@@ -7556,9 +6836,7 @@ export const pages = [
         "label": "中央断言卡",
         "type": "boolean",
         "default": true,
-        "description": "横跨接缝的中央玻璃断言卡显示。",
         "publicKey": "showPlate",
-        "publicLabel": "中央断言卡",
         "desc": "横跨接缝的中央玻璃断言卡显示。"
       },
       {
@@ -7566,9 +6844,7 @@ export const pages = [
         "label": "对比数字",
         "type": "boolean",
         "default": true,
-        "description": "断言卡上的左右对比数字显示。",
         "publicKey": "showStats",
-        "publicLabel": "对比数字",
         "desc": "断言卡上的左右对比数字显示。"
       },
       {
@@ -7590,9 +6866,7 @@ export const pages = [
             "label": "不强调"
           }
         ],
-        "description": "哪一侧的对比数字渲染成荧光强调。",
         "publicKey": "highlightSide",
-        "publicLabel": "点亮一侧",
         "desc": "哪一侧的对比数字渲染成荧光强调。"
       },
       {
@@ -7626,9 +6900,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "中央卡 kicker 与荧光数字的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "强调色",
         "desc": "中央卡 kicker 与荧光数字的颜色。"
       },
       {
@@ -7636,9 +6908,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -7708,9 +6978,7 @@ export const pages = [
             "label": "面积"
           }
         ],
-        "description": "逐月数据的呈现形式：热力色块 / 柱状 / 面积折线。",
         "publicKey": "chartType",
-        "publicLabel": "图表类型",
         "desc": "逐月数据的呈现形式：热力色块 / 柱状 / 面积折线。"
       },
       {
@@ -7718,9 +6986,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调某一个月份（如峰值）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调某一个月份（如峰值）。"
       },
       {
@@ -7731,9 +6997,7 @@ export const pages = [
         "min": 0,
         "max": 11,
         "step": 1,
-        "description": "被强调的月份序号（0 = 1 月，11 = 12 月）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的月份序号（0 = 1 月，11 = 12 月）。"
       },
       {
@@ -7741,9 +7005,7 @@ export const pages = [
         "label": "数据摘要面板",
         "type": "boolean",
         "default": true,
-        "description": "是否显示右侧峰值 / 低谷 / 月均摘要卡。",
         "publicKey": "showStats",
-        "publicLabel": "数据摘要面板",
         "desc": "是否显示右侧峰值 / 低谷 / 月均摘要卡。"
       },
       {
@@ -7751,9 +7013,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       },
       {
@@ -7761,9 +7021,7 @@ export const pages = [
         "label": "evilcharts 模式",
         "type": "boolean",
         "default": false,
-        "description": "切换为 evilcharts 风格：点阵底纹 + 柱/格面 45° 斜纹 + 霓虹辉光（面积图为点阵底 + 发光折线）。",
         "publicKey": "evil",
-        "publicLabel": "evilcharts 模式",
         "desc": "切换为 evilcharts 风格：点阵底纹 + 柱/格面 45° 斜纹 + 霓虹辉光（面积图为点阵底 + 发光折线）。"
       }
     ],
@@ -7870,10 +7128,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "顶部关键指标卡的数量（0 时隐藏整行）。",
+        "unit": "张",
         "publicKey": "statCount",
-        "publicLabel": "指标卡数量",
         "desc": "顶部关键指标卡的数量（0 时隐藏整行）。"
       },
       {
@@ -7884,10 +7140,8 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "核心优势要点卡的数量。",
+        "unit": "张",
         "publicKey": "pointCount",
-        "publicLabel": "要点卡数量",
         "desc": "核心优势要点卡的数量。"
       },
       {
@@ -7895,9 +7149,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一个要点。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一个要点。"
       },
       {
@@ -7908,9 +7160,7 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "description": "被强调的要点序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几项",
         "desc": "被强调的要点序号（从 0 开始）。"
       },
       {
@@ -7921,10 +7171,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "右侧图片槽数量（0 时文字占满整页，布局自动适配）。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "右侧图片槽数量（0 时文字占满整页，布局自动适配）。"
       },
       {
@@ -7942,9 +7190,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满构图统一，完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满构图统一，完整自适应按原始比例显示。"
       },
       {
@@ -7962,9 +7208,7 @@ export const pages = [
             "label": "叠放拼贴"
           }
         ],
-        "description": "常规：整齐排布；叠放拼贴：图片倾斜叠压、白边浮起的拼贴效果。",
         "publicKey": "imageLayout",
-        "publicLabel": "图片版式",
         "desc": "常规：整齐排布；叠放拼贴：图片倾斜叠压、白边浮起的拼贴效果。"
       },
       {
@@ -7972,9 +7216,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传图片（数量由「图片数量」控制），槽位会自适应图片比例。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传图片（数量由「图片数量」控制），槽位会自适应图片比例。"
       },
       {
@@ -7982,9 +7224,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       }
     ],
@@ -7994,7 +7234,7 @@ export const pages = [
       "accentColor": "#5b8def",
       "title": "xAI · 马斯克的第三次创业",
       "en": "Musk's Third Venture",
-      "intro": "xAI 2024 年完成 50 亿美元融资，18 个月跻身头部梯队。",
+      "intro": "由埃隆·马斯克于 2023 年创立的 xAI，在 2024 年 11 月完成 50 亿美元融资，估值达 500 亿美元。体量虽不及 OpenAI / Anthropic，但增速惊人——从成立到跻身头部梯队仅用 18 个月。",
       "stats": [
         {
           "value": "50",
@@ -8059,10 +7299,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "顶部关键指标卡的数量（0 时隐藏整行）。",
+        "unit": "张",
         "publicKey": "statCount",
-        "publicLabel": "指标卡数量",
         "desc": "顶部关键指标卡的数量（0 时隐藏整行）。"
       },
       {
@@ -8073,10 +7311,8 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "核心优势要点卡的数量。",
+        "unit": "张",
         "publicKey": "pointCount",
-        "publicLabel": "要点卡数量",
         "desc": "核心优势要点卡的数量。"
       },
       {
@@ -8084,9 +7320,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一个要点。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一个要点。"
       },
       {
@@ -8097,9 +7331,7 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "description": "被强调的要点序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几项",
         "desc": "被强调的要点序号（从 0 开始）。"
       },
       {
@@ -8110,10 +7342,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "右侧图片槽数量（0 时文字占满整页，布局自动适配）。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "右侧图片槽数量（0 时文字占满整页，布局自动适配）。"
       },
       {
@@ -8131,9 +7361,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满构图统一，完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满构图统一，完整自适应按原始比例显示。"
       },
       {
@@ -8151,9 +7379,7 @@ export const pages = [
             "label": "叠放拼贴"
           }
         ],
-        "description": "常规：整齐排布；叠放拼贴：图片倾斜叠压、白边浮起的拼贴效果。",
         "publicKey": "imageLayout",
-        "publicLabel": "图片版式",
         "desc": "常规：整齐排布；叠放拼贴：图片倾斜叠压、白边浮起的拼贴效果。"
       },
       {
@@ -8161,9 +7387,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传图片（数量由「图片数量」控制），槽位会自适应图片比例。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传图片（数量由「图片数量」控制），槽位会自适应图片比例。"
       },
       {
@@ -8171,9 +7395,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       }
     ],
@@ -8183,7 +7405,7 @@ export const pages = [
       "accentColor": "#46b083",
       "title": "CoreWeave · 卖铲子的人也赚翻了",
       "en": "Selling Shovels in the Gold Rush",
-      "intro": "CoreWeave 转型 AI 算力云，2024 年融资 110 亿美元。",
+      "intro": "原本是一家加密货币挖矿公司，2023 年转型为 AI 算力云服务商。2024 年完成 110 亿美元融资，估值超 190 亿美元——印证了「淘金热中卖铲子」的商业逻辑。",
       "stats": [
         {
           "value": "110",
@@ -8271,9 +7493,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "荧光贴纸与高亮的颜色（参考图的荧光高亮）。",
         "publicKey": "accentColor",
-        "publicLabel": "荧光色",
         "desc": "荧光贴纸与高亮的颜色（参考图的荧光高亮）。"
       },
       {
@@ -8284,10 +7504,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "unit": " 个",
-        "description": "右上角倾斜便签贴纸的数量（装饰性回声标签）。",
+        "unit": "个",
         "publicKey": "noteCount",
-        "publicLabel": "便签贴纸",
         "desc": "右上角倾斜便签贴纸的数量（装饰性回声标签）。"
       },
       {
@@ -8295,9 +7513,7 @@ export const pages = [
         "label": "关键词贴纸",
         "type": "boolean",
         "default": true,
-        "description": "是否把金句中的对立关键词渲染成「黑色印章 + 荧光」贴纸。",
         "publicKey": "showHighlighter",
-        "publicLabel": "关键词贴纸",
         "desc": "是否把金句中的对立关键词渲染成「黑色印章 + 荧光」贴纸。"
       },
       {
@@ -8305,9 +7521,7 @@ export const pages = [
         "label": "巨型引号",
         "type": "boolean",
         "default": true,
-        "description": "是否显示背景的超大引号。",
         "publicKey": "showQuoteMark",
-        "publicLabel": "巨型引号",
         "desc": "是否显示背景的超大引号。"
       },
       {
@@ -8315,9 +7529,7 @@ export const pages = [
         "label": "署名",
         "type": "boolean",
         "default": true,
-        "description": "是否显示出处 / 署名。",
         "publicKey": "showAttribution",
-        "publicLabel": "署名",
         "desc": "是否显示出处 / 署名。"
       },
       {
@@ -8335,9 +7547,7 @@ export const pages = [
             "label": "居中"
           }
         ],
-        "description": "整页内容的对齐方式。",
         "publicKey": "align",
-        "publicLabel": "对齐方式",
         "desc": "整页内容的对齐方式。"
       },
       {
@@ -8345,9 +7555,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -8394,10 +7602,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "unit": " 个",
-        "description": "参与堆叠与卡片展示的地区数量。",
+        "unit": "个",
         "publicKey": "itemCount",
-        "publicLabel": "地区数量",
         "desc": "参与堆叠与卡片展示的地区数量。"
       },
       {
@@ -8405,9 +7611,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一个地区（描边卡片 + 加粗段）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一个地区（描边卡片 + 加粗段）。"
       },
       {
@@ -8418,9 +7622,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的地区序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的地区序号（从 0 开始）。"
       },
       {
@@ -8428,9 +7630,7 @@ export const pages = [
         "label": "堆叠条",
         "type": "boolean",
         "default": true,
-        "description": "顶部 100% 堆叠占比条的显示。",
         "publicKey": "showBar",
-        "publicLabel": "堆叠条",
         "desc": "顶部 100% 堆叠占比条的显示。"
       },
       {
@@ -8438,9 +7638,7 @@ export const pages = [
         "label": "数值数字",
         "type": "boolean",
         "default": true,
-        "description": "卡片上数值数字的显示（关闭则只看占比）。",
         "publicKey": "showValueLabels",
-        "publicLabel": "数值数字",
         "desc": "卡片上数值数字的显示（关闭则只看占比）。"
       },
       {
@@ -8448,9 +7646,7 @@ export const pages = [
         "label": "总额徽标",
         "type": "boolean",
         "default": true,
-        "description": "右上角全球总额胶囊徽标的显示。",
         "publicKey": "showTotal",
-        "publicLabel": "总额徽标",
         "desc": "右上角全球总额胶囊徽标的显示。"
       },
       {
@@ -8480,9 +7676,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "标题荧光与强调地区的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "标题荧光与强调地区的颜色。"
       },
       {
@@ -8490,9 +7684,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -8505,6 +7697,7 @@ export const pages = [
       "totalLabel": "全球 AI 融资总额",
       "totalValue": "970",
       "totalUnit": "亿美元",
+      "barAnnotation": "*/ 各地区占全球 AI 融资份额 · 合计 100% /*",
       "regions": [
         {
           "name": "美国",
@@ -8567,37 +7760,16 @@ export const pages = [
         "min": 2,
         "max": 6,
         "step": 1,
-        "unit": " 家",
-        "description": "榜单中展示的机构卡片数量。",
+        "unit": "家",
         "publicKey": "itemCount",
-        "publicLabel": "机构数量",
         "desc": "榜单中展示的机构卡片数量。"
-      },
-      {
-        "key": "dealCount",
-        "publicKey": "exampleCount",
-        "label": "项目数量",
-        "type": "number",
-        "default": 3,
-        "min": 1,
-        "max": 3,
-        "step": 1,
-        "unit": " 个",
-        "countArrays": [
-          "investors[].deals"
-        ],
-        "description": "每家机构最多展示的代表项目数量。",
-        "publicLabel": "项目数量",
-        "desc": "每家机构最多展示的代表项目数量。"
       },
       {
         "key": "highlight",
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调榜首/某家机构（描边 + 实色徽章）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调榜首/某家机构（描边 + 实色徽章）。"
       },
       {
@@ -8608,9 +7780,7 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "description": "被强调的机构序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几家",
         "desc": "被强调的机构序号（从 0 开始）。"
       },
       {
@@ -8618,9 +7788,7 @@ export const pages = [
         "label": "活跃度条",
         "type": "boolean",
         "default": true,
-        "description": "出手次数比例微条的显示。",
         "publicKey": "showBars",
-        "publicLabel": "活跃度条",
         "desc": "出手次数比例微条的显示。"
       },
       {
@@ -8628,10 +7796,22 @@ export const pages = [
         "label": "代表项目",
         "type": "boolean",
         "default": true,
-        "description": "代表投资项目贴纸标签的显示。",
         "publicKey": "showExamples",
-        "publicLabel": "代表项目",
         "desc": "代表投资项目贴纸标签的显示。"
+      },
+      {
+        "key": "dealCount",
+        "label": "代表项目数量",
+        "type": "number",
+        "default": 3,
+        "min": 1,
+        "max": 3,
+        "step": 1,
+        "countArrays": [
+          "investors[].deals"
+        ],
+        "publicKey": "exampleCount",
+        "desc": "每家机构最多展示的代表项目数量。"
       },
       {
         "key": "accentColor",
@@ -8660,9 +7840,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "标题荧光与强调机构卡片的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "标题荧光与强调机构卡片的颜色。"
       },
       {
@@ -8670,9 +7848,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -8694,7 +7870,8 @@ export const pages = [
             "OpenAI",
             "Mistral",
             "xAI"
-          ]
+          ],
+          "tone": "violet"
         },
         {
           "name": "Sequoia",
@@ -8703,9 +7880,9 @@ export const pages = [
           "metric": 24,
           "deals": [
             "OpenAI",
-            "Glean",
-            "Harvey"
-          ]
+            "Glean"
+          ],
+          "tone": "blue"
         },
         {
           "name": "Thrive",
@@ -8714,9 +7891,9 @@ export const pages = [
           "metric": 17,
           "deals": [
             "OpenAI",
-            "Anthropic",
-            "Scale AI"
-          ]
+            "Anthropic"
+          ],
+          "tone": "green"
         },
         {
           "name": "Microsoft",
@@ -8725,9 +7902,9 @@ export const pages = [
           "metric": 14,
           "deals": [
             "OpenAI",
-            "CoreWeave",
-            "Mistral"
-          ]
+            "CoreWeave"
+          ],
+          "tone": "amber"
         },
         {
           "name": "MGX",
@@ -8736,9 +7913,9 @@ export const pages = [
           "metric": 11,
           "deals": [
             "xAI",
-            "Anthropic",
-            "OpenAI"
-          ]
+            "Anthropic"
+          ],
+          "tone": "red"
         },
         {
           "name": "Nvidia",
@@ -8747,18 +7924,18 @@ export const pages = [
           "metric": 10,
           "deals": [
             "CoreWeave",
-            "Figure",
-            "Runway"
-          ]
+            "Figure"
+          ],
+          "tone": "green"
         }
       ],
       "caption": "投资机构榜 · 一线风投、战略 CVC 与主权资本三股力量主导大额融资",
       "itemCount": 6,
-      "dealCount": 3,
       "highlight": true,
       "highlightIndex": 0,
       "showBars": true,
       "showDeals": true,
+      "dealCount": 3,
       "accentColor": "#7a5ae0",
       "showCaption": true
     }
@@ -8780,10 +7957,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 项",
-        "description": "展示的尽调评分维度数量。",
+        "unit": "项",
         "publicKey": "criterionCount",
-        "publicLabel": "评分维度数量",
         "desc": "展示的尽调评分维度数量。"
       },
       {
@@ -8791,9 +7966,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把某一行（短板）点亮成荧光。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把某一行（短板）点亮成荧光。"
       },
       {
@@ -8804,9 +7977,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的评分维度序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几项",
         "desc": "被强调的评分维度序号（从 0 开始）。"
       },
       {
@@ -8814,9 +7985,7 @@ export const pages = [
         "label": "分数条",
         "type": "boolean",
         "default": true,
-        "description": "每项的荧光分数条显示（关闭则仅留分数与评级）。",
         "publicKey": "showBars",
-        "publicLabel": "分数条",
         "desc": "每项的荧光分数条显示（关闭则仅留分数与评级）。"
       },
       {
@@ -8824,9 +7993,7 @@ export const pages = [
         "label": "总评印章",
         "type": "boolean",
         "default": true,
-        "description": "左侧巨型总评等级印章的显示。",
         "publicKey": "showGrade",
-        "publicLabel": "总评印章",
         "desc": "左侧巨型总评等级印章的显示。"
       },
       {
@@ -8860,9 +8027,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "荧光强调行与印章的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "强调色",
         "desc": "荧光强调行与印章的颜色。"
       },
       {
@@ -8870,9 +8035,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -8884,6 +8047,7 @@ export const pages = [
       "subject": "通用大模型 · 头部梯队",
       "grade": "A−",
       "gradeNote": "加权总分 81 / 100",
+      "gradeKicker": "RATING",
       "criteria": [
         {
           "name": "团队与履历",
@@ -8948,10 +8112,8 @@ export const pages = [
         "min": 3,
         "max": 6,
         "step": 1,
-        "unit": " 家",
-        "description": "天梯中展示的公司数量。",
+        "unit": "家",
         "publicKey": "itemCount",
-        "publicLabel": "公司数量",
         "desc": "天梯中展示的公司数量。"
       },
       {
@@ -8959,9 +8121,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一行（描边 + 发光）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一行（描边 + 发光）。"
       },
       {
@@ -8972,9 +8132,7 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "description": "被强调的行序号（按倍数从高到低排序，从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几行",
         "desc": "被强调的行序号（按倍数从高到低排序，从 0 开始）。"
       },
       {
@@ -8986,9 +8144,7 @@ export const pages = [
         "max": 60,
         "step": 5,
         "unit": "×",
-        "description": "合理指标的市销率参考倍数。",
         "publicKey": "refMultiple",
-        "publicLabel": "参考倍数",
         "desc": "合理指标的市销率参考倍数。"
       },
       {
@@ -8996,9 +8152,7 @@ export const pages = [
         "label": "参考线",
         "type": "boolean",
         "default": true,
-        "description": "市销率参考竖线的显示。",
         "publicKey": "showRefLine",
-        "publicLabel": "参考线",
         "desc": "市销率参考竖线的显示。"
       },
       {
@@ -9006,9 +8160,7 @@ export const pages = [
         "label": "区间底色",
         "type": "boolean",
         "default": true,
-        "description": "合理区 / 泡沫区 背景色带的显示。",
         "publicKey": "showZones",
-        "publicLabel": "区间底色",
         "desc": "合理区 / 泡沫区 背景色带的显示。"
       },
       {
@@ -9016,9 +8168,7 @@ export const pages = [
         "label": "指标数值",
         "type": "boolean",
         "default": true,
-        "description": "左侧「指标 / 收入」数字的显示。",
         "publicKey": "showValueLabels",
-        "publicLabel": "指标数值",
         "desc": "左侧「指标 / 收入」数字的显示。"
       },
       {
@@ -9048,9 +8198,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "标题荧光、参考线与泡沫区的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "标题荧光、参考线与泡沫区的主题色。"
       },
       {
@@ -9058,9 +8206,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -9072,25 +8218,26 @@ export const pages = [
       "cn": "市销率天梯 · 倍数越高，估值越悬空",
       "refMultiple": 20,
       "refLabel": "20× 合理参考",
+      "metricAxisLabel": "P/S MULTIPLE · 估值 ÷ 年化收入",
       "unit": "亿",
       "items": [
         {
           "name": "OpenAI",
-          "sector": "FRONTIER",
+          "sector": "GEN-AI",
           "val": 1570,
           "rev": 37,
           "tone": "blue"
         },
         {
           "name": "Anthropic",
-          "sector": "SAFETY AI",
+          "sector": "GEN-AI",
           "val": 615,
           "rev": 8,
           "tone": "violet"
         },
         {
           "name": "xAI",
-          "sector": "CHALLENGER",
+          "sector": "GEN-AI",
           "val": 500,
           "rev": 2,
           "tone": "red"
@@ -9118,7 +8265,7 @@ export const pages = [
         }
       ],
       "insightTitle": "泡沫信号",
-      "insight": "通用大模型多在参考线之上，CoreWeave 更接近合理区间。",
+      "insight": "通用大模型集体悬于参考线之上，估值建立在「未来市值」；唯算力基础设施 CoreWeave 贴近合理区间。",
       "caption": "市销率天梯 · 多数公司估值远超 20× 收入，唯算力「卖铲」贴近合理区间",
       "itemCount": 6,
       "highlight": true,
@@ -9147,10 +8294,8 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "unit": " 张",
-        "description": "右侧拼贴的图片张数（0–5，构图自动适配数量与比例）。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "右侧拼贴的图片张数（0–5，构图自动适配数量与比例）。"
       },
       {
@@ -9158,9 +8303,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传拼贴图片，槽位自适应图片比例不变形（cover/contain）。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传拼贴图片，槽位自适应图片比例不变形（cover/contain）。"
       },
       {
@@ -9178,9 +8321,7 @@ export const pages = [
             "label": "完整显示"
           }
         ],
-        "description": "cover 裁剪填满 · contain 完整留白，均不变形。",
         "publicKey": "imageFit",
-        "publicLabel": "图片裁剪",
         "desc": "cover 裁剪填满 · contain 完整留白，均不变形。"
       },
       {
@@ -9191,10 +8332,8 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "unit": " 个",
-        "description": "散落贴纸标签的数量。",
+        "unit": "个",
         "publicKey": "tagCount",
-        "publicLabel": "标签数量",
         "desc": "散落贴纸标签的数量。"
       },
       {
@@ -9202,9 +8341,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮强调其中一个散落标签。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一个散落标签。"
       },
       {
@@ -9215,9 +8352,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的标签序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的标签序号（从 0 开始）。"
       },
       {
@@ -9225,9 +8360,7 @@ export const pages = [
         "label": "引导段落",
         "type": "boolean",
         "default": true,
-        "description": "标题下方引导文案的显示。",
         "publicKey": "showLead",
-        "publicLabel": "引导段落",
         "desc": "标题下方引导文案的显示。"
       },
       {
@@ -9257,9 +8390,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "荧光强调字块与拼贴前景框的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "荧光强调字块与拼贴前景框的颜色。"
       },
       {
@@ -9267,9 +8398,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -9341,10 +8470,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 行",
-        "description": "矩阵展示的分类（行）数量。",
+        "unit": "行",
         "publicKey": "categoryCount",
-        "publicLabel": "分类行数",
         "desc": "矩阵展示的分类（行）数量。"
       },
       {
@@ -9352,9 +8479,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把数值最高的单元格渲染成荧光「印章」。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把数值最高的单元格渲染成荧光「印章」。"
       },
       {
@@ -9362,9 +8487,7 @@ export const pages = [
         "label": "合计列",
         "type": "boolean",
         "default": true,
-        "description": "右侧每行合计列的显示。",
         "publicKey": "showTotals",
-        "publicLabel": "合计列",
         "desc": "右侧每行合计列的显示。"
       },
       {
@@ -9372,9 +8495,7 @@ export const pages = [
         "label": "热度图例",
         "type": "boolean",
         "default": true,
-        "description": "底部「低 → 高」热度渐变图例的显示。",
         "publicKey": "showLegend",
-        "publicLabel": "热度图例",
         "desc": "底部「低 → 高」热度渐变图例的显示。"
       },
       {
@@ -9404,9 +8525,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "热度单一色家族与强调印章的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "热度单一色家族与强调印章的颜色。"
       },
       {
@@ -9414,9 +8533,7 @@ export const pages = [
         "label": "evilcharts 模式",
         "type": "boolean",
         "default": false,
-        "description": "切换为 evilcharts 风格：点阵底纹绘图区 + 单元格 45° 斜纹 + 按热度递增的霓虹辉光（最热格最亮）。",
         "publicKey": "evil",
-        "publicLabel": "evilcharts 模式",
         "desc": "切换为 evilcharts 风格：点阵底纹绘图区 + 单元格 45° 斜纹 + 按热度递增的霓虹辉光（最热格最亮）。"
       },
       {
@@ -9424,9 +8541,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -9436,6 +8551,8 @@ export const pages = [
       "title": "资金热力矩阵",
       "en": "Where The Money Flowed",
       "cn": "赛道 × 季度 · 单笔大额融资额（亿美元）",
+      "cornerLabel": "赛道 \\ 季度",
+      "hotBadgeLabel": "HOTTEST",
       "colLabels": [
         "Q1",
         "Q2",
@@ -9517,10 +8634,8 @@ export const pages = [
         "min": 4,
         "max": 6,
         "step": 1,
-        "unit": " 条",
-        "description": "排行榜展示的分类条数。",
+        "unit": "条",
         "publicKey": "categoryCount",
-        "publicLabel": "条目数量",
         "desc": "排行榜展示的分类条数。"
       },
       {
@@ -9528,9 +8643,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一条渲染成荧光强调条。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一条渲染成荧光强调条。"
       },
       {
@@ -9541,9 +8654,7 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "description": "被强调的条目序号（按当前排序后从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几条",
         "desc": "被强调的条目序号（按当前排序后从 0 开始）。"
       },
       {
@@ -9551,9 +8662,7 @@ export const pages = [
         "label": "数值标签",
         "type": "boolean",
         "default": true,
-        "description": "每条末端数值胶囊的显示。",
         "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
         "desc": "每条末端数值胶囊的显示。"
       },
       {
@@ -9561,9 +8670,7 @@ export const pages = [
         "label": "副标说明",
         "type": "boolean",
         "default": true,
-        "description": "每条标签下方代表公司 / 说明的显示。",
         "publicKey": "showMeta",
-        "publicLabel": "副标说明",
         "desc": "每条标签下方代表公司 / 说明的显示。"
       },
       {
@@ -9571,9 +8678,7 @@ export const pages = [
         "label": "降序排列",
         "type": "boolean",
         "default": true,
-        "description": "是否按数值从高到低排序（关闭则保留原始顺序）。",
         "publicKey": "sortDesc",
-        "publicLabel": "降序排列",
         "desc": "是否按数值从高到低排序（关闭则保留原始顺序）。"
       },
       {
@@ -9603,9 +8708,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "条形与强调条的主题色（单一色家族，逐条递减透明度）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "条形与强调条的主题色（单一色家族，逐条递减透明度）。"
       },
       {
@@ -9613,9 +8716,7 @@ export const pages = [
         "label": "evilcharts 模式",
         "type": "boolean",
         "default": false,
-        "description": "切换为 evilcharts 风格：点阵底纹绘图区 + 条面 45° 斜纹 + 条形霓虹辉光。",
         "publicKey": "evil",
-        "publicLabel": "evilcharts 模式",
         "desc": "切换为 evilcharts 风格：点阵底纹绘图区 + 条面 45° 斜纹 + 条形霓虹辉光。"
       },
       {
@@ -9623,9 +8724,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -9698,10 +8797,8 @@ export const pages = [
         "min": 4,
         "max": 6,
         "step": 1,
-        "unit": " 条",
-        "description": "棒棒糖排行展示的分类条数。",
+        "unit": "条",
         "publicKey": "categoryCount",
-        "publicLabel": "条目数量",
         "desc": "棒棒糖排行展示的分类条数。"
       },
       {
@@ -9709,9 +8806,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一条渲染成荧光放大的强调棒。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一条渲染成荧光放大的强调棒。"
       },
       {
@@ -9722,9 +8817,7 @@ export const pages = [
         "min": 0,
         "max": 6,
         "step": 1,
-        "description": "被强调的条目序号（按当前排序后从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几条",
         "desc": "被强调的条目序号（按当前排序后从 0 开始）。"
       },
       {
@@ -9732,9 +8825,7 @@ export const pages = [
         "label": "数值标签",
         "type": "boolean",
         "default": true,
-        "description": "圆盘上数值的显示。",
         "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
         "desc": "圆盘上数值的显示。"
       },
       {
@@ -9742,9 +8833,7 @@ export const pages = [
         "label": "副标说明",
         "type": "boolean",
         "default": true,
-        "description": "每条标签下方代表公司 / 说明的显示。",
         "publicKey": "showMeta",
-        "publicLabel": "副标说明",
         "desc": "每条标签下方代表公司 / 说明的显示。"
       },
       {
@@ -9752,9 +8841,7 @@ export const pages = [
         "label": "连接棒",
         "type": "boolean",
         "default": true,
-        "description": "从左轴到圆盘的连接细棒的显示（关闭则只剩圆盘）。",
         "publicKey": "showStem",
-        "publicLabel": "连接棒",
         "desc": "从左轴到圆盘的连接细棒的显示（关闭则只剩圆盘）。"
       },
       {
@@ -9762,9 +8849,7 @@ export const pages = [
         "label": "降序排列",
         "type": "boolean",
         "default": true,
-        "description": "是否按数值从高到低排序（关闭则保留原始顺序）。",
         "publicKey": "sortDesc",
-        "publicLabel": "降序排列",
         "desc": "是否按数值从高到低排序（关闭则保留原始顺序）。"
       },
       {
@@ -9794,9 +8879,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "棒与圆盘的主题色（单一色家族，逐条递减透明度）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "棒与圆盘的主题色（单一色家族，逐条递减透明度）。"
       },
       {
@@ -9804,9 +8887,7 @@ export const pages = [
         "label": "口径说明",
         "type": "boolean",
         "default": true,
-        "description": "底部口径小字说明的显示。",
         "publicKey": "showNote",
-        "publicLabel": "口径说明",
         "desc": "底部口径小字说明的显示。"
       },
       {
@@ -9814,9 +8895,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -9890,10 +8969,8 @@ export const pages = [
         "min": 2,
         "max": 6,
         "step": 1,
-        "unit": " 条",
-        "description": "斜率图展示的分类系列数量。",
+        "unit": "条",
         "publicKey": "categoryCount",
-        "publicLabel": "系列数量",
         "desc": "斜率图展示的分类系列数量。"
       },
       {
@@ -9901,9 +8978,7 @@ export const pages = [
         "label": "聚焦某条",
         "type": "boolean",
         "default": true,
-        "description": "是否点亮其中一条系列（其余淡为灰线），追踪单一迁移。",
         "publicKey": "highlight",
-        "publicLabel": "聚焦某条",
         "desc": "是否点亮其中一条系列（其余淡为灰线），追踪单一迁移。"
       },
       {
@@ -9914,9 +8989,7 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "description": "被聚焦的系列序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "聚焦第几条",
         "desc": "被聚焦的系列序号（从 0 开始）。"
       },
       {
@@ -9924,9 +8997,7 @@ export const pages = [
         "label": "两端数值",
         "type": "boolean",
         "default": true,
-        "description": "左右两端节点数值的显示。",
         "publicKey": "showValueLabels",
-        "publicLabel": "两端数值",
         "desc": "左右两端节点数值的显示。"
       },
       {
@@ -9934,9 +9005,7 @@ export const pages = [
         "label": "变化量胶囊",
         "type": "boolean",
         "default": true,
-        "description": "右端 Δ 增减胶囊的显示。",
         "publicKey": "showDelta",
-        "publicLabel": "变化量胶囊",
         "desc": "右端 Δ 增减胶囊的显示。"
       },
       {
@@ -9944,9 +9013,7 @@ export const pages = [
         "label": "两端基准线",
         "type": "boolean",
         "default": true,
-        "description": "左右两条期次基准竖线与表头的显示。",
         "publicKey": "showGrid",
-        "publicLabel": "两端基准线",
         "desc": "左右两条期次基准竖线与表头的显示。"
       },
       {
@@ -9976,9 +9043,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "被聚焦系列与标题点的颜色（不改其余系列自身配色）。",
         "publicKey": "accentColor",
-        "publicLabel": "聚焦色",
         "desc": "被聚焦系列与标题点的颜色（不改其余系列自身配色）。"
       },
       {
@@ -9986,9 +9051,7 @@ export const pages = [
         "label": "口径说明",
         "type": "boolean",
         "default": true,
-        "description": "底部口径小字说明的显示。",
         "publicKey": "showNote",
-        "publicLabel": "口径说明",
         "desc": "底部口径小字说明的显示。"
       },
       {
@@ -9996,9 +9059,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -10079,10 +9140,8 @@ export const pages = [
         "min": 0,
         "max": 1,
         "step": 1,
-        "unit": " 张",
-        "description": "特写图片槽（0 时切换为纯文字 + 标签的大留白构图）。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "特写图片槽（0 时切换为纯文字 + 标签的大留白构图）。"
       },
       {
@@ -10100,9 +9159,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满铺满版面，完整自适应按原始比例显示不变形。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满铺满版面，完整自适应按原始比例显示不变形。"
       },
       {
@@ -10110,9 +9167,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传特写图片，槽位自适应图片比例。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传特写图片，槽位自适应图片比例。"
       },
       {
@@ -10130,9 +9185,7 @@ export const pages = [
             "label": "图左文右"
           }
         ],
-        "description": "特写图片在左还是在右（标签贴纸自动贴向接缝一侧）。",
         "publicKey": "imageSide",
-        "publicLabel": "图片位置",
         "desc": "特写图片在左还是在右（标签贴纸自动贴向接缝一侧）。"
       },
       {
@@ -10143,10 +9196,8 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "unit": " 个",
-        "description": "贴在接缝上的标签贴纸数量。",
+        "unit": "个",
         "publicKey": "tagCount",
-        "publicLabel": "标签数量",
         "desc": "贴在接缝上的标签贴纸数量。"
       },
       {
@@ -10154,9 +9205,7 @@ export const pages = [
         "label": "荧光标签",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一个标签点亮成荧光强调贴纸。",
         "publicKey": "highlight",
-        "publicLabel": "荧光标签",
         "desc": "是否把其中一个标签点亮成荧光强调贴纸。"
       },
       {
@@ -10167,9 +9216,7 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "description": "被荧光强调的标签序号（从 0 开始；也可在标签数据里以 tone:accent 指定）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被荧光强调的标签序号（从 0 开始；也可在标签数据里以 tone:accent 指定）。"
       },
       {
@@ -10177,9 +9224,7 @@ export const pages = [
         "label": "主数字",
         "type": "boolean",
         "default": true,
-        "description": "文字栏底部主数字贴纸的显示。",
         "publicKey": "showStat",
-        "publicLabel": "主数字",
         "desc": "文字栏底部主数字贴纸的显示。"
       },
       {
@@ -10187,9 +9232,7 @@ export const pages = [
         "label": "关键词荧光",
         "type": "boolean",
         "default": true,
-        "description": "说明句关键词荧光底纹的显示。",
         "publicKey": "showHighlighter",
-        "publicLabel": "关键词荧光",
         "desc": "说明句关键词荧光底纹的显示。"
       },
       {
@@ -10223,9 +9266,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "荧光标签、主数字与强调描边的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "荧光标签、主数字与强调描边的颜色。"
       },
       {
@@ -10233,9 +9274,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -10305,10 +9344,8 @@ export const pages = [
         "min": 3,
         "max": 6,
         "step": 1,
-        "unit": " 个",
-        "description": "时间线展示的事件节点数量。",
+        "unit": "个",
         "publicKey": "itemCount",
-        "publicLabel": "节点数量",
         "desc": "时间线展示的事件节点数量。"
       },
       {
@@ -10316,9 +9353,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一个节点 + 卡片渲染成荧光强调。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一个节点 + 卡片渲染成荧光强调。"
       },
       {
@@ -10329,9 +9364,7 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "description": "被强调的节点序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的节点序号（从 0 开始）。"
       },
       {
@@ -10339,9 +9372,7 @@ export const pages = [
         "label": "中轴脊线",
         "type": "boolean",
         "default": true,
-        "description": "中央竖向脊线的显示。",
         "publicKey": "showSpine",
-        "publicLabel": "中轴脊线",
         "desc": "中央竖向脊线的显示。"
       },
       {
@@ -10349,9 +9380,7 @@ export const pages = [
         "label": "左右交错",
         "type": "boolean",
         "default": true,
-        "description": "卡片左右交错排布（关闭则全部排在右侧，节点靠左成竖排清单）。",
         "publicKey": "alternate",
-        "publicLabel": "左右交错",
         "desc": "卡片左右交错排布（关闭则全部排在右侧，节点靠左成竖排清单）。"
       },
       {
@@ -10381,9 +9410,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "脊线、节点与强调卡片的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "脊线、节点与强调卡片的主题色。"
       },
       {
@@ -10391,9 +9418,7 @@ export const pages = [
         "label": "口径说明",
         "type": "boolean",
         "default": true,
-        "description": "底部口径小字说明的显示。",
         "publicKey": "showNote",
-        "publicLabel": "口径说明",
         "desc": "底部口径小字说明的显示。"
       },
       {
@@ -10401,9 +9426,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -10474,10 +9497,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 层",
-        "description": "堆叠的分类层数；少于总数时其余并入「其它」。",
+        "unit": "层",
         "publicKey": "categoryCount",
-        "publicLabel": "分类层数",
         "desc": "堆叠的分类层数；少于总数时其余并入「其它」。"
       },
       {
@@ -10485,9 +9506,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把某一层渲染成荧光主层（提亮 + 顶缘发光）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把某一层渲染成荧光主层（提亮 + 顶缘发光）。"
       },
       {
@@ -10498,9 +9517,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的分类层序号（从下往上、0 基）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几层",
         "desc": "被强调的分类层序号（从下往上、0 基）。"
       },
       {
@@ -10508,9 +9525,7 @@ export const pages = [
         "label": "平滑曲线",
         "type": "boolean",
         "default": true,
-        "description": "层与层边界用平滑曲线（关闭则折线）。",
         "publicKey": "smooth",
-        "publicLabel": "平滑曲线",
         "desc": "层与层边界用平滑曲线（关闭则折线）。"
       },
       {
@@ -10518,9 +9533,7 @@ export const pages = [
         "label": "数据点",
         "type": "boolean",
         "default": false,
-        "description": "主层顶缘各时间段数据点的显示。",
         "publicKey": "showDots",
-        "publicLabel": "数据点",
         "desc": "主层顶缘各时间段数据点的显示。"
       },
       {
@@ -10528,9 +9541,7 @@ export const pages = [
         "label": "网格基线",
         "type": "boolean",
         "default": true,
-        "description": "横向网格与时间刻度的显示。",
         "publicKey": "showGrid",
-        "publicLabel": "网格基线",
         "desc": "横向网格与时间刻度的显示。"
       },
       {
@@ -10538,9 +9549,7 @@ export const pages = [
         "label": "峰值标注",
         "type": "boolean",
         "default": true,
-        "description": "末期总额峰值气泡的显示。",
         "publicKey": "showPeak",
-        "publicLabel": "峰值标注",
         "desc": "末期总额峰值气泡的显示。"
       },
       {
@@ -10548,9 +9557,7 @@ export const pages = [
         "label": "核心发现",
         "type": "boolean",
         "default": true,
-        "description": "底部「核心发现」说明卡的显示。",
         "publicKey": "showNote",
-        "publicLabel": "核心发现",
         "desc": "底部「核心发现」说明卡的显示。"
       },
       {
@@ -10580,9 +9587,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "标签、峰值与核心发现卡的主题色（不影响各层固有配色）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "标签、峰值与核心发现卡的主题色（不影响各层固有配色）。"
       },
       {
@@ -10590,9 +9595,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -10602,6 +9605,7 @@ export const pages = [
       "title": "资金河流 · 赛道构成的此消彼长",
       "en": "How the Capital Mix Shifts",
       "cn": "逐季度看各赛道吸纳资金的堆叠演变",
+      "noteBadgeLabel": "核心发现",
       "unit": "亿",
       "periods": [
         "24Q1",
@@ -10723,10 +9727,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 条",
-        "description": "展示的目标指标条数。",
+        "unit": "条",
         "publicKey": "itemCount",
-        "publicLabel": "指标条数",
         "desc": "展示的目标指标条数。"
       },
       {
@@ -10734,9 +9736,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把某一条渲染成荧光主条（加粗 + 发光）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把某一条渲染成荧光主条（加粗 + 发光）。"
       },
       {
@@ -10747,9 +9747,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的指标序号（0 基）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几条",
         "desc": "被强调的指标序号（0 基）。"
       },
       {
@@ -10757,9 +9755,7 @@ export const pages = [
         "label": "目标标尺",
         "type": "boolean",
         "default": true,
-        "description": "竖向目标线与「目标」标注的显示。",
         "publicKey": "showTarget",
-        "publicLabel": "目标标尺",
         "desc": "竖向目标线与「目标」标注的显示。"
       },
       {
@@ -10767,9 +9763,7 @@ export const pages = [
         "label": "区间色带",
         "type": "boolean",
         "default": true,
-        "description": "差 / 良 / 优三段定性背景色带的显示。",
         "publicKey": "showBands",
-        "publicLabel": "区间色带",
         "desc": "差 / 良 / 优三段定性背景色带的显示。"
       },
       {
@@ -10777,9 +9771,7 @@ export const pages = [
         "label": "达成率徽标",
         "type": "boolean",
         "default": true,
-        "description": "右侧达成率（当前 / 目标）徽标的显示。",
         "publicKey": "showRate",
-        "publicLabel": "达成率徽标",
         "desc": "右侧达成率（当前 / 目标）徽标的显示。"
       },
       {
@@ -10787,9 +9779,7 @@ export const pages = [
         "label": "副标说明",
         "type": "boolean",
         "default": true,
-        "description": "每条标签下方口径说明的显示。",
         "publicKey": "showMeta",
-        "publicLabel": "副标说明",
         "desc": "每条标签下方口径说明的显示。"
       },
       {
@@ -10797,9 +9787,7 @@ export const pages = [
         "label": "核心发现",
         "type": "boolean",
         "default": true,
-        "description": "底部「核心发现」说明卡的显示。",
         "publicKey": "showNote",
-        "publicLabel": "核心发现",
         "desc": "底部「核心发现」说明卡的显示。"
       },
       {
@@ -10829,9 +9817,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "测量条与达成率徽标的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "测量条与达成率徽标的主题色。"
       },
       {
@@ -10839,9 +9825,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -10851,6 +9835,10 @@ export const pages = [
       "title": "叙事 vs 兑现 · 2026 目标达成度",
       "en": "Progress Against 2026 Targets",
       "cn": "当前进度对照年度目标，差距一目了然",
+      "legendActualLabel": "当前值",
+      "legendTargetLabel": "目标线",
+      "legendBandsLabel": "差 · 良 · 优 区间",
+      "noteBadgeLabel": "核心发现",
       "unit": "亿",
       "items": [
         {
@@ -10925,10 +9913,8 @@ export const pages = [
         "min": 3,
         "max": 6,
         "step": 1,
-        "unit": " 家",
-        "description": "时间表上展示的公司条数。",
+        "unit": "家",
         "publicKey": "itemCount",
-        "publicLabel": "公司条数",
         "desc": "时间表上展示的公司条数。"
       },
       {
@@ -10936,9 +9922,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把某一条渲染成荧光主条（加粗 + 发光）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把某一条渲染成荧光主条（加粗 + 发光）。"
       },
       {
@@ -10949,9 +9933,7 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "description": "被强调的公司序号（0 基）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几条",
         "desc": "被强调的公司序号（0 基）。"
       },
       {
@@ -10959,9 +9941,7 @@ export const pages = [
         "label": "「今天」竖线",
         "type": "boolean",
         "default": true,
-        "description": "贯穿全图的「今天」分隔竖线的显示。",
         "publicKey": "showNow",
-        "publicLabel": "「今天」竖线",
         "desc": "贯穿全图的「今天」分隔竖线的显示。"
       },
       {
@@ -10969,9 +9949,7 @@ export const pages = [
         "label": "时间网格",
         "type": "boolean",
         "default": true,
-        "description": "纵向时间段分隔网格的显示。",
         "publicKey": "showGrid",
-        "publicLabel": "时间网格",
         "desc": "纵向时间段分隔网格的显示。"
       },
       {
@@ -10979,9 +9957,7 @@ export const pages = [
         "label": "副标说明",
         "type": "boolean",
         "default": true,
-        "description": "每条标签下方分类 / 说明的显示。",
         "publicKey": "showMeta",
-        "publicLabel": "副标说明",
         "desc": "每条标签下方分类 / 说明的显示。"
       },
       {
@@ -10989,9 +9965,7 @@ export const pages = [
         "label": "里程碑徽标",
         "type": "boolean",
         "default": true,
-        "description": "条末里程碑圆点与事件标签的显示。",
         "publicKey": "showMilestone",
-        "publicLabel": "里程碑徽标",
         "desc": "条末里程碑圆点与事件标签的显示。"
       },
       {
@@ -10999,9 +9973,7 @@ export const pages = [
         "label": "核心发现",
         "type": "boolean",
         "default": true,
-        "description": "底部「核心发现」说明卡的显示。",
         "publicKey": "showNote",
-        "publicLabel": "核心发现",
         "desc": "底部「核心发现」说明卡的显示。"
       },
       {
@@ -11031,9 +10003,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "「今天」竖线、强调条与核心发现卡的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "「今天」竖线、强调条与核心发现卡的主题色。"
       },
       {
@@ -11041,9 +10011,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -11120,6 +10088,14 @@ export const pages = [
         }
       ],
       "nowIndex": 2,
+      "statusLabels": {
+        "done": "已完成",
+        "active": "进行中",
+        "planned": "计划中"
+      },
+      "nowLineLabel": "今天",
+      "milestoneLegendLabel": "里程碑事件",
+      "noteBadgeLabel": "核心发现",
       "note": "2026 全年是退出窗口最密集的一段——一级市场的天价估值，正排队接受二级市场真金白银的检验。",
       "itemCount": 6,
       "highlight": true,
@@ -11159,9 +10135,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -11189,9 +10163,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "imageSlotCount",
@@ -11201,11 +10173,9 @@ export const pages = [
         "min": 0,
         "max": 1,
         "step": 1,
-        "unit": " 张",
+        "unit": "张",
         "countKey": "imageSlotCount",
-        "description": "满版背景图数量（0 时显示柔光 bokeh 背景）。",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "满版背景图数量（0 时显示柔光 bokeh 背景）。"
       },
       {
@@ -11213,9 +10183,7 @@ export const pages = [
         "label": "上传图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "满版背景图，按图片比例自适应填满（cover / contain）。",
         "publicKey": "images",
-        "publicLabel": "上传图片",
         "desc": "满版背景图，按图片比例自适应填满（cover / contain）。"
       },
       {
@@ -11233,9 +10201,7 @@ export const pages = [
             "label": "完整显示"
           }
         ],
-        "description": "cover 裁剪铺满、contain 完整不裁切。",
         "publicKey": "imageFit",
-        "publicLabel": "图片适配",
         "desc": "cover 裁剪铺满、contain 完整不裁切。"
       },
       {
@@ -11246,10 +10212,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 个",
-        "description": "玻璃浮层底部指标卡片的数量。",
+        "unit": "个",
         "publicKey": "statCount",
-        "publicLabel": "指标卡片数",
         "desc": "玻璃浮层底部指标卡片的数量。"
       },
       {
@@ -11257,9 +10221,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一个指标卡片渲染成荧光强调款。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一个指标卡片渲染成荧光强调款。"
       },
       {
@@ -11270,9 +10232,7 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "description": "被强调的指标卡片序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的指标卡片序号（从 0 开始）。"
       },
       {
@@ -11280,9 +10240,7 @@ export const pages = [
         "label": "荧光高亮",
         "type": "boolean",
         "default": true,
-        "description": "是否给标题关键词加荧光底纹。",
         "publicKey": "showHighlighter",
-        "publicLabel": "荧光高亮",
         "desc": "是否给标题关键词加荧光底纹。"
       },
       {
@@ -11312,9 +10270,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "荧光高亮与强调芯片的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "荧光高亮与强调芯片的颜色。"
       },
       {
@@ -11322,9 +10278,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -11392,9 +10346,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -11422,9 +10374,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "imageSlotCount",
@@ -11434,10 +10384,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "unit": " 张",
-        "description": "满版影像槽：0 纯色封面 / 1 满版 / 2 左右分屏，均按比例自适应不变形。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "满版影像槽：0 纯色封面 / 1 满版 / 2 左右分屏，均按比例自适应不变形。"
       },
       {
@@ -11455,9 +10403,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "裁剪填满铺满版面，或完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "裁剪填满铺满版面，或完整自适应按原始比例显示。"
       },
       {
@@ -11465,9 +10411,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传封面影像，槽位自适应图片比例。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传封面影像，槽位自适应图片比例。"
       },
       {
@@ -11478,10 +10422,8 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "unit": " 行",
-        "description": "标题贴纸的行数（黑 / 白 / 荧光交替）。",
+        "unit": "行",
         "publicKey": "titleLineCount",
-        "publicLabel": "标题行数",
         "desc": "标题贴纸的行数（黑 / 白 / 荧光交替）。"
       },
       {
@@ -11492,10 +10434,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 枚",
-        "description": "四角手写感批注贴纸的数量。",
+        "unit": "枚",
         "publicKey": "noteCount",
-        "publicLabel": "批注贴纸",
         "desc": "四角手写感批注贴纸的数量。"
       },
       {
@@ -11503,9 +10443,7 @@ export const pages = [
         "label": "大数字贴纸",
         "type": "boolean",
         "default": true,
-        "description": "底部大数字贴纸的显示。",
         "publicKey": "showBigStat",
-        "publicLabel": "大数字贴纸",
         "desc": "底部大数字贴纸的显示。"
       },
       {
@@ -11513,9 +10451,7 @@ export const pages = [
         "label": "英文副标",
         "type": "boolean",
         "default": true,
-        "description": "标题下方英文副标的显示。",
         "publicKey": "showEn",
-        "publicLabel": "英文副标",
         "desc": "标题下方英文副标的显示。"
       },
       {
@@ -11549,9 +10485,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "荧光贴纸与强调元素的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "荧光色",
         "desc": "荧光贴纸与强调元素的颜色。"
       },
       {
@@ -11559,9 +10493,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -11638,10 +10570,8 @@ export const pages = [
         "min": 3,
         "max": 4,
         "step": 1,
-        "unit": " 根",
-        "description": "图表展示的柱子数量。",
+        "unit": "根",
         "publicKey": "itemCount",
-        "publicLabel": "柱子数量",
         "desc": "图表展示的柱子数量。"
       },
       {
@@ -11649,9 +10579,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一根柱子渲染成发光强调柱（带聚光）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一根柱子渲染成发光强调柱（带聚光）。"
       },
       {
@@ -11662,9 +10590,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的柱子序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几根",
         "desc": "被强调的柱子序号（从 0 开始）。"
       },
       {
@@ -11672,9 +10598,7 @@ export const pages = [
         "label": "点阵底纹",
         "type": "boolean",
         "default": false,
-        "description": "evilcharts 标志性的点阵网格背景的显示（默认关闭，净色柱状图）。",
         "publicKey": "showDots",
-        "publicLabel": "点阵底纹",
         "desc": "evilcharts 标志性的点阵网格背景的显示（默认关闭，净色柱状图）。"
       },
       {
@@ -11682,9 +10606,7 @@ export const pages = [
         "label": "横向网格",
         "type": "boolean",
         "default": true,
-        "description": "绘图区横向参考线的显示。",
         "publicKey": "showGrid",
-        "publicLabel": "横向网格",
         "desc": "绘图区横向参考线的显示。"
       },
       {
@@ -11692,9 +10614,7 @@ export const pages = [
         "label": "趋势角标",
         "type": "boolean",
         "default": true,
-        "description": "右上角趋势胶囊角标的显示。",
         "publicKey": "showBadge",
-        "publicLabel": "趋势角标",
         "desc": "右上角趋势胶囊角标的显示。"
       },
       {
@@ -11728,9 +10648,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "渐变柱与发光强调柱的主题色（单一色家族，渐变 + 发光）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "渐变柱与发光强调柱的主题色（单一色家族，渐变 + 发光）。"
       },
       {
@@ -11738,9 +10656,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -11804,10 +10720,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "unit": " 个",
-        "description": "同时叠加在雷达上的系列数量。",
+        "unit": "个",
         "publicKey": "itemCount",
-        "publicLabel": "对比对象数",
         "desc": "同时叠加在雷达上的系列数量。"
       },
       {
@@ -11818,10 +10732,8 @@ export const pages = [
         "min": 4,
         "max": 6,
         "step": 1,
-        "unit": " 维",
-        "description": "雷达的轴（评估维度）数量。",
+        "unit": "维",
         "publicKey": "axisCount",
-        "publicLabel": "维度数量",
         "desc": "雷达的轴（评估维度）数量。"
       },
       {
@@ -11829,9 +10741,7 @@ export const pages = [
         "label": "高亮系列",
         "type": "boolean",
         "default": true,
-        "description": "是否突出其中一个系列（加粗描边 + 提亮，其余淡化）。",
         "publicKey": "highlight",
-        "publicLabel": "高亮系列",
         "desc": "是否突出其中一个系列（加粗描边 + 提亮，其余淡化）。"
       },
       {
@@ -11842,9 +10752,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被高亮的系列序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "高亮第几个",
         "desc": "被高亮的系列序号（从 0 开始）。"
       },
       {
@@ -11852,9 +10760,7 @@ export const pages = [
         "label": "刻度环",
         "type": "boolean",
         "default": true,
-        "description": "同心刻度参考环与轴线的显示。",
         "publicKey": "showRings",
-        "publicLabel": "刻度环",
         "desc": "同心刻度参考环与轴线的显示。"
       },
       {
@@ -11862,9 +10768,7 @@ export const pages = [
         "label": "顶点圆点",
         "type": "boolean",
         "default": true,
-        "description": "每个系列在各轴上的顶点圆点。",
         "publicKey": "showDots",
-        "publicLabel": "顶点圆点",
         "desc": "每个系列在各轴上的顶点圆点。"
       },
       {
@@ -11872,9 +10776,7 @@ export const pages = [
         "label": "领先读数",
         "type": "boolean",
         "default": true,
-        "description": "右侧「维度领先」逐项对照表的显示。",
         "publicKey": "showLead",
-        "publicLabel": "领先读数",
         "desc": "右侧「维度领先」逐项对照表的显示。"
       },
       {
@@ -11885,10 +10787,8 @@ export const pages = [
         "min": 6,
         "max": 34,
         "step": 2,
-        "unit": " %",
-        "description": "系列多边形的半透明填充浓度。",
+        "unit": "%",
         "publicKey": "fillOpacity",
-        "publicLabel": "填充浓度",
         "desc": "系列多边形的半透明填充浓度。"
       },
       {
@@ -11918,9 +10818,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "卡片标题点 / 刻度强调的主题色（不改系列自身配色）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "卡片标题点 / 刻度强调的主题色（不改系列自身配色）。"
       },
       {
@@ -11928,9 +10826,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -12038,10 +10934,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 家",
-        "description": "参与对比的公司（行）数量。",
+        "unit": "家",
         "publicKey": "rowCount",
-        "publicLabel": "公司数量",
         "desc": "参与对比的公司（行）数量。"
       },
       {
@@ -12052,10 +10946,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 项",
-        "description": "对比维度（列）数量。",
+        "unit": "项",
         "publicKey": "dimCount",
-        "publicLabel": "维度数量",
         "desc": "对比维度（列）数量。"
       },
       {
@@ -12063,9 +10955,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮某一行（抬升 + 描边发光）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮某一行（抬升 + 描边发光）。"
       },
       {
@@ -12076,9 +10966,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的公司序号（0 基）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几行",
         "desc": "被强调的公司序号（0 基）。"
       },
       {
@@ -12086,9 +10974,7 @@ export const pages = [
         "label": "数字评分",
         "type": "boolean",
         "default": false,
-        "description": "在评分点下方叠加 0–3 数字（关闭则纯点阵）。",
         "publicKey": "showScoreNum",
-        "publicLabel": "数字评分",
         "desc": "在评分点下方叠加 0–3 数字（关闭则纯点阵）。"
       },
       {
@@ -12096,9 +10982,7 @@ export const pages = [
         "label": "点级图例",
         "type": "boolean",
         "default": true,
-        "description": "底部点级含义图例的显示。",
         "publicKey": "showLegend",
-        "publicLabel": "点级图例",
         "desc": "底部点级含义图例的显示。"
       },
       {
@@ -12128,9 +11012,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "表头、评分点与高亮行的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "表头、评分点与高亮行的主题色。"
       },
       {
@@ -12138,9 +11020,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -12150,6 +11030,7 @@ export const pages = [
       "title": "头部玩家 · 能力对比矩阵",
       "en": "Capability Matrix",
       "cn": "五个维度，谁是六边形战士",
+      "cornerLabel": "公司 · 赛道",
       "dims": [
         "模型能力",
         "算力储备",
@@ -12248,10 +11129,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 步",
-        "description": "参与叠加的分类（瀑布步骤）数量，末尾自动追加「合计」列。",
+        "unit": "步",
         "publicKey": "categoryCount",
-        "publicLabel": "分类步数",
         "desc": "参与叠加的分类（瀑布步骤）数量，末尾自动追加「合计」列。"
       },
       {
@@ -12259,9 +11138,7 @@ export const pages = [
         "label": "高亮最大项",
         "type": "boolean",
         "default": true,
-        "description": "是否把贡献最大的分类渲染成强调色。",
         "publicKey": "highlight",
-        "publicLabel": "高亮最大项",
         "desc": "是否把贡献最大的分类渲染成强调色。"
       },
       {
@@ -12269,9 +11146,7 @@ export const pages = [
         "label": "连接虚线",
         "type": "boolean",
         "default": true,
-        "description": "步骤之间承接累计高度的虚线连接。",
         "publicKey": "showConnectors",
-        "publicLabel": "连接虚线",
         "desc": "步骤之间承接累计高度的虚线连接。"
       },
       {
@@ -12279,9 +11154,7 @@ export const pages = [
         "label": "累计读数",
         "type": "boolean",
         "default": true,
-        "description": "每根浮动柱上方的「累计达成」小读数。",
         "publicKey": "showRun",
-        "publicLabel": "累计读数",
         "desc": "每根浮动柱上方的「累计达成」小读数。"
       },
       {
@@ -12289,9 +11162,7 @@ export const pages = [
         "label": "横向网格",
         "type": "boolean",
         "default": true,
-        "description": "绘图区横向参考线的显示。",
         "publicKey": "showGrid",
-        "publicLabel": "横向网格",
         "desc": "绘图区横向参考线的显示。"
       },
       {
@@ -12321,9 +11192,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "浮动分类柱的渐变主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "分类色",
         "desc": "浮动分类柱的渐变主题色。"
       },
       {
@@ -12357,9 +11226,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "末尾「合计」实心柱的颜色。",
         "publicKey": "totalColor",
-        "publicLabel": "合计柱色",
         "desc": "末尾「合计」实心柱的颜色。"
       },
       {
@@ -12367,9 +11234,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -12379,6 +11244,7 @@ export const pages = [
       "title": "资金如何累积成 937 亿",
       "en": "Funding Build-Up · Waterfall",
       "cn": "逐赛道叠加，看清这一年的钱从哪儿堆出来",
+      "chartSectionLabel": "逐赛道叠加 · 累计构成",
       "steps": [
         {
           "label": "通用大模型",
@@ -12432,10 +11298,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 行",
-        "description": "展示的公司（哑铃行）数量。",
+        "unit": "行",
         "publicKey": "itemCount",
-        "publicLabel": "公司行数",
         "desc": "展示的公司（哑铃行）数量。"
       },
       {
@@ -12443,9 +11307,7 @@ export const pages = [
         "label": "高亮某行",
         "type": "boolean",
         "default": true,
-        "description": "是否突出其中一行（提亮 + 放大端点）。",
         "publicKey": "highlight",
-        "publicLabel": "高亮某行",
         "desc": "是否突出其中一行（提亮 + 放大端点）。"
       },
       {
@@ -12456,9 +11318,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被高亮的行序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "高亮第几行",
         "desc": "被高亮的行序号（从 0 开始）。"
       },
       {
@@ -12466,9 +11326,7 @@ export const pages = [
         "label": "坐标刻度",
         "type": "boolean",
         "default": true,
-        "description": "底部数值刻度与纵向参考线的显示。",
         "publicKey": "showValueLabels",
-        "publicLabel": "坐标刻度",
         "desc": "底部数值刻度与纵向参考线的显示。"
       },
       {
@@ -12476,9 +11334,7 @@ export const pages = [
         "label": "倍数角标",
         "type": "boolean",
         "default": true,
-        "description": "右侧 ×倍 跃迁角标的显示。",
         "publicKey": "showDelta",
-        "publicLabel": "倍数角标",
         "desc": "右侧 ×倍 跃迁角标的显示。"
       },
       {
@@ -12486,9 +11342,7 @@ export const pages = [
         "label": "年初端点",
         "type": "boolean",
         "default": true,
-        "description": "空心「年初」端点与其数值标签的显示。",
         "publicKey": "showValueLabels2",
-        "publicLabel": "年初端点",
         "desc": "空心「年初」端点与其数值标签的显示。"
       },
       {
@@ -12518,9 +11372,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "「最新」端点与连杆的强调色。",
         "publicKey": "accentColor",
-        "publicLabel": "终点色",
         "desc": "「最新」端点与连杆的强调色。"
       },
       {
@@ -12550,9 +11402,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "「年初」空心端点的颜色。",
         "publicKey": "startColor",
-        "publicLabel": "起点色",
         "desc": "「年初」空心端点的颜色。"
       },
       {
@@ -12560,9 +11410,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -12645,13 +11493,11 @@ export const pages = [
         "min": 6,
         "max": 12,
         "step": 1,
-        "unit": " 个",
+        "unit": "个",
         "countArrays": [
           "tags"
         ],
-        "description": "标签墙上展示的热词数量（自动保持错落构图）。",
         "publicKey": "itemCount",
-        "publicLabel": "标签数量",
         "desc": "标签墙上展示的热词数量（自动保持错落构图）。"
       },
       {
@@ -12659,9 +11505,7 @@ export const pages = [
         "label": "高亮标签",
         "type": "boolean",
         "default": true,
-        "description": "是否放大并发光强调其中一个标签。",
         "publicKey": "highlight",
-        "publicLabel": "高亮标签",
         "desc": "是否放大并发光强调其中一个标签。"
       },
       {
@@ -12672,9 +11516,7 @@ export const pages = [
         "min": 0,
         "max": 11,
         "step": 1,
-        "description": "被强调的标签序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "高亮第几个",
         "desc": "被强调的标签序号（从 0 开始）。"
       },
       {
@@ -12686,9 +11528,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "unit": "°",
-        "description": "顶部贴纸标题的整体旋转角度。",
         "publicKey": "headTilt",
-        "publicLabel": "标题倾斜",
         "desc": "顶部贴纸标题的整体旋转角度。"
       },
       {
@@ -12696,9 +11536,7 @@ export const pages = [
         "label": "副标题",
         "type": "boolean",
         "default": true,
-        "description": "标题下方说明副标题的显示。",
         "publicKey": "showSub",
-        "publicLabel": "副标题",
         "desc": "标题下方说明副标题的显示。"
       },
       {
@@ -12706,9 +11544,7 @@ export const pages = [
         "label": "底部金句",
         "type": "boolean",
         "default": true,
-        "description": "底部荧光高亮金句贴纸的显示。",
         "publicKey": "showTakeaway",
-        "publicLabel": "底部金句",
         "desc": "底部荧光高亮金句贴纸的显示。"
       },
       {
@@ -12742,9 +11578,7 @@ export const pages = [
             "label": "颜色 6"
           }
         ],
-        "description": "荧光高亮贴纸 / 高光的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "荧光色",
         "desc": "荧光高亮贴纸 / 高光的主题色。"
       },
       {
@@ -12752,9 +11586,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -12871,10 +11703,8 @@ export const pages = [
         "min": 3,
         "max": 6,
         "step": 1,
-        "unit": " 位",
-        "description": "同时追踪排名变化的玩家数量。",
+        "unit": "位",
         "publicKey": "itemCount",
-        "publicLabel": "玩家数量",
         "desc": "同时追踪排名变化的玩家数量。"
       },
       {
@@ -12885,10 +11715,8 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "unit": " 个",
-        "description": "横轴上的时间节点数量（取每位玩家 ranks 的前 N 个）。",
+        "unit": "个",
         "publicKey": "periodCount",
-        "publicLabel": "时间节点",
         "desc": "横轴上的时间节点数量（取每位玩家 ranks 的前 N 个）。"
       },
       {
@@ -12896,9 +11724,7 @@ export const pages = [
         "label": "高亮玩家",
         "type": "boolean",
         "default": true,
-        "description": "是否突出其中一位玩家（加粗发光，其余淡化）。",
         "publicKey": "highlight",
-        "publicLabel": "高亮玩家",
         "desc": "是否突出其中一位玩家（加粗发光，其余淡化）。"
       },
       {
@@ -12909,9 +11735,7 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "description": "被高亮的玩家序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "高亮第几位",
         "desc": "被高亮的玩家序号（从 0 开始）。"
       },
       {
@@ -12919,9 +11743,7 @@ export const pages = [
         "label": "排名节点",
         "type": "boolean",
         "default": true,
-        "description": "每个时间节点上的排名圆点（含名次数字）。",
         "publicKey": "showNodes",
-        "publicLabel": "排名节点",
         "desc": "每个时间节点上的排名圆点（含名次数字）。"
       },
       {
@@ -12929,9 +11751,7 @@ export const pages = [
         "label": "两端名牌",
         "type": "boolean",
         "default": true,
-        "description": "折线两端显示玩家名称的名牌。",
         "publicKey": "showEndPills",
-        "publicLabel": "两端名牌",
         "desc": "折线两端显示玩家名称的名牌。"
       },
       {
@@ -12939,9 +11759,7 @@ export const pages = [
         "label": "口径说明",
         "type": "boolean",
         "default": true,
-        "description": "图表底部排名口径小字说明的显示。",
         "publicKey": "showNote",
-        "publicLabel": "口径说明",
         "desc": "图表底部排名口径小字说明的显示。"
       },
       {
@@ -12971,9 +11789,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "标题点与高亮发光的主题色（不改各玩家自身配色）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "标题点与高亮发光的主题色（不改各玩家自身配色）。"
       },
       {
@@ -12981,9 +11797,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -13084,10 +11898,8 @@ export const pages = [
         "min": 2,
         "max": 5,
         "step": 1,
-        "unit": " 条",
-        "description": "展示的时间周期（堆叠条）数量。",
+        "unit": "条",
         "publicKey": "itemCount",
-        "publicLabel": "时间条数",
         "desc": "展示的时间周期（堆叠条）数量。"
       },
       {
@@ -13098,10 +11910,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "unit": " 段",
-        "description": "每条堆叠的分段（类别）数量。",
+        "unit": "段",
         "publicKey": "segmentCount",
-        "publicLabel": "分段数量",
         "desc": "每条堆叠的分段（类别）数量。"
       },
       {
@@ -13109,9 +11919,7 @@ export const pages = [
         "label": "聚焦某段",
         "type": "boolean",
         "default": true,
-        "description": "是否在所有条上点亮同一分段（其余淡化），追踪单一趋势。",
         "publicKey": "highlight",
-        "publicLabel": "聚焦某段",
         "desc": "是否在所有条上点亮同一分段（其余淡化），追踪单一趋势。"
       },
       {
@@ -13122,9 +11930,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被聚焦的分段序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "聚焦第几段",
         "desc": "被聚焦的分段序号（从 0 开始）。"
       },
       {
@@ -13132,9 +11938,7 @@ export const pages = [
         "label": "段内数值",
         "type": "boolean",
         "default": true,
-        "description": "各分段内百分比数值的显示（过窄的段自动隐藏）。",
         "publicKey": "showValueLabels",
-        "publicLabel": "段内数值",
         "desc": "各分段内百分比数值的显示（过窄的段自动隐藏）。"
       },
       {
@@ -13142,9 +11946,7 @@ export const pages = [
         "label": "顶部图例",
         "type": "boolean",
         "default": true,
-        "description": "顶部分段图例的显示。",
         "publicKey": "showLegend",
-        "publicLabel": "顶部图例",
         "desc": "顶部分段图例的显示。"
       },
       {
@@ -13152,9 +11954,7 @@ export const pages = [
         "label": "口径说明",
         "type": "boolean",
         "default": true,
-        "description": "底部口径小字说明的显示。",
         "publicKey": "showNote",
-        "publicLabel": "口径说明",
         "desc": "底部口径小字说明的显示。"
       },
       {
@@ -13184,9 +11984,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "标题点的主题色（不改各分段自身配色）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "标题点的主题色（不改各分段自身配色）。"
       },
       {
@@ -13194,9 +11992,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -13301,10 +12097,8 @@ export const pages = [
         "min": 2,
         "max": 5,
         "step": 1,
-        "unit": " 类",
-        "description": "参与拼格的类别数量（不足 100 的格子留作底色空格）。",
+        "unit": "类",
         "publicKey": "itemCount",
-        "publicLabel": "类别数量",
         "desc": "参与拼格的类别数量（不足 100 的格子留作底色空格）。"
       },
       {
@@ -13312,9 +12106,7 @@ export const pages = [
         "label": "聚焦某类",
         "type": "boolean",
         "default": false,
-        "description": "是否只点亮其中一类（其余格子与图例淡化）。",
         "publicKey": "highlight",
-        "publicLabel": "聚焦某类",
         "desc": "是否只点亮其中一类（其余格子与图例淡化）。"
       },
       {
@@ -13325,9 +12117,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被聚焦的类别序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "聚焦第几类",
         "desc": "被聚焦的类别序号（从 0 开始）。"
       },
       {
@@ -13335,9 +12125,7 @@ export const pages = [
         "label": "右侧图例",
         "type": "boolean",
         "default": true,
-        "description": "右侧类别图例 / 占比读数的显示。",
         "publicKey": "showLegend",
-        "publicLabel": "右侧图例",
         "desc": "右侧类别图例 / 占比读数的显示。"
       },
       {
@@ -13345,9 +12133,7 @@ export const pages = [
         "label": "副标说明",
         "type": "boolean",
         "default": true,
-        "description": "图例中代表公司 / 说明小字的显示。",
         "publicKey": "showMeta",
-        "publicLabel": "副标说明",
         "desc": "图例中代表公司 / 说明小字的显示。"
       },
       {
@@ -13355,9 +12141,7 @@ export const pages = [
         "label": "占比数值",
         "type": "boolean",
         "default": true,
-        "description": "图例右侧百分比大数字的显示。",
         "publicKey": "showValueLabels",
-        "publicLabel": "占比数值",
         "desc": "图例右侧百分比大数字的显示。"
       },
       {
@@ -13368,10 +12152,8 @@ export const pages = [
         "min": 3,
         "max": 14,
         "step": 1,
-        "unit": " px",
-        "description": "方格之间的间隙大小。",
+        "unit": "px",
         "publicKey": "cellGap",
-        "publicLabel": "格子间距",
         "desc": "方格之间的间隙大小。"
       },
       {
@@ -13401,9 +12183,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "标题点 / 聚焦描边的主题色（不改各类别自身配色）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "标题点 / 聚焦描边的主题色（不改各类别自身配色）。"
       },
       {
@@ -13411,9 +12191,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -13424,6 +12202,7 @@ export const pages = [
       "en": "Where Every Dollar Goes",
       "cn": "把全年大额融资视作 100 份，看资金如何分配",
       "unitNote": "每格 = 全年大额融资的 1%",
+      "legendHeading": "// 资金分配",
       "items": [
         {
           "label": "通用大模型",
@@ -13492,9 +12271,7 @@ export const pages = [
             "label": "图左文右"
           }
         ],
-        "description": "图片栏放在左侧还是右侧。",
         "publicKey": "imageSide",
-        "publicLabel": "图片位置",
         "desc": "图片栏放在左侧还是右侧。"
       },
       {
@@ -13505,10 +12282,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "图片槽数量：1 张为单图特写，2–3 张为倾斜叠压拼贴，0 张为纯文字大留白。",
+        "unit": "张",
         "publicKey": "imageSlotCount",
-        "publicLabel": "图片数量",
         "desc": "图片槽数量：1 张为单图特写，2–3 张为倾斜叠压拼贴，0 张为纯文字大留白。"
       },
       {
@@ -13526,9 +12301,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满铺满版面，完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满铺满版面，完整自适应按原始比例显示。"
       },
       {
@@ -13536,9 +12309,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传专题图片，槽位自适应图片比例不变形。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传专题图片，槽位自适应图片比例不变形。"
       },
       {
@@ -13549,10 +12320,8 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "unit": " 个",
-        "description": "正文下方倾斜数据贴纸的数量。",
+        "unit": "个",
         "publicKey": "statCount",
-        "publicLabel": "数据贴纸",
         "desc": "正文下方倾斜数据贴纸的数量。"
       },
       {
@@ -13560,9 +12329,7 @@ export const pages = [
         "label": "引述金句",
         "type": "boolean",
         "default": true,
-        "description": "正文与数据之间引述金句条的显示。",
         "publicKey": "showQuote",
-        "publicLabel": "引述金句",
         "desc": "正文与数据之间引述金句条的显示。"
       },
       {
@@ -13570,9 +12337,7 @@ export const pages = [
         "label": "巨型刊号",
         "type": "boolean",
         "default": true,
-        "description": "文字栏背后超大幽灵刊号数字的显示。",
         "publicKey": "showGhost",
-        "publicLabel": "巨型刊号",
         "desc": "文字栏背后超大幽灵刊号数字的显示。"
       },
       {
@@ -13580,9 +12345,7 @@ export const pages = [
         "label": "荧光高亮",
         "type": "boolean",
         "default": true,
-        "description": "是否给导语关键词加荧光底纹。",
         "publicKey": "showHighlighter",
-        "publicLabel": "荧光高亮",
         "desc": "是否给导语关键词加荧光底纹。"
       },
       {
@@ -13612,9 +12375,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "刊号、荧光、引述竖条与图片边框的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "刊号、荧光、引述竖条与图片边框的主题色。"
       },
       {
@@ -13622,9 +12383,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -13682,10 +12441,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "unit": " 个",
-        "description": "一行并排的环形仪表数量。",
+        "unit": "个",
         "publicKey": "itemCount",
-        "publicLabel": "仪表数量",
         "desc": "一行并排的环形仪表数量。"
       },
       {
@@ -13693,9 +12450,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一个仪表渲染成发光强调款（其余柔化）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一个仪表渲染成发光强调款（其余柔化）。"
       },
       {
@@ -13706,9 +12461,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的仪表序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的仪表序号（从 0 开始）。"
       },
       {
@@ -13716,9 +12469,7 @@ export const pages = [
         "label": "底环轨道",
         "type": "boolean",
         "default": true,
-        "description": "环形底部灰色轨道的显示。",
         "publicKey": "showGuide",
-        "publicLabel": "底环轨道",
         "desc": "环形底部灰色轨道的显示。"
       },
       {
@@ -13729,10 +12480,8 @@ export const pages = [
         "min": 14,
         "max": 34,
         "step": 2,
-        "unit": " px",
-        "description": "仪表环线的粗细。",
+        "unit": "px",
         "publicKey": "arcWidth",
-        "publicLabel": "环线粗细",
         "desc": "仪表环线的粗细。"
       },
       {
@@ -13762,9 +12511,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "标题点与强调发光的主题色（不改各仪表自身配色）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "标题点与强调发光的主题色（不改各仪表自身配色）。"
       },
       {
@@ -13772,9 +12519,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -13838,10 +12583,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 类",
-        "description": "横轴上的类别（柱组）数量。",
+        "unit": "类",
         "publicKey": "itemCount",
-        "publicLabel": "类别数量",
         "desc": "横轴上的类别（柱组）数量。"
       },
       {
@@ -13852,10 +12595,8 @@ export const pages = [
         "min": 1,
         "max": 2,
         "step": 1,
-        "unit": " 组",
-        "description": "每个类别并排的柱子数量（1 = 仅最新年，2 = 同比对比）。",
+        "unit": "组",
         "publicKey": "seriesCount",
-        "publicLabel": "系列数量",
         "desc": "每个类别并排的柱子数量（1 = 仅最新年，2 = 同比对比）。"
       },
       {
@@ -13863,9 +12604,7 @@ export const pages = [
         "label": "数值标签",
         "type": "boolean",
         "default": true,
-        "description": "每根柱顶数值胶囊的显示。",
         "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
         "desc": "每根柱顶数值胶囊的显示。"
       },
       {
@@ -13873,9 +12612,7 @@ export const pages = [
         "label": "网格刻度",
         "type": "boolean",
         "default": true,
-        "description": "绘图区水平网格线与左侧刻度的显示。",
         "publicKey": "showGrid",
-        "publicLabel": "网格刻度",
         "desc": "绘图区水平网格线与左侧刻度的显示。"
       },
       {
@@ -13883,9 +12620,7 @@ export const pages = [
         "label": "顶部图例",
         "type": "boolean",
         "default": true,
-        "description": "顶部系列图例的显示。",
         "publicKey": "showLegend",
-        "publicLabel": "顶部图例",
         "desc": "顶部系列图例的显示。"
       },
       {
@@ -13915,9 +12650,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "最新系列柱子与标题点的主题色（早期系列保持灰调）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "最新系列柱子与标题点的主题色（早期系列保持灰调）。"
       },
       {
@@ -13925,9 +12658,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -14022,10 +12753,8 @@ export const pages = [
         "min": 2,
         "max": 5,
         "step": 1,
-        "unit": " 帧",
-        "description": "长卷中并排的画面（图片帧）数量。",
+        "unit": "帧",
         "publicKey": "imageSlotCount",
-        "publicLabel": "画面数量",
         "desc": "长卷中并排的画面（图片帧）数量。"
       },
       {
@@ -14043,9 +12772,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满铺满画面，完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满铺满画面，完整自适应按原始比例显示。"
       },
       {
@@ -14053,9 +12780,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传画面图片，槽位自适应图片比例不变形。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传画面图片，槽位自适应图片比例不变形。"
       },
       {
@@ -14063,9 +12788,7 @@ export const pages = [
         "label": "主画面",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一帧加宽并以主题色描边，作为主画面。",
         "publicKey": "highlight",
-        "publicLabel": "主画面",
         "desc": "是否把其中一帧加宽并以主题色描边，作为主画面。"
       },
       {
@@ -14076,9 +12799,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被加宽强调的主画面序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "主画面第几帧",
         "desc": "被加宽强调的主画面序号（从 0 开始）。"
       },
       {
@@ -14086,9 +12807,7 @@ export const pages = [
         "label": "编号角标",
         "type": "boolean",
         "default": true,
-        "description": "每帧左上角 01 / 02 编号角标的显示。",
         "publicKey": "showIndex",
-        "publicLabel": "编号角标",
         "desc": "每帧左上角 01 / 02 编号角标的显示。"
       },
       {
@@ -14096,9 +12815,7 @@ export const pages = [
         "label": "画面说明",
         "type": "boolean",
         "default": true,
-        "description": "每帧底部说明条 / 标签的显示。",
         "publicKey": "showFrameCaption",
-        "publicLabel": "画面说明",
         "desc": "每帧底部说明条 / 标签的显示。"
       },
       {
@@ -14128,9 +12845,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "编号角标、标签与主画面描边的主题色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "编号角标、标签与主画面描边的主题色。"
       },
       {
@@ -14138,9 +12853,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -14203,10 +12916,8 @@ export const pages = [
         "min": 4,
         "max": 6,
         "step": 1,
-        "unit": " 项",
-        "description": "参与多空对比的因子数量。",
+        "unit": "项",
         "publicKey": "itemCount",
-        "publicLabel": "因子数量",
         "desc": "参与多空对比的因子数量。"
       },
       {
@@ -14214,9 +12925,7 @@ export const pages = [
         "label": "按强度排序",
         "type": "boolean",
         "default": true,
-        "description": "是否从最强推力到最强阻力排序（关闭则保留原始顺序）。",
         "publicKey": "sortDesc",
-        "publicLabel": "按强度排序",
         "desc": "是否从最强推力到最强阻力排序（关闭则保留原始顺序）。"
       },
       {
@@ -14224,9 +12933,7 @@ export const pages = [
         "label": "强度数值",
         "type": "boolean",
         "default": true,
-        "description": "每根条上强度数值胶囊的显示。",
         "publicKey": "showValueLabels",
-        "publicLabel": "强度数值",
         "desc": "每根条上强度数值胶囊的显示。"
       },
       {
@@ -14234,9 +12941,7 @@ export const pages = [
         "label": "副标说明",
         "type": "boolean",
         "default": true,
-        "description": "每项因子名称下方说明小字的显示。",
         "publicKey": "showNote",
-        "publicLabel": "副标说明",
         "desc": "每项因子名称下方说明小字的显示。"
       },
       {
@@ -14244,9 +12949,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一项渲染成发光强调条。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一项渲染成发光强调条。"
       },
       {
@@ -14257,9 +12960,7 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "description": "被强调的因子序号（按当前排序后从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几项",
         "desc": "被强调的因子序号（按当前排序后从 0 开始）。"
       },
       {
@@ -14267,9 +12968,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -14343,10 +13042,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 瓣",
-        "description": "参与玫瑰图的分类数量（其余并入末项）。",
+        "unit": "瓣",
         "publicKey": "categoryCount",
-        "publicLabel": "花瓣数量",
         "desc": "参与玫瑰图的分类数量（其余并入末项）。"
       },
       {
@@ -14364,9 +13061,7 @@ export const pages = [
             "label": "半径正比"
           }
         ],
-        "description": "面积正比（半径取平方根，弱化巨头）或半径正比（直接线性，放大差距）。",
         "publicKey": "radiusScale",
-        "publicLabel": "半径标度",
         "desc": "面积正比（半径取平方根，弱化巨头）或半径正比（直接线性，放大差距）。"
       },
       {
@@ -14374,9 +13069,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮其中一瓣（放大 + 辉光，其余淡出）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮其中一瓣（放大 + 辉光，其余淡出）。"
       },
       {
@@ -14387,9 +13080,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的分类序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几瓣",
         "desc": "被强调的分类序号（从 0 开始）。"
       },
       {
@@ -14397,9 +13088,7 @@ export const pages = [
         "label": "刻度环",
         "type": "boolean",
         "default": true,
-        "description": "同心刻度圆环与数值刻度的显示。",
         "publicKey": "showValueLabels",
-        "publicLabel": "刻度环",
         "desc": "同心刻度圆环与数值刻度的显示。"
       },
       {
@@ -14407,9 +13096,7 @@ export const pages = [
         "label": "花瓣数值",
         "type": "boolean",
         "default": true,
-        "description": "每瓣尖端数值胶囊的显示。",
         "publicKey": "showValueLabels2",
-        "publicLabel": "花瓣数值",
         "desc": "每瓣尖端数值胶囊的显示。"
       },
       {
@@ -14417,9 +13104,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -14496,9 +13181,7 @@ export const pages = [
             "label": "饼图"
           }
         ],
-        "description": "甜甜圈（圆环 + 环心标注）或实心饼图。",
         "publicKey": "chartType",
-        "publicLabel": "图表类型",
         "desc": "甜甜圈（圆环 + 环心标注）或实心饼图。"
       },
       {
@@ -14509,10 +13192,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 类",
-        "description": "展示的类目数；少于总数时其余并入「其它」。",
+        "unit": "类",
         "publicKey": "itemCount",
-        "publicLabel": "类目数量",
         "desc": "展示的类目数；少于总数时其余并入「其它」。"
       },
       {
@@ -14520,9 +13201,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮某一扇段（外扩 + 发光）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮某一扇段（外扩 + 发光）。"
       },
       {
@@ -14533,9 +13212,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的类目序号（0 基）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几个",
         "desc": "被强调的类目序号（0 基）。"
       },
       {
@@ -14547,9 +13224,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "unit": "°",
-        "description": "相邻扇段之间的留白角度。",
         "publicKey": "gapAngle",
-        "publicLabel": "扇段间隙",
         "desc": "相邻扇段之间的留白角度。"
       },
       {
@@ -14557,9 +13232,7 @@ export const pages = [
         "label": "图例数值",
         "type": "boolean",
         "default": true,
-        "description": "图例行右侧数值与占比条的显示。",
         "publicKey": "showValueLabels",
-        "publicLabel": "图例数值",
         "desc": "图例行右侧数值与占比条的显示。"
       },
       {
@@ -14567,9 +13240,7 @@ export const pages = [
         "label": "核心发现",
         "type": "boolean",
         "default": true,
-        "description": "底部「核心发现」说明卡的显示。",
         "publicKey": "showNote",
-        "publicLabel": "核心发现",
         "desc": "底部「核心发现」说明卡的显示。"
       },
       {
@@ -14599,9 +13270,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "标签、环心与核心发现卡的主题色（不影响各扇段固有配色）。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "标签、环心与核心发现卡的主题色（不影响各扇段固有配色）。"
       },
       {
@@ -14609,9 +13278,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -14621,6 +13288,7 @@ export const pages = [
       "title": "钱从哪里来 · 投资方类型占比",
       "en": "Capital by Investor Type",
       "cn": "巨额资金背后，谁在下注",
+      "noteBadgeLabel": "核心发现",
       "unit": "亿",
       "segments": [
         {
@@ -14680,10 +13348,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "unit": " 列",
-        "description": "参与对比的分类列数量（其余略去）。",
+        "unit": "列",
         "publicKey": "categoryCount",
-        "publicLabel": "列数量",
         "desc": "参与对比的分类列数量（其余略去）。"
       },
       {
@@ -14691,9 +13357,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮其中一列（描边 + 抬升，其余淡出）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮其中一列（描边 + 抬升，其余淡出）。"
       },
       {
@@ -14704,9 +13368,7 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "description": "被强调的分类列序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几列",
         "desc": "被强调的分类列序号（从 0 开始）。"
       },
       {
@@ -14714,9 +13376,7 @@ export const pages = [
         "label": "分段占比",
         "type": "boolean",
         "default": true,
-        "description": "每个色块内阶段占比数字的显示。",
         "publicKey": "showCellPct",
-        "publicLabel": "分段占比",
         "desc": "每个色块内阶段占比数字的显示。"
       },
       {
@@ -14724,9 +13384,7 @@ export const pages = [
         "label": "左侧百分轴",
         "type": "boolean",
         "default": true,
-        "description": "左侧 0–100% 纵轴刻度的显示。",
         "publicKey": "showAxis",
-        "publicLabel": "左侧百分轴",
         "desc": "左侧 0–100% 纵轴刻度的显示。"
       },
       {
@@ -14776,9 +13434,7 @@ export const pages = [
             "color": "linear-gradient(135deg, #2b2b30 0% 33.33333333333333%, #5b8def 33.33333333333333% 66.66666666666666%, #9aa0ad 66.66666666666666% 100%)"
           }
         ],
-        "description": "三个阶段（后期 / 成长 / 早期）的色序。",
         "publicKey": "palette",
-        "publicLabel": "阶段配色",
         "desc": "三个阶段（后期 / 成长 / 早期）的色序。"
       },
       {
@@ -14786,9 +13442,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -14881,10 +13535,8 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "unit": " 联",
-        "description": "满版画面联数（1 单幅 / 2 双联 / 3 三联），每幅自适应所配图片比例。",
+        "unit": "联",
         "publicKey": "imageSlotCount",
-        "publicLabel": "画面数量",
         "desc": "满版画面联数（1 单幅 / 2 双联 / 3 三联），每幅自适应所配图片比例。"
       },
       {
@@ -14902,9 +13554,7 @@ export const pages = [
             "label": "完整自适应"
           }
         ],
-        "description": "图片填充方式：裁剪填满铺满画面，完整自适应按原始比例显示。",
         "publicKey": "imageFit",
-        "publicLabel": "图片填充",
         "desc": "图片填充方式：裁剪填满铺满画面，完整自适应按原始比例显示。"
       },
       {
@@ -14912,9 +13562,7 @@ export const pages = [
         "label": "图片",
         "type": "images",
         "countKey": "imageSlotCount",
-        "description": "上传满版画面，槽位自适应图片比例不变形。",
         "publicKey": "images",
-        "publicLabel": "图片",
         "desc": "上传满版画面，槽位自适应图片比例不变形。"
       },
       {
@@ -14922,9 +13570,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否高亮其中一联（主题色描边 + 强调标签）。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮其中一联（主题色描边 + 强调标签）。"
       },
       {
@@ -14935,9 +13581,7 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "description": "被强调的画面序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几联",
         "desc": "被强调的画面序号（从 0 开始）。"
       },
       {
@@ -14967,9 +13611,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "头牌、强调描边与高亮标签的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "头牌、强调描边与高亮标签的颜色。"
       },
       {
@@ -14977,9 +13619,7 @@ export const pages = [
         "label": "巨型序号",
         "type": "boolean",
         "default": true,
-        "description": "每联左上角超大 01 / 02 / 03 序号的显示。",
         "publicKey": "showIndex",
-        "publicLabel": "巨型序号",
         "desc": "每联左上角超大 01 / 02 / 03 序号的显示。"
       },
       {
@@ -14987,9 +13627,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -15001,16 +13639,19 @@ export const pages = [
       "panels": [
         {
           "tag": "训练集群",
+          "tagTone": "blue",
           "heading": "超大规模训练",
           "sub": "十万卡级集群，是大模型的入场券"
         },
         {
           "tag": "具身智能",
+          "tagTone": "violet",
           "heading": "走进物理世界",
           "sub": "人形机器人从演示走向量产"
         },
         {
           "tag": "算力基建",
+          "tagTone": "amber",
           "heading": "卖铲子的人",
           "sub": "数据中心与电力成为新的稀缺"
         }
@@ -15066,9 +13707,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "荧光高亮、强调字与强调贴纸的颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "荧光高亮、强调字与强调贴纸的颜色。"
       },
       {
@@ -15076,9 +13715,7 @@ export const pages = [
         "label": "荧光 / 贴纸标记",
         "type": "boolean",
         "default": true,
-        "description": "关闭后高亮词回退为普通文字（仅保留删除线语义）。",
         "publicKey": "showHighlighter",
-        "publicLabel": "荧光 / 贴纸标记",
         "desc": "关闭后高亮词回退为普通文字（仅保留删除线语义）。"
       },
       {
@@ -15086,9 +13723,7 @@ export const pages = [
         "label": "副文说明",
         "type": "boolean",
         "default": true,
-        "description": "主张下方说明段落的显示。",
         "publicKey": "showSub",
-        "publicLabel": "副文说明",
         "desc": "主张下方说明段落的显示。"
       },
       {
@@ -15099,10 +13734,8 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "unit": " 张",
-        "description": "底部数据贴纸数量（0 时只留大字主张）。",
+        "unit": "张",
         "publicKey": "statCount",
-        "publicLabel": "数据贴纸数量",
         "desc": "底部数据贴纸数量（0 时只留大字主张）。"
       },
       {
@@ -15110,9 +13743,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": true,
-        "description": "是否把其中一张数据贴纸渲染成主题色强调款。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否把其中一张数据贴纸渲染成主题色强调款。"
       },
       {
@@ -15123,9 +13754,7 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "description": "被强调的数据贴纸序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几张",
         "desc": "被强调的数据贴纸序号（从 0 开始）。"
       },
       {
@@ -15143,9 +13772,7 @@ export const pages = [
             "label": "居中"
           }
         ],
-        "description": "主张文字的对齐方式。",
         "publicKey": "align",
-        "publicLabel": "对齐",
         "desc": "主张文字的对齐方式。"
       },
       {
@@ -15153,9 +13780,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],
@@ -15231,10 +13856,8 @@ export const pages = [
         "min": 1,
         "max": 4,
         "step": 1,
-        "unit": " 条",
-        "description": "展示的核心结论卡数量（最多 4 条）。",
+        "unit": "条",
         "publicKey": "takeawayCount",
-        "publicLabel": "结论卡数量",
         "desc": "展示的核心结论卡数量（最多 4 条）。"
       },
       {
@@ -15252,9 +13875,7 @@ export const pages = [
             "label": "单一主题色"
           }
         ],
-        "description": "每卡使用品牌色序列，或统一使用单一主题色。",
         "publicKey": "colorMode",
-        "publicLabel": "配色模式",
         "desc": "每卡使用品牌色序列，或统一使用单一主题色。"
       },
       {
@@ -15284,9 +13905,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "「单一主题色」模式下，所有卡片与高亮的统一颜色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "「单一主题色」模式下，所有卡片与高亮的统一颜色。"
       },
       {
@@ -15294,9 +13913,7 @@ export const pages = [
         "label": "英文标签",
         "type": "boolean",
         "default": true,
-        "description": "是否显示每卡的英文 mono 标签。",
         "publicKey": "showEn",
-        "publicLabel": "英文标签",
         "desc": "是否显示每卡的英文 mono 标签。"
       },
       {
@@ -15304,9 +13921,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": false,
-        "description": "是否高亮强调其中一条结论。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一条结论。"
       },
       {
@@ -15317,9 +13932,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的结论序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几条",
         "desc": "被强调的结论序号（从 0 开始）。"
       },
       {
@@ -15327,9 +13940,7 @@ export const pages = [
         "label": "一句话总结",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部强调的一句话总结。",
         "publicKey": "showSummary",
-        "publicLabel": "一句话总结",
         "desc": "是否显示底部强调的一句话总结。"
       },
       {
@@ -15337,9 +13948,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "是否显示底部说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "是否显示底部说明文案。"
       }
     ],
@@ -15404,10 +14013,8 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "unit": " 类",
-        "description": "左栏来源索引的行数（0 时只显示右侧说明面板）。",
+        "unit": "类",
         "publicKey": "sourceCount",
-        "publicLabel": "来源数量",
         "desc": "左栏来源索引的行数（0 时只显示右侧说明面板）。"
       },
       {
@@ -15415,9 +14022,7 @@ export const pages = [
         "label": "重点强调",
         "type": "boolean",
         "default": false,
-        "description": "是否高亮强调其中一条来源。",
         "publicKey": "highlight",
-        "publicLabel": "重点强调",
         "desc": "是否高亮强调其中一条来源。"
       },
       {
@@ -15428,9 +14033,7 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "description": "被强调的来源序号（从 0 开始）。",
         "publicKey": "highlightIndex",
-        "publicLabel": "强调第几条",
         "desc": "被强调的来源序号（从 0 开始）。"
       },
       {
@@ -15460,9 +14063,7 @@ export const pages = [
             "label": "颜色 5"
           }
         ],
-        "description": "编号、分隔与高亮的统一强调色。",
         "publicKey": "accentColor",
-        "publicLabel": "主题色",
         "desc": "编号、分隔与高亮的统一强调色。"
       },
       {
@@ -15470,9 +14071,7 @@ export const pages = [
         "label": "说明面板",
         "type": "boolean",
         "default": true,
-        "description": "是否显示右侧「口径与说明」玻璃面板（关闭时来源清单占满整页）。",
         "publicKey": "showPanel",
-        "publicLabel": "说明面板",
         "desc": "是否显示右侧「口径与说明」玻璃面板（关闭时来源清单占满整页）。"
       },
       {
@@ -15480,9 +14079,7 @@ export const pages = [
         "label": "免责声明",
         "type": "boolean",
         "default": true,
-        "description": "是否在说明面板内显示免责声明。",
         "publicKey": "showDisclaimer",
-        "publicLabel": "免责声明",
         "desc": "是否在说明面板内显示免责声明。"
       },
       {
@@ -15490,9 +14087,7 @@ export const pages = [
         "label": "装饰文案",
         "type": "boolean",
         "default": true,
-        "description": "底部 */ … /* 说明文案的显示。",
         "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
         "desc": "底部 */ … /* 说明文案的显示。"
       }
     ],

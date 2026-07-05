@@ -13,9 +13,9 @@ export async function exportScreenshotPdfFromUrl(browser, url, options = {}) {
   const outFile = path.resolve(options.outFile || 'deck.pdf');
   const reportFile = options.reportFile ? path.resolve(options.reportFile) : null;
   const batchSize = Math.max(1, Math.min(20, Number(options.batchSize || DEFAULT_BATCH_SIZE)));
+  // 首个批次直接复用这次导航的页面,避免一次只为读页数的整页加载(实测 ~420ms)。
   const first = await openPreparedPage(browser, url, options);
   const totalSlides = first.count;
-  await first.close();
 
   const pdf = await PDFDocument.create();
   pdf.setTitle(options.title || 'Deck PDF Export');
@@ -24,6 +24,7 @@ export async function exportScreenshotPdfFromUrl(browser, url, options = {}) {
 
   const slideReports = [];
   const batches = [];
+  if (totalSlides <= 0) await first.close();
   for (let start = 0; start < totalSlides; start += batchSize) {
     batches.push({ start, end: Math.min(totalSlides, start + batchSize) });
   }
@@ -35,7 +36,7 @@ export async function exportScreenshotPdfFromUrl(browser, url, options = {}) {
       detail: `截图批次 ${batchIndex + 1}/${batches.length}`,
       percent: progressPercent(batch.start, totalSlides, 10, 78),
     });
-    const prepared = await openPreparedPage(browser, url, options);
+    const prepared = batchIndex === 0 ? first : await openPreparedPage(browser, url, options);
     try {
       for (let index = batch.start; index < batch.end; index += 1) {
         await emitProgress(options.onProgress, {

@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { isMediaArrayKey, isSerializedReactElementLike } from '../src/prop-contract-core.mjs';
+import { isCssColorLike, isMediaArrayKey, isSerializedReactElementLike } from '../src/prop-contract-core.mjs';
 import {
+  NEUTRAL_PLACEHOLDERS,
   getCopyBudgetsForLayout,
   inspectLayout,
   getMediaSlotsForLayout,
@@ -18,7 +20,6 @@ import {
 } from './skill-workflow-utils.mjs';
 
 const ALLOWED_INLINE_TAGS = new Set(['b', 'strong', 'i', 'em', 'br', 'sup', 'sub']);
-const NEUTRAL_PLACEHOLDERS = ['请输入文本', '请输入', '请输'];
 const NON_CONTENT_STRING_FIELD_PATTERN = /^(id|key|type|kind|tone|color|colour|accent|fill|stroke|background|bg|tint|hex|variant|style|theme|mode|layout|align|side|position|icon|href|url|src|fit|className)$/i;
 const ALLOWED_MEDIA_ITEM_FIELDS = new Set(['src', 'kind', 'type', 'ar', 'ratio', 'poster']);
 
@@ -1004,12 +1005,6 @@ function isUploadPlaceholderText(value) {
   return /上传|upload/i.test(String(value || '').trim());
 }
 
-function isCssColorLike(value) {
-  return /^#[0-9a-fA-F]{3,8}$/.test(String(value || '').trim())
-    || /^(rgb|rgba|hsl|hsla)\(/i.test(String(value || '').trim())
-    || /^var\(--[A-Za-z0-9_-]+\)$/.test(String(value || '').trim())
-    || /^(transparent|currentColor|black|white)$/i.test(String(value || '').trim());
-}
 
 function themeFromLayout(layout) {
   return String(layout || '').split('_')[0] || '<unknown>';
@@ -1023,7 +1018,9 @@ function runCli() {
     process.exit(2);
   }
 
-  const spec = JSON.parse(readFileSync(parsed.file, 'utf8'));
+  // 相对路径按调用方目录解析:npm run(含 --prefix)会把脚本 cwd 切到项目根,INIT_CWD 才是用户所在目录。
+  const callerCwd = process.env.INIT_CWD || process.cwd();
+  const spec = JSON.parse(readFileSync(path.resolve(callerCwd, parsed.file), 'utf8'));
   const errors = validateGoalSpec(spec);
   if (errors.length) {
     console.error('Goal spec validation failed:');

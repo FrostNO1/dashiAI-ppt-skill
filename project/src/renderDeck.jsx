@@ -36,7 +36,6 @@ import {
 const ROOT = path.resolve(import.meta.dirname, '..');
 const FULL_THEME_REGISTRY = path.join(ROOT, 'src/components/themes/theme-registry.jsx');
 const MIGRATION_ONLY_DIRS = new Set(['uploads', 'screens', 'screenshots', 'shots', 'scratch']);
-const PREVIEW_FAVICON = 'assets/skill/dashiai-ppt-favicon.png';
 
 export function renderDeck(deck, { outFile, includeThemeSwitcher = deck.preview?.themeSwitcher === true }) {
   const viewModel = buildDeckViewModel(deck, {
@@ -54,7 +53,6 @@ export function renderDeck(deck, { outFile, includeThemeSwitcher = deck.preview?
   html = html.replace('<title>[必填] 替换为 PPT 标题 · Deck Title</title>', `<title>${escapeHtml(viewModel.model.title)}</title>`);
   html = injectPreviewOptions(html, viewModel.options, { includeThemeSwitcher });
   html = injectDeckViewModel(html, serializeDeckViewModel(viewModel));
-  html = html.replace('<link rel="preconnect" href="https://fonts.googleapis.com">', `<link rel="icon" type="image/png" sizes="32x32" href="${PREVIEW_FAVICON}">\n<link rel="preconnect" href="https://fonts.googleapis.com">`);
 
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
   fs.writeFileSync(outFile, html);
@@ -132,16 +130,15 @@ function copyRuntimeAssets(outDir, { usedThemeKeys = [] } = {}) {
       fs.rmSync(dir, { recursive: true, force: true });
     });
     fs.mkdirSync(assetsDir, { recursive: true });
-    copyFileIfExists(path.join(ROOT, 'node_modules/gsap/dist/gsap.min.js'), path.join(assetsDir, 'vendor/gsap.min.js'));
-    copyFileIfExists(path.join(ROOT, 'node_modules/pptxgenjs/dist/pptxgen.bundle.js'), path.join(assetsDir, 'vendor/pptxgen.bundle.js'));
-    copyFileIfExists(path.join(ROOT, 'node_modules/html-to-image/dist/html-to-image.js'), path.join(assetsDir, 'vendor/html-to-image.js'));
+    copyRequiredFile(path.join(ROOT, 'node_modules/gsap/dist/gsap.min.js'), path.join(assetsDir, 'vendor/gsap.min.js'));
+    copyRequiredFile(path.join(ROOT, 'node_modules/pptxgenjs/dist/pptxgen.bundle.js'), path.join(assetsDir, 'vendor/pptxgen.bundle.js'));
+    copyRequiredFile(path.join(ROOT, 'node_modules/html-to-image/dist/html-to-image.js'), path.join(assetsDir, 'vendor/html-to-image.js'));
     for (const assetPath of RUNTIME_ASSET_PATHS) {
       if (assetPath === RUNTIME_TEMPLATE) continue;
       copyRuntimeAsset(assetPath, outDir);
     }
     copyImportedThemeAssets(outDir, usedThemeKeys);
     buildImportedThemeRuntime(path.join(assetsDir, 'imported-theme-runtime.js'), usedThemeKeys);
-    buildDeckRuntime(path.join(assetsDir, 'deck-runtime.js'));
     restoreUserMediaDirs(preservedUserMedia, outDir);
     const imageSlotStateFile = path.join(outDir, '.image-slots.state.json');
     if (!fs.existsSync(imageSlotStateFile)) fs.writeFileSync(imageSlotStateFile, '{}\n');
@@ -186,24 +183,6 @@ function restoreUserMediaDirs(preserved, outDir) {
 
 function cleanupPreservedUserMedia(preserved) {
   fs.rmSync(preserved.tempRoot, { recursive: true, force: true });
-}
-
-// JAD-168 step 1:交付件运行时的第二个 bundle(纯 DOM JS,无 React)。当前入口为空,
-// 后续把 template-swiss.html 的内联 IIFE 逐个迁入 src/runtime/* 并由此打包注入。
-function buildDeckRuntime(outFile) {
-  buildSync({
-    entryPoints: [path.join(ROOT, 'src/runtime/index.js')],
-    outfile: outFile,
-    bundle: true,
-    minify: true,
-    format: 'iife',
-    globalName: 'DeckRuntime',
-    platform: 'browser',
-    define: {
-      'process.env.NODE_ENV': '"production"',
-    },
-    logLevel: 'silent',
-  });
 }
 
 // JAD-201/203:打包这份 deck 实际用到主题的浏览器运行时。两条等价路径(见 runtime-build.mjs):
@@ -355,6 +334,15 @@ function copyFileIfExists(from, to) {
     fs.mkdirSync(path.dirname(to), { recursive: true });
     fs.copyFileSync(from, to);
   }
+}
+
+// 交付件必需的 vendor 库缺失时立刻失败,不允许静默产出缺脚本的 deck。
+function copyRequiredFile(from, to) {
+  if (!fs.existsSync(from)) {
+    throw new Error(`Required vendor asset missing: ${from}`);
+  }
+  fs.mkdirSync(path.dirname(to), { recursive: true });
+  fs.copyFileSync(from, to);
 }
 
 function escapeHtml(value) {

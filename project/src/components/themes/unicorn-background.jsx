@@ -47,7 +47,7 @@ export default function UnicornBackground({ accent = '#15A7F0', scene = DEFAULT_
       data-unicorn-json-file-path={filePath}
       data-unicorn-scale="1"
       data-unicorn-dpi="1.5"
-      data-unicorn-sdk-url="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.1.12/dist/unicornStudio.umd.js"
+      data-unicorn-sdk-url="assets/vendor/unicornstudio.umd.js"
       aria-hidden="true"
       style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', overflow: 'hidden', background: '#05070b', ['--unicorn-accent']: accent }}>
       <div className="bt-unicorn-scene" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} />

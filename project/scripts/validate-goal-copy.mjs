@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import { isMediaArrayKey } from '../src/prop-contract-core.mjs';
+
+// 相对路径按调用方目录解析:npm run(含 --prefix)会把脚本 cwd 切到项目根,INIT_CWD 才是用户所在目录。
+const CALLER_CWD = process.env.INIT_CWD || process.cwd();
 
 const [, , specArg, htmlArg] = process.argv;
 
@@ -9,8 +13,8 @@ if (!specArg || !htmlArg) {
   process.exit(2);
 }
 
-const spec = JSON.parse(readFileSync(specArg, 'utf8'));
-const html = readFileSync(htmlArg, 'utf8');
+const spec = JSON.parse(readFileSync(path.resolve(CALLER_CWD, specArg), 'utf8'));
+const html = readFileSync(path.resolve(CALLER_CWD, htmlArg), 'utf8');
 const layoutManifest = readLayoutManifest();
 const specText = JSON.stringify(spec, null, 2);
 const errors = [];

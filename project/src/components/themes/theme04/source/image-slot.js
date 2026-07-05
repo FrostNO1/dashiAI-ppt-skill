@@ -76,17 +76,10 @@
 
   function load() {
     if (loadP) return loadP;
-    const saved = readSavedSlots();
-    if (!canReadSidecar()) {
-      if (saved) slots = Object.assign({}, saved, slots);
-      loaded = true;
-      subs.forEach((fn) => fn());
-      loadP = Promise.resolve();
-      return loadP;
-    }
     loadP = fetch(STATE_FILE)
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => {
+        const saved = readSavedSlots();
         if (saved) j = Object.assign({}, j || {}, saved);
         // Merge: sidecar loses to any in-memory change that raced ahead of
         // the fetch (drop or clear) so neither is clobbered by hydration.
@@ -108,10 +101,6 @@
       .catch(() => {})
       .then(() => { loaded = true; subs.forEach((fn) => fn()); });
     return loadP;
-  }
-
-  function canReadSidecar() {
-    return !!(window.omelette && window.omelette.writeFile) || location.protocol === 'https:';
   }
 
   // Serialize writes so two near-simultaneous drops on different slots
@@ -154,29 +143,6 @@
 
   const S_MAX = 5;
   const clampS = (s) => Math.max(1, Math.min(S_MAX, s));
-
-  // Convention poster path: swap a file-path video extension for `.poster.jpg`.
-  // Returns null for data: URLs (no sidecar poster) so no broken poster loads.
-  function videoPoster(src) {
-    const s = String(src || '');
-    return /\.(mp4|m4v|mov|webm|ogv)(?:[?#].*)?$/i.test(s)
-      ? s.replace(/\.(mp4|m4v|mov|webm|ogv)(?:[?#].*)?$/i, '.poster.jpg')
-      : null;
-  }
-
-  function releaseVideo(video) {
-    if (!video) return;
-    video.pause && video.pause();
-    video.removeAttribute && video.removeAttribute('src');
-    video.querySelectorAll && video.querySelectorAll('source[src]').forEach((source) => source.removeAttribute('src'));
-    video.load && video.load();
-  }
-
-  function slideIsActive(node) {
-    const slide = node && node.closest && node.closest('.slide');
-    if (!slide) return true;
-    return slide.classList.contains('active') || slide.hasAttribute('data-deck-active');
-  }
 
   // Normalize a stored slot value. Pre-reframe sidecars stored a bare
   // data-URL string; newer ones store {u, s, x, y}. Either shape is valid.
@@ -227,6 +193,34 @@
       reader.onerror = () => reject(reader.error || new Error('read failed'));
       reader.readAsDataURL(file);
     });
+  }
+
+  // A slide that isn't on-stage shouldn't hold a live <video> — an inactive
+  // deck can have dozens of slides mounted at once (overview/adjacent
+  // preload), each with an uploaded video silently decoding in the
+  // background. Mirror the poster-swap gating used by the React media slots.
+  function slotIsActive(el) {
+    const slide = el.closest && el.closest('.slide');
+    if (!slide) return true;
+    return slide.classList.contains('active') || slide.hasAttribute('data-deck-active');
+  }
+
+  function videoPosterSrc(url) {
+    const s = String(url || '');
+    return /\.(mp4|webm|mov|m4v)(?:[?#].*)?$/i.test(s)
+      ? s.replace(/\.(mp4|webm|mov|m4v)(?:[?#].*)?$/i, '.poster.jpg')
+      : '';
+  }
+
+  // Any time the shadow <video> stops being the shown element (replaced by
+  // an image, emptied, gated inactive, or disconnected), fully release its
+  // resource — pause, drop src, reload — instead of just hiding it.
+  function releaseSlotVideo(video) {
+    if (!video) return;
+    video.pause?.();
+    video.style.display = 'none';
+    video.removeAttribute('src');
+    video.load?.();
   }
 
   // ── Custom element ──────────────────────────────────────────────────────
@@ -307,15 +301,16 @@
       root.innerHTML =
         '<style>' + stylesheet + '</style>' +
         '<div class="frame" part="frame">' +
-        '  <img part="image" alt="" draggable="false" loading="lazy" decoding="async" style="display:none">' +
-        '  <video part="video" muted playsinline loop preload="none" style="display:none"></video>' +
+        '  <img class="main" part="image" alt="" draggable="false" style="display:none">' +
+        '  <video part="video" muted playsinline loop autoplay preload="metadata" style="display:none"></video>' +
+        '  <img class="poster" alt="" draggable="false" data-video-poster style="display:none">' +
         '  <div class="empty" part="empty">' + icon +
         '    <div class="cap"></div>' +
         '    <div class="sub">or <u>browse files</u></div></div>' +
         '  <div class="ring" part="ring"></div>' +
         '</div>' +
         '<div class="spill">' +
-        '  <img class="ghost" alt="" draggable="false" loading="lazy" decoding="async">' +
+        '  <img class="ghost" alt="" draggable="false">' +
         '  <div class="handle" data-c="nw"></div><div class="handle" data-c="ne"></div>' +
         '  <div class="handle" data-c="sw"></div><div class="handle" data-c="se"></div>' +
         '</div>' +
@@ -324,8 +319,9 @@
         '<input type="file" accept="' + ACCEPT.join(',') + '" hidden>';
       this._frame = root.querySelector('.frame');
       this._ring = root.querySelector('.ring');
-      this._img = root.querySelector('.frame img');
+      this._img = root.querySelector('.frame img.main');
       this._video = root.querySelector('.frame video');
+      this._poster = root.querySelector('.frame img.poster');
       this._empty = root.querySelector('.empty');
       this._cap = root.querySelector('.cap');
       this._sub = root.querySelector('.sub');
@@ -336,10 +332,7 @@
       this._depth = 0;
       this._gen = 0;
       this._view = { s: 1, x: 0, y: 0 };
-      this._propSrc = null;
       this._subFn = () => this._render();
-      this._activeSlide = null;
-      this._activeObserver = null;
       // Shadow-DOM listeners live with the shadow DOM — bound once here so
       // disconnect/reconnect (e.g. React remount) doesn't stack handlers.
       this.addEventListener('pointerdown', e => e.stopPropagation());
@@ -482,7 +475,19 @@
       // frame's clamp range.
       this._ro = new ResizeObserver(() => this._render());
       this._ro.observe(this);
-      this._watchActiveSlide();
+      const slide = this.closest('.slide');
+      if (slide && typeof MutationObserver !== 'undefined') {
+        this._activeObserver = new MutationObserver(() => {
+          // The observer callback is a queued microtask — by the time it
+          // runs, a fast navigation may already have disconnected (or
+          // reconnected under a different parent) this element. Rendering
+          // into a detached shadow tree is harmless but pointless; skip it
+          // so a stale callback can't race a fresh mount's own render.
+          if (!this.isConnected) return;
+          this._render();
+        });
+        this._activeObserver.observe(slide, { attributes: true, attributeFilter: ['class', 'data-deck-active'] });
+      }
       load();
       this._render();
     }
@@ -495,32 +500,7 @@
       this.removeEventListener('drop', this);
       if (this._ro) { this._ro.disconnect(); this._ro = null; }
       if (this._activeObserver) { this._activeObserver.disconnect(); this._activeObserver = null; }
-      this._activeSlide = null;
       this._exitReframe(false);
-      releaseVideo(this._video);
-    }
-
-    get src() {
-      return this._propSrc ?? this.getAttribute('src') ?? '';
-    }
-
-    set src(value) {
-      this._propSrc = value == null ? null : String(value);
-      if (this.shadowRoot) this._render();
-    }
-
-    _watchActiveSlide() {
-      const slide = this.closest && this.closest('.slide');
-      if (slide === this._activeSlide) return;
-      if (this._activeObserver) this._activeObserver.disconnect();
-      this._activeSlide = slide || null;
-      if (!slide || typeof MutationObserver === 'undefined') return;
-      this._activeObserver = new MutationObserver(() => this._render());
-      this._activeObserver.observe(slide, { attributes: true, attributeFilter: ['class', 'data-deck-active'] });
-      const deck = slide.parentElement || document.body;
-      if (deck && deck !== slide) {
-        this._activeObserver.observe(deck, { subtree: true, attributes: true, attributeFilter: ['class', 'data-deck-active'] });
-      }
     }
 
     _enterReframe() {
@@ -687,6 +667,21 @@
     }
 
     _render() {
+      // A custom element callback (attributeChangedCallback, a
+      // MutationObserver reacting to an ancestor's active-state change,
+      // etc.) must never throw into its caller — the caller here is
+      // frequently the deck's synchronous React render pass for a
+      // completely different slide, and an uncaught error here would abort
+      // that render before it marks itself mounted, misreporting an
+      // "unmounted" slide that is actually fine.
+      try {
+        this._renderImpl();
+      } catch (error) {
+        console.error('[image-slot] render failed', error);
+      }
+    }
+
+    _renderImpl() {
       // Shape / mask. Presets use border-radius so the dashed ring can
       // follow the rounded outline; clip-path is only applied for an
       // explicit `mask` (the ring is hidden there since a rectangle
@@ -716,7 +711,7 @@
       // (Claude wrote it into the HTML) so it passes through unchanged.
       let stored = this.id ? getSlot(this.id) : this._local;
       if (stored && stored.u && !/^data:(image|video)\//i.test(stored.u)) stored = null;
-      const srcAttr = this.src || '';
+      const srcAttr = this.getAttribute('src') || '';
       this._userUrl = (stored && stored.u) || null;
       const url = this._userUrl || srcAttr;
       const kind = (stored && stored.kind) || (String(url).startsWith('data:video/') || /\.(mp4|webm|mov)(\?|#|$)/i.test(String(url)) ? 'video' : 'image');
@@ -735,17 +730,13 @@
       if (url) {
         if (kind === 'video') {
           this._exitReframe(false);
-          const poster = videoPoster(url);
-          if (slideIsActive(this)) {
-            if (this._video.getAttribute('src') !== url) {
-              releaseVideo(this._video);
-              this._video.src = url;
-            }
-            if (poster) this._video.setAttribute('poster', poster);
-            else this._video.removeAttribute('poster');
-            this._img.style.display = 'none';
-            this._img.removeAttribute('src');
-            this._ghost.removeAttribute('src');
+          this._img.style.display = 'none';
+          this._img.removeAttribute('src');
+          this._ghost.removeAttribute('src');
+          if (slotIsActive(this)) {
+            this._poster.style.display = 'none';
+            this._poster.removeAttribute('src');
+            if (this._video.getAttribute('src') !== url) this._video.src = url;
             this._video.style.display = 'block';
             this._video.style.width = '100%';
             this._video.style.height = '100%';
@@ -753,26 +744,30 @@
             this._video.style.top = '50%';
             this._video.style.objectFit = this.getAttribute('fit') || 'cover';
             this._video.style.objectPosition = this.getAttribute('position') || '50% 50%';
+            // <image-slot> owns its own upload/storage path (setSlot/subs),
+            // entirely outside the deck's createMediaApi/updateList bridge —
+            // so it never benefits from the template's syncVideoActivity()
+            // pass. Play it ourselves whenever this branch (re)applies a
+            // src to an active slot, e.g. right after a drag-drop upload.
+            if (this._video.readyState < 2) this._video.load();
+            this._video.play?.().catch(() => {});
           } else {
-            this._video.style.display = 'none';
-            releaseVideo(this._video);
-            this._ghost.removeAttribute('src');
+            // Inactive slide: release the video resource entirely (pause,
+            // drop its src, reload) and show a static poster placeholder.
+            releaseSlotVideo(this._video);
+            const poster = videoPosterSrc(url);
+            this._poster.style.width = '100%';
+            this._poster.style.height = '100%';
+            this._poster.style.left = '50%';
+            this._poster.style.top = '50%';
+            this._poster.style.objectFit = this.getAttribute('fit') || 'cover';
+            this._poster.style.objectPosition = this.getAttribute('position') || '50% 50%';
             if (poster) {
-              if (this._img.getAttribute('src') !== poster) this._img.setAttribute('src', poster);
-              this._img.setAttribute('data-video-poster', 'true');
-              this._img.style.display = 'block';
-              this._img.style.width = '100%';
-              this._img.style.height = '100%';
-              this._img.style.left = '50%';
-              this._img.style.top = '50%';
-              this._img.style.objectFit = this.getAttribute('fit') || 'cover';
-              this._img.style.objectPosition = this.getAttribute('position') || '50% 50%';
-              this._empty.style.display = 'none';
+              this._poster.src = poster;
+              this._poster.style.display = 'block';
             } else {
-              this._img.style.display = 'none';
-              this._img.removeAttribute('src');
-              this._img.removeAttribute('data-video-poster');
-              this._empty.style.display = 'flex';
+              this._poster.removeAttribute('src');
+              this._poster.style.display = 'block';
             }
           }
         } else {
@@ -780,9 +775,9 @@
             this._img.src = url;
             this._ghost.src = url;
           }
-          this._img.removeAttribute('data-video-poster');
-          this._video.style.display = 'none';
-          releaseVideo(this._video);
+          releaseSlotVideo(this._video);
+          this._poster.style.display = 'none';
+          this._poster.removeAttribute('src');
           this._img.style.display = 'block';
           this._clampView();
           this._applyView();
@@ -792,8 +787,9 @@
       } else {
         this._img.style.display = 'none';
         this._img.removeAttribute('src');
-        this._video.style.display = 'none';
-        releaseVideo(this._video);
+        releaseSlotVideo(this._video);
+        this._poster.style.display = 'none';
+        this._poster.removeAttribute('src');
         this._ghost.removeAttribute('src');
         this._empty.style.display = 'flex';
         this.removeAttribute('data-filled');

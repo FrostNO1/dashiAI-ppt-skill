@@ -5,8 +5,10 @@
 // 收编范围保守:只标已确认的纯装饰位。
 // - theme09_page007 封面右下角手写花字 signature('AInsight'):
 //   与 JAD-196(closing 已在组件层处理)一致,这里补封面契约标记,避免被当文案填写。
+// - theme09_page111(结语/closing)同一枚手写花字 signature('AInsight')。
 export const DECORATIVE_SLOTS = {
   theme09_page007: ['signature'],
+  theme09_page111: ['signature'],
 };
 
 export function getDecorativeKeys(layout) {

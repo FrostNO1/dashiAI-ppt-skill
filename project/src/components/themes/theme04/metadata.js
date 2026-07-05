@@ -49,9 +49,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -62,9 +60,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "accentTone",
@@ -96,9 +92,7 @@ export const pages = [
         ],
         "default": "green",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "statCount",
@@ -109,9 +103,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "底部并置指标卡片数量",
-        "publicKey": "statCount",
-        "publicLabel": "指标卡片数量",
-        "description": "底部并置指标卡片数量"
+        "publicKey": "statCount"
       },
       {
         "key": "focusEnabled",
@@ -119,9 +111,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一枚芯片",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一枚芯片"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -133,9 +123,7 @@ export const pages = [
         "default": 3,
         "maxFromKey": "statCount",
         "desc": "被高亮芯片序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "高亮第几个",
-        "description": "被高亮芯片序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showSub",
@@ -143,9 +131,7 @@ export const pages = [
         "label": "副标题",
         "default": true,
         "desc": "副标题显隐",
-        "publicKey": "showSub",
-        "publicLabel": "副标题",
-        "description": "副标题显隐"
+        "publicKey": "showSub"
       },
       {
         "key": "showBrand",
@@ -153,9 +139,7 @@ export const pages = [
         "label": "顶部刊名",
         "default": true,
         "desc": "顶部刊名显隐",
-        "publicKey": "showBrand",
-        "publicLabel": "顶部刊名",
-        "description": "顶部刊名显隐"
+        "publicKey": "showBrand"
       },
       {
         "key": "showDecorations",
@@ -163,122 +147,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "资本，正在",
-        "desc": "主标题关键词前的文字",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "主标题关键词前的文字"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "重新分配",
-        "desc": "玻璃糖果胶囊里的关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "玻璃糖果胶囊里的关键词"
-      },
-      {
-        "key": "eyebrow",
-        "type": "text",
-        "label": "眉标",
-        "default": "年度封面 · ANNUAL COVER",
-        "desc": "标题上方的小标",
-        "publicKey": "eyebrow",
-        "publicLabel": "眉标",
-        "description": "标题上方的小标"
-      },
-      {
-        "key": "sub",
-        "type": "text",
-        "label": "副标题",
-        "default": "2024 全球 AI 大额融资 · 全景年鉴",
-        "desc": "标题下方副标题",
-        "publicKey": "sub",
-        "publicLabel": "副标题",
-        "description": "标题下方副标题"
-      },
-      {
-        "key": "brand",
-        "type": "text",
-        "label": "刊名(英)",
-        "default": "AI CAPITAL",
-        "desc": "顶部英文刊名",
-        "publicKey": "brand",
-        "publicLabel": "刊名(英)",
-        "description": "顶部英文刊名"
-      },
-      {
-        "key": "brandZh",
-        "type": "text",
-        "label": "刊名(中)",
-        "default": "资本观察 · 年度特刊",
-        "desc": "顶部中文刊名",
-        "publicKey": "brandZh",
-        "publicLabel": "刊名(中)",
-        "description": "顶部中文刊名"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 芯片",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 芯片"
-      },
-      {
-        "key": "stats",
-        "type": "list",
-        "label": "指标卡片",
-        "itemLabel": "芯片",
-        "countFromKey": "statCount",
-        "fields": [
-          {
-            "key": "n",
-            "label": "数字"
-          },
-          {
-            "key": "l",
-            "label": "标签"
-          },
-          {
-            "key": "color",
-            "label": "颜色"
-          }
-        ],
-        "default": [
-          {
-            "n": "970",
-            "l": "亿美元 · 全年总额",
-            "color": "#27E021"
-          },
-          {
-            "n": "97",
-            "l": "笔 · 单笔 ≥1 亿",
-            "color": "#15A7F0"
-          },
-          {
-            "n": "×3",
-            "l": "估值 · 一年跃迁",
-            "color": "#FF9FE2"
-          }
-        ],
-        "desc": "底部指标卡片：数字 / 标签 / 主色",
-        "publicKey": "stats",
-        "publicLabel": "指标卡片",
-        "description": "底部指标卡片：数字 / 标签 / 主色"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -355,9 +224,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -368,9 +235,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "accentTone",
@@ -402,9 +267,7 @@ export const pages = [
         ],
         "default": "blue",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "itemCount",
@@ -415,9 +278,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "右侧索引卡数量",
-        "publicKey": "itemCount",
-        "publicLabel": "索引卡数量",
-        "description": "右侧索引卡数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "focusEnabled",
@@ -425,9 +286,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一张索引卡",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一张索引卡"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -439,9 +298,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "itemCount",
         "desc": "被高亮索引卡序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "高亮第几个",
-        "description": "被高亮索引卡序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showIssue",
@@ -449,9 +306,7 @@ export const pages = [
         "label": "期号徽标",
         "default": true,
         "desc": "期号徽标显隐",
-        "publicKey": "showIssue",
-        "publicLabel": "期号徽标",
-        "description": "期号徽标显隐"
+        "publicKey": "showIssue"
       },
       {
         "key": "showSub",
@@ -459,9 +314,7 @@ export const pages = [
         "label": "副标题",
         "default": true,
         "desc": "副标题显隐",
-        "publicKey": "showSub",
-        "publicLabel": "副标题",
-        "description": "副标题显隐"
+        "publicKey": "showSub"
       },
       {
         "key": "showDecorations",
@@ -469,167 +322,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "谁在",
-        "desc": "关键词前的文字",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "关键词前的文字"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "改写",
-        "desc": "玻璃糖果胶囊里的关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "玻璃糖果胶囊里的关键词"
-      },
-      {
-        "key": "titleTail",
-        "type": "text",
-        "label": "标题后半",
-        "default": "估值规则",
-        "desc": "关键词后另起一行的文字",
-        "publicKey": "titleTail",
-        "publicLabel": "标题后半",
-        "description": "关键词后另起一行的文字"
-      },
-      {
-        "key": "eyebrow",
-        "type": "text",
-        "label": "眉标",
-        "default": "封面故事 · COVER STORY",
-        "desc": "标题上方的小标",
-        "publicKey": "eyebrow",
-        "publicLabel": "眉标",
-        "description": "标题上方的小标"
-      },
-      {
-        "key": "sub",
-        "type": "text",
-        "label": "副标题",
-        "default": "头部玩家、资本流向与一年翻倍的独角兽流水线",
-        "desc": "标题下方副标题",
-        "publicKey": "sub",
-        "publicLabel": "副标题",
-        "description": "标题下方副标题"
-      },
-      {
-        "key": "brand",
-        "type": "text",
-        "label": "刊名(英)",
-        "default": "AI CAPITAL",
-        "desc": "顶部英文刊名",
-        "publicKey": "brand",
-        "publicLabel": "刊名(英)",
-        "description": "顶部英文刊名"
-      },
-      {
-        "key": "brandZh",
-        "type": "text",
-        "label": "刊名(中)",
-        "default": "资本观察 · 特别报告",
-        "desc": "顶部中文刊名",
-        "publicKey": "brandZh",
-        "publicLabel": "刊名(中)",
-        "description": "顶部中文刊名"
-      },
-      {
-        "key": "issueNo",
-        "type": "text",
-        "label": "期号前缀",
-        "default": "NO.",
-        "desc": "期号徽标前缀",
-        "publicKey": "issueNo",
-        "publicLabel": "期号前缀",
-        "description": "期号徽标前缀"
-      },
-      {
-        "key": "issueVol",
-        "type": "text",
-        "label": "期号",
-        "default": "04",
-        "desc": "期号数字",
-        "publicKey": "issueVol",
-        "publicLabel": "期号",
-        "description": "期号数字"
-      },
-      {
-        "key": "issueYr",
-        "type": "text",
-        "label": "期号年份",
-        "default": "2024 年刊",
-        "desc": "期号年份文字",
-        "publicKey": "issueYr",
-        "publicLabel": "期号年份",
-        "description": "期号年份文字"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 索引卡",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 索引卡"
-      },
-      {
-        "key": "items",
-        "type": "list",
-        "label": "索引卡",
-        "itemLabel": "索引",
-        "countFromKey": "itemCount",
-        "fields": [
-          {
-            "key": "tag",
-            "label": "编号"
-          },
-          {
-            "key": "head",
-            "label": "主句"
-          },
-          {
-            "key": "sub",
-            "label": "释义"
-          }
-        ],
-        "default": [
-          {
-            "tag": "01",
-            "head": "算力霸权",
-            "sub": "芯片 · 数据中心 · 谁卡住咽喉"
-          },
-          {
-            "tag": "02",
-            "head": "模型军备",
-            "sub": "基础模型三强 · 烧钱与护城河"
-          },
-          {
-            "tag": "03",
-            "head": "应用突围",
-            "sub": "从 Demo 到收入 · 谁先跑通"
-          },
-          {
-            "tag": "04",
-            "head": "资本退潮",
-            "sub": "热钱之后 · 谁会被留在沙滩上"
-          }
-        ],
-        "desc": "右侧索引卡：编号 / 主句 / 释义",
-        "publicKey": "items",
-        "publicLabel": "索引卡",
-        "description": "右侧索引卡：编号 / 主句 / 释义"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -656,22 +349,26 @@ export const pages = [
         {
           "tag": "01",
           "head": "算力霸权",
-          "sub": "芯片 · 数据中心 · 谁卡住咽喉"
+          "sub": "芯片 · 数据中心 · 谁卡住咽喉",
+          "color": "#27E021"
         },
         {
           "tag": "02",
           "head": "模型军备",
-          "sub": "基础模型三强 · 烧钱与护城河"
+          "sub": "基础模型三强 · 烧钱与护城河",
+          "color": "#15A7F0"
         },
         {
           "tag": "03",
           "head": "应用突围",
-          "sub": "从 Demo 到收入 · 谁先跑通"
+          "sub": "从 Demo 到收入 · 谁先跑通",
+          "color": "#FFC700"
         },
         {
           "tag": "04",
           "head": "资本退潮",
-          "sub": "热钱之后 · 谁会被留在沙滩上"
+          "sub": "热钱之后 · 谁会被留在沙滩上",
+          "color": "#FF9FE2"
         }
       ]
     }
@@ -715,9 +412,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -728,9 +423,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "accentTone",
@@ -762,9 +455,7 @@ export const pages = [
         ],
         "default": "yellow",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "lineCount",
@@ -775,9 +466,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "底部导读条数量",
-        "publicKey": "lineCount",
-        "publicLabel": "导读条数量",
-        "description": "底部导读条数量"
+        "publicKey": "lineCount"
       },
       {
         "key": "focusEnabled",
@@ -785,9 +474,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一导读条",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一导读条"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -799,9 +486,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "lineCount",
         "desc": "被高亮导读条序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "高亮第几个",
-        "description": "被高亮导读条序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showGhost",
@@ -809,9 +494,7 @@ export const pages = [
         "label": "幽灵数字",
         "default": true,
         "desc": "背景巨型描边数字显隐",
-        "publicKey": "showGhost",
-        "publicLabel": "幽灵数字",
-        "description": "背景巨型描边数字显隐"
+        "publicKey": "showGhost"
       },
       {
         "key": "showIssue",
@@ -819,9 +502,7 @@ export const pages = [
         "label": "期号徽标",
         "default": true,
         "desc": "期号徽标显隐",
-        "publicKey": "showIssue",
-        "publicLabel": "期号徽标",
-        "description": "期号徽标显隐"
+        "publicKey": "showIssue"
       },
       {
         "key": "showDecorations",
@@ -829,168 +510,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "大额时代",
-        "desc": "关键词前的文字",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "关键词前的文字"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "来了",
-        "desc": "玻璃糖果胶囊里的关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "玻璃糖果胶囊里的关键词"
-      },
-      {
-        "key": "eyebrow",
-        "type": "text",
-        "label": "眉标",
-        "default": "特别报告 · SPECIAL ISSUE",
-        "desc": "标题上方的小标",
-        "publicKey": "eyebrow",
-        "publicLabel": "眉标",
-        "description": "标题上方的小标"
-      },
-      {
-        "key": "sub",
-        "type": "textarea",
-        "label": "副标题",
-        "rows": 2,
-        "default": "单笔过亿成为新常态 —— 一年里，钱以前所未有的速度涌入",
-        "desc": "标题下方副标题",
-        "publicKey": "sub",
-        "publicLabel": "副标题",
-        "description": "标题下方副标题"
-      },
-      {
-        "key": "ghostText",
-        "type": "text",
-        "label": "幽灵数字",
-        "default": "04",
-        "desc": "背景巨型描边数字",
-        "publicKey": "ghostText",
-        "publicLabel": "幽灵数字",
-        "description": "背景巨型描边数字"
-      },
-      {
-        "key": "brand",
-        "type": "text",
-        "label": "刊名(英)",
-        "default": "AI CAPITAL",
-        "desc": "顶部英文刊名",
-        "publicKey": "brand",
-        "publicLabel": "刊名(英)",
-        "description": "顶部英文刊名"
-      },
-      {
-        "key": "brandZh",
-        "type": "text",
-        "label": "刊名(中)",
-        "default": "资本观察 · 数据特辑",
-        "desc": "顶部中文刊名",
-        "publicKey": "brandZh",
-        "publicLabel": "刊名(中)",
-        "description": "顶部中文刊名"
-      },
-      {
-        "key": "issueNo",
-        "type": "text",
-        "label": "期号前缀",
-        "default": "VOL.",
-        "desc": "期号徽标前缀",
-        "publicKey": "issueNo",
-        "publicLabel": "期号前缀",
-        "description": "期号徽标前缀"
-      },
-      {
-        "key": "issueVol",
-        "type": "text",
-        "label": "期号",
-        "default": "04",
-        "desc": "期号数字",
-        "publicKey": "issueVol",
-        "publicLabel": "期号",
-        "description": "期号数字"
-      },
-      {
-        "key": "issueYr",
-        "type": "text",
-        "label": "期号年份",
-        "default": "2024 年度",
-        "desc": "期号年份文字",
-        "publicKey": "issueYr",
-        "publicLabel": "期号年份",
-        "description": "期号年份文字"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 导读条",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 导读条"
-      },
-      {
-        "key": "lines",
-        "type": "list",
-        "label": "导读条",
-        "itemLabel": "导读",
-        "countFromKey": "lineCount",
-        "fields": [
-          {
-            "key": "head",
-            "label": "主句"
-          },
-          {
-            "key": "sub",
-            "label": "释义"
-          },
-          {
-            "key": "color",
-            "label": "颜色"
-          }
-        ],
-        "default": [
-          {
-            "head": "970 亿美元",
-            "sub": "全年总额创历史新高",
-            "color": "#27E021"
-          },
-          {
-            "head": "97 笔大额轮",
-            "sub": "单笔 ≥1 亿 · 头部集中",
-            "color": "#15A7F0"
-          },
-          {
-            "head": "六大赛道",
-            "sub": "算力 · 模型 · 应用争霸",
-            "color": "#FFC700"
-          },
-          {
-            "head": "估值翻数倍",
-            "sub": "独角兽流水线 · 资本不眠",
-            "color": "#FF9FE2"
-          }
-        ],
-        "desc": "底部导读条：主句 / 释义 / 主色",
-        "publicKey": "lines",
-        "publicLabel": "导读条",
-        "description": "底部导读条：主句 / 释义 / 主色"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -1076,9 +596,7 @@ export const pages = [
         ],
         "default": "green",
         "desc": "标题板主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "标题板主色",
-        "description": "标题板主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "tileCount",
@@ -1089,9 +607,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "玻璃糖果数据瓷砖数量(自动重排)",
-        "publicKey": "tileCount",
-        "publicLabel": "瓷砖数量",
-        "description": "玻璃糖果数据瓷砖数量(自动重排)"
+        "publicKey": "tileCount"
       },
       {
         "key": "paletteVariant",
@@ -1113,9 +629,7 @@ export const pages = [
         ],
         "default": "multi",
         "desc": "瓷砖多彩 / 统一主色",
-        "publicKey": "paletteVariant",
-        "publicLabel": "瓷砖配色",
-        "description": "瓷砖多彩 / 统一主色"
+        "publicKey": "paletteVariant"
       },
       {
         "key": "focusEnabled",
@@ -1123,9 +637,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一块瓷砖",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一块瓷砖"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -1137,9 +649,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "tileCount",
         "desc": "被高亮瓷砖序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "高亮第几个",
-        "description": "被高亮瓷砖序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showIssue",
@@ -1147,9 +657,7 @@ export const pages = [
         "label": "期号徽标",
         "default": true,
         "desc": "期号徽标显隐",
-        "publicKey": "showIssue",
-        "publicLabel": "期号徽标",
-        "description": "期号徽标显隐"
+        "publicKey": "showIssue"
       },
       {
         "key": "showKicker",
@@ -1157,9 +665,7 @@ export const pages = [
         "label": "瓷砖角标",
         "default": true,
         "desc": "瓷砖英文小标显隐",
-        "publicKey": "showKicker",
-        "publicLabel": "瓷砖角标",
-        "description": "瓷砖英文小标显隐"
+        "publicKey": "showKicker"
       },
       {
         "key": "showDecorations",
@@ -1167,163 +673,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "AI 资本",
-        "desc": "标题第一行",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "标题第一行"
-      },
-      {
-        "key": "titleTail",
-        "type": "text",
-        "label": "标题后半",
-        "default": "全景图鉴",
-        "desc": "标题第二行",
-        "publicKey": "titleTail",
-        "publicLabel": "标题后半",
-        "description": "标题第二行"
-      },
-      {
-        "key": "eyebrow",
-        "type": "text",
-        "label": "眉标",
-        "default": "一图速览 · AT A GLANCE",
-        "desc": "标题上方的小标",
-        "publicKey": "eyebrow",
-        "publicLabel": "眉标",
-        "description": "标题上方的小标"
-      },
-      {
-        "key": "brand",
-        "type": "text",
-        "label": "刊名(英)",
-        "default": "AI CAPITAL",
-        "desc": "标题板英文刊名",
-        "publicKey": "brand",
-        "publicLabel": "刊名(英)",
-        "description": "标题板英文刊名"
-      },
-      {
-        "key": "brandZh",
-        "type": "text",
-        "label": "刊名(中)",
-        "default": "资本观察",
-        "desc": "标题板中文刊名",
-        "publicKey": "brandZh",
-        "publicLabel": "刊名(中)",
-        "description": "标题板中文刊名"
-      },
-      {
-        "key": "issueNo",
-        "type": "text",
-        "label": "期号前缀",
-        "default": "NO.",
-        "desc": "期号徽标前缀",
-        "publicKey": "issueNo",
-        "publicLabel": "期号前缀",
-        "description": "期号徽标前缀"
-      },
-      {
-        "key": "issueVol",
-        "type": "text",
-        "label": "期号",
-        "default": "04",
-        "desc": "期号数字",
-        "publicKey": "issueVol",
-        "publicLabel": "期号",
-        "description": "期号数字"
-      },
-      {
-        "key": "issueYr",
-        "type": "text",
-        "label": "期号年份",
-        "default": "2024 年刊",
-        "desc": "期号年份文字",
-        "publicKey": "issueYr",
-        "publicLabel": "期号年份",
-        "description": "期号年份文字"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 瓷砖",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 瓷砖"
-      },
-      {
-        "key": "tiles",
-        "type": "list",
-        "label": "数据瓷砖",
-        "itemLabel": "瓷砖",
-        "countFromKey": "tileCount",
-        "fields": [
-          {
-            "key": "kick",
-            "label": "角标"
-          },
-          {
-            "key": "big",
-            "label": "大数"
-          },
-          {
-            "key": "unit",
-            "label": "单位"
-          },
-          {
-            "key": "lab",
-            "label": "标签"
-          },
-          {
-            "key": "color",
-            "label": "颜色"
-          }
-        ],
-        "default": [
-          {
-            "kick": "TOTAL",
-            "big": "970",
-            "unit": "亿",
-            "lab": "全年融资总额",
-            "color": "#27E021"
-          },
-          {
-            "kick": "SECTORS",
-            "big": "6",
-            "unit": "",
-            "lab": "赛道争霸",
-            "color": "#FFC700"
-          },
-          {
-            "kick": "MEGA",
-            "big": "97",
-            "unit": "",
-            "lab": "笔大额轮",
-            "color": "#15A7F0"
-          },
-          {
-            "kick": "VALUATION",
-            "big": "×3",
-            "unit": "",
-            "lab": "独角兽一年估值跃迁",
-            "color": "#FF9FE2"
-          }
-        ],
-        "desc": "数据瓷砖：角标 / 大数 / 单位 / 标签 / 主色",
-        "publicKey": "tiles",
-        "publicLabel": "数据瓷砖",
-        "description": "数据瓷砖：角标 / 大数 / 单位 / 标签 / 主色"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -1414,9 +764,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -1427,9 +775,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "itemCount",
@@ -1440,9 +786,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "展示的章节模块卡数量",
-        "publicKey": "itemCount",
-        "publicLabel": "模块数量",
-        "description": "展示的章节模块卡数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "focusEnabled",
@@ -1450,9 +794,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一个模块",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一个模块"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -1464,9 +806,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "itemCount",
         "desc": "被高亮模块的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮模块的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "tilt",
@@ -1474,9 +814,7 @@ export const pages = [
         "label": "卡片倾斜",
         "default": true,
         "desc": "卡片是否带随机倾斜角",
-        "publicKey": "tilt",
-        "publicLabel": "卡片倾斜",
-        "description": "卡片是否带随机倾斜角"
+        "publicKey": "tilt"
       },
       {
         "key": "showTag",
@@ -1484,9 +822,7 @@ export const pages = [
         "label": "序号标签",
         "default": true,
         "desc": "显示 <Part0X> 标签",
-        "publicKey": "showTag",
-        "publicLabel": "序号标签",
-        "description": "显示 <Part0X> 标签"
+        "publicKey": "showTag"
       },
       {
         "key": "showDecorations",
@@ -1494,107 +830,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "RESEARCH FRAMEWORK / 调研框架",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLine1",
-        "type": "text",
-        "label": "标题首行",
-        "default": "2024 美国大额融资 AI 公司",
-        "desc": "主标题第一行",
-        "publicKey": "titleLine1",
-        "publicLabel": "标题首行",
-        "description": "主标题第一行"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "调研报告",
-        "desc": "高亮关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "key": "footnote",
-        "type": "text",
-        "label": "脚注",
-        "default": "横纵分析法 · 在空间维度与时间维度交叉透视同一组数据",
-        "desc": "底部脚注",
-        "publicKey": "footnote",
-        "publicLabel": "脚注",
-        "description": "底部脚注"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 模块卡",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 模块卡"
-      },
-      {
-        "key": "items",
-        "type": "list",
-        "label": "模块卡",
-        "itemLabel": "模块",
-        "countFromKey": "itemCount",
-        "fields": [
-          {
-            "key": "tag",
-            "label": "标签"
-          },
-          {
-            "key": "title",
-            "label": "标题"
-          },
-          {
-            "key": "caption",
-            "label": "说明"
-          }
-        ],
-        "default": [
-          {
-            "tag": "<Part01>",
-            "title": "市场全景",
-            "caption": "全年 970 亿美元 · 融资全景"
-          },
-          {
-            "tag": "<Part02>",
-            "title": "行业透视",
-            "caption": "赛道 / 轮次 / 头部玩家"
-          },
-          {
-            "tag": "<Part03>",
-            "title": "产业链分层",
-            "caption": "上 · 中 · 下游结构透视"
-          },
-          {
-            "tag": "<Part04>",
-            "title": "品质涌现",
-            "caption": "从「赌叙事」到「看兑现」"
-          }
-        ],
-        "desc": "章节模块卡：标签 / 标题 / 说明",
-        "publicKey": "items",
-        "publicLabel": "模块卡",
-        "description": "章节模块卡：标签 / 标题 / 说明"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -1644,112 +880,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文"
-          }
-        ],
-        "default": {
-          "text001": "全篇导览 · CONTENTS",
-          "text002": "六章，看懂这一年的 AI 资本"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "itemsData",
-        "type": "list",
-        "label": "itemsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "no",
-            "label": "no"
-          },
-          {
-            "key": "zh",
-            "label": "zh"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "desc",
-            "label": "desc"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "no": "01",
-            "zh": "市场全景",
-            "en": "MARKET",
-            "desc": "970 亿与 97 笔大额融资",
-            "color": "#27E021"
-          },
-          {
-            "no": "02",
-            "zh": "资金版图",
-            "en": "LANDSCAPE",
-            "desc": "赛道、地区与头部集中",
-            "color": "#FFC700"
-          },
-          {
-            "no": "03",
-            "zh": "头部玩家",
-            "en": "PLAYERS",
-            "desc": "OpenAI · Anthropic · xAI 争霸",
-            "color": "#15A7F0"
-          },
-          {
-            "no": "04",
-            "zh": "产业链条",
-            "en": "VALUE CHAIN",
-            "desc": "上中下游与算力底座",
-            "color": "#FF9FE2"
-          },
-          {
-            "no": "05",
-            "zh": "投资策略",
-            "en": "STRATEGY",
-            "desc": "看好与谨慎的分野",
-            "color": "#27E021"
-          },
-          {
-            "no": "06",
-            "zh": "风险展望",
-            "en": "OUTLOOK",
-            "desc": "集中度风险与 2025 路径",
-            "color": "#FFC700"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "itemsData",
-        "publicLabel": "itemsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "itemCount",
         "type": "slider",
         "label": "章节卡数量",
@@ -1758,9 +888,7 @@ export const pages = [
         "step": 1,
         "default": 6,
         "desc": "展示的章节卡数量",
-        "publicKey": "itemCount",
-        "publicLabel": "章节卡数量",
-        "description": "展示的章节卡数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "mediaCount",
@@ -1772,9 +900,7 @@ export const pages = [
         "default": 6,
         "maxFromKey": "itemCount",
         "desc": "显示缩略图的卡数(其余转霓虹编号)",
-        "publicKey": "mediaCount",
-        "publicLabel": "缩略图卡数",
-        "description": "显示缩略图的卡数(其余转霓虹编号)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "focusEnabled",
@@ -1782,9 +908,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一章节",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一章节"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -1796,9 +920,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "itemCount",
         "desc": "被高亮章节的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮章节的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDesc",
@@ -1806,9 +928,7 @@ export const pages = [
         "label": "导读",
         "default": true,
         "desc": "卡片导读一句话",
-        "publicKey": "showDesc",
-        "publicLabel": "导读",
-        "description": "卡片导读一句话"
+        "publicKey": "showDesc"
       },
       {
         "key": "showDecorations",
@@ -1816,9 +936,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -1888,124 +1006,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "正文 3"
-          },
-          {
-            "key": "text007",
-            "label": "正文 4"
-          },
-          {
-            "key": "text008",
-            "label": "正文 5"
-          },
-          {
-            "key": "text009",
-            "label": "标签"
-          },
-          {
-            "key": "placeholder001",
-            "label": "图片占位"
-          }
-        ],
-        "default": {
-          "text001": "研究方法 · METHODOLOGY",
-          "text002": "横纵分析法，",
-          "text003": "两个正交维度",
-          "text004": "看清同一组数据",
-          "text005": "×",
-          "text006": "两维交叉，进一步识别",
-          "text007": "产业链的层级结构",
-          "text008": "与",
-          "text009": "因果传导关系",
-          "placeholder001": "研究框架 / 数据墙示意"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "dimsData",
-        "type": "list",
-        "label": "dimsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "tag",
-            "label": "tag"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "axis",
-            "label": "axis"
-          },
-          {
-            "key": "desc",
-            "label": "desc"
-          }
-        ],
-        "default": [
-          {
-            "tag": "横向 · 空间维度",
-            "en": "HORIZONTAL",
-            "color": "#15A7F0",
-            "axis": "h",
-            "desc": "在同一时间截面，对公司 / 赛道 / 轮次 / 地区横向对比——回答「谁更大、谁更密集、资源集中在哪里」。"
-          },
-          {
-            "tag": "纵向 · 时间维度",
-            "en": "VERTICAL",
-            "color": "#FFC700",
-            "axis": "v",
-            "desc": "沿时间轴追踪同一指标的演化——回答「趋势向上还是向下、拐点在何处、节奏是否可持续」。"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "dimsData",
-        "publicLabel": "dimsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -2035,9 +1035,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -2048,9 +1046,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -2061,9 +1057,7 @@ export const pages = [
         "step": 1,
         "default": 1,
         "desc": "自适应配图(0=纯概念居中)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片槽数量",
-        "description": "自适应配图(0=纯概念居中)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "imageSide",
@@ -2085,9 +1079,7 @@ export const pages = [
         ],
         "default": "left",
         "desc": "配图在左 / 右(有图时生效)",
-        "publicKey": "imageSide",
-        "publicLabel": "配图位置",
-        "description": "配图在左 / 右(有图时生效)"
+        "publicKey": "imageSide"
       },
       {
         "key": "dimCount",
@@ -2098,9 +1090,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "展示的维度卡数量(横向 / 纵向)",
-        "publicKey": "dimCount",
-        "publicLabel": "维度卡数量",
-        "description": "展示的维度卡数量(横向 / 纵向)"
+        "publicKey": "dimCount"
       },
       {
         "key": "accentTone",
@@ -2132,9 +1122,7 @@ export const pages = [
         ],
         "default": "blue",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "showSynthesis",
@@ -2142,9 +1130,7 @@ export const pages = [
         "label": "交叉结论条",
         "default": true,
         "desc": "底部「两维交叉」结论条",
-        "publicKey": "showSynthesis",
-        "publicLabel": "交叉结论条",
-        "description": "底部「两维交叉」结论条"
+        "publicKey": "showSynthesis"
       },
       {
         "key": "showDecorations",
@@ -2152,9 +1138,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -2214,9 +1198,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "大号 Part 编号徽章",
-        "publicKey": "partNumber",
-        "publicLabel": "章节编号",
-        "description": "大号 Part 编号徽章"
+        "publicKey": "partNumber"
       },
       {
         "key": "accentTone",
@@ -2248,9 +1230,7 @@ export const pages = [
         ],
         "default": "blue",
         "desc": "页面主色调",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调"
+        "publicKey": "accentTone"
       },
       {
         "key": "showIndex",
@@ -2258,9 +1238,7 @@ export const pages = [
         "label": "章节索引",
         "default": true,
         "desc": "右侧章节导航列表",
-        "publicKey": "showIndex",
-        "publicLabel": "章节索引",
-        "description": "右侧章节导航列表"
+        "publicKey": "showIndex"
       },
       {
         "key": "indexCount",
@@ -2271,9 +1249,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "索引列表条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "索引条目",
-        "description": "索引列表条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "focusEnabled",
@@ -2281,9 +1257,7 @@ export const pages = [
         "label": "当前高亮",
         "default": true,
         "desc": "高亮当前章节",
-        "publicKey": "focusEnabled",
-        "publicLabel": "当前高亮",
-        "description": "高亮当前章节"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -2295,9 +1269,7 @@ export const pages = [
         "default": 3,
         "maxFromKey": "indexCount",
         "desc": "当前章节的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "当前序号",
-        "description": "当前章节的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecorations",
@@ -2305,93 +1277,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "lead",
-        "type": "textarea",
-        "label": "导语",
-        "rows": 3,
-        "default": "沿时间轴追踪同一指标的演化，回答趋势的走向、拐点与节奏是否可持续——这是「横纵分析法」的纵向维度。",
-        "desc": "海报卡下方导语",
-        "publicKey": "lead",
-        "publicLabel": "导语",
-        "description": "海报卡下方导语"
-      },
-      {
-        "key": "indexKicker",
-        "type": "text",
-        "label": "索引眉标",
-        "default": "CONTENTS · 章节导航",
-        "desc": "右侧索引标题",
-        "publicKey": "indexKicker",
-        "publicLabel": "索引眉标",
-        "description": "右侧索引标题"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 章节",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 章节"
-      },
-      {
-        "key": "chapters",
-        "type": "list",
-        "label": "章节",
-        "itemLabel": "章节",
-        "countFromKey": "indexCount",
-        "fields": [
-          {
-            "key": "no",
-            "label": "编号"
-          },
-          {
-            "key": "zh",
-            "label": "中文名"
-          },
-          {
-            "key": "en",
-            "label": "英文名"
-          }
-        ],
-        "default": [
-          {
-            "no": "01",
-            "zh": "研究方法",
-            "en": "METHODOLOGY"
-          },
-          {
-            "no": "02",
-            "zh": "市场全景",
-            "en": "MARKET LANDSCAPE"
-          },
-          {
-            "no": "03",
-            "zh": "横向透视",
-            "en": "SECTOR & PLAYERS"
-          },
-          {
-            "no": "04",
-            "zh": "产业链分层",
-            "en": "VALUE CHAIN"
-          },
-          {
-            "no": "05",
-            "zh": "风险研判",
-            "en": "RISK & OUTLOOK"
-          }
-        ],
-        "desc": "章节列表：编号 / 中文 / 英文（海报卡标题取 partNumber 对应项）",
-        "publicKey": "chapters",
-        "publicLabel": "章节",
-        "description": "章节列表：编号 / 中文 / 英文（海报卡标题取 partNumber 对应项）"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -2443,31 +1329,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          }
-        ],
-        "default": {
-          "text001": "占比"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -2497,9 +1358,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -2510,9 +1369,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "cardCount",
@@ -2523,9 +1380,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "分类卡片数量",
-        "publicKey": "categoryCount",
-        "publicLabel": "卡片数量",
-        "description": "分类卡片数量"
+        "publicKey": "categoryCount"
       },
       {
         "key": "focusEnabled",
@@ -2533,9 +1388,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一张卡片",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一张卡片"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -2547,9 +1400,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "cardCount",
         "desc": "被高亮卡片的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮卡片的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "mediaCount",
@@ -2561,9 +1412,7 @@ export const pages = [
         "default": 0,
         "maxFromKey": "cardCount",
         "desc": "从左起 N 张卡片加入自适应图片槽",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片槽数量",
-        "description": "从左起 N 张卡片加入自适应图片槽"
+        "publicKey": "mediaCount"
       },
       {
         "key": "showTags",
@@ -2571,25 +1420,7 @@ export const pages = [
         "label": "底部标签",
         "default": true,
         "desc": "卡片底部小标签",
-        "publicKey": "showTags",
-        "publicLabel": "底部标签",
-        "description": "卡片底部小标签"
-      },
-      {
-        "key": "tagCount",
-        "type": "slider",
-        "label": "标签数量",
-        "min": 1,
-        "max": 2,
-        "step": 1,
-        "default": 2,
-        "countArrays": [
-          "cards[].tags"
-        ],
-        "desc": "每张卡片展示的标签数量",
-        "publicKey": "tagCount",
-        "publicLabel": "标签数量",
-        "description": "每张卡片展示的标签数量"
+        "publicKey": "showTags"
       },
       {
         "key": "showDecorations",
@@ -2597,167 +1428,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicKey": "undefined2",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "行业赛道 · 资金分布格局",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLine1",
-        "type": "text",
-        "label": "标题首行",
-        "default": "资本高度集中",
-        "desc": "标题第一行",
-        "publicKey": "titleLine1",
-        "publicLabel": "标题首行",
-        "description": "标题第一行"
-      },
-      {
-        "key": "titleKeyword1",
-        "type": "text",
-        "label": "关键词 1",
-        "default": "通用大模型",
-        "desc": "高亮关键词(黄)",
-        "publicKey": "titleKeyword1",
-        "publicLabel": "关键词 1",
-        "description": "高亮关键词(黄)"
-      },
-      {
-        "key": "titleLead2",
-        "type": "text",
-        "label": "第三行前缀",
-        "default": "占据",
-        "desc": "第三行关键词前文",
-        "publicKey": "titleLead2",
-        "publicLabel": "第三行前缀",
-        "description": "第三行关键词前文"
-      },
-      {
-        "key": "titleKeyword2",
-        "type": "text",
-        "label": "关键词 2",
-        "default": "近半壁江山",
-        "desc": "高亮关键词(绿)",
-        "publicKey": "titleKeyword2",
-        "publicLabel": "关键词 2",
-        "description": "高亮关键词(绿)"
-      },
-      {
-        "key": "sub",
-        "type": "textarea",
-        "label": "副标题",
-        "rows": 2,
-        "default": "按业务类型对 97 笔 ≥1 亿美元融资归类，统计各赛道吸纳资金占比。",
-        "desc": "标题下方说明",
-        "publicKey": "sub",
-        "publicLabel": "副标题",
-        "description": "标题下方说明"
-      },
-      {
-        "key": "mediaPlaceholder",
-        "type": "text",
-        "label": "图片槽提示",
-        "default": "拖入图片",
-        "desc": "图片槽占位文案",
-        "publicKey": "mediaPlaceholder",
-        "publicLabel": "图片槽提示",
-        "description": "图片槽占位文案"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 分类卡",
-        "publicKey": "undefined3",
-        "publicLabel": "数据 · 分类卡"
-      },
-      {
-        "key": "cards",
-        "type": "list",
-        "label": "分类卡",
-        "itemLabel": "卡片",
-        "countFromKey": "cardCount",
-        "fields": [
-          {
-            "key": "title",
-            "label": "标题"
-          },
-          {
-            "key": "amount",
-            "label": "金额"
-          },
-          {
-            "key": "share",
-            "label": "占比"
-          },
-          {
-            "key": "note",
-            "label": "说明"
-          },
-          {
-            "key": "tags",
-            "label": "标签(逗号分隔)"
-          }
-        ],
-        "default": [
-          {
-            "title": "通用大模型",
-            "amount": "420 亿",
-            "share": "43.3%",
-            "note": "押注「AGI 叙事」，OpenAI / Anthropic / xAI 领跑。",
-            "tags": [
-              "明星赛道",
-              "资本高地"
-            ]
-          },
-          {
-            "title": "垂直应用",
-            "amount": "245 亿",
-            "share": "25.3%",
-            "note": "商业化路径渐清晰，企业搜索 / 法律 AI 落地。",
-            "tags": [
-              "落地清晰",
-              "隐形价值"
-            ]
-          },
-          {
-            "title": "AI 基础设施",
-            "amount": "158 亿",
-            "share": "16.3%",
-            "note": "「卖铲子」逻辑，算力云与数据平台稀缺。",
-            "tags": [
-              "确定性强",
-              "卖铲子"
-            ]
-          },
-          {
-            "title": "AI 芯片",
-            "amount": "97 亿",
-            "share": "10.0%",
-            "note": "产业链上游硬件，Cerebras / Groq 等新势力。",
-            "tags": [
-              "上游硬件",
-              "长周期"
-            ]
-          }
-        ],
-        "desc": "分类卡：标题 / 数值 / 占比 / 说明 / 标签",
-        "publicKey": "cards",
-        "publicLabel": "分类卡",
-        "description": "分类卡：标题 / 数值 / 占比 / 说明 / 标签"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -2770,7 +1441,6 @@ export const pages = [
       "focusEnabled": false,
       "focusIndex": 2,
       "showTags": true,
-      "tagCount": 2,
       "showDecorations": true,
       "mediaCount": 0,
       "kicker": "行业赛道 · 资金分布格局",
@@ -2834,36 +1504,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "单位"
-          }
-        ],
-        "default": {
-          "text001": "亿",
-          "text002": "%"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -2893,9 +1533,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -2906,9 +1544,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "segmentCount",
@@ -2919,9 +1555,7 @@ export const pages = [
         "step": 1,
         "default": 5,
         "desc": "展示的分类分段数量",
-        "publicKey": "segmentCount",
-        "publicLabel": "分段数量",
-        "description": "展示的分类分段数量"
+        "publicKey": "segmentCount"
       },
       {
         "key": "chartVariant",
@@ -2943,9 +1577,7 @@ export const pages = [
         ],
         "default": "donut",
         "desc": "同心放射环 / 纵向渐变柱",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "同心放射环 / 纵向渐变柱"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -2953,9 +1585,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一分段",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一分段"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -2967,9 +1597,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "segmentCount",
         "desc": "被高亮分段的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮分段的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCenterTotal",
@@ -2977,9 +1605,7 @@ export const pages = [
         "label": "中心总额",
         "default": true,
         "desc": "环形中心总数值(环形生效)",
-        "publicKey": "showValueLabels",
-        "publicLabel": "中心总额",
-        "description": "环形中心总数值(环形生效)"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showLegend",
@@ -2987,9 +1613,7 @@ export const pages = [
         "label": "图例列表",
         "default": true,
         "desc": "右侧图例列表(环形生效)",
-        "publicKey": "showLegend",
-        "publicLabel": "图例列表",
-        "description": "右侧图例列表(环形生效)"
+        "publicKey": "showLegend"
       },
       {
         "key": "showDecorations",
@@ -2997,152 +1621,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicKey": "undefined2",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "行业分布 · SECTOR SHARE",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "通用大模型",
-        "desc": "关键词前文",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "关键词前文"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "独占近半",
-        "desc": "高亮关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "key": "sub",
-        "type": "textarea",
-        "label": "副标题",
-        "rows": 2,
-        "default": "97 笔大额融资按赛道归类，资金向「底座」高度倾斜——投资人押注 AGI 叙事。",
-        "desc": "标题下方说明",
-        "publicKey": "sub",
-        "publicLabel": "副标题",
-        "description": "标题下方说明"
-      },
-      {
-        "key": "centerUnit",
-        "type": "text",
-        "label": "中心单位",
-        "default": "亿美元",
-        "desc": "环形中心单位",
-        "publicKey": "centerUnit",
-        "publicLabel": "中心单位",
-        "description": "环形中心单位"
-      },
-      {
-        "key": "centerCap",
-        "type": "text",
-        "label": "中心说明",
-        "default": "总融资额",
-        "desc": "环形中心说明",
-        "publicKey": "centerCap",
-        "publicLabel": "中心说明",
-        "description": "环形中心说明"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 分类",
-        "publicKey": "undefined3",
-        "publicLabel": "数据 · 分类"
-      },
-      {
-        "key": "segments",
-        "type": "list",
-        "label": "分类分段",
-        "itemLabel": "赛道",
-        "countFromKey": "segmentCount",
-        "fields": [
-          {
-            "key": "zh",
-            "label": "中文名"
-          },
-          {
-            "key": "en",
-            "label": "英文名"
-          },
-          {
-            "key": "amt",
-            "label": "金额"
-          },
-          {
-            "key": "pct",
-            "label": "占比%"
-          },
-          {
-            "key": "color",
-            "label": "颜色"
-          }
-        ],
-        "default": [
-          {
-            "zh": "通用大模型",
-            "en": "Foundation Model",
-            "amt": 420,
-            "pct": 43.3,
-            "color": "#15A7F0"
-          },
-          {
-            "zh": "垂直应用",
-            "en": "Vertical AI",
-            "amt": 245,
-            "pct": 25.3,
-            "color": "#27E021"
-          },
-          {
-            "zh": "AI 基础设施",
-            "en": "Infrastructure",
-            "amt": 158,
-            "pct": 16.3,
-            "color": "#FFC700"
-          },
-          {
-            "zh": "AI 芯片",
-            "en": "Hardware",
-            "amt": 97,
-            "pct": 10,
-            "color": "#FF9FE2"
-          },
-          {
-            "zh": "其他赛道",
-            "en": "Tooling · Safety",
-            "amt": 50,
-            "pct": 5.1,
-            "color": "#8a8f98"
-          }
-        ],
-        "desc": "分类：中文 / 英文 / 数值 / 占比 / 主色（中心总额自动求和）",
-        "publicKey": "segments",
-        "publicLabel": "分类分段",
-        "description": "分类：中文 / 英文 / 数值 / 占比 / 主色（中心总额自动求和）"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -3214,177 +1693,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "坐标标签 1"
-          },
-          {
-            "key": "text003",
-            "label": "坐标标签 2"
-          },
-          {
-            "key": "text004",
-            "label": "单位 1"
-          },
-          {
-            "key": "text005",
-            "label": "坐标标签 3"
-          },
-          {
-            "key": "text006",
-            "label": "单位 2"
-          },
-          {
-            "key": "text007",
-            "label": "坐标标签 4"
-          },
-          {
-            "key": "text008",
-            "label": "坐标标签 5"
-          },
-          {
-            "key": "text009",
-            "label": "坐标标签 6"
-          },
-          {
-            "key": "text010",
-            "label": "坐标标签 7"
-          },
-          {
-            "key": "text011",
-            "label": "标签 1"
-          },
-          {
-            "key": "text012",
-            "label": "标签 2"
-          },
-          {
-            "key": "text013",
-            "label": "正文"
-          }
-        ],
-        "default": {
-          "text001": "资本图谱 · VALUATION MAP",
-          "text002": "融资越猛，",
-          "text003": "估值就越高吗",
-          "text004": "亿",
-          "text005": "融资",
-          "text006": "亿",
-          "text007": "估值跑在融资前面",
-          "text008": "融资换体量 · 估值待追",
-          "text009": "亿 · 热度",
-          "text010": "最新估值（亿美元）→",
-          "text011": "2024 融资规模（亿美元）→",
-          "text012": "资本图谱",
-          "text013": "气泡大小 = 资本热度 · 纵轴为 sqrt 示意比例（小值仍可辨识）· 数值见标注（报告 2.x · 调研整理）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "ptsData",
-        "type": "list",
-        "label": "ptsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "raise",
-            "label": "raise"
-          },
-          {
-            "key": "val",
-            "label": "val"
-          },
-          {
-            "key": "heat",
-            "label": "heat"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "note",
-            "label": "note"
-          }
-        ],
-        "default": [
-          {
-            "name": "OpenAI",
-            "raise": 66,
-            "val": 1570,
-            "heat": 5,
-            "color": "#27E021",
-            "note": "估值断层第一"
-          },
-          {
-            "name": "Databricks",
-            "raise": 100,
-            "val": 620,
-            "heat": 4,
-            "color": "#FFC700",
-            "note": "单轮融资最猛"
-          },
-          {
-            "name": "Anthropic",
-            "raise": 80,
-            "val": 600,
-            "heat": 5,
-            "color": "#15A7F0",
-            "note": "安全派头号挑战者"
-          },
-          {
-            "name": "xAI",
-            "raise": 60,
-            "val": 500,
-            "heat": 4,
-            "color": "#FF9FE2",
-            "note": "后发高举高打"
-          },
-          {
-            "name": "CoreWeave",
-            "raise": 75,
-            "val": 230,
-            "heat": 3,
-            "color": "#27E021",
-            "note": "算力底座 · 估值待追"
-          },
-          {
-            "name": "SSI",
-            "raise": 10,
-            "val": 50,
-            "heat": 3,
-            "color": "#15A7F0",
-            "note": "种子即被追捧"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "ptsData",
-        "publicLabel": "ptsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -3414,9 +1722,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -3427,9 +1733,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "itemCount",
@@ -3440,9 +1744,7 @@ export const pages = [
         "step": 1,
         "default": 6,
         "desc": "展示的公司气泡数量",
-        "publicKey": "itemCount",
-        "publicLabel": "公司气泡数",
-        "description": "展示的公司气泡数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "chartVariant",
@@ -3464,9 +1766,7 @@ export const pages = [
         ],
         "default": "scatter",
         "desc": "气泡散点 / 横向柱状",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "气泡散点 / 横向柱状"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -3474,9 +1774,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一公司",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一公司"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -3488,9 +1786,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "itemCount",
         "desc": "被高亮公司的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮公司的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showZones",
@@ -3498,9 +1794,7 @@ export const pages = [
         "label": "对角分区",
         "default": true,
         "desc": "背景指标兑现 / 跑前淡色块",
-        "publicKey": "showZones",
-        "publicLabel": "对角分区",
-        "description": "背景指标兑现 / 跑前淡色块"
+        "publicKey": "showZones"
       },
       {
         "key": "showAxisLabels",
@@ -3508,9 +1802,7 @@ export const pages = [
         "label": "坐标轴文字",
         "default": true,
         "desc": "横纵坐标轴文字",
-        "publicKey": "showAxisLabels",
-        "publicLabel": "坐标轴文字",
-        "description": "横纵坐标轴文字"
+        "publicKey": "showAxisLabels"
       },
       {
         "key": "showDecorations",
@@ -3518,9 +1810,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -3610,142 +1900,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "正文 3"
-          },
-          {
-            "key": "text007",
-            "label": "正文 4"
-          },
-          {
-            "key": "text008",
-            "label": "正文 5"
-          }
-        ],
-        "default": {
-          "text001": "半年风向 · RANK SHIFT",
-          "text002": "半年之间，谁在",
-          "text003": "逆势上位",
-          "text004": "2024 上半年",
-          "text005": "2024 下半年",
-          "text006": "#",
-          "text007": "#",
-          "text008": "数据为调研整理与推演 · 名次＝该赛道半年内 ≥1 亿美元 AI 轮次的资本关注度排名（1＝最热 · 示意）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "rowsData",
-        "type": "list",
-        "label": "rowsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "short",
-            "label": "short"
-          },
-          {
-            "key": "h1",
-            "label": "h1"
-          },
-          {
-            "key": "h2",
-            "label": "h2"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "name": "AI 算力 / 基础设施",
-            "short": "算力·基建",
-            "h1": 4,
-            "h2": 1,
-            "color": "#15A7F0"
-          },
-          {
-            "name": "通用大模型",
-            "short": "通用大模型",
-            "h1": 1,
-            "h2": 2,
-            "color": "#27E021"
-          },
-          {
-            "name": "企业级 AI 应用",
-            "short": "企业应用",
-            "h1": 2,
-            "h2": 3,
-            "color": "#FFC700"
-          },
-          {
-            "name": "具身智能 / 机器人",
-            "short": "具身智能",
-            "h1": 6,
-            "h2": 4,
-            "color": "#FF9FE2"
-          },
-          {
-            "name": "AI 安全 / 对齐",
-            "short": "安全·对齐",
-            "h1": 5,
-            "h2": 5,
-            "color": "#27E021"
-          },
-          {
-            "name": "AIGC 内容生成",
-            "short": "内容生成",
-            "h1": 3,
-            "h2": 6,
-            "color": "#FFC700"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "rowsData",
-        "publicLabel": "rowsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -3775,9 +1929,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -3788,9 +1940,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "itemCount",
@@ -3801,9 +1951,7 @@ export const pages = [
         "step": 1,
         "default": 6,
         "desc": "展示的分类数量",
-        "publicKey": "categoryCount",
-        "publicLabel": "分类条数",
-        "description": "展示的分类数量"
+        "publicKey": "categoryCount"
       },
       {
         "key": "chartVariant",
@@ -3825,9 +1973,7 @@ export const pages = [
         ],
         "default": "slope",
         "desc": "斜率图 / 横向柱状",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "斜率图 / 横向柱状"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -3835,9 +1981,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一分类",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一分类"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -3849,9 +1993,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "itemCount",
         "desc": "被高亮分类的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮分类的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDelta",
@@ -3859,9 +2001,7 @@ export const pages = [
         "label": "升降徽标",
         "default": true,
         "desc": "▲n / ▼n / = 升降标记",
-        "publicKey": "showDelta",
-        "publicLabel": "升降徽标",
-        "description": "▲n / ▼n / = 升降标记"
+        "publicKey": "showDelta"
       },
       {
         "key": "showRankNum",
@@ -3869,9 +2009,7 @@ export const pages = [
         "label": "名次数字",
         "default": true,
         "desc": "两端名次数字",
-        "publicKey": "showRankNum",
-        "publicLabel": "名次数字",
-        "description": "两端名次数字"
+        "publicKey": "showRankNum"
       },
       {
         "key": "showDecorations",
@@ -3879,9 +2017,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -3948,6 +2084,18 @@ export const pages = [
       "showDelta": true,
       "showRankNum": true,
       "showDecorations": true
+    },
+    "numberBounds": {
+      "rowsData[].h1": {
+        "min": 1,
+        "max": 6,
+        "semantics": "coordinate"
+      },
+      "rowsData[].h2": {
+        "min": 1,
+        "max": 6,
+        "semantics": "coordinate"
+      }
     }
   },
   {
@@ -3959,139 +2107,6 @@ export const pages = [
     "label": "资金版图",
     "bgClass": "",
     "controls": [
-      {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "单位 1"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "单位 2"
-          },
-          {
-            "key": "text007",
-            "label": "正文 3"
-          }
-        ],
-        "default": {
-          "text001": "资金版图 · FUNDING MAP",
-          "text002": "赛道版图：通用大模型",
-          "text003": "独占四成",
-          "text004": "亿",
-          "text005": "全年合计",
-          "text006": "亿美元",
-          "text007": "面积 / 长度 ∝ 赛道融资额 · 数据为调研整理（报告 3.1）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "segData",
-        "type": "list",
-        "label": "segData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "zh",
-            "label": "zh"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "val",
-            "label": "val"
-          },
-          {
-            "key": "pct",
-            "label": "pct"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "note",
-            "label": "note"
-          }
-        ],
-        "default": [
-          {
-            "zh": "通用大模型",
-            "en": "FOUNDATION MODEL",
-            "val": 420,
-            "pct": "43.3%",
-            "color": "#27E021",
-            "note": "押注 AGI 叙事"
-          },
-          {
-            "zh": "垂直应用",
-            "en": "VERTICAL AI",
-            "val": 245,
-            "pct": "25.3%",
-            "color": "#FF9FE2",
-            "note": "寻找商业化路径"
-          },
-          {
-            "zh": "AI 基础设施",
-            "en": "INFRASTRUCTURE",
-            "val": 158,
-            "pct": "16.3%",
-            "color": "#15A7F0",
-            "note": "“卖铲子”逻辑"
-          },
-          {
-            "zh": "AI 芯片",
-            "en": "HARDWARE",
-            "val": 97,
-            "pct": "10.0%",
-            "color": "#FFC700",
-            "note": "算力上游"
-          },
-          {
-            "zh": "其他",
-            "en": "TOOLING · SAFETY",
-            "val": 50,
-            "pct": "5.1%",
-            "color": "#9aa0a6",
-            "note": "工具链 / 安全"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "segData",
-        "publicLabel": "segData",
-        "description": "默认数据内容"
-      },
       {
         "key": "hlStyle",
         "type": "radio",
@@ -4122,9 +2137,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -4135,9 +2148,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "segmentCount",
@@ -4148,9 +2159,7 @@ export const pages = [
         "step": 1,
         "default": 5,
         "desc": "展示的分类块数",
-        "publicKey": "segmentCount",
-        "publicLabel": "分类块",
-        "description": "展示的分类块数"
+        "publicKey": "segmentCount"
       },
       {
         "key": "chartVariant",
@@ -4172,9 +2181,7 @@ export const pages = [
         ],
         "default": "treemap",
         "desc": "矩形树图 / 横向柱状",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "矩形树图 / 横向柱状"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -4182,9 +2189,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一分类",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一分类"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -4196,9 +2201,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "segmentCount",
         "desc": "被高亮分类的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮分类的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showShare",
@@ -4206,9 +2209,7 @@ export const pages = [
         "label": "占比百分比",
         "default": true,
         "desc": "瓷砖 / 柱尾占比显隐",
-        "publicKey": "showShare",
-        "publicLabel": "占比百分比",
-        "description": "瓷砖 / 柱尾占比显隐"
+        "publicKey": "showShare"
       },
       {
         "key": "showTotal",
@@ -4216,9 +2217,7 @@ export const pages = [
         "label": "合计徽标",
         "default": true,
         "desc": "页脚总额显隐",
-        "publicKey": "showTotal",
-        "publicLabel": "合计徽标",
-        "description": "页脚总额显隐"
+        "publicKey": "showTotal"
       },
       {
         "key": "showDecorations",
@@ -4226,9 +2225,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -4304,131 +2301,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "标签"
-          },
-          {
-            "key": "text007",
-            "label": "单位"
-          },
-          {
-            "key": "text008",
-            "label": "正文 3"
-          },
-          {
-            "key": "text009",
-            "label": "正文 4"
-          }
-        ],
-        "default": {
-          "text001": "资金构成 · WATERFALL",
-          "text002": "总盘子，是被",
-          "text003": "逐层堆出来",
-          "text004": "的",
-          "text005": "合计盘子",
-          "text006": "TOTAL · 亿美元",
-          "text007": "亿",
-          "text008": "头部赛道领跑",
-          "text009": "通用大模型 + 算力两条赛道吃掉七成盘子 · 数据为调研整理（报告 3.1，单位亿美元 / 示意比例）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "segsData",
-        "type": "list",
-        "label": "segsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "zh",
-            "label": "zh"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "value",
-            "label": "value"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "zh": "通用大模型",
-            "en": "FOUNDATION",
-            "value": 480,
-            "color": "#27E021"
-          },
-          {
-            "zh": "算力 / 云",
-            "en": "COMPUTE",
-            "value": 360,
-            "color": "#15A7F0"
-          },
-          {
-            "zh": "应用层",
-            "en": "APPLICATION",
-            "value": 150,
-            "color": "#FFC700"
-          },
-          {
-            "zh": "具身智能",
-            "en": "ROBOTICS",
-            "value": 120,
-            "color": "#FF9FE2"
-          },
-          {
-            "zh": "其他赛道",
-            "en": "OTHERS",
-            "value": 90,
-            "color": "#9aa0ff"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "segsData",
-        "publicLabel": "segsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -4458,9 +2330,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -4471,9 +2341,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "segmentCount",
@@ -4484,9 +2352,7 @@ export const pages = [
         "step": 1,
         "default": 5,
         "desc": "参与累加的分类段数",
-        "publicKey": "segmentCount",
-        "publicLabel": "分类段数",
-        "description": "参与累加的分类段数"
+        "publicKey": "segmentCount"
       },
       {
         "key": "chartVariant",
@@ -4508,9 +2374,7 @@ export const pages = [
         ],
         "default": "waterfall",
         "desc": "瀑布累加 / 横向柱状",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "瀑布累加 / 横向柱状"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -4518,9 +2382,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一分类段",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一分类段"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -4532,9 +2394,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "segmentCount",
         "desc": "被高亮分类段的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮分类段的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showConnectors",
@@ -4542,9 +2402,7 @@ export const pages = [
         "label": "段间连接",
         "default": true,
         "desc": "瀑布段间虚线连接（瀑布生效）",
-        "publicKey": "showConnectors",
-        "publicLabel": "段间连接",
-        "description": "瀑布段间虚线连接（瀑布生效）"
+        "publicKey": "showConnectors"
       },
       {
         "key": "showTotal",
@@ -4552,9 +2410,7 @@ export const pages = [
         "label": "合计柱",
         "default": true,
         "desc": "末端总额柱显隐（瀑布生效）",
-        "publicKey": "showTotal",
-        "publicLabel": "合计柱",
-        "description": "末端总额柱显隐（瀑布生效）"
+        "publicKey": "showTotal"
       },
       {
         "key": "showDecorations",
@@ -4562,9 +2418,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -4632,130 +2486,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "正文 3"
-          },
-          {
-            "key": "text007",
-            "label": "正文 4"
-          }
-        ],
-        "default": {
-          "text001": "半年消长 · H1 vs H2",
-          "text002": "下半年，",
-          "text003": "每条赛道都在加速",
-          "text004": "上半年 H1",
-          "text005": "下半年 H2",
-          "text006": "半年消长",
-          "text007": "柱高为示意比例，数值以柱顶标签为准（单位亿美元）· 报告 3.x · 调研整理"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "groupsData",
-        "type": "list",
-        "label": "groupsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "h1",
-            "label": "h1"
-          },
-          {
-            "key": "h2",
-            "label": "h2"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "name": "算力基础设施",
-            "en": "COMPUTE",
-            "h1": 180,
-            "h2": 260,
-            "color": "#27E021"
-          },
-          {
-            "name": "通用大模型",
-            "en": "FOUNDATION",
-            "h1": 150,
-            "h2": 210,
-            "color": "#15A7F0"
-          },
-          {
-            "name": "应用层",
-            "en": "APPLICATION",
-            "h1": 70,
-            "h2": 110,
-            "color": "#FFC700"
-          },
-          {
-            "name": "行业垂直",
-            "en": "VERTICAL",
-            "h1": 45,
-            "h2": 80,
-            "color": "#FF9FE2"
-          },
-          {
-            "name": "数据与工具",
-            "en": "DATA & TOOLS",
-            "h1": 30,
-            "h2": 55,
-            "color": "#27E021"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "groupsData",
-        "publicLabel": "groupsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -4785,9 +2515,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -4798,9 +2526,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "columnCount",
@@ -4811,9 +2537,7 @@ export const pages = [
         "step": 1,
         "default": 5,
         "desc": "展示的分类组数量",
-        "publicKey": "categoryCount",
-        "publicLabel": "分类组数",
-        "description": "展示的分类组数量"
+        "publicKey": "categoryCount"
       },
       {
         "key": "chartVariant",
@@ -4835,9 +2559,7 @@ export const pages = [
         ],
         "default": "group",
         "desc": "上下半年双柱 / 合计单柱",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "上下半年双柱 / 合计单柱"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -4845,9 +2567,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一分类组",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一分类组"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -4859,9 +2579,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "columnCount",
         "desc": "被高亮分类的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮分类的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showValues",
@@ -4869,9 +2587,7 @@ export const pages = [
         "label": "柱顶数值",
         "default": true,
         "desc": "柱顶数值标签",
-        "publicKey": "showValueLabels",
-        "publicLabel": "柱顶数值",
-        "description": "柱顶数值标签"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showLegend",
@@ -4879,9 +2595,7 @@ export const pages = [
         "label": "图例",
         "default": true,
         "desc": "上 / 下半年图例",
-        "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "description": "上 / 下半年图例"
+        "publicKey": "showLegend"
       },
       {
         "key": "showDecorations",
@@ -4889,9 +2603,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -4962,140 +2674,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          }
-        ],
-        "default": {
-          "text001": "AT A GLANCE · 一图速览",
-          "text002": "2024，",
-          "text003": "一屏看懂资本流向",
-          "text004": "“"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "tilesData",
-        "type": "list",
-        "label": "tilesData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "type",
-            "label": "type"
-          },
-          {
-            "key": "area",
-            "label": "area"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "initial",
-            "label": "initial"
-          },
-          {
-            "key": "ph",
-            "label": "ph"
-          },
-          {
-            "key": "cap",
-            "label": "cap"
-          }
-        ],
-        "default": [
-          {
-            "type": "image",
-            "area": "hero",
-            "color": "#15A7F0",
-            "initial": "AI",
-            "ph": "主视觉 · 机房 / 团队 / 现场",
-            "cap": "2024 · 资本现场"
-          },
-          {
-            "type": "stat",
-            "area": "big",
-            "color": "#27E021",
-            "value": "970",
-            "unit": "亿",
-            "label": "全年 AI 风投总额 / 美元",
-            "big": true
-          },
-          {
-            "type": "stat",
-            "area": "s1",
-            "color": "#FFC700",
-            "value": "97",
-            "unit": "笔",
-            "label": "≥1 亿美元事件"
-          },
-          {
-            "type": "image",
-            "area": "img",
-            "color": "#FF9FE2",
-            "initial": "GPU",
-            "ph": "算力 / 卡墙",
-            "cap": "算力基建"
-          },
-          {
-            "type": "quote",
-            "area": "quote",
-            "color": "#FF9FE2",
-            "quote": "钱在追少数人",
-            "tail": "头部高度集中，通用大模型最拥挤。"
-          },
-          {
-            "type": "stat",
-            "area": "s2",
-            "color": "#15A7F0",
-            "value": "≈1/3",
-            "unit": "",
-            "label": "占全美 VC"
-          },
-          {
-            "type": "stat",
-            "area": "s3",
-            "color": "#FF9FE2",
-            "value": "190",
-            "unit": "亿",
-            "label": "头部单笔估值峰值 / 美元"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "tilesData",
-        "publicLabel": "tilesData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -5125,9 +2703,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -5138,9 +2714,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -5151,9 +2725,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "显示图片槽的瓷砖数(其余转无图态)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片瓷砖",
-        "description": "显示图片槽的瓷砖数(其余转无图态)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "focusEnabled",
@@ -5161,9 +2733,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一块瓷砖",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一块瓷砖"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -5174,9 +2744,7 @@ export const pages = [
         "step": 1,
         "default": 1,
         "desc": "被高亮瓷砖的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮瓷砖的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "paletteVariant",
@@ -5198,9 +2766,7 @@ export const pages = [
         ],
         "default": "multi",
         "desc": "瓷砖多彩 / 统一单色",
-        "publicKey": "paletteVariant",
-        "publicLabel": "配色",
-        "description": "瓷砖多彩 / 统一单色"
+        "publicKey": "paletteVariant"
       },
       {
         "key": "showCaptions",
@@ -5208,9 +2774,7 @@ export const pages = [
         "label": "瓷砖标签",
         "default": true,
         "desc": "瓷砖小标签 / 说明",
-        "publicKey": "showCaptions",
-        "publicLabel": "瓷砖标签",
-        "description": "瓷砖小标签 / 说明"
+        "publicKey": "showCaptions"
       },
       {
         "key": "showDecorations",
@@ -5218,9 +2782,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -5308,36 +2870,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "单位"
-          }
-        ],
-        "default": {
-          "text001": "单位：",
-          "text002": "%"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -5367,9 +2899,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -5380,9 +2910,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "panelCount",
@@ -5393,9 +2921,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "并排展示的图表面板数",
-        "publicKey": "panelCount",
-        "publicLabel": "面板数量",
-        "description": "并排展示的图表面板数"
+        "publicKey": "panelCount"
       },
       {
         "key": "chartVariant",
@@ -5417,9 +2943,7 @@ export const pages = [
         ],
         "default": "bar",
         "desc": "柱状图或折线图",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "柱状图或折线图"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -5427,9 +2951,7 @@ export const pages = [
         "label": "高亮重点",
         "default": true,
         "desc": "是否高亮某个数据点",
-        "publicKey": "focusEnabled",
-        "publicLabel": "高亮重点",
-        "description": "是否高亮某个数据点"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -5440,9 +2962,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "被高亮数据点的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮数据点的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showGrowthMarkers",
@@ -5450,9 +2970,7 @@ export const pages = [
         "label": "增长标注",
         "default": true,
         "desc": "柱间 +x% 增幅标注",
-        "publicKey": "showGrowthMarkers",
-        "publicLabel": "增长标注",
-        "description": "柱间 +x% 增幅标注"
+        "publicKey": "showGrowthMarkers"
       },
       {
         "key": "showDecorations",
@@ -5460,122 +2978,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicKey": "undefined2",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "市场节奏 · 融资趋势透视",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "title",
-        "type": "text",
-        "label": "标题",
-        "default": "全年「前高后稳」，资金向头部加速集中",
-        "desc": "页面主标题",
-        "publicKey": "title",
-        "publicLabel": "标题",
-        "description": "页面主标题"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 面板文案",
-        "publicKey": "undefined3",
-        "publicLabel": "数据 · 面板文案"
-      },
-      {
-        "key": "panels",
-        "type": "list",
-        "label": "图表面板",
-        "itemLabel": "面板",
-        "countFromKey": "panelCount",
-        "fields": [
-          {
-            "key": "title",
-            "label": "标题"
-          },
-          {
-            "key": "hl",
-            "label": "关键词"
-          },
-          {
-            "key": "desc",
-            "label": "描述"
-          },
-          {
-            "key": "unit",
-            "label": "单位"
-          },
-          {
-            "key": "data",
-            "label": "图表点"
-          }
-        ],
-        "default": [
-          {
-            "color": "#27E021",
-            "title": "融资节奏",
-            "hl": "前高后稳",
-            "desc": "全年单笔 ≥1 亿美元融资呈「前高后稳」：Q2–Q3 连续达峰后理性回落，平均单笔约 10 亿美元，市场对头部标的高度追捧。",
-            "unit": "亿美元",
-            "data": [
-              {
-                "label": "Q1",
-                "value": 162
-              },
-              {
-                "label": "Q2",
-                "value": 284
-              },
-              {
-                "label": "Q3",
-                "value": 318
-              },
-              {
-                "label": "Q4",
-                "value": 206
-              }
-            ]
-          },
-          {
-            "color": "#FFC700",
-            "title": "头部集中",
-            "hl": "赢家通吃",
-            "desc": "随着轮次后移，平均单笔融资额持续放大——「D 轮及以后」超 15 亿美元，少数独角兽反复获得巨额追加，市场集中度极高。",
-            "unit": "亿美元",
-            "data": [
-              {
-                "label": "B 轮",
-                "value": 3.5
-              },
-              {
-                "label": "C 轮",
-                "value": 6.8
-              },
-              {
-                "label": "D+ 轮",
-                "value": 15.2
-              }
-            ]
-          }
-        ],
-        "desc": "面板文案与图表点：标题 / 关键词 / 描述 / 单位 / data",
-        "publicKey": "panels",
-        "publicLabel": "图表面板",
-        "description": "面板文案与图表点：标题 / 关键词 / 描述 / 单位 / data"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -5682,9 +3085,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -5695,9 +3096,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "chartVariant",
@@ -5724,9 +3123,7 @@ export const pages = [
         ],
         "default": "area",
         "desc": "面积 / 折线 / 柱状",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "面积 / 折线 / 柱状"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -5734,9 +3131,7 @@ export const pages = [
         "label": "重点月份",
         "default": true,
         "desc": "是否高亮某个月份",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点月份",
-        "description": "是否高亮某个月份"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -5747,9 +3142,7 @@ export const pages = [
         "step": 1,
         "default": 8,
         "desc": "被高亮月份(1=1月)",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮月份(1=1月)"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showPeakMarkers",
@@ -5757,9 +3150,7 @@ export const pages = [
         "label": "峰值标记",
         "default": true,
         "desc": "5月/8月峰值标注",
-        "publicKey": "showPeakMarkers",
-        "publicLabel": "峰值标记",
-        "description": "5月/8月峰值标注"
+        "publicKey": "showPeakMarkers"
       },
       {
         "key": "showAvgLine",
@@ -5767,9 +3158,7 @@ export const pages = [
         "label": "月均线",
         "default": true,
         "desc": "月均参考虚线",
-        "publicKey": "showAvgLine",
-        "publicLabel": "月均线",
-        "description": "月均参考虚线"
+        "publicKey": "showAvgLine"
       },
       {
         "key": "showDecorations",
@@ -5777,164 +3166,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "逐月节奏 · MONTHLY TREND",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "全年",
-        "desc": "关键词前文",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "关键词前文"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "双峰",
-        "desc": "高亮关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "key": "titleTail",
-        "type": "text",
-        "label": "标题后半",
-        "default": "：5 月、8 月集中关账",
-        "desc": "关键词后文",
-        "publicKey": "titleTail",
-        "publicLabel": "标题后半",
-        "description": "关键词后文"
-      },
-      {
-        "key": "sub",
-        "type": "textarea",
-        "label": "副标题",
-        "rows": 2,
-        "default": "细化到月度，多家头部公司集中关账推高 5 月（105）与 8 月（118）两次峰值，单位：亿美元。",
-        "desc": "标题下方说明",
-        "publicKey": "sub",
-        "publicLabel": "副标题",
-        "description": "标题下方说明"
-      },
-      {
-        "key": "avgLabel",
-        "type": "text",
-        "label": "均线标签",
-        "default": "月均 ≈",
-        "desc": "月均线文字前缀",
-        "publicKey": "avgLabel",
-        "publicLabel": "均线标签",
-        "description": "月均线文字前缀"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 逐月",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 逐月"
-      },
-      {
-        "key": "avgValue",
-        "type": "number",
-        "label": "月均值",
-        "min": 0,
-        "max": 130,
-        "step": 1,
-        "default": 81,
-        "desc": "月均参考线数值",
-        "publicKey": "avgValue",
-        "publicLabel": "月均值",
-        "description": "月均参考线数值"
-      },
-      {
-        "key": "data",
-        "type": "list",
-        "label": "月度数据",
-        "itemLabel": "月",
-        "fields": [
-          {
-            "key": "label",
-            "label": "月份"
-          },
-          {
-            "key": "value",
-            "label": "数值"
-          }
-        ],
-        "default": [
-          {
-            "label": "1月",
-            "value": 45
-          },
-          {
-            "label": "2月",
-            "value": 58
-          },
-          {
-            "label": "3月",
-            "value": 59
-          },
-          {
-            "label": "4月",
-            "value": 86
-          },
-          {
-            "label": "5月",
-            "value": 105
-          },
-          {
-            "label": "6月",
-            "value": 93
-          },
-          {
-            "label": "7月",
-            "value": 92
-          },
-          {
-            "label": "8月",
-            "value": 118
-          },
-          {
-            "label": "9月",
-            "value": 108
-          },
-          {
-            "label": "10月",
-            "value": 73
-          },
-          {
-            "label": "11月",
-            "value": 81
-          },
-          {
-            "label": "12月",
-            "value": 52
-          }
-        ],
-        "desc": "12 个月的数值（峰值标记自动取最大两点）",
-        "publicKey": "data",
-        "publicLabel": "月度数据",
-        "description": "12 个月的数值（峰值标记自动取最大两点）"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -6015,167 +3247,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标签 1"
-          },
-          {
-            "key": "text005",
-            "label": "标签 2"
-          }
-        ],
-        "default": {
-          "text001": "季度构成 · CAPITAL MIX BY QUARTER",
-          "text002": "钱往哪挪？",
-          "text003": "算力逐季抬升",
-          "text004": "数据为调研整理与推演 ·",
-          "text005": "· 示意"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "colsData",
-        "type": "list",
-        "label": "colsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "q",
-            "label": "q"
-          },
-          {
-            "key": "total",
-            "label": "total"
-          }
-        ],
-        "default": [
-          {
-            "q": "Q1",
-            "total": 180,
-            "parts": {
-              "infra": 28,
-              "model": 34,
-              "app": 22,
-              "other": 16
-            }
-          },
-          {
-            "q": "Q2",
-            "total": 220,
-            "parts": {
-              "infra": 33,
-              "model": 31,
-              "app": 21,
-              "other": 15
-            }
-          },
-          {
-            "q": "Q3",
-            "total": 260,
-            "parts": {
-              "infra": 38,
-              "model": 28,
-              "app": 20,
-              "other": 14
-            }
-          },
-          {
-            "q": "Q4",
-            "total": 310,
-            "parts": {
-              "infra": 44,
-              "model": 25,
-              "app": 19,
-              "other": 12
-            }
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "colsData",
-        "publicLabel": "colsData",
-        "description": "默认数据内容"
-      },
-      {
-        "key": "tracksData",
-        "type": "list",
-        "label": "tracksData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "key",
-            "label": "key"
-          },
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "short",
-            "label": "short"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "key": "infra",
-            "name": "AI 算力 / 基础设施",
-            "short": "算力·基建",
-            "color": "#15A7F0"
-          },
-          {
-            "key": "model",
-            "name": "通用大模型",
-            "short": "通用大模型",
-            "color": "#27E021"
-          },
-          {
-            "key": "app",
-            "name": "企业级 AI 应用",
-            "short": "企业应用",
-            "color": "#FFC700"
-          },
-          {
-            "key": "other",
-            "name": "具身 / 内容 / 其他",
-            "short": "其他赛道",
-            "color": "#FF9FE2"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "tracksData",
-        "publicLabel": "tracksData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -6205,9 +3276,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -6218,9 +3287,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "columnCount",
@@ -6231,9 +3298,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "展示的时间段数量",
-        "publicKey": "columnCount",
-        "publicLabel": "时间柱数",
-        "description": "展示的时间段数量"
+        "publicKey": "columnCount"
       },
       {
         "key": "chartVariant",
@@ -6255,9 +3320,7 @@ export const pages = [
         ],
         "default": "ratio",
         "desc": "100% 占比 / 绝对额(柱高随总盘)",
-        "publicKey": "chartVariant",
-        "publicLabel": "堆叠口径",
-        "description": "100% 占比 / 绝对额(柱高随总盘)"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -6265,9 +3328,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一分类",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一分类"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -6278,9 +3339,7 @@ export const pages = [
         "step": 1,
         "default": 1,
         "desc": "被高亮分类的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点分类",
-        "description": "被高亮分类的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showSegLabel",
@@ -6288,9 +3347,7 @@ export const pages = [
         "label": "段内标签",
         "default": true,
         "desc": "段内占比 / 数值标签",
-        "publicKey": "showValueLabels",
-        "publicLabel": "段内标签",
-        "description": "段内占比 / 数值标签"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showLegend",
@@ -6298,9 +3355,7 @@ export const pages = [
         "label": "分类图例",
         "default": true,
         "desc": "底部分类图例",
-        "publicKey": "showLegend",
-        "publicLabel": "分类图例",
-        "description": "底部分类图例"
+        "publicKey": "showLegend"
       },
       {
         "key": "showDecorations",
@@ -6308,9 +3363,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -6389,6 +3442,10 @@ export const pages = [
           "color": "#FF9FE2"
         }
       ],
+      "captionBody": {
+        "ratio": "各季按赛道资本占比堆叠（求和 100%）",
+        "absolute": "各季按赛道绝对融资额（亿美元）堆叠，柱高即季度总盘子"
+      },
       "hlStyle": "glass",
       "hlTilt": 2,
       "columnCount": 4,
@@ -6409,118 +3466,6 @@ export const pages = [
     "label": "三重集中",
     "bgClass": "",
     "controls": [
-      {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "单位"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "正文 3"
-          }
-        ],
-        "default": {
-          "text001": "集中度 · CONCENTRATION",
-          "text002": "钱、赛道、地理，",
-          "text003": "越挤越窄",
-          "text004": "%",
-          "text005": "赢家通吃",
-          "text006": "资金高度向头部公司、单一赛道与少数枢纽集中 · 数据为调研整理（报告 3.1 / 3.2）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "dialsData",
-        "type": "list",
-        "label": "dialsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "dim",
-            "label": "dim"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "value",
-            "label": "value"
-          },
-          {
-            "key": "label",
-            "label": "label"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "note",
-            "label": "note"
-          }
-        ],
-        "default": [
-          {
-            "dim": "地理集中",
-            "en": "GEOGRAPHY",
-            "value": 63.9,
-            "label": "旧金山湾区",
-            "color": "#15A7F0",
-            "note": "六成资金落在一座湾区"
-          },
-          {
-            "dim": "赛道集中",
-            "en": "SECTOR",
-            "value": 43.3,
-            "label": "通用大模型",
-            "color": "#27E021",
-            "note": "近半押注同一条赛道"
-          },
-          {
-            "dim": "头部集中",
-            "en": "LATE-STAGE",
-            "value": 45.4,
-            "label": "D 轮及以后 / 未标明",
-            "color": "#FFC700",
-            "note": "后期大额轮包揽近半笔数"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "dialsData",
-        "publicLabel": "dialsData",
-        "description": "默认数据内容"
-      },
       {
         "key": "hlStyle",
         "type": "radio",
@@ -6551,9 +3496,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -6564,9 +3507,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "gaugeCount",
@@ -6577,9 +3518,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "展示的环形仪表盘数量",
-        "publicKey": "gaugeCount",
-        "publicLabel": "仪表盘数",
-        "description": "展示的环形仪表盘数量"
+        "publicKey": "gaugeCount"
       },
       {
         "key": "chartVariant",
@@ -6601,9 +3540,7 @@ export const pages = [
         ],
         "default": "gauge",
         "desc": "环形仪表盘 / 横向柱状",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "环形仪表盘 / 横向柱状"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -6611,9 +3548,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一仪表盘",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一仪表盘"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -6625,9 +3560,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "gaugeCount",
         "desc": "被高亮仪表盘的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮仪表盘的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showContext",
@@ -6635,9 +3568,7 @@ export const pages = [
         "label": "盘下注释",
         "default": true,
         "desc": "仪表盘下方注释行",
-        "publicKey": "showContext",
-        "publicLabel": "盘下注释",
-        "description": "仪表盘下方注释行"
+        "publicKey": "showContext"
       },
       {
         "key": "showTrack",
@@ -6645,9 +3576,7 @@ export const pages = [
         "label": "底环",
         "default": true,
         "desc": "未填充弧（底环）显隐",
-        "publicKey": "showGuide",
-        "publicLabel": "底环",
-        "description": "未填充弧（底环）显隐"
+        "publicKey": "showGuide"
       },
       {
         "key": "showDecorations",
@@ -6655,9 +3584,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -6716,199 +3643,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "标题前句"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "正文 1"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "正文 3"
-          },
-          {
-            "key": "text007",
-            "label": "正文 4"
-          },
-          {
-            "key": "text008",
-            "label": "正文 5"
-          },
-          {
-            "key": "text009",
-            "label": "正文 6"
-          },
-          {
-            "key": "text010",
-            "label": "标签"
-          }
-        ],
-        "default": {
-          "text001": "资金热力 · MONTHLY HEATMAP",
-          "text002": "热钱",
-          "text003": "扎堆 5 月、8 月",
-          "text004": "，通用大模型最烫手",
-          "text005": "赛道 / 月",
-          "text006": "合计",
-          "text007": "弱",
-          "text008": "强",
-          "text009": "数值为相对热度（0–100）· 颜色深浅 / 气泡大小同义",
-          "text010": "数据为调研整理与月度推演 · 列「合计」越高代表当月越热"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "monthsData",
-        "type": "list",
-        "label": "monthsData",
-        "itemLabel": "数据",
-        "primitive": true,
-        "default": [
-          "1月",
-          "2月",
-          "3月",
-          "4月",
-          "5月",
-          "6月",
-          "7月",
-          "8月",
-          "9月",
-          "10月",
-          "11月",
-          "12月"
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "monthsData",
-        "publicLabel": "monthsData",
-        "description": "默认数据内容"
-      },
-      {
-        "key": "rowsData",
-        "type": "list",
-        "label": "rowsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "track",
-            "label": "track"
-          },
-          {
-            "key": "short",
-            "label": "short"
-          },
-          {
-            "key": "vals",
-            "label": "vals"
-          }
-        ],
-        "default": [
-          {
-            "track": "通用大模型",
-            "short": "LLM",
-            "vals": [
-              32,
-              44,
-              58,
-              70,
-              96,
-              54,
-              50,
-              92,
-              64,
-              82,
-              70,
-              76
-            ]
-          },
-          {
-            "track": "AI 基础设施",
-            "short": "INFRA",
-            "vals": [
-              40,
-              34,
-              50,
-              46,
-              62,
-              56,
-              70,
-              76,
-              56,
-              60,
-              66,
-              82
-            ]
-          },
-          {
-            "track": "AI 硬件",
-            "short": "HW",
-            "vals": [
-              22,
-              30,
-              56,
-              40,
-              84,
-              36,
-              30,
-              46,
-              40,
-              30,
-              36,
-              42
-            ]
-          },
-          {
-            "track": "垂直应用",
-            "short": "APP",
-            "vals": [
-              24,
-              30,
-              36,
-              30,
-              42,
-              46,
-              36,
-              56,
-              40,
-              52,
-              46,
-              60
-            ]
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "rowsData",
-        "publicLabel": "rowsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -6938,9 +3672,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -6951,9 +3683,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "columnCount",
@@ -6963,14 +3693,8 @@ export const pages = [
         "max": 12,
         "step": 1,
         "default": 12,
-        "countArrays": [
-          "monthsData",
-          "rowsData[].vals"
-        ],
         "desc": "展示的月份列数",
-        "publicKey": "columnCount",
-        "publicLabel": "月份列数",
-        "description": "展示的月份列数"
+        "publicKey": "columnCount"
       },
       {
         "key": "rowCount",
@@ -6981,9 +3705,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "展示的分类行数",
-        "publicKey": "categoryCount",
-        "publicLabel": "分类行数",
-        "description": "展示的分类行数"
+        "publicKey": "categoryCount"
       },
       {
         "key": "chartVariant",
@@ -7005,9 +3727,7 @@ export const pages = [
         ],
         "default": "heat",
         "desc": "颜色深浅 / 气泡大小",
-        "publicKey": "chartVariant",
-        "publicLabel": "编码方式",
-        "description": "颜色深浅 / 气泡大小"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -7015,9 +3735,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一月份",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一月份"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -7029,9 +3747,7 @@ export const pages = [
         "default": 6,
         "maxFromKey": "columnCount",
         "desc": "被高亮月份的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点月份",
-        "description": "被高亮月份的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showRowTotal",
@@ -7039,9 +3755,7 @@ export const pages = [
         "label": "分类合计",
         "default": true,
         "desc": "行尾分类合计列",
-        "publicKey": "showRowTotal",
-        "publicLabel": "分类合计",
-        "description": "行尾分类合计列"
+        "publicKey": "showRowTotal"
       },
       {
         "key": "showScale",
@@ -7049,9 +3763,7 @@ export const pages = [
         "label": "强度图例",
         "default": true,
         "desc": "底部强度图例",
-        "publicKey": "showScale",
-        "publicLabel": "强度图例",
-        "description": "底部强度图例"
+        "publicKey": "showScale"
       },
       {
         "key": "showDecorations",
@@ -7059,9 +3771,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -7095,6 +3805,7 @@ export const pages = [
         {
           "track": "通用大模型",
           "short": "LLM",
+          "color": "#27E021",
           "vals": [
             32,
             44,
@@ -7113,6 +3824,7 @@ export const pages = [
         {
           "track": "AI 基础设施",
           "short": "INFRA",
+          "color": "#15A7F0",
           "vals": [
             40,
             34,
@@ -7131,6 +3843,7 @@ export const pages = [
         {
           "track": "AI 硬件",
           "short": "HW",
+          "color": "#FFC700",
           "vals": [
             22,
             30,
@@ -7149,6 +3862,7 @@ export const pages = [
         {
           "track": "垂直应用",
           "short": "APP",
+          "color": "#FF9FE2",
           "vals": [
             24,
             30,
@@ -7180,8 +3894,7 @@ export const pages = [
       {
         "dependent": "rowsData[].vals",
         "anchor": "monthsData",
-        "relation": "same-length",
-        "countKey": "columnCount"
+        "relation": "same-length"
       }
     ]
   },
@@ -7194,194 +3907,6 @@ export const pages = [
     "label": "资本月历",
     "bgClass": "",
     "controls": [
-      {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "坐标标签"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "正文 3"
-          },
-          {
-            "key": "text007",
-            "label": "正文 4"
-          },
-          {
-            "key": "text008",
-            "label": "正文 5"
-          },
-          {
-            "key": "text009",
-            "label": "标签"
-          },
-          {
-            "key": "text010",
-            "label": "正文 6"
-          }
-        ],
-        "default": {
-          "text001": "资本月历 · 2024 CALENDAR",
-          "text002": "一年十二格，",
-          "text003": "三个月最热",
-          "text004": "大额融资笔数",
-          "text005": "少",
-          "text006": "多",
-          "text007": "★ 峰值",
-          "text008": "笔",
-          "text009": "资本月历",
-          "text010": "格内为当月 ≥1 亿美元融资笔数 · 着色随笔数加深 · 峰值月加 ★（报告 2.x · 调研整理）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "monthsData",
-        "type": "list",
-        "label": "monthsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "mo",
-            "label": "mo"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "deals",
-            "label": "deals"
-          },
-          {
-            "key": "ev",
-            "label": "ev"
-          },
-          {
-            "key": "peak",
-            "label": "peak"
-          }
-        ],
-        "default": [
-          {
-            "mo": "1月",
-            "en": "JAN",
-            "deals": 5,
-            "ev": "",
-            "peak": false
-          },
-          {
-            "mo": "2月",
-            "en": "FEB",
-            "deals": 6,
-            "ev": "Figure 6.7亿",
-            "peak": false
-          },
-          {
-            "mo": "3月",
-            "en": "MAR",
-            "deals": 8,
-            "ev": "Anthropic 加注",
-            "peak": false
-          },
-          {
-            "mo": "4月",
-            "en": "APR",
-            "deals": 6,
-            "ev": "",
-            "peak": false
-          },
-          {
-            "mo": "5月",
-            "en": "MAY",
-            "deals": 11,
-            "ev": "xAI 60亿 · CoreWeave",
-            "peak": true
-          },
-          {
-            "mo": "6月",
-            "en": "JUN",
-            "deals": 7,
-            "ev": "",
-            "peak": false
-          },
-          {
-            "mo": "7月",
-            "en": "JUL",
-            "deals": 6,
-            "ev": "",
-            "peak": false
-          },
-          {
-            "mo": "8月",
-            "en": "AUG",
-            "deals": 9,
-            "ev": "应用层放量",
-            "peak": false
-          },
-          {
-            "mo": "9月",
-            "en": "SEP",
-            "deals": 7,
-            "ev": "",
-            "peak": false
-          },
-          {
-            "mo": "10月",
-            "en": "OCT",
-            "deals": 10,
-            "ev": "OpenAI 66亿",
-            "peak": true
-          },
-          {
-            "mo": "11月",
-            "en": "NOV",
-            "deals": 8,
-            "ev": "Anthropic 40亿",
-            "peak": false
-          },
-          {
-            "mo": "12月",
-            "en": "DEC",
-            "deals": 14,
-            "ev": "Databricks 100亿",
-            "peak": true
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "monthsData",
-        "publicLabel": "monthsData",
-        "description": "默认数据内容"
-      },
       {
         "key": "hlStyle",
         "type": "radio",
@@ -7412,9 +3937,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -7425,9 +3948,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "monthCount",
@@ -7438,9 +3959,7 @@ export const pages = [
         "step": 1,
         "default": 12,
         "desc": "展示的月份数量",
-        "publicKey": "monthCount",
-        "publicLabel": "月份数",
-        "description": "展示的月份数量"
+        "publicKey": "monthCount"
       },
       {
         "key": "focusEnabled",
@@ -7448,9 +3967,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一月份",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一月份"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -7462,9 +3979,7 @@ export const pages = [
         "default": 12,
         "maxFromKey": "monthCount",
         "desc": "被高亮月份(1=1月)",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点月份",
-        "description": "被高亮月份(1=1月)"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showHeat",
@@ -7472,9 +3987,7 @@ export const pages = [
         "label": "热力着色",
         "default": true,
         "desc": "按笔数热力着色",
-        "publicKey": "showHeat",
-        "publicLabel": "热力着色",
-        "description": "按笔数热力着色"
+        "publicKey": "showHeat"
       },
       {
         "key": "showEventNote",
@@ -7482,9 +3995,7 @@ export const pages = [
         "label": "标志事件",
         "default": true,
         "desc": "标志事件芯片",
-        "publicKey": "showEventNote",
-        "publicLabel": "标志事件",
-        "description": "标志事件芯片"
+        "publicKey": "showEventNote"
       },
       {
         "key": "showPeakTag",
@@ -7492,9 +4003,7 @@ export const pages = [
         "label": "峰值角标",
         "default": true,
         "desc": "峰值月 ★ 角标",
-        "publicKey": "showPeakTag",
-        "publicLabel": "峰值角标",
-        "description": "峰值月 ★ 角标"
+        "publicKey": "showPeakTag"
       },
       {
         "key": "showDecorations",
@@ -7502,9 +4011,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -7627,153 +4134,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "标题前句"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "正文 1"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "正文 3"
-          },
-          {
-            "key": "text007",
-            "label": "正文 4"
-          },
-          {
-            "key": "text008",
-            "label": "正文 5"
-          }
-        ],
-        "default": {
-          "text001": "季度走势 · QUARTERLY TREND",
-          "text002": "四个季度",
-          "text003": "逐级走高",
-          "text004": "，Q4 冲上全年峰值",
-          "text005": "指标 / 季度",
-          "text006": "趋势",
-          "text007": "峰值",
-          "text008": "数据为调研整理与推演 · 单位见各行标注 · 峰值角标标示该指标全年最高季度"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "colsData",
-        "type": "list",
-        "label": "colsData",
-        "itemLabel": "数据",
-        "primitive": true,
-        "default": [
-          "Q1",
-          "Q2",
-          "Q3",
-          "Q4"
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "colsData",
-        "publicLabel": "colsData",
-        "description": "默认数据内容"
-      },
-      {
-        "key": "rowsData",
-        "type": "list",
-        "label": "rowsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "metric",
-            "label": "metric"
-          },
-          {
-            "key": "unit",
-            "label": "unit"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "metric": "融资总额",
-            "unit": "亿美元",
-            "color": "#15A7F0",
-            "vals": [
-              185,
-              232,
-              248,
-              305
-            ]
-          },
-          {
-            "metric": "大额轮次",
-            "unit": "笔",
-            "color": "#27E021",
-            "vals": [
-              18,
-              23,
-              27,
-              29
-            ]
-          },
-          {
-            "metric": "平均单笔",
-            "unit": "亿美元",
-            "color": "#FFC700",
-            "vals": [
-              10.3,
-              10.1,
-              9.2,
-              10.5
-            ]
-          },
-          {
-            "metric": "十亿级轮次",
-            "unit": "笔",
-            "color": "#FF9FE2",
-            "vals": [
-              2,
-              4,
-              5,
-              7
-            ]
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "rowsData",
-        "publicLabel": "rowsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -7803,9 +4163,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -7816,9 +4174,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "columnCount",
@@ -7829,9 +4185,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "展示的时间列数",
-        "publicKey": "columnCount",
-        "publicLabel": "时间列数",
-        "description": "展示的时间列数"
+        "publicKey": "columnCount"
       },
       {
         "key": "rowCount",
@@ -7842,9 +4196,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "展示的指标行数",
-        "publicKey": "rowCount",
-        "publicLabel": "指标行数",
-        "description": "展示的指标行数"
+        "publicKey": "rowCount"
       },
       {
         "key": "focusEnabled",
@@ -7852,9 +4204,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一列",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一列"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -7866,9 +4216,7 @@ export const pages = [
         "default": 4,
         "maxFromKey": "columnCount",
         "desc": "被高亮列的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点列序号",
-        "description": "被高亮列的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showTrendBar",
@@ -7876,9 +4224,7 @@ export const pages = [
         "label": "趋势条",
         "default": false,
         "desc": "行尾迷你趋势折线",
-        "publicKey": "showTrendBar",
-        "publicLabel": "趋势条",
-        "description": "行尾迷你趋势折线"
+        "publicKey": "showTrendBar"
       },
       {
         "key": "showPeakTag",
@@ -7886,9 +4232,7 @@ export const pages = [
         "label": "峰值角标",
         "default": true,
         "desc": "各行峰值单元格角标",
-        "publicKey": "showPeakTag",
-        "publicLabel": "峰值角标",
-        "description": "各行峰值单元格角标"
+        "publicKey": "showPeakTag"
       },
       {
         "key": "showDecorations",
@@ -7896,9 +4240,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -7993,36 +4335,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "标题前句"
-          }
-        ],
-        "default": {
-          "text001": "笔",
-          "text002": "笔"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -8052,9 +4364,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -8065,9 +4375,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "rowCount",
@@ -8078,9 +4386,7 @@ export const pages = [
         "step": 1,
         "default": 6,
         "desc": "展示的数据行数量",
-        "publicKey": "rowCount",
-        "publicLabel": "数据行数",
-        "description": "展示的数据行数量"
+        "publicKey": "rowCount"
       },
       {
         "key": "focusEnabled",
@@ -8088,9 +4394,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一行",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一行"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -8102,9 +4406,7 @@ export const pages = [
         "default": 6,
         "maxFromKey": "rowCount",
         "desc": "被高亮行的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点行号",
-        "description": "被高亮行的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showBar",
@@ -8112,9 +4414,7 @@ export const pages = [
         "label": "可视化列",
         "default": true,
         "desc": "行内规模对比柱条列",
-        "publicKey": "showBar",
-        "publicLabel": "可视化列",
-        "description": "行内规模对比柱条列"
+        "publicKey": "showBar"
       },
       {
         "key": "showTotalRow",
@@ -8122,9 +4422,7 @@ export const pages = [
         "label": "合计行",
         "default": true,
         "desc": "底部合计行",
-        "publicKey": "showTotalRow",
-        "publicLabel": "合计行",
-        "description": "底部合计行"
+        "publicKey": "showTotalRow"
       },
       {
         "key": "showDecorations",
@@ -8132,214 +4430,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicKey": "undefined2",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "轮次结构 · ROUND STRUCTURE",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "越往后轮次，",
-        "desc": "关键词前文",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "关键词前文"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "单笔越大",
-        "desc": "高亮关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "key": "titleTail",
-        "type": "text",
-        "label": "标题后半",
-        "default": "——头部「赢家通吃」",
-        "desc": "关键词后文",
-        "publicKey": "titleTail",
-        "publicLabel": "标题后半",
-        "description": "关键词后文"
-      },
-      {
-        "key": "sub",
-        "type": "textarea",
-        "label": "副标题",
-        "rows": 2,
-        "default": "「D 轮及以后」与「未标明轮次」合计占比过半，平均单笔超 15 亿美元。",
-        "desc": "标题下方说明",
-        "publicKey": "sub",
-        "publicLabel": "副标题",
-        "description": "标题下方说明"
-      },
-      {
-        "key": "colStage",
-        "type": "text",
-        "label": "列头·阶段",
-        "default": "融资轮次",
-        "desc": "第一列表头",
-        "publicKey": "colStage",
-        "publicLabel": "列头·阶段",
-        "description": "第一列表头"
-      },
-      {
-        "key": "colCountLabel",
-        "type": "text",
-        "label": "列头·笔数",
-        "default": "事件笔数",
-        "desc": "第二列表头",
-        "publicKey": "colCountLabel",
-        "publicLabel": "列头·笔数",
-        "description": "第二列表头"
-      },
-      {
-        "key": "colAvg",
-        "type": "text",
-        "label": "列头·均值",
-        "default": "平均单笔 / 亿美元",
-        "desc": "第三列表头",
-        "publicKey": "colAvg",
-        "publicLabel": "列头·均值",
-        "description": "第三列表头"
-      },
-      {
-        "key": "colBar",
-        "type": "text",
-        "label": "列头·柱条",
-        "default": "规模对比",
-        "desc": "柱条列表头",
-        "publicKey": "colBar",
-        "publicLabel": "列头·柱条",
-        "description": "柱条列表头"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 表格",
-        "publicKey": "undefined3",
-        "publicLabel": "数据 · 表格"
-      },
-      {
-        "key": "rows",
-        "type": "list",
-        "label": "数据行",
-        "itemLabel": "行",
-        "countFromKey": "rowCount",
-        "fields": [
-          {
-            "key": "stage",
-            "label": "轮次"
-          },
-          {
-            "key": "en",
-            "label": "英文"
-          },
-          {
-            "key": "count",
-            "label": "笔数",
-            "type": "number"
-          },
-          {
-            "key": "avg",
-            "label": "平均单笔",
-            "type": "number"
-          }
-        ],
-        "default": [
-          {
-            "stage": "种子轮",
-            "en": "Seed",
-            "count": 8,
-            "avg": 1.2
-          },
-          {
-            "stage": "A 轮",
-            "en": "Series A",
-            "count": 12,
-            "avg": 1.8
-          },
-          {
-            "stage": "B 轮",
-            "en": "Series B",
-            "count": 18,
-            "avg": 3.5
-          },
-          {
-            "stage": "C 轮",
-            "en": "Series C",
-            "count": 15,
-            "avg": 6.8
-          },
-          {
-            "stage": "D 轮及以后",
-            "en": "Series D+",
-            "count": 22,
-            "avg": 15.2
-          },
-          {
-            "stage": "未标明轮次",
-            "en": "Undisclosed",
-            "count": 22,
-            "avg": 18.6
-          }
-        ],
-        "desc": "表格数据行：阶段 / 英文 / 笔数 / 平均单笔",
-        "publicKey": "rows",
-        "publicLabel": "数据行",
-        "description": "表格数据行：阶段 / 英文 / 笔数 / 平均单笔"
-      },
-      {
-        "key": "totalRow",
-        "type": "list",
-        "label": "合计行",
-        "itemLabel": "合计",
-        "single": true,
-        "fields": [
-          {
-            "key": "stage",
-            "label": "名称"
-          },
-          {
-            "key": "count",
-            "label": "笔数",
-            "type": "number"
-          },
-          {
-            "key": "avg",
-            "label": "平均单笔",
-            "type": "number"
-          }
-        ],
-        "default": {
-          "stage": "全年合计",
-          "en": "Total",
-          "count": 97,
-          "avg": 10
-        },
-        "desc": "底部合计行",
-        "publicKey": "totalRow",
-        "publicLabel": "合计行",
-        "description": "底部合计行"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -8361,7 +4452,7 @@ export const pages = [
       "titleTail": "——头部「赢家通吃」",
       "sub": "「D 轮及以后」与「未标明轮次」合计占比过半，平均单笔超 15 亿美元。",
       "colStage": "融资轮次",
-      "colCountLabel": "事件笔数",
+      "colCount": "事件笔数",
       "colAvg": "平均单笔 / 亿美元",
       "colBar": "规模对比",
       "rows": [
@@ -8420,152 +4511,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text005",
-            "label": "正文 1"
-          },
-          {
-            "key": "text006",
-            "label": "正文 2"
-          },
-          {
-            "key": "text007",
-            "label": "正文 3"
-          },
-          {
-            "key": "text008",
-            "label": "正文 4"
-          },
-          {
-            "key": "text009",
-            "label": "标签 1"
-          },
-          {
-            "key": "text010",
-            "label": "标签 2"
-          },
-          {
-            "key": "text011",
-            "label": "标签 3"
-          },
-          {
-            "key": "text012",
-            "label": "标签 4"
-          },
-          {
-            "key": "text013",
-            "label": "标签 5"
-          },
-          {
-            "key": "text016",
-            "label": "正文 5"
-          }
-        ],
-        "default": {
-          "text005": "半年消长 · H1 → H2 SWING",
-          "text006": "下半年，资本",
-          "text007": "集体加码算力",
-          "text008": "赛道",
-          "text009": "2024 上半年",
-          "text010": "2024 下半年",
-          "text011": "环比 Δ",
-          "text012": "上 / 下半年对比",
-          "text013": "全市场合计",
-          "text016": "数据为调研整理与推演 · 金额＝该赛道半年内 ≥1 亿美元 AI 轮次合计（亿美元 · 示意）· mini 双柱按全表最高额归一"
-        },
-        "desc": "页面中的可见正文与表头文案",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的可见正文与表头文案"
-      },
-      {
-        "key": "rowsData",
-        "type": "list",
-        "label": "rowsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "short",
-            "label": "short"
-          },
-          {
-            "key": "h1",
-            "label": "h1"
-          },
-          {
-            "key": "h2",
-            "label": "h2"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "name": "AI 算力 / 基础设施",
-            "short": "算力·基建",
-            "h1": 120,
-            "h2": 210,
-            "color": "#15A7F0"
-          },
-          {
-            "name": "具身智能 / 机器人",
-            "short": "具身智能",
-            "h1": 24,
-            "h2": 58,
-            "color": "#FF9FE2"
-          },
-          {
-            "name": "企业级 AI 应用",
-            "short": "企业应用",
-            "h1": 60,
-            "h2": 88,
-            "color": "#FFC700"
-          },
-          {
-            "name": "通用大模型",
-            "short": "通用大模型",
-            "h1": 110,
-            "h2": 140,
-            "color": "#27E021"
-          },
-          {
-            "name": "AI 安全 / 对齐",
-            "short": "安全·对齐",
-            "h1": 16,
-            "h2": 28,
-            "color": "#15A7F0"
-          },
-          {
-            "name": "AIGC 内容生成",
-            "short": "内容生成",
-            "h1": 38,
-            "h2": 34,
-            "color": "#FFC700"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "rowsData",
-        "publicLabel": "rowsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -8595,9 +4540,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -8608,9 +4551,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "rowCount",
@@ -8621,9 +4562,7 @@ export const pages = [
         "step": 1,
         "default": 6,
         "desc": "展示的分类行数",
-        "publicKey": "categoryCount",
-        "publicLabel": "分类行数",
-        "description": "展示的分类行数"
+        "publicKey": "categoryCount"
       },
       {
         "key": "focusEnabled",
@@ -8631,9 +4570,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一行",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一行"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -8645,9 +4582,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "rowCount",
         "desc": "被高亮行的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点行序号",
-        "description": "被高亮行的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDelta",
@@ -8655,9 +4590,7 @@ export const pages = [
         "label": "环比徽标",
         "default": true,
         "desc": "Δ 升降徽标列",
-        "publicKey": "showDelta",
-        "publicLabel": "环比徽标",
-        "description": "Δ 升降徽标列"
+        "publicKey": "showDelta"
       },
       {
         "key": "showMiniBar",
@@ -8665,9 +4598,7 @@ export const pages = [
         "label": "双柱对比",
         "default": true,
         "desc": "上 / 下半年并置双柱列",
-        "publicKey": "showMiniBar",
-        "publicLabel": "双柱对比",
-        "description": "上 / 下半年并置双柱列"
+        "publicKey": "showMiniBar"
       },
       {
         "key": "showTotalRow",
@@ -8675,9 +4606,7 @@ export const pages = [
         "label": "合计行",
         "default": true,
         "desc": "底部全市场合计行",
-        "publicKey": "showTotalRow",
-        "publicLabel": "合计行",
-        "description": "底部全市场合计行"
+        "publicKey": "showTotalRow"
       },
       {
         "key": "showDecorations",
@@ -8685,13 +4614,15 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
       "copy": {
+        "text001": "亿",
+        "text002": "亿",
+        "text003": "上",
+        "text004": "下",
         "text005": "半年消长 · H1 → H2 SWING",
         "text006": "下半年，资本",
         "text007": "集体加码算力",
@@ -8701,6 +4632,8 @@ export const pages = [
         "text011": "环比 Δ",
         "text012": "上 / 下半年对比",
         "text013": "全市场合计",
+        "text014": "亿",
+        "text015": "亿",
         "text016": "数据为调研整理与推演 · 金额＝该赛道半年内 ≥1 亿美元 AI 轮次合计（亿美元 · 示意）· mini 双柱按全表最高额归一"
       },
       "rowsData": [
@@ -8768,147 +4701,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "坐标标签 1"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "正文 3"
-          },
-          {
-            "key": "text007",
-            "label": "坐标标签 2"
-          },
-          {
-            "key": "text009",
-            "label": "标签"
-          },
-          {
-            "key": "text011",
-            "label": "坐标标签 3"
-          },
-          {
-            "key": "text012",
-            "label": "正文 4"
-          }
-        ],
-        "default": {
-          "text001": "头部对照 · SCOREBOARD",
-          "text002": "六家头部，",
-          "text003": "估值与热度一表看清",
-          "text005": "公司",
-          "text006": "主投赛道",
-          "text007": "最新估值",
-          "text009": "最大单笔",
-          "text011": "资本热度",
-          "text012": "数据为调研整理与推演 · 估值柱条按全表最高估值归一 · 资本热度＝该公司 2024 受追捧程度（0–5）"
-        },
-        "desc": "页面中的可见正文与表头文案",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的可见正文与表头文案"
-      },
-      {
-        "key": "rowsData",
-        "type": "list",
-        "label": "rowsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "cat",
-            "label": "cat"
-          },
-          {
-            "key": "val",
-            "label": "val"
-          },
-          {
-            "key": "single",
-            "label": "single"
-          },
-          {
-            "key": "heat",
-            "label": "heat"
-          }
-        ],
-        "default": [
-          {
-            "name": "OpenAI",
-            "cat": "通用大模型",
-            "val": 1570,
-            "single": 66,
-            "heat": 5
-          },
-          {
-            "name": "Databricks",
-            "cat": "AI 基础设施",
-            "val": 620,
-            "single": 100,
-            "heat": 5
-          },
-          {
-            "name": "Anthropic",
-            "cat": "通用大模型",
-            "val": 600,
-            "single": 40,
-            "heat": 5
-          },
-          {
-            "name": "xAI",
-            "cat": "通用大模型",
-            "val": 500,
-            "single": 60,
-            "heat": 4
-          },
-          {
-            "name": "CoreWeave",
-            "cat": "AI 基础设施",
-            "val": 190,
-            "single": 11,
-            "heat": 4
-          },
-          {
-            "name": "Safe Superintelligence",
-            "cat": "通用大模型",
-            "val": 50,
-            "single": 10,
-            "heat": 3
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "rowsData",
-        "publicLabel": "rowsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -8938,9 +4730,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -8951,9 +4741,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "rowCount",
@@ -8964,9 +4752,7 @@ export const pages = [
         "step": 1,
         "default": 6,
         "desc": "展示的公司行数",
-        "publicKey": "rowCount",
-        "publicLabel": "公司行数",
-        "description": "展示的公司行数"
+        "publicKey": "rowCount"
       },
       {
         "key": "focusEnabled",
@@ -8974,9 +4760,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一行",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一行"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -8988,9 +4772,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "rowCount",
         "desc": "被高亮行的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点行序号",
-        "description": "被高亮行的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showBar",
@@ -8998,9 +4780,7 @@ export const pages = [
         "label": "指标柱条",
         "default": true,
         "desc": "行内指标规模柱条",
-        "publicKey": "showBar",
-        "publicLabel": "指标柱条",
-        "description": "行内指标规模柱条"
+        "publicKey": "showBar"
       },
       {
         "key": "showRating",
@@ -9008,9 +4788,7 @@ export const pages = [
         "label": "关注度",
         "default": true,
         "desc": "关注度评级点",
-        "publicKey": "showStatusRating",
-        "publicLabel": "关注度",
-        "description": "关注度评级点"
+        "publicKey": "showStatusRating"
       },
       {
         "key": "showCategory",
@@ -9018,9 +4796,7 @@ export const pages = [
         "label": "分类标签",
         "default": true,
         "desc": "主投分类标签列",
-        "publicKey": "showCategory",
-        "publicLabel": "分类标签",
-        "description": "主投分类标签列"
+        "publicKey": "showCategory"
       },
       {
         "key": "showDecorations",
@@ -9028,9 +4804,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -9038,10 +4812,13 @@ export const pages = [
         "text001": "头部对照 · SCOREBOARD",
         "text002": "六家头部，",
         "text003": "估值与热度一表看清",
+        "text004": "#",
         "text005": "公司",
         "text006": "主投赛道",
         "text007": "最新估值",
+        "text008": "亿美元",
         "text009": "最大单笔",
+        "text010": "亿美元",
         "text011": "资本热度",
         "text012": "数据为调研整理与推演 · 估值柱条按全表最高估值归一 · 资本热度＝该公司 2024 受追捧程度（0–5）"
       },
@@ -9110,142 +4887,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "眉标"
-          },
-          {
-            "key": "text002",
-            "label": "标题前半"
-          },
-          {
-            "key": "text003",
-            "label": "标题重点"
-          },
-          {
-            "key": "text005",
-            "label": "出资方表头"
-          },
-          {
-            "key": "text006",
-            "label": "机构类型表头"
-          },
-          {
-            "key": "text007",
-            "label": "出手次数表头"
-          },
-          {
-            "key": "text009",
-            "label": "代表押注表头"
-          },
-          {
-            "key": "text010",
-            "label": "数据说明"
-          }
-        ],
-        "default": {
-          "text001": "出资方 · WHO'S WRITING CHECKS",
-          "text002": "谁在出手？",
-          "text003": "头部资本最忙",
-          "text005": "出资方",
-          "text006": "机构类型",
-          "text007": "2024 出手",
-          "text009": "代表押注",
-          "text010": "数据为调研整理与推演 · 出手次数＝该机构 2024 参与的 ≥1 亿美元 AI 轮次（示意量级）· 柱条按全表最多出手归一"
-        },
-        "desc": "页面中的可见正文与表头文案",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的可见正文与表头文案"
-      },
-      {
-        "key": "rowsData",
-        "type": "list",
-        "label": "rowsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "full",
-            "label": "full"
-          },
-          {
-            "key": "category",
-            "label": "category"
-          },
-          {
-            "key": "deals",
-            "label": "deals"
-          },
-          {
-            "key": "rep",
-            "label": "rep"
-          }
-        ],
-        "default": [
-          {
-            "name": "a16z",
-            "full": "Andreessen Horowitz",
-            "category": "风险投资",
-            "deals": 12,
-            "rep": "xAI · Databricks"
-          },
-          {
-            "name": "Nvidia",
-            "full": "英伟达战投",
-            "category": "战略投资",
-            "deals": 9,
-            "rep": "CoreWeave · xAI"
-          },
-          {
-            "name": "Sequoia",
-            "full": "红杉资本",
-            "category": "风险投资",
-            "deals": 8,
-            "rep": "OpenAI 生态"
-          },
-          {
-            "name": "Thrive Capital",
-            "full": "OpenAI 领投方",
-            "category": "成长基金",
-            "deals": 7,
-            "rep": "领投 OpenAI 66 亿"
-          },
-          {
-            "name": "SoftBank",
-            "full": "软银愿景基金",
-            "category": "成长基金",
-            "deals": 6,
-            "rep": "重返 AI 牌桌"
-          },
-          {
-            "name": "MGX",
-            "full": "阿布扎比主权",
-            "category": "主权基金",
-            "deals": 5,
-            "rep": "中东资本进场"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "rowsData",
-        "publicLabel": "rowsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -9275,9 +4916,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -9288,9 +4927,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "rowCount",
@@ -9301,9 +4938,7 @@ export const pages = [
         "step": 1,
         "default": 6,
         "desc": "展示的出资方行数",
-        "publicKey": "rowCount",
-        "publicLabel": "机构行数",
-        "description": "展示的出资方行数"
+        "publicKey": "rowCount"
       },
       {
         "key": "focusEnabled",
@@ -9311,9 +4946,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一行",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一行"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -9325,9 +4958,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "rowCount",
         "desc": "被高亮行的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点行序号",
-        "description": "被高亮行的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showBar",
@@ -9335,9 +4966,7 @@ export const pages = [
         "label": "出手柱条",
         "default": true,
         "desc": "行内出手次数柱条",
-        "publicKey": "showBar",
-        "publicLabel": "出手柱条",
-        "description": "行内出手次数柱条"
+        "publicKey": "showBar"
       },
       {
         "key": "showType",
@@ -9345,9 +4974,7 @@ export const pages = [
         "label": "类型标签",
         "default": true,
         "desc": "机构类型标签列",
-        "publicKey": "showType",
-        "publicLabel": "类型标签",
-        "description": "机构类型标签列"
+        "publicKey": "showType"
       },
       {
         "key": "showRep",
@@ -9355,9 +4982,7 @@ export const pages = [
         "label": "代表押注",
         "default": true,
         "desc": "代表押注列",
-        "publicKey": "showRep",
-        "publicLabel": "代表押注",
-        "description": "代表押注列"
+        "publicKey": "showRep"
       },
       {
         "key": "showDecorations",
@@ -9365,9 +4990,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -9375,9 +4998,11 @@ export const pages = [
         "text001": "出资方 · WHO'S WRITING CHECKS",
         "text002": "谁在出手？",
         "text003": "头部资本最忙",
+        "text004": "#",
         "text005": "出资方",
         "text006": "机构类型",
         "text007": "2024 出手",
+        "text008": "次",
         "text009": "代表押注",
         "text010": "数据为调研整理与推演 · 出手次数＝该机构 2024 参与的 ≥1 亿美元 AI 轮次（示意量级）· 柱条按全表最多出手归一"
       },
@@ -9385,42 +5010,42 @@ export const pages = [
         {
           "name": "a16z",
           "full": "Andreessen Horowitz",
-          "category": "风险投资",
+          "type": "风险投资",
           "deals": 12,
           "rep": "xAI · Databricks"
         },
         {
           "name": "Nvidia",
           "full": "英伟达战投",
-          "category": "战略投资",
+          "type": "战略投资",
           "deals": 9,
           "rep": "CoreWeave · xAI"
         },
         {
           "name": "Sequoia",
           "full": "红杉资本",
-          "category": "风险投资",
+          "type": "风险投资",
           "deals": 8,
           "rep": "OpenAI 生态"
         },
         {
           "name": "Thrive Capital",
-          "full": "OpenAI 领投方",
-          "category": "成长基金",
+          "full": "成长基金",
+          "type": "成长基金",
           "deals": 7,
           "rep": "领投 OpenAI 66 亿"
         },
         {
           "name": "SoftBank",
           "full": "软银愿景基金",
-          "category": "成长基金",
+          "type": "成长基金",
           "deals": 6,
           "rep": "重返 AI 牌桌"
         },
         {
           "name": "MGX",
           "full": "阿布扎比主权",
-          "category": "主权基金",
+          "type": "主权基金",
           "deals": 5,
           "rep": "中东资本进场"
         }
@@ -9446,240 +5071,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "正文 3"
-          }
-        ],
-        "default": {
-          "text001": "能力画像 · CAPABILITY MATRIX",
-          "text002": "同样是头部，",
-          "text003": "强项各不同",
-          "text004": "公司 \\ 维度",
-          "text005": "综合强度",
-          "text006": "横纵分析法 · 能力画像（报告 2，评级为调研整理 / 示意）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "dimsData",
-        "type": "list",
-        "label": "dimsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "zh",
-            "label": "zh"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          }
-        ],
-        "default": [
-          {
-            "zh": "通用大模型",
-            "en": "MODEL"
-          },
-          {
-            "zh": "算力自有",
-            "en": "COMPUTE"
-          },
-          {
-            "zh": "商业兑现",
-            "en": "REVENUE"
-          },
-          {
-            "zh": "安全治理",
-            "en": "SAFETY"
-          },
-          {
-            "zh": "生态分发",
-            "en": "ECOSYSTEM"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "dimsData",
-        "publicLabel": "dimsData",
-        "description": "默认数据内容"
-      },
-      {
-        "key": "rowsData",
-        "type": "list",
-        "label": "rowsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "cat",
-            "label": "cat"
-          },
-          {
-            "key": "ratings",
-            "label": "ratings"
-          }
-        ],
-        "default": [
-          {
-            "name": "OpenAI",
-            "cat": "通用大模型 · 应用",
-            "color": "#27E021",
-            "ratings": [
-              {
-                "rating": "leading"
-              },
-              {
-                "rating": "capable"
-              },
-              {
-                "rating": "leading"
-              },
-              {
-                "rating": "capable"
-              },
-              {
-                "rating": "leading"
-              }
-            ]
-          },
-          {
-            "name": "Anthropic",
-            "cat": "通用大模型 · 安全",
-            "color": "#15A7F0",
-            "ratings": [
-              {
-                "rating": "leading"
-              },
-              {
-                "rating": "capable"
-              },
-              {
-                "rating": "capable"
-              },
-              {
-                "rating": "leading"
-              },
-              {
-                "rating": "capable"
-              }
-            ]
-          },
-          {
-            "name": "Google DeepMind",
-            "cat": "大模型 · 全栈",
-            "color": "#FFC700",
-            "ratings": [
-              {
-                "rating": "leading"
-              },
-              {
-                "rating": "leading"
-              },
-              {
-                "rating": "capable"
-              },
-              {
-                "rating": "leading"
-              },
-              {
-                "rating": "leading"
-              }
-            ]
-          },
-          {
-            "name": "xAI",
-            "cat": "通用大模型 · 算力",
-            "color": "#FF9FE2",
-            "ratings": [
-              {
-                "rating": "capable"
-              },
-              {
-                "rating": "leading"
-              },
-              {
-                "rating": "weak"
-              },
-              {
-                "rating": "weak"
-              },
-              {
-                "rating": "leading"
-              }
-            ]
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "rowsData",
-        "publicLabel": "rowsData",
-        "description": "默认数据内容"
-      },
-      {
-        "key": "lvData",
-        "type": "list",
-        "label": "lvData",
-        "itemLabel": "数据",
-        "single": true,
-        "default": {
-          "1": {
-            "color": "#5f5f5f",
-            "glyph": "–",
-            "tag": "偏弱"
-          },
-          "2": {
-            "color": "#FFC700",
-            "glyph": "●",
-            "tag": "具备"
-          },
-          "3": {
-            "color": "#27E021",
-            "glyph": "✓",
-            "tag": "领先"
-          }
-        },
-        "desc": "默认数据内容",
-        "publicKey": "lvData",
-        "publicLabel": "lvData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -9709,9 +5100,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -9722,9 +5111,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "rowCount",
@@ -9735,9 +5122,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "展示的公司行数",
-        "publicKey": "rowCount",
-        "publicLabel": "公司行数",
-        "description": "展示的公司行数"
+        "publicKey": "rowCount"
       },
       {
         "key": "colCount",
@@ -9747,14 +5132,8 @@ export const pages = [
         "max": 5,
         "step": 1,
         "default": 5,
-        "countArrays": [
-          "dimsData",
-          "rowsData[].ratings"
-        ],
         "desc": "展示的能力维度列数",
-        "publicKey": "colCount",
-        "publicLabel": "维度列数",
-        "description": "展示的能力维度列数"
+        "publicKey": "colCount"
       },
       {
         "key": "focusEnabled",
@@ -9762,9 +5141,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一行",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一行"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -9776,9 +5153,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "rowCount",
         "desc": "被高亮行的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮行的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showRowMeta",
@@ -9786,9 +5161,7 @@ export const pages = [
         "label": "分类副标",
         "default": true,
         "desc": "公司下方分类副标显隐",
-        "publicKey": "showRowMeta",
-        "publicLabel": "分类副标",
-        "description": "公司下方分类副标显隐"
+        "publicKey": "showRowMeta"
       },
       {
         "key": "showLegend",
@@ -9796,9 +5169,7 @@ export const pages = [
         "label": "评级图例",
         "default": true,
         "desc": "底部评级图例显隐",
-        "publicKey": "showLegend",
-        "publicLabel": "评级图例",
-        "description": "底部评级图例显隐"
+        "publicKey": "showLegend"
       },
       {
         "key": "showColScore",
@@ -9806,9 +5177,7 @@ export const pages = [
         "label": "综合强度行",
         "default": true,
         "desc": "列尾综合强度行显隐",
-        "publicKey": "showColScore",
-        "publicLabel": "综合强度行",
-        "description": "列尾综合强度行显隐"
+        "publicKey": "showColScore"
       },
       {
         "key": "showDecorations",
@@ -9816,9 +5185,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -9857,88 +5224,48 @@ export const pages = [
           "name": "OpenAI",
           "cat": "通用大模型 · 应用",
           "color": "#27E021",
-          "ratings": [
-            {
-              "rating": "leading"
-            },
-            {
-              "rating": "capable"
-            },
-            {
-              "rating": "leading"
-            },
-            {
-              "rating": "capable"
-            },
-            {
-              "rating": "leading"
-            }
+          "s": [
+            3,
+            2,
+            3,
+            2,
+            3
           ]
         },
         {
           "name": "Anthropic",
           "cat": "通用大模型 · 安全",
           "color": "#15A7F0",
-          "ratings": [
-            {
-              "rating": "leading"
-            },
-            {
-              "rating": "capable"
-            },
-            {
-              "rating": "capable"
-            },
-            {
-              "rating": "leading"
-            },
-            {
-              "rating": "capable"
-            }
+          "s": [
+            3,
+            2,
+            2,
+            3,
+            2
           ]
         },
         {
           "name": "Google DeepMind",
           "cat": "大模型 · 全栈",
           "color": "#FFC700",
-          "ratings": [
-            {
-              "rating": "leading"
-            },
-            {
-              "rating": "leading"
-            },
-            {
-              "rating": "capable"
-            },
-            {
-              "rating": "leading"
-            },
-            {
-              "rating": "leading"
-            }
+          "s": [
+            3,
+            3,
+            2,
+            3,
+            3
           ]
         },
         {
           "name": "xAI",
           "cat": "通用大模型 · 算力",
           "color": "#FF9FE2",
-          "ratings": [
-            {
-              "rating": "capable"
-            },
-            {
-              "rating": "leading"
-            },
-            {
-              "rating": "weak"
-            },
-            {
-              "rating": "weak"
-            },
-            {
-              "rating": "leading"
-            }
+          "s": [
+            2,
+            3,
+            1,
+            1,
+            3
           ]
         }
       ],
@@ -9989,9 +5316,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "主数字下方支撑数据卡数量",
-        "publicKey": "statCount",
-        "publicLabel": "支撑卡数量",
-        "description": "主数字下方支撑数据卡数量"
+        "publicKey": "statCount"
       },
       {
         "key": "focusEnabled",
@@ -9999,9 +5324,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一张支撑卡",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一张支撑卡"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -10013,9 +5336,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "statCount",
         "desc": "被高亮支撑卡的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮支撑卡的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showUnit",
@@ -10023,9 +5344,7 @@ export const pages = [
         "label": "单位后缀",
         "default": true,
         "desc": "主数字「亿美元」单位",
-        "publicKey": "showUnit",
-        "publicLabel": "单位后缀",
-        "description": "主数字「亿美元」单位"
+        "publicKey": "showUnit"
       },
       {
         "key": "showCaption",
@@ -10033,9 +5352,7 @@ export const pages = [
         "label": "底部说明",
         "default": true,
         "desc": "底部数据口径说明",
-        "publicKey": "showCaption",
-        "publicLabel": "底部说明",
-        "description": "底部数据口径说明"
+        "publicKey": "showCaption"
       },
       {
         "key": "showDecorations",
@@ -10043,130 +5360,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "MARKET SCALE · 资本大年",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "pre",
-        "type": "text",
-        "label": "主数字前句",
-        "default": "2024 全年 AI 初创吸纳风投",
-        "desc": "主数字上方引言",
-        "publicKey": "pre",
-        "publicLabel": "主数字前句",
-        "description": "主数字上方引言"
-      },
-      {
-        "key": "mainValue",
-        "type": "text",
-        "label": "主数字",
-        "default": "970",
-        "desc": "巨型主数字",
-        "publicKey": "mainValue",
-        "publicLabel": "主数字",
-        "description": "巨型主数字"
-      },
-      {
-        "key": "mainUnit",
-        "type": "text",
-        "label": "主数字单位",
-        "default": "亿美元",
-        "desc": "单位后缀",
-        "publicKey": "mainUnit",
-        "publicLabel": "主数字单位",
-        "description": "单位后缀"
-      },
-      {
-        "key": "post",
-        "type": "textarea",
-        "label": "主数字后句",
-        "rows": 2,
-        "default": "创历史新高 · 平均单笔约 10 亿美元，市场对头部标的高度追捧",
-        "desc": "主数字下方说明",
-        "publicKey": "post",
-        "publicLabel": "主数字后句",
-        "description": "主数字下方说明"
-      },
-      {
-        "key": "caption",
-        "type": "textarea",
-        "label": "底部说明",
-        "rows": 2,
-        "default": "数据口径：2024 全年公开披露的 ≥1 亿美元融资事件 · 占美国 VC 近三分之一",
-        "desc": "数据口径说明",
-        "publicKey": "caption",
-        "publicLabel": "底部说明",
-        "description": "数据口径说明"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 支撑卡",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 支撑卡"
-      },
-      {
-        "key": "stats",
-        "type": "list",
-        "label": "支撑卡",
-        "itemLabel": "卡",
-        "countFromKey": "statCount",
-        "fields": [
-          {
-            "key": "value",
-            "label": "数值"
-          },
-          {
-            "key": "unit",
-            "label": "单位"
-          },
-          {
-            "key": "label",
-            "label": "标签"
-          },
-          {
-            "key": "color",
-            "label": "颜色"
-          }
-        ],
-        "default": [
-          {
-            "value": "≈1/3",
-            "label": "占美国全部风险投资",
-            "color": "#15A7F0"
-          },
-          {
-            "value": "97",
-            "unit": "笔",
-            "label": "单笔 ≥1 亿美元事件",
-            "color": "#FFC700"
-          },
-          {
-            "value": "≈10",
-            "unit": "亿",
-            "label": "平均单笔融资金额",
-            "color": "#FF9FE2"
-          }
-        ],
-        "desc": "支撑数据卡：数值 / 单位 / 标签 / 主色",
-        "publicKey": "stats",
-        "publicLabel": "支撑卡",
-        "description": "支撑数据卡：数值 / 单位 / 标签 / 主色"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -10213,118 +5407,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "脚注"
-          }
-        ],
-        "default": {
-          "text001": "资本大年 · BY THE NUMBERS",
-          "text002": "三组数字，",
-          "text003": "读懂这一年",
-          "text004": "▲",
-          "text005": "资本大年",
-          "text006": "数据口径：2024 全年公开披露的 ≥1 亿美元 AI 融资事件 · 占美国 VC 近三分之一（报告 2.x · 调研整理）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "statsData",
-        "type": "list",
-        "label": "statsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "eyebrow",
-            "label": "eyebrow"
-          },
-          {
-            "key": "num",
-            "label": "num"
-          },
-          {
-            "key": "unit",
-            "label": "unit"
-          },
-          {
-            "key": "sub",
-            "label": "sub"
-          },
-          {
-            "key": "delta",
-            "label": "delta"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "eyebrow": "全年总额 · TOTAL",
-            "num": "970",
-            "unit": "亿",
-            "sub": "2024 全年 AI 初创吸纳风险投资",
-            "delta": "创历史新高",
-            "color": "#27E021"
-          },
-          {
-            "eyebrow": "大额事件 · MEGA-DEALS",
-            "num": "97",
-            "unit": "笔",
-            "sub": "单笔 ≥1 亿美元的融资事件",
-            "delta": "头部高度集中",
-            "color": "#15A7F0"
-          },
-          {
-            "eyebrow": "市场占比 · SHARE",
-            "num": "≈1/3",
-            "unit": "",
-            "sub": "占全美风险投资总额",
-            "delta": "近三分之一",
-            "color": "#FFC700"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "statsData",
-        "publicLabel": "statsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -10354,9 +5436,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -10367,9 +5447,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "statCount",
@@ -10380,9 +5458,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "并置展示的巨型数字列数",
-        "publicKey": "statCount",
-        "publicLabel": "巨数列数",
-        "description": "并置展示的巨型数字列数"
+        "publicKey": "statCount"
       },
       {
         "key": "focusEnabled",
@@ -10390,9 +5466,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一列",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一列"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -10404,9 +5478,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "statCount",
         "desc": "被高亮列的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮列的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDelta",
@@ -10414,9 +5486,7 @@ export const pages = [
         "label": "趋势徽标",
         "default": true,
         "desc": "数字下方趋势徽标",
-        "publicKey": "showDelta",
-        "publicLabel": "趋势徽标",
-        "description": "数字下方趋势徽标"
+        "publicKey": "showDelta"
       },
       {
         "key": "showDivider",
@@ -10424,9 +5494,7 @@ export const pages = [
         "label": "列间分隔",
         "default": true,
         "desc": "列与列之间的分隔线",
-        "publicKey": "showDivider",
-        "publicLabel": "列间分隔",
-        "description": "列与列之间的分隔线"
+        "publicKey": "showDivider"
       },
       {
         "key": "showDecorations",
@@ -10434,9 +5502,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -10494,161 +5560,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "标签 1"
-          },
-          {
-            "key": "text006",
-            "label": "单位 1"
-          },
-          {
-            "key": "text007",
-            "label": "标签 2"
-          },
-          {
-            "key": "text008",
-            "label": "标签 3"
-          },
-          {
-            "key": "text009",
-            "label": "标签 4"
-          },
-          {
-            "key": "text010",
-            "label": "单位 2"
-          },
-          {
-            "key": "text011",
-            "label": "标签 5"
-          },
-          {
-            "key": "text012",
-            "label": "标签 6"
-          },
-          {
-            "key": "text013",
-            "label": "标签 7"
-          },
-          {
-            "key": "text014",
-            "label": "单位 3"
-          },
-          {
-            "key": "text015",
-            "label": "标签 8"
-          },
-          {
-            "key": "text016",
-            "label": "脚注"
-          }
-        ],
-        "default": {
-          "text001": "一年之变 · YEAR-OVER-YEAR",
-          "text002": "一年时间，",
-          "text003": "资本翻了一倍",
-          "text004": "▲",
-          "text005": "116",
-          "text006": "%",
-          "text007": "2024 AI 初创吸纳风险投资 · 同比增速",
-          "text008": "2023",
-          "text009": "≈450",
-          "text010": "亿",
-          "text011": "×2.2",
-          "text012": "2024",
-          "text013": "≈970",
-          "text014": "亿",
-          "text015": "一年之变",
-          "text016": "同比口径：2023→2024 全年公开披露 AI 融资额，比例为示意（报告 2.x · 调研整理）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "metricsData",
-        "type": "list",
-        "label": "metricsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "k",
-            "label": "k"
-          },
-          {
-            "key": "d",
-            "label": "d"
-          },
-          {
-            "key": "u",
-            "label": "u"
-          },
-          {
-            "key": "dir",
-            "label": "dir"
-          },
-          {
-            "key": "note",
-            "label": "note"
-          }
-        ],
-        "default": [
-          {
-            "k": "大额事件数",
-            "d": "+64",
-            "u": "%",
-            "dir": "up",
-            "note": "≥1 亿美元单笔融资"
-          },
-          {
-            "k": "单笔均值",
-            "d": "+38",
-            "u": "%",
-            "dir": "up",
-            "note": "头部抬高整体水位"
-          },
-          {
-            "k": "占全美 VC",
-            "d": "+9",
-            "u": "pct",
-            "dir": "up",
-            "note": "逼近三分之一"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "metricsData",
-        "publicLabel": "metricsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -10678,9 +5589,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -10691,9 +5600,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "accentTone",
@@ -10725,9 +5632,7 @@ export const pages = [
         ],
         "default": "green",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "metricCount",
@@ -10738,9 +5643,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "右栏支撑变化卡数量",
-        "publicKey": "metricCount",
-        "publicLabel": "支撑变化卡",
-        "description": "右栏支撑变化卡数量"
+        "publicKey": "metricCount"
       },
       {
         "key": "focusEnabled",
@@ -10748,9 +5651,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一张支撑卡",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一张支撑卡"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -10762,9 +5663,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "metricCount",
         "desc": "被高亮支撑卡序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮支撑卡序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showTrack",
@@ -10772,9 +5671,7 @@ export const pages = [
         "label": "跃迁条",
         "default": true,
         "desc": "去年→今年体量跃迁条",
-        "publicKey": "showGuide",
-        "publicLabel": "跃迁条",
-        "description": "去年→今年体量跃迁条"
+        "publicKey": "showGuide"
       },
       {
         "key": "showUnit",
@@ -10782,9 +5679,7 @@ export const pages = [
         "label": "单位后缀",
         "default": true,
         "desc": "主数字 % 单位后缀",
-        "publicKey": "showUnit",
-        "publicLabel": "单位后缀",
-        "description": "主数字 % 单位后缀"
+        "publicKey": "showUnit"
       },
       {
         "key": "showDecorations",
@@ -10792,9 +5687,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -10860,162 +5753,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "脚注"
-          }
-        ],
-        "default": {
-          "text001": "2024 资本大年 · SCORECARD",
-          "text002": "四个数字，读懂这场",
-          "text003": "资本大年",
-          "text004": "数据为调研整理与推演 · 口径＝2024 全年美国 ≥1 亿美元 AI 融资事件汇总（示意）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "cardsData",
-        "type": "list",
-        "label": "cardsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "eyebrow",
-            "label": "eyebrow"
-          },
-          {
-            "key": "num",
-            "label": "num"
-          },
-          {
-            "key": "unit",
-            "label": "unit"
-          },
-          {
-            "key": "label",
-            "label": "label"
-          },
-          {
-            "key": "ctx",
-            "label": "ctx"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "eyebrow": "TOTAL · 总额",
-            "num": "970",
-            "unit": "亿美元",
-            "label": "全年 AI 初创吸纳风投",
-            "delta": {
-              "dir": "up",
-              "txt": "创历史新高"
-            },
-            "ctx": "平均单笔约 10 亿美元，头部标的高度追捧",
-            "color": "#15A7F0"
-          },
-          {
-            "eyebrow": "MEGA-DEALS · 大额事件",
-            "num": "97",
-            "unit": "笔",
-            "label": "单笔 ≥1 亿美元的融资",
-            "delta": {
-              "dir": "up",
-              "txt": "同比显著放量"
-            },
-            "ctx": "资金向少数巨型轮次集中",
-            "color": "#27E021"
-          },
-          {
-            "eyebrow": "SHARE · 市场占比",
-            "num": "≈1/3",
-            "unit": "",
-            "label": "占全美风险投资总额",
-            "delta": {
-              "dir": "flat",
-              "txt": "资本虹吸"
-            },
-            "ctx": "AI 单一主题吸走近三分之一弹药",
-            "color": "#FFC700"
-          },
-          {
-            "eyebrow": "AVG TICKET · 单笔均值",
-            "num": "10",
-            "unit": "亿美元",
-            "label": "大额轮次平均规模",
-            "delta": {
-              "dir": "up",
-              "txt": "持续大额化"
-            },
-            "ctx": "从「百万级」迈入「十亿级」叙事",
-            "color": "#FF9FE2"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "cardsData",
-        "publicLabel": "cardsData",
-        "description": "默认数据内容"
-      },
-      {
-        "key": "deltaSymData",
-        "type": "list",
-        "label": "deltaSymData",
-        "itemLabel": "数据",
-        "single": true,
-        "fields": [
-          {
-            "key": "up",
-            "label": "up"
-          },
-          {
-            "key": "down",
-            "label": "down"
-          },
-          {
-            "key": "flat",
-            "label": "flat"
-          }
-        ],
-        "default": {
-          "up": "▲",
-          "down": "▼",
-          "flat": "="
-        },
-        "desc": "默认数据内容",
-        "publicKey": "deltaSymData",
-        "publicLabel": "deltaSymData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -11045,9 +5782,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -11058,9 +5793,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "statCount",
@@ -11071,9 +5804,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "展示的计分卡数量",
-        "publicKey": "statCount",
-        "publicLabel": "计分卡数",
-        "description": "展示的计分卡数量"
+        "publicKey": "statCount"
       },
       {
         "key": "layoutVariant",
@@ -11095,9 +5826,7 @@ export const pages = [
         ],
         "default": "grid",
         "desc": "网格 / 一行（2 张自动一行）",
-        "publicKey": "layoutVariant",
-        "publicLabel": "排布",
-        "description": "网格 / 一行（2 张自动一行）"
+        "publicKey": "layoutVariant"
       },
       {
         "key": "focusEnabled",
@@ -11105,9 +5834,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一张卡",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一张卡"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -11119,9 +5846,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "statCount",
         "desc": "被高亮卡的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点卡序号",
-        "description": "被高亮卡的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDelta",
@@ -11129,9 +5854,7 @@ export const pages = [
         "label": "趋势徽标",
         "default": true,
         "desc": "卡内趋势徽标",
-        "publicKey": "showDelta",
-        "publicLabel": "趋势徽标",
-        "description": "卡内趋势徽标"
+        "publicKey": "showDelta"
       },
       {
         "key": "showContext",
@@ -11139,9 +5862,7 @@ export const pages = [
         "label": "卡片注脚",
         "default": true,
         "desc": "卡片底部一句注脚",
-        "publicKey": "showContext",
-        "publicLabel": "卡片注脚",
-        "description": "卡片底部一句注脚"
+        "publicKey": "showContext"
       },
       {
         "key": "showDecorations",
@@ -11149,9 +5870,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -11237,145 +5956,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标签 1"
-          },
-          {
-            "key": "text005",
-            "label": "标签 2"
-          },
-          {
-            "key": "text006",
-            "label": "标签 3"
-          },
-          {
-            "key": "text007",
-            "label": "正文 2"
-          }
-        ],
-        "default": {
-          "text001": "HEAD TO HEAD · 两笔头部融资正面对决",
-          "text002": "两强相争，",
-          "text003": "只差 6 亿美元",
-          "text004": "VS",
-          "text005": "OpenAI · 66 亿",
-          "text006": "xAI · 60 亿",
-          "text007": "两笔交易体量近乎并驾齐驱，头部资金高度集中于通用大模型「第一梯队」。"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "sidesData",
-        "type": "list",
-        "label": "sidesData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "key",
-            "label": "key"
-          },
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "initial",
-            "label": "initial"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "big",
-            "label": "big"
-          },
-          {
-            "key": "unit",
-            "label": "unit"
-          },
-          {
-            "key": "sub",
-            "label": "sub"
-          }
-        ],
-        "default": [
-          {
-            "key": "left",
-            "name": "OpenAI",
-            "initial": "O",
-            "color": "#15A7F0",
-            "big": "66",
-            "unit": "亿",
-            "sub": "2024 单笔融资额 / 美元",
-            "metrics": [
-              {
-                "v": "1570",
-                "u": "亿",
-                "l": "投后估值 / 美元"
-              },
-              {
-                "v": "No.1",
-                "u": "",
-                "l": "全年最大单笔"
-              }
-            ]
-          },
-          {
-            "key": "right",
-            "name": "xAI",
-            "initial": "x",
-            "color": "#FFC700",
-            "big": "60",
-            "unit": "亿",
-            "sub": "2024 单笔融资额 / 美元",
-            "metrics": [
-              {
-                "v": "240",
-                "u": "亿",
-                "l": "投后估值 / 美元"
-              },
-              {
-                "v": "18",
-                "u": "月",
-                "l": "成立到 B 轮"
-              }
-            ]
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "sidesData",
-        "publicLabel": "sidesData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -11405,9 +5985,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -11418,9 +5996,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "metricCount",
@@ -11431,9 +6007,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "每侧支撑指标行数",
-        "publicKey": "metricCount",
-        "publicLabel": "支撑指标",
-        "description": "每侧支撑指标行数"
+        "publicKey": "metricCount"
       },
       {
         "key": "focusSide",
@@ -11460,9 +6034,7 @@ export const pages = [
         ],
         "default": "none",
         "desc": "高亮左 / 右某一侧",
-        "publicKey": "focusSide",
-        "publicLabel": "高亮侧",
-        "description": "高亮左 / 右某一侧"
+        "publicKey": "focusSide"
       },
       {
         "key": "showVsBadge",
@@ -11470,9 +6042,7 @@ export const pages = [
         "label": "VS 徽章",
         "default": true,
         "desc": "中缝 VS 徽章",
-        "publicKey": "showVsBadge",
-        "publicLabel": "VS 徽章",
-        "description": "中缝 VS 徽章"
+        "publicKey": "showVsBadge"
       },
       {
         "key": "showDelta",
@@ -11480,9 +6050,7 @@ export const pages = [
         "label": "差额对比条",
         "default": true,
         "desc": "底部两侧体量对比条",
-        "publicKey": "showDelta",
-        "publicLabel": "差额对比条",
-        "description": "底部两侧体量对比条"
+        "publicKey": "showDelta"
       },
       {
         "key": "showUnit",
@@ -11490,9 +6058,7 @@ export const pages = [
         "label": "单位后缀",
         "default": true,
         "desc": "主数字「亿」单位",
-        "publicKey": "showUnit",
-        "publicLabel": "单位后缀",
-        "description": "主数字「亿」单位"
+        "publicKey": "showUnit"
       },
       {
         "key": "showDecorations",
@@ -11500,9 +6066,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -11579,153 +6143,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "正文 2"
-          },
-          {
-            "key": "text005",
-            "label": "正文 3"
-          },
-          {
-            "key": "text006",
-            "label": "正文 4"
-          },
-          {
-            "key": "text007",
-            "label": "正文 5"
-          },
-          {
-            "key": "text008",
-            "label": "正文 6"
-          }
-        ],
-        "default": {
-          "text001": "交易漏斗 · DEAL FUNNEL",
-          "text002": "五千家筛到最后，",
-          "text003": "只有 97 笔",
-          "text004": "从活跃创业公司到亿美元级大额融资，层层筛选——本报告聚焦的，正是漏斗最底端那批顶流。",
-          "text005": "家",
-          "text006": "▼",
-          "text007": "通过率",
-          "text008": "漏斗宽度为示意比例 · 通过率 = 本层 ÷ 上一层 · 数据为调研整理推演"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "stagesData",
-        "type": "list",
-        "label": "stagesData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "sub",
-            "label": "sub"
-          },
-          {
-            "key": "count",
-            "label": "count"
-          },
-          {
-            "key": "suffix",
-            "label": "suffix"
-          },
-          {
-            "key": "conv",
-            "label": "conv"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "topW",
-            "label": "topW"
-          }
-        ],
-        "default": [
-          {
-            "name": "活跃 AI 创业公司",
-            "sub": "全美在投",
-            "count": "5,000",
-            "suffix": "+",
-            "conv": "",
-            "color": "#15A7F0",
-            "topW": 100
-          },
-          {
-            "name": "全年获得新融资",
-            "sub": "完成至少一轮",
-            "count": "1,200",
-            "suffix": "",
-            "conv": "24%",
-            "color": "#27E021",
-            "topW": 75
-          },
-          {
-            "name": "千万美元级以上",
-            "sub": "$10M+ 单笔",
-            "count": "380",
-            "suffix": "",
-            "conv": "32%",
-            "color": "#FFC700",
-            "topW": 51
-          },
-          {
-            "name": "亿美元级以上",
-            "sub": "本报告样本 · $100M+",
-            "count": "97",
-            "suffix": "",
-            "conv": "26%",
-            "color": "#FF9FE2",
-            "topW": 31
-          },
-          {
-            "name": "十亿美元级",
-            "sub": "$1B+ 巨额轮",
-            "count": "12",
-            "suffix": "",
-            "conv": "12%",
-            "color": "#15A7F0",
-            "topW": 17
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "stagesData",
-        "publicLabel": "stagesData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -11755,9 +6172,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -11768,9 +6183,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "stageCount",
@@ -11781,9 +6194,7 @@ export const pages = [
         "step": 1,
         "default": 5,
         "desc": "漏斗层级数量",
-        "publicKey": "stageCount",
-        "publicLabel": "层级数量",
-        "description": "漏斗层级数量"
+        "publicKey": "stageCount"
       },
       {
         "key": "chartVariant",
@@ -11805,9 +6216,7 @@ export const pages = [
         ],
         "default": "funnel",
         "desc": "梯形漏斗 / 横向柱状",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "梯形漏斗 / 横向柱状"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -11815,9 +6224,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一层级",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一层级"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -11829,9 +6236,7 @@ export const pages = [
         "default": 5,
         "maxFromKey": "stageCount",
         "desc": "被高亮层级的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮层级的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showConversion",
@@ -11839,9 +6244,7 @@ export const pages = [
         "label": "层级转化率",
         "default": true,
         "desc": "层级间通过率显隐",
-        "publicKey": "showConversion",
-        "publicLabel": "层级转化率",
-        "description": "层级间通过率显隐"
+        "publicKey": "showConversion"
       },
       {
         "key": "showStageIndex",
@@ -11849,9 +6252,7 @@ export const pages = [
         "label": "层级编号",
         "default": true,
         "desc": "漏斗内层级编号(funnel/bars)",
-        "publicKey": "showStageIndex",
-        "publicLabel": "层级编号",
-        "description": "漏斗内层级编号(funnel/bars)"
+        "publicKey": "showStageIndex"
       },
       {
         "key": "showDecorations",
@@ -11859,9 +6260,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -11943,66 +6342,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          }
-        ],
-        "default": {
-          "text001": "PART"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "chapterData",
-        "type": "list",
-        "label": "chapterData",
-        "itemLabel": "数据",
-        "single": true,
-        "fields": [
-          {
-            "key": "zh",
-            "label": "zh"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "lead",
-            "label": "lead"
-          }
-        ],
-        "default": {
-          "zh": "横向透视",
-          "en": "SECTOR · ROUNDS · PLAYERS",
-          "lead": "在同一时间截面上，对赛道、轮次、地区与头部玩家做横向对比——回答「谁更大、谁更密集、资源集中在哪里」。",
-          "tags": [
-            "行业赛道",
-            "轮次结构",
-            "头部玩家"
-          ]
-        },
-        "desc": "默认数据内容",
-        "publicKey": "chapterData",
-        "publicLabel": "chapterData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "partNumber",
         "type": "slider",
         "label": "章节编号",
@@ -12012,9 +6351,7 @@ export const pages = [
         "default": 3,
         "maxFromKey": "progressCount",
         "desc": "徽章 / 进度轨当前段",
-        "publicKey": "partNumber",
-        "publicLabel": "章节编号",
-        "description": "徽章 / 进度轨当前段"
+        "publicKey": "partNumber"
       },
       {
         "key": "accentTone",
@@ -12046,9 +6383,7 @@ export const pages = [
         ],
         "default": "green",
         "desc": "页面主色调",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调"
+        "publicKey": "accentTone"
       },
       {
         "key": "textAlign",
@@ -12070,9 +6405,7 @@ export const pages = [
         ],
         "default": "center",
         "desc": "居中 / 靠左",
-        "publicKey": "textAlign",
-        "publicLabel": "文案对齐",
-        "description": "居中 / 靠左"
+        "publicKey": "textAlign"
       },
       {
         "key": "showGhost",
@@ -12080,9 +6413,7 @@ export const pages = [
         "label": "幽灵数字",
         "default": true,
         "desc": "背景巨型描边数字",
-        "publicKey": "showGhost",
-        "publicLabel": "幽灵数字",
-        "description": "背景巨型描边数字"
+        "publicKey": "showGhost"
       },
       {
         "key": "showProgress",
@@ -12090,9 +6421,7 @@ export const pages = [
         "label": "进度轨",
         "default": true,
         "desc": "底部章节进度轨",
-        "publicKey": "showProgress",
-        "publicLabel": "进度轨",
-        "description": "底部章节进度轨"
+        "publicKey": "showProgress"
       },
       {
         "key": "progressCount",
@@ -12103,9 +6432,7 @@ export const pages = [
         "step": 1,
         "default": 6,
         "desc": "进度轨段数",
-        "publicKey": "progressCount",
-        "publicLabel": "进度段数",
-        "description": "进度轨段数"
+        "publicKey": "progressCount"
       },
       {
         "key": "showDecorations",
@@ -12113,9 +6440,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -12180,9 +6505,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -12193,9 +6516,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "itemCount",
@@ -12206,9 +6527,7 @@ export const pages = [
         "step": 1,
         "default": 6,
         "desc": "展示的排行条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "description": "展示的排行条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "focusEnabled",
@@ -12216,9 +6535,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一名次",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一名次"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -12230,9 +6547,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "itemCount",
         "desc": "被高亮条目的名次",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮条目的名次"
+        "publicKey": "focusIndex"
       },
       {
         "key": "sortDir",
@@ -12254,9 +6569,7 @@ export const pages = [
         ],
         "default": "desc",
         "desc": "展示顺序方向",
-        "publicKey": "sortDir",
-        "publicLabel": "排序方向",
-        "description": "展示顺序方向"
+        "publicKey": "sortDir"
       },
       {
         "key": "showValue",
@@ -12264,9 +6577,7 @@ export const pages = [
         "label": "数值显示",
         "default": true,
         "desc": "条末数值标签",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值显示",
-        "description": "条末数值标签"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showCategory",
@@ -12274,9 +6585,7 @@ export const pages = [
         "label": "类别标签",
         "default": true,
         "desc": "名称下方的分类标签",
-        "publicKey": "showCategory",
-        "publicLabel": "类别标签",
-        "description": "名称下方的分类标签"
+        "publicKey": "showCategory"
       },
       {
         "key": "showRankBadge",
@@ -12284,9 +6593,7 @@ export const pages = [
         "label": "序号徽章",
         "default": true,
         "desc": "左侧名次徽章",
-        "publicKey": "showRankBadge",
-        "publicLabel": "序号徽章",
-        "description": "左侧名次徽章"
+        "publicKey": "showRankBadge"
       },
       {
         "key": "showDecorations",
@@ -12294,137 +6601,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "头部玩家 · TOP 10 单笔融资排名",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "三大模型公司",
-        "desc": "标题关键词前文",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "标题关键词前文"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "霸榜前三",
-        "desc": "高亮关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "key": "sub",
-        "type": "text",
-        "label": "副标题",
-        "default": "单位：亿美元 · 仅取各公司 2024 年最大单笔融资",
-        "desc": "标题下方说明",
-        "publicKey": "sub",
-        "publicLabel": "副标题",
-        "description": "标题下方说明"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 排行",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 排行"
-      },
-      {
-        "key": "rows",
-        "type": "list",
-        "label": "排行条目",
-        "itemLabel": "名次",
-        "countFromKey": "itemCount",
-        "fields": [
-          {
-            "key": "name",
-            "label": "名称"
-          },
-          {
-            "key": "value",
-            "label": "数值"
-          },
-          {
-            "key": "cat",
-            "label": "赛道"
-          }
-        ],
-        "default": [
-          {
-            "name": "OpenAI",
-            "value": 66,
-            "cat": "通用大模型"
-          },
-          {
-            "name": "Anthropic",
-            "value": 65,
-            "cat": "通用大模型"
-          },
-          {
-            "name": "xAI",
-            "value": 50,
-            "cat": "通用大模型"
-          },
-          {
-            "name": "CoreWeave",
-            "value": 11,
-            "cat": "AI 基础设施"
-          },
-          {
-            "name": "Safe Superintelligence",
-            "value": 10,
-            "cat": "通用大模型"
-          },
-          {
-            "name": "Scale AI",
-            "value": 10,
-            "cat": "AI 基础设施"
-          },
-          {
-            "name": "Figure AI",
-            "value": 6.8,
-            "cat": "AI 硬件"
-          },
-          {
-            "name": "Perplexity AI",
-            "value": 5.2,
-            "cat": "垂直应用"
-          },
-          {
-            "name": "Databricks",
-            "value": 5,
-            "cat": "AI 基础设施"
-          },
-          {
-            "name": "Glean",
-            "value": 2.6,
-            "cat": "垂直应用"
-          }
-        ],
-        "desc": "排行条目：名称 / 数值 / 分类（分类名决定色彩）",
-        "publicKey": "rows",
-        "publicLabel": "排行条目",
-        "description": "排行条目：名称 / 数值 / 分类（分类名决定色彩）"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -12535,9 +6712,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -12548,9 +6723,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "layerCount",
@@ -12561,41 +6734,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "展示的产业链层数(上→中→下游)",
-        "publicKey": "layerCount",
-        "publicLabel": "展示层数",
-        "description": "展示的产业链层数(上→中→下游)"
-      },
-      {
-        "key": "segmentCount",
-        "type": "slider",
-        "label": "细分环节数",
-        "min": 1,
-        "max": 2,
-        "step": 1,
-        "default": 2,
-        "countArrays": [
-          "layers[].segments"
-        ],
-        "desc": "每层最多展示的细分环节数",
-        "publicKey": "segmentCount",
-        "publicLabel": "细分环节数",
-        "description": "每层最多展示的细分环节数"
-      },
-      {
-        "key": "compCount",
-        "type": "slider",
-        "label": "代表公司数",
-        "min": 1,
-        "max": 2,
-        "step": 1,
-        "default": 2,
-        "countArrays": [
-          "layers[].segments[].comps"
-        ],
-        "desc": "每个细分环节最多展示的代表公司数",
-        "publicKey": "compCount",
-        "publicLabel": "代表公司数",
-        "description": "每个细分环节最多展示的代表公司数"
+        "publicKey": "layerCount"
       },
       {
         "key": "focusEnabled",
@@ -12603,9 +6742,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一层",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一层"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -12617,9 +6754,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "layerCount",
         "desc": "被高亮层的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮层的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showSegments",
@@ -12627,9 +6762,7 @@ export const pages = [
         "label": "细分环节",
         "default": true,
         "desc": "每层的细分环节卡",
-        "publicKey": "showSegments",
-        "publicLabel": "细分环节",
-        "description": "每层的细分环节卡"
+        "publicKey": "showSegments"
       },
       {
         "key": "showTags",
@@ -12637,9 +6770,7 @@ export const pages = [
         "label": "对象标签",
         "default": true,
         "desc": "代表对象标签",
-        "publicKey": "showTags",
-        "publicLabel": "对象标签",
-        "description": "代表对象标签"
+        "publicKey": "showTags"
       },
       {
         "key": "showDecorations",
@@ -12647,169 +6778,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "产业链分层 · 上 → 中 → 下游",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "越往",
-        "desc": "关键词前文",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "关键词前文"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "上游",
-        "desc": "高亮关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "key": "titleTail",
-        "type": "text",
-        "label": "标题后半",
-        "default": "越确定，越往下游越有想象",
-        "desc": "关键词后文",
-        "publicKey": "titleTail",
-        "publicLabel": "标题后半",
-        "description": "关键词后文"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 分层",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 分层"
-      },
-      {
-        "key": "layers",
-        "type": "list",
-        "label": "产业层",
-        "itemLabel": "层",
-        "countFromKey": "layerCount",
-        "fields": [
-          {
-            "key": "tier",
-            "label": "层名"
-          },
-          {
-            "key": "en",
-            "label": "英文"
-          },
-          {
-            "key": "note",
-            "label": "注释"
-          },
-          {
-            "key": "segments",
-            "label": "细分环节",
-            "type": "list",
-            "max": 2,
-            "fields": [
-              {
-                "key": "name",
-                "label": "环节名"
-              },
-              {
-                "key": "comps",
-                "label": "代表公司",
-                "type": "list",
-                "max": 3
-              }
-            ]
-          }
-        ],
-        "default": [
-          {
-            "tier": "上游 · 基础设施",
-            "en": "UPSTREAM",
-            "note": "确定性最强 ·「卖铲子」",
-            "segments": [
-              {
-                "name": "AI 芯片",
-                "comps": [
-                  "Cerebras",
-                  "Groq"
-                ]
-              },
-              {
-                "name": "算力云 / 数据",
-                "comps": [
-                  "CoreWeave",
-                  "Scale AI"
-                ]
-              }
-            ]
-          },
-          {
-            "tier": "中游 · 模型层",
-            "en": "MIDSTREAM",
-            "note": "竞争最激烈 · 兵家必争",
-            "segments": [
-              {
-                "name": "通用大模型",
-                "comps": [
-                  "OpenAI",
-                  "Anthropic",
-                  "xAI"
-                ]
-              },
-              {
-                "name": "开源 / 专用",
-                "comps": [
-                  "Mistral",
-                  "SSI"
-                ]
-              }
-            ]
-          },
-          {
-            "tier": "下游 · 应用层",
-            "en": "DOWNSTREAM",
-            "note": "潜力最大 · 待验证",
-            "segments": [
-              {
-                "name": "企业生产力",
-                "comps": [
-                  "Glean",
-                  "Databricks"
-                ]
-              },
-              {
-                "name": "消费搜索 · 具身",
-                "comps": [
-                  "Perplexity",
-                  "Figure AI"
-                ]
-              }
-            ]
-          }
-        ],
-        "desc": "产业层：层名 / 英文 / 注释（细分 segments 在 defaults 中）",
-        "publicKey": "layers",
-        "publicLabel": "产业层",
-        "description": "产业层：层名 / 英文 / 注释（细分 segments 在 defaults 中）"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -12821,8 +6790,6 @@ export const pages = [
       "showSegments": true,
       "showTags": true,
       "showDecorations": true,
-      "segmentCount": 2,
-      "compCount": 2,
       "kicker": "产业链分层 · 上 → 中 → 下游",
       "titleLead": "越往",
       "titleKeyword": "上游",
@@ -12831,6 +6798,7 @@ export const pages = [
         {
           "tier": "上游 · 基础设施",
           "en": "UPSTREAM",
+          "color": "#15A7F0",
           "note": "确定性最强 ·「卖铲子」",
           "segments": [
             {
@@ -12852,6 +6820,7 @@ export const pages = [
         {
           "tier": "中游 · 模型层",
           "en": "MIDSTREAM",
+          "color": "#27E021",
           "note": "竞争最激烈 · 兵家必争",
           "segments": [
             {
@@ -12874,6 +6843,7 @@ export const pages = [
         {
           "tier": "下游 · 应用层",
           "en": "DOWNSTREAM",
+          "color": "#FFC700",
           "note": "潜力最大 · 待验证",
           "segments": [
             {
@@ -12905,208 +6875,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "标题前句"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "正文 1"
-          },
-          {
-            "key": "text006",
-            "label": "正文 2"
-          },
-          {
-            "key": "text007",
-            "label": "正文 3"
-          },
-          {
-            "key": "text008",
-            "label": "正文 4"
-          },
-          {
-            "key": "text009",
-            "label": "标签"
-          }
-        ],
-        "default": {
-          "text001": "产业链分层 · VALUE CHAIN",
-          "text002": "从",
-          "text003": "芯片算力",
-          "text004": "到",
-          "text005": "终端应用",
-          "text006": "，三层结构一表读懂",
-          "text007": "产业层级",
-          "text008": "细分环节",
-          "text009": "代表公司"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "groupsData",
-        "type": "list",
-        "label": "groupsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "level",
-            "label": "level"
-          },
-          {
-            "key": "cn",
-            "label": "cn"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "segs",
-            "label": "segs",
-            "type": "list",
-            "max": 3,
-            "fields": [
-              {
-                "key": "env",
-                "label": "env"
-              },
-              {
-                "key": "cos",
-                "label": "cos",
-                "type": "list",
-                "max": 3
-              }
-            ]
-          }
-        ],
-        "default": [
-          {
-            "level": "上游",
-            "cn": "基础设施",
-            "en": "INFRASTRUCTURE",
-            "segs": [
-              {
-                "env": "AI 芯片",
-                "cos": [
-                  "Cerebras",
-                  "Groq",
-                  "Nvidia"
-                ]
-              },
-              {
-                "env": "算力云 / 数据",
-                "cos": [
-                  "CoreWeave",
-                  "Scale AI",
-                  "Lambda"
-                ]
-              },
-              {
-                "env": "开发工具链",
-                "cos": [
-                  "Hugging Face",
-                  "LangChain",
-                  "Pinecone"
-                ]
-              }
-            ]
-          },
-          {
-            "level": "中游",
-            "cn": "模型层",
-            "en": "MODEL LAYER",
-            "segs": [
-              {
-                "env": "通用大模型",
-                "cos": [
-                  "OpenAI",
-                  "Anthropic",
-                  "xAI"
-                ]
-              },
-              {
-                "env": "开源 / 专用模型",
-                "cos": [
-                  "Mistral",
-                  "SSI",
-                  "Cohere"
-                ]
-              },
-              {
-                "env": "模型评测 / 安全",
-                "cos": [
-                  "Scale AI",
-                  "Surge AI",
-                  "Labelbox"
-                ]
-              }
-            ]
-          },
-          {
-            "level": "下游",
-            "cn": "应用层",
-            "en": "APPLICATION",
-            "segs": [
-              {
-                "env": "企业生产力",
-                "cos": [
-                  "Glean",
-                  "Databricks",
-                  "Harvey"
-                ]
-              },
-              {
-                "env": "消费 / 搜索",
-                "cos": [
-                  "Perplexity AI",
-                  "Character.AI",
-                  "Poe"
-                ]
-              },
-              {
-                "env": "具身智能 / 机器人",
-                "cos": [
-                  "Figure AI",
-                  "Physical Intelligence",
-                  "Skild AI"
-                ]
-              }
-            ]
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "groupsData",
-        "publicLabel": "groupsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -13136,9 +6904,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -13149,9 +6915,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "groupCount",
@@ -13162,41 +6926,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "展示的产业层级数(上中下游)",
-        "publicKey": "groupCount",
-        "publicLabel": "层级数量",
-        "description": "展示的产业层级数(上中下游)"
-      },
-      {
-        "key": "segCount",
-        "type": "slider",
-        "label": "细分环节数",
-        "min": 1,
-        "max": 3,
-        "step": 1,
-        "default": 3,
-        "countArrays": [
-          "groupsData[].segs"
-        ],
-        "desc": "每层最多展示的细分环节数",
-        "publicKey": "segCount",
-        "publicLabel": "细分环节数",
-        "description": "每层最多展示的细分环节数"
-      },
-      {
-        "key": "cosCount",
-        "type": "slider",
-        "label": "代表公司数",
-        "min": 1,
-        "max": 3,
-        "step": 1,
-        "default": 3,
-        "countArrays": [
-          "groupsData[].segs[].cos"
-        ],
-        "desc": "每个细分环节最多展示的代表公司数",
-        "publicKey": "cosCount",
-        "publicLabel": "代表公司数",
-        "description": "每个细分环节最多展示的代表公司数"
+        "publicKey": "groupCount"
       },
       {
         "key": "focusEnabled",
@@ -13204,9 +6934,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一层级",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一层级"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -13218,9 +6946,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "groupCount",
         "desc": "被高亮层级的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮层级的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCompanyTags",
@@ -13228,9 +6954,7 @@ export const pages = [
         "label": "对象标签",
         "default": true,
         "desc": "代表公司用标签(关) / 纯文本",
-        "publicKey": "showCompanyTags",
-        "publicLabel": "对象标签",
-        "description": "代表公司用标签(关) / 纯文本"
+        "publicKey": "showCompanyTags"
       },
       {
         "key": "showLevelBadge",
@@ -13238,9 +6962,7 @@ export const pages = [
         "label": "层级徽章",
         "default": true,
         "desc": "层级大徽章 + 英文",
-        "publicKey": "showLevelBadge",
-        "publicLabel": "层级徽章",
-        "description": "层级大徽章 + 英文"
+        "publicKey": "showLevelBadge"
       },
       {
         "key": "showFlow",
@@ -13248,9 +6970,7 @@ export const pages = [
         "label": "传导箭头",
         "default": true,
         "desc": "层级间向下传导箭头",
-        "publicKey": "showFlow",
-        "publicLabel": "传导箭头",
-        "description": "层级间向下传导箭头"
+        "publicKey": "showFlow"
       },
       {
         "key": "showDecorations",
@@ -13258,9 +6978,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -13278,39 +6996,31 @@ export const pages = [
       "groupsData": [
         {
           "level": "上游",
-          "cn": "基础设施",
+          "theme": "基础设施",
           "en": "INFRASTRUCTURE",
+          "color": "#FFC700",
           "segs": [
             {
               "env": "AI 芯片",
               "cos": [
                 "Cerebras",
-                "Groq",
-                "Nvidia"
+                "Groq"
               ]
             },
             {
               "env": "算力云 / 数据",
               "cos": [
                 "CoreWeave",
-                "Scale AI",
-                "Lambda"
-              ]
-            },
-            {
-              "env": "开发工具链",
-              "cos": [
-                "Hugging Face",
-                "LangChain",
-                "Pinecone"
+                "Scale AI"
               ]
             }
           ]
         },
         {
           "level": "中游",
-          "cn": "模型层",
+          "theme": "模型层",
           "en": "MODEL LAYER",
+          "color": "#15A7F0",
           "segs": [
             {
               "env": "通用大模型",
@@ -13324,47 +7034,34 @@ export const pages = [
               "env": "开源 / 专用模型",
               "cos": [
                 "Mistral",
-                "SSI",
-                "Cohere"
-              ]
-            },
-            {
-              "env": "模型评测 / 安全",
-              "cos": [
-                "Scale AI",
-                "Surge AI",
-                "Labelbox"
+                "SSI"
               ]
             }
           ]
         },
         {
           "level": "下游",
-          "cn": "应用层",
+          "theme": "应用层",
           "en": "APPLICATION",
+          "color": "#27E021",
           "segs": [
             {
               "env": "企业生产力",
               "cos": [
                 "Glean",
-                "Databricks",
-                "Harvey"
+                "Databricks"
               ]
             },
             {
               "env": "消费 / 搜索",
               "cos": [
-                "Perplexity AI",
-                "Character.AI",
-                "Poe"
+                "Perplexity AI"
               ]
             },
             {
               "env": "具身智能 / 机器人",
               "cos": [
-                "Figure AI",
-                "Physical Intelligence",
-                "Skild AI"
+                "Figure AI"
               ]
             }
           ]
@@ -13373,8 +7070,6 @@ export const pages = [
       "hlStyle": "glass",
       "hlTilt": 2,
       "groupCount": 3,
-      "segCount": 3,
-      "cosCount": 3,
       "focusEnabled": false,
       "focusIndex": 2,
       "showCompanyTags": true,
@@ -13393,255 +7088,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "单位"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          }
-        ],
-        "default": {
-          "text001": "资本流向 · CAPITAL FLOW",
-          "text002": "三层分工中，",
-          "text003": "资金集中投向模型平台",
-          "text004": "%",
-          "text005": "资本占比"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "layersData",
-        "type": "list",
-        "label": "layersData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "tier",
-            "label": "tier"
-          },
-          {
-            "key": "cn",
-            "label": "cn"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "share",
-            "label": "share"
-          },
-          {
-            "key": "cats",
-            "label": "cats",
-            "type": "list",
-            "max": 3,
-            "fields": [
-              {
-                "key": "name",
-                "label": "name"
-              },
-              {
-                "key": "firms",
-                "label": "firms",
-                "type": "list",
-                "max": 3,
-                "fields": [
-                  {
-                    "key": "name",
-                    "label": "name"
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "default": [
-          {
-            "tier": "上游",
-            "cn": "算力供给",
-            "en": "COMPUTE SUPPLY",
-            "share": 30,
-            "cats": [
-              {
-                "name": "GPU 云",
-                "firms": [
-                  {
-                    "name": "CoreWeave"
-                  },
-                  {
-                    "name": "Lambda"
-                  },
-                  {
-                    "name": "Crusoe"
-                  }
-                ]
-              },
-              {
-                "name": "数据管线",
-                "firms": [
-                  {
-                    "name": "Scale AI"
-                  },
-                  {
-                    "name": "Labelbox"
-                  },
-                  {
-                    "name": "Surge AI"
-                  }
-                ]
-              },
-              {
-                "name": "芯片新秀",
-                "firms": [
-                  {
-                    "name": "Cerebras"
-                  },
-                  {
-                    "name": "Groq"
-                  },
-                  {
-                    "name": "Tenstorrent"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tier": "中游",
-            "cn": "模型平台",
-            "en": "MODEL PLATFORMS",
-            "share": 55,
-            "cats": [
-              {
-                "name": "通用大模型",
-                "firms": [
-                  {
-                    "name": "OpenAI"
-                  },
-                  {
-                    "name": "Anthropic"
-                  },
-                  {
-                    "name": "xAI"
-                  }
-                ]
-              },
-              {
-                "name": "开源生态",
-                "firms": [
-                  {
-                    "name": "Mistral"
-                  },
-                  {
-                    "name": "Cohere"
-                  },
-                  {
-                    "name": "DeepSeek"
-                  }
-                ]
-              },
-              {
-                "name": "Agent 栈",
-                "firms": [
-                  {
-                    "name": "LangChain"
-                  },
-                  {
-                    "name": "LlamaIndex"
-                  },
-                  {
-                    "name": "CrewAI"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tier": "下游",
-            "cn": "商业落地",
-            "en": "GO-TO-MARKET",
-            "share": 15,
-            "cats": [
-              {
-                "name": "企业 AI",
-                "firms": [
-                  {
-                    "name": "Glean"
-                  },
-                  {
-                    "name": "Harvey"
-                  },
-                  {
-                    "name": "Writer"
-                  }
-                ]
-              },
-              {
-                "name": "开发 / 数据",
-                "firms": [
-                  {
-                    "name": "Databricks"
-                  },
-                  {
-                    "name": "Anysphere"
-                  },
-                  {
-                    "name": "Cursor"
-                  }
-                ]
-              },
-              {
-                "name": "消费内容",
-                "firms": [
-                  {
-                    "name": "Perplexity AI"
-                  },
-                  {
-                    "name": "Character.AI"
-                  },
-                  {
-                    "name": "Runway"
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "layersData",
-        "publicLabel": "layersData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -13671,9 +7117,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -13684,9 +7128,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "groupCount",
@@ -13697,41 +7139,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "展示的产业层级数（上中下游）",
-        "publicKey": "groupCount",
-        "publicLabel": "产业层数",
-        "description": "展示的产业层级数（上中下游）"
-      },
-      {
-        "key": "catCount",
-        "type": "slider",
-        "label": "分类容量",
-        "min": 1,
-        "max": 3,
-        "step": 1,
-        "default": 3,
-        "countArrays": [
-          "layersData[].cats"
-        ],
-        "desc": "每层最多可填写的分类数",
-        "publicKey": "categoryCount",
-        "publicLabel": "分类容量",
-        "description": "每层最多可填写的分类数"
-      },
-      {
-        "key": "firmCount",
-        "type": "slider",
-        "label": "公司容量",
-        "min": 1,
-        "max": 3,
-        "step": 1,
-        "default": 3,
-        "countArrays": [
-          "layersData[].cats[].firms"
-        ],
-        "desc": "每个分类最多可填写的公司数",
-        "publicKey": "categoryCount2",
-        "publicLabel": "公司容量",
-        "description": "每个分类最多可填写的公司数"
+        "publicKey": "groupCount"
       },
       {
         "key": "focusEnabled",
@@ -13739,9 +7147,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一层级",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一层级"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -13753,9 +7159,7 @@ export const pages = [
         "default": 3,
         "maxFromKey": "groupCount",
         "desc": "被高亮层级的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点层序号",
-        "description": "被高亮层级的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showShareBar",
@@ -13763,9 +7167,7 @@ export const pages = [
         "label": "占比",
         "default": true,
         "desc": "右栏占比大数字 + 进度条",
-        "publicKey": "showShareBar",
-        "publicLabel": "占比",
-        "description": "右栏占比大数字 + 进度条"
+        "publicKey": "showShareBar"
       },
       {
         "key": "showCompanyTags",
@@ -13773,9 +7175,7 @@ export const pages = [
         "label": "对象标签",
         "default": true,
         "desc": "公司用霓虹芯片（关=纯文本）",
-        "publicKey": "showCompanyTags",
-        "publicLabel": "对象标签",
-        "description": "公司用霓虹芯片（关=纯文本）"
+        "publicKey": "showCompanyTags"
       },
       {
         "key": "showLevelBadge",
@@ -13783,9 +7183,7 @@ export const pages = [
         "label": "层级徽章",
         "default": true,
         "desc": "层级大徽章 + 英文",
-        "publicKey": "showLevelBadge",
-        "publicLabel": "层级徽章",
-        "description": "层级大徽章 + 英文"
+        "publicKey": "showLevelBadge"
       },
       {
         "key": "showFlow",
@@ -13793,9 +7191,7 @@ export const pages = [
         "label": "传导箭头",
         "default": true,
         "desc": "层级间向下传导箭头",
-        "publicKey": "showFlow",
-        "publicLabel": "传导箭头",
-        "description": "层级间向下传导箭头"
+        "publicKey": "showFlow"
       },
       {
         "key": "showDecorations",
@@ -13803,166 +7199,89 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
       "copy": {
-        "text001": "资本流向 · CAPITAL FLOW",
-        "text002": "三层分工中，",
-        "text003": "资金集中投向模型平台",
+        "text001": "产业链分层 · VALUE CHAIN",
+        "text002": "一条产业链，",
+        "text003": "钱主要压在中游",
         "text004": "%",
         "text005": "资本占比"
       },
       "layersData": [
         {
           "tier": "上游",
-          "cn": "算力供给",
-          "en": "COMPUTE SUPPLY",
+          "cn": "基础设施",
+          "en": "INFRASTRUCTURE",
+          "color": "#FFC700",
           "share": 30,
           "cats": [
             {
-              "name": "GPU 云",
+              "name": "AI 芯片",
               "firms": [
-                {
-                  "name": "CoreWeave"
-                },
-                {
-                  "name": "Lambda"
-                },
-                {
-                  "name": "Crusoe"
-                }
+                "Cerebras",
+                "Groq"
               ]
             },
             {
-              "name": "数据管线",
+              "name": "算力云 / 数据",
               "firms": [
-                {
-                  "name": "Scale AI"
-                },
-                {
-                  "name": "Labelbox"
-                },
-                {
-                  "name": "Surge AI"
-                }
-              ]
-            },
-            {
-              "name": "芯片新秀",
-              "firms": [
-                {
-                  "name": "Cerebras"
-                },
-                {
-                  "name": "Groq"
-                },
-                {
-                  "name": "Tenstorrent"
-                }
+                "CoreWeave",
+                "Scale AI"
               ]
             }
           ]
         },
         {
           "tier": "中游",
-          "cn": "模型平台",
-          "en": "MODEL PLATFORMS",
+          "cn": "模型层",
+          "en": "MODEL LAYER",
+          "color": "#15A7F0",
           "share": 55,
           "cats": [
             {
               "name": "通用大模型",
               "firms": [
-                {
-                  "name": "OpenAI"
-                },
-                {
-                  "name": "Anthropic"
-                },
-                {
-                  "name": "xAI"
-                }
+                "OpenAI",
+                "Anthropic",
+                "xAI"
               ]
             },
             {
-              "name": "开源生态",
+              "name": "开源 / 专用模型",
               "firms": [
-                {
-                  "name": "Mistral"
-                },
-                {
-                  "name": "Cohere"
-                },
-                {
-                  "name": "DeepSeek"
-                }
-              ]
-            },
-            {
-              "name": "Agent 栈",
-              "firms": [
-                {
-                  "name": "LangChain"
-                },
-                {
-                  "name": "LlamaIndex"
-                },
-                {
-                  "name": "CrewAI"
-                }
+                "Mistral",
+                "SSI"
               ]
             }
           ]
         },
         {
           "tier": "下游",
-          "cn": "商业落地",
-          "en": "GO-TO-MARKET",
+          "cn": "应用层",
+          "en": "APPLICATION",
+          "color": "#27E021",
           "share": 15,
           "cats": [
             {
-              "name": "企业 AI",
+              "name": "企业生产力",
               "firms": [
-                {
-                  "name": "Glean"
-                },
-                {
-                  "name": "Harvey"
-                },
-                {
-                  "name": "Writer"
-                }
+                "Glean",
+                "Databricks"
               ]
             },
             {
-              "name": "开发 / 数据",
+              "name": "消费 / 搜索",
               "firms": [
-                {
-                  "name": "Databricks"
-                },
-                {
-                  "name": "Anysphere"
-                },
-                {
-                  "name": "Cursor"
-                }
+                "Perplexity AI"
               ]
             },
             {
-              "name": "消费内容",
+              "name": "具身智能 / 机器人",
               "firms": [
-                {
-                  "name": "Perplexity AI"
-                },
-                {
-                  "name": "Character.AI"
-                },
-                {
-                  "name": "Runway"
-                }
+                "Figure AI"
               ]
             }
           ]
@@ -13971,8 +7290,6 @@ export const pages = [
       "hlStyle": "glass",
       "hlTilt": 2,
       "groupCount": 3,
-      "catCount": 3,
-      "firmCount": 3,
       "focusEnabled": false,
       "focusIndex": 3,
       "showShareBar": true,
@@ -13992,51 +7309,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "单位 1"
-          },
-          {
-            "key": "text003",
-            "label": "坐标标签"
-          },
-          {
-            "key": "text004",
-            "label": "单位 2"
-          },
-          {
-            "key": "text005",
-            "label": "单位 3"
-          }
-        ],
-        "default": {
-          "text001": "亿",
-          "text002": "%",
-          "text003": "· 融资额领先",
-          "text004": "亿",
-          "text005": "%"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -14066,9 +7338,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -14079,9 +7349,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "itemCount",
@@ -14092,9 +7360,7 @@ export const pages = [
         "step": 1,
         "default": 5,
         "desc": "展示的地区条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "description": "展示的地区条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "chartVariant",
@@ -14116,9 +7382,7 @@ export const pages = [
         ],
         "default": "donut",
         "desc": "环形图或柱状图",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "环形图或柱状图"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -14126,9 +7390,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一地区",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一地区"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -14140,9 +7402,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "itemCount",
         "desc": "被高亮地区的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮地区的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showPercent",
@@ -14150,9 +7410,7 @@ export const pages = [
         "label": "百分比",
         "default": true,
         "desc": "右侧百分比徽章",
-        "publicKey": "showPercent",
-        "publicLabel": "百分比",
-        "description": "右侧百分比徽章"
+        "publicKey": "showPercent"
       },
       {
         "key": "showDecorations",
@@ -14160,132 +7418,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicKey": "undefined2",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "地理护城河 · 融资地区分布",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "旧金山湾区",
-        "desc": "关键词前文",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "关键词前文"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "独占六成",
-        "desc": "高亮关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "key": "captionTotal",
-        "type": "text",
-        "label": "中心总计",
-        "default": "全年 970 亿美元",
-        "desc": "环形中心总计(非焦点态)",
-        "publicKey": "captionTotal",
-        "publicLabel": "中心总计",
-        "description": "环形中心总计(非焦点态)"
-      },
-      {
-        "key": "captionSub",
-        "type": "text",
-        "label": "中心注释",
-        "default": "按公司总部所在地统计",
-        "desc": "环形中心注释(非焦点态)",
-        "publicKey": "captionSub",
-        "publicLabel": "中心注释",
-        "description": "环形中心注释(非焦点态)"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 地区",
-        "publicKey": "undefined3",
-        "publicLabel": "数据 · 地区"
-      },
-      {
-        "key": "regions",
-        "type": "list",
-        "label": "地区",
-        "itemLabel": "地区",
-        "countFromKey": "itemCount",
-        "fields": [
-          {
-            "key": "name",
-            "label": "名称"
-          },
-          {
-            "key": "value",
-            "label": "金额"
-          },
-          {
-            "key": "pct",
-            "label": "占比"
-          },
-          {
-            "key": "color",
-            "label": "颜色"
-          }
-        ],
-        "default": [
-          {
-            "name": "旧金山湾区",
-            "value": 620,
-            "pct": 63.9,
-            "color": "#27E021"
-          },
-          {
-            "name": "纽约",
-            "value": 120,
-            "pct": 12.4,
-            "color": "#FFC700"
-          },
-          {
-            "name": "西雅图",
-            "value": 95,
-            "pct": 9.8,
-            "color": "#15A7F0"
-          },
-          {
-            "name": "波士顿",
-            "value": 75,
-            "pct": 7.7,
-            "color": "#FF9FE2"
-          },
-          {
-            "name": "其他地区",
-            "value": 60,
-            "pct": 6.2,
-            "color": "#9aa0a6"
-          }
-        ],
-        "desc": "地区：名称 / 数值 / 占比 / 颜色",
-        "publicKey": "regions",
-        "publicLabel": "地区",
-        "description": "地区：名称 / 数值 / 占比 / 颜色"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -14353,23 +7486,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "key": "areaData",
-        "type": "list",
-        "label": "areaData",
-        "itemLabel": "数据",
-        "primitive": true,
-        "default": [
-          "a",
-          "b",
-          "c",
-          "d"
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "areaData",
-        "publicLabel": "areaData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -14399,9 +7515,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -14412,9 +7526,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -14425,9 +7537,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "自适应图片槽数量(按上传图片比例)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片槽数量",
-        "description": "自适应图片槽数量(按上传图片比例)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "mediaLayout",
@@ -14449,9 +7559,7 @@ export const pages = [
         ],
         "default": "mosaic",
         "desc": "特写网格(首图大) / 等比网格",
-        "publicKey": "mediaLayout",
-        "publicLabel": "排布构图",
-        "description": "特写网格(首图大) / 等比网格"
+        "publicKey": "mediaLayout"
       },
       {
         "key": "showCaptions",
@@ -14459,9 +7567,7 @@ export const pages = [
         "label": "浮层标注",
         "default": true,
         "desc": "图片底部城市/占比标注",
-        "publicKey": "showCaptions",
-        "publicLabel": "浮层标注",
-        "description": "图片底部城市/占比标注"
+        "publicKey": "showCaptions"
       },
       {
         "key": "focusEnabled",
@@ -14469,9 +7575,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一张图片",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一张图片"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -14483,9 +7587,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "mediaCount",
         "desc": "被高亮图片的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮图片的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecorations",
@@ -14493,134 +7595,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "地区分布 · GEO HUBS",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "资本与算力，",
-        "desc": "关键词前文",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "关键词前文"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "高度集聚",
-        "desc": "高亮关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "key": "sub",
-        "type": "textarea",
-        "label": "副标题",
-        "rows": 3,
-        "default": "旧金山湾区独占六成以上，人才、资本、算力的虹吸效应进一步强化「地理护城河」。",
-        "desc": "标题下方说明",
-        "publicKey": "sub",
-        "publicLabel": "副标题",
-        "description": "标题下方说明"
-      },
-      {
-        "key": "mediaPlaceholder",
-        "type": "text",
-        "label": "图片槽提示",
-        "default": "拖入图片",
-        "desc": "图片槽占位文案",
-        "publicKey": "mediaPlaceholder",
-        "publicLabel": "图片槽提示",
-        "description": "图片槽占位文案"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 地区",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 地区"
-      },
-      {
-        "key": "items",
-        "type": "list",
-        "label": "地区",
-        "itemLabel": "地区",
-        "countFromKey": "mediaCount",
-        "fields": [
-          {
-            "key": "rank",
-            "label": "名次"
-          },
-          {
-            "key": "city",
-            "label": "城市"
-          },
-          {
-            "key": "en",
-            "label": "英文"
-          },
-          {
-            "key": "amt",
-            "label": "金额"
-          },
-          {
-            "key": "pct",
-            "label": "占比"
-          }
-        ],
-        "default": [
-          {
-            "city": "旧金山湾区",
-            "en": "SF BAY AREA",
-            "pct": "63.9%",
-            "amt": "620 亿",
-            "rank": "01"
-          },
-          {
-            "city": "纽约",
-            "en": "NEW YORK",
-            "pct": "12.4%",
-            "amt": "120 亿",
-            "rank": "02"
-          },
-          {
-            "city": "西雅图",
-            "en": "SEATTLE",
-            "pct": "9.8%",
-            "amt": "95 亿",
-            "rank": "03"
-          },
-          {
-            "city": "波士顿",
-            "en": "BOSTON",
-            "pct": "7.7%",
-            "amt": "75 亿",
-            "rank": "04"
-          }
-        ],
-        "desc": "每张图的浮层标注：名次 / 城市 / 英文 / 数值 / 占比",
-        "publicKey": "items",
-        "publicLabel": "地区",
-        "description": "每张图的浮层标注：名次 / 城市 / 英文 / 数值 / 占比"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -14685,100 +7660,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "正文 2"
-          }
-        ],
-        "default": {
-          "text001": "资本现场 · CONTACT SHEET",
-          "text002": "一卷胶片，",
-          "text003": "记录 2024 的资本现场",
-          "text004": "把镜头对准签约桌、机房与发布日 —— 拖入你的现场照片，自动排进受控画框"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "framesData",
-        "type": "list",
-        "label": "framesData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "initial",
-            "label": "initial"
-          },
-          {
-            "key": "code",
-            "label": "code"
-          },
-          {
-            "key": "cap",
-            "label": "cap"
-          }
-        ],
-        "default": [
-          {
-            "color": "#27E021",
-            "initial": "A",
-            "code": "ROLL-01 / 12A",
-            "cap": "签约现场 · 头部轮次"
-          },
-          {
-            "color": "#15A7F0",
-            "initial": "B",
-            "code": "ROLL-01 / 18B",
-            "cap": "算力机房 · GPU 卡墙"
-          },
-          {
-            "color": "#FFC700",
-            "initial": "C",
-            "code": "ROLL-01 / 23C",
-            "cap": "发布日 · 产品 demo"
-          },
-          {
-            "color": "#FF9FE2",
-            "initial": "D",
-            "code": "ROLL-01 / 31D",
-            "cap": "团队合影 · 创始团队"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "framesData",
-        "publicLabel": "framesData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -14808,9 +7689,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -14821,9 +7700,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -14834,9 +7711,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "显示图片槽的格数(其余转未曝光占位)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片格数",
-        "description": "显示图片槽的格数(其余转未曝光占位)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "frameRatio",
@@ -14858,9 +7733,7 @@ export const pages = [
         ],
         "default": "landscape",
         "desc": "画框横 / 竖比例",
-        "publicKey": "frameRatio",
-        "publicLabel": "画框构图",
-        "description": "画框横 / 竖比例"
+        "publicKey": "frameRatio"
       },
       {
         "key": "focusEnabled",
@@ -14868,9 +7741,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一格",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一格"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -14881,9 +7752,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "被高亮格的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点格序号",
-        "description": "被高亮格的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCaptions",
@@ -14891,9 +7760,7 @@ export const pages = [
         "label": "逐格说明",
         "default": true,
         "desc": "每格编号 / 说明",
-        "publicKey": "showCaptions",
-        "publicLabel": "逐格说明",
-        "description": "每格编号 / 说明"
+        "publicKey": "showCaptions"
       },
       {
         "key": "showSprockets",
@@ -14901,9 +7768,7 @@ export const pages = [
         "label": "胶片齿孔",
         "default": true,
         "desc": "上下齿孔显隐",
-        "publicKey": "showSprockets",
-        "publicLabel": "胶片齿孔",
-        "description": "上下齿孔显隐"
+        "publicKey": "showSprockets"
       },
       {
         "key": "showDecorations",
@@ -14911,9 +7776,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -14999,9 +7862,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -15012,9 +7873,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "focusEnabled",
@@ -15022,9 +7881,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一象限",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一象限"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -15035,9 +7892,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "被高亮象限序号(1左上→4右下)",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点象限",
-        "description": "被高亮象限序号(1左上→4右下)"
+        "publicKey": "focusIndex"
       },
       {
         "key": "chipCount",
@@ -15048,9 +7903,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "每个象限展示的示例标签数量",
-        "publicKey": "chipCount",
-        "publicLabel": "标签数量",
-        "description": "每个象限展示的示例标签数量"
+        "publicKey": "chipCount"
       },
       {
         "key": "showAxisLabels",
@@ -15058,9 +7911,7 @@ export const pages = [
         "label": "坐标轴标注",
         "default": true,
         "desc": "横纵坐标轴文字",
-        "publicKey": "showAxisLabels",
-        "publicLabel": "坐标轴标注",
-        "description": "横纵坐标轴文字"
+        "publicKey": "showAxisLabels"
       },
       {
         "key": "showChips",
@@ -15068,9 +7919,7 @@ export const pages = [
         "label": "示例标签",
         "default": true,
         "desc": "象限内示例对象标签",
-        "publicKey": "showChips",
-        "publicLabel": "示例标签",
-        "description": "象限内示例对象标签"
+        "publicKey": "showChips"
       },
       {
         "key": "showDecorations",
@@ -15078,160 +7927,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "选题四象限 · 资本热度 × 商业兑现",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "从「谁融得多」升级为",
-        "desc": "标题关键词前文",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "标题关键词前文"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "「谁能兑现」",
-        "desc": "高亮关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "key": "axisColHigh",
-        "type": "text",
-        "label": "横轴 · 高",
-        "default": "商业兑现度 · 高",
-        "desc": "左列顶轴标",
-        "publicKey": "axisColHigh",
-        "publicLabel": "横轴 · 高",
-        "description": "左列顶轴标"
-      },
-      {
-        "key": "axisColLow",
-        "type": "text",
-        "label": "横轴 · 低",
-        "default": "商业兑现度 · 低 / 待验证",
-        "desc": "右列顶轴标",
-        "publicKey": "axisColLow",
-        "publicLabel": "横轴 · 低",
-        "description": "右列顶轴标"
-      },
-      {
-        "key": "axisRowHigh",
-        "type": "text",
-        "label": "纵轴 · 高",
-        "default": "资本热度 · 高",
-        "desc": "上行左轴标",
-        "publicKey": "axisRowHigh",
-        "publicLabel": "纵轴 · 高",
-        "description": "上行左轴标"
-      },
-      {
-        "key": "axisRowLow",
-        "type": "text",
-        "label": "纵轴 · 低",
-        "default": "资本热度 · 低 / 中",
-        "desc": "下行左轴标",
-        "publicKey": "axisRowLow",
-        "publicLabel": "纵轴 · 低",
-        "description": "下行左轴标"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 象限",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 象限"
-      },
-      {
-        "key": "cells",
-        "type": "list",
-        "label": "象限",
-        "itemLabel": "象限",
-        "fields": [
-          {
-            "key": "name",
-            "label": "名称"
-          },
-          {
-            "key": "desc",
-            "label": "描述"
-          },
-          {
-            "key": "chips",
-            "label": "标签(逗号分隔)"
-          },
-          {
-            "key": "color",
-            "label": "颜色"
-          }
-        ],
-        "default": [
-          {
-            "name": "明星兑现区",
-            "color": "#27E021",
-            "desc": "融资热度与收入确定性兼具，\"卖铲子\"逻辑成立。",
-            "chips": [
-              "CoreWeave",
-              "Databricks",
-              "Scale AI"
-            ]
-          },
-          {
-            "name": "叙事泡沫区",
-            "color": "#FFC700",
-            "desc": "巨额融资在手，商业兑现仍受成本与监管约束。",
-            "chips": [
-              "OpenAI",
-              "Anthropic",
-              "xAI",
-              "SSI"
-            ]
-          },
-          {
-            "name": "隐形价值区",
-            "color": "#15A7F0",
-            "desc": "单笔不一定最大，但落地路径与留存更清晰。",
-            "chips": [
-              "Glean",
-              "Perplexity"
-            ]
-          },
-          {
-            "name": "等待验证区",
-            "color": "#FF9FE2",
-            "desc": "概念成立、规模未证，作为风险与边缘变量观察。",
-            "chips": [
-              "长尾工具链",
-              "AI 安全",
-              "早期硬件"
-            ]
-          }
-        ],
-        "desc": "四象限：名称 / 描述 / 示例标签 / 颜色",
-        "publicKey": "cells",
-        "publicLabel": "象限",
-        "description": "四象限：名称 / 描述 / 示例标签 / 颜色"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -15319,9 +8015,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -15349,133 +8043,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
-      },
-      {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "placeholder001",
-            "label": "图片占位"
-          },
-          {
-            "key": "text001",
-            "label": "眉标"
-          },
-          {
-            "key": "text002",
-            "label": "标签 1"
-          },
-          {
-            "key": "text003",
-            "label": "标签 2"
-          },
-          {
-            "key": "text004",
-            "label": "标签 3"
-          },
-          {
-            "key": "text005",
-            "label": "正文 1"
-          },
-          {
-            "key": "text006",
-            "label": "标签 4"
-          },
-          {
-            "key": "text007",
-            "label": "正文 2"
-          },
-          {
-            "key": "text008",
-            "label": "正文 3"
-          },
-          {
-            "key": "text009",
-            "label": "标签 5"
-          }
-        ],
-        "default": {
-          "placeholder001": "封面大图 · 资本现场 / 人物 / 城市",
-          "text001": "AI CAPITAL",
-          "text002": "资本观察 · 特别报告",
-          "text003": "NO.",
-          "text004": "04",
-          "text005": "2024 年刊",
-          "text006": "封面故事 · COVER STORY",
-          "text007": "钱，都",
-          "text008": "去哪了",
-          "text009": "2024 美国大额融资 AI 公司 · 全景调研"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "linesData",
-        "type": "list",
-        "label": "linesData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "tag",
-            "label": "tag"
-          },
-          {
-            "key": "head",
-            "label": "head"
-          },
-          {
-            "key": "sub",
-            "label": "sub"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "tag": "01",
-            "head": "970 亿美元",
-            "sub": "全年总额创历史新高",
-            "color": "#27E021"
-          },
-          {
-            "tag": "02",
-            "head": "97 笔大额轮",
-            "sub": "单笔 ≥1 亿 · 头部高度集中",
-            "color": "#15A7F0"
-          },
-          {
-            "tag": "03",
-            "head": "六大赛道争霸",
-            "sub": "算力 · 大模型 · 应用 · 谁吸金",
-            "color": "#FFC700"
-          },
-          {
-            "tag": "04",
-            "head": "估值一年翻数倍",
-            "sub": "独角兽流水线 · 资本不眠",
-            "color": "#FF9FE2"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "linesData",
-        "publicLabel": "linesData",
-        "description": "默认数据内容"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "hlStyle",
@@ -15507,9 +8075,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -15520,9 +8086,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -15535,9 +8099,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "media",
         "desc": "整屏 cover 背景图片槽(0=霓虹渐变底)",
-        "publicKey": "mediaCount",
-        "publicLabel": "背景图片槽",
-        "description": "整屏 cover 背景图片槽(0=霓虹渐变底)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "accentTone",
@@ -15569,9 +8131,7 @@ export const pages = [
         ],
         "default": "green",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "lineCount",
@@ -15582,9 +8142,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "右侧角标导读条数",
-        "publicKey": "lineCount",
-        "publicLabel": "角标导读条数",
-        "description": "右侧角标导读条数"
+        "publicKey": "lineCount"
       },
       {
         "key": "showMasthead",
@@ -15592,9 +8150,7 @@ export const pages = [
         "label": "顶部刊头",
         "default": true,
         "desc": "顶部刊头",
-        "publicKey": "showMasthead",
-        "publicLabel": "顶部刊头",
-        "description": "顶部刊头"
+        "publicKey": "showMasthead"
       },
       {
         "key": "showIssue",
@@ -15602,9 +8158,7 @@ export const pages = [
         "label": "期号徽标",
         "default": true,
         "desc": "期号徽标",
-        "publicKey": "showIssue",
-        "publicLabel": "期号徽标",
-        "description": "期号徽标"
+        "publicKey": "showIssue"
       },
       {
         "key": "showScrim",
@@ -15612,9 +8166,7 @@ export const pages = [
         "label": "暗角遮罩",
         "default": true,
         "desc": "保证文字可读的暗角遮罩",
-        "publicKey": "showScrim",
-        "publicLabel": "暗角遮罩",
-        "description": "保证文字可读的暗角遮罩"
+        "publicKey": "showScrim"
       },
       {
         "key": "showDecorations",
@@ -15622,9 +8174,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -15704,9 +8254,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -15734,88 +8282,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
-      },
-      {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "placeholder001",
-            "label": "图片占位"
-          },
-          {
-            "key": "text001",
-            "label": "眉标"
-          }
-        ],
-        "default": {
-          "placeholder001": "整屏背景 · 机房 / 团队 / 资本现场",
-          "text001": "CONTENTS"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "progressData",
-        "type": "list",
-        "label": "progressData",
-        "itemLabel": "数据",
-        "primitive": true,
-        "default": [
-          "研究方法",
-          "市场全景",
-          "横向透视",
-          "资本现场",
-          "风险研判",
-          "投资展望"
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "progressData",
-        "publicLabel": "progressData",
-        "description": "默认数据内容"
-      },
-      {
-        "key": "chapterData",
-        "type": "list",
-        "label": "chapterData",
-        "itemLabel": "数据",
-        "single": true,
-        "fields": [
-          {
-            "key": "zh",
-            "label": "zh"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "lead",
-            "label": "lead"
-          }
-        ],
-        "default": {
-          "zh": "资本现场",
-          "en": "INSIDE THE CAPITAL",
-          "lead": "镜头拉近到一线——机房、团队、发布会与签约桌，看资本如何在真实场景里落地。"
-        },
-        "desc": "默认数据内容",
-        "publicKey": "chapterData",
-        "publicLabel": "chapterData",
-        "description": "默认数据内容"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "mediaCount",
@@ -15828,9 +8295,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "media",
         "desc": "整屏背景图片槽(0=霓虹渐变底)",
-        "publicKey": "mediaCount",
-        "publicLabel": "整屏背景图",
-        "description": "整屏背景图片槽(0=霓虹渐变底)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "partNumber",
@@ -15841,9 +8306,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "大号 Part 编号徽章",
-        "publicKey": "partNumber",
-        "publicLabel": "章节编号",
-        "description": "大号 Part 编号徽章"
+        "publicKey": "partNumber"
       },
       {
         "key": "accentTone",
@@ -15875,9 +8338,7 @@ export const pages = [
         ],
         "default": "pink",
         "desc": "页面主色调",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调"
+        "publicKey": "accentTone"
       },
       {
         "key": "textAlign",
@@ -15899,9 +8360,7 @@ export const pages = [
         ],
         "default": "left",
         "desc": "文案靠左下 / 居中",
-        "publicKey": "textAlign",
-        "publicLabel": "文案对齐",
-        "description": "文案靠左下 / 居中"
+        "publicKey": "textAlign"
       },
       {
         "key": "showProgress",
@@ -15909,9 +8368,7 @@ export const pages = [
         "label": "章节进度",
         "default": true,
         "desc": "右下角章节进度条",
-        "publicKey": "showProgress",
-        "publicLabel": "章节进度",
-        "description": "右下角章节进度条"
+        "publicKey": "showProgress"
       },
       {
         "key": "progressCount",
@@ -15921,13 +8378,8 @@ export const pages = [
         "max": 6,
         "step": 1,
         "default": 5,
-        "countArrays": [
-          "progressData"
-        ],
         "desc": "进度条段数",
-        "publicKey": "progressCount",
-        "publicLabel": "进度段数",
-        "description": "进度条段数"
+        "publicKey": "progressCount"
       },
       {
         "key": "showScrim",
@@ -15935,9 +8387,7 @@ export const pages = [
         "label": "暗角遮罩",
         "default": true,
         "desc": "保证文字可读的暗角遮罩",
-        "publicKey": "showScrim",
-        "publicLabel": "暗角遮罩",
-        "description": "保证文字可读的暗角遮罩"
+        "publicKey": "showScrim"
       },
       {
         "key": "showDecorations",
@@ -15945,9 +8395,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -15990,132 +8438,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "正文 2"
-          },
-          {
-            "key": "text005",
-            "label": "单位"
-          },
-          {
-            "key": "text006",
-            "label": "正文 3"
-          }
-        ],
-        "default": {
-          "text001": "头部玩家 · FOUNDATION MODEL",
-          "text002": "三强争霸，",
-          "text003": "瓜分半数资金",
-          "text004": "OpenAI、Anthropic、xAI 包揽 Top3 单笔融资，通用大模型成为资本最拥挤的赛道。",
-          "text005": "亿",
-          "text006": "2024 单笔最大融资 / 美元"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "itemsData",
-        "type": "list",
-        "label": "itemsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "rank",
-            "label": "rank"
-          },
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "initial",
-            "label": "initial"
-          },
-          {
-            "key": "founder",
-            "label": "founder"
-          },
-          {
-            "key": "sector",
-            "label": "sector"
-          },
-          {
-            "key": "amt",
-            "label": "amt"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "ph",
-            "label": "ph"
-          }
-        ],
-        "default": [
-          {
-            "rank": "01",
-            "name": "OpenAI",
-            "initial": "O",
-            "founder": "Sam Altman",
-            "sector": "通用大模型",
-            "amt": "66",
-            "color": "#15A7F0",
-            "ph": "OpenAI · 团队 / Logo"
-          },
-          {
-            "rank": "02",
-            "name": "Anthropic",
-            "initial": "A",
-            "founder": "Dario Amodei",
-            "sector": "通用大模型",
-            "amt": "65",
-            "color": "#27E021",
-            "ph": "Anthropic · 团队 / Logo"
-          },
-          {
-            "rank": "03",
-            "name": "xAI",
-            "initial": "x",
-            "founder": "Elon Musk",
-            "sector": "通用大模型",
-            "amt": "50",
-            "color": "#FFC700",
-            "ph": "xAI · 团队 / Logo"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "itemsData",
-        "publicLabel": "itemsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -16145,9 +8467,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -16158,9 +8478,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "itemCount",
@@ -16171,9 +8489,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "展示的公司卡片数量",
-        "publicKey": "itemCount",
-        "publicLabel": "公司卡数量",
-        "description": "展示的公司卡片数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "mediaCount",
@@ -16185,9 +8501,7 @@ export const pages = [
         "default": 3,
         "maxFromKey": "itemCount",
         "desc": "从左起带图片槽的卡片数(其余转无图态)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片槽数量",
-        "description": "从左起带图片槽的卡片数(其余转无图态)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "focusEnabled",
@@ -16195,9 +8509,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一张卡片",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一张卡片"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -16209,9 +8521,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "itemCount",
         "desc": "被高亮卡片的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮卡片的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showMeta",
@@ -16219,9 +8529,7 @@ export const pages = [
         "label": "角色 / 分类",
         "default": true,
         "desc": "角色 + 分类标签行",
-        "publicKey": "showMeta",
-        "publicLabel": "角色 / 分类",
-        "description": "角色 + 分类标签行"
+        "publicKey": "showMeta"
       },
       {
         "key": "showRank",
@@ -16229,9 +8537,7 @@ export const pages = [
         "label": "名次徽章",
         "default": true,
         "desc": "左上角名次徽章",
-        "publicKey": "showRank",
-        "publicLabel": "名次徽章",
-        "description": "左上角名次徽章"
+        "publicKey": "showRank"
       },
       {
         "key": "showDecorations",
@@ -16239,9 +8545,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -16306,117 +8610,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "标题前句"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "正文 1"
-          },
-          {
-            "key": "text006",
-            "label": "正文 2"
-          },
-          {
-            "key": "text007",
-            "label": "正文 3"
-          },
-          {
-            "key": "text008",
-            "label": "正文 4"
-          },
-          {
-            "key": "placeholder001",
-            "label": "图片占位"
-          },
-          {
-            "key": "text009",
-            "label": "标签"
-          }
-        ],
-        "default": {
-          "text001": "案例 · CASE FILE 03",
-          "text002": "AI 基础设施",
-          "text003": "CoreWeave",
-          "text004": "踩中算力风口的基建黑马",
-          "text005": "所有人都在抢 GPU，把卡变成「云」的人先吃到红利。CoreWeave 从加密矿场转型为 AI 算力云，靠规模化 GPU 集群与长约绑定，成为大模型公司绕不开的算力供应商。",
-          "text006": "它的估值半年内翻数倍——不是因为模型多强，而是因为站在了所有模型的「下游」。 基础设施的确定性，让资本愿意为它的现金流与扩张速度付高溢价。",
-          "text007": "“",
-          "text008": "卖铲子的人，往往比挖金子的人更早赚到钱。",
-          "placeholder001": "算力机房 / GPU 卡墙 / 团队实拍",
-          "text009": "P. 03"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "statsData",
-        "type": "list",
-        "label": "statsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "value",
-            "label": "value"
-          },
-          {
-            "key": "unit",
-            "label": "unit"
-          },
-          {
-            "key": "label",
-            "label": "label"
-          }
-        ],
-        "default": [
-          {
-            "value": "190",
-            "unit": "亿",
-            "label": "最新估值 / 美元"
-          },
-          {
-            "value": "11",
-            "unit": "亿",
-            "label": "2024 单笔融资 / 美元"
-          },
-          {
-            "value": "2017",
-            "unit": "",
-            "label": "公司成立年份"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "statsData",
-        "publicLabel": "statsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -16446,9 +8639,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -16459,9 +8650,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -16472,9 +8661,7 @@ export const pages = [
         "step": 1,
         "default": 1,
         "desc": "自适应单张大图(0=满栏文字跨页)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片槽数量",
-        "description": "自适应单张大图(0=满栏文字跨页)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "imageSide",
@@ -16496,9 +8683,7 @@ export const pages = [
         ],
         "default": "right",
         "desc": "配图在左 / 右(有图时生效)",
-        "publicKey": "imageSide",
-        "publicLabel": "配图位置",
-        "description": "配图在左 / 右(有图时生效)"
+        "publicKey": "imageSide"
       },
       {
         "key": "accentTone",
@@ -16530,9 +8715,7 @@ export const pages = [
         ],
         "default": "blue",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "statCount",
@@ -16543,9 +8726,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "底部数据栏条目数",
-        "publicKey": "itemCount",
-        "publicLabel": "数据栏条目",
-        "description": "底部数据栏条目数"
+        "publicKey": "itemCount"
       },
       {
         "key": "showPullQuote",
@@ -16553,9 +8734,7 @@ export const pages = [
         "label": "抽言",
         "default": true,
         "desc": "抽言(pull quote)显隐",
-        "publicKey": "showPullQuote",
-        "publicLabel": "抽言",
-        "description": "抽言(pull quote)显隐"
+        "publicKey": "showPullQuote"
       },
       {
         "key": "showLede",
@@ -16563,9 +8742,7 @@ export const pages = [
         "label": "首段导语",
         "default": true,
         "desc": "首段导语强调(加粗 + 色条)",
-        "publicKey": "showLede",
-        "publicLabel": "首段导语",
-        "description": "首段导语强调(加粗 + 色条)"
+        "publicKey": "showLede"
       },
       {
         "key": "showDecorations",
@@ -16573,9 +8750,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -16629,103 +8804,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          }
-        ],
-        "default": {
-          "text001": "资本现场 · ON THE GROUND",
-          "text002": "钱涌向哪里，",
-          "text003": "故事就发生在哪里"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "panelsData",
-        "type": "list",
-        "label": "panelsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "no",
-            "label": "no"
-          },
-          {
-            "key": "zh",
-            "label": "zh"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "note",
-            "label": "note"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "glyph",
-            "label": "glyph"
-          }
-        ],
-        "default": [
-          {
-            "no": "01",
-            "zh": "算力机房",
-            "en": "COMPUTE",
-            "note": "260 亿美元流向基础设施",
-            "color": "#27E021",
-            "glyph": "C"
-          },
-          {
-            "no": "02",
-            "zh": "路演签约",
-            "en": "DEALS",
-            "note": "97 笔单笔过亿的大额融资",
-            "color": "#FFC700",
-            "glyph": "D"
-          },
-          {
-            "no": "03",
-            "zh": "人才争夺",
-            "en": "TALENT",
-            "note": "顶尖团队成为最稀缺资产",
-            "color": "#15A7F0",
-            "glyph": "T"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "panelsData",
-        "publicLabel": "panelsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "mediaCount",
         "type": "slider",
         "label": "图片槽条数",
@@ -16734,9 +8812,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "显示图片槽的条数(其余转霓虹占位)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片槽条数",
-        "description": "显示图片槽的条数(其余转霓虹占位)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "focusEnabled",
@@ -16744,9 +8820,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一条",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一条"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -16757,9 +8831,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "被高亮条的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮条的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCaptions",
@@ -16767,9 +8839,7 @@ export const pages = [
         "label": "现场注解",
         "default": true,
         "desc": "每条底部现场注解",
-        "publicKey": "showCaptions",
-        "publicLabel": "现场注解",
-        "description": "每条底部现场注解"
+        "publicKey": "showCaptions"
       },
       {
         "key": "showHeader",
@@ -16777,9 +8847,7 @@ export const pages = [
         "label": "顶部标题",
         "default": true,
         "desc": "顶部总标题浮层",
-        "publicKey": "showHeader",
-        "publicLabel": "顶部标题",
-        "description": "顶部总标题浮层"
+        "publicKey": "showHeader"
       },
       {
         "key": "showDecorations",
@@ -16787,9 +8855,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -16842,121 +8908,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "正文 2"
-          },
-          {
-            "key": "text005",
-            "label": "正文 3"
-          },
-          {
-            "key": "text006",
-            "label": "正文 4"
-          }
-        ],
-        "default": {
-          "text001": "头部玩家 · CAPABILITY RADAR",
-          "text002": "三强各有所长，没有",
-          "text003": "全能选手",
-          "text004": "同样是通用大模型，OpenAI 全面、Anthropic 押注安全治理、xAI 死磕算力——六大维度看清差异。",
-          "text005": "综合分",
-          "text006": "评分为调研示意（0–100）· 维度权重等权 · 数据为调研整理推演"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "playersData",
-        "type": "list",
-        "label": "playersData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "vals",
-            "label": "vals"
-          }
-        ],
-        "default": [
-          {
-            "name": "OpenAI",
-            "en": "GPT",
-            "color": "#15A7F0",
-            "vals": [
-              95,
-              92,
-              86,
-              90,
-              88,
-              70
-            ]
-          },
-          {
-            "name": "Anthropic",
-            "en": "Claude",
-            "color": "#27E021",
-            "vals": [
-              90,
-              84,
-              72,
-              78,
-              85,
-              96
-            ]
-          },
-          {
-            "name": "xAI",
-            "en": "Grok",
-            "color": "#FFC700",
-            "vals": [
-              82,
-              80,
-              54,
-              96,
-              70,
-              58
-            ]
-          }
-        ],
-        "desc": "玩家数据与六个内部维度顺序对齐的 vals",
-        "publicKey": "playersData",
-        "publicLabel": "playersData",
-        "description": "玩家数据与六个内部维度顺序对齐的 vals"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -16986,9 +8937,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -16999,9 +8948,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "itemCount",
@@ -17012,9 +8959,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "对比的玩家数量",
-        "publicKey": "itemCount",
-        "publicLabel": "玩家数量",
-        "description": "对比的玩家数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "chartVariant",
@@ -17036,9 +8981,7 @@ export const pages = [
         ],
         "default": "radar",
         "desc": "雷达图 / 分组柱状图",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "雷达图 / 分组柱状图"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -17046,9 +8989,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一玩家",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一玩家"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -17060,9 +9001,7 @@ export const pages = [
         "default": 3,
         "maxFromKey": "itemCount",
         "desc": "被高亮玩家的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮玩家的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showGrid",
@@ -17070,9 +9009,7 @@ export const pages = [
         "label": "雷达网格",
         "default": true,
         "desc": "雷达网格 / 刻度环(雷达生效)",
-        "publicKey": "showGrid",
-        "publicLabel": "雷达网格",
-        "description": "雷达网格 / 刻度环(雷达生效)"
+        "publicKey": "showGrid"
       },
       {
         "key": "showLegend",
@@ -17080,9 +9017,7 @@ export const pages = [
         "label": "图例列表",
         "default": true,
         "desc": "右侧玩家图例 + 综合分",
-        "publicKey": "showLegend",
-        "publicLabel": "图例列表",
-        "description": "右侧玩家图例 + 综合分"
+        "publicKey": "showLegend"
       },
       {
         "key": "showDecorations",
@@ -17090,9 +9025,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -17145,6 +9078,14 @@ export const pages = [
           ]
         }
       ],
+      "dims": [
+        "模型能力",
+        "资本储备",
+        "商业兑现",
+        "算力规模",
+        "人才密度",
+        "安全治理"
+      ],
       "hlStyle": "glass",
       "hlTilt": 2,
       "itemCount": 3,
@@ -17154,7 +9095,14 @@ export const pages = [
       "showGrid": true,
       "showLegend": true,
       "showDecorations": true
-    }
+    },
+    "lengthBindings": [
+      {
+        "dependent": "playersData[].vals",
+        "anchor": "dims",
+        "relation": "same-length"
+      }
+    ]
   },
   {
     "key": "theme04_page050",
@@ -17166,31 +9114,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          }
-        ],
-        "default": {
-          "text001": "“"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
         "key": "mediaCount",
         "type": "slider",
         "label": "图片槽数量",
@@ -17199,9 +9122,7 @@ export const pages = [
         "step": 1,
         "default": 1,
         "desc": "自适应图片槽数量(按上传图片比例)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片槽数量",
-        "description": "自适应图片槽数量(按上传图片比例)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "mediaLayout",
@@ -17223,9 +9144,7 @@ export const pages = [
         ],
         "default": "stack",
         "desc": "多张图片的排列方式",
-        "publicKey": "mediaLayout",
-        "publicLabel": "多图排布",
-        "description": "多张图片的排列方式"
+        "publicKey": "mediaLayout"
       },
       {
         "key": "milestoneCount",
@@ -17236,9 +9155,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "时间轴节点数量",
-        "publicKey": "milestoneCount",
-        "publicLabel": "里程碑数量",
-        "description": "时间轴节点数量"
+        "publicKey": "milestoneCount"
       },
       {
         "key": "focusEnabled",
@@ -17246,9 +9163,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一里程碑",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一里程碑"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -17260,9 +9175,7 @@ export const pages = [
         "default": 4,
         "maxFromKey": "milestoneCount",
         "desc": "被高亮里程碑的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮里程碑的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showQuote",
@@ -17270,9 +9183,7 @@ export const pages = [
         "label": "引言显示",
         "default": true,
         "desc": "底部人物引言",
-        "publicKey": "showQuote",
-        "publicLabel": "引言显示",
-        "description": "底部人物引言"
+        "publicKey": "showQuote"
       },
       {
         "key": "showDecorations",
@@ -17280,149 +9191,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicKey": "undefined2",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "典型案例 · CASE STUDY",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "name",
-        "type": "text",
-        "label": "公司名",
-        "default": "Anthropic",
-        "desc": "案例公司名",
-        "publicKey": "name",
-        "publicLabel": "公司名",
-        "description": "案例公司名"
-      },
-      {
-        "key": "tagline",
-        "type": "text",
-        "label": "标语",
-        "default": "从追赶到反超 · 估值登顶",
-        "desc": "公司名下标语",
-        "publicKey": "tagline",
-        "publicLabel": "标语",
-        "description": "公司名下标语"
-      },
-      {
-        "key": "pill",
-        "type": "text",
-        "label": "胶囊数据",
-        "default": "估值 9650 亿美元 · 全球最高",
-        "desc": "糖果胶囊文案",
-        "publicKey": "pill",
-        "publicLabel": "胶囊数据",
-        "description": "糖果胶囊文案"
-      },
-      {
-        "key": "quote",
-        "type": "textarea",
-        "label": "引言",
-        "rows": 3,
-        "default": "通过 Constitutional AI 构建可解释、可控的系统，比单纯追求规模更符合长远利益。",
-        "desc": "人物引言",
-        "publicKey": "quote",
-        "publicLabel": "引言",
-        "description": "人物引言"
-      },
-      {
-        "key": "quoteCite",
-        "type": "text",
-        "label": "引言署名",
-        "default": "— Dario Amodei，CEO",
-        "desc": "引言署名",
-        "publicKey": "quoteCite",
-        "publicLabel": "引言署名",
-        "description": "引言署名"
-      },
-      {
-        "key": "mediaPlaceholder1",
-        "type": "text",
-        "label": "图槽 1 提示",
-        "default": "公司 Logo",
-        "desc": "第 1 个图片槽占位文案",
-        "publicKey": "mediaPlaceholder1",
-        "publicLabel": "图槽 1 提示",
-        "description": "第 1 个图片槽占位文案"
-      },
-      {
-        "key": "mediaPlaceholder2",
-        "type": "text",
-        "label": "图槽 2 提示",
-        "default": "创始人 / 团队",
-        "desc": "第 2 个图片槽占位文案",
-        "publicKey": "mediaPlaceholder2",
-        "publicLabel": "图槽 2 提示",
-        "description": "第 2 个图片槽占位文案"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 里程碑",
-        "publicKey": "undefined3",
-        "publicLabel": "数据 · 里程碑"
-      },
-      {
-        "key": "milestones",
-        "type": "list",
-        "label": "里程碑",
-        "itemLabel": "节点",
-        "countFromKey": "milestoneCount",
-        "fields": [
-          {
-            "key": "date",
-            "label": "日期"
-          },
-          {
-            "key": "title",
-            "label": "标题"
-          },
-          {
-            "key": "metric",
-            "label": "数据"
-          }
-        ],
-        "default": [
-          {
-            "date": "2024 · 5月",
-            "title": "Series G",
-            "metric": "融资 280 亿 · 估值 600 亿"
-          },
-          {
-            "date": "2024 · 8月",
-            "title": "Series H 首轮",
-            "metric": "融资 180 亿 · 估值 830 亿"
-          },
-          {
-            "date": "2024 · 11月",
-            "title": "Series H 扩轮",
-            "metric": "融资 190 亿 · 估值 9650 亿"
-          },
-          {
-            "date": "2026 · 6月",
-            "title": "递交 IPO 申请",
-            "metric": "估值登顶 · 预计年内上市"
-          }
-        ],
-        "desc": "里程碑：日期 / 标题 / 数据",
-        "publicKey": "milestones",
-        "publicLabel": "里程碑",
-        "description": "里程碑：日期 / 标题 / 数据"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -17478,142 +9247,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "placeholder001",
-            "label": "图片占位"
-          },
-          {
-            "key": "text002",
-            "label": "标签 1"
-          },
-          {
-            "key": "text003",
-            "label": "标签 2"
-          },
-          {
-            "key": "text004",
-            "label": "正文 1"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "正文 3"
-          },
-          {
-            "key": "text007",
-            "label": "正文 4"
-          },
-          {
-            "key": "text008",
-            "label": "正文 5"
-          },
-          {
-            "key": "text009",
-            "label": "标签 3"
-          },
-          {
-            "key": "text010",
-            "label": "坐标标签"
-          },
-          {
-            "key": "text011",
-            "label": "标签 4"
-          },
-          {
-            "key": "text012",
-            "label": "标签 5"
-          },
-          {
-            "key": "text013",
-            "label": "正文 6"
-          }
-        ],
-        "default": {
-          "text001": "档案 NO. 02 · CASE",
-          "placeholder001": "Dario Amodei · 人物肖像",
-          "text002": "A",
-          "text003": "典型案例 · DOSSIER",
-          "text004": "一张档案，",
-          "text005": "看懂头号挑战者",
-          "text006": "联合创始人 & CEO",
-          "text007": "Dario Amodei",
-          "text008": "Anthropic",
-          "text009": "通用大模型 · 安全对齐",
-          "text010": "资本热度",
-          "text011": "5 / 5",
-          "text012": "“",
-          "text013": "以「AI 安全」为旗号，成为资本最青睐的 OpenAI 头号挑战者——估值一年翻数倍。"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "factsData",
-        "type": "list",
-        "label": "factsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "k",
-            "label": "k"
-          },
-          {
-            "key": "v",
-            "label": "v"
-          },
-          {
-            "key": "u",
-            "label": "u"
-          }
-        ],
-        "default": [
-          {
-            "k": "最新估值",
-            "v": "600",
-            "u": "亿美元"
-          },
-          {
-            "k": "2024 融资",
-            "v": "80",
-            "u": "亿美元"
-          },
-          {
-            "k": "成立年份",
-            "v": "2021",
-            "u": ""
-          },
-          {
-            "k": "主投赛道",
-            "v": "通用大模型",
-            "u": "安全对齐"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "factsData",
-        "publicLabel": "factsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -17643,9 +9276,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -17656,9 +9287,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -17669,9 +9298,7 @@ export const pages = [
         "step": 1,
         "default": 1,
         "desc": "肖像图片槽数量(0=霓虹首字母无图态)",
-        "publicKey": "mediaCount",
-        "publicLabel": "肖像图片槽",
-        "description": "肖像图片槽数量(0=霓虹首字母无图态)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "imageSide",
@@ -17693,9 +9320,7 @@ export const pages = [
         ],
         "default": "left",
         "desc": "肖像在左 / 右",
-        "publicKey": "imageSide",
-        "publicLabel": "肖像位置",
-        "description": "肖像在左 / 右"
+        "publicKey": "imageSide"
       },
       {
         "key": "accentTone",
@@ -17727,9 +9352,7 @@ export const pages = [
         ],
         "default": "blue",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "statCount",
@@ -17740,9 +9363,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "结构化档案数据条数",
-        "publicKey": "statCount",
-        "publicLabel": "档案数据条数",
-        "description": "结构化档案数据条数"
+        "publicKey": "statCount"
       },
       {
         "key": "showRating",
@@ -17750,9 +9371,7 @@ export const pages = [
         "label": "关注度",
         "default": true,
         "desc": "关注度评级点",
-        "publicKey": "showStatusRating",
-        "publicLabel": "关注度",
-        "description": "关注度评级点"
+        "publicKey": "showStatusRating"
       },
       {
         "key": "showNote",
@@ -17760,9 +9379,7 @@ export const pages = [
         "label": "批注金句",
         "default": true,
         "desc": "底部批注金句",
-        "publicKey": "showNote",
-        "publicLabel": "批注金句",
-        "description": "底部批注金句"
+        "publicKey": "showNote"
       },
       {
         "key": "showDecorations",
@@ -17770,9 +9387,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -17835,109 +9450,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "正文 2"
-          },
-          {
-            "key": "text005",
-            "label": "单位 1"
-          },
-          {
-            "key": "text006",
-            "label": "单位 2"
-          },
-          {
-            "key": "text007",
-            "label": "正文 3"
-          }
-        ],
-        "default": {
-          "text001": "典型案例 · ANTHROPIC 估值跃迁",
-          "text002": "Anthropic 估值，半年内",
-          "text003": "三级跳",
-          "text004": "5 月 → 8 月 → 11 月 连续三轮，估值从 600 亿冲上 9650 亿美元，登顶全球最高估值 AI 初创。",
-          "text005": "亿",
-          "text006": "亿",
-          "text007": "估值单位：亿美元 · 纵轴为示意比例，数值以标签为准 · 数据为调研整理推演"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "pointsData",
-        "type": "list",
-        "label": "pointsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "month",
-            "label": "month"
-          },
-          {
-            "key": "round",
-            "label": "round"
-          },
-          {
-            "key": "val",
-            "label": "val"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "month": "5 月",
-            "round": "Series G",
-            "val": 600,
-            "color": "#15A7F0"
-          },
-          {
-            "month": "8 月",
-            "round": "Series H 首轮",
-            "val": 830,
-            "color": "#27E021"
-          },
-          {
-            "month": "11 月",
-            "round": "Series H 扩轮",
-            "val": 9650,
-            "color": "#FFC700"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "pointsData",
-        "publicLabel": "pointsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -17967,9 +9479,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -17980,9 +9490,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "pointCount",
@@ -17993,9 +9501,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "展示的指标数据点数量",
-        "publicKey": "pointCount",
-        "publicLabel": "数据点数量",
-        "description": "展示的指标数据点数量"
+        "publicKey": "pointCount"
       },
       {
         "key": "chartVariant",
@@ -18017,9 +9523,7 @@ export const pages = [
         ],
         "default": "area",
         "desc": "面积折线 / 柱状",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "面积折线 / 柱状"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -18027,9 +9531,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一数据点",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一数据点"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -18041,9 +9543,7 @@ export const pages = [
         "default": 3,
         "maxFromKey": "pointCount",
         "desc": "被高亮数据点的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮数据点的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showGrowthMarkers",
@@ -18051,9 +9551,7 @@ export const pages = [
         "label": "增幅标注",
         "default": true,
         "desc": "点 / 柱间增幅标注",
-        "publicKey": "showGrowthMarkers",
-        "publicLabel": "增幅标注",
-        "description": "点 / 柱间增幅标注"
+        "publicKey": "showGrowthMarkers"
       },
       {
         "key": "showValueLabels",
@@ -18061,9 +9559,7 @@ export const pages = [
         "label": "数值标签",
         "default": true,
         "desc": "各点 / 柱数值标签",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
-        "description": "各点 / 柱数值标签"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showDecorations",
@@ -18071,9 +9567,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -18127,130 +9621,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "坐标标签"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "单位"
-          },
-          {
-            "key": "text006",
-            "label": "正文 1"
-          },
-          {
-            "key": "text007",
-            "label": "正文 2"
-          }
-        ],
-        "default": {
-          "text001": "估值跃迁 · ONE-YEAR LEAP",
-          "text002": "一年之内，头部把估值",
-          "text003": "整段拉远",
-          "text004": "×",
-          "text005": "亿",
-          "text006": "强者愈强",
-          "text007": "起投估值 ●——● 当前估值 · 横轴 sqrt 示意比例，数值以标签为准（报告 3.2，亿美元）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "rowsData",
-        "type": "list",
-        "label": "rowsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "cat",
-            "label": "cat"
-          },
-          {
-            "key": "start",
-            "label": "start"
-          },
-          {
-            "key": "now",
-            "label": "now"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "name": "OpenAI",
-            "cat": "通用大模型",
-            "start": 290,
-            "now": 1570,
-            "color": "#27E021"
-          },
-          {
-            "name": "Anthropic",
-            "cat": "通用大模型",
-            "start": 184,
-            "now": 615,
-            "color": "#15A7F0"
-          },
-          {
-            "name": "xAI",
-            "cat": "通用大模型",
-            "start": 240,
-            "now": 500,
-            "color": "#FF9FE2"
-          },
-          {
-            "name": "Safe Superintelligence",
-            "cat": "安全对齐",
-            "start": 50,
-            "now": 320,
-            "color": "#FFC700"
-          },
-          {
-            "name": "CoreWeave",
-            "cat": "算力 / 云",
-            "start": 190,
-            "now": 235,
-            "color": "#9aa0ff"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "rowsData",
-        "publicLabel": "rowsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -18280,9 +9650,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -18293,9 +9661,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "itemCount",
@@ -18306,9 +9672,7 @@ export const pages = [
         "step": 1,
         "default": 5,
         "desc": "展示的公司哑铃条数",
-        "publicKey": "itemCount",
-        "publicLabel": "公司数",
-        "description": "展示的公司哑铃条数"
+        "publicKey": "itemCount"
       },
       {
         "key": "chartVariant",
@@ -18330,9 +9694,7 @@ export const pages = [
         ],
         "default": "dumbbell",
         "desc": "哑铃区间 / 横向柱状",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "哑铃区间 / 横向柱状"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -18340,9 +9702,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一行",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一行"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -18354,9 +9714,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "itemCount",
         "desc": "被高亮行的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮行的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showStartDot",
@@ -18364,9 +9722,7 @@ export const pages = [
         "label": "起点端点",
         "default": true,
         "desc": "起投指标端点显隐（哑铃生效）",
-        "publicKey": "showStartDot",
-        "publicLabel": "起点端点",
-        "description": "起投指标端点显隐（哑铃生效）"
+        "publicKey": "showStartDot"
       },
       {
         "key": "showMultiplier",
@@ -18374,9 +9730,7 @@ export const pages = [
         "label": "倍数徽标",
         "default": true,
         "desc": "×倍数徽标显隐（哑铃生效）",
-        "publicKey": "showMultiplier",
-        "publicLabel": "倍数徽标",
-        "description": "×倍数徽标显隐（哑铃生效）"
+        "publicKey": "showMultiplier"
       },
       {
         "key": "showScale",
@@ -18384,9 +9738,7 @@ export const pages = [
         "label": "刻度参考",
         "default": true,
         "desc": "底部刻度参考线显隐",
-        "publicKey": "showScale",
-        "publicLabel": "刻度参考",
-        "description": "底部刻度参考线显隐"
+        "publicKey": "showScale"
       },
       {
         "key": "showDecorations",
@@ -18394,9 +9746,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -18468,163 +9818,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "坐标标签 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "标签"
-          },
-          {
-            "key": "text006",
-            "label": "坐标标签 2"
-          },
-          {
-            "key": "text007",
-            "label": "正文"
-          }
-        ],
-        "default": {
-          "text001": "估值分层 · THE PYRAMID",
-          "text002": "估值金字塔，",
-          "text003": "越往上越稀缺",
-          "text004": "↑",
-          "text005": "越往上 · 越稀缺",
-          "text006": "估值门槛 ·",
-          "text007": "数据为调研整理与推演 · 家数 / 笔数为 2024 ≥1 亿美元 AI 融资玩家的估值分层（示意量级）· 梯形宽度示意各层规模"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "tiersData",
-        "type": "list",
-        "label": "tiersData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "threshold",
-            "label": "threshold"
-          },
-          {
-            "key": "count",
-            "label": "count"
-          },
-          {
-            "key": "unit",
-            "label": "unit"
-          },
-          {
-            "key": "weight",
-            "label": "weight"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "reps",
-            "label": "reps",
-            "type": "list",
-            "max": 3
-          }
-        ],
-        "default": [
-          {
-            "name": "超级独角兽",
-            "en": "SUPER",
-            "threshold": "≥ 1000 亿美元",
-            "count": "3",
-            "unit": "家",
-            "weight": 3,
-            "color": "#27E021",
-            "reps": [
-              "OpenAI",
-              "xAI",
-              "Databricks"
-            ]
-          },
-          {
-            "name": "巨型独角兽",
-            "en": "MEGA",
-            "threshold": "≥ 100 亿美元",
-            "count": "9",
-            "unit": "家",
-            "weight": 9,
-            "color": "#15A7F0",
-            "reps": [
-              "Anthropic",
-              "CoreWeave",
-              "Scale AI"
-            ]
-          },
-          {
-            "name": "独角兽",
-            "en": "UNICORN",
-            "threshold": "≥ 10 亿美元",
-            "count": "30+",
-            "unit": "家",
-            "weight": 33,
-            "color": "#FFC700",
-            "reps": [
-              "Figure",
-              "Perplexity",
-              "Glean"
-            ]
-          },
-          {
-            "name": "成长梯队",
-            "en": "GROWTH",
-            "threshold": "1 – 10 亿美元",
-            "count": "55+",
-            "unit": "笔",
-            "weight": 58,
-            "color": "#FF9FE2",
-            "reps": [
-              "大量早 / 中期玩家"
-            ]
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "tiersData",
-        "publicLabel": "tiersData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -18654,9 +9847,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -18667,9 +9858,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "tierCount",
@@ -18680,25 +9869,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "展示的指标分层数",
-        "publicKey": "tierCount",
-        "publicLabel": "分层数",
-        "description": "展示的指标分层数"
-      },
-      {
-        "key": "repCount",
-        "type": "slider",
-        "label": "代表容量",
-        "min": 1,
-        "max": 1,
-        "step": 1,
-        "default": 1,
-        "countArrays": [
-          "tiersData[].reps"
-        ],
-        "desc": "每层最多可填写的代表公司数",
-        "publicKey": "repCount",
-        "publicLabel": "代表容量",
-        "description": "每层最多可填写的代表公司数"
+        "publicKey": "tierCount"
       },
       {
         "key": "chartVariant",
@@ -18720,9 +9891,7 @@ export const pages = [
         ],
         "default": "pyramid",
         "desc": "金字塔 / 横向柱状",
-        "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "description": "金字塔 / 横向柱状"
+        "publicKey": "chartVariant"
       },
       {
         "key": "focusEnabled",
@@ -18730,9 +9899,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一层",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一层"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -18744,9 +9911,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "tierCount",
         "desc": "被高亮层的序号（顶为1）",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点层序号",
-        "description": "被高亮层的序号（顶为1）"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCount",
@@ -18754,9 +9919,7 @@ export const pages = [
         "label": "家数数字",
         "default": true,
         "desc": "层内家数数字",
-        "publicKey": "showCount",
-        "publicLabel": "家数数字",
-        "description": "层内家数数字"
+        "publicKey": "showCount"
       },
       {
         "key": "showExamples",
@@ -18764,9 +9927,7 @@ export const pages = [
         "label": "代表公司",
         "default": true,
         "desc": "右栏代表对象标签",
-        "publicKey": "showExamples",
-        "publicLabel": "代表公司",
-        "description": "右栏代表对象标签"
+        "publicKey": "showExamples"
       },
       {
         "key": "showDecorations",
@@ -18774,9 +9935,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -18797,12 +9956,12 @@ export const pages = [
           "count": "3",
           "unit": "家",
           "weight": 3,
-          "color": "#27E021",
           "reps": [
             "OpenAI",
             "xAI",
             "Databricks"
-          ]
+          ],
+          "color": "#27E021"
         },
         {
           "name": "巨型独角兽",
@@ -18811,12 +9970,12 @@ export const pages = [
           "count": "9",
           "unit": "家",
           "weight": 9,
-          "color": "#15A7F0",
           "reps": [
             "Anthropic",
             "CoreWeave",
             "Scale AI"
-          ]
+          ],
+          "color": "#15A7F0"
         },
         {
           "name": "独角兽",
@@ -18825,12 +9984,12 @@ export const pages = [
           "count": "30+",
           "unit": "家",
           "weight": 33,
-          "color": "#FFC700",
           "reps": [
             "Figure",
             "Perplexity",
             "Glean"
-          ]
+          ],
+          "color": "#FFC700"
         },
         {
           "name": "成长梯队",
@@ -18839,16 +9998,15 @@ export const pages = [
           "count": "55+",
           "unit": "笔",
           "weight": 58,
-          "color": "#FF9FE2",
           "reps": [
             "大量早 / 中期玩家"
-          ]
+          ],
+          "color": "#FF9FE2"
         }
       ],
       "hlStyle": "glass",
       "hlTilt": 2,
       "tierCount": 4,
-      "repCount": 1,
       "chartVariant": "pyramid",
       "focusEnabled": true,
       "focusIndex": 2,
@@ -18882,9 +10040,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -18912,9 +10068,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "hlStyle",
@@ -18946,9 +10100,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -18959,9 +10111,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -18974,9 +10124,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "media",
         "desc": "整屏 cover 背景图(0=渐变底)",
-        "publicKey": "mediaCount",
-        "publicLabel": "背景图数量",
-        "description": "整屏 cover 背景图(0=渐变底)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "textAlign",
@@ -18998,9 +10146,7 @@ export const pages = [
         ],
         "default": "left",
         "desc": "浮层文案对齐方式",
-        "publicKey": "textAlign",
-        "publicLabel": "文案对齐",
-        "description": "浮层文案对齐方式"
+        "publicKey": "textAlign"
       },
       {
         "key": "accentTone",
@@ -19032,9 +10178,7 @@ export const pages = [
         ],
         "default": "blue",
         "desc": "页面主色调",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调"
+        "publicKey": "accentTone"
       },
       {
         "key": "statCount",
@@ -19045,9 +10189,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "底部数据卡数量",
-        "publicKey": "statCount",
-        "publicLabel": "数据卡数量",
-        "description": "底部数据卡数量"
+        "publicKey": "statCount"
       },
       {
         "key": "showScrim",
@@ -19055,9 +10197,7 @@ export const pages = [
         "label": "暗角遮罩",
         "default": true,
         "desc": "保证文字可读的暗角",
-        "publicKey": "showScrim",
-        "publicLabel": "暗角遮罩",
-        "description": "保证文字可读的暗角"
+        "publicKey": "showScrim"
       },
       {
         "key": "showDecorations",
@@ -19065,133 +10205,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "典型案例 · 第三次创业",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "name",
-        "type": "text",
-        "label": "主标题",
-        "default": "xAI",
-        "desc": "巨型主标题",
-        "publicKey": "name",
-        "publicLabel": "主标题",
-        "description": "巨型主标题"
-      },
-      {
-        "key": "taglineLead",
-        "type": "text",
-        "label": "口号前半",
-        "default": "马斯克的",
-        "desc": "口号关键词前文",
-        "publicKey": "taglineLead",
-        "publicLabel": "口号前半",
-        "description": "口号关键词前文"
-      },
-      {
-        "key": "taglineKeyword",
-        "type": "text",
-        "label": "口号关键词",
-        "default": "第三次创业",
-        "desc": "高亮关键词",
-        "publicKey": "taglineKeyword",
-        "publicLabel": "口号关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "key": "taglineTail",
-        "type": "text",
-        "label": "口号后半",
-        "default": "",
-        "desc": "关键词后文",
-        "publicKey": "taglineTail",
-        "publicLabel": "口号后半",
-        "description": "关键词后文"
-      },
-      {
-        "key": "body",
-        "type": "textarea",
-        "label": "正文",
-        "rows": 3,
-        "default": "X 实时数据叠加特斯拉协同，Grok 用差异化叙事跻身头部。",
-        "desc": "正文段落",
-        "publicKey": "body",
-        "publicLabel": "正文",
-        "description": "正文段落"
-      },
-      {
-        "key": "mediaPlaceholder",
-        "type": "text",
-        "label": "图片槽提示",
-        "default": "拖入整屏背景图",
-        "desc": "背景图槽占位文案",
-        "publicKey": "mediaPlaceholder",
-        "publicLabel": "图片槽提示",
-        "description": "背景图槽占位文案"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 数据卡",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 数据卡"
-      },
-      {
-        "key": "stats",
-        "type": "list",
-        "label": "数据卡",
-        "itemLabel": "卡",
-        "countFromKey": "statCount",
-        "fields": [
-          {
-            "key": "value",
-            "label": "数值"
-          },
-          {
-            "key": "unit",
-            "label": "单位"
-          },
-          {
-            "key": "label",
-            "label": "标签"
-          }
-        ],
-        "default": [
-          {
-            "value": "50",
-            "unit": "亿",
-            "label": "2024 融资额"
-          },
-          {
-            "value": "500",
-            "unit": "亿",
-            "label": "估值 / 美元"
-          },
-          {
-            "value": "18",
-            "unit": "个月",
-            "label": "跻身头部梯队"
-          }
-        ],
-        "desc": "底部数据卡：数值 / 单位 / 标签",
-        "publicKey": "stats",
-        "publicLabel": "数据卡",
-        "description": "底部数据卡：数值 / 单位 / 标签"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -19210,7 +10224,7 @@ export const pages = [
       "taglineLead": "马斯克的",
       "taglineKeyword": "第三次创业",
       "taglineTail": "",
-      "body": "X 实时数据叠加特斯拉协同，Grok 用差异化叙事跻身头部。",
+      "body": "背靠 X 平台海量实时社交数据，协同特斯拉自动驾驶团队——Grok 主打「幽默、实时、无审查」，从成立到跻身头部梯队仅用 18 个月。",
       "mediaPlaceholder": "拖入整屏背景图",
       "stats": [
         {
@@ -19241,118 +10255,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "placeholder001",
-            "label": "图片占位"
-          }
-        ],
-        "default": {
-          "text001": "算力军备 · CASE / COLOSSUS",
-          "text002": "把超算，",
-          "text003": "122 天",
-          "text004": "盖出来",
-          "text005": "大额融资的尽头是算力。xAI 在孟菲斯把十万张 H100 塞进同一个集群，用四个月完成传统需要数年的工程—— 资本、电力与工程速度，正在成为大模型竞赛真正的护城河。",
-          "placeholder001": "超算中心 / GPU 集群 / 数据中心实拍"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "pinsData",
-        "type": "list",
-        "label": "pinsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "x",
-            "label": "x"
-          },
-          {
-            "key": "y",
-            "label": "y"
-          },
-          {
-            "key": "val",
-            "label": "val"
-          },
-          {
-            "key": "unit",
-            "label": "unit"
-          },
-          {
-            "key": "label",
-            "label": "label"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "x": 31,
-            "y": 26,
-            "val": "10万",
-            "unit": "卡",
-            "label": "H100 GPU · 同一集群",
-            "color": "#27E021"
-          },
-          {
-            "x": 69,
-            "y": 50,
-            "val": "122",
-            "unit": "天",
-            "label": "从破土到点亮上线",
-            "color": "#FFC700"
-          },
-          {
-            "x": 44,
-            "y": 77,
-            "val": "孟菲斯",
-            "unit": "",
-            "label": "田纳西 · 电网就近供电",
-            "color": "#15A7F0"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "pinsData",
-        "publicLabel": "pinsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -19382,9 +10284,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -19395,9 +10295,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -19408,9 +10306,7 @@ export const pages = [
         "step": 1,
         "default": 1,
         "desc": "自适应单张大图(0=纯文案+数据卡)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片槽数量",
-        "description": "自适应单张大图(0=纯文案+数据卡)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "imageSide",
@@ -19432,9 +10328,7 @@ export const pages = [
         ],
         "default": "right",
         "desc": "配图在左 / 右(有图时生效)",
-        "publicKey": "imageSide",
-        "publicLabel": "配图位置",
-        "description": "配图在左 / 右(有图时生效)"
+        "publicKey": "imageSide"
       },
       {
         "key": "accentTone",
@@ -19466,9 +10360,7 @@ export const pages = [
         ],
         "default": "blue",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "pinCount",
@@ -19479,9 +10371,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "浮层标注 pin 数量",
-        "publicKey": "pinCount",
-        "publicLabel": "标注数量",
-        "description": "浮层标注 pin 数量"
+        "publicKey": "pinCount"
       },
       {
         "key": "focusEnabled",
@@ -19489,9 +10379,7 @@ export const pages = [
         "label": "重点放大",
         "default": true,
         "desc": "是否放大某一标注",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点放大",
-        "description": "是否放大某一标注"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -19503,9 +10391,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "pinCount",
         "desc": "被放大标注的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被放大标注的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecorations",
@@ -19513,9 +10399,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -19603,9 +10487,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -19616,9 +10498,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -19633,9 +10513,7 @@ export const pages = [
           "images"
         ],
         "desc": "自适应图片槽数量(按上传图片比例)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片槽数量",
-        "description": "自适应图片槽数量(按上传图片比例)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "mediaLayout",
@@ -19657,9 +10535,7 @@ export const pages = [
         ],
         "default": "feature",
         "desc": "多张图片的排布构图",
-        "publicKey": "mediaLayout",
-        "publicLabel": "多图构图",
-        "description": "多张图片的排布构图"
+        "publicKey": "mediaLayout"
       },
       {
         "key": "statCount",
@@ -19670,9 +10546,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "左侧数据标签数量",
-        "publicKey": "statCount",
-        "publicLabel": "数据标签",
-        "description": "左侧数据标签数量"
+        "publicKey": "statCount"
       },
       {
         "key": "focusEnabled",
@@ -19680,9 +10554,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一张图片",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一张图片"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -19694,9 +10566,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "mediaCount",
         "desc": "被高亮图片的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮图片的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecorations",
@@ -19704,154 +10574,14 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "典型案例 · 卖铲子的人",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "name",
-        "type": "text",
-        "label": "主标题",
-        "default": "CoreWeave",
-        "desc": "巨型公司名 / 主标题",
-        "publicKey": "name",
-        "publicLabel": "主标题",
-        "description": "巨型公司名 / 主标题"
-      },
-      {
-        "key": "taglineLead",
-        "type": "text",
-        "label": "口号前半",
-        "default": "淘金热里",
-        "desc": "口号关键词前文",
-        "publicKey": "taglineLead",
-        "publicLabel": "口号前半",
-        "description": "口号关键词前文"
-      },
-      {
-        "key": "taglineKeyword",
-        "type": "text",
-        "label": "口号关键词",
-        "default": "卖铲子",
-        "desc": "高亮关键词",
-        "publicKey": "taglineKeyword",
-        "publicLabel": "口号关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "key": "taglineTail",
-        "type": "text",
-        "label": "口号后半",
-        "default": "，也赚翻了",
-        "desc": "关键词后文",
-        "publicKey": "taglineTail",
-        "publicLabel": "口号后半",
-        "description": "关键词后文"
-      },
-      {
-        "key": "body",
-        "type": "textarea",
-        "label": "正文",
-        "rows": 4,
-        "default": "转型 AI 算力云后，它凭长期 GPU 供应成为模型公司的稀缺底座。",
-        "desc": "正文段落",
-        "publicKey": "body",
-        "publicLabel": "正文",
-        "description": "正文段落"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 标签与图片槽",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 标签与图片槽"
-      },
-      {
-        "key": "stats",
-        "type": "list",
-        "label": "数据标签",
-        "itemLabel": "标签",
-        "countFromKey": "statCount",
-        "fields": [
-          {
-            "key": "value",
-            "label": "数值"
-          },
-          {
-            "key": "unit",
-            "label": "单位"
-          },
-          {
-            "key": "label",
-            "label": "说明"
-          },
-          {
-            "key": "color",
-            "label": "颜色"
-          }
-        ],
-        "default": [
-          {
-            "value": "110",
-            "unit": "亿",
-            "label": "2024 融资额",
-            "color": "#15A7F0"
-          },
-          {
-            "value": "190",
-            "unit": "亿",
-            "label": "估值 / 美元",
-            "color": "#FFC700"
-          },
-          {
-            "value": "数万",
-            "unit": "张",
-            "label": "H100/H200 储备",
-            "color": "#27E021"
-          }
-        ],
-        "desc": "左侧数据标签：数值 / 单位 / 说明 / 主色",
-        "publicKey": "stats",
-        "publicLabel": "数据标签",
-        "description": "左侧数据标签：数值 / 单位 / 说明 / 主色"
-      },
-      {
-        "key": "slotLabels",
-        "type": "list",
-        "label": "图片槽提示",
-        "itemLabel": "槽",
-        "countFromKey": "mediaCount",
-        "primitive": true,
-        "default": [
-          "公司 / 机房实景",
-          "创始团队 / Logo",
-          "GPU 算力示意"
-        ],
-        "desc": "各图片槽占位提示文案",
-        "publicKey": "slotLabels",
-        "publicLabel": "图片槽提示",
-        "description": "各图片槽占位提示文案"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
       "hlStyle": "glass",
       "hlTilt": 2,
-      "mediaCount": 3,
       "images": [],
+      "mediaCount": 3,
       "mediaLayout": "feature",
       "statCount": 3,
       "focusEnabled": false,
@@ -19862,7 +10592,7 @@ export const pages = [
       "taglineLead": "淘金热里",
       "taglineKeyword": "卖铲子",
       "taglineTail": "，也赚翻了",
-      "body": "转型 AI 算力云后，它凭长期 GPU 供应成为模型公司的稀缺底座。",
+      "body": "从加密货币挖矿转型 AI 算力云，与 NVIDIA 锁定长期供应，手握数万张 H100/H200，成为 OpenAI、Stability AI 等公司的核心算力供应商——当所有模型公司都在抢 GPU，提前锁定算力的人反而成了稀缺标的。",
       "stats": [
         {
           "value": "110",
@@ -19900,112 +10630,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "标题前句"
-          },
-          {
-            "key": "text003",
-            "label": "正文 1"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "placeholder001",
-            "label": "图片占位"
-          },
-          {
-            "key": "text006",
-            "label": "标签"
-          },
-          {
-            "key": "text007",
-            "label": "正文 3"
-          },
-          {
-            "key": "text008",
-            "label": "正文 4"
-          }
-        ],
-        "default": {
-          "text001": "具身智能 · EMBODIED AI",
-          "text002": "Figure AI",
-          "text003": "人形机器人，硬科技的",
-          "text004": "长周期下注",
-          "text005": "资本愿意为「具身智能」的星辰大海买单，但兑现周期远长于软件——它需要长周期的技术积累， 是一场关于耐心的赌注。一旦机器人真正理解物理世界，想象空间将远超任何一个软件应用。",
-          "placeholder001": "具身智能 / 人形机器人实拍",
-          "text006": "FOCUS",
-          "text007": "“",
-          "text008": "真正的通用智能，需要一具身体来理解物理世界——这正是具身智能值得长期押注的理由。"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "statsData",
-        "type": "list",
-        "label": "statsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "value",
-            "label": "value"
-          },
-          {
-            "key": "unit",
-            "label": "unit"
-          },
-          {
-            "key": "label",
-            "label": "label"
-          }
-        ],
-        "default": [
-          {
-            "value": "6.8",
-            "unit": "亿",
-            "label": "2024 融资额 / 美元"
-          },
-          {
-            "value": "2022",
-            "unit": "",
-            "label": "公司成立年份"
-          },
-          {
-            "value": "人形",
-            "unit": "机器人",
-            "label": "具身智能赛道"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "statsData",
-        "publicLabel": "statsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -20035,9 +10659,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -20048,9 +10670,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -20061,9 +10681,7 @@ export const pages = [
         "step": 1,
         "default": 1,
         "desc": "自适应单张大图(0=纯文案居中)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片槽数量",
-        "description": "自适应单张大图(0=纯文案居中)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "imageSide",
@@ -20085,9 +10703,7 @@ export const pages = [
         ],
         "default": "left",
         "desc": "配图在左 / 右(有图时生效)",
-        "publicKey": "imageSide",
-        "publicLabel": "配图位置",
-        "description": "配图在左 / 右(有图时生效)"
+        "publicKey": "imageSide"
       },
       {
         "key": "accentTone",
@@ -20119,9 +10735,7 @@ export const pages = [
         ],
         "default": "green",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "statCount",
@@ -20132,9 +10746,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "浮层数据卡数量",
-        "publicKey": "statCount",
-        "publicLabel": "数据卡数量",
-        "description": "浮层数据卡数量"
+        "publicKey": "statCount"
       },
       {
         "key": "showQuote",
@@ -20142,9 +10754,7 @@ export const pages = [
         "label": "底部金句",
         "default": true,
         "desc": "底部金句显隐",
-        "publicKey": "showQuote",
-        "publicLabel": "底部金句",
-        "description": "底部金句显隐"
+        "publicKey": "showQuote"
       },
       {
         "key": "showDecorations",
@@ -20152,9 +10762,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -20206,134 +10814,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "placeholder001",
-            "label": "图片占位"
-          },
-          {
-            "key": "text001",
-            "label": "眉标"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "正文 2"
-          }
-        ],
-        "default": {
-          "placeholder001": "主图 · 资本现场主场",
-          "text001": "焦点机位 · SHOWCASE",
-          "text002": "同一笔大钱，",
-          "text003": "不同的现场切面",
-          "text004": "主图之外，再切三个机位——看资金、看团队、看入场券的争夺。"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "thumbsData",
-        "type": "list",
-        "label": "thumbsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "no",
-            "label": "no"
-          },
-          {
-            "key": "tag",
-            "label": "tag"
-          },
-          {
-            "key": "note",
-            "label": "note"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "no": "02",
-            "tag": "算力",
-            "note": "资金的去向",
-            "color": "#27E021"
-          },
-          {
-            "no": "03",
-            "tag": "团队",
-            "note": "稀缺的人才",
-            "color": "#15A7F0"
-          },
-          {
-            "no": "04",
-            "tag": "路演",
-            "note": "争夺入场券",
-            "color": "#FFC700"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "thumbsData",
-        "publicLabel": "thumbsData",
-        "description": "默认数据内容"
-      },
-      {
-        "key": "heroData",
-        "type": "list",
-        "label": "heroData",
-        "itemLabel": "数据",
-        "single": true,
-        "fields": [
-          {
-            "key": "no",
-            "label": "no"
-          },
-          {
-            "key": "tag",
-            "label": "tag"
-          },
-          {
-            "key": "note",
-            "label": "note"
-          },
-          {
-            "key": "glyph",
-            "label": "glyph"
-          }
-        ],
-        "default": {
-          "no": "机位 01",
-          "tag": "主场 · MAIN",
-          "note": "签约现场：97 笔大额融资的缩影",
-          "glyph": "01"
-        },
-        "desc": "默认数据内容",
-        "publicKey": "heroData",
-        "publicLabel": "heroData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "thumbCount",
         "type": "slider",
         "label": "缩略图数量",
@@ -20342,9 +10822,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "右侧缩略图机位数量",
-        "publicKey": "thumbCount",
-        "publicLabel": "缩略图数量",
-        "description": "右侧缩略图机位数量"
+        "publicKey": "thumbCount"
       },
       {
         "key": "mediaCount",
@@ -20355,9 +10833,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "显示图片槽的画框数(主图优先)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片槽画框数",
-        "description": "显示图片槽的画框数(主图优先)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "imageSide",
@@ -20379,9 +10855,7 @@ export const pages = [
         ],
         "default": "left",
         "desc": "主图在左 / 右",
-        "publicKey": "imageSide",
-        "publicLabel": "主图位置",
-        "description": "主图在左 / 右"
+        "publicKey": "imageSide"
       },
       {
         "key": "focusEnabled",
@@ -20389,9 +10863,7 @@ export const pages = [
         "label": "选中环",
         "default": true,
         "desc": "缩略图选中环",
-        "publicKey": "focusEnabled",
-        "publicLabel": "选中环",
-        "description": "缩略图选中环"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -20403,9 +10875,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "thumbCount",
         "desc": "被选中缩略图序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "选中序号",
-        "description": "被选中缩略图序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showHeroCaption",
@@ -20413,9 +10883,7 @@ export const pages = [
         "label": "主图注解",
         "default": true,
         "desc": "主图底部浮层注解",
-        "publicKey": "showHeroCaption",
-        "publicLabel": "主图注解",
-        "description": "主图底部浮层注解"
+        "publicKey": "showHeroCaption"
       },
       {
         "key": "showDecorations",
@@ -20423,9 +10891,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -20481,105 +10947,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "正文 2"
-          },
-          {
-            "key": "text005",
-            "label": "标签"
-          }
-        ],
-        "default": {
-          "text001": "资本现场 · ON THE GROUND",
-          "text002": "钱潮之下，是一张张",
-          "text003": "真实的脸",
-          "text004": "从旧金山的总部到田纳西的超算集群——把这一年的 AI 资本现场，钉在一面拍立得墙上。",
-          "text005": "把「资本现场」的实拍照片拖进来 · 0–4 张"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "shotsData",
-        "type": "list",
-        "label": "shotsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "cap",
-            "label": "cap"
-          },
-          {
-            "key": "note",
-            "label": "note"
-          },
-          {
-            "key": "tone",
-            "label": "tone"
-          },
-          {
-            "key": "ph",
-            "label": "ph"
-          }
-        ],
-        "default": [
-          {
-            "cap": "旧金山 · 总部",
-            "note": "SF / HQ",
-            "tone": "#15A7F0",
-            "ph": "公司总部 / 团队合影"
-          },
-          {
-            "cap": "GPU 算力集群",
-            "note": "COMPUTE",
-            "tone": "#27E021",
-            "ph": "数据中心 / GPU 集群实拍"
-          },
-          {
-            "cap": "融资签约现场",
-            "note": "THE DEAL",
-            "tone": "#FFC700",
-            "ph": "路演 / 签约 / 发布会现场"
-          },
-          {
-            "cap": "创始人特写",
-            "note": "FOUNDER",
-            "tone": "#FF9FE2",
-            "ph": "创始人 / 人物特写"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "shotsData",
-        "publicLabel": "shotsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -20609,9 +10976,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -20622,9 +10987,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -20635,9 +10998,7 @@ export const pages = [
         "step": 1,
         "default": 4,
         "desc": "拍立得照片数量(图片槽)",
-        "publicKey": "mediaCount",
-        "publicLabel": "照片数量",
-        "description": "拍立得照片数量(图片槽)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "mediaLayout",
@@ -20659,9 +11020,7 @@ export const pages = [
         ],
         "default": "scatter",
         "desc": "散落倾斜 / 整齐排列",
-        "publicKey": "mediaLayout",
-        "publicLabel": "排布方式",
-        "description": "散落倾斜 / 整齐排列"
+        "publicKey": "mediaLayout"
       },
       {
         "key": "focusEnabled",
@@ -20669,9 +11028,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一张照片",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一张照片"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -20683,9 +11040,7 @@ export const pages = [
         "default": 3,
         "maxFromKey": "mediaCount",
         "desc": "被高亮照片的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮照片的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showCaptions",
@@ -20693,9 +11048,7 @@ export const pages = [
         "label": "手写标签",
         "default": true,
         "desc": "照片底部标签显隐",
-        "publicKey": "showCaptions",
-        "publicLabel": "手写标签",
-        "description": "照片底部标签显隐"
+        "publicKey": "showCaptions"
       },
       {
         "key": "showTape",
@@ -20703,9 +11056,7 @@ export const pages = [
         "label": "彩色胶带",
         "default": true,
         "desc": "顶部彩色胶带显隐",
-        "publicKey": "showTape",
-        "publicLabel": "彩色胶带",
-        "description": "顶部彩色胶带显隐"
+        "publicKey": "showTape"
       },
       {
         "key": "showDecorations",
@@ -20713,9 +11064,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -20773,117 +11122,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "标题前句"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          }
-        ],
-        "default": {
-          "text001": "这一章，我们回答四个问题里",
-          "text002": "最关键的",
-          "text003": "几个"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "objectivesData",
-        "type": "list",
-        "label": "objectivesData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "no",
-            "label": "no"
-          },
-          {
-            "key": "zh",
-            "label": "zh"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          }
-        ],
-        "default": [
-          {
-            "no": "01",
-            "zh": "资本高度集中的结构性风险",
-            "en": "CONCENTRATION RISK"
-          },
-          {
-            "no": "02",
-            "zh": "估值与商业兑现的落差",
-            "en": "VALUATION vs DELIVERY"
-          },
-          {
-            "no": "03",
-            "zh": "2025 的三段式演进路径",
-            "en": "PATH AHEAD · 2025"
-          },
-          {
-            "no": "04",
-            "zh": "泡沫还是新基建之争",
-            "en": "BUBBLE OR BEDROCK"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "objectivesData",
-        "publicLabel": "objectivesData",
-        "description": "默认数据内容"
-      },
-      {
-        "key": "chapterData",
-        "type": "list",
-        "label": "chapterData",
-        "itemLabel": "数据",
-        "single": true,
-        "fields": [
-          {
-            "key": "zh",
-            "label": "zh"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "tag",
-            "label": "tag"
-          }
-        ],
-        "default": {
-          "zh": "风险与展望",
-          "en": "RISK & OUTLOOK",
-          "tag": "本章导读 · CHAPTER BRIEF"
-        },
-        "desc": "默认数据内容",
-        "publicKey": "chapterData",
-        "publicLabel": "chapterData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "partNumber",
         "type": "slider",
         "label": "章节编号",
@@ -20892,9 +11130,7 @@ export const pages = [
         "step": 1,
         "default": 5,
         "desc": "大号 Part 编号",
-        "publicKey": "partNumber",
-        "publicLabel": "章节编号",
-        "description": "大号 Part 编号"
+        "publicKey": "partNumber"
       },
       {
         "key": "accentTone",
@@ -20926,9 +11162,7 @@ export const pages = [
         ],
         "default": "yellow",
         "desc": "页面主色调",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调"
+        "publicKey": "accentTone"
       },
       {
         "key": "panelSide",
@@ -20950,9 +11184,7 @@ export const pages = [
         ],
         "default": "left",
         "desc": "accent 面板在左 / 右",
-        "publicKey": "panelSide",
-        "publicLabel": "面板侧",
-        "description": "accent 面板在左 / 右"
+        "publicKey": "panelSide"
       },
       {
         "key": "showObjectives",
@@ -20960,9 +11192,7 @@ export const pages = [
         "label": "议题清单",
         "default": true,
         "desc": "右侧议题清单",
-        "publicKey": "showObjectives",
-        "publicLabel": "议题清单",
-        "description": "右侧议题清单"
+        "publicKey": "showObjectives"
       },
       {
         "key": "objectiveCount",
@@ -20973,9 +11203,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "议题条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "议题条数",
-        "description": "议题条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "focusEnabled",
@@ -20983,9 +11211,7 @@ export const pages = [
         "label": "当前高亮",
         "default": true,
         "desc": "高亮当前议题",
-        "publicKey": "focusEnabled",
-        "publicLabel": "当前高亮",
-        "description": "高亮当前议题"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -20997,9 +11223,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "objectiveCount",
         "desc": "当前议题序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "当前序号",
-        "description": "当前议题序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showDecorations",
@@ -21007,9 +11231,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -21094,9 +11316,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -21107,9 +11327,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "columnCount",
@@ -21120,9 +11338,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "对比列数(=1 仅显示首列)",
-        "publicKey": "columnCount",
-        "publicLabel": "列数",
-        "description": "对比列数(=1 仅显示首列)"
+        "publicKey": "columnCount"
       },
       {
         "key": "itemCount",
@@ -21133,9 +11349,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "每列展示的条目数量",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "description": "每列展示的条目数量"
+        "publicKey": "itemCount"
       },
       {
         "key": "focusEnabled",
@@ -21143,9 +11357,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一列",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一列"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusSide",
@@ -21167,9 +11379,7 @@ export const pages = [
         ],
         "default": "left",
         "desc": "被高亮的列",
-        "publicKey": "focusSide",
-        "publicLabel": "重点列",
-        "description": "被高亮的列"
+        "publicKey": "focusSide"
       },
       {
         "key": "showIcons",
@@ -21177,9 +11387,7 @@ export const pages = [
         "label": "图标显示",
         "default": true,
         "desc": "列首 ✓/✕ 图标",
-        "publicKey": "showIcons",
-        "publicLabel": "图标显示",
-        "description": "列首 ✓/✕ 图标"
+        "publicKey": "showIcons"
       },
       {
         "key": "showDecorations",
@@ -21187,119 +11395,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "投资展望 · 策略对比",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "退潮之后，谁能",
-        "desc": "标题关键词前文",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "标题关键词前文"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "留在牌桌",
-        "desc": "高亮关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 对比列",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 对比列"
-      },
-      {
-        "key": "columns",
-        "type": "list",
-        "label": "对比列",
-        "itemLabel": "列",
-        "countFromKey": "columnCount",
-        "fields": [
-          {
-            "key": "heading",
-            "label": "标题"
-          },
-          {
-            "key": "sub",
-            "label": "副标"
-          },
-          {
-            "key": "color",
-            "label": "颜色"
-          }
-        ],
-        "default": [
-          {
-            "side": "left",
-            "color": "#27E021",
-            "kind": "good",
-            "heading": "看好方向",
-            "sub": "有商业闭环 · 确定性强",
-            "items": [
-              {
-                "title": "垂直应用",
-                "desc": "商业模式清晰、已验证 PMF，如 Glean、Harvey。"
-              },
-              {
-                "title": "基础设施中游",
-                "desc": "数据标注、向量数据库等\"卖铲子\"环节，如 Scale AI、Pinecone。"
-              },
-              {
-                "title": "具身智能",
-                "desc": "人形机器人、自动驾驶等长周期硬科技，如 Figure AI。"
-              }
-            ]
-          },
-          {
-            "side": "right",
-            "color": "#FF2442",
-            "kind": "bad",
-            "heading": "谨慎对待",
-            "sub": "泡沫高 · 壁垒低",
-            "items": [
-              {
-                "title": "高估值无收入纯模型",
-                "desc": "烧钱速度快、竞争壁垒低、估值泡沫大。"
-              },
-              {
-                "title": "跟风的\"AI 包装\"项目",
-                "desc": "仅在传统业务上加一层 LLM 调用，无核心壁垒。"
-              },
-              {
-                "title": "无数据护城河的消费应用",
-                "desc": "用户迁移成本低，易被大厂直接复制。"
-              }
-            ]
-          }
-        ],
-        "desc": "对比列：标题 / 副标 / 颜色（每列条目 items 在 defaults 中）",
-        "publicKey": "columns",
-        "publicLabel": "对比列",
-        "description": "对比列：标题 / 副标 / 颜色（每列条目 items 在 defaults 中）"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -21370,120 +11466,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "标题前句"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "正文 1"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "标签"
-          }
-        ],
-        "default": {
-          "text001": "范式转折 · NARRATIVE → PROOF",
-          "text002": "从赌",
-          "text003": "叙事",
-          "text004": "，到看",
-          "text005": "兑现",
-          "text006": "VS"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "sidesData",
-        "type": "list",
-        "label": "sidesData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "key",
-            "label": "key"
-          },
-          {
-            "key": "era",
-            "label": "era"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "title",
-            "label": "title"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "desc",
-            "label": "desc"
-          }
-        ],
-        "default": [
-          {
-            "key": "left",
-            "era": "2023",
-            "color": "#15A7F0",
-            "title": "赌「叙事」",
-            "en": "BET ON STORY",
-            "desc": "愿景与团队即可撬动巨额融资，市场为想象空间买单。",
-            "points": [
-              "宏大愿景驱动估值",
-              "PPT 与 Demo 即可融资",
-              "增长速度优先于利润"
-            ]
-          },
-          {
-            "key": "right",
-            "era": "2024",
-            "color": "#27E021",
-            "title": "看「兑现」",
-            "en": "SHOW THE PROOF",
-            "desc": "资本回归理性，营收与留存成为穿越周期的硬通货。",
-            "points": [
-              "营收能力成为分水岭",
-              "单位经济模型被审视",
-              "商业化进度决定下一轮"
-            ]
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "sidesData",
-        "publicLabel": "sidesData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -21513,9 +11495,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -21526,9 +11506,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "mediaCount",
@@ -21539,9 +11517,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "带图片槽的面板数(其余转霓虹标题态)",
-        "publicKey": "mediaCount",
-        "publicLabel": "图片槽数量",
-        "description": "带图片槽的面板数(其余转霓虹标题态)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "pointCount",
@@ -21552,9 +11528,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "每侧对位要点数量",
-        "publicKey": "pointCount",
-        "publicLabel": "要点数量",
-        "description": "每侧对位要点数量"
+        "publicKey": "pointCount"
       },
       {
         "key": "focusSide",
@@ -21581,9 +11555,7 @@ export const pages = [
         ],
         "default": "none",
         "desc": "高亮左 / 右面板",
-        "publicKey": "focusSide",
-        "publicLabel": "重点侧",
-        "description": "高亮左 / 右面板"
+        "publicKey": "focusSide"
       },
       {
         "key": "showVsBadge",
@@ -21591,9 +11563,7 @@ export const pages = [
         "label": "VS 徽章",
         "default": true,
         "desc": "中缝 VS 徽章显隐",
-        "publicKey": "showVsBadge",
-        "publicLabel": "VS 徽章",
-        "description": "中缝 VS 徽章显隐"
+        "publicKey": "showVsBadge"
       },
       {
         "key": "showDecorations",
@@ -21601,9 +11571,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒 / 圆环等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒 / 圆环等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -21691,9 +11659,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -21704,9 +11670,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "chainCount",
@@ -21717,25 +11681,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "展示的状态传导链数量",
-        "publicKey": "chainCount",
-        "publicLabel": "链路数量",
-        "description": "展示的状态传导链数量"
-      },
-      {
-        "key": "nodeCount",
-        "type": "slider",
-        "label": "节点数量",
-        "min": 2,
-        "max": 3,
-        "step": 1,
-        "default": 3,
-        "countArrays": [
-          "chains[].nodes"
-        ],
-        "desc": "每条传导链最多展示的节点数",
-        "publicKey": "nodeCount",
-        "publicLabel": "节点数量",
-        "description": "每条传导链最多展示的节点数"
+        "publicKey": "chainCount"
       },
       {
         "key": "focusEnabled",
@@ -21743,9 +11689,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一条链路",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一条链路"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -21757,9 +11701,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "chainCount",
         "desc": "被高亮链路的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮链路的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showArrows",
@@ -21767,9 +11709,7 @@ export const pages = [
         "label": "箭头连接",
         "default": true,
         "desc": "节点间的箭头流向",
-        "publicKey": "showArrows",
-        "publicLabel": "箭头连接",
-        "description": "节点间的箭头流向"
+        "publicKey": "showArrows"
       },
       {
         "key": "showOutcome",
@@ -21777,9 +11717,7 @@ export const pages = [
         "label": "结果强调",
         "default": true,
         "desc": "末端结果节点高亮",
-        "publicKey": "showOutcome",
-        "publicLabel": "结果强调",
-        "description": "末端结果节点高亮"
+        "publicKey": "showOutcome"
       },
       {
         "key": "showDecorations",
@@ -21787,105 +11725,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "风险研判 · 传导链条",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "盛宴仍在，但",
-        "desc": "关键词前文",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "关键词前文"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "风险在累积",
-        "desc": "高亮关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 传导链",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 传导链"
-      },
-      {
-        "key": "chains",
-        "type": "list",
-        "label": "传导链",
-        "itemLabel": "链路",
-        "countFromKey": "chainCount",
-        "fields": [
-          {
-            "key": "label",
-            "label": "标签"
-          },
-          {
-            "key": "nodes",
-            "label": "节点(逗号分隔)"
-          },
-          {
-            "key": "outcome",
-            "label": "结果"
-          }
-        ],
-        "default": [
-          {
-            "label": "估值泡沫",
-            "nodes": [
-              "高估值泡沫",
-              "盈利模式未验证",
-              "烧钱速度过快",
-              "资本耐心耗尽"
-            ],
-            "outcome": "估值回调 · 倒闭潮"
-          },
-          {
-            "label": "监管压力",
-            "nodes": [
-              "监管收紧",
-              "AI 安全法案",
-              "合规成本激增"
-            ],
-            "outcome": "不确定性升高"
-          },
-          {
-            "label": "竞争挤压",
-            "nodes": [
-              "大厂自研",
-              "开源模型普及",
-              "商业化壁垒降低"
-            ],
-            "outcome": "API 收费承压"
-          }
-        ],
-        "desc": "传导链：标签 / 节点 / 结果",
-        "publicKey": "chains",
-        "publicLabel": "传导链",
-        "description": "传导链：标签 / 节点 / 结果"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -21903,6 +11743,7 @@ export const pages = [
       "chains": [
         {
           "label": "估值泡沫",
+          "color": "#FF2442",
           "nodes": [
             "高估值泡沫",
             "盈利模式未验证",
@@ -21913,6 +11754,7 @@ export const pages = [
         },
         {
           "label": "监管压力",
+          "color": "#FFC700",
           "nodes": [
             "监管收紧",
             "AI 安全法案",
@@ -21922,6 +11764,7 @@ export const pages = [
         },
         {
           "label": "竞争挤压",
+          "color": "#15A7F0",
           "nodes": [
             "大厂自研",
             "开源模型普及",
@@ -21929,8 +11772,7 @@ export const pages = [
           ],
           "outcome": "API 收费承压"
         }
-      ],
-      "nodeCount": 3
+      ]
     }
   },
   {
@@ -21942,128 +11784,6 @@ export const pages = [
     "label": "资本三段式",
     "bgClass": "",
     "controls": [
-      {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          },
-          {
-            "key": "text006",
-            "label": "标签"
-          },
-          {
-            "key": "text007",
-            "label": "正文 3"
-          },
-          {
-            "key": "text008",
-            "label": "正文 4"
-          }
-        ],
-        "default": {
-          "text001": "资本节奏 · ROADMAP",
-          "text002": "一年三步：从赌叙事，到",
-          "text003": "看兑现",
-          "text004": "「",
-          "text005": "」",
-          "text006": "STEP",
-          "text007": "节节收窄",
-          "text008": "资本叙事的重心逐级上移：愿景 → 算力 → 兑现 · 阶段为调研整理（报告 4 结论 / 示意）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "stepsData",
-        "type": "list",
-        "label": "stepsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "tag",
-            "label": "tag"
-          },
-          {
-            "key": "theme",
-            "label": "theme"
-          },
-          {
-            "key": "phrase",
-            "label": "phrase"
-          },
-          {
-            "key": "desc",
-            "label": "desc"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "tag": "2024 H1",
-            "theme": "叙事驱动",
-            "phrase": "为愿景下注",
-            "desc": "估值跑在收入前面，资本愿意为故事埋单。",
-            "color": "#27E021"
-          },
-          {
-            "tag": "2024 H2",
-            "theme": "算力卡位",
-            "phrase": "卖铲子的赢",
-            "desc": "资金大举涌入算力与云，谁锁住 GPU 谁掌握主动。",
-            "color": "#15A7F0"
-          },
-          {
-            "tag": "2025 起",
-            "theme": "兑现为王",
-            "phrase": "看 ARR 说话",
-            "desc": "能把模型变成真实收入的公司，才留在牌桌上。",
-            "color": "#FFC700"
-          },
-          {
-            "tag": "前瞻",
-            "theme": "集中加剧",
-            "phrase": "强者通吃",
-            "desc": "资金继续向头部、单一赛道与少数枢纽收拢。",
-            "color": "#FF9FE2"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "stepsData",
-        "publicLabel": "stepsData",
-        "description": "默认数据内容"
-      },
       {
         "key": "hlStyle",
         "type": "radio",
@@ -22094,9 +11814,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -22107,9 +11825,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "stepCount",
@@ -22120,9 +11836,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "展示的阶段数量",
-        "publicKey": "stepCount",
-        "publicLabel": "阶段数",
-        "description": "展示的阶段数量"
+        "publicKey": "stepCount"
       },
       {
         "key": "layoutVariant",
@@ -22144,9 +11858,7 @@ export const pages = [
         ],
         "default": "ascend",
         "desc": "逐级抬高 / 等高平台",
-        "publicKey": "layoutVariant",
-        "publicLabel": "基座形态",
-        "description": "逐级抬高 / 等高平台"
+        "publicKey": "layoutVariant"
       },
       {
         "key": "focusEnabled",
@@ -22154,9 +11866,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一阶段",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一阶段"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -22168,9 +11878,7 @@ export const pages = [
         "default": 3,
         "maxFromKey": "stepCount",
         "desc": "被高亮阶段的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮阶段的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showGhost",
@@ -22178,9 +11886,7 @@ export const pages = [
         "label": "幽灵编号",
         "default": true,
         "desc": "背景巨型描边编号显隐",
-        "publicKey": "showGhost",
-        "publicLabel": "幽灵编号",
-        "description": "背景巨型描边编号显隐"
+        "publicKey": "showGhost"
       },
       {
         "key": "showBaseline",
@@ -22188,9 +11894,7 @@ export const pages = [
         "label": "底部基线",
         "default": true,
         "desc": "阶梯底部基线显隐",
-        "publicKey": "showBaseline",
-        "publicLabel": "底部基线",
-        "description": "阶梯底部基线显隐"
+        "publicKey": "showBaseline"
       },
       {
         "key": "showPhrase",
@@ -22198,9 +11902,7 @@ export const pages = [
         "label": "阶段金句",
         "default": true,
         "desc": "阶段金句短语显隐",
-        "publicKey": "showPhrase",
-        "publicLabel": "阶段金句",
-        "description": "阶段金句短语显隐"
+        "publicKey": "showPhrase"
       },
       {
         "key": "showDecorations",
@@ -22208,9 +11910,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -22276,180 +11976,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "标题前句"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标签"
-          },
-          {
-            "key": "text005",
-            "label": "单位"
-          },
-          {
-            "key": "text006",
-            "label": "正文 1"
-          },
-          {
-            "key": "text007",
-            "label": "正文 2"
-          }
-        ],
-        "default": {
-          "text001": "资本节奏 · 2024 FUNDING CALENDAR",
-          "text002": "一整年的",
-          "text003": "资本节奏",
-          "text004": "Q",
-          "text005": "亿",
-          "text006": "资本节奏",
-          "text007": "每个标记 = 一笔披露融资 · 区间条 = 同年多轮 · 月份为示意（报告案例 · 调研整理）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "lanesData",
-        "type": "list",
-        "label": "lanesData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "events",
-            "label": "events"
-          }
-        ],
-        "default": [
-          {
-            "name": "OpenAI",
-            "en": "GENERAL",
-            "events": [
-              {
-                "monthIndex": 9,
-                "amount": "66"
-              }
-            ]
-          },
-          {
-            "name": "Databricks",
-            "en": "DATA",
-            "events": [
-              {
-                "monthIndex": 11,
-                "amount": "100"
-              }
-            ]
-          },
-          {
-            "name": "Anthropic",
-            "en": "SAFETY",
-            "events": [
-              {
-                "monthIndex": 2,
-                "amount": "27"
-              },
-              {
-                "monthIndex": 10,
-                "amount": "40"
-              }
-            ]
-          },
-          {
-            "name": "xAI",
-            "en": "GENERAL",
-            "events": [
-              {
-                "monthIndex": 4,
-                "amount": "60"
-              },
-              {
-                "monthIndex": 11,
-                "amount": "50"
-              }
-            ]
-          },
-          {
-            "name": "CoreWeave",
-            "en": "COMPUTE",
-            "events": [
-              {
-                "monthIndex": 4,
-                "amount": "75"
-              }
-            ]
-          },
-          {
-            "name": "Figure AI",
-            "en": "ROBOTICS",
-            "events": [
-              {
-                "monthIndex": 1,
-                "amount": "6.7"
-              }
-            ]
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "lanesData",
-        "publicLabel": "lanesData",
-        "description": "默认数据内容"
-      },
-      {
-        "key": "monthsData",
-        "type": "list",
-        "label": "monthsData",
-        "itemLabel": "数据",
-        "primitive": true,
-        "default": [
-          "J",
-          "F",
-          "M",
-          "A",
-          "M",
-          "J",
-          "J",
-          "A",
-          "S",
-          "O",
-          "N",
-          "D"
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "monthsData",
-        "publicLabel": "monthsData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -22479,9 +12005,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -22492,9 +12016,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "laneCount",
@@ -22505,9 +12027,7 @@ export const pages = [
         "step": 1,
         "default": 6,
         "desc": "展示的公司泳道数量",
-        "publicKey": "laneCount",
-        "publicLabel": "公司泳道数",
-        "description": "展示的公司泳道数量"
+        "publicKey": "laneCount"
       },
       {
         "key": "focusEnabled",
@@ -22515,9 +12035,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一泳道",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一泳道"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -22529,9 +12047,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "laneCount",
         "desc": "被高亮泳道的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮泳道的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showSpan",
@@ -22539,9 +12055,7 @@ export const pages = [
         "label": "多轮区间条",
         "default": true,
         "desc": "同年多轮的区间连接条",
-        "publicKey": "showSpan",
-        "publicLabel": "多轮区间条",
-        "description": "同年多轮的区间连接条"
+        "publicKey": "showSpan"
       },
       {
         "key": "showAmount",
@@ -22549,9 +12063,7 @@ export const pages = [
         "label": "数值标签",
         "default": true,
         "desc": "事件数值标签",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
-        "description": "事件数值标签"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showQuarterTint",
@@ -22559,9 +12071,7 @@ export const pages = [
         "label": "时间分区",
         "default": true,
         "desc": "时间段背景分区淡色块",
-        "publicKey": "showQuarterTint",
-        "publicLabel": "时间分区",
-        "description": "时间段背景分区淡色块"
+        "publicKey": "showQuarterTint"
       },
       {
         "key": "showDecorations",
@@ -22569,9 +12079,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -22588,68 +12096,74 @@ export const pages = [
         {
           "name": "OpenAI",
           "en": "GENERAL",
-          "events": [
+          "color": "#27E021",
+          "ev": [
             {
-              "monthIndex": 9,
-              "amount": "66"
+              "m": 9,
+              "amt": "66"
             }
           ]
         },
         {
           "name": "Databricks",
           "en": "DATA",
-          "events": [
+          "color": "#FFC700",
+          "ev": [
             {
-              "monthIndex": 11,
-              "amount": "100"
+              "m": 11,
+              "amt": "100"
             }
           ]
         },
         {
           "name": "Anthropic",
           "en": "SAFETY",
-          "events": [
+          "color": "#15A7F0",
+          "ev": [
             {
-              "monthIndex": 2,
-              "amount": "27"
+              "m": 2,
+              "amt": "27"
             },
             {
-              "monthIndex": 10,
-              "amount": "40"
+              "m": 10,
+              "amt": "40"
             }
           ]
         },
         {
           "name": "xAI",
           "en": "GENERAL",
-          "events": [
+          "color": "#FF9FE2",
+          "ev": [
             {
-              "monthIndex": 4,
-              "amount": "60"
+              "m": 4,
+              "amt": "60"
             },
             {
-              "monthIndex": 11,
-              "amount": "50"
+              "m": 11,
+              "amt": "50"
             }
           ]
         },
         {
           "name": "CoreWeave",
           "en": "COMPUTE",
-          "events": [
+          "color": "#27E021",
+          "ev": [
             {
-              "monthIndex": 4,
-              "amount": "75"
+              "m": 4,
+              "amt": "75"
             }
           ]
         },
         {
           "name": "Figure AI",
           "en": "ROBOTICS",
-          "events": [
+          "color": "#15A7F0",
+          "ev": [
             {
-              "monthIndex": 1,
-              "amount": "6.7"
+              "m": 1,
+              "amt": "6.7"
             }
           ]
         }
@@ -22689,117 +12203,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文 1"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          },
-          {
-            "key": "text005",
-            "label": "正文 2"
-          }
-        ],
-        "default": {
-          "text001": "资本时间线 · CAPITAL LINE",
-          "text002": "一年六站，",
-          "text003": "资本一路加速",
-          "text004": "节节攀升",
-          "text005": "从基础模型回暖到头部冲刺 IPO，2024 资本沿这条线一路加速 · 数据为调研整理（报告 2.x · 示意）"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "nodesData",
-        "type": "list",
-        "label": "nodesData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "tag",
-            "label": "tag"
-          },
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "val",
-            "label": "val"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          }
-        ],
-        "default": [
-          {
-            "tag": "2023 Q4",
-            "name": "资本回暖",
-            "val": "基础模型重启大额融资",
-            "color": "#27E021"
-          },
-          {
-            "tag": "2024 Q1",
-            "name": "Anthropic 加注",
-            "val": "亚马逊再追投 40 亿",
-            "color": "#15A7F0"
-          },
-          {
-            "tag": "2024 Q2",
-            "name": "xAI B 轮",
-            "val": "单笔募资 60 亿美元",
-            "color": "#FFC700"
-          },
-          {
-            "tag": "2024 Q4",
-            "name": "Databricks",
-            "val": "史上最大轮 100 亿",
-            "color": "#FF9FE2"
-          },
-          {
-            "tag": "2024 末",
-            "name": "OpenAI",
-            "val": "66 亿 · 估值 1570 亿",
-            "color": "#27E021"
-          },
-          {
-            "tag": "2025 展望",
-            "name": "IPO 窗口",
-            "val": "头部排队冲刺上市",
-            "color": "#15A7F0"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "nodesData",
-        "publicLabel": "nodesData",
-        "description": "默认数据内容"
-      },
-      {
         "key": "hlStyle",
         "type": "radio",
         "label": "高亮样式",
@@ -22829,9 +12232,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -22842,9 +12243,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "nodeCount",
@@ -22855,9 +12254,7 @@ export const pages = [
         "step": 1,
         "default": 6,
         "desc": "地铁线上的里程碑站点数量",
-        "publicKey": "nodeCount",
-        "publicLabel": "站点数量",
-        "description": "地铁线上的里程碑站点数量"
+        "publicKey": "nodeCount"
       },
       {
         "key": "focusEnabled",
@@ -22865,9 +12262,7 @@ export const pages = [
         "label": "重点突出",
         "default": true,
         "desc": "是否高亮某一站",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一站"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -22879,9 +12274,7 @@ export const pages = [
         "default": 4,
         "maxFromKey": "nodeCount",
         "desc": "被高亮站点的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮站点的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "alternate",
@@ -22889,9 +12282,7 @@ export const pages = [
         "label": "上下交替",
         "default": true,
         "desc": "标签在线上 / 线下交替（关=全部在线下）",
-        "publicKey": "alternate",
-        "publicLabel": "上下交替",
-        "description": "标签在线上 / 线下交替（关=全部在线下）"
+        "publicKey": "alternate"
       },
       {
         "key": "showValue",
@@ -22899,9 +12290,7 @@ export const pages = [
         "label": "结论行",
         "default": true,
         "desc": "站点数值 / 结论行显隐",
-        "publicKey": "showValueLabels",
-        "publicLabel": "结论行",
-        "description": "站点数值 / 结论行显隐"
+        "publicKey": "showValueLabels"
       },
       {
         "key": "showLine",
@@ -22909,9 +12298,7 @@ export const pages = [
         "label": "贯穿线",
         "default": true,
         "desc": "贯穿全幅的地铁线显隐",
-        "publicKey": "showLine",
-        "publicLabel": "贯穿线",
-        "description": "贯穿全幅的地铁线显隐"
+        "publicKey": "showLine"
       },
       {
         "key": "showDecorations",
@@ -22919,9 +12306,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -23020,9 +12405,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -23033,9 +12416,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "stepCount",
@@ -23046,9 +12427,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "时间轴阶段数量",
-        "publicKey": "stepCount",
-        "publicLabel": "阶段数量",
-        "description": "时间轴阶段数量"
+        "publicKey": "stepCount"
       },
       {
         "key": "focusEnabled",
@@ -23056,9 +12435,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一阶段",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一阶段"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -23070,9 +12447,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "stepCount",
         "desc": "被高亮阶段的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮阶段的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showAxis",
@@ -23080,9 +12455,7 @@ export const pages = [
         "label": "连接轴线",
         "default": true,
         "desc": "贯穿节点的横向轴线",
-        "publicKey": "showAxis",
-        "publicLabel": "连接轴线",
-        "description": "贯穿节点的横向轴线"
+        "publicKey": "showAxis"
       },
       {
         "key": "showRange",
@@ -23090,9 +12463,7 @@ export const pages = [
         "label": "时间区间",
         "default": true,
         "desc": "节点下方的时间区间标签",
-        "publicKey": "showRange",
-        "publicLabel": "时间区间",
-        "description": "节点下方的时间区间标签"
+        "publicKey": "showRange"
       },
       {
         "key": "showDecorations",
@@ -23100,110 +12471,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "投资展望 · 阶段性策略",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "titleLead",
-        "type": "text",
-        "label": "标题前半",
-        "default": "分三步走，",
-        "desc": "标题关键词前文",
-        "publicKey": "titleLead",
-        "publicLabel": "标题前半",
-        "description": "标题关键词前文"
-      },
-      {
-        "key": "titleKeyword",
-        "type": "text",
-        "label": "标题关键词",
-        "default": "穿越周期",
-        "desc": "高亮关键词",
-        "publicKey": "titleKeyword",
-        "publicLabel": "标题关键词",
-        "description": "高亮关键词"
-      },
-      {
-        "key": "sub",
-        "type": "textarea",
-        "label": "副标题",
-        "rows": 2,
-        "default": "不押注单点爆发，按时间窗口分阶段布局——用纪律穿越 AI 资本周期的起伏。",
-        "desc": "标题下方说明",
-        "publicKey": "sub",
-        "publicLabel": "副标题",
-        "description": "标题下方说明"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 阶段",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 阶段"
-      },
-      {
-        "key": "steps",
-        "type": "list",
-        "label": "阶段",
-        "itemLabel": "阶段",
-        "countFromKey": "stepCount",
-        "fields": [
-          {
-            "key": "range",
-            "label": "时间区间"
-          },
-          {
-            "key": "focus",
-            "label": "关键词"
-          },
-          {
-            "key": "desc",
-            "label": "说明"
-          },
-          {
-            "key": "color",
-            "label": "颜色"
-          }
-        ],
-        "default": [
-          {
-            "range": "2025 – 2026",
-            "color": "#27E021",
-            "focus": "观察 IPO",
-            "desc": "盯头部公司 IPO 表现；若 OpenAI / Anthropic 上市破发，警惕全行业估值回调。"
-          },
-          {
-            "range": "2026 – 2027",
-            "color": "#15A7F0",
-            "focus": "收入曲线",
-            "desc": "关注垂直应用收入增长；优选 ARR ≥ 1 亿美元、续约率 > 120% 的标的。"
-          },
-          {
-            "range": "2027 年后",
-            "color": "#FFC700",
-            "focus": "行业洗牌",
-            "desc": "若 AGI 突破未兑现，进入洗牌期，可逢低抄底被低估的技术资产。"
-          }
-        ],
-        "desc": "时间轴阶段：区间 / 关键词 / 说明 / 主色",
-        "publicKey": "steps",
-        "publicLabel": "阶段",
-        "description": "时间轴阶段：区间 / 关键词 / 说明 / 主色"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -23251,41 +12519,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "zh",
-            "label": "zh"
-          },
-          {
-            "key": "en",
-            "label": "en"
-          },
-          {
-            "key": "tag",
-            "label": "tag"
-          },
-          {
-            "key": "sub",
-            "label": "sub"
-          }
-        ],
-        "default": {
-          "zh": "结论与展望",
-          "en": "CONCLUSION",
-          "tag": "本章导读 · FINAL CHAPTER",
-          "sub": "把全篇收束成一句判断"
-        },
-        "desc": "页面中的固定可见文案",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案"
-      },
-      {
         "key": "partNumber",
         "type": "slider",
         "label": "章节编号",
@@ -23295,9 +12528,7 @@ export const pages = [
         "default": 6,
         "maxFromKey": "stepCount",
         "desc": "当前章节编号（同时定位步进位置）",
-        "publicKey": "partNumber",
-        "publicLabel": "章节编号",
-        "description": "当前章节编号（同时定位步进位置）"
+        "publicKey": "partNumber"
       },
       {
         "key": "accentTone",
@@ -23329,9 +12560,7 @@ export const pages = [
         ],
         "default": "pink",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "stepCount",
@@ -23342,9 +12571,7 @@ export const pages = [
         "step": 1,
         "default": 6,
         "desc": "底部分章步进轨段数",
-        "publicKey": "stepCount",
-        "publicLabel": "步进段数",
-        "description": "底部分章步进轨段数"
+        "publicKey": "stepCount"
       },
       {
         "key": "showStepper",
@@ -23352,9 +12579,7 @@ export const pages = [
         "label": "步进轨",
         "default": true,
         "desc": "底部分章步进轨",
-        "publicKey": "showStepper",
-        "publicLabel": "步进轨",
-        "description": "底部分章步进轨"
+        "publicKey": "showStepper"
       },
       {
         "key": "showRule",
@@ -23362,9 +12587,7 @@ export const pages = [
         "label": "顶部细线",
         "default": true,
         "desc": "顶部细分隔线",
-        "publicKey": "showRule",
-        "publicLabel": "顶部细线",
-        "description": "顶部细分隔线"
+        "publicKey": "showRule"
       },
       {
         "key": "showKana",
@@ -23372,9 +12595,7 @@ export const pages = [
         "label": "英文小注",
         "default": true,
         "desc": "标题下英文小注",
-        "publicKey": "showKana",
-        "publicLabel": "英文小注",
-        "description": "标题下英文小注"
+        "publicKey": "showKana"
       },
       {
         "key": "showDecorations",
@@ -23382,13 +12603,11 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
-      "copy": {
+      "chapterData": {
         "zh": "结论与展望",
         "en": "CONCLUSION",
         "tag": "本章导读 · FINAL CHAPTER",
@@ -23412,108 +12631,6 @@ export const pages = [
     "label": "投资人说",
     "bgClass": "",
     "controls": [
-      {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          },
-          {
-            "key": "text002",
-            "label": "正文"
-          },
-          {
-            "key": "text003",
-            "label": "标题强调"
-          },
-          {
-            "key": "text004",
-            "label": "标题后句"
-          }
-        ],
-        "default": {
-          "text001": "观点墙 · WHAT THEY SAY",
-          "text002": "三种声音，一个共识：",
-          "text003": "从叙事到兑现",
-          "text004": "“"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
-        "key": "cardsData",
-        "type": "list",
-        "label": "cardsData",
-        "itemLabel": "数据",
-        "fields": [
-          {
-            "key": "quote",
-            "label": "quote"
-          },
-          {
-            "key": "name",
-            "label": "name"
-          },
-          {
-            "key": "role",
-            "label": "role"
-          },
-          {
-            "key": "color",
-            "label": "color"
-          },
-          {
-            "key": "initial",
-            "label": "initial"
-          },
-          {
-            "key": "ph",
-            "label": "ph"
-          }
-        ],
-        "default": [
-          {
-            "quote": "构建可解释、可控的系统，比单纯追求规模更符合长远利益。",
-            "name": "Dario Amodei",
-            "role": "Anthropic 联合创始人 / CEO",
-            "color": "#27E021",
-            "initial": "DA",
-            "ph": "人物头像"
-          },
-          {
-            "quote": "资本正在从「赌叙事」转向「看兑现」——能把技术变成收入的公司才留在牌桌上。",
-            "name": "本报告 · 核心判断",
-            "role": "横纵分析法 · 结论篇",
-            "color": "#FFC700",
-            "initial": "判",
-            "ph": "观点配图"
-          },
-          {
-            "quote": "淘金热里，提前锁定算力的「卖铲子」的人，反而成了最稀缺的标的。",
-            "name": "基础设施视角",
-            "role": "案例 · CoreWeave 算力云",
-            "color": "#15A7F0",
-            "initial": "IN",
-            "ph": "人物头像"
-          }
-        ],
-        "desc": "默认数据内容",
-        "publicKey": "cardsData",
-        "publicLabel": "cardsData",
-        "description": "默认数据内容"
-      },
       {
         "key": "hlStyle",
         "type": "radio",
@@ -23544,9 +12661,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -23557,9 +12672,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
+        "publicKey": "hlTilt"
       },
       {
         "key": "cardCount",
@@ -23570,9 +12683,7 @@ export const pages = [
         "step": 1,
         "default": 3,
         "desc": "展示的观点卡数量",
-        "publicKey": "cardCount",
-        "publicLabel": "观点卡数",
-        "description": "展示的观点卡数量"
+        "publicKey": "cardCount"
       },
       {
         "key": "mediaCount",
@@ -23584,9 +12695,7 @@ export const pages = [
         "default": 0,
         "maxFromKey": "cardCount",
         "desc": "显示头像槽的卡片数(其余转首字母)",
-        "publicKey": "mediaCount",
-        "publicLabel": "头像图片槽",
-        "description": "显示头像槽的卡片数(其余转首字母)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "focusEnabled",
@@ -23594,9 +12703,7 @@ export const pages = [
         "label": "重点突出",
         "default": false,
         "desc": "是否高亮某一张卡片",
-        "publicKey": "focusEnabled",
-        "publicLabel": "重点突出",
-        "description": "是否高亮某一张卡片"
+        "publicKey": "focusEnabled"
       },
       {
         "key": "focusIndex",
@@ -23608,9 +12715,7 @@ export const pages = [
         "default": 2,
         "maxFromKey": "cardCount",
         "desc": "被高亮卡片的序号",
-        "publicKey": "focusIndex",
-        "publicLabel": "重点序号",
-        "description": "被高亮卡片的序号"
+        "publicKey": "focusIndex"
       },
       {
         "key": "showRole",
@@ -23618,9 +12723,7 @@ export const pages = [
         "label": "职务行",
         "default": true,
         "desc": "署名下职务行显隐",
-        "publicKey": "showRole",
-        "publicLabel": "职务行",
-        "description": "署名下职务行显隐"
+        "publicKey": "showRole"
       },
       {
         "key": "showDecorations",
@@ -23628,9 +12731,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -23715,9 +12816,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -23728,64 +12827,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "kicker",
-            "label": "眉标"
-          },
-          {
-            "key": "statementLead",
-            "label": "论断前句"
-          },
-          {
-            "key": "statementHighlight",
-            "label": "论断强调"
-          },
-          {
-            "key": "infrastructureLead",
-            "label": "基础设施前句"
-          },
-          {
-            "key": "infrastructureHighlight",
-            "label": "基础设施强调"
-          },
-          {
-            "key": "statementTail",
-            "label": "论断尾句"
-          },
-          {
-            "key": "sub",
-            "label": "支撑副句"
-          },
-          {
-            "key": "attribution",
-            "label": "署名"
-          }
-        ],
-        "default": {
-          "kicker": "核心判断 · THE THESIS",
-          "statementLead": "2024 不是 AI 的泡沫之年，而是",
-          "statementHighlight": "资本用脚投票",
-          "infrastructureLead": "钱，正涌向能造出",
-          "infrastructureHighlight": "下一代基础设施",
-          "statementTail": "的少数人。",
-          "sub": "970 亿美元、97 笔大额轮、近三分之一的美国风投——这一年的结论只有一句：头部赢家通吃，资本不再撒胡椒面。",
-          "attribution": "《2024 美国大额融资 AI 公司调研报告》· 核心结论"
-        },
-        "desc": "页面中的可填业务文案",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的可填业务文案"
+        "publicKey": "hlTilt"
       },
       {
         "key": "accentTone",
@@ -23817,9 +12859,7 @@ export const pages = [
         ],
         "default": "green",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "textAlign",
@@ -23841,9 +12881,7 @@ export const pages = [
         ],
         "default": "left",
         "desc": "文案靠左 / 居中",
-        "publicKey": "textAlign",
-        "publicLabel": "文案对齐",
-        "description": "文案靠左 / 居中"
+        "publicKey": "textAlign"
       },
       {
         "key": "showGhostMark",
@@ -23851,9 +12889,7 @@ export const pages = [
         "label": "背景引号",
         "default": true,
         "desc": "背景巨型引号",
-        "publicKey": "showGhostMark",
-        "publicLabel": "背景引号",
-        "description": "背景巨型引号"
+        "publicKey": "showGhostMark"
       },
       {
         "key": "showSub",
@@ -23861,9 +12897,7 @@ export const pages = [
         "label": "支撑副句",
         "default": true,
         "desc": "论断下方支撑副句",
-        "publicKey": "showSub",
-        "publicLabel": "支撑副句",
-        "description": "论断下方支撑副句"
+        "publicKey": "showSub"
       },
       {
         "key": "showAttribution",
@@ -23871,9 +12905,7 @@ export const pages = [
         "label": "底部署名",
         "default": true,
         "desc": "底部署名",
-        "publicKey": "showAttribution",
-        "publicLabel": "底部署名",
-        "description": "底部署名"
+        "publicKey": "showAttribution"
       },
       {
         "key": "showRule",
@@ -23881,9 +12913,7 @@ export const pages = [
         "label": "署名短线",
         "default": true,
         "desc": "署名前装饰短线",
-        "publicKey": "showRule",
-        "publicLabel": "署名短线",
-        "description": "署名前装饰短线"
+        "publicKey": "showRule"
       },
       {
         "key": "showDecorations",
@@ -23891,24 +12921,27 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
+      "copy": {
+        "text001": "“",
+        "text002": "核心判断 · THE THESIS",
+        "text003": "2024 不是 AI 的泡沫之年，",
+        "text004": "而是",
+        "text005": "资本用脚投票",
+        "text006": "的一年——",
+        "text007": "钱，正涌向能造出",
+        "text008": "下一代基础设施",
+        "text009": "的少数人。",
+        "text010": "970 亿美元、97 笔大额轮、近三分之一的美国风投——这一年的结论只有一句：",
+        "text011": "头部赢家通吃，资本不再撒胡椒面。",
+        "text012": "《2024 美国大额融资 AI 公司调研报告》",
+        "text013": "· 核心结论"
+      },
       "hlStyle": "glass",
       "hlTilt": 2,
-      "copy": {
-        "kicker": "核心判断 · THE THESIS",
-        "statementLead": "2024 不是 AI 的泡沫之年，而是",
-        "statementHighlight": "资本用脚投票",
-        "infrastructureLead": "钱，正涌向能造出",
-        "infrastructureHighlight": "下一代基础设施",
-        "statementTail": "的少数人。",
-        "sub": "970 亿美元、97 笔大额轮、近三分之一的美国风投——这一年的结论只有一句：头部赢家通吃，资本不再撒胡椒面。",
-        "attribution": "《2024 美国大额融资 AI 公司调研报告》· 核心结论"
-      },
       "accentTone": "green",
       "textAlign": "left",
       "showGhostMark": true,
@@ -23957,9 +12990,7 @@ export const pages = [
         ],
         "default": "glass",
         "desc": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字",
-        "publicKey": "hlStyle",
-        "publicLabel": "高亮样式",
-        "description": "关键词高亮：玻璃糖果 / 扁平药丸 / 下划线 / 纯文字"
+        "publicKey": "hlStyle"
       },
       {
         "key": "hlTilt",
@@ -23970,74 +13001,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "关键词胶囊旋转角度（仅糖果/药丸样式生效）",
-        "publicKey": "hlTilt",
-        "publicLabel": "高亮倾斜",
-        "description": "关键词胶囊旋转角度（仅糖果/药丸样式生效）"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "kicker",
-            "label": "眉标"
-          },
-          {
-            "key": "statementLead",
-            "label": "论断前句"
-          },
-          {
-            "key": "statementHighlight",
-            "label": "论断强调"
-          },
-          {
-            "key": "consensusLine",
-            "label": "共识句"
-          },
-          {
-            "key": "sub",
-            "label": "支撑副句"
-          },
-          {
-            "key": "attribution",
-            "label": "署名"
-          },
-          {
-            "key": "sealTitle",
-            "label": "印章标题"
-          },
-          {
-            "key": "sealSubtitle",
-            "label": "印章副标"
-          },
-          {
-            "key": "sealMetric",
-            "label": "印章数字"
-          },
-          {
-            "key": "sealUnit",
-            "label": "印章单位"
-          }
-        ],
-        "default": {
-          "kicker": "终审判断 · THE VERDICT",
-          "statementLead": "这不是一次普通的风口，而是一场",
-          "statementHighlight": "资本的总动员",
-          "consensusLine": "钱、算力与共识，同时压向了同一个方向。",
-          "sub": "970 亿美元在一年内涌入，把「AI 是否值得」的争论，直接改写成了「谁能上车」。",
-          "attribution": "《2024 美国大额融资 AI 公司调研报告》· 总结",
-          "sealTitle": "资本大年 · CONFIRMED",
-          "sealSubtitle": "FUNDING YEAR · 2024",
-          "sealMetric": "970",
-          "sealUnit": "亿美元"
-        },
-        "desc": "页面中的可填业务文案和数据印章内容",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的可填业务文案和数据印章内容"
+        "publicKey": "hlTilt"
       },
       {
         "key": "accentTone",
@@ -24069,9 +13033,7 @@ export const pages = [
         ],
         "default": "yellow",
         "desc": "页面主色调(通用命名)",
-        "publicKey": "accentTone",
-        "publicLabel": "主色调",
-        "description": "页面主色调(通用命名)"
+        "publicKey": "accentTone"
       },
       {
         "key": "textAlign",
@@ -24093,9 +13055,7 @@ export const pages = [
         ],
         "default": "left",
         "desc": "论断靠左(带印章) / 居中(纯文字)",
-        "publicKey": "textAlign",
-        "publicLabel": "论断对齐",
-        "description": "论断靠左(带印章) / 居中(纯文字)"
+        "publicKey": "textAlign"
       },
       {
         "key": "showSeal",
@@ -24103,9 +13063,7 @@ export const pages = [
         "label": "数据印章",
         "default": true,
         "desc": "右侧圆形数据印章",
-        "publicKey": "showSeal",
-        "publicLabel": "数据印章",
-        "description": "右侧圆形数据印章"
+        "publicKey": "showSeal"
       },
       {
         "key": "showGhostMark",
@@ -24113,9 +13071,7 @@ export const pages = [
         "label": "背景引号",
         "default": true,
         "desc": "背景巨型引号",
-        "publicKey": "showGhostMark",
-        "publicLabel": "背景引号",
-        "description": "背景巨型引号"
+        "publicKey": "showGhostMark"
       },
       {
         "key": "showSub",
@@ -24123,9 +13079,7 @@ export const pages = [
         "label": "支撑副句",
         "default": true,
         "desc": "论断下方支撑副句",
-        "publicKey": "showSub",
-        "publicLabel": "支撑副句",
-        "description": "论断下方支撑副句"
+        "publicKey": "showSub"
       },
       {
         "key": "showAttribution",
@@ -24133,9 +13087,7 @@ export const pages = [
         "label": "署名",
         "default": true,
         "desc": "底部署名",
-        "publicKey": "showAttribution",
-        "publicLabel": "署名",
-        "description": "底部署名"
+        "publicKey": "showAttribution"
       },
       {
         "key": "showDecorations",
@@ -24143,26 +13095,28 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
+      "copy": {
+        "text001": "”",
+        "text002": "终审判断 · THE VERDICT",
+        "text003": "这不是一次普通的风口，",
+        "text004": "而是一场",
+        "text005": "资本的总动员",
+        "text006": "钱、算力与共识，",
+        "text007": "同时压向了同一个方向。",
+        "text008": "970 亿美元在一年内涌入，把「AI 是否值得」的争论，直接改写成了「谁能上车」。",
+        "text009": "《2024 美国大额融资 AI 公司调研报告》· 总结",
+        "text010": "资本大年 · CONFIRMED",
+        "text011": "FUNDING YEAR · 2024",
+        "text012": "970",
+        "text013": "亿美元",
+        "text014": "★"
+      },
       "hlStyle": "glass",
       "hlTilt": 2,
-      "copy": {
-        "kicker": "终审判断 · THE VERDICT",
-        "statementLead": "这不是一次普通的风口，而是一场",
-        "statementHighlight": "资本的总动员",
-        "consensusLine": "钱、算力与共识，同时压向了同一个方向。",
-        "sub": "970 亿美元在一年内涌入，把「AI 是否值得」的争论，直接改写成了「谁能上车」。",
-        "attribution": "《2024 美国大额融资 AI 公司调研报告》· 总结",
-        "sealTitle": "资本大年 · CONFIRMED",
-        "sealSubtitle": "FUNDING YEAR · 2024",
-        "sealMetric": "970",
-        "sealUnit": "亿美元"
-      },
       "accentTone": "yellow",
       "textAlign": "left",
       "showSeal": true,
@@ -24182,31 +13136,6 @@ export const pages = [
     "bgClass": "",
     "controls": [
       {
-        "type": "section",
-        "label": "文案 / 单位",
-        "publicLabel": "文案 / 单位"
-      },
-      {
-        "key": "copy",
-        "type": "list",
-        "label": "可见文案",
-        "itemLabel": "文案",
-        "single": true,
-        "fields": [
-          {
-            "key": "text001",
-            "label": "标题"
-          }
-        ],
-        "default": {
-          "text001": "“"
-        },
-        "desc": "页面中的固定可见文案、单位和图片槽提示",
-        "publicKey": "copy",
-        "publicLabel": "可见文案",
-        "description": "页面中的固定可见文案、单位和图片槽提示"
-      },
-      {
         "key": "mediaCount",
         "type": "slider",
         "label": "配图数量",
@@ -24215,9 +13144,7 @@ export const pages = [
         "step": 1,
         "default": 1,
         "desc": "自适应配图(0=纯金句)",
-        "publicKey": "mediaCount",
-        "publicLabel": "配图数量",
-        "description": "自适应配图(0=纯金句)"
+        "publicKey": "mediaCount"
       },
       {
         "key": "imageSide",
@@ -24239,9 +13166,7 @@ export const pages = [
         ],
         "default": "right",
         "desc": "配图在左 / 右",
-        "publicKey": "imageSide",
-        "publicLabel": "配图位置",
-        "description": "配图在左 / 右"
+        "publicKey": "imageSide"
       },
       {
         "key": "highlightStyle",
@@ -24263,9 +13188,7 @@ export const pages = [
         ],
         "default": "box",
         "desc": "关键词强调方式",
-        "publicKey": "highlightStyle",
-        "publicLabel": "强调样式",
-        "description": "关键词强调方式"
+        "publicKey": "highlightStyle"
       },
       {
         "key": "showAttribution",
@@ -24273,9 +13196,7 @@ export const pages = [
         "label": "署名显示",
         "default": true,
         "desc": "底部署名",
-        "publicKey": "showAttribution",
-        "publicLabel": "署名显示",
-        "description": "底部署名"
+        "publicKey": "showAttribution"
       },
       {
         "key": "showDecorations",
@@ -24283,76 +13204,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicKey": "undefined2",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "quoteLead",
-        "type": "text",
-        "label": "引言前半",
-        "default": "AI 融资盛宴仍在继续，但",
-        "desc": "关键词前文",
-        "publicKey": "quoteLead",
-        "publicLabel": "引言前半",
-        "description": "关键词前文"
-      },
-      {
-        "key": "quoteKeyword",
-        "type": "text",
-        "label": "引言关键词",
-        "default": "音乐节奏正在变化",
-        "desc": "强调关键词",
-        "publicKey": "quoteKeyword",
-        "publicLabel": "引言关键词",
-        "description": "强调关键词"
-      },
-      {
-        "key": "quoteTail",
-        "type": "text",
-        "label": "引言后半",
-        "default": "。",
-        "desc": "关键词后文",
-        "publicKey": "quoteTail",
-        "publicLabel": "引言后半",
-        "description": "关键词后文"
-      },
-      {
-        "key": "sub",
-        "type": "textarea",
-        "label": "支撑副句",
-        "rows": 3,
-        "default": "资本的下一阶段，将从「赌叙事」转向「看兑现」——能把技术变成可持续收入的公司，才能在退潮后留在牌桌上。",
-        "desc": "引言下方说明",
-        "publicKey": "sub",
-        "publicLabel": "支撑副句",
-        "description": "引言下方说明"
-      },
-      {
-        "key": "attribution",
-        "type": "text",
-        "label": "署名",
-        "default": "—— 2024 美国大额融资 AI 调研 · 结论",
-        "desc": "底部署名",
-        "publicKey": "attribution",
-        "publicLabel": "署名",
-        "description": "底部署名"
-      },
-      {
-        "key": "mediaPlaceholder",
-        "type": "text",
-        "label": "图片槽提示",
-        "default": "拖入配图",
-        "desc": "配图槽占位文案",
-        "publicKey": "mediaPlaceholder",
-        "publicLabel": "图片槽提示",
-        "description": "配图槽占位文案"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {
@@ -24390,9 +13242,7 @@ export const pages = [
         "step": 1,
         "default": 2,
         "desc": "展示的金句行数",
-        "publicKey": "lineCount",
-        "publicLabel": "文案行数",
-        "description": "展示的金句行数"
+        "publicKey": "lineCount"
       },
       {
         "key": "highlightStyle",
@@ -24414,9 +13264,7 @@ export const pages = [
         ],
         "default": "box",
         "desc": "关键词强调方式",
-        "publicKey": "highlightStyle",
-        "publicLabel": "强调样式",
-        "description": "关键词强调方式"
+        "publicKey": "highlightStyle"
       },
       {
         "key": "showIcons",
@@ -24424,9 +13272,7 @@ export const pages = [
         "label": "图标显示",
         "default": true,
         "desc": "行尾圆形图标",
-        "publicKey": "showIcons",
-        "publicLabel": "图标显示",
-        "description": "行尾圆形图标"
+        "publicKey": "showIcons"
       },
       {
         "key": "showDecorations",
@@ -24434,89 +13280,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "desc": "星芒等点缀",
-        "publicKey": "showDecorations",
-        "publicLabel": "装饰元素",
-        "description": "星芒等点缀"
-      },
-      {
-        "type": "section",
-        "label": "文案",
-        "publicLabel": "文案"
-      },
-      {
-        "key": "kicker",
-        "type": "text",
-        "label": "眉标",
-        "default": "CONCLUSION · 核心结论",
-        "desc": "顶部 kicker",
-        "publicKey": "kicker",
-        "publicLabel": "眉标",
-        "description": "顶部 kicker"
-      },
-      {
-        "key": "footnote",
-        "type": "text",
-        "label": "脚注",
-        "default": "音乐节奏正在变化 · 资本从「赌叙事」走向「看兑现」",
-        "desc": "底部脚注",
-        "publicKey": "footnote",
-        "publicLabel": "脚注",
-        "description": "底部脚注"
-      },
-      {
-        "type": "section",
-        "label": "数据 · 金句",
-        "publicKey": "undefined2",
-        "publicLabel": "数据 · 金句"
-      },
-      {
-        "key": "lines",
-        "type": "list",
-        "label": "金句行",
-        "itemLabel": "行",
-        "countFromKey": "lineCount",
-        "fields": [
-          {
-            "key": "before",
-            "label": "前文"
-          },
-          {
-            "key": "mark",
-            "label": "关键词"
-          },
-          {
-            "key": "after",
-            "label": "后文"
-          },
-          {
-            "key": "color",
-            "label": "颜色"
-          },
-          {
-            "key": "icon",
-            "label": "图标(trend/check)"
-          }
-        ],
-        "default": [
-          {
-            "color": "#15A7F0",
-            "before": "资本下一阶段，从 赌叙事 转向",
-            "mark": "看兑现",
-            "after": "",
-            "icon": "trend"
-          },
-          {
-            "color": "#FFC700",
-            "before": "能把技术变成",
-            "mark": "可持续收入",
-            "after": "的公司，才留在牌桌",
-            "icon": "check"
-          }
-        ],
-        "desc": "金句：前文 / 关键词 / 后文 / 颜色 / 图标",
-        "publicKey": "lines",
-        "publicLabel": "金句行",
-        "description": "金句：前文 / 关键词 / 后文 / 颜色 / 图标"
+        "publicKey": "showDecorations"
       }
     ],
     "defaultProps": {

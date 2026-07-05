@@ -38,66 +38,48 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showStatus",
         "type": "toggle",
         "label": "状态胶囊",
         "default": true,
-        "describe": "顶部的接单状态胶囊。",
         "publicKey": "showStatus",
-        "publicLabel": "状态胶囊",
-        "desc": "顶部的接单状态胶囊。",
-        "description": "顶部的接单状态胶囊。"
+        "desc": "顶部的接单状态胶囊。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的刊号式装饰小标。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的刊号式装饰小标。",
-        "description": "主标题上方的刊号式装饰小标。"
+        "desc": "主标题上方的刊号式装饰小标。"
       },
       {
         "key": "showSweep",
         "type": "toggle",
         "label": "暖橙扫光条",
         "default": true,
-        "describe": "主标题下方的暖橙渐变扫光条（图形母题）。",
         "publicKey": "showSweep",
-        "publicLabel": "暖橙扫光条",
-        "desc": "主标题下方的暖橙渐变扫光条（图形母题）。",
-        "description": "主标题下方的暖橙渐变扫光条（图形母题）。"
+        "desc": "主标题下方的暖橙渐变扫光条（图形母题）。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "扫光条下方的衬线斜体引言。",
         "publicKey": "showLede",
-        "publicLabel": "装饰小字",
-        "desc": "扫光条下方的衬线斜体引言。",
-        "description": "扫光条下方的衬线斜体引言。"
+        "desc": "扫光条下方的衬线斜体引言。"
       },
       {
         "key": "showTicker",
         "type": "toggle",
         "label": "关键词跑马条",
         "default": true,
-        "describe": "底部的箭头串联关键词跑马条。",
         "publicKey": "showTicker",
-        "publicLabel": "关键词跑马条",
-        "desc": "底部的箭头串联关键词跑马条。",
-        "description": "底部的箭头串联关键词跑马条。"
+        "desc": "底部的箭头串联关键词跑马条。"
       },
       {
         "key": "tickerCount",
@@ -107,36 +89,30 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "跑马条中的关键词数量（末项点亮）。",
         "publicKey": "tickerCount",
-        "publicLabel": "关键词数量",
-        "desc": "跑马条中的关键词数量（末项点亮）。",
-        "description": "跑马条中的关键词数量（末项点亮）。"
+        "desc": "跑马条中的关键词数量（末项点亮）。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落的超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落的超大幽灵字符装饰。",
-        "description": "角落的超大幽灵字符装饰。"
+        "desc": "角落的超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
+      "railText": "Capabilities — 燃点",
       "surface": "paper",
       "showStatus": true,
       "showKicker": true,
@@ -189,9 +165,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -219,64 +193,47 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "showScrim",
         "type": "toggle",
         "label": "压暗叠层",
         "default": true,
-        "describe": "图片上的渐变压暗层，保证文字可读。",
         "publicKey": "showScrim",
-        "publicLabel": "压暗叠层",
-        "desc": "图片上的渐变压暗层，保证文字可读。",
-        "description": "图片上的渐变压暗层，保证文字可读。"
+        "desc": "图片上的渐变压暗层，保证文字可读。"
       },
       {
         "key": "showStatus",
         "type": "toggle",
         "label": "状态胶囊",
         "default": true,
-        "describe": "顶部的接单状态胶囊。",
         "publicKey": "showStatus",
-        "publicLabel": "状态胶囊",
-        "desc": "顶部的接单状态胶囊。",
-        "description": "顶部的接单状态胶囊。"
+        "desc": "顶部的接单状态胶囊。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "主标题上方的衬线斜体引言。",
         "publicKey": "showLede",
-        "publicLabel": "装饰小字",
-        "desc": "主标题上方的衬线斜体引言。",
-        "description": "主标题上方的衬线斜体引言。"
+        "desc": "主标题上方的衬线斜体引言。"
       },
       {
         "key": "showSub",
         "type": "toggle",
         "label": "副标题",
         "default": true,
-        "describe": "主标题下方的副标题。",
         "publicKey": "showSub",
-        "publicLabel": "副标题",
-        "desc": "主标题下方的副标题。",
-        "description": "主标题下方的副标题。"
+        "desc": "主标题下方的副标题。"
       },
       {
         "key": "showStrip",
         "type": "toggle",
         "label": "指标条",
         "default": true,
-        "describe": "底部的关键指标条。",
         "publicKey": "showStrip",
-        "publicLabel": "指标条",
-        "desc": "底部的关键指标条。",
-        "description": "底部的关键指标条。"
+        "desc": "底部的关键指标条。"
       },
       {
         "key": "statCount",
@@ -286,25 +243,22 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "describe": "指标条中的指标数量；为 0 时隐藏指标条。",
         "publicKey": "statCount",
-        "publicLabel": "指标数量",
-        "desc": "指标条中的指标数量；为 0 时隐藏指标条。",
-        "description": "指标条中的指标数量；为 0 时隐藏指标条。"
+        "desc": "指标条中的指标数量；为 0 时隐藏指标条。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
+      "railText": "AI Growth Engine — 燃点",
       "surface": "ink",
       "images": [],
       "backgroundMode": "unicorn",
@@ -369,44 +323,32 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showTagBar",
         "type": "toggle",
         "label": "箭头标签栏",
         "default": true,
-        "describe": "顶部的箭头串联标签栏。",
         "publicKey": "showTagBar",
-        "publicLabel": "箭头标签栏",
-        "desc": "顶部的箭头串联标签栏。",
-        "description": "顶部的箭头串联标签栏。"
+        "desc": "顶部的箭头串联标签栏。"
       },
       {
         "key": "showMark",
         "type": "toggle",
         "label": "巨型箭头母题",
         "default": true,
-        "describe": "陈述句上方的超大暖橙箭头母题。",
         "publicKey": "showMark",
-        "publicLabel": "巨型箭头母题",
-        "desc": "陈述句上方的超大暖橙箭头母题。",
-        "description": "陈述句上方的超大暖橙箭头母题。"
+        "desc": "陈述句上方的超大暖橙箭头母题。"
       },
       {
         "key": "showRibbon",
         "type": "toggle",
         "label": "指标条",
         "default": true,
-        "describe": "底部的分隔式关键指标条。",
         "publicKey": "showRibbon",
-        "publicLabel": "指标条",
-        "desc": "底部的分隔式关键指标条。",
-        "description": "底部的分隔式关键指标条。"
+        "desc": "底部的分隔式关键指标条。"
       },
       {
         "key": "statCount",
@@ -416,47 +358,38 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "指标条中的指标数量。",
         "publicKey": "statCount",
-        "publicLabel": "指标数量",
-        "desc": "指标条中的指标数量。",
-        "description": "指标条中的指标数量。"
+        "desc": "指标条中的指标数量。"
       },
       {
         "key": "showSignoff",
         "type": "toggle",
         "label": "翻页提示",
         "default": true,
-        "describe": "右下角的箭头母题与翻页提示。",
         "publicKey": "showSignoff",
-        "publicLabel": "翻页提示",
-        "desc": "右下角的箭头母题与翻页提示。",
-        "description": "右下角的箭头母题与翻页提示。"
+        "desc": "右下角的箭头母题与翻页提示。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落的超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落的超大幽灵字符装饰。",
-        "description": "角落的超大幽灵字符装饰。"
+        "desc": "角落的超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
+      "railText": "AI Growth Engine — 燃点",
       "surface": "ember",
       "showTagBar": true,
       "showMark": true,
@@ -517,44 +450,32 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "左栏标题上方的状态小标。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "左栏标题上方的状态小标。",
-        "description": "左栏标题上方的状态小标。"
+        "desc": "左栏标题上方的状态小标。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "左栏标题下方的衬线引言。",
         "publicKey": "showLede",
-        "publicLabel": "装饰小字",
-        "desc": "左栏标题下方的衬线引言。",
-        "description": "左栏标题下方的衬线引言。"
+        "desc": "左栏标题下方的衬线引言。"
       },
       {
         "key": "showArrow",
         "type": "toggle",
         "label": "翻页箭头",
         "default": true,
-        "describe": "左栏底部的箭头母题与提示。",
         "publicKey": "showArrow",
-        "publicLabel": "翻页箭头",
-        "desc": "左栏底部的箭头母题与提示。",
-        "description": "左栏底部的箭头母题与提示。"
+        "desc": "左栏底部的箭头母题与提示。"
       },
       {
         "key": "imageCount",
@@ -564,11 +485,11 @@ export const pages = [
         "min": 0,
         "max": 1,
         "step": 1,
-        "describe": "右栏图片开关；关闭时呈现指标堆叠，开启时呈现一张满栏图。",
+        "countArrays": [
+          "images"
+        ],
         "publicKey": "imageCount",
-        "publicLabel": "图片",
-        "desc": "右栏图片开关；关闭时呈现指标堆叠，开启时呈现一张满栏图。",
-        "description": "右栏图片开关；关闭时呈现指标堆叠，开启时呈现一张满栏图。"
+        "desc": "右栏图片开关；0=呈现指标堆叠，1=呈现一张满栏图。"
       },
       {
         "key": "statCount",
@@ -578,36 +499,30 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "describe": "右栏指标堆叠的条目数量（仅图片关闭时）。",
         "publicKey": "itemCount",
-        "publicLabel": "指标数量",
-        "desc": "右栏指标堆叠的条目数量（仅图片关闭时）。",
-        "description": "右栏指标堆叠的条目数量（仅图片关闭时）。"
+        "desc": "右栏指标堆叠的条目数量（右栏开关关闭时生效）。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "底对齐",
         "default": true,
-        "describe": "左栏的超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "底对齐",
-        "desc": "左栏的超大幽灵字符装饰。",
-        "description": "左栏的超大幽灵字符装饰。"
+        "desc": "左栏的超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
+      "railText": "AI Growth Engine — 燃点",
       "surface": "ink",
       "showKicker": true,
       "showLede": true,
@@ -668,83 +583,69 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showNav",
         "type": "toggle",
         "label": "章节导航",
         "default": true,
-        "describe": "顶部章节面包屑导航的显示与隐藏。",
         "publicKey": "showNav",
-        "publicLabel": "章节导航",
-        "desc": "顶部章节面包屑导航的显示与隐藏。",
-        "description": "顶部章节面包屑导航的显示与隐藏。"
+        "desc": "顶部章节面包屑导航的显示与隐藏。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "状态胶囊 + 衬线斜体引言等装饰性文案。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "状态胶囊 + 衬线斜体引言等装饰性文案。",
-        "description": "状态胶囊 + 衬线斜体引言等装饰性文案。"
+        "desc": "状态胶囊 + 衬线斜体引言等装饰性文案。"
       },
       {
         "key": "showStats",
         "type": "toggle",
         "label": "关键指标行",
         "default": true,
-        "describe": "主标题下方的三组关键数字。",
         "publicKey": "showStats",
-        "publicLabel": "关键指标行",
-        "desc": "主标题下方的三组关键数字。",
-        "description": "主标题下方的三组关键数字。"
+        "desc": "主标题下方的三组关键数字。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落的超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落的超大幽灵字符装饰。",
-        "description": "角落的超大幽灵字符装饰。"
+        "desc": "角落的超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "logoCount",
         "type": "slider",
+        "countArrays": [
+          "logos",
+          "images"
+        ],
         "label": "图片槽数量",
         "default": 0,
         "min": 0,
         "max": 6,
         "step": 1,
-        "describe": "底部图片槽（Logo 墙）的数量；为 0 时回退为文字标识。",
         "publicKey": "logoCount",
-        "publicLabel": "图片槽数量",
-        "desc": "底部图片槽（Logo 墙）的数量；为 0 时回退为文字标识。",
-        "description": "底部图片槽（Logo 墙）的数量；为 0 时回退为文字标识。"
+        "desc": "底部图片槽（Logo 墙）的数量；为 0 时回退为文字标识。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
+      "railText": "AI Growth Engine — 燃点",
       "surface": "ink",
       "showNav": true,
       "showKicker": true,
@@ -753,6 +654,7 @@ export const pages = [
       "showScaffold": true,
       "logoCount": 0,
       "logos": [],
+      "images": [],
       "ghostMark": "IG",
       "deckLabel": "CAPABILITIES DECK",
       "deckYear": "2026",
@@ -783,30 +685,26 @@ export const pages = [
       ],
       "trustedLabel": "Trusted by",
       "marks": [
-        {
-          "label": "DAZZ",
-          "accent": "."
-        },
-        {
-          "label": "MULTIPLY",
-          "accent": ""
-        },
-        {
-          "label": "CLOUDBOLT",
-          "accent": ""
-        },
-        {
-          "label": "VOLT",
-          "accent": ""
-        },
-        {
-          "label": "CAYO",
-          "accent": "soft"
-        },
-        {
-          "label": "DENSIFY",
-          "accent": ""
-        }
+        [
+          "DAZZ",
+          "."
+        ],
+        [
+          "MULTIPLY"
+        ],
+        [
+          "CLOUDBOLT"
+        ],
+        [
+          "VOLT"
+        ],
+        [
+          "CAYO",
+          "soft"
+        ],
+        [
+          "DENSIFY"
+        ]
       ],
       "pageRange": "↓ 01 — 18"
     }
@@ -839,44 +737,32 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showTag",
         "type": "toggle",
         "label": "章节标签",
         "default": true,
-        "describe": "主标题上方的「第 N 章」标签行。",
         "publicKey": "showTag",
-        "publicLabel": "章节标签",
-        "desc": "主标题上方的「第 N 章」标签行。",
-        "description": "主标题上方的「第 N 章」标签行。"
+        "desc": "主标题上方的「第 N 章」标签行。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题下方的衬线斜体导语。",
         "publicKey": "showLede",
-        "publicLabel": "装饰小字",
-        "desc": "标题下方的衬线斜体导语。",
-        "description": "标题下方的衬线斜体导语。"
+        "desc": "标题下方的衬线斜体导语。"
       },
       {
         "key": "showAgenda",
         "type": "toggle",
         "label": "本章导览",
         "default": true,
-        "describe": "底部分栏的章节导览条目。",
         "publicKey": "showAgenda",
-        "publicLabel": "本章导览",
-        "desc": "底部分栏的章节导览条目。",
-        "description": "底部分栏的章节导览条目。"
+        "desc": "底部分栏的章节导览条目。"
       },
       {
         "key": "agendaCount",
@@ -886,22 +772,16 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "describe": "本章导览的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "导览条目数",
-        "desc": "本章导览的条目数量。",
-        "description": "本章导览的条目数量。"
+        "desc": "本章导览的条目数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一条导览，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一条导览，其余弱化。",
-        "description": "开启后突出某一条导览，其余弱化。"
+        "desc": "开启后突出某一条导览，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -911,48 +791,38 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "describe": "需要突出的导览序号。",
         "displayOffset": 1,
         "desc": "需要突出的导览序号。",
-        "description": "需要突出的导览序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "showTag": true,
       "showLede": true,
@@ -1025,11 +895,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "partCount",
@@ -1039,22 +906,16 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "目录中列出的章节条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "章节数量",
-        "desc": "目录中列出的章节条目数量。",
-        "description": "目录中列出的章节条目数量。"
+        "desc": "目录中列出的章节条目数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": true,
-        "describe": "开启后高亮当前章节（编号着色 + 箭头），其余保持低调。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后高亮当前章节（编号着色 + 箭头），其余保持低调。",
-        "description": "开启后高亮当前章节（编号着色 + 箭头），其余保持低调。"
+        "desc": "开启后高亮当前章节（编号着色 + 箭头），其余保持低调。"
       },
       {
         "key": "emphasisIndex",
@@ -1064,70 +925,54 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要高亮的章节序号。",
         "displayOffset": 1,
         "desc": "需要高亮的章节序号。",
-        "description": "需要高亮的章节序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "标题下方的说明段落。",
-        "description": "标题下方的说明段落。"
+        "desc": "标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "partCount": 5,
       "emphasis": true,
@@ -1202,55 +1047,40 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "大数字上方的装饰性引导标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "大数字上方的装饰性引导标签。",
-        "description": "大数字上方的装饰性引导标签。"
+        "desc": "大数字上方的装饰性引导标签。"
       },
       {
         "key": "showTrend",
         "type": "toggle",
         "label": "迷你趋势线",
         "default": true,
-        "describe": "大数字下方的装饰趋势曲线。",
         "publicKey": "showTrend",
-        "publicLabel": "迷你趋势线",
-        "desc": "大数字下方的装饰趋势曲线。",
-        "description": "大数字下方的装饰趋势曲线。"
+        "desc": "大数字下方的装饰趋势曲线。"
       },
       {
         "key": "showCaption",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "大数字正下方的说明文案。",
         "publicKey": "showCaption",
-        "publicLabel": "说明文案",
-        "desc": "大数字正下方的说明文案。",
-        "description": "大数字正下方的说明文案。"
+        "desc": "大数字正下方的说明文案。"
       },
       {
         "key": "showSubStats",
         "type": "toggle",
         "label": "辅助数据行",
         "default": true,
-        "describe": "底部分栏的辅助数据。",
         "publicKey": "showSubStats",
-        "publicLabel": "辅助数据行",
-        "desc": "底部分栏的辅助数据。",
-        "description": "底部分栏的辅助数据。"
+        "desc": "底部分栏的辅助数据。"
       },
       {
         "key": "subStatCount",
@@ -1260,22 +1090,16 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "describe": "底部辅助数据的条目数量；为 0 时隐藏整行。",
         "publicKey": "itemCount",
-        "publicLabel": "辅助数据数量",
-        "desc": "底部辅助数据的条目数量；为 0 时隐藏整行。",
-        "description": "底部辅助数据的条目数量；为 0 时隐藏整行。"
+        "desc": "底部辅助数据的条目数量；为 0 时隐藏整行。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一条辅助数据，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一条辅助数据，其余弱化。",
-        "description": "开启后突出某一条辅助数据，其余弱化。"
+        "desc": "开启后突出某一条辅助数据，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -1285,56 +1109,41 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "需要突出的辅助数据序号。",
         "displayOffset": 1,
         "desc": "需要突出的辅助数据序号。",
-        "description": "需要突出的辅助数据序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showNote",
         "type": "toggle",
         "label": "装饰注释",
         "default": true,
-        "describe": "底部居中的衬线注释文案。",
         "publicKey": "showNote",
-        "publicLabel": "装饰注释",
-        "desc": "底部居中的衬线注释文案。",
-        "description": "底部居中的衬线注释文案。"
+        "desc": "底部居中的衬线注释文案。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -1405,9 +1214,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -1435,9 +1242,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "surface",
@@ -1458,11 +1263,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "空槽占位与底纹的基调（图片满铺时主要影响占位区）。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "空槽占位与底纹的基调（图片满铺时主要影响占位区）。",
-        "description": "空槽占位与底纹的基调（图片满铺时主要影响占位区）。"
+        "desc": "空槽占位与底纹的基调（图片满铺时主要影响占位区）。"
       },
       {
         "key": "imageCount",
@@ -1472,11 +1274,8 @@ export const pages = [
         "min": 1,
         "max": 2,
         "step": 1,
-        "describe": "满铺图片槽数量：1 为整幅，2 为左右双联。点击画面上的图片区域即可上传/更换。",
         "publicKey": "imageCount",
-        "publicLabel": "图片数量",
-        "desc": "满铺图片槽数量：1 为整幅，2 为左右双联。点击画面上的图片区域即可上传/更换。",
-        "description": "满铺图片槽数量：1 为整幅，2 为左右双联。点击画面上的图片区域即可上传/更换。"
+        "desc": "满铺图片槽数量：1 为整幅，2 为左右双联。点击画面上的图片区域即可上传/更换。"
       },
       {
         "key": "overlayPosition",
@@ -1493,69 +1292,53 @@ export const pages = [
             "label": "右下"
           }
         ],
-        "describe": "标题文字版块所在角落。",
         "publicKey": "overlayPosition",
-        "publicLabel": "文字位置",
-        "desc": "标题文字版块所在角落。",
-        "description": "标题文字版块所在角落。"
+        "desc": "标题文字版块所在角落。"
       },
       {
         "key": "showCaption",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "标题下方的说明段落。",
         "publicKey": "showCaption",
-        "publicLabel": "说明文案",
-        "desc": "标题下方的说明段落。",
-        "description": "标题下方的说明段落。"
+        "desc": "标题下方的说明段落。"
       },
       {
         "key": "showOverlayStat",
         "type": "toggle",
         "label": "浮层数字",
         "default": true,
-        "describe": "画面一角的大号叠加指标。",
         "publicKey": "showOverlayStat",
-        "publicLabel": "浮层数字",
-        "desc": "画面一角的大号叠加指标。",
-        "description": "画面一角的大号叠加指标。"
+        "desc": "画面一角的大号叠加指标。"
       },
       {
         "key": "showTag",
         "type": "toggle",
         "label": "标签行",
         "default": true,
-        "describe": "标题上方的分类标签行。",
         "publicKey": "showTag",
-        "publicLabel": "标签行",
-        "desc": "标题上方的分类标签行。",
-        "description": "标题上方的分类标签行。"
+        "desc": "标题上方的分类标签行。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "imageCount": 1,
       "images": [],
@@ -1616,108 +1399,75 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showMark",
         "type": "toggle",
         "label": "引号字符",
         "default": true,
-        "describe": "金句上方的超大装饰引号。",
         "publicKey": "showMark",
-        "publicLabel": "引号字符",
-        "desc": "金句上方的超大装饰引号。",
-        "description": "金句上方的超大装饰引号。"
+        "desc": "金句上方的超大装饰引号。"
       },
       {
         "key": "showAttribution",
         "type": "toggle",
         "label": "辅助文本",
         "default": true,
-        "describe": "金句下方的署名与来源行。",
         "publicKey": "showAttribution",
-        "publicLabel": "辅助文本",
-        "desc": "金句下方的署名与来源行。",
-        "description": "金句下方的署名与来源行。"
+        "desc": "金句下方的署名与来源行。"
       },
       {
         "key": "showRule",
         "type": "toggle",
         "label": "分隔细线",
         "default": true,
-        "describe": "署名上方的分隔细线。",
         "publicKey": "showRule",
-        "publicLabel": "分隔细线",
-        "desc": "署名上方的分隔细线。",
-        "description": "署名上方的分隔细线。"
+        "desc": "署名上方的分隔细线。"
       },
       {
         "key": "avatarCount",
-        "type": "slider",
+        "type": "toggle",
         "label": "图片",
-        "default": 0,
-        "min": 0,
-        "max": 1,
-        "step": 1,
-        "countArrays": [
-          "images"
-        ],
-        "describe": "署名旁的圆形头像图片槽。",
+        "default": false,
         "publicKey": "avatarCount",
-        "publicLabel": "图片",
-        "desc": "署名旁的圆形头像图片槽。",
-        "description": "署名旁的圆形头像图片槽。"
+        "desc": "署名旁的圆形头像图片槽。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "顶部导航处的章节标识。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "顶部导航处的章节标识。",
-        "description": "顶部导航处的章节标识。"
+        "desc": "顶部导航处的章节标识。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": false,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "showMark": true,
       "showRule": true,
       "showAttribution": true,
-      "avatarCount": 0,
-      "images": [
-        ""
-      ],
-      "avatar": [
-        ""
-      ],
+      "avatarCount": false,
+      "avatar": [],
       "showKicker": true,
       "showGhostMark": true,
       "showScaffold": true,
@@ -1768,22 +1518,16 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showSidePanel",
         "type": "toggle",
         "label": "侧栏信息卡",
         "default": true,
-        "describe": "右上角的指标信息卡显示与隐藏；隐藏时主标题占满整行。",
         "publicKey": "showSidePanel",
-        "publicLabel": "侧栏信息卡",
-        "desc": "右上角的指标信息卡显示与隐藏；隐藏时主标题占满整行。",
-        "description": "右上角的指标信息卡显示与隐藏；隐藏时主标题占满整行。"
+        "desc": "右上角的指标信息卡显示与隐藏；隐藏时主标题占满整行。"
       },
       {
         "key": "stepCount",
@@ -1793,22 +1537,16 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "describe": "底部流程步骤的数量。",
         "publicKey": "stepCount",
-        "publicLabel": "步骤数量",
-        "desc": "底部流程步骤的数量。",
-        "description": "底部流程步骤的数量。"
+        "desc": "底部流程步骤的数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一步骤，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一步骤，其余弱化。",
-        "description": "开启后突出某一步骤，其余弱化。"
+        "desc": "开启后突出某一步骤，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -1818,45 +1556,33 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "需要突出的步骤序号，仅在“重点突出”开启时生效。",
         "displayOffset": 1,
         "desc": "需要突出的步骤序号，仅在“重点突出”开启时生效。",
-        "description": "需要突出的步骤序号，仅在“重点突出”开启时生效。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -1950,11 +1676,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "chartVariant",
@@ -1975,22 +1698,16 @@ export const pages = [
             "label": "柱状图"
           }
         ],
-        "describe": "右侧数据图的可视化类型。",
         "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "desc": "右侧数据图的可视化类型。",
-        "description": "右侧数据图的可视化类型。"
+        "desc": "右侧数据图的可视化类型。"
       },
       {
         "key": "showChart",
         "type": "toggle",
         "label": "数据图卡片",
         "default": true,
-        "describe": "右侧图表卡片显示与隐藏；隐藏时左侧内容占满整行。",
         "publicKey": "showChart",
-        "publicLabel": "数据图卡片",
-        "desc": "右侧图表卡片显示与隐藏；隐藏时左侧内容占满整行。",
-        "description": "右侧图表卡片显示与隐藏；隐藏时左侧内容占满整行。"
+        "desc": "右侧图表卡片显示与隐藏；隐藏时左侧内容占满整行。"
       },
       {
         "key": "itemCount",
@@ -2000,22 +1717,16 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "左侧能力清单的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "列表项数量",
-        "desc": "左侧能力清单的条目数量。",
-        "description": "左侧能力清单的条目数量。"
+        "desc": "左侧能力清单的条目数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一条目，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一条目，其余弱化。",
-        "description": "开启后突出某一条目，其余弱化。"
+        "desc": "开启后突出某一条目，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -2025,56 +1736,41 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "需要突出的条目序号。",
         "displayOffset": 1,
         "desc": "需要突出的条目序号。",
-        "description": "需要突出的条目序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showPills",
         "type": "toggle",
         "label": "装饰标签行",
         "default": true,
-        "describe": "左下角的标签胶囊行。",
         "publicKey": "showPills",
-        "publicLabel": "装饰标签行",
-        "desc": "左下角的标签胶囊行。",
-        "description": "左下角的标签胶囊行。"
+        "desc": "左下角的标签胶囊行。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -2166,11 +1862,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "chartVariant",
@@ -2191,11 +1884,8 @@ export const pages = [
             "label": "堆叠条"
           }
         ],
-        "describe": "渠道占比的可视化类型。",
         "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "desc": "渠道占比的可视化类型。",
-        "description": "渠道占比的可视化类型。"
+        "desc": "渠道占比的可视化类型。"
       },
       {
         "key": "itemCount",
@@ -2205,22 +1895,16 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "参与构成的渠道数量。",
         "publicKey": "itemCount",
-        "publicLabel": "渠道数量",
-        "desc": "参与构成的渠道数量。",
-        "description": "参与构成的渠道数量。"
+        "desc": "参与构成的渠道数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一渠道，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一渠道，其余弱化。",
-        "description": "开启后突出某一渠道，其余弱化。"
+        "desc": "开启后突出某一渠道，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -2230,78 +1914,57 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的渠道序号。",
         "displayOffset": 1,
         "desc": "需要突出的渠道序号。",
-        "description": "需要突出的渠道序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showLegend",
         "type": "toggle",
         "label": "明细图例",
         "default": true,
-        "describe": "环形图右侧的明细图例（仅环形图模式）。",
         "publicKey": "showLegend",
-        "publicLabel": "明细图例",
-        "desc": "环形图右侧的明细图例（仅环形图模式）。",
-        "description": "环形图右侧的明细图例（仅环形图模式）。"
+        "desc": "环形图右侧的明细图例（仅环形图模式）。"
       },
       {
         "key": "showNote",
         "type": "toggle",
         "label": "装饰注释",
         "default": true,
-        "describe": "标题旁的衬线注释文案。",
         "publicKey": "showNote",
-        "publicLabel": "装饰注释",
-        "desc": "标题旁的衬线注释文案。",
-        "description": "标题旁的衬线注释文案。"
+        "desc": "标题旁的衬线注释文案。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -2388,11 +2051,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "statCount",
@@ -2402,22 +2062,16 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "关键数据卡片的数量。",
         "publicKey": "statCount",
-        "publicLabel": "数据卡数量",
-        "desc": "关键数据卡片的数量。",
-        "description": "关键数据卡片的数量。"
+        "desc": "关键数据卡片的数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一张数据卡，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一张数据卡，其余弱化。",
-        "description": "开启后突出某一张数据卡，其余弱化。"
+        "desc": "开启后突出某一张数据卡，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -2427,34 +2081,25 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "需要突出的数据卡序号。",
         "displayOffset": 1,
         "desc": "需要突出的数据卡序号。",
-        "description": "需要突出的数据卡序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showBars",
         "type": "toggle",
         "label": "迷你趋势图",
         "default": true,
-        "describe": "每张数据卡下方的迷你柱状趋势。",
         "publicKey": "showBars",
-        "publicLabel": "迷你趋势图",
-        "desc": "每张数据卡下方的迷你柱状趋势。",
-        "description": "每张数据卡下方的迷你柱状趋势。"
+        "desc": "每张数据卡下方的迷你柱状趋势。"
       },
       {
         "key": "showRibbon",
         "type": "toggle",
         "label": "流程飘带",
         "default": true,
-        "describe": "中部的流程步骤飘带。",
         "publicKey": "showRibbon",
-        "publicLabel": "流程飘带",
-        "desc": "中部的流程步骤飘带。",
-        "description": "中部的流程步骤飘带。"
+        "desc": "中部的流程步骤飘带。"
       },
       {
         "key": "ribbonStepCount",
@@ -2464,75 +2109,53 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "流程飘带的节点数量。",
         "publicKey": "ribbonStepCount",
-        "publicLabel": "流程节点数",
-        "desc": "流程飘带的节点数量。",
-        "description": "流程飘带的节点数量。"
+        "desc": "流程飘带的节点数量。"
       },
       {
         "key": "showQuote",
         "type": "toggle",
         "label": "二级正文",
         "default": true,
-        "describe": "底部客户引述显示与隐藏。",
         "publicKey": "showQuote",
-        "publicLabel": "二级正文",
-        "desc": "底部客户引述显示与隐藏。",
-        "description": "底部客户引述显示与隐藏。"
+        "desc": "底部客户引述显示与隐藏。"
       },
       {
         "key": "avatarCount",
-        "type": "slider",
+        "type": "toggle",
         "label": "图片",
-        "default": 0,
-        "min": 0,
-        "max": 1,
-        "step": 1,
-        "countArrays": [
-          "images"
-        ],
-        "describe": "引述旁的圆形头像图片槽。",
+        "default": false,
         "publicKey": "avatarCount",
-        "publicLabel": "图片",
-        "desc": "引述旁的圆形头像图片槽。",
-        "description": "引述旁的圆形头像图片槽。"
+        "desc": "引述旁的圆形头像图片槽。"
       },
       {
         "key": "showNote",
         "type": "toggle",
         "label": "装饰注释",
         "default": true,
-        "describe": "标题旁的衬线注释文案。",
         "publicKey": "showNote",
-        "publicLabel": "装饰注释",
-        "desc": "标题旁的衬线注释文案。",
-        "description": "标题旁的衬线注释文案。"
+        "desc": "标题旁的衬线注释文案。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "statCount": 3,
       "emphasis": false,
@@ -2541,13 +2164,8 @@ export const pages = [
       "showRibbon": true,
       "ribbonStepCount": 5,
       "showQuote": true,
-      "avatarCount": 0,
-      "images": [
-        ""
-      ],
-      "avatar": [
-        ""
-      ],
+      "avatarCount": false,
+      "avatar": [],
       "showNote": true,
       "showGhostMark": true,
       "showScaffold": true,
@@ -2568,116 +2186,47 @@ export const pages = [
         {
           "v": "+182%",
           "l": "自然搜索流量 · 12 月平均增幅",
-          "trendBars": [
-            {
-              "height": 22,
-              "highlight": false
-            },
-            {
-              "height": 30,
-              "highlight": false
-            },
-            {
-              "height": 28,
-              "highlight": false
-            },
-            {
-              "height": 42,
-              "highlight": false
-            },
-            {
-              "height": 52,
-              "highlight": false
-            },
-            {
-              "height": 64,
-              "highlight": false
-            },
-            {
-              "height": 82,
-              "highlight": true
-            },
-            {
-              "height": 100,
-              "highlight": true
-            }
-          ]
+          "bars": [
+            22,
+            30,
+            28,
+            42,
+            52,
+            64,
+            82,
+            100
+          ],
+          "hotFrom": 6
         },
         {
           "v": "3.8×",
           "l": "转化率提升 · 较投放前基线",
-          "trendBars": [
-            {
-              "height": 26,
-              "highlight": false
-            },
-            {
-              "height": 24,
-              "highlight": false
-            },
-            {
-              "height": 38,
-              "highlight": false
-            },
-            {
-              "height": 46,
-              "highlight": false
-            },
-            {
-              "height": 44,
-              "highlight": false
-            },
-            {
-              "height": 60,
-              "highlight": false
-            },
-            {
-              "height": 78,
-              "highlight": true
-            },
-            {
-              "height": 96,
-              "highlight": true
-            }
-          ]
+          "bars": [
+            26,
+            24,
+            38,
+            46,
+            44,
+            60,
+            78,
+            96
+          ],
+          "hotFrom": 6
         },
         {
           "v": "−41%",
           "l": "单客获取成本 · 持续优化下降",
-          "trendBars": [
-            {
-              "height": 100,
-              "highlight": true
-            },
-            {
-              "height": 90,
-              "highlight": true
-            },
-            {
-              "height": 72,
-              "highlight": true
-            },
-            {
-              "height": 66,
-              "highlight": false
-            },
-            {
-              "height": 54,
-              "highlight": false
-            },
-            {
-              "height": 48,
-              "highlight": false
-            },
-            {
-              "height": 40,
-              "highlight": false
-            },
-            {
-              "height": 34,
-              "highlight": false
-            }
-          ]
+          "bars": [
+            100,
+            90,
+            72,
+            66,
+            54,
+            48,
+            40,
+            34
+          ],
+          "hotTo": 2
         }
       ],
       "ribbon": [
@@ -2721,11 +2270,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "stageCount",
@@ -2735,22 +2281,16 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "从曝光到成交的漏斗阶段数量。",
         "publicKey": "stageCount",
-        "publicLabel": "漏斗层数",
-        "desc": "从曝光到成交的漏斗阶段数量。",
-        "description": "从曝光到成交的漏斗阶段数量。"
+        "desc": "从曝光到成交的漏斗阶段数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一阶段，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一阶段，其余弱化。",
-        "description": "开启后突出某一阶段，其余弱化。"
+        "desc": "开启后突出某一阶段，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -2760,78 +2300,57 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的阶段序号。",
         "displayOffset": 1,
         "desc": "需要突出的阶段序号。",
-        "description": "需要突出的阶段序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showRates",
         "type": "toggle",
         "label": "转化率标注",
         "default": true,
-        "describe": "右侧逐级转化率与下钻箭头。",
         "publicKey": "showRates",
-        "publicLabel": "转化率标注",
-        "desc": "右侧逐级转化率与下钻箭头。",
-        "description": "右侧逐级转化率与下钻箭头。"
+        "desc": "右侧逐级转化率与下钻箭头。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "右上角的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "右上角的说明段落。",
-        "description": "右上角的说明段落。"
+        "desc": "右上角的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -2920,25 +2439,16 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "imageCount",
-        "type": "slider",
+        "type": "toggle",
         "label": "图片",
-        "default": 1,
-        "min": 0,
-        "max": 1,
-        "step": 1,
-        "describe": "是否显示配图槽。",
+        "default": true,
         "publicKey": "imageCount",
-        "publicLabel": "图片",
-        "desc": "是否显示配图槽。",
-        "description": "是否显示配图槽。"
+        "desc": "是否显示配图槽。"
       },
       {
         "key": "imagePosition",
@@ -2955,22 +2465,16 @@ export const pages = [
             "label": "右"
           }
         ],
-        "describe": "主图相对文字的位置。",
         "publicKey": "imagePosition",
-        "publicLabel": "图片位置",
-        "desc": "主图相对文字的位置。",
-        "description": "主图相对文字的位置。"
+        "desc": "主图相对文字的位置。"
       },
       {
         "key": "showStats",
         "type": "toggle",
         "label": "指标行",
         "default": true,
-        "describe": "正文下方的关键指标行。",
         "publicKey": "showStats",
-        "publicLabel": "指标行",
-        "desc": "正文下方的关键指标行。",
-        "description": "正文下方的关键指标行。"
+        "desc": "正文下方的关键指标行。"
       },
       {
         "key": "statCount",
@@ -2980,22 +2484,16 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "关键指标的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "指标数量",
-        "desc": "关键指标的条目数量。",
-        "description": "关键指标的条目数量。"
+        "desc": "关键指标的条目数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一指标，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一指标，其余弱化。",
-        "description": "开启后突出某一指标，其余弱化。"
+        "desc": "开启后突出某一指标，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -3005,67 +2503,49 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "需要突出的指标序号。",
         "displayOffset": 1,
         "desc": "需要突出的指标序号。",
-        "description": "需要突出的指标序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showCaption",
         "type": "toggle",
         "label": "图片说明",
         "default": true,
-        "describe": "主图下方的说明标注（有图时）。",
         "publicKey": "showCaption",
-        "publicLabel": "图片说明",
-        "desc": "主图下方的说明标注（有图时）。",
-        "description": "主图下方的说明标注（有图时）。"
+        "desc": "主图下方的说明标注（有图时）。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -3143,28 +2623,16 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "avatarCount",
-        "type": "slider",
+        "type": "toggle",
         "label": "图片",
-        "default": 1,
-        "min": 0,
-        "max": 1,
-        "step": 1,
-        "countArrays": [
-          "images"
-        ],
-        "describe": "客户头像图片槽，关闭时留白占位。",
+        "default": true,
         "publicKey": "avatarCount",
-        "publicLabel": "图片",
-        "desc": "客户头像图片槽，关闭时留白占位。",
-        "description": "客户头像图片槽，关闭时留白占位。"
+        "desc": "客户头像图片槽，关闭时留白占位。"
       },
       {
         "key": "portraitShape",
@@ -3181,77 +2649,56 @@ export const pages = [
             "label": "正圆"
           }
         ],
-        "describe": "头像槽的裁切形状。",
         "publicKey": "portraitShape",
-        "publicLabel": "头像形状",
-        "desc": "头像槽的裁切形状。",
-        "description": "头像槽的裁切形状。"
+        "desc": "头像槽的裁切形状。"
       },
       {
         "key": "showRating",
         "type": "toggle",
         "label": "评分行",
         "default": true,
-        "describe": "引文上下的菱形评分点。",
         "publicKey": "showStatusRating",
-        "publicLabel": "评分行",
-        "desc": "引文上下的菱形评分点。",
-        "description": "引文上下的菱形评分点。"
+        "desc": "引文上下的菱形评分点。"
       },
       {
         "key": "showMetric",
         "type": "toggle",
         "label": "成果数字",
         "default": true,
-        "describe": "左下角的大号成果指标。",
         "publicKey": "showMetric",
-        "publicLabel": "成果数字",
-        "desc": "左下角的大号成果指标。",
-        "description": "左下角的大号成果指标。"
+        "desc": "左下角的大号成果指标。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "导航旁的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "导航旁的装饰标签。",
-        "description": "导航旁的装饰标签。"
+        "desc": "导航旁的装饰标签。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
-      "avatarCount": 1,
-      "images": [
-        ""
-      ],
-      "avatar": [
-        ""
-      ],
+      "avatarCount": true,
+      "avatar": [],
       "portraitShape": "rounded",
       "showRating": true,
       "showMetric": true,
@@ -3310,11 +2757,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "pillarCount",
@@ -3324,22 +2768,16 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "describe": "横向价值柱的数量。",
         "publicKey": "pillarCount",
-        "publicLabel": "价值柱数量",
-        "desc": "横向价值柱的数量。",
-        "description": "横向价值柱的数量。"
+        "desc": "横向价值柱的数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": true,
-        "describe": "开启后突出某一根价值柱，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一根价值柱，其余弱化。",
-        "description": "开启后突出某一根价值柱，其余弱化。"
+        "desc": "开启后突出某一根价值柱，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -3349,70 +2787,55 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "需要突出的价值柱序号，仅在“重点突出”开启时生效。",
         "displayOffset": 1,
         "desc": "需要突出的价值柱序号，仅在“重点突出”开启时生效。",
-        "description": "需要突出的价值柱序号，仅在“重点突出”开启时生效。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showStat",
         "type": "toggle",
         "label": "指标行",
         "default": true,
-        "describe": "每根价值柱底部的关键数字。",
         "publicKey": "showStat",
-        "publicLabel": "指标行",
-        "desc": "每根价值柱底部的关键数字。",
-        "description": "每根价值柱底部的关键数字。"
+        "desc": "每根价值柱底部的关键数字。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "标题旁的衬线注释文案。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "标题旁的衬线注释文案。",
-        "description": "标题旁的衬线注释文案。"
+        "desc": "标题旁的衬线注释文案。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
+      "pillarWord": "Pillar",
       "surface": "paper",
       "pillarCount": 3,
       "emphasis": true,
@@ -3487,11 +2910,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "plotCount",
@@ -3501,113 +2921,85 @@ export const pages = [
         "min": 3,
         "max": 6,
         "step": 1,
-        "describe": "矩阵中绘制的参与者数量（始终包含「燃点」自身）。",
         "publicKey": "plotCount",
-        "publicLabel": "气泡数量",
-        "desc": "矩阵中绘制的参与者数量（始终包含「燃点」自身）。",
-        "description": "矩阵中绘制的参与者数量（始终包含「燃点」自身）。"
+        "desc": "矩阵中绘制的参与者数量（始终包含「燃点」自身）。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": true,
-        "describe": "开启后弱化竞品气泡，突出「燃点」自身。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后弱化竞品气泡，突出「燃点」自身。",
-        "description": "开启后弱化竞品气泡，突出「燃点」自身。"
+        "desc": "开启后弱化竞品气泡，突出「燃点」自身。"
       },
       {
         "key": "showAxisLabels",
         "type": "toggle",
         "label": "坐标轴标签",
         "default": true,
-        "describe": "横纵坐标轴的含义标签。",
         "publicKey": "showAxisLabels",
-        "publicLabel": "坐标轴标签",
-        "desc": "横纵坐标轴的含义标签。",
-        "description": "横纵坐标轴的含义标签。"
+        "desc": "横纵坐标轴的含义标签。"
       },
       {
         "key": "showQuadrantLabels",
         "type": "toggle",
         "label": "象限标签",
         "default": true,
-        "describe": "四个象限角落的定性标签。",
         "publicKey": "showQuadrantLabels",
-        "publicLabel": "象限标签",
-        "desc": "四个象限角落的定性标签。",
-        "description": "四个象限角落的定性标签。"
+        "desc": "四个象限角落的定性标签。"
       },
       {
         "key": "showLegend",
         "type": "toggle",
         "label": "图例",
         "default": true,
-        "describe": "左侧的气泡含义图例。",
         "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "desc": "左侧的气泡含义图例。",
-        "description": "左侧的气泡含义图例。"
+        "desc": "左侧的气泡含义图例。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "标题下方的说明段落。",
-        "description": "标题下方的说明段落。"
+        "desc": "标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "plotCount": 6,
       "emphasis": true,
@@ -3640,14 +3032,45 @@ export const pages = [
       ],
       "axisX": "投入成本 →",
       "axisY": "增长效果 →",
-      "names": [
-        "燃点",
-        "综合代理",
-        "外包工厂",
-        "内部团队",
-        "垂直工具",
-        "自由职业"
+      "others": [
+        {
+          "name": "综合代理",
+          "x": 78,
+          "y": 50,
+          "r": 36
+        },
+        {
+          "name": "外包工厂",
+          "x": 68,
+          "y": 20,
+          "r": 30
+        },
+        {
+          "name": "内部团队",
+          "x": 56,
+          "y": 34,
+          "r": 32
+        },
+        {
+          "name": "垂直工具",
+          "x": 40,
+          "y": 42,
+          "r": 28
+        },
+        {
+          "name": "自由职业",
+          "x": 28,
+          "y": 22,
+          "r": 26
+        }
       ],
+      "us": {
+        "name": "燃点",
+        "x": 22,
+        "y": 80,
+        "r": 52,
+        "us": true
+      },
       "metaLeft": "IGNIS — 燃点 · 竞争格局",
       "metaMid": "左上角，本该有人站"
     }
@@ -3680,11 +3103,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "serviceCount",
@@ -3694,22 +3114,16 @@ export const pages = [
         "min": 1,
         "max": 5,
         "step": 1,
-        "describe": "左侧清单的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "desc": "左侧清单的条目数量。",
-        "description": "左侧清单的条目数量。"
+        "desc": "左侧清单的条目数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一条服务，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一条服务，其余弱化。",
-        "description": "开启后突出某一条服务，其余弱化。"
+        "desc": "开启后突出某一条服务，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -3719,34 +3133,25 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的服务序号。",
         "displayOffset": 1,
         "desc": "需要突出的服务序号。",
-        "description": "需要突出的服务序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showArrow",
         "type": "toggle",
         "label": "箭头母题",
         "default": true,
-        "describe": "右侧的圆环箭头品牌母题。",
         "publicKey": "showArrow",
-        "publicLabel": "箭头母题",
-        "desc": "右侧的圆环箭头品牌母题。",
-        "description": "右侧的圆环箭头品牌母题。"
+        "desc": "右侧的圆环箭头品牌母题。"
       },
       {
         "key": "showPills",
         "type": "toggle",
         "label": "能力标签行",
         "default": true,
-        "describe": "底部的能力标签胶囊行。",
         "publicKey": "showPills",
-        "publicLabel": "能力标签行",
-        "desc": "底部的能力标签胶囊行。",
-        "description": "底部的能力标签胶囊行。"
+        "desc": "底部的能力标签胶囊行。"
       },
       {
         "key": "pillCount",
@@ -3756,11 +3161,8 @@ export const pages = [
         "min": 3,
         "max": 8,
         "step": 1,
-        "describe": "能力标签的数量。",
         "publicKey": "pillCount",
-        "publicLabel": "标签数量",
-        "desc": "能力标签的数量。",
-        "description": "能力标签的数量。"
+        "desc": "能力标签的数量。"
       },
       {
         "key": "pillActiveIndex",
@@ -3770,48 +3172,38 @@ export const pages = [
         "min": 0,
         "max": 7,
         "step": 1,
-        "describe": "高亮为实底的标签序号。",
         "displayOffset": 1,
         "desc": "高亮为实底的标签序号。",
-        "description": "高亮为实底的标签序号。",
-        "publicKey": "pillActiveIndex",
-        "publicLabel": "高亮标签序号"
+        "publicKey": "pillActiveIndex"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰眉标。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰眉标。",
-        "description": "主标题上方的装饰眉标。"
+        "desc": "主标题上方的装饰眉标。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "serviceCount": 4,
       "emphasis": false,
@@ -3897,11 +3289,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "milestoneCount",
@@ -3911,22 +3300,16 @@ export const pages = [
         "min": 1,
         "max": 5,
         "step": 1,
-        "describe": "时间轴条目的数量。",
         "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "desc": "时间轴条目的数量。",
-        "description": "时间轴条目的数量。"
+        "desc": "时间轴条目的数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一里程碑，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一里程碑，其余弱化。",
-        "description": "开启后突出某一里程碑，其余弱化。"
+        "desc": "开启后突出某一里程碑，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -3936,81 +3319,62 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的里程碑序号。",
         "displayOffset": 1,
         "desc": "需要突出的里程碑序号。",
-        "description": "需要突出的里程碑序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showAxis",
         "type": "toggle",
         "label": "时间轴线",
         "default": true,
-        "describe": "左侧的竖向轴线与节点圆点。",
         "publicKey": "showAxis",
-        "publicLabel": "时间轴线",
-        "desc": "左侧的竖向轴线与节点圆点。",
-        "description": "左侧的竖向轴线与节点圆点。"
+        "desc": "左侧的竖向轴线与节点圆点。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "标题下方的说明段落。",
-        "description": "标题下方的说明段落。"
+        "desc": "标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "milestoneCount": 5,
       "emphasis": false,
@@ -4096,11 +3460,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "imageCount",
@@ -4110,22 +3471,16 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "拼贴图片数量：0 无图、1 单图、2 主图+叠加小图。",
         "publicKey": "imageCount",
-        "publicLabel": "图片数量",
-        "desc": "拼贴图片数量：0 无图、1 单图、2 主图+叠加小图。",
-        "description": "拼贴图片数量：0 无图、1 单图、2 主图+叠加小图。"
+        "desc": "拼贴图片数量：0 无图、1 单图、2 主图+叠加小图。"
       },
       {
         "key": "showPoints",
         "type": "toggle",
         "label": "列表",
         "default": true,
-        "describe": "左侧编号列表。",
         "publicKey": "showPoints",
-        "publicLabel": "列表",
-        "desc": "左侧编号列表。",
-        "description": "左侧编号列表。"
+        "desc": "左侧编号列表。"
       },
       {
         "key": "pointCount",
@@ -4135,80 +3490,61 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "编号列表的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "列表数量",
-        "desc": "编号列表的条目数量。",
-        "description": "编号列表的条目数量。"
+        "desc": "编号列表的条目数量。"
       },
       {
         "key": "showCaptions",
         "type": "toggle",
         "label": "图片标签",
         "default": true,
-        "describe": "图片角标分类标签。",
         "publicKey": "showCaptions",
-        "publicLabel": "图片标签",
-        "desc": "图片角标分类标签。",
-        "description": "图片角标分类标签。"
+        "desc": "图片角标分类标签。"
       },
       {
         "key": "showNumber",
         "type": "toggle",
         "label": "装饰编号",
         "default": true,
-        "describe": "拼贴角落的大号装饰编号。",
         "publicKey": "showNumber",
-        "publicLabel": "装饰编号",
-        "desc": "拼贴角落的大号装饰编号。",
-        "description": "拼贴角落的大号装饰编号。"
+        "desc": "拼贴角落的大号装饰编号。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "imageCount": 2,
       "images": [],
@@ -4282,11 +3618,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "stepCount",
@@ -4296,33 +3629,24 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "横向流程的节点数量。",
         "publicKey": "stepCount",
-        "publicLabel": "流程节点数",
-        "desc": "横向流程的节点数量。",
-        "description": "横向流程的节点数量。"
+        "desc": "横向流程的节点数量。"
       },
       {
         "key": "showStartNode",
         "type": "toggle",
         "label": "起点节点",
         "default": true,
-        "describe": "流程最左侧的脉冲起点圆点。",
         "publicKey": "showStartNode",
-        "publicLabel": "起点节点",
-        "desc": "流程最左侧的脉冲起点圆点。",
-        "description": "流程最左侧的脉冲起点圆点。"
+        "desc": "流程最左侧的脉冲起点圆点。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一个流程节点，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一个流程节点，其余弱化。",
-        "description": "开启后突出某一个流程节点，其余弱化。"
+        "desc": "开启后突出某一个流程节点，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -4332,23 +3656,17 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的节点序号。",
         "displayOffset": 1,
         "desc": "需要突出的节点序号。",
-        "description": "需要突出的节点序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showCaptions",
         "type": "toggle",
         "label": "底部说明",
         "default": true,
-        "describe": "底部的成果说明栏。",
         "publicKey": "showCaptions",
-        "publicLabel": "底部说明",
-        "desc": "底部的成果说明栏。",
-        "description": "底部的成果说明栏。"
+        "desc": "底部的成果说明栏。"
       },
       {
         "key": "captionCount",
@@ -4358,58 +3676,45 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "describe": "底部说明栏的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "说明数量",
-        "desc": "底部说明栏的条目数量。",
-        "description": "底部说明栏的条目数量。"
+        "desc": "底部说明栏的条目数量。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的衬线引言。",
-        "description": "主标题上方的衬线引言。"
+        "desc": "主标题上方的衬线引言。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "stepCount": 5,
       "showStartNode": true,
@@ -4500,22 +3805,16 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showGauge",
         "type": "toggle",
         "label": "状态度仪表",
         "default": true,
-        "describe": "左侧的半环健康度仪表；隐藏时右侧指标占满整行。",
         "publicKey": "showGauge",
-        "publicLabel": "状态度仪表",
-        "desc": "左侧的半环状态度仪表；隐藏时右侧指标占满整行。",
-        "description": "左侧的半环状态度仪表；隐藏时右侧指标占满整行。"
+        "desc": "左侧的半环状态度仪表；隐藏时右侧指标占满整行。"
       },
       {
         "key": "metricCount",
@@ -4525,22 +3824,16 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "右侧技术指标的数量。",
         "publicKey": "metricCount",
-        "publicLabel": "指标数量",
-        "desc": "右侧技术指标的数量。",
-        "description": "右侧技术指标的数量。"
+        "desc": "右侧技术指标的数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一项指标，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一项指标，其余弱化。",
-        "description": "开启后突出某一项指标，其余弱化。"
+        "desc": "开启后突出某一项指标，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -4550,34 +3843,25 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "需要突出的指标序号。",
         "displayOffset": 1,
         "desc": "需要突出的指标序号。",
-        "description": "需要突出的指标序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showBars",
         "type": "toggle",
         "label": "指标进度条",
         "default": true,
-        "describe": "每项指标下方的进度条。",
         "publicKey": "showBars",
-        "publicLabel": "指标进度条",
-        "desc": "每项指标下方的进度条。",
-        "description": "每项指标下方的进度条。"
+        "desc": "每项指标下方的进度条。"
       },
       {
         "key": "showFoot",
         "type": "toggle",
         "label": "底部说明",
         "default": true,
-        "describe": "底部的成果说明栏。",
         "publicKey": "showFoot",
-        "publicLabel": "底部说明",
-        "desc": "底部的成果说明栏。",
-        "description": "底部的成果说明栏。"
+        "desc": "底部的成果说明栏。"
       },
       {
         "key": "footCount",
@@ -4587,47 +3871,37 @@ export const pages = [
         "min": 1,
         "max": 2,
         "step": 1,
-        "describe": "底部说明栏的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "说明数量",
-        "desc": "底部说明栏的条目数量。",
-        "description": "底部说明栏的条目数量。"
+        "desc": "底部说明栏的条目数量。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的衬线引言。",
-        "description": "主标题上方的衬线引言。"
+        "desc": "主标题上方的衬线引言。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "showGauge": true,
       "metricCount": 3,
@@ -4709,11 +3983,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "columnCount",
@@ -4723,15 +3994,8 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "countArrays": [
-          "cols",
-          "rows[].cells"
-        ],
-        "describe": "参与对比的方案列数。",
         "publicKey": "columnCount",
-        "publicLabel": "对比列数",
-        "desc": "参与对比的方案列数。",
-        "description": "参与对比的方案列数。"
+        "desc": "参与对比的方案列数。"
       },
       {
         "key": "rowCount",
@@ -4741,14 +4005,8 @@ export const pages = [
         "min": 1,
         "max": 6,
         "step": 1,
-        "countArrays": [
-          "rows"
-        ],
-        "describe": "对比维度（行）的数量。",
         "publicKey": "rowCount",
-        "publicLabel": "对比行数",
-        "desc": "对比维度（行）的数量。",
-        "description": "对比维度（行）的数量。"
+        "desc": "对比维度（行）的数量。"
       },
       {
         "key": "highlightColumnIndex",
@@ -4758,81 +4016,62 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "需要高亮的方案列序号（默认燃点列）。",
         "displayOffset": 1,
         "desc": "需要高亮的方案列序号（默认燃点列）。",
-        "description": "需要高亮的方案列序号（默认燃点列）。",
-        "publicKey": "highlightColumnIndex",
-        "publicLabel": "高亮列"
+        "publicKey": "highlightColumnIndex"
       },
       {
         "key": "showHeadRow",
         "type": "toggle",
         "label": "表头行",
         "default": true,
-        "describe": "方案名称表头行的显示与隐藏。",
         "publicKey": "showHeadRow",
-        "publicLabel": "表头行",
-        "desc": "方案名称表头行的显示与隐藏。",
-        "description": "方案名称表头行的显示与隐藏。"
+        "desc": "方案名称表头行的显示与隐藏。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showFootNote",
         "type": "toggle",
         "label": "脚注",
         "default": true,
-        "describe": "表格下方的衬线脚注。",
         "publicKey": "showFootNote",
-        "publicLabel": "脚注",
-        "desc": "表格下方的衬线脚注。",
-        "description": "表格下方的衬线脚注。"
+        "desc": "表格下方的衬线脚注。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "columnCount": 3,
       "rowCount": 6,
@@ -4952,11 +4191,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "rowCount",
@@ -4966,14 +4202,8 @@ export const pages = [
         "min": 1,
         "max": 7,
         "step": 1,
-        "countArrays": [
-          "rows"
-        ],
-        "describe": "清单的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "desc": "清单的条目数量。",
-        "description": "清单的条目数量。"
+        "desc": "清单的条目数量。"
       },
       {
         "key": "columnCount",
@@ -4983,14 +4213,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "countArrays": [
-          "rows[].cells"
-        ],
-        "describe": "对比的方案列数（最后一列始终为「燃点」）。",
         "publicKey": "columnCount",
-        "publicLabel": "对比列数",
-        "desc": "对比的方案列数（最后一列始终为「燃点」）。",
-        "description": "对比的方案列数（最后一列始终为「燃点」）。"
+        "desc": "对比的方案列数（最后一列始终为「燃点」）。"
       },
       {
         "key": "highlightColumnIndex",
@@ -5000,89 +4224,65 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "describe": "需要高亮的列序号（超出列数自动收敛）。",
         "displayOffset": 1,
         "desc": "需要高亮的列序号（超出列数自动收敛）。",
-        "description": "需要高亮的列序号（超出列数自动收敛）。",
-        "publicKey": "highlightColumnIndex",
-        "publicLabel": "高亮列"
+        "publicKey": "highlightColumnIndex"
       },
       {
         "key": "showHeadRow",
         "type": "toggle",
         "label": "表头行",
         "default": true,
-        "describe": "顶部的方案名称表头。",
         "publicKey": "showHeadRow",
-        "publicLabel": "表头行",
-        "desc": "顶部的方案名称表头。",
-        "description": "顶部的方案名称表头。"
+        "desc": "顶部的方案名称表头。"
       },
       {
         "key": "showLegend",
         "type": "toggle",
         "label": "图例",
         "default": true,
-        "describe": "底部的符号含义图例。",
         "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "desc": "底部的符号含义图例。",
-        "description": "底部的符号含义图例。"
+        "desc": "底部的符号含义图例。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "右上角的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "右上角的说明段落。",
-        "description": "右上角的说明段落。"
+        "desc": "右上角的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -5278,11 +4478,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "planCount",
@@ -5292,22 +4489,16 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "价格套餐卡片的数量。",
         "publicKey": "planCount",
-        "publicLabel": "卡片数量",
-        "desc": "价格套餐卡片的数量。",
-        "description": "价格套餐卡片的数量。"
+        "desc": "价格套餐卡片的数量。"
       },
       {
         "key": "featured",
         "type": "toggle",
         "label": "主推套餐",
         "default": true,
-        "describe": "开启后高亮某一张套餐为主推方案。",
         "publicKey": "featured",
-        "publicLabel": "主推套餐",
-        "desc": "开启后高亮某一张套餐为主推方案。",
-        "description": "开启后高亮某一张套餐为主推方案。"
+        "desc": "开启后高亮某一张套餐为主推方案。"
       },
       {
         "key": "featuredIndex",
@@ -5317,92 +4508,70 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "主推套餐的序号，仅在“主推套餐”开启时生效。",
         "displayOffset": 1,
         "desc": "主推套餐的序号，仅在“主推套餐”开启时生效。",
-        "description": "主推套餐的序号，仅在“主推套餐”开启时生效。",
-        "publicKey": "featuredIndex",
-        "publicLabel": "主推序号"
+        "publicKey": "featuredIndex"
       },
       {
-        "key": "itemCount",
+        "key": "featureCount",
         "type": "slider",
         "label": "权益条目数",
         "default": 4,
         "min": 3,
         "max": 5,
         "step": 1,
-        "countArrays": [
-          "plans[].feats"
-        ],
-        "describe": "每张套餐展示的权益条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "权益条目数",
-        "desc": "每张套餐展示的权益条目数量。",
-        "description": "每张套餐展示的权益条目数量。"
+        "desc": "每张套餐展示的权益条目数量。"
       },
       {
         "key": "showPriceNote",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题旁的衬线说明文案。",
         "publicKey": "showPriceNote",
-        "publicLabel": "装饰小字",
-        "desc": "标题旁的衬线说明文案。",
-        "description": "标题旁的衬线说明文案。"
+        "desc": "标题旁的衬线说明文案。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰眉标。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰眉标。",
-        "description": "主标题上方的装饰眉标。"
+        "desc": "主标题上方的装饰眉标。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵数字装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵数字装饰。",
-        "description": "角落超大幽灵数字装饰。"
+        "desc": "角落超大幽灵数字装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "planCount": 3,
       "featured": true,
       "featuredIndex": 1,
-      "itemCount": 4,
+      "featureCount": 4,
       "showPriceNote": true,
       "showKicker": true,
       "showGhostMark": true,
@@ -5436,8 +4605,7 @@ export const pages = [
             "搜索引擎优化基础包",
             "每月内容产出 4 篇",
             "月度数据看板",
-            "邮件支持",
-            "基础诊断建议"
+            "邮件支持"
           ]
         },
         {
@@ -5499,11 +4667,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "principleCount",
@@ -5513,22 +4678,16 @@ export const pages = [
         "min": 1,
         "max": 6,
         "step": 1,
-        "describe": "列出的操作原则条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "desc": "列出的操作原则条目数量。",
-        "description": "列出的操作原则条目数量。"
+        "desc": "列出的操作原则条目数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一条原则，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一条原则，其余弱化。",
-        "description": "开启后突出某一条原则，其余弱化。"
+        "desc": "开启后突出某一条原则，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -5538,70 +4697,54 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "describe": "需要突出的原则序号。",
         "displayOffset": 1,
         "desc": "需要突出的原则序号。",
-        "description": "需要突出的原则序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "右上角的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "右上角的说明段落。",
-        "description": "右上角的说明段落。"
+        "desc": "右上角的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "principleCount": 6,
       "emphasis": false,
@@ -5680,11 +4823,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "imageCount",
@@ -5694,77 +4834,56 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "画廊图片槽数量（0–4）；版式随数量自适应，为 0 时回退为留白引导。",
         "publicKey": "imageCount",
-        "publicLabel": "图片槽数量",
-        "desc": "画廊图片槽数量（0–4）；版式随数量自适应，为 0 时回退为留白引导。",
-        "description": "画廊图片槽数量（0–4）；版式随数量自适应，为 0 时回退为留白引导。"
+        "desc": "画廊图片槽数量（0–4）；版式随数量自适应，为 0 时回退为留白引导。"
       },
       {
         "key": "showCaptions",
         "type": "toggle",
         "label": "图片说明",
         "default": true,
-        "describe": "每张图片下方的客户标注。",
         "publicKey": "showCaptions",
-        "publicLabel": "图片说明",
-        "desc": "每张图片下方的客户标注。",
-        "description": "每张图片下方的客户标注。"
+        "desc": "每张图片下方的客户标注。"
       },
       {
         "key": "showHeadline",
         "type": "toggle",
         "label": "标题",
         "default": true,
-        "describe": "页面主标题的显示与隐藏。",
         "publicKey": "showHeadline",
-        "publicLabel": "标题",
-        "desc": "页面主标题的显示与隐藏。",
-        "description": "页面主标题的显示与隐藏。"
+        "desc": "页面主标题的显示与隐藏。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰注释",
         "default": true,
-        "describe": "标题旁的衬线注释文案。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰注释",
-        "desc": "标题旁的衬线注释文案。",
-        "description": "标题旁的衬线注释文案。"
+        "desc": "标题旁的衬线注释文案。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -5839,55 +4958,40 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "主标题上方的衬线斜体引言。",
         "publicKey": "showLede",
-        "publicLabel": "装饰小字",
-        "desc": "主标题上方的衬线斜体引言。",
-        "description": "主标题上方的衬线斜体引言。"
+        "desc": "主标题上方的衬线斜体引言。"
       },
       {
         "key": "showSub",
         "type": "toggle",
         "label": "副标题",
         "default": true,
-        "describe": "主标题下方的说明副标题。",
         "publicKey": "showSub",
-        "publicLabel": "副标题",
-        "desc": "主标题下方的说明副标题。",
-        "description": "主标题下方的说明副标题。"
+        "desc": "主标题下方的说明副标题。"
       },
       {
         "key": "showCta",
         "type": "toggle",
         "label": "行动召唤",
         "default": true,
-        "describe": "排版化的主行动召唤语（大字 + 箭头 + 分隔线）。",
         "publicKey": "showCta",
-        "publicLabel": "行动召唤",
-        "desc": "排版化的主行动召唤语（大字 + 箭头 + 分隔线）。",
-        "description": "排版化的主行动召唤语（大字 + 箭头 + 分隔线）。"
+        "desc": "排版化的主行动召唤语（大字 + 箭头 + 分隔线）。"
       },
       {
         "key": "showChannels",
         "type": "toggle",
         "label": "信息组",
         "default": true,
-        "describe": "邮箱 / 电话 / 地点等信息组。",
         "publicKey": "showChannels",
-        "publicLabel": "信息组",
-        "desc": "邮箱 / 电话 / 地点等信息组。",
-        "description": "邮箱 / 电话 / 地点等信息组。"
+        "desc": "邮箱 / 电话 / 地点等信息组。"
       },
       {
         "key": "channelCount",
@@ -5897,58 +5001,47 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "展示的信息条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "desc": "展示的信息条目数量。",
-        "description": "展示的信息条目数量。"
+        "desc": "展示的信息条目数量。"
       },
       {
         "key": "showBigMark",
         "type": "toggle",
         "label": "右上品牌标",
         "default": true,
-        "describe": "右上角的品牌图标锁定组合。",
         "publicKey": "showBigMark",
-        "publicLabel": "右上品牌标",
-        "desc": "右上角的品牌图标锁定组合。",
-        "description": "右上角的品牌图标锁定组合。"
+        "desc": "右上角的品牌图标锁定组合。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "logoCount",
         "type": "slider",
+        "countArrays": [
+          "logos",
+          "images"
+        ],
         "label": "合作图片槽",
         "default": 0,
         "min": 0,
         "max": 6,
         "step": 1,
-        "describe": "底部合作伙伴图片槽数量；为 0 时回退为文字标识。",
         "publicKey": "logoCount",
-        "publicLabel": "合作图片槽",
-        "desc": "底部合作伙伴图片槽数量；为 0 时回退为文字标识。",
-        "description": "底部合作伙伴图片槽数量；为 0 时回退为文字标识。"
+        "desc": "底部合作伙伴图片槽数量；为 0 时回退为文字标识。"
       }
     ],
     "defaultProps": {
@@ -5963,7 +5056,10 @@ export const pages = [
       "showScaffold": true,
       "logoCount": 0,
       "logos": [],
+      "images": [],
       "ghostMark": "09",
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "railText": "Let's begin — 行动",
       "navItems": [
         "行动"
@@ -6026,11 +5122,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "axisCount",
@@ -6040,124 +5133,93 @@ export const pages = [
         "min": 5,
         "max": 7,
         "step": 1,
-        "describe": "雷达图的能力轴数量（多边形边数）。",
         "publicKey": "axisCount",
-        "publicLabel": "能力维度",
-        "desc": "雷达图的能力轴数量（多边形边数）。",
-        "description": "雷达图的能力轴数量（多边形边数）。"
+        "desc": "雷达图的能力轴数量（多边形边数）。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": true,
-        "describe": "开启后弱化「行业基准」多边形，突出「燃点」。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后弱化「参考基准」多边形，突出「燃点」。",
-        "description": "开启后弱化「参考基准」多边形，突出「燃点」。"
+        "desc": "开启后弱化「参考基准」多边形，突出「燃点」。"
       },
       {
         "key": "showBaseline",
         "type": "toggle",
         "label": "参考基准",
         "default": true,
-        "describe": "叠加的行业基准对比多边形。",
         "publicKey": "showBaseline",
-        "publicLabel": "参考基准",
-        "desc": "叠加的参考基准对比多边形。",
-        "description": "叠加的参考基准对比多边形。"
+        "desc": "叠加的参考基准对比多边形。"
       },
       {
         "key": "showRings",
         "type": "toggle",
         "label": "刻度网格",
         "default": true,
-        "describe": "同心刻度环与放射轴线。",
         "publicKey": "showRings",
-        "publicLabel": "刻度网格",
-        "desc": "同心刻度环与放射轴线。",
-        "description": "同心刻度环与放射轴线。"
+        "desc": "同心刻度环与放射轴线。"
       },
       {
         "key": "showAxisLabels",
         "type": "toggle",
         "label": "维度标签",
         "default": true,
-        "describe": "每条轴外侧的能力维度标签。",
         "publicKey": "showAxisLabels",
-        "publicLabel": "维度标签",
-        "desc": "每条轴外侧的能力维度标签。",
-        "description": "每条轴外侧的能力维度标签。"
+        "desc": "每条轴外侧的能力维度标签。"
       },
       {
         "key": "showLegend",
         "type": "toggle",
         "label": "图例",
         "default": true,
-        "describe": "左侧的多边形含义图例。",
         "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "desc": "左侧的多边形含义图例。",
-        "description": "左侧的多边形含义图例。"
+        "desc": "左侧的多边形含义图例。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "标题下方的说明段落。",
-        "description": "标题下方的说明段落。"
+        "desc": "标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "axisCount": 7,
       "emphasis": true,
@@ -6261,55 +5323,40 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showDelta",
         "type": "toggle",
         "label": "中间增幅章",
         "default": true,
-        "describe": "两栏之间的增幅对比标记。",
         "publicKey": "showDelta",
-        "publicLabel": "中间增幅章",
-        "desc": "两栏之间的增幅对比标记。",
-        "description": "两栏之间的增幅对比标记。"
+        "desc": "两栏之间的增幅对比标记。"
       },
       {
         "key": "showCaptions",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "每栏大数字下方的说明文案。",
         "publicKey": "showCaptions",
-        "publicLabel": "说明文案",
-        "desc": "每栏大数字下方的说明文案。",
-        "description": "每栏大数字下方的说明文案。"
+        "desc": "每栏大数字下方的说明文案。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": true,
-        "describe": "开启后点亮其中一栏，另一栏弱化为「现状」。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后点亮其中一栏，另一栏弱化为「现状」。",
-        "description": "开启后点亮其中一栏，另一栏弱化为「现状」。"
+        "desc": "开启后点亮其中一栏，另一栏弱化为「现状」。"
       },
       {
         "key": "emphasisSide",
@@ -6326,22 +5373,16 @@ export const pages = [
             "label": "右栏"
           }
         ],
-        "describe": "被点亮（暖橙）的栏位。",
         "publicKey": "emphasisSide",
-        "publicLabel": "重点栏位",
-        "desc": "被点亮（暖橙）的栏位。",
-        "description": "被点亮（暖橙）的栏位。"
+        "desc": "被点亮（暖橙）的栏位。"
       },
       {
         "key": "showSubStats",
         "type": "toggle",
         "label": "辅助数据行",
         "default": true,
-        "describe": "底部分栏的辅助数据。",
         "publicKey": "showSubStats",
-        "publicLabel": "辅助数据行",
-        "desc": "底部分栏的辅助数据。",
-        "description": "底部分栏的辅助数据。"
+        "desc": "底部分栏的辅助数据。"
       },
       {
         "key": "subStatCount",
@@ -6351,55 +5392,40 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "底部辅助数据的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "辅助数据数量",
-        "desc": "底部辅助数据的条目数量。",
-        "description": "底部辅助数据的条目数量。"
+        "desc": "底部辅助数据的条目数量。"
       },
       {
         "key": "showNote",
         "type": "toggle",
         "label": "装饰注释",
         "default": true,
-        "describe": "底部信息条中间的衬线注释。",
         "publicKey": "showNote",
-        "publicLabel": "装饰注释",
-        "desc": "底部信息条中间的衬线注释。",
-        "description": "底部信息条中间的衬线注释。"
+        "desc": "底部信息条中间的衬线注释。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -6481,11 +5507,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "memberCount",
@@ -6495,11 +5518,8 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "describe": "展示的成员卡片数量。",
         "publicKey": "memberCount",
-        "publicLabel": "成员数量",
-        "desc": "展示的成员卡片数量。",
-        "description": "展示的成员卡片数量。"
+        "desc": "展示的成员卡片数量。"
       },
       {
         "key": "avatarCount",
@@ -6512,11 +5532,8 @@ export const pages = [
         "countArrays": [
           "images"
         ],
-        "describe": "使用真实照片的成员数量；其余回退为字号大的姓氏字符。",
         "publicKey": "avatarCount",
-        "publicLabel": "头像槽数量",
-        "desc": "使用真实照片的成员数量；其余回退为字号大的姓氏字符。",
-        "description": "使用真实照片的成员数量；其余回退为字号大的姓氏字符。"
+        "desc": "使用真实照片的成员数量；其余回退为字号大的姓氏字符。"
       },
       {
         "key": "portraitShape",
@@ -6533,91 +5550,69 @@ export const pages = [
             "label": "圆形"
           }
         ],
-        "describe": "头像槽的裁切形状。",
         "publicKey": "portraitShape",
-        "publicLabel": "头像形状",
-        "desc": "头像槽的裁切形状。",
-        "description": "头像槽的裁切形状。"
+        "desc": "头像槽的裁切形状。"
       },
       {
         "key": "showRoles",
         "type": "toggle",
         "label": "副标题",
         "default": true,
-        "describe": "姓名下方的副标题。",
         "publicKey": "showRoles",
-        "publicLabel": "副标题",
-        "desc": "姓名下方的副标题。",
-        "description": "姓名下方的副标题。"
+        "desc": "姓名下方的副标题。"
       },
       {
         "key": "showEn",
         "type": "toggle",
         "label": "英文标签",
         "default": true,
-        "describe": "卡片底部的英文职能标签。",
         "publicKey": "showEn",
-        "publicLabel": "英文标签",
-        "desc": "卡片底部的英文职能标签。",
-        "description": "卡片底部的英文职能标签。"
+        "desc": "卡片底部的英文职能标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "左侧标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "左侧标题下方的说明段落。",
-        "description": "左侧标题下方的说明段落。"
+        "desc": "左侧标题下方的说明段落。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "memberCount": 4,
       "avatarCount": 0,
@@ -6646,29 +5641,25 @@ export const pages = [
           "name": "林 远",
           "role": "增长策略总监",
           "en": "Strategy",
-          "mono": "远",
-          "avatar": null
+          "mono": "远"
         },
         {
           "name": "苏 黎",
           "role": "内容与SEO主理",
           "en": "Content / SEO",
-          "mono": "黎",
-          "avatar": null
+          "mono": "黎"
         },
         {
           "name": "陈 默",
           "role": "转化与数据负责",
           "en": "CRO / Data",
-          "mono": "默",
-          "avatar": null
+          "mono": "默"
         },
         {
           "name": "何 川",
           "role": "前端与性能工程",
           "en": "Web / Perf",
-          "mono": "川",
-          "avatar": null
+          "mono": "川"
         }
       ],
       "metaLeft": "IGNIS — 燃点 · 核心团队",
@@ -6703,11 +5694,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "ringCount",
@@ -6717,22 +5705,16 @@ export const pages = [
         "min": 1,
         "max": 4,
         "step": 1,
-        "describe": "展示的 KPI 进度环数量。",
         "publicKey": "ringCount",
-        "publicLabel": "指标环数量",
-        "desc": "展示的 KPI 进度环数量。",
-        "description": "展示的 KPI 进度环数量。"
+        "desc": "展示的 KPI 进度环数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一个环，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一个环，其余弱化。",
-        "description": "开启后突出某一个环，其余弱化。"
+        "desc": "开启后突出某一个环，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -6742,92 +5724,70 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "describe": "需要突出的环序号。",
         "displayOffset": 1,
         "desc": "需要突出的环序号。",
-        "description": "需要突出的环序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showCenterValue",
         "type": "toggle",
         "label": "环心数值",
         "default": true,
-        "describe": "每个环中心的百分比数值。",
         "publicKey": "showValueLabels",
-        "publicLabel": "环心数值",
-        "desc": "每个环中心的百分比数值。",
-        "description": "每个环中心的百分比数值。"
+        "desc": "每个环中心的百分比数值。"
       },
       {
         "key": "showDelta",
         "type": "toggle",
         "label": "同比增幅",
         "default": true,
-        "describe": "名称下方的同比增幅标记。",
         "publicKey": "showDelta",
-        "publicLabel": "同比增幅",
-        "desc": "名称下方的同比增幅标记。",
-        "description": "名称下方的同比增幅标记。"
+        "desc": "名称下方的同比增幅标记。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "右上角的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "右上角的说明段落。",
-        "description": "右上角的说明段落。"
+        "desc": "右上角的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "ringCount": 4,
       "emphasis": false,
@@ -6850,7 +5810,7 @@ export const pages = [
       "lead": "Every dial, climbing.",
       "headingHtml": "每一项，<span class=\"ign-ember-text\">都在往上走</span>。",
       "lede": "不是单点漂亮，而是关键指标同时抬升——这才是引擎跑顺的样子。",
-      "deltaSuffix": " pts",
+      "deltaSuffix": " pts · 同比",
       "rings": [
         {
           "pct": 96,
@@ -6909,11 +5869,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "rowCount",
@@ -6923,33 +5880,24 @@ export const pages = [
         "min": 1,
         "max": 6,
         "step": 1,
-        "describe": "列表的明细行数。",
         "publicKey": "rowCount",
-        "publicLabel": "列表行数",
-        "desc": "列表的明细行数。",
-        "description": "列表的明细行数。"
+        "desc": "列表的明细行数。"
       },
       {
         "key": "showColHeads",
         "type": "toggle",
         "label": "表头行",
         "default": true,
-        "describe": "顶部的列名表头。",
         "publicKey": "showColHeads",
-        "publicLabel": "表头行",
-        "desc": "顶部的列名表头。",
-        "description": "顶部的列名表头。"
+        "desc": "顶部的列名表头。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后高亮某一明细行，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后高亮某一明细行，其余弱化。",
-        "description": "开启后高亮某一明细行，其余弱化。"
+        "desc": "开启后高亮某一明细行，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -6959,89 +5907,65 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "describe": "需要高亮的明细行序号。",
         "displayOffset": 1,
         "desc": "需要高亮的明细行序号。",
-        "description": "需要高亮的明细行序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showNetRow",
         "type": "toggle",
         "label": "净值汇总行",
         "default": true,
-        "describe": "底部高亮的净值/总回报汇总行。",
         "publicKey": "showNetRow",
-        "publicLabel": "净值汇总行",
-        "desc": "底部高亮的净值/总回报汇总行。",
-        "description": "底部高亮的净值/总回报汇总行。"
+        "desc": "底部高亮的净值/总回报汇总行。"
       },
       {
         "key": "showFootNote",
         "type": "toggle",
         "label": "脚注",
         "default": true,
-        "describe": "表格右下角的衬线脚注。",
         "publicKey": "showFootNote",
-        "publicLabel": "脚注",
-        "desc": "表格右下角的衬线脚注。",
-        "description": "表格右下角的衬线脚注。"
+        "desc": "表格右下角的衬线脚注。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "右上角的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "右上角的说明段落。",
-        "description": "右上角的说明段落。"
+        "desc": "右上角的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -7156,25 +6080,16 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "imageCount",
-        "type": "slider",
+        "type": "toggle",
         "label": "图片",
-        "default": 1,
-        "min": 0,
-        "max": 1,
-        "step": 1,
-        "describe": "样机内截图的显示与隐藏。",
+        "default": true,
         "publicKey": "imageCount",
-        "publicLabel": "图片",
-        "desc": "样机内截图的显示与隐藏。",
-        "description": "样机内截图的显示与隐藏。"
+        "desc": "样机内截图的显示与隐藏。"
       },
       {
         "key": "imagePosition",
@@ -7191,33 +6106,24 @@ export const pages = [
             "label": "右"
           }
         ],
-        "describe": "设备样机相对文字的位置。",
         "publicKey": "imagePosition",
-        "publicLabel": "样机位置",
-        "desc": "设备样机相对文字的位置。",
-        "description": "设备样机相对文字的位置。"
+        "desc": "设备样机相对文字的位置。"
       },
       {
         "key": "showChrome",
         "type": "toggle",
         "label": "浏览器外框",
         "default": true,
-        "describe": "样机顶部的浏览器窗口外框。",
         "publicKey": "showChrome",
-        "publicLabel": "浏览器外框",
-        "desc": "样机顶部的浏览器窗口外框。",
-        "description": "样机顶部的浏览器窗口外框。"
+        "desc": "样机顶部的浏览器窗口外框。"
       },
       {
         "key": "showPins",
         "type": "toggle",
         "label": "标注点",
         "default": true,
-        "describe": "截图上的编号标注点与左侧说明清单。",
         "publicKey": "showPins",
-        "publicLabel": "标注点",
-        "desc": "截图上的编号标注点与左侧说明清单。",
-        "description": "截图上的编号标注点与左侧说明清单。"
+        "desc": "截图上的编号标注点与左侧说明清单。"
       },
       {
         "key": "pinCount",
@@ -7227,66 +6133,48 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "编号标注列表的数量。",
         "publicKey": "pinCount",
-        "publicLabel": "列表数量",
-        "desc": "编号标注列表的数量。",
-        "description": "编号标注列表的数量。"
+        "desc": "编号标注列表的数量。"
       },
       {
         "key": "showCaption",
         "type": "toggle",
         "label": "图片说明",
         "default": true,
-        "describe": "样机下方的说明标注。",
         "publicKey": "showCaption",
-        "publicLabel": "图片说明",
-        "desc": "样机下方的说明标注。",
-        "description": "样机下方的说明标注。"
+        "desc": "样机下方的说明标注。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -7370,11 +6258,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "align",
@@ -7391,80 +6276,61 @@ export const pages = [
             "label": "居中"
           }
         ],
-        "describe": "宣言文字的对齐方式。",
         "publicKey": "align",
-        "publicLabel": "对齐方式",
-        "desc": "宣言文字的对齐方式。",
-        "description": "宣言文字的对齐方式。"
+        "desc": "宣言文字的对齐方式。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "宣言上方的装饰性引导标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "宣言上方的装饰性引导标签。",
-        "description": "宣言上方的装饰性引导标签。"
+        "desc": "宣言上方的装饰性引导标签。"
       },
       {
         "key": "showRule",
         "type": "toggle",
         "label": "强调短线",
         "default": true,
-        "describe": "宣言下方的暖橙强调短线。",
         "publicKey": "showRule",
-        "publicLabel": "强调短线",
-        "desc": "宣言下方的暖橙强调短线。",
-        "description": "宣言下方的暖橙强调短线。"
+        "desc": "宣言下方的暖橙强调短线。"
       },
       {
         "key": "showFootLine",
         "type": "toggle",
         "label": "辅助文本",
         "default": true,
-        "describe": "宣言下方的衬线收束句。",
         "publicKey": "showFootLine",
-        "publicLabel": "辅助文本",
-        "desc": "宣言下方的衬线收束句。",
-        "description": "宣言下方的衬线收束句。"
+        "desc": "宣言下方的衬线收束句。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "align": "left",
       "showKicker": true,
@@ -7517,25 +6383,16 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "imageCount",
-        "type": "slider",
+        "type": "toggle",
         "label": "图片",
-        "default": 1,
-        "min": 0,
-        "max": 1,
-        "step": 1,
-        "describe": "是否显示配图槽。",
+        "default": true,
         "publicKey": "imageCount",
-        "publicLabel": "图片",
-        "desc": "是否显示配图槽。",
-        "description": "是否显示配图槽。"
+        "desc": "是否显示配图槽。"
       },
       {
         "key": "imagePosition",
@@ -7552,11 +6409,8 @@ export const pages = [
             "label": "右"
           }
         ],
-        "describe": "配图相对正文的位置。",
         "publicKey": "imagePosition",
-        "publicLabel": "配图位置",
-        "desc": "配图相对正文的位置。",
-        "description": "配图相对正文的位置。"
+        "desc": "配图相对正文的位置。"
       },
       {
         "key": "columnCount",
@@ -7566,88 +6420,64 @@ export const pages = [
         "min": 1,
         "max": 2,
         "step": 1,
-        "describe": "正文的分栏数量。",
         "publicKey": "columnCount",
-        "publicLabel": "正文栏数",
-        "desc": "正文的分栏数量。",
-        "description": "正文的分栏数量。"
+        "desc": "正文的分栏数量。"
       },
       {
         "key": "showDropCap",
         "type": "toggle",
         "label": "首字下沉",
         "default": true,
-        "describe": "正文首段的大号首字母装饰。",
         "publicKey": "showDropCap",
-        "publicLabel": "首字下沉",
-        "desc": "正文首段的大号首字母装饰。",
-        "description": "正文首段的大号首字母装饰。"
+        "desc": "正文首段的大号首字母装饰。"
       },
       {
         "key": "showPullQuote",
         "type": "toggle",
         "label": "二级正文",
         "default": true,
-        "describe": "正文中的衬线引文段落。",
         "publicKey": "showPullQuote",
-        "publicLabel": "二级正文",
-        "desc": "正文中的衬线引文段落。",
-        "description": "正文中的衬线引文段落。"
+        "desc": "正文中的衬线引文段落。"
       },
       {
         "key": "showByline",
         "type": "toggle",
         "label": "辅助文本",
         "default": true,
-        "describe": "正文末尾的作者署名。",
         "publicKey": "showByline",
-        "publicLabel": "辅助文本",
-        "desc": "正文末尾的作者署名。",
-        "description": "正文末尾的作者署名。"
+        "desc": "正文末尾的作者署名。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "标题上方的装饰标签。",
-        "description": "标题上方的装饰标签。"
+        "desc": "标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -7712,11 +6542,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "periodCount",
@@ -7726,14 +6553,8 @@ export const pages = [
         "min": 3,
         "max": 6,
         "step": 1,
-        "countArrays": [
-          "periods"
-        ],
-        "describe": "横轴上的时间周期（柱子）数量。",
         "publicKey": "periodCount",
-        "publicLabel": "周期数量",
-        "desc": "横轴上的时间周期（柱子）数量。",
-        "description": "横轴上的时间周期（柱子）数量。"
+        "desc": "横轴上的时间周期（柱子）数量。"
       },
       {
         "key": "segmentCount",
@@ -7743,117 +6564,85 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "countArrays": [
-          "segs",
-          "periods[].vals"
-        ],
-        "describe": "每根柱子堆叠的渠道层数。",
         "publicKey": "segmentCount",
-        "publicLabel": "渠道层数",
-        "desc": "每根柱子堆叠的渠道层数。",
-        "description": "每根柱子堆叠的渠道层数。"
+        "desc": "每根柱子堆叠的渠道层数。"
       },
       {
         "key": "showTotals",
         "type": "toggle",
         "label": "柱顶合计",
         "default": true,
-        "describe": "每根柱子顶部的合计数值。",
         "publicKey": "showValueLabels",
-        "publicLabel": "柱顶合计",
-        "desc": "每根柱子顶部的合计数值。",
-        "description": "每根柱子顶部的合计数值。"
+        "desc": "每根柱子顶部的合计数值。"
       },
       {
         "key": "showGrid",
         "type": "toggle",
         "label": "网格线",
         "default": true,
-        "describe": "背景的水平刻度网格。",
         "publicKey": "showGrid",
-        "publicLabel": "网格线",
-        "desc": "背景的水平刻度网格。",
-        "description": "背景的水平刻度网格。"
+        "desc": "背景的水平刻度网格。"
       },
       {
         "key": "showLegend",
         "type": "toggle",
         "label": "图例",
         "default": true,
-        "describe": "右上角的渠道图例。",
         "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "desc": "右上角的渠道图例。",
-        "description": "右上角的渠道图例。"
+        "desc": "右上角的渠道图例。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": true,
-        "describe": "开启后突出最新一根柱子，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出最新一根柱子，其余弱化。",
-        "description": "开启后突出最新一根柱子，其余弱化。"
+        "desc": "开启后突出最新一根柱子，其余弱化。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "右上角的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "右上角的说明段落。",
-        "description": "右上角的说明段落。"
+        "desc": "右上角的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "periodCount": 5,
       "segmentCount": 3,
@@ -7894,16 +6683,9 @@ export const pages = [
           "en": "Direct"
         }
       ],
-      "periodLabels": [
-        "Q1",
-        "Q2",
-        "Q3",
-        "Q4",
-        "Q5",
-        "Q6"
-      ],
       "periods": [
         {
+          "x": "Q1",
           "vals": [
             10,
             14,
@@ -7911,6 +6693,7 @@ export const pages = [
           ]
         },
         {
+          "x": "Q2",
           "vals": [
             16,
             22,
@@ -7918,6 +6701,7 @@ export const pages = [
           ]
         },
         {
+          "x": "Q3",
           "vals": [
             24,
             34,
@@ -7925,6 +6709,7 @@ export const pages = [
           ]
         },
         {
+          "x": "Q4",
           "vals": [
             34,
             48,
@@ -7932,6 +6717,7 @@ export const pages = [
           ]
         },
         {
+          "x": "Q5",
           "vals": [
             46,
             64,
@@ -7939,6 +6725,7 @@ export const pages = [
           ]
         },
         {
+          "x": "Q6",
           "vals": [
             58,
             82,
@@ -7953,8 +6740,7 @@ export const pages = [
       {
         "dependent": "periods[].vals",
         "anchor": "segs",
-        "relation": "same-length",
-        "countKey": "segmentCount"
+        "relation": "same-length"
       }
     ]
   },
@@ -7986,11 +6772,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "stepCount",
@@ -8000,66 +6783,48 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "describe": "基线与总计之间的增量步骤数量。",
         "publicKey": "stepCount",
-        "publicLabel": "增量步骤",
-        "desc": "基线与总计之间的增量步骤数量。",
-        "description": "基线与总计之间的增量步骤数量。"
+        "desc": "基线与总计之间的增量步骤数量。"
       },
       {
         "key": "showConnectors",
         "type": "toggle",
         "label": "连接虚线",
         "default": true,
-        "describe": "相邻柱之间的水平连接虚线。",
         "publicKey": "showConnectors",
-        "publicLabel": "连接虚线",
-        "desc": "相邻柱之间的水平连接虚线。",
-        "description": "相邻柱之间的水平连接虚线。"
+        "desc": "相邻柱之间的水平连接虚线。"
       },
       {
         "key": "showValues",
         "type": "toggle",
         "label": "数值标签",
         "default": true,
-        "describe": "每根柱顶部的数值。",
         "publicKey": "showValueLabels",
-        "publicLabel": "数值标签",
-        "desc": "每根柱顶部的数值。",
-        "description": "每根柱顶部的数值。"
+        "desc": "每根柱顶部的数值。"
       },
       {
         "key": "showBaseline",
         "type": "toggle",
         "label": "基线柱",
         "default": true,
-        "describe": "最左侧的接入前基线柱。",
         "publicKey": "showBaseline",
-        "publicLabel": "基线柱",
-        "desc": "最左侧的接入前基线柱。",
-        "description": "最左侧的接入前基线柱。"
+        "desc": "最左侧的接入前基线柱。"
       },
       {
         "key": "showTotal",
         "type": "toggle",
         "label": "总计柱",
         "default": true,
-        "describe": "最右侧的累计总计柱。",
         "publicKey": "showTotal",
-        "publicLabel": "总计柱",
-        "desc": "最右侧的累计总计柱。",
-        "description": "最右侧的累计总计柱。"
+        "desc": "最右侧的累计总计柱。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一增量步骤，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一增量步骤，其余弱化。",
-        "description": "开启后突出某一增量步骤，其余弱化。"
+        "desc": "开启后突出某一增量步骤，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -8069,70 +6834,54 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "describe": "需要突出的柱序号（含基线）。",
         "displayOffset": 1,
         "desc": "需要突出的柱序号（含基线）。",
-        "description": "需要突出的柱序号（含基线）。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "右上角的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "右上角的说明段落。",
-        "description": "右上角的说明段落。"
+        "desc": "右上角的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "stepCount": 4,
       "showConnectors": true,
@@ -8227,11 +6976,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "tileCount",
@@ -8241,91 +6987,69 @@ export const pages = [
         "min": 2,
         "max": 5,
         "step": 1,
-        "describe": "拼贴的图块数量，每个图块都是可点击上传的图片槽，布局随之自适应。",
         "publicKey": "tileCount",
-        "publicLabel": "拼贴块数",
-        "desc": "拼贴的图块数量，每个图块都是可点击上传的图片槽，布局随之自适应。",
-        "description": "拼贴的图块数量，每个图块都是可点击上传的图片槽，布局随之自适应。"
+        "desc": "拼贴的图块数量，每个图块都是可点击上传的图片槽，布局随之自适应。"
       },
       {
         "key": "showTags",
         "type": "toggle",
         "label": "图块标注",
         "default": true,
-        "describe": "每个图块左下角的编号标注。",
         "publicKey": "showTags",
-        "publicLabel": "图块标注",
-        "desc": "每个图块左下角的编号标注。",
-        "description": "每个图块左下角的编号标注。"
+        "desc": "每个图块左下角的编号标注。"
       },
       {
         "key": "showHead",
         "type": "toggle",
         "label": "标题区",
         "default": true,
-        "describe": "顶部标题与说明区域。",
         "publicKey": "showHead",
-        "publicLabel": "标题区",
-        "desc": "顶部标题与说明区域。",
-        "description": "顶部标题与说明区域。"
+        "desc": "顶部标题与说明区域。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "右上角的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "右上角的说明段落。",
-        "description": "右上角的说明段落。"
+        "desc": "右上角的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "tileCount": 3,
       "images": [],
@@ -8416,11 +7140,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "brandCount",
@@ -8430,11 +7151,8 @@ export const pages = [
         "min": 4,
         "max": 12,
         "step": 1,
-        "describe": "展示的品牌格子数量。",
         "publicKey": "brandCount",
-        "publicLabel": "品牌数量",
-        "desc": "展示的品牌格子数量。",
-        "description": "展示的品牌格子数量。"
+        "desc": "展示的品牌格子数量。"
       },
       {
         "key": "columns",
@@ -8444,11 +7162,8 @@ export const pages = [
         "min": 3,
         "max": 6,
         "step": 1,
-        "describe": "品牌墙每行的列数。",
         "publicKey": "columns",
-        "publicLabel": "每行列数",
-        "desc": "品牌墙每行的列数。",
-        "description": "品牌墙每行的列数。"
+        "desc": "品牌墙每行的列数。"
       },
       {
         "key": "logoCount",
@@ -8457,82 +7172,62 @@ export const pages = [
         "default": 0,
         "min": 0,
         "max": 12,
-        "maxFromKey": "brandCount",
         "step": 1,
-        "describe": "使用真实 logo 的格子数；其余回退为字母组合标记。",
         "publicKey": "logoCount",
-        "publicLabel": "Logo 槽数量",
-        "desc": "使用真实 logo 的格子数；其余回退为字母组合标记。",
-        "description": "使用真实 logo 的格子数；其余回退为字母组合标记。"
+        "desc": "使用真实 logo 的格子数；其余回退为字母组合标记。"
       },
       {
         "key": "showNames",
         "type": "toggle",
         "label": "品牌名",
         "default": true,
-        "describe": "字母标记旁的品牌名称。",
         "publicKey": "showNames",
-        "publicLabel": "品牌名",
-        "desc": "字母标记旁的品牌名称。",
-        "description": "字母标记旁的品牌名称。"
+        "desc": "字母标记旁的品牌名称。"
       },
       {
         "key": "showStat",
         "type": "toggle",
         "label": "成果数字",
         "default": true,
-        "describe": "右上角的客户数量大数字。",
         "publicKey": "showStat",
-        "publicLabel": "成果数字",
-        "desc": "右上角的客户数量大数字。",
-        "description": "右上角的客户数量大数字。"
+        "desc": "右上角的客户数量大数字。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "brandCount": 8,
       "columns": 4,
@@ -8638,11 +7333,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "rowCount",
@@ -8652,44 +7344,32 @@ export const pages = [
         "min": 1,
         "max": 5,
         "step": 1,
-        "describe": "问答表的行数。",
         "publicKey": "rowCount",
-        "publicLabel": "问答行数",
-        "desc": "问答表的行数。",
-        "description": "问答表的行数。"
+        "desc": "问答表的行数。"
       },
       {
         "key": "showColHeads",
         "type": "toggle",
         "label": "列名表头",
         "default": true,
-        "describe": "顶部「顾虑 / 我们的回答」列名。",
         "publicKey": "showColHeads",
-        "publicLabel": "列名表头",
-        "desc": "顶部「顾虑 / 我们的回答」列名。",
-        "description": "顶部「顾虑 / 我们的回答」列名。"
+        "desc": "顶部「顾虑 / 我们的回答」列名。"
       },
       {
         "key": "showNumbers",
         "type": "toggle",
         "label": "序号列",
         "default": true,
-        "describe": "每行左侧的编号。",
         "publicKey": "showNumbers",
-        "publicLabel": "序号列",
-        "desc": "每行左侧的编号。",
-        "description": "每行左侧的编号。"
+        "desc": "每行左侧的编号。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后高亮某一行，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后高亮某一行，其余弱化。",
-        "description": "开启后高亮某一行，其余弱化。"
+        "desc": "开启后高亮某一行，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -8699,67 +7379,49 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要高亮的行序号。",
         "displayOffset": 1,
         "desc": "需要高亮的行序号。",
-        "description": "需要高亮的行序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "右上角的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "右上角的说明段落。",
-        "description": "右上角的说明段落。"
+        "desc": "右上角的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -8844,44 +7506,32 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showNumber",
         "type": "toggle",
         "label": "巨型序号",
         "default": true,
-        "describe": "左侧的超大章节数字。",
         "publicKey": "showNumber",
-        "publicLabel": "巨型序号",
-        "desc": "左侧的超大章节数字。",
-        "description": "左侧的超大章节数字。"
+        "desc": "左侧的超大章节数字。"
       },
       {
         "key": "showSub",
         "type": "toggle",
         "label": "副标题",
         "default": true,
-        "describe": "章节标题下方的说明句。",
         "publicKey": "showSub",
-        "publicLabel": "副标题",
-        "desc": "章节标题下方的说明句。",
-        "description": "章节标题下方的说明句。"
+        "desc": "章节标题下方的说明句。"
       },
       {
         "key": "showAgenda",
         "type": "toggle",
         "label": "小目录",
         "default": true,
-        "describe": "右侧本章覆盖要点的小目录。",
         "publicKey": "showAgenda",
-        "publicLabel": "小目录",
-        "desc": "右侧本章覆盖要点的小目录。",
-        "description": "右侧本章覆盖要点的小目录。"
+        "desc": "右侧本章覆盖要点的小目录。"
       },
       {
         "key": "agendaCount",
@@ -8891,11 +7541,8 @@ export const pages = [
         "min": 1,
         "max": 4,
         "step": 1,
-        "describe": "小目录的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "目录条数",
-        "desc": "小目录的条目数量。",
-        "description": "小目录的条目数量。"
+        "desc": "小目录的条目数量。"
       },
       {
         "key": "agendaCurrent",
@@ -8905,59 +7552,46 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "describe": "小目录中高亮的当前条目序号。",
         "displayOffset": 1,
         "desc": "小目录中高亮的当前条目序号。",
-        "description": "小目录中高亮的当前条目序号。",
-        "publicKey": "agendaCurrent",
-        "publicLabel": "当前条目"
+        "publicKey": "agendaCurrent"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的章节引导标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的章节引导标签。",
-        "description": "标题上方的章节引导标签。"
+        "desc": "标题上方的章节引导标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大描边字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大描边字符装饰。",
-        "description": "角落超大描边字符装饰。"
+        "desc": "角落超大描边字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "showNumber": true,
       "showSub": true,
@@ -8969,6 +7603,7 @@ export const pages = [
       "showScaffold": true,
       "showMeta": true,
       "chapterNo": "03",
+      "footerBrandLabel": "IGNIS — 燃点 · 第",
       "railText": "Chapter — 章节",
       "navItems": [
         "章节"
@@ -9033,11 +7668,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "statCount",
@@ -9047,11 +7679,8 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "describe": "并列展示的大数字数量。",
         "publicKey": "statCount",
-        "publicLabel": "数字数量",
-        "desc": "并列展示的大数字数量。",
-        "description": "并列展示的大数字数量。"
+        "desc": "并列展示的大数字数量。"
       },
       {
         "key": "orientation",
@@ -9068,44 +7697,32 @@ export const pages = [
             "label": "纵向堆叠"
           }
         ],
-        "describe": "大数字的排列方向。",
         "publicKey": "orientation",
-        "publicLabel": "排列方向",
-        "desc": "大数字的排列方向。",
-        "description": "大数字的排列方向。"
+        "desc": "大数字的排列方向。"
       },
       {
         "key": "showDeltas",
         "type": "toggle",
         "label": "趋势标记",
         "default": true,
-        "describe": "每个数字的趋势/对比标记。",
         "publicKey": "showDeltas",
-        "publicLabel": "趋势标记",
-        "desc": "每个数字的趋势/对比标记。",
-        "description": "每个数字的趋势/对比标记。"
+        "desc": "每个数字的趋势/对比标记。"
       },
       {
         "key": "showCaptions",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "每个数字的说明文案。",
         "publicKey": "showCaptions",
-        "publicLabel": "说明文案",
-        "desc": "每个数字的说明文案。",
-        "description": "每个数字的说明文案。"
+        "desc": "每个数字的说明文案。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一个数字，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一个数字，其余弱化。",
-        "description": "开启后突出某一个数字，其余弱化。"
+        "desc": "开启后突出某一个数字，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -9115,70 +7732,54 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "需要突出的数字序号。",
         "displayOffset": 1,
         "desc": "需要突出的数字序号。",
-        "description": "需要突出的数字序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "主标题",
         "default": true,
-        "describe": "数字带上方的主标题。",
         "publicKey": "showLede",
-        "publicLabel": "主标题",
-        "desc": "数字带上方的主标题。",
-        "description": "数字带上方的主标题。"
+        "desc": "数字带上方的主标题。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "statCount": 3,
       "orientation": "row",
@@ -9254,25 +7855,16 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "imageCount",
-        "type": "slider",
+        "type": "toggle",
         "label": "图片",
-        "default": 1,
-        "min": 0,
-        "max": 1,
-        "step": 1,
-        "describe": "是否显示配图槽。",
+        "default": true,
         "publicKey": "imageCount",
-        "publicLabel": "图片",
-        "desc": "是否显示配图槽。",
-        "description": "是否显示配图槽。"
+        "desc": "是否显示配图槽。"
       },
       {
         "key": "imagePosition",
@@ -9289,11 +7881,8 @@ export const pages = [
             "label": "右"
           }
         ],
-        "describe": "配图相对正文的位置。",
         "publicKey": "imagePosition",
-        "publicLabel": "配图位置",
-        "desc": "配图相对正文的位置。",
-        "description": "配图相对正文的位置。"
+        "desc": "配图相对正文的位置。"
       },
       {
         "key": "pointCount",
@@ -9303,80 +7892,61 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "describe": "编号要点的数量。",
         "publicKey": "pointCount",
-        "publicLabel": "要点数量",
-        "desc": "编号要点的数量。",
-        "description": "编号要点的数量。"
+        "desc": "编号要点的数量。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "标题下方的说明段落。",
-        "description": "标题下方的说明段落。"
+        "desc": "标题下方的说明段落。"
       },
       {
         "key": "showStatTab",
         "type": "toggle",
         "label": "数据浮签",
         "default": true,
-        "describe": "配图上叠加的数据浮签。",
         "publicKey": "showStatTab",
-        "publicLabel": "数据浮签",
-        "desc": "配图上叠加的数据浮签。",
-        "description": "配图上叠加的数据浮签。"
+        "desc": "配图上叠加的数据浮签。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "imageCount": 1,
       "images": [],
@@ -9452,11 +8022,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "cohortCount",
@@ -9466,11 +8033,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "横向群组（每月新客队列）行数。",
         "publicKey": "cohortCount",
-        "publicLabel": "群组行数",
-        "desc": "横向群组（每月新客队列）行数。",
-        "description": "横向群组（每月新客队列）行数。"
+        "desc": "横向群组（每月新客队列）行数。"
       },
       {
         "key": "periodCount",
@@ -9480,66 +8044,48 @@ export const pages = [
         "min": 4,
         "max": 6,
         "step": 1,
-        "describe": "纵向观察周期（周）列数。",
         "publicKey": "periodCount",
-        "publicLabel": "观察周期",
-        "desc": "纵向观察周期（周）列数。",
-        "description": "纵向观察周期（周）列数。"
+        "desc": "纵向观察周期（周）列数。"
       },
       {
         "key": "showValues",
         "type": "toggle",
         "label": "单元数值",
         "default": true,
-        "describe": "每个色块中的留存百分比数值。",
         "publicKey": "showValueLabels",
-        "publicLabel": "单元数值",
-        "desc": "每个色块中的留存百分比数值。",
-        "description": "每个色块中的留存百分比数值。"
+        "desc": "每个色块中的留存百分比数值。"
       },
       {
         "key": "showRowHead",
         "type": "toggle",
         "label": "行标题",
         "default": true,
-        "describe": "左侧群组名称与样本量。",
         "publicKey": "showRowHead",
-        "publicLabel": "行标题",
-        "desc": "左侧群组名称与样本量。",
-        "description": "左侧群组名称与样本量。"
+        "desc": "左侧群组名称与样本量。"
       },
       {
         "key": "showColHead",
         "type": "toggle",
         "label": "列标题",
         "default": true,
-        "describe": "顶部周期标签。",
         "publicKey": "showColHead",
-        "publicLabel": "列标题",
-        "desc": "顶部周期标签。",
-        "description": "顶部周期标签。"
+        "desc": "顶部周期标签。"
       },
       {
         "key": "showLegend",
         "type": "toggle",
         "label": "色阶图例",
         "default": true,
-        "describe": "底部留存强度色阶。",
         "publicKey": "showLegend",
-        "publicLabel": "色阶图例",
-        "desc": "底部留存强度色阶。",
-        "description": "底部留存强度色阶。"
+        "desc": "底部留存强度色阶。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一行群组，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一行群组，其余弱化。",
-        "description": "开启后突出某一行群组，其余弱化。"
+        "desc": "开启后突出某一行群组，其余弱化。"
       },
       {
         "key": "emphasisRow",
@@ -9549,70 +8095,54 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的群组行序号。",
         "displayOffset": 1,
         "desc": "需要突出的群组行序号。",
-        "description": "需要突出的群组行序号。",
-        "publicKey": "emphasisRow",
-        "publicLabel": "重点行"
+        "publicKey": "emphasisRow"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "右上角的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "右上角的说明段落。",
-        "description": "右上角的说明段落。"
+        "desc": "右上角的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "cohortCount": 5,
       "periodCount": 6,
@@ -9750,11 +8280,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "bubbleCount",
@@ -9764,135 +8291,101 @@ export const pages = [
         "min": 3,
         "max": 6,
         "step": 1,
-        "describe": "散点图中的气泡（举措）数量。",
         "publicKey": "bubbleCount",
-        "publicLabel": "气泡数量",
-        "desc": "散点图中的气泡（举措）数量。",
-        "description": "散点图中的气泡（举措）数量。"
+        "desc": "散点图中的气泡（举措）数量。"
       },
       {
         "key": "showAxes",
         "type": "toggle",
         "label": "坐标轴",
         "default": true,
-        "describe": "X/Y 轴线与轴标题。",
         "publicKey": "showAxes",
-        "publicLabel": "坐标轴",
-        "desc": "X/Y 轴线与轴标题。",
-        "description": "X/Y 轴线与轴标题。"
+        "desc": "X/Y 轴线与轴标题。"
       },
       {
         "key": "showGrid",
         "type": "toggle",
         "label": "网格线",
         "default": true,
-        "describe": "背景刻度网格。",
         "publicKey": "showGrid",
-        "publicLabel": "网格线",
-        "desc": "背景刻度网格。",
-        "description": "背景刻度网格。"
+        "desc": "背景刻度网格。"
       },
       {
         "key": "showLabels",
         "type": "toggle",
         "label": "气泡标签",
         "default": true,
-        "describe": "每个气泡旁的举措名称。",
         "publicKey": "showLabels",
-        "publicLabel": "气泡标签",
-        "desc": "每个气泡旁的举措名称。",
-        "description": "每个气泡旁的举措名称。"
+        "desc": "每个气泡旁的举措名称。"
       },
       {
         "key": "showLegend",
         "type": "toggle",
         "label": "图例",
         "default": true,
-        "describe": "左侧的气泡含义图例。",
         "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "desc": "左侧的气泡含义图例。",
-        "description": "左侧的气泡含义图例。"
+        "desc": "左侧的气泡含义图例。"
       },
       {
         "key": "showSweetSpot",
         "type": "toggle",
         "label": "甜区高亮",
         "default": true,
-        "describe": "右上角「高影响·低投入」甜区高亮。",
         "publicKey": "showSweetSpot",
-        "publicLabel": "甜区高亮",
-        "desc": "右上角「高影响·低投入」甜区高亮。",
-        "description": "右上角「高影响·低投入」甜区高亮。"
+        "desc": "右上角「高影响·低投入」甜区高亮。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后弱化非重点气泡，突出燃点主推举措。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后弱化非重点气泡，突出燃点主推举措。",
-        "description": "开启后弱化非重点气泡，突出燃点主推举措。"
+        "desc": "开启后弱化非重点气泡，突出燃点主推举措。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "标题下方的说明段落。",
-        "description": "标题下方的说明段落。"
+        "desc": "标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "bubbleCount": 6,
       "showAxes": true,
@@ -9926,26 +8419,44 @@ export const pages = [
       "axisYLow": "低",
       "bubbles": [
         {
+          "x": 22,
+          "y": 78,
+          "r": 46,
           "lit": true,
           "label": "内容引擎"
         },
         {
+          "x": 38,
+          "y": 62,
+          "r": 34,
           "lit": true,
           "label": "转化优化"
         },
         {
+          "x": 68,
+          "y": 84,
+          "r": 40,
           "lit": true,
           "label": "付费放大"
         },
         {
+          "x": 30,
+          "y": 34,
+          "r": 22,
           "lit": false,
           "label": "社媒运营"
         },
         {
+          "x": 74,
+          "y": 40,
+          "r": 28,
           "lit": false,
           "label": "线下活动"
         },
         {
+          "x": 55,
+          "y": 52,
+          "r": 18,
           "lit": false,
           "label": "邮件触达"
         }
@@ -9982,11 +8493,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "milestoneCount",
@@ -9996,11 +8504,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "路线图上的阶段节点数量。",
         "publicKey": "milestoneCount",
-        "publicLabel": "里程碑数量",
-        "desc": "路线图上的阶段节点数量。",
-        "description": "路线图上的阶段节点数量。"
+        "desc": "路线图上的阶段节点数量。"
       },
       {
         "key": "currentIndex",
@@ -10010,103 +8515,78 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "「当前所在」节点序号；之前为已完成，之后为待办。",
         "displayOffset": 1,
         "desc": "「当前所在」节点序号；之前为已完成，之后为待办。",
-        "description": "「当前所在」节点序号；之前为已完成，之后为待办。",
-        "publicKey": "currentIndex",
-        "publicLabel": "当前阶段"
+        "publicKey": "currentIndex"
       },
       {
         "key": "showDesc",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "每个里程碑下方的描述句。",
         "publicKey": "showDesc",
-        "publicLabel": "说明文案",
-        "desc": "每个里程碑下方的描述句。",
-        "description": "每个里程碑下方的描述句。"
+        "desc": "每个里程碑下方的描述句。"
       },
       {
         "key": "showPhaseLabel",
         "type": "toggle",
         "label": "阶段标签",
         "default": true,
-        "describe": "每个节点的 Phase 标签。",
         "publicKey": "showPhaseLabel",
-        "publicLabel": "阶段标签",
-        "desc": "每个节点的 Phase 标签。",
-        "description": "每个节点的 Phase 标签。"
+        "desc": "每个节点的 Phase 标签。"
       },
       {
         "key": "showProgress",
         "type": "toggle",
         "label": "进度填充",
         "default": true,
-        "describe": "主轴上的暖橙进度填充。",
         "publicKey": "showProgress",
-        "publicLabel": "进度填充",
-        "desc": "主轴上的暖橙进度填充。",
-        "description": "主轴上的暖橙进度填充。"
+        "desc": "主轴上的暖橙进度填充。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "右上角的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "右上角的说明段落。",
-        "description": "右上角的说明段落。"
+        "desc": "右上角的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "milestoneCount": 5,
       "currentIndex": 2,
@@ -10188,11 +8668,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "regionCount",
@@ -10202,113 +8679,85 @@ export const pages = [
         "min": 2,
         "max": 5,
         "step": 1,
-        "describe": "展示的市场区域数量（同时影响地图上的光点）。",
         "publicKey": "regionCount",
-        "publicLabel": "区域数量",
-        "desc": "展示的市场区域数量（同时影响地图上的光点）。",
-        "description": "展示的市场区域数量（同时影响地图上的光点）。"
+        "desc": "展示的市场区域数量（同时影响地图上的光点）。"
       },
       {
         "key": "showPins",
         "type": "toggle",
         "label": "市场光点",
         "default": true,
-        "describe": "地图上的发光市场光点。",
         "publicKey": "showPins",
-        "publicLabel": "市场光点",
-        "desc": "地图上的发光市场光点。",
-        "description": "地图上的发光市场光点。"
+        "desc": "地图上的发光市场光点。"
       },
       {
         "key": "showRegionList",
         "type": "toggle",
         "label": "区域清单",
         "default": true,
-        "describe": "左侧的区域占比清单。",
         "publicKey": "showRegionList",
-        "publicLabel": "区域清单",
-        "desc": "左侧的区域占比清单。",
-        "description": "左侧的区域占比清单。"
+        "desc": "左侧的区域占比清单。"
       },
       {
         "key": "showValues",
         "type": "toggle",
         "label": "占比数值",
         "default": true,
-        "describe": "区域清单右侧的占比数值。",
         "publicKey": "showValueLabels",
-        "publicLabel": "占比数值",
-        "desc": "区域清单右侧的占比数值。",
-        "description": "区域清单右侧的占比数值。"
+        "desc": "区域清单右侧的占比数值。"
       },
       {
         "key": "showInset",
         "type": "toggle",
         "label": "现场配图",
         "default": true,
-        "describe": "地图右下角的配图框;开启后点击该框即可上传/更换图片。",
         "publicKey": "showInset",
-        "publicLabel": "现场配图",
-        "desc": "地图右下角的配图框;开启后点击该框即可上传/更换图片。",
-        "description": "地图右下角的配图框;开启后点击该框即可上传/更换图片。"
+        "desc": "地图右下角的配图框;开启后点击该框即可上传/更换图片。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "标题下方的说明段落。",
-        "description": "标题下方的说明段落。"
+        "desc": "标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "regionCount": 4,
       "showPins": true,
@@ -10432,11 +8881,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "rowCount",
@@ -10446,44 +8892,32 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "对比清单的标准行数。",
         "publicKey": "rowCount",
-        "publicLabel": "对比项数",
-        "desc": "对比清单的标准行数。",
-        "description": "对比清单的标准行数。"
+        "desc": "对比清单的标准行数。"
       },
       {
         "key": "showColHeads",
         "type": "toggle",
         "label": "列表头",
         "default": true,
-        "describe": "顶部「燃点 / 传统代理」列头。",
         "publicKey": "showColHeads",
-        "publicLabel": "列表头",
-        "desc": "顶部「燃点 / 传统代理」列头。",
-        "description": "顶部「燃点 / 传统代理」列头。"
+        "desc": "顶部「燃点 / 传统代理」列头。"
       },
       {
         "key": "showNotes",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "每个对勾旁的简短说明。",
         "publicKey": "showNotes",
-        "publicLabel": "说明文案",
-        "desc": "每个对勾旁的简短说明。",
-        "description": "每个对勾旁的简短说明。"
+        "desc": "每个对勾旁的简短说明。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后高亮某一对比项，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后高亮某一对比项，其余弱化。",
-        "description": "开启后高亮某一对比项，其余弱化。"
+        "desc": "开启后高亮某一对比项，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -10493,67 +8927,49 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要高亮的对比项序号。",
         "displayOffset": 1,
         "desc": "需要高亮的对比项序号。",
-        "description": "需要高亮的对比项序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "右上角的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "右上角的说明段落。",
-        "description": "右上角的说明段落。"
+        "desc": "右上角的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
@@ -10588,58 +9004,58 @@ export const pages = [
       "rows": [
         {
           "crit": "按结果计费",
-          "us": {
-            "ok": true,
-            "note": "季度结算，不满意退款"
-          },
-          "them": {
-            "ok": false,
-            "note": "预付坑位，先收钱"
-          }
+          "us": [
+            true,
+            "季度结算，不满意退款"
+          ],
+          "them": [
+            false,
+            "预付坑位，先收钱"
+          ]
         },
         {
           "crit": "全链路一体",
-          "us": {
-            "ok": true,
-            "note": "策略到工程一个团队"
-          },
-          "them": {
-            "ok": false,
-            "note": "环节割裂，反复交接"
-          }
+          "us": [
+            true,
+            "策略到工程一个团队"
+          ],
+          "them": [
+            false,
+            "环节割裂，反复交接"
+          ]
         },
         {
           "crit": "数据可对账",
-          "us": {
-            "ok": true,
-            "note": "埋点透明，随时可查"
-          },
-          "them": {
-            "ok": false,
-            "note": "报表美化，归因模糊"
-          }
+          "us": [
+            true,
+            "埋点透明，随时可查"
+          ],
+          "them": [
+            false,
+            "报表美化，归因模糊"
+          ]
         },
         {
           "crit": "资产可沉淀",
-          "us": {
-            "ok": true,
-            "note": "停投后仍持续带量"
-          },
-          "them": {
-            "ok": false,
-            "note": "停投即归零"
-          }
+          "us": [
+            true,
+            "停投后仍持续带量"
+          ],
+          "them": [
+            false,
+            "停投即归零"
+          ]
         },
         {
           "crit": "响应速度",
-          "us": {
-            "ok": true,
-            "note": "周级迭代"
-          },
-          "them": {
-            "ok": false,
-            "note": "月级排期"
-          }
+          "us": [
+            true,
+            "周级迭代"
+          ],
+          "them": [
+            false,
+            "月级排期"
+          ]
         }
       ],
       "yesMark": "✓",
@@ -10676,11 +9092,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "quoteCount",
@@ -10690,11 +9103,8 @@ export const pages = [
         "min": 2,
         "max": 5,
         "step": 1,
-        "describe": "展示的客户证言数量（含主推）。",
         "publicKey": "quoteCount",
-        "publicLabel": "证言数量",
-        "desc": "展示的客户证言数量（含主推）。",
-        "description": "展示的客户证言数量（含主推）。"
+        "desc": "展示的客户证言数量（含主推）。"
       },
       {
         "key": "columns",
@@ -10704,91 +9114,69 @@ export const pages = [
         "min": 1,
         "max": 2,
         "step": 1,
-        "describe": "右侧次要证言的排布列数；证言较多时可用 2 列。",
         "publicKey": "columns",
-        "publicLabel": "列表列数",
-        "desc": "右侧次要证言的排布列数；证言较多时可用 2 列。",
-        "description": "右侧次要证言的排布列数；证言较多时可用 2 列。"
+        "desc": "右侧次要证言的排布列数；证言较多时可用 2 列。"
       },
       {
         "key": "showLeadQuote",
         "type": "toggle",
         "label": "重点突出",
         "default": true,
-        "describe": "首条证言作为左侧大号引述锚点；关闭则全部并入列表。",
         "publicKey": "showLeadQuote",
-        "publicLabel": "重点突出",
-        "desc": "首条证言作为左侧大号引述锚点；关闭则全部并入列表。",
-        "description": "首条证言作为左侧大号引述锚点；关闭则全部并入列表。"
+        "desc": "首条证言作为左侧大号引述锚点；关闭则全部并入列表。"
       },
       {
         "key": "showBylines",
         "type": "toggle",
         "label": "辅助文本",
         "default": true,
-        "describe": "每条证言下方的姓名与职务。",
         "publicKey": "showBylines",
-        "publicLabel": "辅助文本",
-        "desc": "每条证言下方的姓名与职务。",
-        "description": "每条证言下方的姓名与职务。"
+        "desc": "每条证言下方的姓名与职务。"
       },
       {
         "key": "showStat",
         "type": "toggle",
         "label": "成果数字",
         "default": true,
-        "describe": "右上角的满意度大数字。",
         "publicKey": "showStat",
-        "publicLabel": "成果数字",
-        "desc": "右上角的满意度大数字。",
-        "description": "右上角的满意度大数字。"
+        "desc": "右上角的满意度大数字。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "quoteCount": 4,
       "columns": 1,
@@ -10876,11 +9264,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "stageCount",
@@ -10890,55 +9275,40 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "飞轮上的环节数量。",
         "publicKey": "stageCount",
-        "publicLabel": "环节数量",
-        "desc": "飞轮上的环节数量。",
-        "description": "飞轮上的环节数量。"
+        "desc": "飞轮上的环节数量。"
       },
       {
         "key": "showHub",
         "type": "toggle",
         "label": "中心标签",
         "default": true,
-        "describe": "飞轮中心的核心标签。",
         "publicKey": "showHub",
-        "publicLabel": "中心标签",
-        "desc": "飞轮中心的核心标签。",
-        "description": "飞轮中心的核心标签。"
+        "desc": "飞轮中心的核心标签。"
       },
       {
         "key": "showList",
         "type": "toggle",
         "label": "环节清单",
         "default": true,
-        "describe": "左侧的环节文字清单。",
         "publicKey": "showList",
-        "publicLabel": "环节清单",
-        "desc": "左侧的环节文字清单。",
-        "description": "左侧的环节文字清单。"
+        "desc": "左侧的环节文字清单。"
       },
       {
         "key": "showArrows",
         "type": "toggle",
         "label": "循环箭头",
         "default": true,
-        "describe": "环节之间的循环方向箭头。",
         "publicKey": "showArrows",
-        "publicLabel": "循环箭头",
-        "desc": "环节之间的循环方向箭头。",
-        "description": "环节之间的循环方向箭头。"
+        "desc": "环节之间的循环方向箭头。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一环节，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一环节，其余弱化。",
-        "description": "开启后突出某一环节，其余弱化。"
+        "desc": "开启后突出某一环节，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -10948,70 +9318,54 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的环节序号。",
         "displayOffset": 1,
         "desc": "需要突出的环节序号。",
-        "description": "需要突出的环节序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "标题上方的衬线引言。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "标题上方的衬线引言。",
-        "description": "标题上方的衬线引言。"
+        "desc": "标题上方的衬线引言。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "标题下方的说明段落。",
-        "description": "标题下方的说明段落。"
+        "desc": "标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "stageCount": 4,
       "showHub": true,
@@ -11091,11 +9445,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "chartVariant",
@@ -11112,11 +9463,8 @@ export const pages = [
             "label": "纯折线"
           }
         ],
-        "describe": "主序列是否带面积填充。",
         "publicKey": "chartVariant",
-        "publicLabel": "图表类型",
-        "desc": "主序列是否带面积填充。",
-        "description": "主序列是否带面积填充。"
+        "desc": "主序列是否带面积填充。"
       },
       {
         "key": "seriesCount",
@@ -11126,22 +9474,16 @@ export const pages = [
         "min": 2,
         "max": 3,
         "step": 1,
-        "describe": "参与对比的趋势序列数量。",
         "publicKey": "seriesCount",
-        "publicLabel": "序列数量",
-        "desc": "参与对比的趋势序列数量。",
-        "description": "参与对比的趋势序列数量。"
+        "desc": "参与对比的趋势序列数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一序列，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一序列，其余弱化。",
-        "description": "开启后突出某一序列，其余弱化。"
+        "desc": "开启后突出某一序列，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -11151,103 +9493,78 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "需要突出的序列序号。",
         "displayOffset": 1,
         "desc": "需要突出的序列序号。",
-        "description": "需要突出的序列序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showGrid",
         "type": "toggle",
         "label": "网格线",
         "default": true,
-        "describe": "图表的横向参考网格线。",
         "publicKey": "showGrid",
-        "publicLabel": "网格线",
-        "desc": "图表的横向参考网格线。",
-        "description": "图表的横向参考网格线。"
+        "desc": "图表的横向参考网格线。"
       },
       {
         "key": "showEndDots",
         "type": "toggle",
         "label": "终点标记",
         "default": true,
-        "describe": "每条曲线末端的圆点标记。",
         "publicKey": "showEndDots",
-        "publicLabel": "终点标记",
-        "desc": "每条曲线末端的圆点标记。",
-        "description": "每条曲线末端的圆点标记。"
+        "desc": "每条曲线末端的圆点标记。"
       },
       {
         "key": "showKeys",
         "type": "toggle",
         "label": "序列图例",
         "default": true,
-        "describe": "左侧带终值的序列图例清单。",
         "publicKey": "showKeys",
-        "publicLabel": "序列图例",
-        "desc": "左侧带终值的序列图例清单。",
-        "description": "左侧带终值的序列图例清单。"
+        "desc": "左侧带终值的序列图例清单。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "主标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "主标题下方的说明段落。",
-        "description": "主标题下方的说明段落。"
+        "desc": "主标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "chartVariant": "area",
       "seriesCount": 3,
@@ -11280,167 +9597,66 @@ export const pages = [
           "nm": "接入燃点",
           "en": "IGNIS",
           "kind": "lead",
-          "points": [
-            {
-              "label": "1月",
-              "value": 12
-            },
-            {
-              "label": "2月",
-              "value": 17
-            },
-            {
-              "label": "3月",
-              "value": 22
-            },
-            {
-              "label": "4月",
-              "value": 30
-            },
-            {
-              "label": "5月",
-              "value": 39
-            },
-            {
-              "label": "6月",
-              "value": 47
-            },
-            {
-              "label": "7月",
-              "value": 56
-            },
-            {
-              "label": "8月",
-              "value": 67
-            },
-            {
-              "label": "9月",
-              "value": 76
-            },
-            {
-              "label": "10月",
-              "value": 85
-            },
-            {
-              "label": "11月",
-              "value": 92
-            },
-            {
-              "label": "12月",
-              "value": 99
-            }
+          "data": [
+            12,
+            17,
+            22,
+            30,
+            39,
+            47,
+            56,
+            67,
+            76,
+            85,
+            92,
+            99
           ]
         },
         {
           "nm": "行业均值",
           "en": "Industry",
           "kind": "mid",
-          "points": [
-            {
-              "label": "1月",
-              "value": 12
-            },
-            {
-              "label": "2月",
-              "value": 14
-            },
-            {
-              "label": "3月",
-              "value": 16
-            },
-            {
-              "label": "4月",
-              "value": 17
-            },
-            {
-              "label": "5月",
-              "value": 19
-            },
-            {
-              "label": "6月",
-              "value": 20
-            },
-            {
-              "label": "7月",
-              "value": 22
-            },
-            {
-              "label": "8月",
-              "value": 23
-            },
-            {
-              "label": "9月",
-              "value": 25
-            },
-            {
-              "label": "10月",
-              "value": 26
-            },
-            {
-              "label": "11月",
-              "value": 27
-            },
-            {
-              "label": "12月",
-              "value": 29
-            }
+          "data": [
+            12,
+            14,
+            16,
+            17,
+            19,
+            20,
+            22,
+            23,
+            25,
+            26,
+            27,
+            29
           ]
         },
         {
           "nm": "自然增长",
           "en": "No action",
           "kind": "low",
-          "points": [
-            {
-              "label": "1月",
-              "value": 12
-            },
-            {
-              "label": "2月",
-              "value": 12
-            },
-            {
-              "label": "3月",
-              "value": 13
-            },
-            {
-              "label": "4月",
-              "value": 12
-            },
-            {
-              "label": "5月",
-              "value": 14
-            },
-            {
-              "label": "6月",
-              "value": 13
-            },
-            {
-              "label": "7月",
-              "value": 14
-            },
-            {
-              "label": "8月",
-              "value": 13
-            },
-            {
-              "label": "9月",
-              "value": 15
-            },
-            {
-              "label": "10月",
-              "value": 14
-            },
-            {
-              "label": "11月",
-              "value": 15
-            },
-            {
-              "label": "12月",
-              "value": 16
-            }
+          "data": [
+            12,
+            12,
+            13,
+            12,
+            14,
+            13,
+            14,
+            13,
+            15,
+            14,
+            15,
+            16
           ]
         }
+      ],
+      "xLabels": [
+        "1月",
+        "3月",
+        "6月",
+        "9月",
+        "12月"
       ],
       "metaLeft": "IGNIS — 燃点 · 跨 2,400+ 品牌中位",
       "metaMid": "差距不是一天拉开的"
@@ -11471,9 +9687,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -11501,9 +9715,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "surface",
@@ -11524,55 +9736,40 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showScrim",
         "type": "toggle",
         "label": "压暗叠层",
         "default": true,
-        "describe": "图片上的渐变压暗层，保证文字可读。",
         "publicKey": "showScrim",
-        "publicLabel": "压暗叠层",
-        "desc": "图片上的渐变压暗层，保证文字可读。",
-        "description": "图片上的渐变压暗层，保证文字可读。"
+        "desc": "图片上的渐变压暗层，保证文字可读。"
       },
       {
         "key": "showTag",
         "type": "toggle",
         "label": "顶部标签",
         "default": true,
-        "describe": "左上角的装饰标签。",
         "publicKey": "showTag",
-        "publicLabel": "顶部标签",
-        "desc": "左上角的装饰标签。",
-        "description": "左上角的装饰标签。"
+        "desc": "左上角的装饰标签。"
       },
       {
         "key": "showSub",
         "type": "toggle",
         "label": "副标题",
         "default": true,
-        "describe": "主标题下方的衬线副标题。",
         "publicKey": "showSub",
-        "publicLabel": "副标题",
-        "desc": "主标题下方的衬线副标题。",
-        "description": "主标题下方的衬线副标题。"
+        "desc": "主标题下方的衬线副标题。"
       },
       {
         "key": "showStrip",
         "type": "toggle",
         "label": "指标条",
         "default": true,
-        "describe": "底部的关键指标条。",
         "publicKey": "showStrip",
-        "publicLabel": "指标条",
-        "desc": "底部的关键指标条。",
-        "description": "底部的关键指标条。"
+        "desc": "底部的关键指标条。"
       },
       {
         "key": "statCount",
@@ -11582,47 +9779,37 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "指标条中的指标数量。",
         "publicKey": "statCount",
-        "publicLabel": "指标数量",
-        "desc": "指标条中的指标数量。",
-        "description": "指标条中的指标数量。"
+        "desc": "指标条中的指标数量。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": false,
-        "describe": "角落超大幽灵字符装饰（满铺图上默认关闭）。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰（满铺图上默认关闭）。",
-        "description": "角落超大幽灵字符装饰（满铺图上默认关闭）。"
+        "desc": "角落超大幽灵字符装饰（满铺图上默认关闭）。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "images": [],
       "backgroundMode": "unicorn",
@@ -11689,11 +9876,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "align",
@@ -11710,66 +9894,48 @@ export const pages = [
             "label": "居中"
           }
         ],
-        "describe": "巨型数字与文案的对齐方向。",
         "publicKey": "align",
-        "publicLabel": "对齐方式",
-        "desc": "巨型数字与文案的对齐方向。",
-        "description": "巨型数字与文案的对齐方向。"
+        "desc": "巨型数字与文案的对齐方向。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "数字上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "数字上方的装饰标签。",
-        "description": "数字上方的装饰标签。"
+        "desc": "数字上方的装饰标签。"
       },
       {
         "key": "showPrefix",
         "type": "toggle",
         "label": "前缀符号",
         "default": false,
-        "describe": "数字前的符号（如 + 号）。",
         "publicKey": "showPrefix",
-        "publicLabel": "前缀符号",
-        "desc": "数字前的符号（如 + 号）。",
-        "description": "数字前的符号（如 + 号）。"
+        "desc": "数字前的符号（如 + 号）。"
       },
       {
         "key": "showUnit",
         "type": "toggle",
         "label": "单位符号",
         "default": true,
-        "describe": "数字后的单位（如 %）。",
         "publicKey": "showUnit",
-        "publicLabel": "单位符号",
-        "desc": "数字后的单位（如 %）。",
-        "description": "数字后的单位（如 %）。"
+        "desc": "数字后的单位（如 %）。"
       },
       {
         "key": "showSub",
         "type": "toggle",
         "label": "副标题",
         "default": true,
-        "describe": "数字下方的衬线说明句。",
         "publicKey": "showSub",
-        "publicLabel": "副标题",
-        "desc": "数字下方的衬线说明句。",
-        "description": "数字下方的衬线说明句。"
+        "desc": "数字下方的衬线说明句。"
       },
       {
         "key": "showFootStats",
         "type": "toggle",
         "label": "辅助数据",
         "default": true,
-        "describe": "底部的小号辅助数据行。",
         "publicKey": "showFootStats",
-        "publicLabel": "辅助数据",
-        "desc": "底部的小号辅助数据行。",
-        "description": "底部的小号辅助数据行。"
+        "desc": "底部的小号辅助数据行。"
       },
       {
         "key": "subStatCount",
@@ -11779,47 +9945,37 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "底部辅助数据的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "辅助数据数量",
-        "desc": "底部辅助数据的条目数量。",
-        "description": "底部辅助数据的条目数量。"
+        "desc": "底部辅助数据的条目数量。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "align": "left",
       "showKicker": true,
@@ -11891,11 +10047,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "rowCount",
@@ -11905,33 +10058,24 @@ export const pages = [
         "min": 4,
         "max": 6,
         "step": 1,
-        "describe": "明细表的模块（行）数量。",
         "publicKey": "rowCount",
-        "publicLabel": "模块行数",
-        "desc": "明细表的模块（行）数量。",
-        "description": "明细表的模块（行）数量。"
+        "desc": "明细表的模块（行）数量。"
       },
       {
         "key": "showColHeads",
         "type": "toggle",
         "label": "表头行",
         "default": true,
-        "describe": "列标题行的显示与隐藏。",
         "publicKey": "showColHeads",
-        "publicLabel": "表头行",
-        "desc": "列标题行的显示与隐藏。",
-        "description": "列标题行的显示与隐藏。"
+        "desc": "列标题行的显示与隐藏。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "高亮某行",
         "default": true,
-        "describe": "开启后高亮某一模块行。",
         "publicKey": "emphasis",
-        "publicLabel": "高亮某行",
-        "desc": "开启后高亮某一模块行。",
-        "description": "开启后高亮某一模块行。"
+        "desc": "开启后高亮某一模块行。"
       },
       {
         "key": "emphasisIndex",
@@ -11941,70 +10085,54 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "describe": "需要高亮的模块行序号。",
         "displayOffset": 1,
         "desc": "需要高亮的模块行序号。",
-        "description": "需要高亮的模块行序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "高亮行序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showFootNote",
         "type": "toggle",
         "label": "脚注",
         "default": true,
-        "describe": "表格下方的衬线脚注。",
         "publicKey": "showFootNote",
-        "publicLabel": "脚注",
-        "desc": "表格下方的衬线脚注。",
-        "description": "表格下方的衬线脚注。"
+        "desc": "表格下方的衬线脚注。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "rowCount": 6,
       "showColHeads": true,
@@ -12110,62 +10238,43 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "cardCount",
         "type": "slider",
-        "label": "图片卡片数量",
+        "label": "卡片数量",
         "default": 3,
         "min": 2,
         "max": 3,
         "step": 1,
-        "countArrays": [
-          "cards",
-          "images"
-        ],
-        "describe": "并列案例图片卡的数量。",
         "publicKey": "cardCount",
-        "publicLabel": "图片卡片数量",
-        "desc": "并列案例图片卡的数量。",
-        "description": "并列案例图片卡的数量。"
+        "desc": "并列案例卡的数量。"
       },
       {
         "key": "showMetric",
         "type": "toggle",
         "label": "成果数字",
         "default": true,
-        "describe": "每张卡底部的成果数字。",
         "publicKey": "showMetric",
-        "publicLabel": "成果数字",
-        "desc": "每张卡底部的成果数字。",
-        "description": "每张卡底部的成果数字。"
+        "desc": "每张卡底部的成果数字。"
       },
       {
         "key": "showResult",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "每张卡的一句话成果描述。",
         "publicKey": "showResult",
-        "publicLabel": "说明文案",
-        "desc": "每张卡的一句话成果描述。",
-        "description": "每张卡的一句话成果描述。"
+        "desc": "每张卡的一句话成果描述。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一张卡，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一张卡，其余弱化。",
-        "description": "开启后突出某一张卡，其余弱化。"
+        "desc": "开启后突出某一张卡，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -12175,59 +10284,46 @@ export const pages = [
         "min": 0,
         "max": 2,
         "step": 1,
-        "describe": "需要突出的卡片序号。",
         "displayOffset": 1,
         "desc": "需要突出的卡片序号。",
-        "description": "需要突出的卡片序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "cardCount": 3,
       "images": [],
@@ -12306,11 +10402,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "blockCount",
@@ -12320,22 +10413,16 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "树图中按占比划分的渠道区块数量。",
         "publicKey": "blockCount",
-        "publicLabel": "区块数量",
-        "desc": "树图中按占比划分的渠道区块数量。",
-        "description": "树图中按占比划分的渠道区块数量。"
+        "desc": "树图中按占比划分的渠道区块数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一区块，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一区块，其余弱化。",
-        "description": "开启后突出某一区块，其余弱化。"
+        "desc": "开启后突出某一区块，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -12345,81 +10432,62 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的区块序号。",
         "displayOffset": 1,
         "desc": "需要突出的区块序号。",
-        "description": "需要突出的区块序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showKeys",
         "type": "toggle",
         "label": "占比图例",
         "default": true,
-        "describe": "左侧带百分比的图例清单。",
         "publicKey": "showKeys",
-        "publicLabel": "占比图例",
-        "desc": "左侧带百分比的图例清单。",
-        "description": "左侧带百分比的图例清单。"
+        "desc": "左侧带百分比的图例清单。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "主标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "主标题下方的说明段落。",
-        "description": "主标题下方的说明段落。"
+        "desc": "主标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "blockCount": 5,
       "emphasis": false,
@@ -12496,11 +10564,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "pairCount",
@@ -12510,44 +10575,32 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "describe": "痛点→解法配对的数量。",
         "publicKey": "pairCount",
-        "publicLabel": "配对数量",
-        "desc": "痛点→解法配对的数量。",
-        "description": "痛点→解法配对的数量。"
+        "desc": "痛点→解法配对的数量。"
       },
       {
         "key": "showArrows",
         "type": "toggle",
         "label": "箭头母题",
         "default": true,
-        "describe": "痛点与解法之间的箭头。",
         "publicKey": "showArrows",
-        "publicLabel": "箭头母题",
-        "desc": "痛点与解法之间的箭头。",
-        "description": "痛点与解法之间的箭头。"
+        "desc": "痛点与解法之间的箭头。"
       },
       {
         "key": "showColLabels",
         "type": "toggle",
         "label": "列标签",
         "default": true,
-        "describe": "顶部「痛点 / 解法」列标签。",
         "publicKey": "showColLabels",
-        "publicLabel": "列标签",
-        "desc": "顶部「痛点 / 解法」列标签。",
-        "description": "顶部「痛点 / 解法」列标签。"
+        "desc": "顶部「痛点 / 解法」列标签。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一对，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一对，其余弱化。",
-        "description": "开启后突出某一对，其余弱化。"
+        "desc": "开启后突出某一对，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -12557,70 +10610,54 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "describe": "需要突出的配对序号。",
         "displayOffset": 1,
         "desc": "需要突出的配对序号。",
-        "description": "需要突出的配对序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showFootLine",
         "type": "toggle",
         "label": "辅助文本",
         "default": true,
-        "describe": "列表下方的衬线收束句。",
         "publicKey": "showFootLine",
-        "publicLabel": "辅助文本",
-        "desc": "列表下方的衬线收束句。",
-        "description": "列表下方的衬线收束句。"
+        "desc": "列表下方的衬线收束句。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "pairCount": 4,
       "showArrows": true,
@@ -12695,55 +10732,40 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showLabels",
         "type": "toggle",
         "label": "前后标签",
         "default": true,
-        "describe": "面板左上角的「改版前 / 改版后」标签。",
         "publicKey": "showLabels",
-        "publicLabel": "前后标签",
-        "desc": "面板左上角的「改版前 / 改版后」标签。",
-        "description": "面板左上角的「改版前 / 改版后」标签。"
+        "desc": "面板左上角的「改版前 / 改版后」标签。"
       },
       {
         "key": "showCaptions",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "面板底部的说明文案。",
         "publicKey": "showCaptions",
-        "publicLabel": "说明文案",
-        "desc": "面板底部的说明文案。",
-        "description": "面板底部的说明文案。"
+        "desc": "面板底部的说明文案。"
       },
       {
         "key": "showSeam",
         "type": "toggle",
         "label": "中缝徽标",
         "default": true,
-        "describe": "两幅图中缝的箭头徽标。",
         "publicKey": "showSeam",
-        "publicLabel": "中缝徽标",
-        "desc": "两幅图中缝的箭头徽标。",
-        "description": "两幅图中缝的箭头徽标。"
+        "desc": "两幅图中缝的箭头徽标。"
       },
       {
         "key": "showStrip",
         "type": "toggle",
         "label": "成果条",
         "default": true,
-        "describe": "底部的成果指标条。",
         "publicKey": "showStrip",
-        "publicLabel": "成果条",
-        "desc": "底部的成果指标条。",
-        "description": "底部的成果指标条。"
+        "desc": "底部的成果指标条。"
       },
       {
         "key": "statCount",
@@ -12753,63 +10775,47 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "成果条中的指标数量。",
         "publicKey": "statCount",
-        "publicLabel": "成果数量",
-        "desc": "成果条中的指标数量。",
-        "description": "成果条中的指标数量。"
+        "desc": "成果条中的指标数量。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
-      "images": [
-        "",
-        ""
-      ],
+      "images": [],
       "showLabels": true,
       "showCaptions": true,
       "showSeam": true,
@@ -12884,11 +10890,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "layerCount",
@@ -12898,22 +10901,16 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "金字塔的分层数量（自顶向下）。",
         "publicKey": "layerCount",
-        "publicLabel": "层级数量",
-        "desc": "金字塔的分层数量（自顶向下）。",
-        "description": "金字塔的分层数量（自顶向下）。"
+        "desc": "金字塔的分层数量（自顶向下）。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一层，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一层，其余弱化。",
-        "description": "开启后突出某一层，其余弱化。"
+        "desc": "开启后突出某一层，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -12923,103 +10920,78 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的层级序号（1 = 顶层）。",
         "displayOffset": 1,
         "desc": "需要突出的层级序号（1 = 顶层）。",
-        "description": "需要突出的层级序号（1 = 顶层）。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showValues",
         "type": "toggle",
         "label": "层级标注",
         "default": true,
-        "describe": "每层名称右侧的层位标注。",
         "publicKey": "showValues",
-        "publicLabel": "层级标注",
-        "desc": "每层名称右侧的层位标注。",
-        "description": "每层名称右侧的层位标注。"
+        "desc": "每层名称右侧的层位标注。"
       },
       {
         "key": "showKeys",
         "type": "toggle",
         "label": "占比图例",
         "default": true,
-        "describe": "左侧带占比的图例清单。",
         "publicKey": "showKeys",
-        "publicLabel": "占比图例",
-        "desc": "左侧带占比的图例清单。",
-        "description": "左侧带占比的图例清单。"
+        "desc": "左侧带占比的图例清单。"
       },
       {
         "key": "showAxis",
         "type": "toggle",
         "label": "方向轴标",
         "default": true,
-        "describe": "金字塔右侧的「价值 / 体量」方向标注。",
         "publicKey": "showAxis",
-        "publicLabel": "方向轴标",
-        "desc": "金字塔右侧的「价值 / 体量」方向标注。",
-        "description": "金字塔右侧的「价值 / 体量」方向标注。"
+        "desc": "金字塔右侧的「价值 / 体量」方向标注。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "主标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "主标题下方的说明段落。",
-        "description": "主标题下方的说明段落。"
+        "desc": "主标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "layerCount": 5,
       "emphasis": false,
@@ -13105,11 +11077,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "imageCount",
@@ -13119,105 +11088,77 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "countArrays": [
-          "images"
-        ],
-        "describe": "散落宝丽来照片槽数量（0–4）；不足回退条纹占位。",
         "publicKey": "imageCount",
-        "publicLabel": "照片数量",
-        "desc": "散落宝丽来照片槽数量（0–4）；不足回退条纹占位。",
-        "description": "散落宝丽来照片槽数量（0–4）；不足回退条纹占位。"
+        "desc": "散落宝丽来照片槽数量（0–4）；不足回退条纹占位。"
       },
       {
         "key": "showCaptions",
         "type": "toggle",
         "label": "手写说明",
         "default": true,
-        "describe": "每张相纸下方的手写体说明。",
         "publicKey": "showCaptions",
-        "publicLabel": "手写说明",
-        "desc": "每张相纸下方的手写体说明。",
-        "description": "每张相纸下方的手写体说明。"
+        "desc": "每张相纸下方的手写体说明。"
       },
       {
         "key": "showPins",
         "type": "toggle",
         "label": "图钉",
         "default": true,
-        "describe": "相纸顶部的图钉装饰。",
         "publicKey": "showPins",
-        "publicLabel": "图钉",
-        "desc": "相纸顶部的图钉装饰。",
-        "description": "相纸顶部的图钉装饰。"
+        "desc": "相纸顶部的图钉装饰。"
       },
       {
         "key": "showTags",
         "type": "toggle",
         "label": "标签行",
         "default": true,
-        "describe": "左侧的关键词标签行。",
         "publicKey": "showTags",
-        "publicLabel": "标签行",
-        "desc": "左侧的关键词标签行。",
-        "description": "左侧的关键词标签行。"
+        "desc": "左侧的关键词标签行。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "主标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "主标题下方的说明段落。",
-        "description": "主标题下方的说明段落。"
+        "desc": "主标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "imageCount": 4,
       "images": [],
@@ -13247,22 +11188,42 @@ export const pages = [
         "团队",
         "后台"
       ],
-      "photoItems": [
+      "photos": [
         {
-          "placeholder": "门店开业",
-          "caption": "首店 · 当天售罄"
+          "ph": "门店开业",
+          "cap": "首店 · 当天售罄",
+          "rot": -6,
+          "w": 360,
+          "x": 2,
+          "y": 40,
+          "z": 4
         },
         {
-          "placeholder": "产品特写",
-          "caption": "复购率 ×2.4"
+          "ph": "产品特写",
+          "cap": "复购率 ×2.4",
+          "rot": 5,
+          "w": 320,
+          "x": 360,
+          "y": 8,
+          "z": 3
         },
         {
-          "placeholder": "团队现场",
-          "caption": "上线第 14 天"
+          "ph": "团队现场",
+          "cap": "上线第 14 天",
+          "rot": -3,
+          "w": 300,
+          "x": 240,
+          "y": 360,
+          "z": 5
         },
         {
-          "placeholder": "后台数据",
-          "caption": "自然进线 +182%"
+          "ph": "后台数据",
+          "cap": "自然进线 +182%",
+          "rot": 7,
+          "w": 286,
+          "x": 612,
+          "y": 300,
+          "z": 2
         }
       ],
       "metaLeft": "IGNIS — 燃点 · 增长现场",
@@ -13297,11 +11258,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "rowCount",
@@ -13311,113 +11269,85 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "排行榜的条目数量（自高到低）。",
         "publicKey": "itemCount",
-        "publicLabel": "榜单条目",
-        "desc": "排行榜的条目数量（自高到低）。",
-        "description": "排行榜的条目数量（自高到低）。"
+        "desc": "排行榜的条目数量（自高到低）。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "榜首突出",
         "default": true,
-        "describe": "开启后榜首放大并点亮为暖橙，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "榜首突出",
-        "desc": "开启后榜首放大并点亮为暖橙，其余弱化。",
-        "description": "开启后榜首放大并点亮为暖橙，其余弱化。"
+        "desc": "开启后榜首放大并点亮为暖橙，其余弱化。"
       },
       {
         "key": "showRankNo",
         "type": "toggle",
         "label": "名次序号",
         "default": true,
-        "describe": "每行左侧的名次大序号。",
         "publicKey": "showRankNo",
-        "publicLabel": "名次序号",
-        "desc": "每行左侧的名次大序号。",
-        "description": "每行左侧的名次大序号。"
+        "desc": "每行左侧的名次大序号。"
       },
       {
         "key": "showBars",
         "type": "toggle",
         "label": "占比条",
         "default": true,
-        "describe": "每行的占比进度条。",
         "publicKey": "showBars",
-        "publicLabel": "占比条",
-        "desc": "每行的占比进度条。",
-        "description": "每行的占比进度条。"
+        "desc": "每行的占比进度条。"
       },
       {
         "key": "showDelta",
         "type": "toggle",
         "label": "占比注释",
         "default": true,
-        "describe": "数值下方的占增量注释。",
         "publicKey": "showValueLabels",
-        "publicLabel": "占比注释",
-        "desc": "数值下方的占增量注释。",
-        "description": "数值下方的占增量注释。"
+        "desc": "数值下方的占增量注释。"
       },
       {
         "key": "showNote",
         "type": "toggle",
         "label": "右上注释",
         "default": true,
-        "describe": "标题右侧的衬线注释。",
         "publicKey": "showNote",
-        "publicLabel": "右上注释",
-        "desc": "标题右侧的衬线注释。",
-        "description": "标题右侧的衬线注释。"
+        "desc": "标题右侧的衬线注释。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "rowCount": 5,
       "emphasis": true,
@@ -13447,30 +11377,35 @@ export const pages = [
           "nm": "自然搜索",
           "en": "Organic",
           "val": 182,
+          "w": 100,
           "d": "占增量 38%"
         },
         {
           "nm": "内容分发",
           "en": "Content",
           "val": 124,
+          "w": 68,
           "d": "占增量 24%"
         },
         {
           "nm": "私域复购",
           "en": "Retention",
           "val": 96,
+          "w": 53,
           "d": "占增量 18%"
         },
         {
           "nm": "社媒互动",
           "en": "Social",
           "val": 61,
+          "w": 34,
           "d": "占增量 12%"
         },
         {
           "nm": "付费投放",
           "en": "Paid",
           "val": 38,
+          "w": 21,
           "d": "占增量 8%"
         }
       ],
@@ -13503,9 +11438,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -13533,9 +11466,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "surface",
@@ -13556,55 +11487,40 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showMast",
         "type": "toggle",
         "label": "刊头",
         "default": true,
-        "describe": "顶部超大刊头字。",
         "publicKey": "showMast",
-        "publicLabel": "刊头",
-        "desc": "顶部超大刊头字。",
-        "description": "顶部超大刊头字。"
+        "desc": "顶部超大刊头字。"
       },
       {
         "key": "showIssue",
         "type": "toggle",
         "label": "刊期行",
         "default": true,
-        "describe": "刊头下方的刊期与署名行。",
         "publicKey": "showIssue",
-        "publicLabel": "刊期行",
-        "desc": "刊头下方的刊期与署名行。",
-        "description": "刊头下方的刊期与署名行。"
+        "desc": "刊头下方的刊期与署名行。"
       },
       {
         "key": "showDeck",
         "type": "toggle",
         "label": "主标题",
         "default": true,
-        "describe": "底部的大号封面主标语。",
         "publicKey": "showDeck",
-        "publicLabel": "主标题",
-        "desc": "底部的大号封面主标语。",
-        "description": "底部的大号封面主标语。"
+        "desc": "底部的大号封面主标语。"
       },
       {
         "key": "showLines",
         "type": "toggle",
         "label": "导读条目",
         "default": true,
-        "describe": "右下角的封面导读条目列表。",
         "publicKey": "showLines",
-        "publicLabel": "导读条目",
-        "desc": "右下角的封面导读条目列表。",
-        "description": "右下角的封面导读条目列表。"
+        "desc": "右下角的封面导读条目列表。"
       },
       {
         "key": "lineCount",
@@ -13614,55 +11530,40 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "describe": "封面导读条目的数量。",
         "publicKey": "itemCount",
-        "publicLabel": "导读数量",
-        "desc": "封面导读条目的数量。",
-        "description": "封面导读条目的数量。"
+        "desc": "封面导读条目的数量。"
       },
       {
         "key": "showBarcode",
         "type": "toggle",
         "label": "条码装饰",
         "default": true,
-        "describe": "杂志封面式的条码装饰。",
         "publicKey": "showBarcode",
-        "publicLabel": "条码装饰",
-        "desc": "杂志封面式的条码装饰。",
-        "description": "杂志封面式的条码装饰。"
+        "desc": "杂志封面式的条码装饰。"
       },
       {
         "key": "showScrim",
         "type": "toggle",
         "label": "压暗叠层",
         "default": true,
-        "describe": "图上的压暗渐变，保证文字可读。",
         "publicKey": "showScrim",
-        "publicLabel": "压暗叠层",
-        "desc": "图上的压暗渐变，保证文字可读。",
-        "description": "图上的压暗渐变，保证文字可读。"
+        "desc": "图上的压暗渐变，保证文字可读。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息（融入封面，简化呈现）。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息（融入封面，简化呈现）。",
-        "description": "底部页脚信息（融入封面，简化呈现）。"
+        "desc": "底部页脚信息（融入封面，简化呈现）。"
       }
     ],
     "defaultProps": {
@@ -13739,11 +11640,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "lineCount",
@@ -13753,25 +11651,16 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "countArrays": [
-          "metrics"
-        ],
-        "describe": "参与前后对比的指标（斜线）数量。",
         "publicKey": "lineCount",
-        "publicLabel": "指标数量",
-        "desc": "参与前后对比的指标（斜线）数量。",
-        "description": "参与前后对比的指标（斜线）数量。"
+        "desc": "参与前后对比的指标（斜线）数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一条斜线，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一条斜线，其余弱化。",
-        "description": "开启后突出某一条斜线，其余弱化。"
+        "desc": "开启后突出某一条斜线，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -13781,103 +11670,78 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的指标序号。",
         "displayOffset": 1,
         "desc": "需要突出的指标序号。",
-        "description": "需要突出的指标序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showValues",
         "type": "toggle",
         "label": "端点数值",
         "default": true,
-        "describe": "斜线两端的数值标注。",
         "publicKey": "showValueLabels",
-        "publicLabel": "端点数值",
-        "desc": "斜线两端的数值标注。",
-        "description": "斜线两端的数值标注。"
+        "desc": "斜线两端的数值标注。"
       },
       {
         "key": "showAxisLabels",
         "type": "toggle",
         "label": "轴标签",
         "default": true,
-        "describe": "左右两端「接入前 / 接入后」轴标签。",
         "publicKey": "showAxisLabels",
-        "publicLabel": "轴标签",
-        "desc": "左右两端「接入前 / 接入后」轴标签。",
-        "description": "左右两端「接入前 / 接入后」轴标签。"
+        "desc": "左右两端「接入前 / 接入后」轴标签。"
       },
       {
         "key": "showKeys",
         "type": "toggle",
         "label": "指标图例",
         "default": true,
-        "describe": "左侧带变化量的指标图例清单。",
         "publicKey": "showKeys",
-        "publicLabel": "指标图例",
-        "desc": "左侧带变化量的指标图例清单。",
-        "description": "左侧带变化量的指标图例清单。"
+        "desc": "左侧带变化量的指标图例清单。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "主标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "主标题下方的说明段落。",
-        "description": "主标题下方的说明段落。"
+        "desc": "主标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "lineCount": 5,
       "emphasis": false,
@@ -13968,11 +11832,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "rowCount",
@@ -13982,44 +11843,32 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "术语定义的词条数量。",
         "publicKey": "rowCount",
-        "publicLabel": "词条数量",
-        "desc": "术语定义的词条数量。",
-        "description": "术语定义的词条数量。"
+        "desc": "术语定义的词条数量。"
       },
       {
         "key": "showNumbers",
         "type": "toggle",
         "label": "词条序号",
         "default": true,
-        "describe": "每条左侧的序号。",
         "publicKey": "showNumbers",
-        "publicLabel": "词条序号",
-        "desc": "每条左侧的序号。",
-        "description": "每条左侧的序号。"
+        "desc": "每条左侧的序号。"
       },
       {
         "key": "showEnTerm",
         "type": "toggle",
         "label": "英文术语",
         "default": true,
-        "describe": "中文术语下方的英文对照。",
         "publicKey": "showEnTerm",
-        "publicLabel": "英文术语",
-        "desc": "中文术语下方的英文对照。",
-        "description": "中文术语下方的英文对照。"
+        "desc": "中文术语下方的英文对照。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一词条，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一词条，其余弱化。",
-        "description": "开启后突出某一词条，其余弱化。"
+        "desc": "开启后突出某一词条，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -14029,70 +11878,54 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的词条序号。",
         "displayOffset": 1,
         "desc": "需要突出的词条序号。",
-        "description": "需要突出的词条序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showNote",
         "type": "toggle",
         "label": "右上注释",
         "default": true,
-        "describe": "标题右侧的衬线注释。",
         "publicKey": "showNote",
-        "publicLabel": "右上注释",
-        "desc": "标题右侧的衬线注释。",
-        "description": "标题右侧的衬线注释。"
+        "desc": "标题右侧的衬线注释。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "rowCount": 5,
       "showNumbers": true,
@@ -14175,11 +12008,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "frameCount",
@@ -14189,26 +12019,16 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "countArrays": [
-          "frames",
-          "images"
-        ],
-        "describe": "胶片画格的数量。",
         "publicKey": "frameCount",
-        "publicLabel": "画格数量",
-        "desc": "胶片画格的数量。",
-        "description": "胶片画格的数量。"
+        "desc": "胶片画格的数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后高亮某一画格的边框与说明。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后高亮某一画格的边框与说明。",
-        "description": "开启后高亮某一画格的边框与说明。"
+        "desc": "开启后高亮某一画格的边框与说明。"
       },
       {
         "key": "emphasisIndex",
@@ -14218,92 +12038,70 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的画格序号。",
         "displayOffset": 1,
         "desc": "需要突出的画格序号。",
-        "description": "需要突出的画格序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showPerf",
         "type": "toggle",
         "label": "齿孔",
         "default": true,
-        "describe": "胶片上下的齿孔装饰。",
         "publicKey": "showPerf",
-        "publicLabel": "齿孔",
-        "desc": "胶片上下的齿孔装饰。",
-        "description": "胶片上下的齿孔装饰。"
+        "desc": "胶片上下的齿孔装饰。"
       },
       {
         "key": "showCaptions",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "每个画格下方的编号说明。",
         "publicKey": "showCaptions",
-        "publicLabel": "说明文案",
-        "desc": "每个画格下方的编号说明。",
-        "description": "每个画格下方的编号说明。"
+        "desc": "每个画格下方的编号说明。"
       },
       {
         "key": "showNote",
         "type": "toggle",
         "label": "右上注释",
         "default": true,
-        "describe": "标题右侧的衬线注释。",
         "publicKey": "showNote",
-        "publicLabel": "右上注释",
-        "desc": "标题右侧的衬线注释。",
-        "description": "标题右侧的衬线注释。"
+        "desc": "标题右侧的衬线注释。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "frameCount": 5,
       "images": [],
@@ -14382,11 +12180,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "align",
@@ -14403,91 +12198,69 @@ export const pages = [
             "label": "居中"
           }
         ],
-        "describe": "收束语的对齐方向。",
         "publicKey": "align",
-        "publicLabel": "对齐方式",
-        "desc": "收束语的对齐方向。",
-        "description": "收束语的对齐方向。"
+        "desc": "收束语的对齐方向。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "金句上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "金句上方的装饰标签。",
-        "description": "金句上方的装饰标签。"
+        "desc": "金句上方的装饰标签。"
       },
       {
         "key": "showArrow",
         "type": "toggle",
         "label": "箭头母题",
         "default": true,
-        "describe": "句末的箭头母题。",
         "publicKey": "showArrow",
-        "publicLabel": "箭头母题",
-        "desc": "句末的箭头母题。",
-        "description": "句末的箭头母题。"
+        "desc": "句末的箭头母题。"
       },
       {
         "key": "showRule",
         "type": "toggle",
         "label": "细分隔线",
         "default": true,
-        "describe": "金句下方的细分隔线。",
         "publicKey": "showRule",
-        "publicLabel": "细分隔线",
-        "desc": "金句下方的细分隔线。",
-        "description": "金句下方的细分隔线。"
+        "desc": "金句下方的细分隔线。"
       },
       {
         "key": "showSignoff",
         "type": "toggle",
         "label": "辅助文本",
         "default": true,
-        "describe": "分隔线旁的品牌署名。",
         "publicKey": "showSignoff",
-        "publicLabel": "辅助文本",
-        "desc": "分隔线旁的品牌署名。",
-        "description": "分隔线旁的品牌署名。"
+        "desc": "分隔线旁的品牌署名。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "align": "left",
       "showKicker": true,
@@ -14542,73 +12315,51 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "screenCount",
         "type": "slider",
-        "label": "图片屏幕数量",
+        "label": "屏幕数量",
         "default": 4,
         "min": 2,
         "max": 4,
         "step": 1,
-        "countArrays": [
-          "steps",
-          "images"
-        ],
-        "describe": "横向排列的手机图片屏数量（流程步数）。",
         "publicKey": "screenCount",
-        "publicLabel": "图片屏幕数量",
-        "desc": "横向排列的手机图片屏数量（流程步数）。",
-        "description": "横向排列的手机图片屏数量（流程步数）。"
+        "desc": "横向排列的手机屏数量（流程步数）。"
       },
       {
         "key": "showArrows",
         "type": "toggle",
         "label": "连接箭头",
         "default": true,
-        "describe": "屏与屏之间的流向箭头。",
         "publicKey": "showArrows",
-        "publicLabel": "连接箭头",
-        "desc": "屏与屏之间的流向箭头。",
-        "description": "屏与屏之间的流向箭头。"
+        "desc": "屏与屏之间的流向箭头。"
       },
       {
         "key": "showSteps",
         "type": "toggle",
         "label": "步骤序号",
         "default": true,
-        "describe": "每屏下方的步骤序号。",
         "publicKey": "showSteps",
-        "publicLabel": "步骤序号",
-        "desc": "每屏下方的步骤序号。",
-        "description": "每屏下方的步骤序号。"
+        "desc": "每屏下方的步骤序号。"
       },
       {
         "key": "showCaptions",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "每屏下方的一句话说明。",
         "publicKey": "showCaptions",
-        "publicLabel": "说明文案",
-        "desc": "每屏下方的一句话说明。",
-        "description": "每屏下方的一句话说明。"
+        "desc": "每屏下方的一句话说明。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一屏，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一屏，其余弱化。",
-        "description": "开启后突出某一屏，其余弱化。"
+        "desc": "开启后突出某一屏，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -14618,59 +12369,46 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "describe": "需要突出的屏序号。",
         "displayOffset": 1,
         "desc": "需要突出的屏序号。",
-        "description": "需要突出的屏序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "screenCount": 4,
       "images": [],
@@ -14747,11 +12485,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "itemCount",
@@ -14761,22 +12496,16 @@ export const pages = [
         "min": 3,
         "max": 6,
         "step": 1,
-        "describe": "棒棒糖条目数量（自高到低）。",
         "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "desc": "棒棒糖条目数量（自高到低）。",
-        "description": "棒棒糖条目数量（自高到低）。"
+        "desc": "棒棒糖条目数量（自高到低）。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "榜首突出",
         "default": true,
-        "describe": "开启后榜首点亮为暖橙并放大圆点，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "榜首突出",
-        "desc": "开启后榜首点亮为暖橙并放大圆点，其余弱化。",
-        "description": "开启后榜首点亮为暖橙并放大圆点，其余弱化。"
+        "desc": "开启后榜首点亮为暖橙并放大圆点，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -14786,92 +12515,70 @@ export const pages = [
         "min": 0,
         "max": 5,
         "step": 1,
-        "describe": "需要突出的条目序号。",
         "displayOffset": 1,
         "desc": "需要突出的条目序号。",
-        "description": "需要突出的条目序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showValues",
         "type": "toggle",
         "label": "数值标注",
         "default": true,
-        "describe": "每行右侧的数值。",
         "publicKey": "showValueLabels",
-        "publicLabel": "数值标注",
-        "desc": "每行右侧的数值。",
-        "description": "每行右侧的数值。"
+        "desc": "每行右侧的数值。"
       },
       {
         "key": "showGrid",
         "type": "toggle",
         "label": "刻度网格",
         "default": true,
-        "describe": "背景的纵向刻度线与轴标。",
         "publicKey": "showGrid",
-        "publicLabel": "刻度网格",
-        "desc": "背景的纵向刻度线与轴标。",
-        "description": "背景的纵向刻度线与轴标。"
+        "desc": "背景的纵向刻度线与轴标。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "右上注释",
         "default": true,
-        "describe": "标题右侧的衬线注释。",
         "publicKey": "showLede",
-        "publicLabel": "右上注释",
-        "desc": "标题右侧的衬线注释。",
-        "description": "标题右侧的衬线注释。"
+        "desc": "标题右侧的衬线注释。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "itemCount": 6,
       "emphasis": true,
@@ -14959,11 +12666,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "subStatCount",
@@ -14973,102 +12677,77 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "左侧贡献分项的数量。",
         "publicKey": "subStatCount",
-        "publicLabel": "辅助数据",
-        "desc": "左侧贡献分项的数量。",
-        "description": "左侧贡献分项的数量。"
+        "desc": "左侧贡献分项的数量。"
       },
       {
         "key": "showPrefix",
         "type": "toggle",
         "label": "数字前缀",
         "default": true,
-        "describe": "大数字上方的口径前缀。",
         "publicKey": "showPrefix",
-        "publicLabel": "数字前缀",
-        "desc": "大数字上方的口径前缀。",
-        "description": "大数字上方的口径前缀。"
+        "desc": "大数字上方的口径前缀。"
       },
       {
         "key": "showUnit",
         "type": "toggle",
         "label": "数字单位",
         "default": true,
-        "describe": "大数字右侧的单位。",
         "publicKey": "showUnit",
-        "publicLabel": "数字单位",
-        "desc": "大数字右侧的单位。",
-        "description": "大数字右侧的单位。"
+        "desc": "大数字右侧的单位。"
       },
       {
         "key": "showCaption",
         "type": "toggle",
         "label": "底部标记",
         "default": true,
-        "describe": "大数字下方的口径与增长胶囊标记。",
         "publicKey": "showCaption",
-        "publicLabel": "底部标记",
-        "desc": "大数字下方的口径与增长胶囊标记。",
-        "description": "大数字下方的口径与增长胶囊标记。"
+        "desc": "大数字下方的口径与增长胶囊标记。"
       },
       {
         "key": "showSubStats",
         "type": "toggle",
         "label": "辅助清单",
         "default": true,
-        "describe": "左侧带数值的贡献分项清单。",
         "publicKey": "showValueLabels",
-        "publicLabel": "辅助清单",
-        "desc": "左侧带数值的贡献分项清单。",
-        "description": "左侧带数值的贡献分项清单。"
+        "desc": "左侧带数值的贡献分项清单。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "左栏顶部的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "左栏顶部的装饰标签。",
-        "description": "左栏顶部的装饰标签。"
+        "desc": "左栏顶部的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "bigNumber": "4.7",
       "unit": "亿",
@@ -15142,97 +12821,71 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showTags",
         "type": "toggle",
         "label": "图片角标",
         "default": true,
-        "describe": "图片格左下角的标签。",
         "publicKey": "showTags",
-        "publicLabel": "图片角标",
-        "desc": "图片格左下角的标签。",
-        "description": "图片格左下角的标签。"
+        "desc": "图片格左下角的标签。"
       },
       {
         "key": "showStats",
         "type": "toggle",
         "label": "数据格",
         "default": true,
-        "describe": "显示两个排版化数据格（关闭则全部为图片格）。",
         "publicKey": "showStats",
-        "publicLabel": "数据格",
-        "desc": "显示两个排版化数据格（关闭则全部为图片格）。",
-        "description": "显示两个排版化数据格（关闭则全部为图片格）。"
+        "desc": "显示两个排版化数据格（关闭则全部为图片格）。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "数据格点亮",
         "default": false,
-        "describe": "开启后第一个数据格点亮为暖橙。",
         "publicKey": "emphasis",
-        "publicLabel": "数据格点亮",
-        "desc": "开启后第一个数据格点亮为暖橙。",
-        "description": "开启后第一个数据格点亮为暖橙。"
+        "desc": "开启后第一个数据格点亮为暖橙。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
-      "images": [
-        "",
-        "",
-        ""
-      ],
+      "images": [],
       "showTags": true,
       "showStats": true,
       "emphasis": false,
@@ -15302,11 +12955,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "rowCount",
@@ -15316,11 +12966,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "排期表的工作流行数。",
         "publicKey": "rowCount",
-        "publicLabel": "工作流数量",
-        "desc": "排期表的工作流行数。",
-        "description": "排期表的工作流行数。"
+        "desc": "排期表的工作流行数。"
       },
       {
         "key": "periodCount",
@@ -15330,11 +12977,8 @@ export const pages = [
         "min": 4,
         "max": 6,
         "step": 1,
-        "describe": "时间轴的周期列数（月）。",
         "publicKey": "periodCount",
-        "publicLabel": "周期列数",
-        "desc": "时间轴的周期列数（月）。",
-        "description": "时间轴的周期列数（月）。"
+        "desc": "时间轴的周期列数（月）。"
       },
       {
         "key": "highlightRowIndex",
@@ -15344,114 +12988,86 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "点亮为暖橙的工作流序号。",
         "displayOffset": 1,
         "desc": "点亮为暖橙的工作流序号。",
-        "description": "点亮为暖橙的工作流序号。",
-        "publicKey": "highlightRowIndex",
-        "publicLabel": "高亮工作流"
+        "publicKey": "highlightRowIndex"
       },
       {
         "key": "showColHeads",
         "type": "toggle",
         "label": "周期表头",
         "default": true,
-        "describe": "顶部的周期列标题。",
         "publicKey": "showColHeads",
-        "publicLabel": "周期表头",
-        "desc": "顶部的周期列标题。",
-        "description": "顶部的周期列标题。"
+        "desc": "顶部的周期列标题。"
       },
       {
         "key": "showBars",
         "type": "toggle",
         "label": "排期色条",
         "default": true,
-        "describe": "每行的跨周期排期色条。",
         "publicKey": "showBars",
-        "publicLabel": "排期色条",
-        "desc": "每行的跨周期排期色条。",
-        "description": "每行的跨周期排期色条。"
+        "desc": "每行的跨周期排期色条。"
       },
       {
         "key": "showMilestones",
         "type": "toggle",
         "label": "里程碑标记",
         "default": true,
-        "describe": "每行的菱形里程碑标记。",
         "publicKey": "showMilestones",
-        "publicLabel": "里程碑标记",
-        "desc": "每行的菱形里程碑标记。",
-        "description": "每行的菱形里程碑标记。"
+        "desc": "每行的菱形里程碑标记。"
       },
       {
         "key": "showLegend",
         "type": "toggle",
         "label": "图例",
         "default": true,
-        "describe": "底部的色条 / 节点 / 里程碑图例。",
         "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "desc": "底部的色条 / 节点 / 里程碑图例。",
-        "description": "底部的色条 / 节点 / 里程碑图例。"
+        "desc": "底部的色条 / 节点 / 里程碑图例。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "右上注释",
         "default": true,
-        "describe": "标题右侧的衬线注释。",
         "publicKey": "showLede",
-        "publicLabel": "右上注释",
-        "desc": "标题右侧的衬线注释。",
-        "description": "标题右侧的衬线注释。"
+        "desc": "标题右侧的衬线注释。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "rowCount": 5,
       "periodCount": 6,
@@ -15563,11 +13179,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "metricCount",
@@ -15577,25 +13190,16 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "countArrays": [
-          "rows"
-        ],
-        "describe": "子弹图的指标行数。",
         "publicKey": "metricCount",
-        "publicLabel": "指标数量",
-        "desc": "子弹图的指标行数。",
-        "description": "子弹图的指标行数。"
+        "desc": "子弹图的指标行数。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": true,
-        "describe": "开启后突出某一指标，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一指标，其余弱化。",
-        "description": "开启后突出某一指标，其余弱化。"
+        "desc": "开启后突出某一指标，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -15605,114 +13209,86 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的指标序号。",
         "displayOffset": 1,
         "desc": "需要突出的指标序号。",
-        "description": "需要突出的指标序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showBands",
         "type": "toggle",
         "label": "分级背景",
         "default": true,
-        "describe": "每行的差/中/优分级背景带。",
         "publicKey": "showBands",
-        "publicLabel": "分级背景",
-        "desc": "每行的差/中/优分级背景带。",
-        "description": "每行的差/中/优分级背景带。"
+        "desc": "每行的差/中/优分级背景带。"
       },
       {
         "key": "showTargets",
         "type": "toggle",
         "label": "目标刻度",
         "default": true,
-        "describe": "每行的纵向目标刻度线。",
         "publicKey": "showTargets",
-        "publicLabel": "目标刻度",
-        "desc": "每行的纵向目标刻度线。",
-        "description": "每行的纵向目标刻度线。"
+        "desc": "每行的纵向目标刻度线。"
       },
       {
         "key": "showValues",
         "type": "toggle",
         "label": "数值标注",
         "default": true,
-        "describe": "每行右侧的成果数值。",
         "publicKey": "showValueLabels",
-        "publicLabel": "数值标注",
-        "desc": "每行右侧的成果数值。",
-        "description": "每行右侧的成果数值。"
+        "desc": "每行右侧的成果数值。"
       },
       {
         "key": "showStatus",
         "type": "toggle",
         "label": "达成标记",
         "default": true,
-        "describe": "数值下方的达成 / 在途标记。",
         "publicKey": "showValueLabels2",
-        "publicLabel": "达成标记",
-        "desc": "数值下方的达成 / 在途标记。",
-        "description": "数值下方的达成 / 在途标记。"
+        "desc": "数值下方的达成 / 在途标记。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "右上注释",
         "default": true,
-        "describe": "标题右侧的衬线注释。",
         "publicKey": "showLede",
-        "publicLabel": "右上注释",
-        "desc": "标题右侧的衬线注释。",
-        "description": "标题右侧的衬线注释。"
+        "desc": "标题右侧的衬线注释。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "metricCount": 5,
       "emphasis": true,
@@ -15762,8 +13338,7 @@ export const pages = [
           "b3": 72,
           "disp": "×3.8",
           "u": "",
-          "hit": true,
-          "status": "✓ 过线"
+          "hit": true
         },
         {
           "nm": "获客成本",
@@ -15774,8 +13349,7 @@ export const pages = [
           "b3": 68,
           "disp": "−41",
           "u": "%",
-          "hit": true,
-          "status": "✓ 达标"
+          "hit": true
         },
         {
           "nm": "复购占比",
@@ -15797,8 +13371,7 @@ export const pages = [
           "b3": 70,
           "disp": "5.4k",
           "u": "",
-          "hit": true,
-          "status": "✓ 完成"
+          "hit": true
         }
       ],
       "metaLeft": "IGNIS — 燃点 · 关键指标达成（中位样本）",
@@ -15833,11 +13406,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "bandCount",
@@ -15847,22 +13417,16 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "describe": "纵向堆叠的图片条带数量。",
         "publicKey": "bandCount",
-        "publicLabel": "条带数量",
-        "desc": "纵向堆叠的图片条带数量。",
-        "description": "纵向堆叠的图片条带数量。"
+        "desc": "纵向堆叠的图片条带数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一条带，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一条带，其余弱化。",
-        "description": "开启后突出某一条带，其余弱化。"
+        "desc": "开启后突出某一条带，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -15872,103 +13436,78 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "describe": "需要突出的条带序号。",
         "displayOffset": 1,
         "desc": "需要突出的条带序号。",
-        "description": "需要突出的条带序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showIndex",
         "type": "toggle",
         "label": "序号",
         "default": true,
-        "describe": "每条带左侧的大序号。",
         "publicKey": "showIndex",
-        "publicLabel": "序号",
-        "desc": "每条带左侧的大序号。",
-        "description": "每条带左侧的大序号。"
+        "desc": "每条带左侧的大序号。"
       },
       {
         "key": "showTags",
         "type": "toggle",
         "label": "分类标签",
         "default": true,
-        "describe": "每条带的行业小标签。",
         "publicKey": "showTags",
-        "publicLabel": "分类标签",
-        "desc": "每条带的分类小标签。",
-        "description": "每条带的分类小标签。"
+        "desc": "每条带的分类小标签。"
       },
       {
         "key": "showCaptions",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "每条带的一句话说明。",
         "publicKey": "showCaptions",
-        "publicLabel": "说明文案",
-        "desc": "每条带的一句话说明。",
-        "description": "每条带的一句话说明。"
+        "desc": "每条带的一句话说明。"
       },
       {
         "key": "showKpi",
         "type": "toggle",
         "label": "成果数字",
         "default": true,
-        "describe": "每条带右侧的成果数字。",
         "publicKey": "showKpi",
-        "publicLabel": "成果数字",
-        "desc": "每条带右侧的成果数字。",
-        "description": "每条带右侧的成果数字。"
+        "desc": "每条带右侧的成果数字。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "bandCount": 3,
       "images": [],
@@ -16056,11 +13595,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "stepCount",
@@ -16070,22 +13606,16 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "describe": "下一步行动的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "desc": "下一步行动的条目数量。",
-        "description": "下一步行动的条目数量。"
+        "desc": "下一步行动的条目数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "首步突出",
         "default": true,
-        "describe": "开启后第一步点亮为暖橙。",
         "publicKey": "emphasis",
-        "publicLabel": "首步突出",
-        "desc": "开启后第一步点亮为暖橙。",
-        "description": "开启后第一步点亮为暖橙。"
+        "desc": "开启后第一步点亮为暖橙。"
       },
       {
         "key": "emphasisIndex",
@@ -16095,103 +13625,78 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "describe": "需要突出的步骤序号。",
         "displayOffset": 1,
         "desc": "需要突出的步骤序号。",
-        "description": "需要突出的步骤序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showTag",
         "type": "toggle",
         "label": "顶部标签",
         "default": true,
-        "describe": "大标题上方的小标签。",
         "publicKey": "showTag",
-        "publicLabel": "顶部标签",
-        "desc": "大标题上方的小标签。",
-        "description": "大标题上方的小标签。"
+        "desc": "大标题上方的小标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "大标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "大标题下方的说明段落。",
-        "description": "大标题下方的说明段落。"
+        "desc": "大标题下方的说明段落。"
       },
       {
         "key": "showArrows",
         "type": "toggle",
         "label": "箭头母题",
         "default": true,
-        "describe": "每步右侧的流向箭头。",
         "publicKey": "showArrows",
-        "publicLabel": "箭头母题",
-        "desc": "每步右侧的流向箭头。",
-        "description": "每步右侧的流向箭头。"
+        "desc": "每步右侧的流向箭头。"
       },
       {
         "key": "showDesc",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "每步的一句话说明。",
         "publicKey": "showDesc",
-        "publicLabel": "说明文案",
-        "desc": "每步的一句话说明。",
-        "description": "每步的一句话说明。"
+        "desc": "每步的一句话说明。"
       },
       {
         "key": "showWhen",
         "type": "toggle",
         "label": "时间注脚",
         "default": true,
-        "describe": "步骤下方的「最快多久启动」注脚。",
         "publicKey": "showWhen",
-        "publicLabel": "时间注脚",
-        "desc": "步骤下方的「最快多久启动」注脚。",
-        "description": "步骤下方的「最快多久启动」注脚。"
+        "desc": "步骤下方的「最快多久启动」注脚。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "stepCount": 3,
       "emphasis": true,
@@ -16268,11 +13773,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "imagePosition",
@@ -16289,11 +13791,8 @@ export const pages = [
             "label": "右"
           }
         ],
-        "describe": "手机在版面中的左右位置。",
         "publicKey": "imagePosition",
-        "publicLabel": "手机位置",
-        "desc": "手机在版面中的左右位置。",
-        "description": "手机在版面中的左右位置。"
+        "desc": "手机在版面中的左右位置。"
       },
       {
         "key": "annotationCount",
@@ -16303,22 +13802,16 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "describe": "右侧功能标注的条目数量。",
         "publicKey": "itemCount",
-        "publicLabel": "标注数量",
-        "desc": "右侧功能标注的条目数量。",
-        "description": "右侧功能标注的条目数量。"
+        "desc": "右侧功能标注的条目数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一条标注，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一条标注，其余弱化。",
-        "description": "开启后突出某一条标注，其余弱化。"
+        "desc": "开启后突出某一条标注，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -16328,70 +13821,54 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "describe": "需要突出的标注序号。",
         "displayOffset": 1,
         "desc": "需要突出的标注序号。",
-        "description": "需要突出的标注序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "主标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "主标题下方的说明段落。",
-        "description": "主标题下方的说明段落。"
+        "desc": "主标题下方的说明段落。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "images": [],
       "imagePosition": "left",
@@ -16466,11 +13943,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "categoryCount",
@@ -16480,22 +13954,16 @@ export const pages = [
         "min": 2,
         "max": 5,
         "step": 1,
-        "describe": "构成类别数量（剩余补为「其他」灰格）。",
         "publicKey": "categoryCount",
-        "publicLabel": "类别数量",
-        "desc": "构成类别数量（剩余补为「其他」灰格）。",
-        "description": "构成类别数量（剩余补为「其他」灰格）。"
+        "desc": "构成类别数量（剩余补为「其他」灰格）。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "首类突出",
         "default": true,
-        "describe": "开启后占比最大的类别点亮为暖橙，图例其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "首类突出",
-        "desc": "开启后占比最大的类别点亮为暖橙，图例其余弱化。",
-        "description": "开启后占比最大的类别点亮为暖橙，图例其余弱化。"
+        "desc": "开启后占比最大的类别点亮为暖橙，图例其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -16505,92 +13973,70 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的类别序号。",
         "displayOffset": 1,
         "desc": "需要突出的类别序号。",
-        "description": "需要突出的类别序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showLegend",
         "type": "toggle",
         "label": "图例",
         "default": true,
-        "describe": "左侧带占比的图例清单。",
         "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "desc": "左侧带占比的图例清单。",
-        "description": "左侧带占比的图例清单。"
+        "desc": "左侧带占比的图例清单。"
       },
       {
         "key": "showValues",
         "type": "toggle",
         "label": "占比数值",
         "default": true,
-        "describe": "图例右侧的百分比数值。",
         "publicKey": "showValueLabels",
-        "publicLabel": "占比数值",
-        "desc": "图例右侧的百分比数值。",
-        "description": "图例右侧的百分比数值。"
+        "desc": "图例右侧的百分比数值。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "主标题下方的说明段落。",
         "publicKey": "showLede",
-        "publicLabel": "说明文案",
-        "desc": "主标题下方的说明段落。",
-        "description": "主标题下方的说明段落。"
+        "desc": "主标题下方的说明段落。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "categoryCount": 5,
       "emphasis": true,
@@ -16673,11 +14119,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "rowCount",
@@ -16687,22 +14130,16 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "评分卡的维度行数。",
         "publicKey": "rowCount",
-        "publicLabel": "维度数量",
-        "desc": "评分卡的维度行数。",
-        "description": "评分卡的维度行数。"
+        "desc": "评分卡的维度行数。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "首行突出",
         "default": true,
-        "describe": "开启后首行点亮为暖橙，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "首行突出",
-        "desc": "开启后首行点亮为暖橙，其余弱化。",
-        "description": "开启后首行点亮为暖橙，其余弱化。"
+        "desc": "开启后首行点亮为暖橙，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -16712,103 +14149,78 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的维度序号。",
         "displayOffset": 1,
         "desc": "需要突出的维度序号。",
-        "description": "需要突出的维度序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showColHeads",
         "type": "toggle",
         "label": "列表头",
         "default": true,
-        "describe": "顶部的列标题行。",
         "publicKey": "showColHeads",
-        "publicLabel": "列表头",
-        "desc": "顶部的列标题行。",
-        "description": "顶部的列标题行。"
+        "desc": "顶部的列标题行。"
       },
       {
         "key": "showDots",
         "type": "toggle",
         "label": "评级圆点",
         "default": true,
-        "describe": "每行的 5 点评级。",
         "publicKey": "showDots",
-        "publicLabel": "评级圆点",
-        "desc": "每行的 5 点评级。",
-        "description": "每行的 5 点评级。"
+        "desc": "每行的 5 点评级。"
       },
       {
         "key": "showScore",
         "type": "toggle",
         "label": "得分",
         "default": true,
-        "describe": "每行的 10 分制得分。",
         "publicKey": "showScore",
-        "publicLabel": "得分",
-        "desc": "每行的 10 分制得分。",
-        "description": "每行的 10 分制得分。"
+        "desc": "每行的 10 分制得分。"
       },
       {
         "key": "showDelta",
         "type": "toggle",
         "label": "对比基准",
         "default": true,
-        "describe": "每行相对行业基准的差值列。",
         "publicKey": "showDelta",
-        "publicLabel": "对比基准",
-        "desc": "每行相对参考基准的差值列。",
-        "description": "每行相对参考基准的差值列。"
+        "desc": "每行相对参考基准的差值列。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "rowCount": 5,
       "emphasis": true,
@@ -16840,7 +14252,7 @@ export const pages = [
         "对比基准"
       ],
       "scoreUnit": " /10",
-      "deltaSuffix": "",
+      "deltaSuffix": " vs 基准",
       "rows": [
         {
           "nm": "自然增长",
@@ -16910,11 +14322,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "pinCount",
@@ -16924,22 +14333,16 @@ export const pages = [
         "min": 2,
         "max": 4,
         "step": 1,
-        "describe": "图上热点与图例条目的数量。",
         "publicKey": "itemCount",
-        "publicLabel": "标注数量",
-        "desc": "图上热点与图例条目的数量。",
-        "description": "图上热点与图例条目的数量。"
+        "desc": "图上热点与图例条目的数量。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "重点突出",
         "default": false,
-        "describe": "开启后突出某一标注，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "重点突出",
-        "desc": "开启后突出某一标注，其余弱化。",
-        "description": "开启后突出某一标注，其余弱化。"
+        "desc": "开启后突出某一标注，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -16949,92 +14352,70 @@ export const pages = [
         "min": 0,
         "max": 3,
         "step": 1,
-        "describe": "需要突出的标注序号。",
         "displayOffset": 1,
         "desc": "需要突出的标注序号。",
-        "description": "需要突出的标注序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showPins",
         "type": "toggle",
         "label": "图上热点",
         "default": true,
-        "describe": "叠在截图上的编号热点。",
         "publicKey": "showPins",
-        "publicLabel": "图上热点",
-        "desc": "叠在截图上的编号热点。",
-        "description": "叠在截图上的编号热点。"
+        "desc": "叠在截图上的编号热点。"
       },
       {
         "key": "showLegend",
         "type": "toggle",
         "label": "图例条",
         "default": true,
-        "describe": "截图下方的编号图例。",
         "publicKey": "showLegend",
-        "publicLabel": "图例条",
-        "desc": "截图下方的编号图例。",
-        "description": "截图下方的编号图例。"
+        "desc": "截图下方的编号图例。"
       },
       {
         "key": "showScrim",
         "type": "toggle",
         "label": "压暗叠层",
         "default": true,
-        "describe": "截图四周的压暗渐变，提升热点可读性。",
         "publicKey": "showScrim",
-        "publicLabel": "压暗叠层",
-        "desc": "截图四周的压暗渐变，提升热点可读性。",
-        "description": "截图四周的压暗渐变，提升热点可读性。"
+        "desc": "截图四周的压暗渐变，提升热点可读性。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "images": [],
       "pinCount": 4,
@@ -17060,20 +14441,28 @@ export const pages = [
       "eyebrowEn": "What we changed",
       "headingHtml": "一张截图，<span class=\"ign-ember-text\">把每处改动指出来</span>。",
       "noteHtml": "编号对应改动点——<br>每一处都对着转化。",
-      "notes": [
+      "pins": [
         {
+          "x": 16,
+          "y": 26,
           "t": "价值主张",
           "d": "首屏一句话锁定意图。"
         },
         {
+          "x": 78,
+          "y": 34,
           "t": "社会证明",
           "d": "客户与数据即时建立信任。"
         },
         {
+          "x": 30,
+          "y": 72,
           "t": "主行动按钮",
           "d": "高对比、零干扰的唯一出口。"
         },
         {
+          "x": 66,
+          "y": 78,
           "t": "风险消解",
           "d": "退款与保障，临门一脚不丢人。"
         }
@@ -17110,11 +14499,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "itemCount",
@@ -17124,22 +14510,16 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "哑铃图的指标行数。",
         "publicKey": "itemCount",
-        "publicLabel": "指标数量",
-        "desc": "哑铃图的指标行数。",
-        "description": "哑铃图的指标行数。"
+        "desc": "哑铃图的指标行数。"
       },
       {
         "key": "emphasis",
         "type": "toggle",
         "label": "首行突出",
         "default": true,
-        "describe": "开启后首行点亮为暖橙，其余弱化。",
         "publicKey": "emphasis",
-        "publicLabel": "首行突出",
-        "desc": "开启后首行点亮为暖橙，其余弱化。",
-        "description": "开启后首行点亮为暖橙，其余弱化。"
+        "desc": "开启后首行点亮为暖橙，其余弱化。"
       },
       {
         "key": "emphasisIndex",
@@ -17149,103 +14529,78 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "需要突出的指标序号。",
         "displayOffset": 1,
         "desc": "需要突出的指标序号。",
-        "description": "需要突出的指标序号。",
-        "publicKey": "emphasisIndex",
-        "publicLabel": "重点序号"
+        "publicKey": "emphasisIndex"
       },
       {
         "key": "showValues",
         "type": "toggle",
         "label": "端点数值",
         "default": true,
-        "describe": "前后两点上方的数值。",
         "publicKey": "showValueLabels",
-        "publicLabel": "端点数值",
-        "desc": "前后两点上方的数值。",
-        "description": "前后两点上方的数值。"
+        "desc": "前后两点上方的数值。"
       },
       {
         "key": "showDelta",
         "type": "toggle",
         "label": "变化幅度",
         "default": true,
-        "describe": "每行右侧的变化幅度。",
         "publicKey": "showDelta",
-        "publicLabel": "变化幅度",
-        "desc": "每行右侧的变化幅度。",
-        "description": "每行右侧的变化幅度。"
+        "desc": "每行右侧的变化幅度。"
       },
       {
         "key": "showGrid",
         "type": "toggle",
         "label": "刻度网格",
         "default": true,
-        "describe": "背景的纵向刻度线与轴标。",
         "publicKey": "showGrid",
-        "publicLabel": "刻度网格",
-        "desc": "背景的纵向刻度线与轴标。",
-        "description": "背景的纵向刻度线与轴标。"
+        "desc": "背景的纵向刻度线与轴标。"
       },
       {
         "key": "showLegend",
         "type": "toggle",
         "label": "图例",
         "default": true,
-        "describe": "标题右侧的「接入前 / 接入后」图例。",
         "publicKey": "showLegend",
-        "publicLabel": "图例",
-        "desc": "标题右侧的「接入前 / 接入后」图例。",
-        "description": "标题右侧的「接入前 / 接入后」图例。"
+        "desc": "标题右侧的「接入前 / 接入后」图例。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "itemCount": 5,
       "emphasis": true,
@@ -17340,11 +14695,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "align",
@@ -17361,102 +14713,77 @@ export const pages = [
             "label": "居中"
           }
         ],
-        "describe": "金句的对齐方式。",
         "publicKey": "align",
-        "publicLabel": "对齐",
-        "desc": "金句的对齐方式。",
-        "description": "金句的对齐方式。"
+        "desc": "金句的对齐方式。"
       },
       {
         "key": "showMark",
         "type": "toggle",
         "label": "引号字符",
         "default": true,
-        "describe": "金句上方的超大装饰引号。",
         "publicKey": "showMark",
-        "publicLabel": "引号字符",
-        "desc": "金句上方的超大装饰引号。",
-        "description": "金句上方的超大装饰引号。"
+        "desc": "金句上方的超大装饰引号。"
       },
       {
         "key": "showBig",
         "type": "toggle",
         "label": "巨号数字",
         "default": true,
-        "describe": "句中嵌入的巨号暖橙数字（关闭则回退为普通字号）。",
         "publicKey": "showBig",
-        "publicLabel": "巨号数字",
-        "desc": "句中嵌入的巨号暖橙数字（关闭则回退为普通字号）。",
-        "description": "句中嵌入的巨号暖橙数字（关闭则回退为普通字号）。"
+        "desc": "句中嵌入的巨号暖橙数字（关闭则回退为普通字号）。"
       },
       {
         "key": "showRule",
         "type": "toggle",
         "label": "分隔细线",
         "default": true,
-        "describe": "署名上方的分隔细线。",
         "publicKey": "showRule",
-        "publicLabel": "分隔细线",
-        "desc": "署名上方的分隔细线。",
-        "description": "署名上方的分隔细线。"
+        "desc": "署名上方的分隔细线。"
       },
       {
         "key": "showAttribution",
         "type": "toggle",
         "label": "辅助文本",
         "default": true,
-        "describe": "金句下方的署名与来源。",
         "publicKey": "showAttribution",
-        "publicLabel": "辅助文本",
-        "desc": "金句下方的署名与来源。",
-        "description": "金句下方的署名与来源。"
+        "desc": "金句下方的署名与来源。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "顶部导航处的章节标识。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "顶部导航处的章节标识。",
-        "description": "顶部导航处的章节标识。"
+        "desc": "顶部导航处的章节标识。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ember",
       "align": "left",
       "showMark": true,
@@ -17516,102 +14843,77 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "showFrameLine",
         "type": "toggle",
         "label": "内框线",
         "default": true,
-        "describe": "画框内的双重细线。",
         "publicKey": "showFrameLine",
-        "publicLabel": "内框线",
-        "desc": "画框内的双重细线。",
-        "description": "画框内的双重细线。"
+        "desc": "画框内的双重细线。"
       },
       {
         "key": "showPlate",
         "type": "toggle",
         "label": "说明牌",
         "default": true,
-        "describe": "图片下方的居中说明牌。",
         "publicKey": "showPlate",
-        "publicLabel": "说明牌",
-        "desc": "图片下方的居中说明牌。",
-        "description": "图片下方的居中说明牌。"
+        "desc": "图片下方的居中说明牌。"
       },
       {
         "key": "showIndex",
         "type": "toggle",
         "label": "编号",
         "default": true,
-        "describe": "说明牌左侧的作品编号。",
         "publicKey": "showIndex",
-        "publicLabel": "编号",
-        "desc": "说明牌左侧的作品编号。",
-        "description": "说明牌左侧的作品编号。"
+        "desc": "说明牌左侧的作品编号。"
       },
       {
         "key": "showMeta_meta",
         "type": "toggle",
         "label": "说明牌副信息",
         "default": true,
-        "describe": "说明牌右侧的媒介 / 年份式副信息。",
         "publicKey": "showMeta_meta",
-        "publicLabel": "说明牌副信息",
-        "desc": "说明牌右侧的媒介 / 年份式副信息。",
-        "description": "说明牌右侧的媒介 / 年份式副信息。"
+        "desc": "说明牌右侧的媒介 / 年份式副信息。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "顶部导航处的章节标识。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "顶部导航处的章节标识。",
-        "description": "顶部导航处的章节标识。"
+        "desc": "顶部导航处的章节标识。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "images": [],
       "showFrameLine": true,
@@ -17666,11 +14968,8 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "eraCount",
@@ -17680,11 +14979,8 @@ export const pages = [
         "min": 3,
         "max": 5,
         "step": 1,
-        "describe": "历程的阶段节点数量。",
         "publicKey": "eraCount",
-        "publicLabel": "阶段数量",
-        "desc": "历程的阶段节点数量。",
-        "description": "历程的阶段节点数量。"
+        "desc": "历程的阶段节点数量。"
       },
       {
         "key": "currentIndex",
@@ -17694,114 +14990,86 @@ export const pages = [
         "min": 0,
         "max": 4,
         "step": 1,
-        "describe": "点亮为暖橙的「当前」阶段序号（进度填充至此）。",
         "displayOffset": 1,
         "desc": "点亮为暖橙的「当前」阶段序号（进度填充至此）。",
-        "description": "点亮为暖橙的「当前」阶段序号（进度填充至此）。",
-        "publicKey": "currentIndex",
-        "publicLabel": "当前阶段"
+        "publicKey": "currentIndex"
       },
       {
         "key": "showYears",
         "type": "toggle",
         "label": "年份",
         "default": true,
-        "describe": "每个节点上方的年份。",
         "publicKey": "showYears",
-        "publicLabel": "年份",
-        "desc": "每个节点上方的年份。",
-        "description": "每个节点上方的年份。"
+        "desc": "每个节点上方的年份。"
       },
       {
         "key": "showDesc",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "每个节点下方的一句话说明。",
         "publicKey": "showDesc",
-        "publicLabel": "说明文案",
-        "desc": "每个节点下方的一句话说明。",
-        "description": "每个节点下方的一句话说明。"
+        "desc": "每个节点下方的一句话说明。"
       },
       {
         "key": "showTags",
         "type": "toggle",
         "label": "阶段标签",
         "default": true,
-        "describe": "每个节点的英文阶段标签。",
         "publicKey": "showTags",
-        "publicLabel": "阶段标签",
-        "desc": "每个节点的英文阶段标签。",
-        "description": "每个节点的英文阶段标签。"
+        "desc": "每个节点的英文阶段标签。"
       },
       {
         "key": "showAxis",
         "type": "toggle",
         "label": "时间轴线",
         "default": true,
-        "describe": "贯穿的横向时间轴与进度填充。",
         "publicKey": "showAxis",
-        "publicLabel": "时间轴线",
-        "desc": "贯穿的横向时间轴与进度填充。",
-        "description": "贯穿的横向时间轴与进度填充。"
+        "desc": "贯穿的横向时间轴与进度填充。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰副标题",
         "default": true,
-        "describe": "主标题上方的装饰标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰副标题",
-        "desc": "主标题上方的装饰标签。",
-        "description": "主标题上方的装饰标签。"
+        "desc": "主标题上方的装饰标签。"
       },
       {
         "key": "showLede",
         "type": "toggle",
         "label": "右上注释",
         "default": true,
-        "describe": "标题右侧的衬线注释。",
         "publicKey": "showLede",
-        "publicLabel": "右上注释",
-        "desc": "标题右侧的衬线注释。",
-        "description": "标题右侧的衬线注释。"
+        "desc": "标题右侧的衬线注释。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "paper",
       "eraCount": 5,
       "currentIndex": 4,
@@ -17887,9 +15155,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -17917,9 +15183,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "key": "layout",
@@ -17941,15 +15205,13 @@ export const pages = [
           }
         ],
         "desc": "根据图片的空白位置安排文字。",
-        "publicKey": "layout",
-        "publicLabel": "排版布局",
-        "description": "根据图片的空白位置安排文字。"
+        "publicKey": "layout"
       },
       {
         "key": "textTone",
         "type": "select",
         "label": "文字色调",
-        "default": "light",
+        "default": "dark",
         "options": [
           {
             "value": "dark",
@@ -17961,19 +15223,15 @@ export const pages = [
           }
         ],
         "desc": "按图片明暗选择深/浅文字。",
-        "publicKey": "textTone",
-        "publicLabel": "文字色调",
-        "description": "按图片明暗选择深/浅文字。"
+        "publicKey": "textTone"
       },
       {
         "key": "showScrim",
         "type": "toggle",
         "label": "压暗层",
-        "default": true,
+        "default": false,
         "desc": "给文字区域增加渐变压暗。",
-        "publicKey": "showScrim",
-        "publicLabel": "压暗层",
-        "description": "给文字区域增加渐变压暗。"
+        "publicKey": "showScrim"
       },
       {
         "key": "headlineStroke",
@@ -17981,15 +15239,13 @@ export const pages = [
         "label": "标题描边",
         "default": true,
         "desc": "给大标题增加描边。",
-        "publicKey": "headlineStroke",
-        "publicLabel": "标题描边",
-        "description": "给大标题增加描边。"
+        "publicKey": "headlineStroke"
       },
       {
         "key": "surface",
         "type": "select",
         "label": "氛围基调",
-        "default": "ink",
+        "default": "paper",
         "options": [
           {
             "value": "paper",
@@ -18005,9 +15261,7 @@ export const pages = [
           }
         ],
         "desc": "控制颗粒、暗角等氛围叠层。",
-        "publicKey": "surface",
-        "publicLabel": "氛围基调",
-        "description": "控制颗粒、暗角等氛围叠层。"
+        "publicKey": "surface"
       },
       {
         "key": "showStatus",
@@ -18015,9 +15269,7 @@ export const pages = [
         "label": "状态胶囊",
         "default": true,
         "desc": "顶部状态胶囊。",
-        "publicKey": "showStatus",
-        "publicLabel": "状态胶囊",
-        "description": "顶部状态胶囊。"
+        "publicKey": "showStatus"
       },
       {
         "key": "showStats",
@@ -18025,9 +15277,7 @@ export const pages = [
         "label": "指标行",
         "default": true,
         "desc": "顶部横排指标。",
-        "publicKey": "showStats",
-        "publicLabel": "指标行",
-        "description": "顶部横排指标。"
+        "publicKey": "showStats"
       },
       {
         "key": "statCount",
@@ -18038,9 +15288,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "desc": "指标行数量。",
-        "publicKey": "statCount",
-        "publicLabel": "指标数量",
-        "description": "指标行数量。"
+        "publicKey": "statCount"
       },
       {
         "key": "showEdgeLabel",
@@ -18048,9 +15296,7 @@ export const pages = [
         "label": "侧边竖排标签",
         "default": true,
         "desc": "侧边坐标标签。",
-        "publicKey": "showEdgeLabel",
-        "publicLabel": "侧边竖排标签",
-        "description": "侧边坐标标签。"
+        "publicKey": "showEdgeLabel"
       },
       {
         "key": "showCta",
@@ -18058,9 +15304,7 @@ export const pages = [
         "label": "排版式 CTA",
         "default": true,
         "desc": "标题下方行动语。",
-        "publicKey": "showCta",
-        "publicLabel": "排版式 CTA",
-        "description": "标题下方行动语。"
+        "publicKey": "showCta"
       },
       {
         "key": "showGhostMark",
@@ -18068,9 +15312,7 @@ export const pages = [
         "label": "背景大字符",
         "default": false,
         "desc": "角落超大幽灵字符。",
-        "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "description": "角落超大幽灵字符。"
+        "publicKey": "showGhostMark"
       },
       {
         "key": "showScaffold",
@@ -18078,12 +15320,13 @@ export const pages = [
         "label": "边框骨架",
         "default": true,
         "desc": "侧边竖排标签与四角括线。",
-        "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "description": "侧边竖排标签与四角括线。"
+        "publicKey": "showScaffold"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
+      "railText": "Expedition — 破冰航道",
       "surface": "ink",
       "backgroundMode": "unicorn",
       "unicornScene": "tech",
@@ -18151,22 +15394,16 @@ export const pages = [
             "label": "暖橙"
           }
         ],
-        "describe": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
         "publicKey": "surface",
-        "publicLabel": "背景基调",
-        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。",
-        "description": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
+        "desc": "页面背景主题，用于在相邻页之间制造色彩跳跃。"
       },
       {
         "key": "imageCount",
         "type": "toggle",
         "label": "图片",
         "default": true,
-        "describe": "显示配图区;开启后点击该区域即可上传/更换图片。",
         "publicKey": "imageCount",
-        "publicLabel": "图片",
-        "desc": "显示配图区;开启后点击该区域即可上传/更换图片。",
-        "description": "显示配图区;开启后点击该区域即可上传/更换图片。"
+        "desc": "显示配图区;开启后点击该区域即可上传/更换图片。"
       },
       {
         "key": "imagePosition",
@@ -18183,11 +15420,8 @@ export const pages = [
             "label": "右"
           }
         ],
-        "describe": "配图相对文字的位置。",
         "publicKey": "imagePosition",
-        "publicLabel": "配图位置",
-        "desc": "配图相对文字的位置。",
-        "description": "配图相对文字的位置。"
+        "desc": "配图相对文字的位置。"
       },
       {
         "key": "imageMode",
@@ -18204,44 +15438,32 @@ export const pages = [
             "label": "原比例"
           }
         ],
-        "describe": "配图的填充方式。",
         "publicKey": "imageMode",
-        "publicLabel": "配图填充",
-        "desc": "配图的填充方式。",
-        "description": "配图的填充方式。"
+        "desc": "配图的填充方式。"
       },
       {
         "key": "showSub",
         "type": "toggle",
         "label": "说明文案",
         "default": true,
-        "describe": "谢幕语下方的说明句。",
         "publicKey": "showSub",
-        "publicLabel": "说明文案",
-        "desc": "谢幕语下方的说明句。",
-        "description": "谢幕语下方的说明句。"
+        "desc": "谢幕语下方的说明句。"
       },
       {
         "key": "showRule",
         "type": "toggle",
         "label": "强调短线",
         "default": true,
-        "describe": "谢幕语下方的暖橙强调短线。",
         "publicKey": "showRule",
-        "publicLabel": "强调短线",
-        "desc": "谢幕语下方的暖橙强调短线。",
-        "description": "谢幕语下方的暖橙强调短线。"
+        "desc": "谢幕语下方的暖橙强调短线。"
       },
       {
         "key": "showContact",
         "type": "toggle",
         "label": "信息组",
         "default": true,
-        "describe": "排版化的信息清单（非按钮控件）。",
         "publicKey": "showContact",
-        "publicLabel": "信息组",
-        "desc": "排版化的信息清单（非按钮控件）。",
-        "description": "排版化的信息清单（非按钮控件）。"
+        "desc": "排版化的信息清单（非按钮控件）。"
       },
       {
         "key": "contactCount",
@@ -18251,58 +15473,45 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "describe": "信息条目的数量。",
         "publicKey": "itemCount",
-        "publicLabel": "条目数量",
-        "desc": "信息条目的数量。",
-        "description": "信息条目的数量。"
+        "desc": "信息条目的数量。"
       },
       {
         "key": "showKicker",
         "type": "toggle",
         "label": "装饰小字",
         "default": true,
-        "describe": "谢幕语上方的装饰引导标签。",
         "publicKey": "showKicker",
-        "publicLabel": "装饰小字",
-        "desc": "谢幕语上方的装饰引导标签。",
-        "description": "谢幕语上方的装饰引导标签。"
+        "desc": "谢幕语上方的装饰引导标签。"
       },
       {
         "key": "showGhostMark",
         "type": "toggle",
         "label": "背景大字符",
         "default": true,
-        "describe": "角落超大幽灵字符装饰。",
         "publicKey": "showGhostMark",
-        "publicLabel": "背景大字符",
-        "desc": "角落超大幽灵字符装饰。",
-        "description": "角落超大幽灵字符装饰。"
+        "desc": "角落超大幽灵字符装饰。"
       },
       {
         "key": "showScaffold",
         "type": "toggle",
         "label": "边框骨架",
         "default": true,
-        "describe": "侧边竖排标签与四角括线。",
         "publicKey": "showScaffold",
-        "publicLabel": "边框骨架",
-        "desc": "侧边竖排标签与四角括线。",
-        "description": "侧边竖排标签与四角括线。"
+        "desc": "侧边竖排标签与四角括线。"
       },
       {
         "key": "showMeta",
         "type": "toggle",
         "label": "底部信息条",
         "default": true,
-        "describe": "底部页脚信息与进度条。",
         "publicKey": "showMeta",
-        "publicLabel": "底部信息条",
-        "desc": "底部页脚信息与进度条。",
-        "description": "底部页脚信息与进度条。"
+        "desc": "底部页脚信息与进度条。"
       }
     ],
     "defaultProps": {
+      "wordmarkLabel": "IGNIS",
+      "wordmarkSub": "燃点",
       "surface": "ink",
       "imageCount": true,
       "image": "",

@@ -24,6 +24,13 @@ export function normalizeRuntimePages(rawPages, { themeKey, layoutPrefix, keepTe
       defaultProps,
       staticHtml: entry.staticHtml || false,
       bgClass: entry.bgClass || entry.backgroundClass || '',
+      // Explicit, page-declared hard domains for array-item fields consumed directly as
+      // chart/SVG geometry (fixed-axis scale, normalized position, rank index, ...). Forwarded
+      // straight through to createContract() in src/prop-contract-core.mjs; see that file for
+      // the "arrayKey[].field" -> {min,max,semantics} shape.
+      ...((entry.numberBounds || entry.spec?.numberBounds || meta.numberBounds)
+        ? { numberBounds: entry.numberBounds || entry.spec?.numberBounds || meta.numberBounds }
+        : {}),
     };
   });
 }

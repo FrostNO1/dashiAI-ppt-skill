@@ -2,13 +2,13 @@ import { THEME_PAGES } from './components/themes/index.jsx';
 import {
   COUNT_ARRAY_BINDINGS,
   buildLayoutManifestFromContracts,
-  createLayoutContracts,
+  createLazyLayoutContracts,
   normalizeSlidePropsForContract,
 } from './prop-contract-core.mjs';
 
 export { COUNT_ARRAY_BINDINGS };
 
-const CONTRACTS = createLayoutContracts(THEME_PAGES);
+const CONTRACTS = createLazyLayoutContracts(THEME_PAGES);
 
 export function getLayoutContract(layout) {
   return CONTRACTS.get(layout) || null;

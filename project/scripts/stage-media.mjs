@@ -5,6 +5,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+// 相对路径按调用方目录解析:npm run(含 --prefix)会把脚本 cwd 切到项目根,INIT_CWD 才是用户所在目录。
+const CALLER_CWD = process.env.INIT_CWD || process.cwd();
+
+
 // Raster image formats that can be safely downsampled by sips (skip gif/svg).
 const DOWNSCALE_EXTS = new Set(['.png', '.jpg', '.jpeg', '.webp']);
 const MAX_LONG_EDGE = 2048;
@@ -43,7 +47,7 @@ function runCli(argv) {
   const stageContext = createStageContext(outDir);
   const items = sourceArgs.map(sourceArg => {
     const source = resolveSourcePath(sourceArg);
-    if (!fs.existsSync(source)) throw new Error(`Media file does not exist: ${path.resolve(sourceArg)}`);
+    if (!fs.existsSync(source)) throw new Error(`Media file does not exist: ${path.resolve(CALLER_CWD, sourceArg)}`);
     const stat = fs.statSync(source);
     if (!stat.isFile()) throw new Error(`Media path is not a file: ${source}`);
     const ext = path.extname(source).toLowerCase();
@@ -61,7 +65,7 @@ function runCli(argv) {
   writeStageManifest(outDir, stageContext.manifest);
 
   process.stdout.write(`${JSON.stringify({
-    input: path.resolve(outDirArg),
+    input: path.resolve(CALLER_CWD, outDirArg),
     outDir,
     deckRoot: path.basename(outDir) === 'ppt' ? path.dirname(outDir) : outDir,
     items,
@@ -77,7 +81,7 @@ function runCli(argv) {
 // match the basename under Unicode normalization so the staged file — and the
 // returned `relative` — points at the real bytes on disk.
 function resolveSourcePath(sourceArg) {
-  const resolved = path.resolve(sourceArg);
+  const resolved = path.resolve(CALLER_CWD, sourceArg);
   if (fs.existsSync(resolved)) return resolved;
 
   const dir = path.dirname(resolved);
@@ -127,7 +131,7 @@ function printUsage() {
 }
 
 function resolveOutputPptDir(value) {
-  const target = path.resolve(value);
+  const target = path.resolve(CALLER_CWD, value);
   if (/\.html?$/i.test(target)) return path.dirname(target);
   if (path.basename(target) === 'ppt') return target;
   if (fs.existsSync(path.join(target, 'index.html'))) return target;
@@ -261,7 +265,7 @@ function prepareMedia(source, ext, kind, outDir, context) {
   const name = existingName || reserveName(base, ext, context, sourceId);
   const relative = existingName ? existing.relative : path.posix.join('assets/user-media', name);
   const dest = path.join(outDir, relative);
-  if (path.resolve(source) !== path.resolve(dest)) fs.copyFileSync(source, dest);
+  if (path.resolve(CALLER_CWD, source) !== path.resolve(CALLER_CWD, dest)) fs.copyFileSync(source, dest);
   if (kind === 'image' && DOWNSCALE_EXTS.has(ext)) {
     maybeDownscaleImage(dest);
   } else if (kind === 'video') {

@@ -28,8 +28,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "metaCount",
-        "publicKey": "metaCount",
-        "publicLabel": "元信息数量"
+        "publicKey": "metaCount"
       },
       {
         "prop": "showRule",
@@ -38,9 +37,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showRule",
-        "publicKey": "showRule",
-        "publicLabel": "刊头分隔线",
-        "description": "装饰"
+        "publicKey": "showRule"
       },
       {
         "prop": "showGhostYear",
@@ -49,9 +46,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showGhostYear",
-        "publicKey": "showGhostYear",
-        "publicLabel": "幽灵年份",
-        "description": "装饰"
+        "publicKey": "showGhostYear"
       },
       {
         "prop": "showChip",
@@ -60,9 +55,7 @@ export const pages = [
         "default": true,
         "desc": "玻璃芯片装饰",
         "key": "showChip",
-        "publicKey": "showChip",
-        "publicLabel": "质感方块",
-        "description": "玻璃芯片装饰"
+        "publicKey": "showChip"
       },
       {
         "prop": "focus",
@@ -70,8 +63,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -85,8 +77,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -129,7 +120,8 @@ export const pages = [
       "showGhostYear": true,
       "showChip": true,
       "focus": true,
-      "focusIndex": 0
+      "focusIndex": 0,
+      "reportLabel": "ANNUAL REPORT"
     }
   },
   {
@@ -150,8 +142,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "indexCount",
-        "publicKey": "indexCount",
-        "publicLabel": "篇章索引数量"
+        "publicKey": "indexCount"
       },
       {
         "prop": "splitDir",
@@ -169,8 +160,7 @@ export const pages = [
           }
         ],
         "key": "splitDir",
-        "publicKey": "splitDir",
-        "publicLabel": "斜切方向"
+        "publicKey": "splitDir"
       },
       {
         "prop": "showSpine",
@@ -179,9 +169,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showSpine",
-        "publicKey": "showSpine",
-        "publicLabel": "竖排书脊",
-        "description": "装饰"
+        "publicKey": "showSpine"
       },
       {
         "prop": "showSeam",
@@ -190,9 +178,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showSeam",
-        "publicKey": "showSeam",
-        "publicLabel": "斜边亮线",
-        "description": "装饰"
+        "publicKey": "showSeam"
       },
       {
         "prop": "showChip",
@@ -201,9 +187,7 @@ export const pages = [
         "default": true,
         "desc": "玻璃芯片装饰",
         "key": "showChip",
-        "publicKey": "showChip",
-        "publicLabel": "质感方块",
-        "description": "玻璃芯片装饰"
+        "publicKey": "showChip"
       },
       {
         "prop": "focus",
@@ -211,8 +195,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -226,8 +209,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -271,7 +253,9 @@ export const pages = [
       "showSeam": true,
       "showChip": true,
       "focus": true,
-      "focusIndex": 0
+      "focusIndex": 0,
+      "fyLabel": "FY ANNUAL",
+      "indexLabel": "CONTENTS"
     }
   },
   {
@@ -292,8 +276,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "fieldCount",
-        "publicKey": "fieldCount",
-        "publicLabel": "档案字段数量"
+        "publicKey": "fieldCount"
       },
       {
         "prop": "showFrame",
@@ -302,9 +285,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showFrame",
-        "publicKey": "showFrame",
-        "publicLabel": "内框定位标",
-        "description": "装饰"
+        "publicKey": "showFrame"
       },
       {
         "prop": "showBarcode",
@@ -313,9 +294,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showBarcode",
-        "publicKey": "showBarcode",
-        "publicLabel": "条形码",
-        "description": "装饰"
+        "publicKey": "showBarcode"
       },
       {
         "prop": "showStamp",
@@ -324,9 +303,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showStamp",
-        "publicKey": "showStamp",
-        "publicLabel": "钢印章",
-        "description": "装饰"
+        "publicKey": "showStamp"
       },
       {
         "prop": "showChip",
@@ -335,9 +312,7 @@ export const pages = [
         "default": true,
         "desc": "玻璃芯片装饰",
         "key": "showChip",
-        "publicKey": "showChip",
-        "publicLabel": "质感方块",
-        "description": "玻璃芯片装饰"
+        "publicKey": "showChip"
       },
       {
         "prop": "focus",
@@ -345,8 +320,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -360,8 +334,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -427,8 +400,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "bandCount",
-        "publicKey": "bandCount",
-        "publicLabel": "层带数量"
+        "publicKey": "bandCount"
       },
       {
         "prop": "showLabels",
@@ -437,9 +409,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showLabels",
-        "publicKey": "showLabels",
-        "publicLabel": "篇章刻度",
-        "description": "装饰"
+        "publicKey": "showLabels"
       },
       {
         "prop": "showChip",
@@ -448,9 +418,7 @@ export const pages = [
         "default": true,
         "desc": "玻璃芯片装饰",
         "key": "showChip",
-        "publicKey": "showChip",
-        "publicLabel": "质感方块",
-        "description": "玻璃芯片装饰"
+        "publicKey": "showChip"
       },
       {
         "prop": "focus",
@@ -458,8 +426,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -473,8 +440,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -536,8 +502,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "key": "ringCount",
-        "publicKey": "ringCount",
-        "publicLabel": "同心环数量"
+        "publicKey": "ringCount"
       },
       {
         "prop": "showBlades",
@@ -546,9 +511,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showBlades",
-        "publicKey": "showBlades",
-        "publicLabel": "光圈刀叶",
-        "description": "装饰"
+        "publicKey": "showBlades"
       },
       {
         "prop": "showGlow",
@@ -557,9 +520,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showGlow",
-        "publicKey": "showGlow",
-        "publicLabel": "圆心辉光",
-        "description": "装饰"
+        "publicKey": "showGlow"
       },
       {
         "prop": "showChip",
@@ -568,9 +529,7 @@ export const pages = [
         "default": true,
         "desc": "玻璃芯片装饰",
         "key": "showChip",
-        "publicKey": "showChip",
-        "publicLabel": "质感方块",
-        "description": "玻璃芯片装饰"
+        "publicKey": "showChip"
       },
       {
         "prop": "focus",
@@ -578,8 +537,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       }
     ],
     "defaultProps": {
@@ -595,7 +553,8 @@ export const pages = [
       "showBlades": true,
       "showGlow": true,
       "showChip": true,
-      "focus": true
+      "focus": true,
+      "centerLabel": "ANNUAL · FY2024"
     }
   },
   {
@@ -616,8 +575,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "tickerCount",
-        "publicKey": "tickerCount",
-        "publicLabel": "Ticker 数量"
+        "publicKey": "tickerCount"
       },
       {
         "prop": "showGrid",
@@ -626,9 +584,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showGrid",
-        "publicKey": "showGrid",
-        "publicLabel": "终端网格",
-        "description": "装饰"
+        "publicKey": "showGrid"
       },
       {
         "prop": "showCaret",
@@ -637,9 +593,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showCaret",
-        "publicKey": "showCaret",
-        "publicLabel": "光标块",
-        "description": "装饰"
+        "publicKey": "showCaret"
       },
       {
         "prop": "showChip",
@@ -648,9 +602,7 @@ export const pages = [
         "default": true,
         "desc": "玻璃芯片装饰",
         "key": "showChip",
-        "publicKey": "showChip",
-        "publicLabel": "质感方块",
-        "description": "玻璃芯片装饰"
+        "publicKey": "showChip"
       },
       {
         "prop": "focus",
@@ -658,8 +610,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -673,8 +624,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -722,7 +672,10 @@ export const pages = [
       "showChip": true,
       "status": "AI CAPITAL LAB · 数据口径 ≥ 1 亿美元 · 2024 全年",
       "focus": true,
-      "focusIndex": 0
+      "focusIndex": 0,
+      "liveLabel": "LIVE",
+      "editionLabel": "FY · ANNUAL REPORT",
+      "footerLabel": "PAGE 00 · COVER"
     }
   },
   {
@@ -741,9 +694,7 @@ export const pages = [
         "default": true,
         "desc": "年号选择框高亮开关",
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus",
-        "description": "年号选择框高亮开关"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -756,9 +707,7 @@ export const pages = [
         "desc": "高亮第几条出处信息",
         "displayOffset": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号",
-        "description": "高亮第几条出处信息"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -785,7 +734,8 @@ export const pages = [
       ],
       "showOrnament": true,
       "focus": true,
-      "focusIndex": 0
+      "focusIndex": 0,
+      "description": "聚焦 2024 年美国 AI 产业单笔亿元以上的大额融资事件，以「横纵分析法」梳理市场全景、行业分布与产业链分层，为投资判断提供结构化参考。"
     }
   },
   {
@@ -807,9 +757,7 @@ export const pages = [
         "step": 1,
         "desc": "底部指标块数量",
         "key": "statCount",
-        "publicKey": "statCount",
-        "publicLabel": "数量",
-        "description": "底部指标块数量"
+        "publicKey": "statCount"
       },
       {
         "prop": "labelType",
@@ -831,8 +779,7 @@ export const pages = [
           }
         ],
         "key": "labelType",
-        "publicKey": "labelType",
-        "publicLabel": "标签类型"
+        "publicKey": "labelType"
       },
       {
         "prop": "focus",
@@ -840,8 +787,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -855,8 +801,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -918,6 +863,8 @@ export const pages = [
       "labelType": "number",
       "focus": true,
       "focusIndex": 0,
+      "barsSectionLabel": "赛道融资额占比",
+      "barsTotalLabel": "$970亿 · 100%",
       "statCount": 4
     }
   },
@@ -939,8 +886,7 @@ export const pages = [
         "max": 140,
         "step": 1,
         "key": "total",
-        "publicKey": "total",
-        "publicLabel": "总单元数"
+        "publicKey": "total"
       },
       {
         "prop": "active",
@@ -953,8 +899,7 @@ export const pages = [
         "maxFromKeyOffset": 0,
         "step": 1,
         "key": "active",
-        "publicKey": "active",
-        "publicLabel": "点亮数量"
+        "publicKey": "active"
       },
       {
         "prop": "columns",
@@ -965,8 +910,7 @@ export const pages = [
         "max": 16,
         "step": 1,
         "key": "columns",
-        "publicKey": "columns",
-        "publicLabel": "每行数量"
+        "publicKey": "columns"
       },
       {
         "prop": "dotShape",
@@ -988,8 +932,7 @@ export const pages = [
           }
         ],
         "key": "dotShape",
-        "publicKey": "dotShape",
-        "publicLabel": "颗粒形状"
+        "publicKey": "dotShape"
       },
       {
         "prop": "showLegend",
@@ -998,9 +941,7 @@ export const pages = [
         "default": true,
         "desc": "图例",
         "key": "showLegend",
-        "publicKey": "showLegend",
-        "publicLabel": "装饰文案",
-        "description": "图例"
+        "publicKey": "showLegend"
       }
     ],
     "defaultProps": {
@@ -1018,7 +959,10 @@ export const pages = [
       "legend": {
         "on": "大模型 / 基础设施",
         "off": "其他赛道"
-      }
+      },
+      "headEn": "Unit Count",
+      "headCn": "把九十七笔，摆成一片",
+      "pctSuffixLabel": "已点亮"
     }
   },
   {
@@ -1039,17 +983,15 @@ export const pages = [
         "max": 7,
         "step": 1,
         "key": "cardCount",
-        "publicKey": "cardCount",
-        "publicLabel": "卡片数量"
+        "publicKey": "cardCount"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -1071,8 +1013,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -1086,8 +1027,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -1162,18 +1102,15 @@ export const pages = [
         "step": 1,
         "desc": "背后叠层玻璃卡数量",
         "key": "stackCount",
-        "publicKey": "stackCount",
-        "publicLabel": "堆叠数量",
-        "description": "背后叠层玻璃卡数量"
+        "publicKey": "stackCount"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -1195,8 +1132,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -1208,8 +1144,7 @@ export const pages = [
         "step": 1,
         "displayOffset": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -1274,8 +1209,7 @@ export const pages = [
           }
         ],
         "key": "granularity",
-        "publicKey": "granularity",
-        "publicLabel": "数据粒度"
+        "publicKey": "granularity"
       },
       {
         "prop": "chartType",
@@ -1297,8 +1231,7 @@ export const pages = [
           }
         ],
         "key": "chartType",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型"
+        "publicKey": "chartType"
       },
       {
         "prop": "showCount",
@@ -1306,8 +1239,7 @@ export const pages = [
         "label": "副指标线",
         "default": true,
         "key": "showCount",
-        "publicKey": "showCount",
-        "publicLabel": "副指标线"
+        "publicKey": "showCount"
       },
       {
         "prop": "callout",
@@ -1315,17 +1247,15 @@ export const pages = [
         "label": "解读卡",
         "default": true,
         "key": "callout",
-        "publicKey": "callout",
-        "publicLabel": "解读卡"
+        "publicKey": "callout"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -1347,8 +1277,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -1365,8 +1294,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -1460,6 +1388,34 @@ export const pages = [
           "cnt": 6
         }
       ],
+      "headEn": "Market Panorama",
+      "headCn": "市场全景 · 纵向趋势",
+      "chartTitleQuarterly": "逐季度融资额走势",
+      "chartTitleMonthly": "逐月融资额走势",
+      "unitCaption": "单位 · 亿美元　全年 $970亿",
+      "amountSeriesLabel": "融资总额",
+      "countSeriesLabel": "事件笔数",
+      "asideTag": "趋势",
+      "insightPre": "Q2、Q3 为融资高峰，进入 Q4 理性回落但仍处高位；",
+      "insightBold": "平均单笔约 10 亿美元",
+      "insightPost": "，市场对头部标的高度追捧。",
+      "summaryStats": [
+        {
+          "v": "970",
+          "u": "亿美元",
+          "l": "全年合计"
+        },
+        {
+          "v": "318",
+          "u": "亿美元",
+          "l": "Q3 峰值"
+        },
+        {
+          "v": "97",
+          "u": "笔",
+          "l": "大额事件"
+        }
+      ],
       "focusIndex": 2
     }
   },
@@ -1482,9 +1438,7 @@ export const pages = [
         "step": 1,
         "desc": "序列数",
         "key": "seriesCount",
-        "publicKey": "seriesCount",
-        "publicLabel": "数量",
-        "description": "序列数"
+        "publicKey": "seriesCount"
       },
       {
         "prop": "offset",
@@ -1502,8 +1456,7 @@ export const pages = [
           }
         ],
         "key": "offset",
-        "publicKey": "offset",
-        "publicLabel": "图表类型"
+        "publicKey": "offset"
       },
       {
         "prop": "showLegend",
@@ -1511,8 +1464,7 @@ export const pages = [
         "label": "图例",
         "default": true,
         "key": "showLegend",
-        "publicKey": "showLegend",
-        "publicLabel": "图例"
+        "publicKey": "showLegend"
       },
       {
         "prop": "showAside",
@@ -1521,18 +1473,15 @@ export const pages = [
         "default": true,
         "desc": "读图条",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "读图条"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -1554,8 +1503,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -1569,8 +1517,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -1667,7 +1614,13 @@ export const pages = [
             92
           ]
         }
-      ]
+      ],
+      "asideTag": "读图",
+      "insightPre": "河道总宽 = 当季全赛道资金；八个季度自 ",
+      "insightMid1": " 增至 ",
+      "insightMid2": " 亿$。",
+      "insightMid3": " 带宽扩张约 ",
+      "insightPost": "，是结构右移的主引擎。"
     },
     "lengthBindings": [
       {
@@ -1695,8 +1648,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "tickCount",
@@ -1708,9 +1660,7 @@ export const pages = [
         "step": 1,
         "desc": "底部走马灯刻度数",
         "key": "tickCount",
-        "publicKey": "tickCount",
-        "publicLabel": "装饰文案",
-        "description": "底部走马灯刻度数"
+        "publicKey": "tickCount"
       },
       {
         "prop": "showLetterbox",
@@ -1718,17 +1668,15 @@ export const pages = [
         "label": "影院黑边",
         "default": false,
         "key": "showLetterbox",
-        "publicKey": "showLetterbox",
-        "publicLabel": "影院黑边"
+        "publicKey": "showLetterbox"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -1750,8 +1698,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -1765,11 +1712,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 1,
       "tickCount": 5,
       "showLetterbox": false,
@@ -1825,8 +1772,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "chipCount",
@@ -1838,9 +1784,7 @@ export const pages = [
         "step": 1,
         "desc": "浮动标注片",
         "key": "chipCount",
-        "publicKey": "chipCount",
-        "publicLabel": "数量",
-        "description": "浮动标注片"
+        "publicKey": "chipCount"
       },
       {
         "prop": "showSpotlight",
@@ -1849,18 +1793,15 @@ export const pages = [
         "default": true,
         "desc": "聚光 + 倒影",
         "key": "showSpotlight",
-        "publicKey": "showSpotlight",
-        "publicLabel": "装饰元素",
-        "description": "聚光 + 倒影"
+        "publicKey": "showSpotlight"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -1882,8 +1823,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -1897,11 +1837,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 1,
       "chipCount": 3,
       "showSpotlight": true,
@@ -1950,8 +1890,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "key": "segCount",
-        "publicKey": "segCount",
-        "publicLabel": "数量"
+        "publicKey": "segCount"
       },
       {
         "prop": "shape",
@@ -1969,8 +1908,7 @@ export const pages = [
           }
         ],
         "key": "shape",
-        "publicKey": "shape",
-        "publicLabel": "图形"
+        "publicKey": "shape"
       },
       {
         "prop": "showRounds",
@@ -1978,8 +1916,7 @@ export const pages = [
         "label": "结构面板",
         "default": true,
         "key": "showRounds",
-        "publicKey": "showRounds",
-        "publicLabel": "结构面板"
+        "publicKey": "showRounds"
       },
       {
         "prop": "roundCount",
@@ -1990,8 +1927,7 @@ export const pages = [
         "max": 12,
         "step": 1,
         "key": "roundCount",
-        "publicKey": "itemCount",
-        "publicLabel": "结构条目数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "callout",
@@ -1999,17 +1935,15 @@ export const pages = [
         "label": "解读卡",
         "default": true,
         "key": "callout",
-        "publicKey": "callout",
-        "publicLabel": "解读卡"
+        "publicKey": "callout"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -2031,8 +1965,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -2046,8 +1979,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -2157,7 +2089,14 @@ export const pages = [
           "n": 22,
           "avg": 18.6
         }
-      ]
+      ],
+      "headEn": "Cross-Section",
+      "headCn": "横向透视 · 赛道与轮次",
+      "totalLabel": "融资额合计 ($亿)",
+      "calloutLabel": "核心发现 · ",
+      "calloutText": "通用大模型占近半壁江山，押注「AGI 叙事」；基础设施与芯片合计超四分之一，上游热度不减。",
+      "roundsSectionLabel": "融资轮次结构",
+      "roundsCaption": "柱高 · 事件笔数　数字 · 平均单笔($亿)"
     }
   },
   {
@@ -2179,9 +2118,7 @@ export const pages = [
         "step": 1,
         "desc": "板块数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "板块数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showRibbon",
@@ -2189,8 +2126,7 @@ export const pages = [
         "label": "联投环带",
         "default": true,
         "key": "showRibbon",
-        "publicKey": "showRibbon",
-        "publicLabel": "联投环带"
+        "publicKey": "showRibbon"
       },
       {
         "prop": "showValue",
@@ -2198,8 +2134,7 @@ export const pages = [
         "label": "强度数值",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValueLabels",
-        "publicLabel": "强度数值"
+        "publicKey": "showValueLabels"
       },
       {
         "prop": "showAside",
@@ -2208,18 +2143,15 @@ export const pages = [
         "default": true,
         "desc": "圆心读数",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "圆心读数"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -2241,8 +2173,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -2256,8 +2187,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -2372,9 +2302,7 @@ export const pages = [
         "step": 1,
         "desc": "大类数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "大类数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showOuter",
@@ -2382,8 +2310,7 @@ export const pages = [
         "label": "外环细分",
         "default": true,
         "key": "showOuter",
-        "publicKey": "showOuter",
-        "publicLabel": "外环细分"
+        "publicKey": "showOuter"
       },
       {
         "prop": "showLabels",
@@ -2391,8 +2318,7 @@ export const pages = [
         "label": "弧上标注",
         "default": true,
         "key": "showLabels",
-        "publicKey": "showLabels",
-        "publicLabel": "弧上标注"
+        "publicKey": "showLabels"
       },
       {
         "prop": "showAside",
@@ -2401,18 +2327,15 @@ export const pages = [
         "default": true,
         "desc": "圆心读数",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "圆心读数"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -2434,8 +2357,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -2449,8 +2371,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -2583,8 +2504,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showAside",
@@ -2592,8 +2512,7 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "showConclusion",
@@ -2601,17 +2520,15 @@ export const pages = [
         "label": "推论块",
         "default": true,
         "key": "showConclusion",
-        "publicKey": "showConclusion",
-        "publicLabel": "推论块"
+        "publicKey": "showConclusion"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -2633,8 +2550,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -2648,8 +2564,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -2714,8 +2629,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "分段数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showPct",
@@ -2723,8 +2637,7 @@ export const pages = [
         "label": "段内占比",
         "default": true,
         "key": "showPct",
-        "publicKey": "showPct",
-        "publicLabel": "段内占比"
+        "publicKey": "showPct"
       },
       {
         "prop": "showScale",
@@ -2733,18 +2646,15 @@ export const pages = [
         "default": true,
         "desc": "刻度基线",
         "key": "showScale",
-        "publicKey": "showScale",
-        "publicLabel": "装饰文案",
-        "description": "刻度基线"
+        "publicKey": "showScale"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -2766,8 +2676,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -2781,8 +2690,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -2854,12 +2762,8 @@ export const pages = [
         "min": 1,
         "max": 3,
         "step": 1,
-        "countArrays": [
-          "tiers"
-        ],
         "key": "layers",
-        "publicKey": "layers",
-        "publicLabel": "层级数量"
+        "publicKey": "layers"
       },
       {
         "prop": "perLayer",
@@ -2867,14 +2771,10 @@ export const pages = [
         "label": "每层数量",
         "default": 4,
         "min": 1,
-        "max": 4,
+        "max": 5,
         "step": 1,
-        "countArrays": [
-          "tiers[].companies"
-        ],
         "key": "perLayer",
-        "publicKey": "perLayer",
-        "publicLabel": "每层数量"
+        "publicKey": "perLayer"
       },
       {
         "prop": "showGeo",
@@ -2882,8 +2782,7 @@ export const pages = [
         "label": "分布面板",
         "default": true,
         "key": "showGeo",
-        "publicKey": "showGeo",
-        "publicLabel": "分布面板"
+        "publicKey": "showGeo"
       },
       {
         "prop": "callout",
@@ -2891,17 +2790,15 @@ export const pages = [
         "label": "解读卡",
         "default": true,
         "key": "callout",
-        "publicKey": "callout",
-        "publicLabel": "解读卡"
+        "publicKey": "callout"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -2923,8 +2820,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -2938,8 +2834,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -3021,7 +2916,13 @@ export const pages = [
           "amt": 60,
           "pct": 6.2
         }
-      ]
+      ],
+      "headEn": "Value Chain",
+      "headCn": "产业链分层透视",
+      "geoSectionLabel": "地区分布",
+      "geoUnitLabel": "$亿 · 占比",
+      "calloutLabel": "地理护城河 · ",
+      "calloutText": "湾区独占六成以上，人才、资本、算力虹吸效应强化，短期难以撼动。"
     }
   },
   {
@@ -3042,8 +2943,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "key": "caseCount",
-        "publicKey": "caseCount",
-        "publicLabel": "数量"
+        "publicKey": "caseCount"
       },
       {
         "prop": "imgCount",
@@ -3054,8 +2954,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "quote",
@@ -3063,17 +2962,15 @@ export const pages = [
         "label": "引用",
         "default": true,
         "key": "quote",
-        "publicKey": "quote",
-        "publicLabel": "引用"
+        "publicKey": "quote"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -3095,8 +2992,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -3110,11 +3006,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "caseCount": 3,
       "imgCount": 3,
       "quote": true,
@@ -3126,9 +3022,7 @@ export const pages = [
           "cn": "Anthropic",
           "en": "从追赶到反超",
           "val": "9650",
-          "valueLabel": "投后估值 · 亿美元",
           "fund": "650+",
-          "fundLabel": "累计融资",
           "meta": "三轮 · 5/8/11月",
           "tags": [
             "Constitutional AI",
@@ -3143,9 +3037,7 @@ export const pages = [
           "cn": "xAI",
           "en": "马斯克的第三次创业",
           "val": "500",
-          "valueLabel": "估值规模 · 亿美元",
           "fund": "50",
-          "fundLabel": "本轮融资",
           "meta": "18 个月跻身头部",
           "tags": [
             "实时数据",
@@ -3160,9 +3052,7 @@ export const pages = [
           "cn": "CoreWeave",
           "en": "卖铲子的人也赚翻了",
           "val": "190",
-          "valueLabel": "账面估值 · 亿美元",
           "fund": "110",
-          "fundLabel": "云算力融资",
           "meta": "加密挖矿转型算力云",
           "tags": [
             "卖铲子",
@@ -3173,7 +3063,12 @@ export const pages = [
           "quote": "淘金热中卖铲子——提前锁定算力的基础设施商成为稀缺标的。",
           "who": "CoreWeave · 算力云"
         }
-      ]
+      ],
+      "headEn": "Case Studies",
+      "headCn": "典型案例深度剖析",
+      "valuationUnitLabel": "亿美元 · 估值",
+      "fundingLabel": "累计融资",
+      "galleryLabel": "Visuals"
     }
   },
   {
@@ -3194,8 +3089,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "supportCount",
-        "publicKey": "supportCount",
-        "publicLabel": "支撑指标数量"
+        "publicKey": "supportCount"
       },
       {
         "prop": "splitDir",
@@ -3213,8 +3107,7 @@ export const pages = [
           }
         ],
         "key": "splitDir",
-        "publicKey": "splitDir",
-        "publicLabel": "斜切方向"
+        "publicKey": "splitDir"
       },
       {
         "prop": "showGhost",
@@ -3223,17 +3116,15 @@ export const pages = [
         "default": true,
         "desc": "幽灵大字",
         "key": "showGhost",
-        "publicKey": "showGhost",
-        "publicLabel": "装饰文案",
-        "description": "幽灵大字"
+        "publicKey": "showGhost"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -3255,8 +3146,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -3270,8 +3160,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -3323,8 +3212,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "showFlow",
@@ -3333,9 +3221,7 @@ export const pages = [
         "default": true,
         "desc": "单排流向箭头",
         "key": "showFlow",
-        "publicKey": "showFlow",
-        "publicLabel": "装饰文案",
-        "description": "单排流向箭头"
+        "publicKey": "showFlow"
       },
       {
         "prop": "showDesc",
@@ -3343,17 +3229,15 @@ export const pages = [
         "label": "镜头说明",
         "default": true,
         "key": "showDesc",
-        "publicKey": "showDesc",
-        "publicLabel": "镜头说明"
+        "publicKey": "showDesc"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -3375,8 +3259,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -3390,11 +3273,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 4,
       "showFlow": true,
       "showDesc": true,
@@ -3452,8 +3335,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "imgSide",
@@ -3463,20 +3345,15 @@ export const pages = [
         "options": [
           {
             "value": "左",
-            "label": "左",
-            "image": "",
-            "color": ""
+            "label": "左"
           },
           {
             "value": "右",
-            "label": "右",
-            "image": "",
-            "color": ""
+            "label": "右"
           }
         ],
         "key": "imgSide",
-        "publicKey": "imgSide",
-        "publicLabel": "图片位置"
+        "publicKey": "imgSide"
       },
       {
         "prop": "pointCount",
@@ -3488,9 +3365,7 @@ export const pages = [
         "step": 1,
         "desc": "图说条数",
         "key": "pointCount",
-        "publicKey": "pointCount",
-        "publicLabel": "数量",
-        "description": "图说条数"
+        "publicKey": "pointCount"
       },
       {
         "prop": "showCaption",
@@ -3499,18 +3374,15 @@ export const pages = [
         "default": true,
         "desc": "图底字幕条",
         "key": "showCaption",
-        "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
-        "description": "图底字幕条"
+        "publicKey": "showCaption"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -3532,8 +3404,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -3547,11 +3418,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 1,
       "imgSide": "左",
       "pointCount": 3,
@@ -3563,7 +3434,7 @@ export const pages = [
       "kicker": "IN FOCUS · 特写",
       "title": "Anthropic",
       "titleEN": "从追赶者到反超者",
-      "paragraph": "以安全路线切入，Anthropic 用对齐叙事把估值推上新台阶。",
+      "paragraph": "以「可解释、可控」的安全路线切入，三轮密集融资把估值推上新台阶 —— 在头部大模型的竞速里，叙事与对齐能力同样是稀缺资产。",
       "points": [
         {
           "label": "累计融资",
@@ -3606,8 +3477,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "scatter",
@@ -3615,8 +3485,7 @@ export const pages = [
         "label": "散落排布",
         "default": true,
         "key": "scatter",
-        "publicKey": "scatter",
-        "publicLabel": "散落排布"
+        "publicKey": "scatter"
       },
       {
         "prop": "showTape",
@@ -3625,18 +3494,15 @@ export const pages = [
         "default": true,
         "desc": "胶带装饰",
         "key": "showTape",
-        "publicKey": "showTape",
-        "publicLabel": "装饰文案",
-        "description": "胶带装饰"
+        "publicKey": "showTape"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -3658,8 +3524,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -3673,11 +3538,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 4,
       "scatter": true,
       "showTape": true,
@@ -3688,7 +3553,6 @@ export const pages = [
       "kicker": "FIELD NOTES · 影像速写",
       "title": "一年间的影像速写",
       "titleEN": "Snapshots · 2024",
-      "images": [],
       "shots": [
         {
           "caption": "路演现场 · 资本与团队的初次握手"
@@ -3729,8 +3593,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "variant",
@@ -3748,8 +3611,7 @@ export const pages = [
           }
         ],
         "key": "variant",
-        "publicKey": "variant",
-        "publicLabel": "布局方式"
+        "publicKey": "variant"
       },
       {
         "prop": "showAside",
@@ -3757,17 +3619,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -3789,14 +3649,13 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
         "type": "slider",
         "label": "焦点序号",
-        "default": 0,
+        "default": 1,
         "min": 0,
         "max": 3,
         "maxFromKey": "itemCount",
@@ -3804,8 +3663,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -3863,7 +3721,11 @@ export const pages = [
         "宏观收紧",
         "估值回调",
         "行业洗牌"
-      ]
+      ],
+      "headEn": "Risk Assessment",
+      "headCn": "风险研判 · 投资前哨",
+      "soloTagLabel": "核心风险 · TOP RISK",
+      "chainLabel": "风险传导链"
     }
   },
   {
@@ -3885,9 +3747,7 @@ export const pages = [
         "step": 1,
         "desc": "每组条目数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "每组条目数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showAside",
@@ -3895,17 +3755,15 @@ export const pages = [
         "label": "时间轴",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "时间轴"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "symbol",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -3927,8 +3785,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -3946,8 +3803,7 @@ export const pages = [
           }
         ],
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点分组"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -3960,6 +3816,7 @@ export const pages = [
         {
           "title": "看好方向",
           "en": "Bullish",
+          "tone": "positive",
           "sign": "✓",
           "items": [
             {
@@ -3979,6 +3836,7 @@ export const pages = [
         {
           "title": "谨慎对待",
           "en": "Caution",
+          "tone": "caution",
           "sign": "!",
           "items": [
             {
@@ -4009,7 +3867,11 @@ export const pages = [
           "time": "2027 年后",
           "text": "若 AGI 突破未兑现，行业进入洗牌期，可抄底被低估的技术资产"
         }
-      ]
+      ],
+      "headEn": "Investment Outlook",
+      "headCn": "投资展望 · 策略取舍",
+      "timelineLabelEN": "Staged Strategy",
+      "timelineLabelCN": "阶段性策略 · 时间轴"
     }
   },
   {
@@ -4030,8 +3892,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showAside",
@@ -4039,17 +3900,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -4071,8 +3930,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -4086,8 +3944,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -4119,7 +3976,9 @@ export const pages = [
       "summary": {
         "tag": "一句话总结",
         "text": "AI 融资盛宴仍在继续，但音乐的节奏正在变化——资本的下一阶段将从「赌叙事」转向「看兑现」，能把技术转化为可持续收入的公司，才能在退潮后留在牌桌上。"
-      }
+      },
+      "headEn": "Conclusion",
+      "headCn": "核心结论 · 横纵结构"
     }
   },
   {
@@ -4141,9 +4000,7 @@ export const pages = [
         "step": 1,
         "desc": "主题索引条目数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "主题索引条目数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "align",
@@ -4161,8 +4018,7 @@ export const pages = [
           }
         ],
         "key": "align",
-        "publicKey": "align",
-        "publicLabel": "对齐"
+        "publicKey": "align"
       },
       {
         "prop": "showIndex",
@@ -4171,18 +4027,15 @@ export const pages = [
         "default": true,
         "desc": "底部主题索引",
         "key": "showIndex",
-        "publicKey": "showIndex",
-        "publicLabel": "装饰文案",
-        "description": "底部主题索引"
+        "publicKey": "showIndex"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -4204,8 +4057,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -4219,8 +4071,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -4280,8 +4131,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "align",
@@ -4299,8 +4149,7 @@ export const pages = [
           }
         ],
         "key": "align",
-        "publicKey": "align",
-        "publicLabel": "对齐"
+        "publicKey": "align"
       },
       {
         "prop": "scale",
@@ -4311,8 +4160,7 @@ export const pages = [
         "max": 72,
         "step": 2,
         "key": "scale",
-        "publicKey": "scale",
-        "publicLabel": "主题词字号"
+        "publicKey": "scale"
       },
       {
         "prop": "showMark",
@@ -4320,8 +4168,7 @@ export const pages = [
         "label": "幽灵引号",
         "default": true,
         "key": "showMark",
-        "publicKey": "showMark",
-        "publicLabel": "幽灵引号"
+        "publicKey": "showMark"
       },
       {
         "prop": "showRule",
@@ -4330,9 +4177,7 @@ export const pages = [
         "default": true,
         "desc": "上下花线",
         "key": "showRule",
-        "publicKey": "showRule",
-        "publicLabel": "装饰文案",
-        "description": "上下花线"
+        "publicKey": "showRule"
       },
       {
         "prop": "focus",
@@ -4340,8 +4185,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       }
     ],
     "defaultProps": {
@@ -4386,8 +4230,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "side",
@@ -4405,8 +4248,7 @@ export const pages = [
           }
         ],
         "key": "side",
-        "publicKey": "side",
-        "publicLabel": "收敛方向"
+        "publicKey": "side"
       },
       {
         "prop": "showBrace",
@@ -4415,18 +4257,15 @@ export const pages = [
         "default": true,
         "desc": "中缝花括号",
         "key": "showBrace",
-        "publicKey": "showBrace",
-        "publicLabel": "装饰文案",
-        "description": "中缝花括号"
+        "publicKey": "showBrace"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -4448,8 +4287,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -4463,8 +4301,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -4528,9 +4365,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -4558,9 +4393,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "prop": "imgCount",
@@ -4572,32 +4405,25 @@ export const pages = [
         "step": 1,
         "desc": "1=纯满幅；>1 加侧栏小图",
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量",
-        "description": "1=纯满幅；>1 加侧栏小图"
+        "publicKey": "imgCount"
       },
       {
         "prop": "textPos",
         "type": "radio",
         "label": "文字位置",
-        "default": "left",
+        "default": "左",
         "options": [
           {
-            "value": "left",
-            "label": "左",
-            "image": "",
-            "color": ""
+            "value": "左",
+            "label": "左"
           },
           {
-            "value": "right",
-            "label": "右",
-            "image": "",
-            "color": ""
+            "value": "右",
+            "label": "右"
           }
         ],
         "key": "textPos",
-        "publicKey": "textPos",
-        "publicLabel": "文字位置"
+        "publicKey": "textPos"
       },
       {
         "prop": "tagCount",
@@ -4608,8 +4434,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "tagCount",
-        "publicKey": "tagCount",
-        "publicLabel": "标签数量"
+        "publicKey": "tagCount"
       },
       {
         "prop": "showMasthead",
@@ -4618,18 +4443,15 @@ export const pages = [
         "default": true,
         "desc": "顶部刊头条",
         "key": "showMasthead",
-        "publicKey": "showMasthead",
-        "publicLabel": "装饰文案",
-        "description": "顶部刊头条"
+        "publicKey": "showMasthead"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -4651,15 +4473,15 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 3,
       "backgroundMode": "unicorn",
       "unicornScene": "tech",
-      "textPos": "left",
+      "textPos": "左",
       "showMasthead": true,
       "tagCount": 3,
       "focus": true,
@@ -4699,8 +4521,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "chartType",
@@ -4722,8 +4543,7 @@ export const pages = [
           }
         ],
         "key": "chartType",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型"
+        "publicKey": "chartType"
       },
       {
         "prop": "metric",
@@ -4745,8 +4565,7 @@ export const pages = [
           }
         ],
         "key": "metric",
-        "publicKey": "metric",
-        "publicLabel": "展示指标"
+        "publicKey": "metric"
       },
       {
         "prop": "showAside",
@@ -4754,17 +4573,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -4786,8 +4603,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -4801,8 +4617,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -4865,6 +4680,32 @@ export const pages = [
           "primary": 22,
           "secondary": 18.6
         }
+      ],
+      "headEn": "Round Structure",
+      "headCn": "轮次结构 · 资本梯度",
+      "totalCaption": " ／ 共 97 笔",
+      "asideTag": "结构",
+      "insightPre": "轮次越靠后、单笔越大：",
+      "insightBold1": "D 轮及以后与未披露轮次",
+      "insightMid": "贡献了绝大部分资本， 而早期笔数虽多、金额有限 —— 资金高度向",
+      "insightBold2": "头部成熟标的",
+      "insightPost": "集中。",
+      "summaryStats": [
+        {
+          "v": "97",
+          "u": "笔",
+          "l": "大额事件总数"
+        },
+        {
+          "v": "10.0",
+          "u": "亿美元",
+          "l": "平均单笔"
+        },
+        {
+          "v": "18.6",
+          "u": "亿美元",
+          "l": "未披露轮均值"
+        }
       ]
     }
   },
@@ -4886,8 +4727,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "条目数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "sort",
@@ -4909,8 +4749,7 @@ export const pages = [
           }
         ],
         "key": "sort",
-        "publicKey": "sort",
-        "publicLabel": "排序方式"
+        "publicKey": "sort"
       },
       {
         "prop": "showValue",
@@ -4918,8 +4757,7 @@ export const pages = [
         "label": "数值显示",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值显示"
+        "publicKey": "showValueLabels"
       },
       {
         "prop": "showAside",
@@ -4927,17 +4765,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -4959,8 +4795,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -4974,8 +4809,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -4991,14 +4825,14 @@ export const pages = [
       "items": [
         {
           "name": "OpenAI",
-          "en": "Frontier Model",
+          "en": "Foundation Model",
           "value": 118,
           "meta": "未披露轮",
           "tag": "大模型"
         },
         {
           "name": "xAI",
-          "en": "Real-time Model",
+          "en": "Foundation Model",
           "value": 110,
           "meta": "B 轮",
           "tag": "大模型"
@@ -5012,7 +4846,7 @@ export const pages = [
         },
         {
           "name": "Anthropic",
-          "en": "Safety Model",
+          "en": "Foundation Model",
           "value": 95,
           "meta": "D 轮+",
           "tag": "大模型"
@@ -5045,7 +4879,12 @@ export const pages = [
           "meta": "C 轮",
           "tag": "垂直应用"
         }
-      ]
+      ],
+      "headEn": "Capital Leaderboard",
+      "headCn": "资本排行榜 · 头部玩家",
+      "concentrationLabel": "头部集中度",
+      "concentrationCaption": "资本流向榜单前三",
+      "insightText": "融资额呈现极端「马太效应」—— 少数大模型与数据平台公司虹吸了绝大多数资金，长尾标的获取资本难度显著上升。"
     }
   },
   {
@@ -5067,9 +4906,7 @@ export const pages = [
         "step": 1,
         "desc": "分类数",
         "key": "itemCount",
-        "publicKey": "categoryCount",
-        "publicLabel": "数量",
-        "description": "分类数"
+        "publicKey": "categoryCount"
       },
       {
         "prop": "periodCount",
@@ -5081,9 +4918,7 @@ export const pages = [
         "step": 1,
         "desc": "时期数",
         "key": "periodCount",
-        "publicKey": "periodCount",
-        "publicLabel": "列数量",
-        "description": "时期数"
+        "publicKey": "periodCount"
       },
       {
         "prop": "showBadge",
@@ -5091,8 +4926,7 @@ export const pages = [
         "label": "名次徽标",
         "default": true,
         "key": "showBadge",
-        "publicKey": "showBadge",
-        "publicLabel": "名次徽标"
+        "publicKey": "showBadge"
       },
       {
         "prop": "showAside",
@@ -5101,18 +4935,15 @@ export const pages = [
         "default": true,
         "desc": "升降解读",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "升降解读"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -5134,8 +4965,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -5149,8 +4979,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -5284,8 +5113,7 @@ export const pages = [
         "max": 7,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "行数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "sort",
@@ -5307,8 +5135,7 @@ export const pages = [
           }
         ],
         "key": "sort",
-        "publicKey": "sort",
-        "publicLabel": "排序"
+        "publicKey": "sort"
       },
       {
         "prop": "showValue",
@@ -5316,8 +5143,7 @@ export const pages = [
         "label": "条末读数",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValue",
-        "publicLabel": "条末读数"
+        "publicKey": "showValue"
       },
       {
         "prop": "showAside",
@@ -5326,18 +5152,15 @@ export const pages = [
         "default": true,
         "desc": "读图条",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "读图条"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -5359,8 +5182,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -5374,8 +5196,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -5439,7 +5260,13 @@ export const pages = [
           "left": 70,
           "right": 55
         }
-      ]
+      ],
+      "asideTag": "读图",
+      "insightPre": "左右条以中轴对望，行按合计降序使轮廓呈龙卷风收束。全赛道自 ",
+      "insightMid1": " 增至 ",
+      "insightMid2": " ",
+      "insightMid3": "（同比 ",
+      "insightPost": "），增量高度集中于顶部少数赛道。"
     }
   },
   {
@@ -5461,9 +5288,7 @@ export const pages = [
         "step": 1,
         "desc": "底部支撑指标数",
         "key": "supportCount",
-        "publicKey": "supportCount",
-        "publicLabel": "数量",
-        "description": "底部支撑指标数"
+        "publicKey": "supportCount"
       },
       {
         "prop": "accentNumber",
@@ -5472,9 +5297,7 @@ export const pages = [
         "default": false,
         "desc": "关则金属字",
         "key": "accentNumber",
-        "publicKey": "accentNumber",
-        "publicLabel": "强调主数字",
-        "description": "关则金属字"
+        "publicKey": "accentNumber"
       },
       {
         "prop": "showGhost",
@@ -5483,18 +5306,15 @@ export const pages = [
         "default": true,
         "desc": "背景巨号幽灵数字",
         "key": "showGhost",
-        "publicKey": "showGhost",
-        "publicLabel": "装饰文案",
-        "description": "背景巨号幽灵数字"
+        "publicKey": "showGhost"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -5516,8 +5336,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -5531,8 +5350,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -5585,8 +5403,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "showCaption",
@@ -5595,18 +5412,15 @@ export const pages = [
         "default": true,
         "desc": "叠印图说",
         "key": "showCaption",
-        "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
-        "description": "叠印图说"
+        "publicKey": "showCaption"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -5628,8 +5442,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -5643,11 +5456,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 5,
       "showCaption": true,
       "focus": true,
@@ -5704,8 +5517,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "rowCount",
-        "publicKey": "rowCount",
-        "publicLabel": "行数量"
+        "publicKey": "rowCount"
       },
       {
         "prop": "colCount",
@@ -5716,8 +5528,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "colCount",
-        "publicKey": "colCount",
-        "publicLabel": "列数量"
+        "publicKey": "colCount"
       },
       {
         "prop": "heat",
@@ -5725,8 +5536,7 @@ export const pages = [
         "label": "热力着色",
         "default": true,
         "key": "heat",
-        "publicKey": "heat",
-        "publicLabel": "热力着色"
+        "publicKey": "heat"
       },
       {
         "prop": "highlightCol",
@@ -5739,8 +5549,7 @@ export const pages = [
         "maxFromKeyOffset": -1,
         "step": 1,
         "key": "highlightCol",
-        "publicKey": "highlightCol",
-        "publicLabel": "高亮列 (-1 关闭)"
+        "publicKey": "highlightCol"
       },
       {
         "prop": "showAside",
@@ -5748,17 +5557,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -5780,8 +5587,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -5795,8 +5601,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -5841,7 +5646,7 @@ export const pages = [
       "rows": [
         {
           "name": "OpenAI",
-          "en": "Frontier",
+          "en": "Foundation",
           "value": 118,
           "valuation": 1570,
           "round": "未披露",
@@ -5852,7 +5657,7 @@ export const pages = [
         },
         {
           "name": "Anthropic",
-          "en": "Safety",
+          "en": "Foundation",
           "value": 95,
           "valuation": 600,
           "round": "D 轮+",
@@ -5863,7 +5668,7 @@ export const pages = [
         },
         {
           "name": "xAI",
-          "en": "Real-time",
+          "en": "Foundation",
           "value": 110,
           "valuation": 500,
           "round": "B 轮",
@@ -5905,7 +5710,15 @@ export const pages = [
           "geo": "帕洛阿尔托",
           "heat": 0.36
         }
-      ]
+      ],
+      "headEn": "Comparison Matrix",
+      "headCn": "估值对比矩阵 · 头部横评",
+      "nameColumnLabel": "公司 / Company",
+      "asideTag": "读表提示",
+      "heatLegendText": "色块越亮 = 融资额越高",
+      "insightPre": "估值与融资额并不完全同步 —— ",
+      "insightBold": "P/S 倍数",
+      "insightMid": "普遍处于历史高位， 多数头部公司的估值建立在「未来市值」而非当期收入之上。"
     }
   },
   {
@@ -5941,8 +5754,7 @@ export const pages = [
           }
         ],
         "key": "pivot",
-        "publicKey": "pivot",
-        "publicLabel": "中枢符"
+        "publicKey": "pivot"
       },
       {
         "prop": "showBar",
@@ -5950,8 +5762,7 @@ export const pages = [
         "label": "对比条",
         "default": true,
         "key": "showBar",
-        "publicKey": "showBar",
-        "publicLabel": "对比条"
+        "publicKey": "showBar"
       },
       {
         "prop": "showNote",
@@ -5960,9 +5771,7 @@ export const pages = [
         "default": true,
         "desc": "底部结论",
         "key": "showNote",
-        "publicKey": "showNote",
-        "publicLabel": "装饰文案",
-        "description": "底部结论"
+        "publicKey": "showNote"
       },
       {
         "prop": "focus",
@@ -5970,8 +5779,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -5983,8 +5791,7 @@ export const pages = [
         "step": 1,
         "displayOffset": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -6011,7 +5818,8 @@ export const pages = [
         "desc": "AI 吸纳的美国风投份额",
         "bar": 33,
         "color": null
-      }
+      },
+      "noteLabel": "对照解读"
     }
   },
   {
@@ -6032,8 +5840,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "wordCount",
-        "publicKey": "wordCount",
-        "publicLabel": "数量"
+        "publicKey": "wordCount"
       },
       {
         "prop": "align",
@@ -6051,8 +5858,7 @@ export const pages = [
           }
         ],
         "key": "align",
-        "publicKey": "align",
-        "publicLabel": "对齐"
+        "publicKey": "align"
       },
       {
         "prop": "showAxis",
@@ -6061,9 +5867,7 @@ export const pages = [
         "default": true,
         "desc": "左侧竖轴",
         "key": "showAxis",
-        "publicKey": "showAxis",
-        "publicLabel": "装饰文案",
-        "description": "左侧竖轴"
+        "publicKey": "showAxis"
       },
       {
         "prop": "showLead",
@@ -6071,8 +5875,7 @@ export const pages = [
         "label": "导语小标",
         "default": true,
         "key": "showLead",
-        "publicKey": "showLead",
-        "publicLabel": "导语小标"
+        "publicKey": "showLead"
       },
       {
         "prop": "focus",
@@ -6080,8 +5883,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -6095,8 +5897,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -6157,9 +5958,7 @@ export const pages = [
         "step": 1,
         "desc": "节点数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "节点数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "orientation",
@@ -6177,8 +5976,7 @@ export const pages = [
           }
         ],
         "key": "orientation",
-        "publicKey": "orientation",
-        "publicLabel": "方向"
+        "publicKey": "orientation"
       },
       {
         "prop": "imgCount",
@@ -6189,8 +5987,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "showAside",
@@ -6198,17 +5995,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -6230,8 +6025,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -6245,11 +6039,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "itemCount": 6,
       "orientation": "横向",
       "focus": true,
@@ -6315,7 +6109,15 @@ export const pages = [
           "text": "E 轮 2.6 亿美元，企业搜索估值破 46 亿",
           "tag": "垂直应用"
         }
-      ]
+      ],
+      "headEn": "Milestones · 2024",
+      "headCn": "年度大事记 · 资本节点",
+      "asideTag": "节奏解读",
+      "insightPre": "超大额事件高度集中在",
+      "insightBold1": "下半年",
+      "insightMid1": " —— 头部公司在年末密集关账，单笔金额节节走高， 将全年融资推向 ",
+      "insightBold2": "970 亿美元",
+      "insightPost": " 的历史峰值。"
     }
   },
   {
@@ -6337,9 +6139,7 @@ export const pages = [
         "step": 1,
         "desc": "节点数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "节点数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showSpine",
@@ -6348,9 +6148,7 @@ export const pages = [
         "default": true,
         "desc": "螺线轨迹",
         "key": "showSpine",
-        "publicKey": "showSpine",
-        "publicLabel": "装饰文案",
-        "description": "螺线轨迹"
+        "publicKey": "showSpine"
       },
       {
         "prop": "showValue",
@@ -6358,8 +6156,7 @@ export const pages = [
         "label": "节点说明",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValue",
-        "publicLabel": "节点说明"
+        "publicKey": "showValue"
       },
       {
         "prop": "showAside",
@@ -6367,17 +6164,15 @@ export const pages = [
         "label": "枢轴文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "枢轴文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -6399,8 +6194,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -6414,8 +6208,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -6505,8 +6298,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showZones",
@@ -6514,8 +6306,7 @@ export const pages = [
         "label": "区域底色",
         "default": true,
         "key": "showZones",
-        "publicKey": "showZones",
-        "publicLabel": "区域底色"
+        "publicKey": "showZones"
       },
       {
         "prop": "showAside",
@@ -6523,17 +6314,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -6555,8 +6344,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -6570,8 +6358,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -6655,7 +6442,30 @@ export const pages = [
           "size": 0.45,
           "tag": "垂直应用"
         }
-      ]
+      ],
+      "headEn": "Positioning Map",
+      "headCn": "定位矩阵 · 估值象限",
+      "legendLabel": "赛道图例 · Legend",
+      "legendCaptionPre": "气泡大小 ∝ ",
+      "legendCaptionBold": "融资规模",
+      "legendCaptionPost": "；横轴为商业化成熟度，纵轴为估值水平。",
+      "focusLabel": "FOCUS · 焦点标的",
+      "asideTag": "读图提示",
+      "insightPre": "「",
+      "insightBold": "双高龙头",
+      "insightPost": "」象限聚集了估值与成熟度双高的头部公司；而「叙事驱动」象限里高估值低收入的标的，正是泡沫风险的集中区。"
+    },
+    "numberBounds": {
+      "points[].x": {
+        "min": 0,
+        "max": 100,
+        "semantics": "coordinate"
+      },
+      "points[].y": {
+        "min": 0,
+        "max": 100,
+        "semantics": "coordinate"
+      }
     }
   },
   {
@@ -6677,9 +6487,7 @@ export const pages = [
         "step": 1,
         "desc": "气泡数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "气泡数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "sort",
@@ -6697,8 +6505,7 @@ export const pages = [
           }
         ],
         "key": "sort",
-        "publicKey": "sort",
-        "publicLabel": "排序"
+        "publicKey": "sort"
       },
       {
         "prop": "showValue",
@@ -6706,8 +6513,7 @@ export const pages = [
         "label": "泡内数值",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValueLabels",
-        "publicLabel": "泡内数值"
+        "publicKey": "showValueLabels"
       },
       {
         "prop": "showAside",
@@ -6716,9 +6522,7 @@ export const pages = [
         "default": true,
         "desc": "读图条",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "读图条"
+        "publicKey": "showAside"
       },
       {
         "prop": "focus",
@@ -6726,8 +6530,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": false,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -6741,8 +6544,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -6761,7 +6563,7 @@ export const pages = [
       "items": [
         {
           "label": "OpenAI",
-          "sub": "Frontier",
+          "sub": "Foundation",
           "value": 157,
           "tone": "acc"
         },
@@ -6773,13 +6575,13 @@ export const pages = [
         },
         {
           "label": "xAI",
-          "sub": "Real-time",
+          "sub": "Foundation",
           "value": 50,
           "tone": "violet"
         },
         {
           "label": "Anthropic",
-          "sub": "Safety",
+          "sub": "Foundation",
           "value": 40,
           "tone": "acc"
         },
@@ -6807,7 +6609,12 @@ export const pages = [
           "value": 10,
           "tone": "violet"
         }
-      ]
+      ],
+      "asideTag": "读图",
+      "insightPre": "圆面积正比单家融资额。",
+      "insightMid1": " 体量居中领先（",
+      "insightMid2": " ",
+      "insightPost": "）， 头部与长尾的半径差直观映射资本极度集中于少数巨头。"
     }
   },
   {
@@ -6829,9 +6636,7 @@ export const pages = [
         "step": 1,
         "desc": "漏斗层数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "漏斗层数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "orientation",
@@ -6849,8 +6654,7 @@ export const pages = [
           }
         ],
         "key": "orientation",
-        "publicKey": "orientation",
-        "publicLabel": "方向"
+        "publicKey": "orientation"
       },
       {
         "prop": "showRate",
@@ -6858,8 +6662,7 @@ export const pages = [
         "label": "转化率",
         "default": true,
         "key": "showRate",
-        "publicKey": "showRate",
-        "publicLabel": "转化率"
+        "publicKey": "showRate"
       },
       {
         "prop": "showAside",
@@ -6867,17 +6670,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -6899,8 +6700,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -6914,8 +6714,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -6958,7 +6757,12 @@ export const pages = [
           "value": 22,
           "note": "单笔 ≥1 亿美元成交"
         }
-      ]
+      ],
+      "headEn": "Investment Funnel",
+      "headCn": "资本漏斗 · 决策转化",
+      "asideTag": "漏斗洞察",
+      "overallRateLabel": "端到端入选率",
+      "insightText": "资本筛选高度严苛 —— 上千候选中仅极少数能拿到大额融资，越靠后的环节转化越陡峭，竞争集中在头部。"
     }
   },
   {
@@ -6979,8 +6783,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "catCount",
-        "publicKey": "catCount",
-        "publicLabel": "列数量"
+        "publicKey": "catCount"
       },
       {
         "prop": "segCount",
@@ -6991,8 +6794,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "key": "segCount",
-        "publicKey": "segCount",
-        "publicLabel": "分段数量"
+        "publicKey": "segCount"
       },
       {
         "prop": "showSegPct",
@@ -7000,8 +6802,7 @@ export const pages = [
         "label": "段内占比",
         "default": true,
         "key": "showSegPct",
-        "publicKey": "showSegPct",
-        "publicLabel": "段内占比"
+        "publicKey": "showSegPct"
       },
       {
         "prop": "showAside",
@@ -7010,18 +6811,15 @@ export const pages = [
         "default": true,
         "desc": "读图条",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "读图条"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -7043,8 +6841,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -7058,8 +6855,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -7144,7 +6940,14 @@ export const pages = [
             10
           ]
         }
-      ]
+      ],
+      "chartTitle": "各赛道资金规模 × 轮次构成",
+      "chartCaptionPre": "列宽∝规模 · 段高∝占比 · ",
+      "asideTag": "读图",
+      "insightMid1": "以 ",
+      "insightMid2": " 的资金占比领跑全盘（列最宽）， 其内部以 ",
+      "insightMid3": " 为主、占该赛道 ",
+      "insightPost": "；宽 × 高同读，规模与结构一目了然。"
     },
     "lengthBindings": [
       {
@@ -7173,8 +6976,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showTarget",
@@ -7183,9 +6985,7 @@ export const pages = [
         "default": true,
         "desc": "目标刻度线",
         "key": "showTarget",
-        "publicKey": "showTarget",
-        "publicLabel": "装饰元素",
-        "description": "目标刻度线"
+        "publicKey": "showTarget"
       },
       {
         "prop": "showValue",
@@ -7193,17 +6993,15 @@ export const pages = [
         "label": "末端读数",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValue",
-        "publicLabel": "末端读数"
+        "publicKey": "showValue"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -7225,8 +7023,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -7240,8 +7037,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -7320,8 +7116,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "columns",
@@ -7332,8 +7127,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "key": "columns",
-        "publicKey": "columns",
-        "publicLabel": "每行数量"
+        "publicKey": "columns"
       },
       {
         "prop": "miniChart",
@@ -7359,8 +7153,7 @@ export const pages = [
           }
         ],
         "key": "miniChart",
-        "publicKey": "miniChart",
-        "publicLabel": "迷你图"
+        "publicKey": "miniChart"
       },
       {
         "prop": "showAside",
@@ -7368,17 +7161,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -7400,8 +7191,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -7415,8 +7205,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -7514,7 +7303,13 @@ export const pages = [
           ],
           "delta": "OpenAI 年末"
         }
-      ]
+      ],
+      "headEn": "Key Metrics",
+      "headCn": "关键指标 · 全景速览",
+      "asideTag": "口径说明",
+      "methodologyPre": "统计口径：2024 全年公开披露的单笔 ",
+      "methodologyBold": "≥1 亿美元",
+      "methodologyPost": " 融资事件；金额单位为亿美元，占比基于赛道资金分布。数据为调研整理，仅供研究参考。"
     }
   },
   {
@@ -7535,8 +7330,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "rowCount",
-        "publicKey": "rowCount",
-        "publicLabel": "行数量"
+        "publicKey": "rowCount"
       },
       {
         "prop": "colCount",
@@ -7547,8 +7341,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "colCount",
-        "publicKey": "colCount",
-        "publicLabel": "列数量"
+        "publicKey": "colCount"
       },
       {
         "prop": "highlightCol",
@@ -7561,8 +7354,7 @@ export const pages = [
         "maxFromKeyOffset": -1,
         "step": 1,
         "key": "highlightCol",
-        "publicKey": "highlightCol",
-        "publicLabel": "高亮列 (-1 关闭)"
+        "publicKey": "highlightCol"
       },
       {
         "prop": "heat",
@@ -7570,8 +7362,7 @@ export const pages = [
         "label": "热力着色",
         "default": true,
         "key": "heat",
-        "publicKey": "heat",
-        "publicLabel": "热力着色"
+        "publicKey": "heat"
       },
       {
         "prop": "showTotals",
@@ -7579,8 +7370,7 @@ export const pages = [
         "label": "边际合计",
         "default": true,
         "key": "showTotals",
-        "publicKey": "showTotals",
-        "publicLabel": "边际合计"
+        "publicKey": "showTotals"
       },
       {
         "prop": "showAside",
@@ -7589,18 +7379,15 @@ export const pages = [
         "default": true,
         "desc": "读表提示",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "读表提示"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -7622,8 +7409,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -7637,8 +7423,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -7726,7 +7511,13 @@ export const pages = [
             2
           ]
         }
-      ]
+      ],
+      "rowTotalLabel": "行合计",
+      "colTotalLabel": "列合计",
+      "grandTotalLabel": "总计 ",
+      "asideTag": "读表",
+      "heatLegendLow": "少",
+      "heatLegendHigh": "多"
     },
     "lengthBindings": [
       {
@@ -7755,8 +7546,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "imgCount",
@@ -7767,8 +7557,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "showSource",
@@ -7776,8 +7565,7 @@ export const pages = [
         "label": "署名",
         "default": true,
         "key": "showSource",
-        "publicKey": "showSource",
-        "publicLabel": "署名"
+        "publicKey": "showSource"
       },
       {
         "prop": "showAside",
@@ -7785,17 +7573,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "symbol",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -7817,8 +7603,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -7832,11 +7617,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "itemCount": 4,
       "focus": true,
       "focusIndex": 0,
@@ -7847,7 +7632,7 @@ export const pages = [
       "badge": "09",
       "quotes": [
         {
-          "text": "2024 是 AI 的资本大年，资金密集涌向少数 AGI 叙事团队，赢家通吃成常态。",
+          "text": "2024 是 AI 的「资本大年」—— 资金以前所未有的密度涌向少数能讲好 AGI 故事的团队，赢家通吃成为常态。",
           "name": "某顶级 VC",
           "role": "成长期基金 合伙人",
           "tone": "看好"
@@ -7870,7 +7655,10 @@ export const pages = [
           "role": "基础设施 投资人",
           "tone": "中性"
         }
-      ]
+      ],
+      "headEn": "Voices · Perspectives",
+      "headCn": "观点引述 · 资本众声",
+      "distributionLabel": "立场分布"
     }
   },
   {
@@ -7898,8 +7686,7 @@ export const pages = [
           }
         ],
         "key": "align",
-        "publicKey": "align",
-        "publicLabel": "对齐"
+        "publicKey": "align"
       },
       {
         "prop": "scale",
@@ -7910,8 +7697,7 @@ export const pages = [
         "max": 80,
         "step": 2,
         "key": "scale",
-        "publicKey": "scale",
-        "publicLabel": "字号"
+        "publicKey": "scale"
       },
       {
         "prop": "showMark",
@@ -7919,8 +7705,7 @@ export const pages = [
         "label": "引号装饰",
         "default": true,
         "key": "showMark",
-        "publicKey": "showMark",
-        "publicLabel": "引号装饰"
+        "publicKey": "showMark"
       },
       {
         "prop": "showRule",
@@ -7929,9 +7714,7 @@ export const pages = [
         "default": true,
         "desc": "上下贯通细线",
         "key": "showRule",
-        "publicKey": "showRule",
-        "publicLabel": "装饰文案",
-        "description": "上下贯通细线"
+        "publicKey": "showRule"
       },
       {
         "prop": "focus",
@@ -7939,8 +7722,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       }
     ],
     "defaultProps": {
@@ -7992,8 +7774,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "noteCount",
-        "publicKey": "noteCount",
-        "publicLabel": "数量"
+        "publicKey": "noteCount"
       },
       {
         "prop": "showConnector",
@@ -8001,8 +7782,7 @@ export const pages = [
         "label": "装饰元素",
         "default": true,
         "key": "showConnector",
-        "publicKey": "showConnector",
-        "publicLabel": "装饰元素"
+        "publicKey": "showConnector"
       },
       {
         "prop": "showAside",
@@ -8010,17 +7790,15 @@ export const pages = [
         "label": "题注条",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "题注条"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -8042,8 +7820,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -8057,8 +7834,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -8142,9 +7918,7 @@ export const pages = [
         "step": 1,
         "desc": "来源数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "来源数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showAside",
@@ -8152,17 +7926,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -8184,8 +7956,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -8199,8 +7970,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -8327,7 +8097,17 @@ export const pages = [
           "to": "数据与安全",
           "value": 12
         }
-      ]
+      ],
+      "headEn": "Capital Flow",
+      "headCn": "资金流向 · 来源到赛道",
+      "sourceColLabel": "资金来源 · SOURCE",
+      "sectorColLabel": "SECTOR · 流入赛道",
+      "asideTag": "流向洞察",
+      "injectedByPrefix": "由「",
+      "injectedBySuffix": "」注入",
+      "insightPre": "资金主干仍由传统风险资本主导，但企业战投与主权基金的入场显著抬高了单笔规模 —— 钱越来越集中地流向",
+      "insightBold": "基础大模型与算力基础设施",
+      "insightPost": "两条主干。"
     }
   },
   {
@@ -8349,9 +8129,7 @@ export const pages = [
         "step": 1,
         "desc": "节点数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "节点数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showArc",
@@ -8359,8 +8137,7 @@ export const pages = [
         "label": "连弧",
         "default": true,
         "key": "showArc",
-        "publicKey": "showArc",
-        "publicLabel": "连弧"
+        "publicKey": "showArc"
       },
       {
         "prop": "showValue",
@@ -8368,8 +8145,7 @@ export const pages = [
         "label": "体量数值",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValueLabels",
-        "publicLabel": "体量数值"
+        "publicKey": "showValueLabels"
       },
       {
         "prop": "showAside",
@@ -8378,18 +8154,15 @@ export const pages = [
         "default": true,
         "desc": "关联解读",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "关联解读"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -8411,8 +8184,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -8426,8 +8198,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -8537,7 +8308,14 @@ export const pages = [
           "j": 7,
           "v": 4
         }
-      ]
+      ],
+      "legendCaption1": "● 点径 ∝ 机构出资体量",
+      "legendCaption2": "⌒ 弧宽 ∝ 共投强度",
+      "asideTag": "关联",
+      "insightMid1": " 共与 ",
+      "insightMid2": " 家机构联合出资， 其中与 ",
+      "insightMid3": " 的共投跨度最强（强度 ",
+      "insightPost": "）； 头部资本围绕大模型与算力企业形成密集弧网，跨度越长代表跨赛道协同越深。"
     }
   },
   {
@@ -8559,9 +8337,7 @@ export const pages = [
         "step": 1,
         "desc": "节点数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "节点数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showCrossLinks",
@@ -8569,8 +8345,7 @@ export const pages = [
         "label": "交叉关联",
         "default": true,
         "key": "showCrossLinks",
-        "publicKey": "showCrossLinks",
-        "publicLabel": "交叉关联"
+        "publicKey": "showCrossLinks"
       },
       {
         "prop": "showValue",
@@ -8578,8 +8353,7 @@ export const pages = [
         "label": "节点数值",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValueLabels",
-        "publicLabel": "节点数值"
+        "publicKey": "showValueLabels"
       },
       {
         "prop": "showAside",
@@ -8588,18 +8362,15 @@ export const pages = [
         "default": true,
         "desc": "读图条",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "读图条"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -8621,8 +8392,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -8636,8 +8406,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -8732,7 +8501,10 @@ export const pages = [
           0,
           5
         ]
-      ]
+      ],
+      "legendCaption": "节点面积∝赛道资金、辐条粗细∝与资本中枢的关联强度，虚线为赛道间协同。",
+      "asideTag": "读图",
+      "insightPost": " 为当前焦点节点，连线最密。"
     }
   },
   {
@@ -8754,26 +8526,7 @@ export const pages = [
         "step": 1,
         "desc": "梯队层数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "梯队层数"
-      },
-      {
-        "prop": "repCount",
-        "type": "slider",
-        "label": "代表数量",
-        "default": 2,
-        "min": 1,
-        "max": 2,
-        "step": 1,
-        "countArrays": [
-          "tiers[].reps"
-        ],
-        "desc": "每个梯队展示的代表公司数量",
-        "key": "repCount",
-        "publicKey": "repCount",
-        "publicLabel": "代表数量",
-        "description": "每个梯队展示的代表公司数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showAside",
@@ -8781,17 +8534,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -8813,8 +8564,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -8828,13 +8578,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
       "itemCount": 5,
-      "repCount": 2,
       "focus": true,
       "focusIndex": 0,
       "labelType": "number",
@@ -8895,7 +8643,12 @@ export const pages = [
             "+45 家"
           ]
         }
-      ]
+      ],
+      "headEn": "Valuation Tiers",
+      "headCn": "估值梯队 · 独角兽群像",
+      "asideTag": "梯队读法",
+      "unicornCountLabel": "家 AI 独角兽在册",
+      "insightText": "塔尖与塔基的估值落差超过两个数量级 —— 少数「超级梯队」吸走绝大多数资金与算力，而塔基的新晋独角兽数量虽多，单体体量与确定性都远不及头部。"
     }
   },
   {
@@ -8916,8 +8669,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "key": "rowCount",
-        "publicKey": "rowCount",
-        "publicLabel": "行数量"
+        "publicKey": "rowCount"
       },
       {
         "prop": "colCount",
@@ -8928,8 +8680,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "colCount",
-        "publicKey": "colCount",
-        "publicLabel": "列数量"
+        "publicKey": "colCount"
       },
       {
         "prop": "sort",
@@ -8951,8 +8702,7 @@ export const pages = [
           }
         ],
         "key": "sort",
-        "publicKey": "sort",
-        "publicLabel": "排序"
+        "publicKey": "sort"
       },
       {
         "prop": "highlightCol",
@@ -8965,8 +8715,7 @@ export const pages = [
         "maxFromKeyOffset": -1,
         "step": 1,
         "key": "highlightCol",
-        "publicKey": "highlightCol",
-        "publicLabel": "高亮列 (-1 关闭)"
+        "publicKey": "highlightCol"
       },
       {
         "prop": "showBar",
@@ -8974,8 +8723,7 @@ export const pages = [
         "label": "行内比例条",
         "default": true,
         "key": "showBar",
-        "publicKey": "showBar",
-        "publicLabel": "行内比例条"
+        "publicKey": "showBar"
       },
       {
         "prop": "showTotal",
@@ -8984,18 +8732,15 @@ export const pages = [
         "default": true,
         "desc": "合计/均值行",
         "key": "showTotal",
-        "publicKey": "showTotal",
-        "publicLabel": "装饰文案",
-        "description": "合计/均值行"
+        "publicKey": "showTotal"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -9017,8 +8762,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -9032,8 +8776,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -9156,7 +8899,10 @@ export const pages = [
             28
           ]
         }
-      ]
+      ],
+      "totalRowLabel": "合计 / 均值",
+      "deltaLegendUp": " 同比上升 ",
+      "deltaLegendDown": " 同比回落"
     },
     "lengthBindings": [
       {
@@ -9186,9 +8932,7 @@ export const pages = [
         "step": 1,
         "desc": "联数",
         "key": "panelCount",
-        "publicKey": "panelCount",
-        "publicLabel": "图片槽数量",
-        "description": "联数"
+        "publicKey": "panelCount"
       },
       {
         "prop": "pivot",
@@ -9214,8 +8958,7 @@ export const pages = [
           }
         ],
         "key": "pivot",
-        "publicKey": "pivot",
-        "publicLabel": "中缝枢标"
+        "publicKey": "pivot"
       },
       {
         "prop": "showSeam",
@@ -9223,8 +8966,7 @@ export const pages = [
         "label": "中缝枢标显隐",
         "default": true,
         "key": "showSeam",
-        "publicKey": "showSeam",
-        "publicLabel": "中缝枢标显隐"
+        "publicKey": "showSeam"
       },
       {
         "prop": "showCaption",
@@ -9233,18 +8975,15 @@ export const pages = [
         "default": true,
         "desc": "各联图说",
         "key": "showCaption",
-        "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
-        "description": "各联图说"
+        "publicKey": "showCaption"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -9266,8 +9005,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -9281,11 +9019,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "panelCount": 2,
       "pivot": "对照",
       "showSeam": true,
@@ -9342,9 +9080,7 @@ export const pages = [
         "step": 1,
         "desc": "用途项数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "用途项数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showAside",
@@ -9352,17 +9088,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -9384,8 +9118,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -9399,8 +9132,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -9441,7 +9173,14 @@ export const pages = [
           "pct": 5,
           "note": "安全合规、行政与储备金"
         }
-      ]
+      ],
+      "headEn": "Use of Proceeds",
+      "headCn": "资金用途 · 钱花在哪",
+      "centerLabel": "FOCUS",
+      "asideTag": "口径说明",
+      "methodologyPre": "基于头部公司公开募资说明与访谈估算的",
+      "methodologyBold": "典型资金用途结构",
+      "methodologyPost": "：算力是绝对大头，近七成资金最终流向「算力 + 人才」两项 —— 这也是当下 AI 公司高烧钱率的根源。比例为加权平均，单家差异较大。"
     }
   },
   {
@@ -9463,9 +9202,7 @@ export const pages = [
         "step": 1,
         "desc": "扇瓣数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "扇瓣数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "areaTrue",
@@ -9474,9 +9211,7 @@ export const pages = [
         "default": true,
         "desc": "半径∝√值",
         "key": "areaTrue",
-        "publicKey": "areaTrue",
-        "publicLabel": "面积真实",
-        "description": "半径∝√值"
+        "publicKey": "areaTrue"
       },
       {
         "prop": "showScale",
@@ -9484,8 +9219,7 @@ export const pages = [
         "label": "刻度环",
         "default": true,
         "key": "showScale",
-        "publicKey": "showScale",
-        "publicLabel": "刻度环"
+        "publicKey": "showScale"
       },
       {
         "prop": "showAside",
@@ -9494,18 +9228,15 @@ export const pages = [
         "default": true,
         "desc": "圆心读数",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "圆心读数"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -9527,8 +9258,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -9542,8 +9272,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -9623,9 +9352,7 @@ export const pages = [
         "step": 1,
         "desc": "节点数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "节点数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "chartType",
@@ -9643,8 +9370,7 @@ export const pages = [
           }
         ],
         "key": "chartType",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型"
+        "publicKey": "chartType"
       },
       {
         "prop": "showSpokes",
@@ -9652,8 +9378,7 @@ export const pages = [
         "label": "辐条连线",
         "default": true,
         "key": "showSpokes",
-        "publicKey": "showSpokes",
-        "publicLabel": "辐条连线"
+        "publicKey": "showSpokes"
       },
       {
         "prop": "showAside",
@@ -9662,18 +9387,15 @@ export const pages = [
         "default": true,
         "desc": "枢轴文案",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "枢轴文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -9695,8 +9417,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -9710,8 +9431,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -9796,9 +9516,7 @@ export const pages = [
         "step": 1,
         "desc": "数据带条目",
         "key": "tickerCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "数据带条目"
+        "publicKey": "itemCount"
       },
       {
         "prop": "accentNumber",
@@ -9807,9 +9525,7 @@ export const pages = [
         "default": false,
         "desc": "关则金属字",
         "key": "accentNumber",
-        "publicKey": "accentNumber",
-        "publicLabel": "强调主数字",
-        "description": "关则金属字"
+        "publicKey": "accentNumber"
       },
       {
         "prop": "showTag",
@@ -9818,9 +9534,7 @@ export const pages = [
         "default": true,
         "desc": "旋转贴标",
         "key": "showTag",
-        "publicKey": "showTag",
-        "publicLabel": "装饰文案",
-        "description": "旋转贴标"
+        "publicKey": "showTag"
       },
       {
         "prop": "focus",
@@ -9828,8 +9542,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -9843,8 +9556,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -9891,9 +9603,7 @@ export const pages = [
         "step": 1,
         "desc": "区域数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "区域数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showAside",
@@ -9901,17 +9611,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -9933,8 +9641,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -9948,8 +9655,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -9971,7 +9677,6 @@ export const pages = [
         {
           "name": "美国",
           "en": "United States",
-          "scoreLabel": "全球中枢",
           "color": "#46e3c6",
           "scores": [
             98,
@@ -9985,7 +9690,6 @@ export const pages = [
         {
           "name": "中国",
           "en": "China",
-          "scoreLabel": "应用纵深",
           "color": "#ffb27a",
           "scores": [
             62,
@@ -9999,7 +9703,6 @@ export const pages = [
         {
           "name": "欧洲",
           "en": "Europe",
-          "scoreLabel": "治理优势",
           "color": "#9f7bff",
           "scores": [
             44,
@@ -10010,7 +9713,14 @@ export const pages = [
             60
           ]
         }
-      ]
+      ],
+      "headEn": "Global Landscape",
+      "headCn": "全球格局 · 区域竞争力",
+      "scoreLabel": "综合分",
+      "asideTag": "格局解读",
+      "insightPre": "美国在",
+      "insightBold": "融资规模、算力与人才",
+      "insightPost": "三轴上几乎拉满，是全球 AI 资本的绝对中心；其它区域各有结构性长板，但在「资金 × 算力」这条主轴上仍存在代际差距。评分为相对量化，仅供研究参考。"
     }
   },
   {
@@ -10032,9 +9742,7 @@ export const pages = [
         "step": 1,
         "desc": "对象数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "对象数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "axisCount",
@@ -10046,9 +9754,7 @@ export const pages = [
         "step": 1,
         "desc": "维度数",
         "key": "axisCount",
-        "publicKey": "axisCount",
-        "publicLabel": "列数量",
-        "description": "维度数"
+        "publicKey": "axisCount"
       },
       {
         "prop": "showDots",
@@ -10056,8 +9762,7 @@ export const pages = [
         "label": "轴上节点",
         "default": true,
         "key": "showDots",
-        "publicKey": "showDots",
-        "publicLabel": "轴上节点"
+        "publicKey": "showDots"
       },
       {
         "prop": "showAside",
@@ -10066,18 +9771,15 @@ export const pages = [
         "default": true,
         "desc": "画像解读",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "画像解读"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -10099,8 +9801,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -10114,8 +9815,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -10229,7 +9929,11 @@ export const pages = [
             44
           ]
         }
-      ]
+      ],
+      "asideTag": "画像",
+      "insightMid1": " 在 ",
+      "insightMid2": " 与 ",
+      "insightPost": " 两端均处高位， 多维折线整体抬升，呈现「资本与人才双密集」的领跑画像；其余区域折线在中下区平移，梯度分明。"
     },
     "lengthBindings": [
       {
@@ -10258,8 +9962,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "key": "rowCount",
-        "publicKey": "rowCount",
-        "publicLabel": "行数量"
+        "publicKey": "rowCount"
       },
       {
         "prop": "colCount",
@@ -10269,12 +9972,8 @@ export const pages = [
         "min": 2,
         "max": 6,
         "step": 1,
-        "countArrays": [
-          "criteria"
-        ],
         "key": "colCount",
-        "publicKey": "colCount",
-        "publicLabel": "列数量"
+        "publicKey": "colCount"
       },
       {
         "prop": "highlightCol",
@@ -10287,8 +9986,7 @@ export const pages = [
         "maxFromKeyOffset": -1,
         "step": 1,
         "key": "highlightCol",
-        "publicKey": "highlightCol",
-        "publicLabel": "高亮列 (-1 关闭)"
+        "publicKey": "highlightCol"
       },
       {
         "prop": "showComposite",
@@ -10296,8 +9994,7 @@ export const pages = [
         "label": "综合评级",
         "default": true,
         "key": "showComposite",
-        "publicKey": "showComposite",
-        "publicLabel": "综合评级"
+        "publicKey": "showComposite"
       },
       {
         "prop": "showAside",
@@ -10306,18 +10003,15 @@ export const pages = [
         "default": true,
         "desc": "等级图例",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "等级图例"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -10339,8 +10033,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -10354,8 +10047,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -10375,127 +10067,109 @@ export const pages = [
         "cn": "赛道评级矩阵"
       },
       "criteria": [
-        {
-          "key": "heat",
-          "label": "资本热度"
-        },
-        {
-          "key": "moat",
-          "label": "护城河"
-        },
-        {
-          "key": "cash",
-          "label": "现金流"
-        },
-        {
-          "key": "growth",
-          "label": "成长性"
-        },
-        {
-          "key": "bubble",
-          "label": "泡沫风险"
-        },
-        {
-          "key": "certainty",
-          "label": "落地确定"
-        }
+        "资本热度",
+        "护城河",
+        "现金流",
+        "成长性",
+        "泡沫风险",
+        "落地确定"
       ],
       "rows": [
         {
           "label": "算力基础设施",
           "sub": "Infra",
-          "grades": {
-            "heat": "S",
-            "moat": "A",
-            "cash": "A",
-            "growth": "B",
-            "bubble": "B",
-            "certainty": "S"
-          }
+          "grades": [
+            "S",
+            "A",
+            "A",
+            "B",
+            "B",
+            "S"
+          ]
         },
         {
           "label": "头部大模型",
           "sub": "Foundation",
-          "grades": {
-            "heat": "S",
-            "moat": "S",
-            "cash": "C",
-            "growth": "S",
-            "bubble": "D",
-            "certainty": "B"
-          }
+          "grades": [
+            "S",
+            "S",
+            "C",
+            "S",
+            "D",
+            "B"
+          ]
         },
         {
           "label": "垂直行业应用",
           "sub": "Vertical",
-          "grades": {
-            "heat": "A",
-            "moat": "B",
-            "cash": "B",
-            "growth": "A",
-            "bubble": "C",
-            "certainty": "A"
-          }
+          "grades": [
+            "A",
+            "B",
+            "B",
+            "A",
+            "C",
+            "A"
+          ]
         },
         {
           "label": "工具与中间件",
           "sub": "Tooling",
-          "grades": {
-            "heat": "B",
-            "moat": "C",
-            "cash": "B",
-            "growth": "B",
-            "bubble": "C",
-            "certainty": "B"
-          }
+          "grades": [
+            "B",
+            "C",
+            "B",
+            "B",
+            "C",
+            "B"
+          ]
         },
         {
           "label": "数据与标注",
           "sub": "Data Layer",
-          "grades": {
-            "heat": "A",
-            "moat": "B",
-            "cash": "A",
-            "growth": "B",
-            "bubble": "B",
-            "certainty": "A"
-          }
+          "grades": [
+            "A",
+            "B",
+            "A",
+            "B",
+            "B",
+            "A"
+          ]
         },
         {
           "label": "概念叙事项目",
           "sub": "Narrative",
-          "grades": {
-            "heat": "B",
-            "moat": "D",
-            "cash": "D",
-            "growth": "C",
-            "bubble": "S",
-            "certainty": "D"
-          }
+          "grades": [
+            "B",
+            "D",
+            "D",
+            "C",
+            "S",
+            "D"
+          ]
         },
         {
           "label": "安全与对齐",
           "sub": "Safety",
-          "grades": {
-            "heat": "A",
-            "moat": "A",
-            "cash": "C",
-            "growth": "A",
-            "bubble": "C",
-            "certainty": "B"
-          }
+          "grades": [
+            "A",
+            "A",
+            "C",
+            "A",
+            "C",
+            "B"
+          ]
         },
         {
           "label": "端侧与硬件",
           "sub": "Edge / HW",
-          "grades": {
-            "heat": "B",
-            "moat": "B",
-            "cash": "B",
-            "growth": "B",
-            "bubble": "C",
-            "certainty": "C"
-          }
+          "grades": [
+            "B",
+            "B",
+            "B",
+            "B",
+            "C",
+            "C"
+          ]
         }
       ]
     }
@@ -10518,8 +10192,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "key": "setCount",
-        "publicKey": "setCount",
-        "publicLabel": "集合数量"
+        "publicKey": "setCount"
       },
       {
         "prop": "showCore",
@@ -10527,8 +10200,7 @@ export const pages = [
         "label": "交集结论",
         "default": true,
         "key": "showCore",
-        "publicKey": "showCore",
-        "publicLabel": "交集结论"
+        "publicKey": "showCore"
       },
       {
         "prop": "showAside",
@@ -10537,9 +10209,7 @@ export const pages = [
         "default": true,
         "desc": "右侧导读",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "右侧导读"
+        "publicKey": "showAside"
       },
       {
         "prop": "focus",
@@ -10547,8 +10217,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -10562,8 +10231,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -10623,9 +10291,7 @@ export const pages = [
         "step": 1,
         "desc": "分类数",
         "key": "itemCount",
-        "publicKey": "categoryCount",
-        "publicLabel": "数量",
-        "description": "分类数"
+        "publicKey": "categoryCount"
       },
       {
         "prop": "columns",
@@ -10636,8 +10302,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "columns",
-        "publicKey": "columns",
-        "publicLabel": "每行数量"
+        "publicKey": "columns"
       },
       {
         "prop": "showAside",
@@ -10645,17 +10310,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -10677,8 +10340,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -10692,8 +10354,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -10769,7 +10430,13 @@ export const pages = [
           "unit": "亿$",
           "delta": "早期"
         }
-      ]
+      ],
+      "headEn": "Vertical Adoption",
+      "headCn": "应用落地 · 垂直行业渗透",
+      "asideTag": "落地观察",
+      "insightPre": "渗透最快的仍是",
+      "insightBold": "编程、客服与创意",
+      "insightPost": "这类「文本/代码即产出」的场景；医疗、工业等强壁垒行业资金可观但兑现更慢。渗透率为资金加权的相对估计，仅供研究参考。"
     }
   },
   {
@@ -10790,8 +10457,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "maxH",
@@ -10802,8 +10468,7 @@ export const pages = [
         "max": 640,
         "step": 20,
         "key": "maxH",
-        "publicKey": "maxH",
-        "publicLabel": "拼贴最大高"
+        "publicKey": "maxH"
       },
       {
         "prop": "layout",
@@ -10821,8 +10486,7 @@ export const pages = [
           }
         ],
         "key": "layout",
-        "publicKey": "layout",
-        "publicLabel": "排布"
+        "publicKey": "layout"
       },
       {
         "prop": "tagCount",
@@ -10834,9 +10498,7 @@ export const pages = [
         "step": 1,
         "desc": "标签数",
         "key": "tagCount",
-        "publicKey": "tagCount",
-        "publicLabel": "数量",
-        "description": "标签数"
+        "publicKey": "tagCount"
       },
       {
         "prop": "showFrame",
@@ -10844,8 +10506,7 @@ export const pages = [
         "label": "裁切角框",
         "default": true,
         "key": "showFrame",
-        "publicKey": "showFrame",
-        "publicLabel": "裁切角框"
+        "publicKey": "showFrame"
       },
       {
         "prop": "showMeta",
@@ -10854,9 +10515,7 @@ export const pages = [
         "default": true,
         "desc": "元信息 + 标签",
         "key": "showMeta",
-        "publicKey": "showMeta",
-        "publicLabel": "装饰文案",
-        "description": "元信息 + 标签"
+        "publicKey": "showMeta"
       },
       {
         "prop": "focus",
@@ -10864,8 +10523,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -10879,11 +10537,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 5,
       "layout": "双排",
       "maxH": 540,
@@ -10924,8 +10582,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "chartType",
@@ -10943,8 +10600,7 @@ export const pages = [
           }
         ],
         "key": "chartType",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型"
+        "publicKey": "chartType"
       },
       {
         "prop": "showScale",
@@ -10953,9 +10609,7 @@ export const pages = [
         "default": true,
         "desc": "装饰",
         "key": "showScale",
-        "publicKey": "showScale",
-        "publicLabel": "刻度网格",
-        "description": "装饰"
+        "publicKey": "showScale"
       },
       {
         "prop": "showAside",
@@ -10964,18 +10618,15 @@ export const pages = [
         "default": true,
         "desc": "口径说明",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "口径说明"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -10997,8 +10648,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": false,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -11012,8 +10662,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -11073,7 +10722,8 @@ export const pages = [
           "unit": "热度",
           "tone": "warn"
         }
-      ]
+      ],
+      "defaultCenterLabel": "峰值刻度"
     }
   },
   {
@@ -11094,8 +10744,7 @@ export const pages = [
         "max": 12,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showAside",
@@ -11103,17 +10752,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -11135,8 +10782,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -11150,8 +10796,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -11178,7 +10823,7 @@ export const pages = [
           "name": "xAI",
           "sector": "基础模型",
           "val": 500,
-          "round": "Series C · xAI"
+          "round": "Series C"
         },
         {
           "name": "Databricks",
@@ -11194,15 +10839,15 @@ export const pages = [
         },
         {
           "name": "Perplexity",
-          "sector": "搜索应用",
+          "sector": "应用层",
           "val": 90,
           "round": "Series · 后期"
         },
         {
           "name": "Anysphere",
-          "sector": "开发工具",
+          "sector": "应用层",
           "val": 96,
-          "round": "Series C · Cursor"
+          "round": "Series C"
         },
         {
           "name": "Glean",
@@ -11214,7 +10859,7 @@ export const pages = [
           "name": "Figure AI",
           "sector": "机器人",
           "val": 260,
-          "round": "Series C · Figure"
+          "round": "Series C"
         },
         {
           "name": "Scale AI",
@@ -11224,9 +10869,9 @@ export const pages = [
         },
         {
           "name": "ElevenLabs",
-          "sector": "语音应用",
+          "sector": "应用层",
           "val": 66,
-          "round": "Series C · Voice"
+          "round": "Series C"
         },
         {
           "name": "Sierra",
@@ -11234,7 +10879,15 @@ export const pages = [
           "val": 100,
           "round": "Series · 后期"
         }
-      ]
+      ],
+      "headEn": "Company Map",
+      "headCn": "公司版图 · 估值占位",
+      "focusLabel": "FOCUS · 焦点公司",
+      "shareLabel": "占样本总估值",
+      "asideTag": "版图读法",
+      "insightPre": "方块面积代表估值体量 —— 少数",
+      "insightBold": "基础模型与数据平台",
+      "insightPost": "公司几乎占满整张版图，应用层公司数量多但单体面积小，「头部吞噬版图」的格局一目了然。估值取年内最新公开口径。"
     }
   },
   {
@@ -11256,9 +10909,7 @@ export const pages = [
         "step": 1,
         "desc": "大类数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "大类数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showChildren",
@@ -11266,8 +10917,7 @@ export const pages = [
         "label": "子项列",
         "default": true,
         "key": "showChildren",
-        "publicKey": "showChildren",
-        "publicLabel": "子项列"
+        "publicKey": "showChildren"
       },
       {
         "prop": "showValue",
@@ -11275,8 +10925,7 @@ export const pages = [
         "label": "数值标注",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标注"
+        "publicKey": "showValueLabels"
       },
       {
         "prop": "showAside",
@@ -11285,18 +10934,15 @@ export const pages = [
         "default": true,
         "desc": "根列读数",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "根列读数"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -11318,8 +10964,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": false,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -11333,8 +10978,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -11449,7 +11093,11 @@ export const pages = [
             }
           ]
         }
-      ]
+      ],
+      "rootBadgeLabel": "ROOT · 100%",
+      "axisLabelL0": "L0 · 总量",
+      "axisLabelL1": "L1 · 大类（高度 ∝ 占比）",
+      "axisLabelL2": "L2 · 子项细分"
     }
   },
   {
@@ -11470,8 +11118,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "matStyle",
@@ -11489,8 +11136,7 @@ export const pages = [
           }
         ],
         "key": "matStyle",
-        "publicKey": "matStyle",
-        "publicLabel": "裱衬色"
+        "publicKey": "matStyle"
       },
       {
         "prop": "showPlacard",
@@ -11499,18 +11145,15 @@ export const pages = [
         "default": true,
         "desc": "展签牌",
         "key": "showPlacard",
-        "publicKey": "showPlacard",
-        "publicLabel": "装饰文案",
-        "description": "展签牌"
+        "publicKey": "showPlacard"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -11532,8 +11175,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -11547,11 +11189,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 3,
       "matStyle": "浅裱",
       "showPlacard": true,
@@ -11601,8 +11243,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "tagCount",
@@ -11614,9 +11255,7 @@ export const pages = [
         "step": 1,
         "desc": "走带标签",
         "key": "tagCount",
-        "publicKey": "tagCount",
-        "publicLabel": "数量",
-        "description": "走带标签"
+        "publicKey": "tagCount"
       },
       {
         "prop": "showSprockets",
@@ -11624,8 +11263,7 @@ export const pages = [
         "label": "齿孔带",
         "default": true,
         "key": "showSprockets",
-        "publicKey": "showSprockets",
-        "publicLabel": "齿孔带"
+        "publicKey": "showSprockets"
       },
       {
         "prop": "showCaption",
@@ -11634,9 +11272,7 @@ export const pages = [
         "default": true,
         "desc": "帧号 + 标签",
         "key": "showCaption",
-        "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
-        "description": "帧号 + 标签"
+        "publicKey": "showCaption"
       },
       {
         "prop": "focus",
@@ -11644,8 +11280,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -11659,11 +11294,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 5,
       "maxH": 520,
       "showSprockets": true,
@@ -11702,8 +11337,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showConnector",
@@ -11711,8 +11345,7 @@ export const pages = [
         "label": "连接线",
         "default": true,
         "key": "showConnector",
-        "publicKey": "showConnector",
-        "publicLabel": "连接线"
+        "publicKey": "showConnector"
       },
       {
         "prop": "showTotal",
@@ -11720,8 +11353,7 @@ export const pages = [
         "label": "合计柱",
         "default": true,
         "key": "showTotal",
-        "publicKey": "showTotal",
-        "publicLabel": "合计柱"
+        "publicKey": "showTotal"
       },
       {
         "prop": "showAside",
@@ -11729,17 +11361,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -11761,8 +11391,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -11776,8 +11405,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -11821,7 +11449,16 @@ export const pages = [
           "en": "Others",
           "value": 70
         }
-      ]
+      ],
+      "headEn": "Funding Waterfall",
+      "headCn": "资金瀑布 · 总额构成",
+      "chartTitle": "各赛道资金累积构成",
+      "asideTag": "构成",
+      "insightMid1": "单赛道即贡献近 ",
+      "insightMid2": " 资金， 叠加基础设施层后过半；全年合计达 ",
+      "insightMid3": "$",
+      "insightMid4": " ",
+      "insightPost": "，结构高度向头部赛道倾斜。"
     }
   },
   {
@@ -11842,8 +11479,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "rowCount",
-        "publicKey": "rowCount",
-        "publicLabel": "行数量"
+        "publicKey": "rowCount"
       },
       {
         "prop": "colCount",
@@ -11854,8 +11490,7 @@ export const pages = [
         "max": 12,
         "step": 1,
         "key": "colCount",
-        "publicKey": "colCount",
-        "publicLabel": "列数量"
+        "publicKey": "colCount"
       },
       {
         "prop": "highlightCol",
@@ -11868,8 +11503,7 @@ export const pages = [
         "maxFromKeyOffset": -1,
         "step": 1,
         "key": "highlightCol",
-        "publicKey": "highlightCol",
-        "publicLabel": "高亮列（-1关）"
+        "publicKey": "highlightCol"
       },
       {
         "prop": "showScale",
@@ -11877,8 +11511,7 @@ export const pages = [
         "label": "色阶图例",
         "default": true,
         "key": "showScale",
-        "publicKey": "showScale",
-        "publicLabel": "色阶图例"
+        "publicKey": "showScale"
       },
       {
         "prop": "showAside",
@@ -11886,17 +11519,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -11918,8 +11549,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -11933,8 +11563,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -12050,7 +11679,18 @@ export const pages = [
             28
           ]
         }
-      ]
+      ],
+      "headEn": "Activity Heatmap",
+      "headCn": "月度热力 · 节奏分布",
+      "axisCornerLabel": "赛道 ＼ 月份",
+      "scaleLabel": "强度色阶 · 0 → 100",
+      "scaleLow": "低",
+      "scaleMid": "中",
+      "scaleHigh": "高",
+      "asideTag": "节奏",
+      "insightPre": "融资热度在 ",
+      "insightMid1": " 触顶，",
+      "insightMid2": " 全年最为活跃； 夏季为投放高峰，年末随窗口收紧整体回落。"
     }
   },
   {
@@ -12072,9 +11712,7 @@ export const pages = [
         "step": 1,
         "desc": "确定性逐日强度",
         "key": "seed",
-        "publicKey": "seed",
-        "publicLabel": "分布种子",
-        "description": "确定性逐日强度"
+        "publicKey": "seed"
       },
       {
         "prop": "showMonths",
@@ -12082,8 +11720,7 @@ export const pages = [
         "label": "月名标注",
         "default": true,
         "key": "showMonths",
-        "publicKey": "showMonths",
-        "publicLabel": "月名标注"
+        "publicKey": "showMonths"
       },
       {
         "prop": "showLegend",
@@ -12091,8 +11728,7 @@ export const pages = [
         "label": "色阶图例",
         "default": true,
         "key": "showLegend",
-        "publicKey": "showLegend",
-        "publicLabel": "色阶图例"
+        "publicKey": "showLegend"
       },
       {
         "prop": "showAside",
@@ -12101,9 +11737,7 @@ export const pages = [
         "default": true,
         "desc": "读数面板",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "读数面板"
+        "publicKey": "showAside"
       },
       {
         "prop": "focus",
@@ -12111,8 +11745,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -12125,9 +11758,7 @@ export const pages = [
         "desc": "高亮月份",
         "displayOffset": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号",
-        "description": "高亮月份"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -12156,7 +11787,15 @@ export const pages = [
         "no": "02",
         "en": "Calendar · Deal Heatmap",
         "cn": "投资日历 · 全年逐日热力"
-      }
+      },
+      "chartCaption": "≥ $1亿 事件 · 逐日分布",
+      "legendLow": "少",
+      "legendHigh": "多",
+      "legendCaption": "每格 = 一天 · 色深 ∝ 当日大额事件数",
+      "totalStrengthLabel": "全年累计强度",
+      "focusMonthPrefix": "焦点月份 · ",
+      "focusStrengthSuffix": " 当月强度",
+      "peakMonthLabel": "全年最热月份"
     }
   },
   {
@@ -12178,9 +11817,7 @@ export const pages = [
         "step": 1,
         "desc": "蜂格数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "蜂格数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "sort",
@@ -12198,8 +11835,7 @@ export const pages = [
           }
         ],
         "key": "sort",
-        "publicKey": "sort",
-        "publicLabel": "排序"
+        "publicKey": "sort"
       },
       {
         "prop": "showValue",
@@ -12207,8 +11843,7 @@ export const pages = [
         "label": "格内数值",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValueLabels",
-        "publicLabel": "格内数值"
+        "publicKey": "showValueLabels"
       },
       {
         "prop": "showScale",
@@ -12217,9 +11852,7 @@ export const pages = [
         "default": true,
         "desc": "热力色阶",
         "key": "showScale",
-        "publicKey": "showScale",
-        "publicLabel": "装饰文案",
-        "description": "热力色阶"
+        "publicKey": "showScale"
       },
       {
         "prop": "showAside",
@@ -12227,17 +11860,15 @@ export const pages = [
         "label": "读图条",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "读图条"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -12259,8 +11890,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -12274,8 +11904,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -12353,7 +11982,11 @@ export const pages = [
           "value": 1.5,
           "unit": "%"
         }
-      ]
+      ],
+      "scaleLabel": "热力色阶 · 占比",
+      "insightPre": "色深正比赛道占比。",
+      "insightMid1": " 居中心、色最深（",
+      "insightPost": "）， 向外蜂格渐浅，呈现资本高度向头部赛道收拢的热度梯度。"
     }
   },
   {
@@ -12374,8 +12007,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "columns",
@@ -12386,8 +12018,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "columns",
-        "publicKey": "columns",
-        "publicLabel": "列数量"
+        "publicKey": "columns"
       },
       {
         "prop": "showCaption",
@@ -12396,18 +12027,15 @@ export const pages = [
         "default": true,
         "desc": "叠印图说",
         "key": "showCaption",
-        "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
-        "description": "叠印图说"
+        "publicKey": "showCaption"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -12429,8 +12057,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -12444,11 +12071,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 6,
       "columns": 3,
       "showCaption": true,
@@ -12515,9 +12142,7 @@ export const pages = [
         "step": 1,
         "desc": "阶段数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "阶段数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "axis",
@@ -12535,8 +12160,7 @@ export const pages = [
           }
         ],
         "key": "axis",
-        "publicKey": "axis",
-        "publicLabel": "图表类型"
+        "publicKey": "axis"
       },
       {
         "prop": "showAxis",
@@ -12544,8 +12168,7 @@ export const pages = [
         "label": "轴线网格",
         "default": true,
         "key": "showAxis",
-        "publicKey": "showAxis",
-        "publicLabel": "轴线网格"
+        "publicKey": "showAxis"
       },
       {
         "prop": "showMilestone",
@@ -12554,18 +12177,15 @@ export const pages = [
         "default": true,
         "desc": "里程碑菱标",
         "key": "showMilestone",
-        "publicKey": "showMilestone",
-        "publicLabel": "装饰文案",
-        "description": "里程碑菱标"
+        "publicKey": "showMilestone"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -12587,8 +12207,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -12602,8 +12221,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -12712,9 +12330,7 @@ export const pages = [
         "step": 1,
         "desc": "节点数",
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量",
-        "description": "节点数"
+        "publicKey": "imgCount"
       },
       {
         "prop": "showAxis",
@@ -12723,18 +12339,15 @@ export const pages = [
         "default": true,
         "desc": "轴线 + 节点",
         "key": "showAxis",
-        "publicKey": "showAxis",
-        "publicLabel": "装饰文案",
-        "description": "轴线 + 节点"
+        "publicKey": "showAxis"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -12756,8 +12369,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -12771,11 +12383,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 5,
       "showAxis": true,
       "focus": true,
@@ -12832,8 +12444,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showValue",
@@ -12841,8 +12452,7 @@ export const pages = [
         "label": "数值标签",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValueLabels",
-        "publicLabel": "数值标签"
+        "publicKey": "showValueLabels"
       },
       {
         "prop": "showAside",
@@ -12850,17 +12460,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -12882,8 +12490,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -12897,8 +12504,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -12953,7 +12559,19 @@ export const pages = [
           "left": 25,
           "right": 70
         }
-      ]
+      ],
+      "headEn": "Rank Migration",
+      "headCn": "排名变迁 · 两期对比",
+      "legendUp": "上升",
+      "legendDown": "回落",
+      "unitLabel": "单位 · ",
+      "asideTag": "迁移",
+      "insightMid1": " 由 ",
+      "insightMid2": " ",
+      "insightMid3": " ",
+      "insightPost": "；资金加速向头部赛道集中，部分前期热门方向理性退潮。",
+      "changeSuffix": " 变化",
+      "upShareLabel": "上升赛道占比"
     }
   },
   {
@@ -12974,8 +12592,7 @@ export const pages = [
         "max": 7,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "行数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "sort",
@@ -12997,8 +12614,7 @@ export const pages = [
           }
         ],
         "key": "sort",
-        "publicKey": "sort",
-        "publicLabel": "排序"
+        "publicKey": "sort"
       },
       {
         "prop": "showValue",
@@ -13006,8 +12622,7 @@ export const pages = [
         "label": "端点数值",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValueLabels",
-        "publicLabel": "端点数值"
+        "publicKey": "showValueLabels"
       },
       {
         "prop": "showAside",
@@ -13016,18 +12631,15 @@ export const pages = [
         "default": true,
         "desc": "读图条",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "读图条"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -13049,8 +12661,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -13064,8 +12675,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -13129,7 +12739,12 @@ export const pages = [
           "b": 74,
           "sub": "Health"
         }
-      ]
+      ],
+      "asideTag": "读图",
+      "insightMid1": "区间跨度最大，自 ",
+      "insightMid2": " 升至 ",
+      "insightMid3": " ",
+      "insightPost": "）；杠越长代表同比变化越剧烈，方向由染色区分。"
     }
   },
   {
@@ -13150,8 +12765,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "gaugeStyle",
@@ -13169,8 +12783,7 @@ export const pages = [
           }
         ],
         "key": "gaugeStyle",
-        "publicKey": "gaugeStyle",
-        "publicLabel": "图表类型"
+        "publicKey": "gaugeStyle"
       },
       {
         "prop": "showAside",
@@ -13178,17 +12791,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -13210,8 +12821,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -13225,8 +12835,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -13266,7 +12875,15 @@ export const pages = [
           "note": "IPO 窗口临近",
           "tone": "acc"
         }
-      ]
+      ],
+      "headEn": "Market Gauges",
+      "headCn": "景气仪表 · 体征速览",
+      "asideTag": "口径说明",
+      "methodologyPre": "各体征指数以 ",
+      "methodologyBold1": "0–100",
+      "methodologyMid": " 标准化打分（基于交易频次、估值倍数、情绪问卷综合测算）； 分值越高代表该维度越活跃，",
+      "methodologyBold2": "暖色",
+      "methodologyPost": "项为需警惕的过热信号。数据为调研整理，仅供研究参考。"
     }
   },
   {
@@ -13287,8 +12904,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showDelta",
@@ -13296,8 +12912,7 @@ export const pages = [
         "label": "同比片",
         "default": true,
         "key": "showDelta",
-        "publicKey": "showDelta",
-        "publicLabel": "同比片"
+        "publicKey": "showDelta"
       },
       {
         "prop": "showScan",
@@ -13306,18 +12921,15 @@ export const pages = [
         "default": true,
         "desc": "LED 扫描线质感",
         "key": "showScan",
-        "publicKey": "showScan",
-        "publicLabel": "装饰元素",
-        "description": "LED 扫描线质感"
+        "publicKey": "showScan"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -13339,8 +12951,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -13354,8 +12965,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -13432,9 +13042,7 @@ export const pages = [
         "step": 1,
         "desc": "图卡数",
         "key": "cardCount",
-        "publicKey": "cardCount",
-        "publicLabel": "图片槽数量",
-        "description": "图卡数"
+        "publicKey": "cardCount"
       },
       {
         "prop": "showCaption",
@@ -13443,18 +13051,15 @@ export const pages = [
         "default": true,
         "desc": "卡面叠印标题/图说",
         "key": "showCaption",
-        "publicKey": "showCaption",
-        "publicLabel": "装饰文案",
-        "description": "卡面叠印标题/图说"
+        "publicKey": "showCaption"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -13476,8 +13081,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -13491,11 +13095,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "cardCount": 3,
       "showCaption": true,
       "focus": true,
@@ -13545,9 +13149,7 @@ export const pages = [
         "step": 1,
         "desc": "下半栏列数",
         "key": "colCount",
-        "publicKey": "colCount",
-        "publicLabel": "数量",
-        "description": "下半栏列数"
+        "publicKey": "colCount"
       },
       {
         "prop": "titlePos",
@@ -13566,9 +13168,7 @@ export const pages = [
         ],
         "desc": "大图上标题位置",
         "key": "titlePos",
-        "publicKey": "titlePos",
-        "publicLabel": "图片位置",
-        "description": "大图上标题位置"
+        "publicKey": "titlePos"
       },
       {
         "prop": "showScrim",
@@ -13577,18 +13177,15 @@ export const pages = [
         "default": true,
         "desc": "大图压暗层",
         "key": "showScrim",
-        "publicKey": "showScrim",
-        "publicLabel": "装饰文案",
-        "description": "大图压暗层"
+        "publicKey": "showScrim"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -13610,8 +13207,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -13625,11 +13221,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "colCount": 3,
       "titlePos": "左",
       "showScrim": true,
@@ -13678,8 +13274,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "seriesCount",
-        "publicKey": "seriesCount",
-        "publicLabel": "数量"
+        "publicKey": "seriesCount"
       },
       {
         "prop": "chartType",
@@ -13697,8 +13292,7 @@ export const pages = [
           }
         ],
         "key": "chartType",
-        "publicKey": "chartType",
-        "publicLabel": "图表类型"
+        "publicKey": "chartType"
       },
       {
         "prop": "showLegend",
@@ -13706,8 +13300,7 @@ export const pages = [
         "label": "图例",
         "default": true,
         "key": "showLegend",
-        "publicKey": "showLegend",
-        "publicLabel": "图例"
+        "publicKey": "showLegend"
       },
       {
         "prop": "showAside",
@@ -13715,17 +13308,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -13747,8 +13338,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -13762,8 +13352,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -13839,7 +13428,16 @@ export const pages = [
             44
           ]
         }
-      ]
+      ],
+      "headEn": "Trend Lines",
+      "headCn": "季度走势 · 赛道对比",
+      "chartTitle": "逐季度融资额走势",
+      "asideTag": "走势",
+      "insightMid1": " 自期初 ",
+      "insightMid2": " 升至期末 ",
+      "insightPost": "），领跑各赛道；多数序列于 24H1 后加速上行，景气共振明显。",
+      "finalLabelSuffix": " 期末",
+      "rangeLabel": "区间增量"
     },
     "lengthBindings": [
       {
@@ -13868,9 +13466,7 @@ export const pages = [
         "step": 1,
         "desc": "行数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "行数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "bins",
@@ -13882,9 +13478,7 @@ export const pages = [
         "step": 2,
         "desc": "曲线平滑度",
         "key": "bins",
-        "publicKey": "bins",
-        "publicLabel": "采样点数",
-        "description": "曲线平滑度"
+        "publicKey": "bins"
       },
       {
         "prop": "seed",
@@ -13895,8 +13489,7 @@ export const pages = [
         "max": 30,
         "step": 1,
         "key": "seed",
-        "publicKey": "seed",
-        "publicLabel": "形态种子"
+        "publicKey": "seed"
       },
       {
         "prop": "showAxis",
@@ -13904,8 +13497,7 @@ export const pages = [
         "label": "横轴刻度",
         "default": true,
         "key": "showAxis",
-        "publicKey": "showAxis",
-        "publicLabel": "横轴刻度"
+        "publicKey": "showAxis"
       },
       {
         "prop": "showAside",
@@ -13914,18 +13506,15 @@ export const pages = [
         "default": true,
         "desc": "演进解读",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "演进解读"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -13947,8 +13536,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -13962,8 +13550,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -14030,7 +13617,11 @@ export const pages = [
           "peak": 0.72,
           "amp": 1
         }
-      ]
+      ],
+      "asideTag": "演进",
+      "insightPre": "单笔融资分布的峰位自 ",
+      "insightMid": " 一路右移至",
+      "insightPost": "，山脊整体抬升、右尾变厚——大额轮次（≥$10亿）逐季成为分布主体， 「平均单笔约 $10亿」由此而来。"
     }
   },
   {
@@ -14048,8 +13639,7 @@ export const pages = [
         "label": "置信带",
         "default": true,
         "key": "showBand",
-        "publicKey": "showBand",
-        "publicLabel": "置信带"
+        "publicKey": "showBand"
       },
       {
         "prop": "showMedian",
@@ -14057,8 +13647,7 @@ export const pages = [
         "label": "预测中值",
         "default": true,
         "key": "showMedian",
-        "publicKey": "showMedian",
-        "publicLabel": "预测中值"
+        "publicKey": "showMedian"
       },
       {
         "prop": "showGrid",
@@ -14066,8 +13655,7 @@ export const pages = [
         "label": "网格刻度",
         "default": true,
         "key": "showGrid",
-        "publicKey": "showGrid",
-        "publicLabel": "网格刻度"
+        "publicKey": "showGrid"
       },
       {
         "prop": "showAside",
@@ -14076,9 +13664,7 @@ export const pages = [
         "default": true,
         "desc": "读图条",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "读图条"
+        "publicKey": "showAside"
       },
       {
         "prop": "focus",
@@ -14086,8 +13672,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -14100,9 +13685,7 @@ export const pages = [
         "desc": "标注第几个预测年",
         "displayOffset": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号",
-        "description": "标注第几个预测年"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -14163,7 +13746,22 @@ export const pages = [
           "lo": 1100,
           "hi": 2080
         }
-      ]
+      ],
+      "legendHist": "历史实测",
+      "legendMedian": "预测中值",
+      "legendBand": "置信区间（乐观—悲观）",
+      "nowLabel": "当下",
+      "asideTag": "读图",
+      "insightPre": "实线为 ",
+      "insightMid1": "–",
+      "insightMid2": " 实测（",
+      "insightMid3": " ",
+      "insightMid4": "）。",
+      "insightMid5": " 中值预测 ",
+      "insightMid6": " ",
+      "insightMid7": "， 区间 ",
+      "insightMid8": "–",
+      "insightPost": "；置信带越往后越张开，刻画远期不确定性的累积。"
     }
   },
   {
@@ -14185,9 +13783,7 @@ export const pages = [
         "step": 1,
         "desc": "方案数",
         "key": "planCount",
-        "publicKey": "planCount",
-        "publicLabel": "列数量",
-        "description": "方案数"
+        "publicKey": "planCount"
       },
       {
         "prop": "rowCount",
@@ -14197,14 +13793,9 @@ export const pages = [
         "min": 2,
         "max": 6,
         "step": 1,
-        "countArrays": [
-          "attributes"
-        ],
         "desc": "维度数",
         "key": "rowCount",
-        "publicKey": "rowCount",
-        "publicLabel": "行数量",
-        "description": "维度数"
+        "publicKey": "rowCount"
       },
       {
         "prop": "showBadge",
@@ -14213,9 +13804,7 @@ export const pages = [
         "default": true,
         "desc": "推荐徽标",
         "key": "showBadge",
-        "publicKey": "showBadge",
-        "publicLabel": "装饰文案",
-        "description": "推荐徽标"
+        "publicKey": "showBadge"
       },
       {
         "prop": "focus",
@@ -14223,8 +13812,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -14238,8 +13826,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -14257,27 +13844,21 @@ export const pages = [
       },
       "attributes": [
         {
-          "key": "cash",
           "label": "现金流确定性"
         },
         {
-          "key": "growth",
           "label": "成长空间"
         },
         {
-          "key": "bubble",
           "label": "估值泡沫"
         },
         {
-          "key": "pmf",
           "label": "已验证 PMF"
         },
         {
-          "key": "liquidity",
           "label": "流动性"
         },
         {
-          "key": "risk",
           "label": "适配风险偏好"
         }
       ],
@@ -14286,55 +13867,58 @@ export const pages = [
           "name": "稳健配置",
           "sub": "Infra-led",
           "tag": "低波动",
-          "cells": {
-            "cash": "高",
-            "growth": "中",
-            "bubble": "低",
-            "pmf": "yes",
-            "liquidity": "高",
-            "risk": "保守"
-          }
+          "cells": [
+            "高",
+            "中",
+            "低",
+            "yes",
+            "高",
+            "保守"
+          ]
         },
         {
           "name": "均衡配置",
           "sub": "Balanced",
           "tag": "攻守兼备",
-          "cells": {
-            "cash": "中",
-            "growth": "高",
-            "bubble": "中",
-            "pmf": "yes",
-            "liquidity": "中",
-            "risk": "中性"
-          }
+          "cells": [
+            "中",
+            "高",
+            "中",
+            "yes",
+            "中",
+            "中性"
+          ]
         },
         {
           "name": "进取配置",
           "sub": "Model-led",
           "tag": "高弹性",
-          "cells": {
-            "cash": "低",
-            "growth": "极高",
-            "bubble": "高",
-            "pmf": "no",
-            "liquidity": "中",
-            "risk": "激进"
-          }
+          "cells": [
+            "低",
+            "极高",
+            "高",
+            "no",
+            "中",
+            "激进"
+          ]
         },
         {
           "name": "主题配置",
           "sub": "Thematic",
           "tag": "叙事驱动",
-          "cells": {
-            "cash": "低",
-            "growth": "高",
-            "bubble": "极高",
-            "pmf": "no",
-            "liquidity": "低",
-            "risk": "投机"
-          }
+          "cells": [
+            "低",
+            "高",
+            "极高",
+            "no",
+            "低",
+            "投机"
+          ]
         }
-      ]
+      ],
+      "recommendBadge": "★ 推荐",
+      "checkLegendSatisfy": " 满足 · ",
+      "checkLegendUnsatisfy": " 不满足"
     }
   },
   {
@@ -14355,8 +13939,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "stepCount",
-        "publicKey": "stepCount",
-        "publicLabel": "数量"
+        "publicKey": "stepCount"
       },
       {
         "prop": "direction",
@@ -14374,8 +13957,7 @@ export const pages = [
           }
         ],
         "key": "direction",
-        "publicKey": "direction",
-        "publicLabel": "排序"
+        "publicKey": "direction"
       },
       {
         "prop": "showRidge",
@@ -14384,9 +13966,7 @@ export const pages = [
         "default": true,
         "desc": "上升轮廓线",
         "key": "showRidge",
-        "publicKey": "showRidge",
-        "publicLabel": "装饰线",
-        "description": "上升轮廓线"
+        "publicKey": "showRidge"
       },
       {
         "prop": "showValue",
@@ -14394,17 +13974,15 @@ export const pages = [
         "label": "阶面数值",
         "default": true,
         "key": "showValue",
-        "publicKey": "showValueLabels",
-        "publicLabel": "阶面数值"
+        "publicKey": "showValueLabels"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -14426,8 +14004,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -14441,8 +14018,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -14510,8 +14086,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "列数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "segCount",
@@ -14522,8 +14097,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "key": "segCount",
-        "publicKey": "segCount",
-        "publicLabel": "分段数量"
+        "publicKey": "segCount"
       },
       {
         "prop": "mode",
@@ -14541,8 +14115,7 @@ export const pages = [
           }
         ],
         "key": "mode",
-        "publicKey": "mode",
-        "publicLabel": "图表类型"
+        "publicKey": "mode"
       },
       {
         "prop": "showAside",
@@ -14550,17 +14123,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -14582,8 +14153,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -14597,8 +14167,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -14669,7 +14238,17 @@ export const pages = [
             160
           ]
         }
-      ]
+      ],
+      "headEn": "Composition Shift",
+      "headCn": "结构演变 · 占比迁移",
+      "chartTitlePrefix": "各赛道资金",
+      "chartTitleSuffix": "演变",
+      "captionAllPct": "每列归一至 100%",
+      "captionUnitPrefix": "单位 · ",
+      "asideTag": "结构",
+      "insightMid1": " 年，",
+      "insightMid2": "占比升至 ",
+      "insightPost": "， 成为最大权重；五年间头部赛道份额持续走高，资金结构由分散走向集中。"
     },
     "lengthBindings": [
       {
@@ -14699,26 +14278,7 @@ export const pages = [
         "step": 1,
         "desc": "分期数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "分期数"
-      },
-      {
-        "prop": "eventCount",
-        "type": "slider",
-        "label": "事件数量",
-        "default": 1,
-        "min": 1,
-        "max": 1,
-        "step": 1,
-        "countArrays": [
-          "eras[].events"
-        ],
-        "desc": "每个分期展示的事件数量",
-        "key": "eventCount",
-        "publicKey": "eventCount",
-        "publicLabel": "事件数量",
-        "description": "每个分期展示的事件数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showConnector",
@@ -14726,8 +14286,7 @@ export const pages = [
         "label": "脊柱连线",
         "default": true,
         "key": "showConnector",
-        "publicKey": "showConnector",
-        "publicLabel": "脊柱连线"
+        "publicKey": "showConnector"
       },
       {
         "prop": "showAside",
@@ -14736,18 +14295,15 @@ export const pages = [
         "default": true,
         "desc": "节奏解读",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案",
-        "description": "节奏解读"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -14769,8 +14325,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -14784,13 +14339,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
       "itemCount": 4,
-      "eventCount": 1,
       "showConnector": true,
       "showAside": true,
       "focus": true,
@@ -14814,7 +14367,7 @@ export const pages = [
             },
             {
               "date": "02",
-              "text": "OpenAI 要约估值 860亿"
+              "text": "OpenAI 要约收购，估值约 860 亿$"
             }
           ]
         },
@@ -14825,11 +14378,11 @@ export const pages = [
           "events": [
             {
               "date": "05",
-              "text": "xAI B轮60亿，投后240亿"
+              "text": "xAI B 轮 60 亿$，投后 240 亿"
             },
             {
               "date": "06",
-              "text": "Anthropic 获亚马逊追投"
+              "text": "Anthropic 获亚马逊追加战略投资"
             }
           ]
         },
@@ -14840,7 +14393,7 @@ export const pages = [
           "events": [
             {
               "date": "09",
-              "text": "Databricks J轮100亿"
+              "text": "Databricks J 轮约 100 亿$，估值 620 亿"
             },
             {
               "date": "09",
@@ -14855,11 +14408,11 @@ export const pages = [
           "events": [
             {
               "date": "10",
-              "text": "OpenAI 66亿，估值1570亿"
+              "text": "OpenAI 新一轮 66 亿$，估值 1570 亿"
             },
             {
               "date": "12",
-              "text": "Safe SI 种子轮 10 亿$"
+              "text": "Safe SI 种子轮即募 10 亿$"
             }
           ]
         },
@@ -14870,11 +14423,12 @@ export const pages = [
           "events": [
             {
               "date": "2024",
-              "text": "亿元级事件97笔，总额970亿"
+              "text": "≥1 亿$ 事件 97 笔，总额 970 亿$"
             }
           ]
         }
-      ]
+      ],
+      "asideTag": "节奏解读"
     }
   },
   {
@@ -14895,8 +14449,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "layout",
@@ -14914,8 +14467,7 @@ export const pages = [
           }
         ],
         "key": "layout",
-        "publicKey": "layout",
-        "publicLabel": "左右布局"
+        "publicKey": "layout"
       },
       {
         "prop": "showPull",
@@ -14924,9 +14476,7 @@ export const pages = [
         "default": true,
         "desc": "抽言条",
         "key": "showPull",
-        "publicKey": "showPull",
-        "publicLabel": "装饰文案",
-        "description": "抽言条"
+        "publicKey": "showPull"
       },
       {
         "prop": "focus",
@@ -14934,11 +14484,11 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 3,
       "layout": "图左文右",
       "showPull": true,
@@ -14948,15 +14498,16 @@ export const pages = [
       "headline": "钱、算力与叙事的合流",
       "headlineEN": "Money, Compute & Narrative",
       "body": [
-        "资本集中涌向能讲清 AGI 路径的团队，大额融资推高全年叙事。",
-        "算力与数据先兑现现金流，垂直应用在续约能力中重新定价。"
+        "2024 年，资本以前所未有的密度涌向少数能讲好 AGI 故事的团队 —— 单笔金额节节攀升，年末进入白热化。",
+        "与此同时，算力与数据的中游率先兑现现金流，成为更稳的下注；垂直应用则在「能否拿到续约」中被重新定价。"
       ],
       "pull": "在这一年，每一笔大额融资，都是一次对方向的押注。",
       "captions": [
         "主图 / hero",
         "细节 / detail",
         "场景 / scene"
-      ]
+      ],
+      "figureLabel": "FIG.01"
     }
   },
   {
@@ -14984,9 +14535,7 @@ export const pages = [
           }
         ],
         "desc": "动态 shader 或自定义背景媒体",
-        "publicKey": "backgroundMode",
-        "publicLabel": "背景替换",
-        "description": "动态 shader 或自定义背景媒体"
+        "publicKey": "backgroundMode"
       },
       {
         "key": "unicornScene",
@@ -15014,9 +14563,7 @@ export const pages = [
         "dependsOn": "backgroundMode",
         "dependsOnValue": "unicorn",
         "desc": "选择固定 Unicorn shader 场景",
-        "publicKey": "dynamicVisual",
-        "publicLabel": "动态场景",
-        "description": "选择固定 Unicorn shader 场景"
+        "publicKey": "dynamicVisual"
       },
       {
         "prop": "imgCount",
@@ -15027,8 +14574,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "textPos",
@@ -15050,8 +14596,7 @@ export const pages = [
           }
         ],
         "key": "textPos",
-        "publicKey": "textPos",
-        "publicLabel": "文案位置"
+        "publicKey": "textPos"
       },
       {
         "prop": "tagCount",
@@ -15063,9 +14608,7 @@ export const pages = [
         "step": 1,
         "desc": "浮板标签数",
         "key": "tagCount",
-        "publicKey": "tagCount",
-        "publicLabel": "数量",
-        "description": "浮板标签数"
+        "publicKey": "tagCount"
       },
       {
         "prop": "showScrim",
@@ -15073,8 +14616,7 @@ export const pages = [
         "label": "压暗层",
         "default": true,
         "key": "showScrim",
-        "publicKey": "showScrim",
-        "publicLabel": "压暗层"
+        "publicKey": "showScrim"
       },
       {
         "prop": "showRail",
@@ -15083,9 +14625,7 @@ export const pages = [
         "default": true,
         "desc": "底部缩略轨",
         "key": "showRail",
-        "publicKey": "showRail",
-        "publicLabel": "装饰图片",
-        "description": "底部缩略轨"
+        "publicKey": "showRail"
       },
       {
         "prop": "focus",
@@ -15093,11 +14633,11 @@ export const pages = [
         "label": "描边高亮",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "描边高亮"
+        "publicKey": "focus"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 1,
       "backgroundMode": "unicorn",
       "unicornScene": "moving",
@@ -15110,7 +14650,7 @@ export const pages = [
       "kicker": "CHAPTER · 视觉",
       "title": "资本与算力的浪潮",
       "titleEN": "Capital × Compute",
-      "paragraph": "资金密集涌向少数团队，每笔大额融资都是对方向的押注。",
+      "paragraph": "在这一年，资金以前所未有的密度涌向少数团队 —— 每一笔大额融资，都是一次对方向的押注。",
       "tags": [
         "2024 · 资本大年",
         "湾区 63.9%",
@@ -15137,8 +14677,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "laneCount",
-        "publicKey": "laneCount",
-        "publicLabel": "行数量"
+        "publicKey": "laneCount"
       },
       {
         "prop": "phaseCount",
@@ -15148,27 +14687,8 @@ export const pages = [
         "min": 3,
         "max": 6,
         "step": 1,
-        "countArrays": [
-          "phases"
-        ],
         "key": "phaseCount",
-        "publicKey": "phaseCount",
-        "publicLabel": "列数量"
-      },
-      {
-        "prop": "itemCount",
-        "type": "slider",
-        "label": "单元数量",
-        "default": 6,
-        "min": 3,
-        "max": 6,
-        "step": 1,
-        "countArrays": [
-          "lanes[].items"
-        ],
-        "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "单元数量"
+        "publicKey": "phaseCount"
       },
       {
         "prop": "showMilestone",
@@ -15176,8 +14696,7 @@ export const pages = [
         "label": "里程碑标记",
         "default": true,
         "key": "showMilestone",
-        "publicKey": "showMilestone",
-        "publicLabel": "里程碑标记"
+        "publicKey": "showMilestone"
       },
       {
         "prop": "showAside",
@@ -15185,17 +14704,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -15217,8 +14734,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -15232,14 +14748,12 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
       "laneCount": 4,
       "phaseCount": 6,
-      "itemCount": 6,
       "showMilestone": true,
       "focus": true,
       "focusIndex": 0,
@@ -15313,7 +14827,14 @@ export const pages = [
             "全球协同"
           ]
         }
-      ]
+      ],
+      "headEn": "Roadmap",
+      "headCn": "布局路线 · 阶段推进",
+      "axisCornerLabel": "泳道 ＼ 阶段",
+      "asideTag": "路径",
+      "insightMid1": "泳道贯穿全周期：由 ",
+      "insightMid2": " 起步， 在 ",
+      "insightPost": " 前后迎来关键节点；四条泳道并行推进，节奏彼此咬合。"
     }
   },
   {
@@ -15334,8 +14855,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "criteriaCount",
@@ -15346,8 +14866,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "criteriaCount",
-        "publicKey": "criteriaCount",
-        "publicLabel": "行数量"
+        "publicKey": "criteriaCount"
       },
       {
         "prop": "sort",
@@ -15365,8 +14884,7 @@ export const pages = [
           }
         ],
         "key": "sort",
-        "publicKey": "sort",
-        "publicLabel": "排序"
+        "publicKey": "sort"
       },
       {
         "prop": "showComposite",
@@ -15374,8 +14892,7 @@ export const pages = [
         "label": "综合分环",
         "default": true,
         "key": "showComposite",
-        "publicKey": "showComposite",
-        "publicLabel": "综合分环"
+        "publicKey": "showComposite"
       },
       {
         "prop": "showAside",
@@ -15383,17 +14900,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -15415,8 +14930,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -15430,8 +14944,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -15513,7 +15026,13 @@ export const pages = [
             54
           ]
         }
-      ]
+      ],
+      "headEn": "Scorecard",
+      "headCn": "赛道评分 · 多维测评",
+      "asideTag": "评分口径",
+      "methodologyPre": "综合分为各维度（0–100）等权平均；",
+      "methodologyMid": " 以 ",
+      "methodologyPost": " 分领先—— 资本热度突出但收入兑现与竞争格局承压。评分为调研主观测评，仅供研究参考。"
     }
   },
   {
@@ -15529,24 +15048,19 @@ export const pages = [
         "prop": "imgSide",
         "type": "radio",
         "label": "图片位置",
-        "default": "left",
+        "default": "左",
         "options": [
           {
-            "value": "left",
-            "label": "左",
-            "image": "",
-            "color": ""
+            "value": "左",
+            "label": "左"
           },
           {
-            "value": "right",
-            "label": "右",
-            "image": "",
-            "color": ""
+            "value": "右",
+            "label": "右"
           }
         ],
         "key": "imgSide",
-        "publicKey": "imgSide",
-        "publicLabel": "图片位置"
+        "publicKey": "imgSide"
       },
       {
         "prop": "credCount",
@@ -15558,9 +15072,7 @@ export const pages = [
         "step": 1,
         "desc": "资历标签数",
         "key": "credCount",
-        "publicKey": "credCount",
-        "publicLabel": "富文本数量",
-        "description": "资历标签数"
+        "publicKey": "credCount"
       },
       {
         "prop": "mediaFit",
@@ -15578,8 +15090,7 @@ export const pages = [
           }
         ],
         "key": "mediaFit",
-        "publicKey": "mediaFit",
-        "publicLabel": "媒体填充类型"
+        "publicKey": "mediaFit"
       },
       {
         "prop": "showMark",
@@ -15587,8 +15098,7 @@ export const pages = [
         "label": "引号装饰",
         "default": true,
         "key": "showMark",
-        "publicKey": "showMark",
-        "publicLabel": "引号装饰"
+        "publicKey": "showMark"
       },
       {
         "prop": "focus",
@@ -15596,12 +15106,12 @@ export const pages = [
         "label": "描边高亮",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "描边高亮"
+        "publicKey": "focus"
       }
     ],
     "defaultProps": {
-      "imgSide": "left",
+      "images": [],
+      "imgSide": "左",
       "quote": "真正稀缺的不是模型，而是能把模型嵌进工作流、拿到续约的垂直应用 —— 卖铲子的人最先赚钱，而修路的人走得最远。",
       "name": "某产业基金",
       "role": "企业服务 合伙人",
@@ -15638,9 +15148,7 @@ export const pages = [
         "step": 1,
         "desc": "议程小节数",
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量",
-        "description": "议程小节数"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showProgress",
@@ -15649,18 +15157,15 @@ export const pages = [
         "default": true,
         "desc": "进度点",
         "key": "showProgress",
-        "publicKey": "showProgress",
-        "publicLabel": "装饰文案",
-        "description": "进度点"
+        "publicKey": "showProgress"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -15682,8 +15187,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -15697,8 +15201,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -15736,7 +15239,8 @@ export const pages = [
           "label": "退出预期",
           "sub": "一级与二级的预期差"
         }
-      ]
+      ],
+      "sideLabel": "CHAPTER"
     }
   },
   {
@@ -15757,8 +15261,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "showAside",
@@ -15766,17 +15269,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -15798,8 +15299,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -15813,8 +15313,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -15878,20 +15377,18 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "rowCount",
-        "publicKey": "rowCount",
-        "publicLabel": "行数量"
+        "publicKey": "rowCount"
       },
       {
         "prop": "columnCount",
         "type": "slider",
         "label": "列数量",
-        "default": 4,
+        "default": 5,
         "min": 2,
         "max": 5,
         "step": 1,
         "key": "columnCount",
-        "publicKey": "columnCount",
-        "publicLabel": "列数量"
+        "publicKey": "columnCount"
       },
       {
         "prop": "highlightCol",
@@ -15904,8 +15401,7 @@ export const pages = [
         "maxFromKeyOffset": -1,
         "step": 1,
         "key": "highlightCol",
-        "publicKey": "highlightCol",
-        "publicLabel": "高亮列 (-1 关闭)"
+        "publicKey": "highlightCol"
       },
       {
         "prop": "showAside",
@@ -15913,17 +15409,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -15945,8 +15439,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -15960,8 +15453,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -16069,7 +15561,11 @@ export const pages = [
             "标配"
           ]
         }
-      ]
+      ],
+      "ratingLegendLabel": "评级 弱→强",
+      "checkLegendSatisfy": " 满足",
+      "checkLegendPartial": " 部分",
+      "checkLegendUnsatisfy": " 不满足"
     }
   },
   {
@@ -16091,9 +15587,7 @@ export const pages = [
         "step": 1,
         "desc": "步骤数",
         "key": "stepCount",
-        "publicKey": "stepCount",
-        "publicLabel": "数量",
-        "description": "步骤数"
+        "publicKey": "stepCount"
       },
       {
         "prop": "showAside",
@@ -16101,17 +15595,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -16133,8 +15625,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -16148,8 +15639,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -16213,8 +15703,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "itemCount",
-        "publicKey": "itemCount",
-        "publicLabel": "数量"
+        "publicKey": "itemCount"
       },
       {
         "prop": "columns",
@@ -16225,8 +15714,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "key": "columns",
-        "publicKey": "columns",
-        "publicLabel": "每行数量"
+        "publicKey": "columns"
       },
       {
         "prop": "showAside",
@@ -16234,17 +15722,15 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -16266,8 +15752,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -16281,8 +15766,7 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
@@ -16344,8 +15828,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "imgSide",
@@ -16367,8 +15850,7 @@ export const pages = [
           }
         ],
         "key": "imgSide",
-        "publicKey": "imgSide",
-        "publicLabel": "图片位置"
+        "publicKey": "imgSide"
       },
       {
         "prop": "statCount",
@@ -16380,9 +15862,7 @@ export const pages = [
         "step": 1,
         "desc": "关键数字数",
         "key": "statCount",
-        "publicKey": "statCount",
-        "publicLabel": "数量",
-        "description": "关键数字数"
+        "publicKey": "statCount"
       },
       {
         "prop": "showAside",
@@ -16390,8 +15870,7 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "focus",
@@ -16399,8 +15878,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -16414,11 +15892,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "kicker": "专题洞察",
       "title": "算力，是这轮周期的硬通货",
       "titleEN": "Compute is the hard currency",
@@ -16474,8 +15952,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "memberCount",
-        "publicKey": "memberCount",
-        "publicLabel": "数量"
+        "publicKey": "memberCount"
       },
       {
         "prop": "columns",
@@ -16486,8 +15963,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "columns",
-        "publicKey": "columns",
-        "publicLabel": "每行数量"
+        "publicKey": "columns"
       },
       {
         "prop": "imgCount",
@@ -16498,8 +15974,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "showAside",
@@ -16507,8 +15982,7 @@ export const pages = [
         "label": "装饰文案",
         "default": true,
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "装饰文案"
+        "publicKey": "showAside"
       },
       {
         "prop": "focus",
@@ -16516,8 +15990,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -16531,11 +16004,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "memberCount": 4,
       "columns": 4,
       "focus": true,
@@ -16579,7 +16052,9 @@ export const pages = [
           "role": "对外沟通",
           "en": "Communications"
         }
-      ]
+      ],
+      "portraitsLabel": "Portraits",
+      "asideTag": "致谢"
     }
   },
   {
@@ -16600,8 +16075,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "arc",
@@ -16609,17 +16083,15 @@ export const pages = [
         "label": "弧形排列",
         "default": true,
         "key": "arc",
-        "publicKey": "arc",
-        "publicLabel": "弧形排列"
+        "publicKey": "arc"
       },
       {
         "prop": "labelType",
         "type": "labelType",
         "label": "标签类型",
-        "default": "number",
+        "default": "数字",
         "key": "labelType",
         "publicKey": "labelType",
-        "publicLabel": "标签类型",
         "options": [
           {
             "value": "number",
@@ -16641,8 +16113,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -16656,11 +16127,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "imgCount": 4,
       "arc": true,
       "focus": true,
@@ -16713,8 +16184,7 @@ export const pages = [
         "max": 3,
         "step": 1,
         "key": "expCount",
-        "publicKey": "expCount",
-        "publicLabel": "经历条数"
+        "publicKey": "expCount"
       },
       {
         "prop": "statCount",
@@ -16725,8 +16195,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "statCount",
-        "publicKey": "statCount",
-        "publicLabel": "数据条数"
+        "publicKey": "statCount"
       },
       {
         "prop": "skillCount",
@@ -16737,8 +16206,7 @@ export const pages = [
         "max": 5,
         "step": 1,
         "key": "skillCount",
-        "publicKey": "skillCount",
-        "publicLabel": "能力条数"
+        "publicKey": "skillCount"
       },
       {
         "prop": "infoCount",
@@ -16749,8 +16217,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "infoCount",
-        "publicKey": "infoCount",
-        "publicLabel": "信息条数"
+        "publicKey": "infoCount"
       },
       {
         "prop": "pillCount",
@@ -16761,8 +16228,7 @@ export const pages = [
         "max": 8,
         "step": 1,
         "key": "pillCount",
-        "publicKey": "pillCount",
-        "publicLabel": "标签数量"
+        "publicKey": "pillCount"
       },
       {
         "prop": "imgCount",
@@ -16773,8 +16239,7 @@ export const pages = [
         "max": 2,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "showBarcode",
@@ -16782,8 +16247,7 @@ export const pages = [
         "label": "条形码装饰",
         "default": true,
         "key": "showBarcode",
-        "publicKey": "showBarcode",
-        "publicLabel": "条形码装饰"
+        "publicKey": "showBarcode"
       },
       {
         "prop": "focus",
@@ -16791,8 +16255,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -16806,11 +16269,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "title": "About us",
       "name": "AI Capital Lab",
       "nameEN": "资本研究室",
@@ -16941,8 +16404,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "tagCount",
@@ -16953,8 +16415,7 @@ export const pages = [
         "max": 6,
         "step": 1,
         "key": "tagCount",
-        "publicKey": "tagCount",
-        "publicLabel": "标签数量"
+        "publicKey": "tagCount"
       },
       {
         "prop": "showMeta",
@@ -16962,8 +16423,7 @@ export const pages = [
         "label": "说明与标签",
         "default": true,
         "key": "showMeta",
-        "publicKey": "showMeta",
-        "publicLabel": "说明与标签"
+        "publicKey": "showMeta"
       },
       {
         "prop": "focus",
@@ -16971,8 +16431,7 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       },
       {
         "prop": "focusIndex",
@@ -16986,11 +16445,11 @@ export const pages = [
         "displayOffset": 1,
         "step": 1,
         "key": "focusIndex",
-        "publicKey": "focusIndex",
-        "publicLabel": "焦点序号"
+        "publicKey": "focusIndex"
       }
     ],
     "defaultProps": {
+      "images": [],
       "kicker": "Featured Companies",
       "title": "代表企业掠影",
       "titleEN": "Company Gallery",
@@ -17029,8 +16488,7 @@ export const pages = [
         "max": 4,
         "step": 1,
         "key": "imgCount",
-        "publicKey": "imgCount",
-        "publicLabel": "图片槽数量"
+        "publicKey": "imgCount"
       },
       {
         "prop": "showAside",
@@ -17039,9 +16497,7 @@ export const pages = [
         "default": true,
         "desc": "数据来源面板",
         "key": "showAside",
-        "publicKey": "showAside",
-        "publicLabel": "附属面板",
-        "description": "数据来源面板"
+        "publicKey": "showAside"
       },
       {
         "prop": "showOrnament",
@@ -17049,8 +16505,7 @@ export const pages = [
         "label": "装饰图形",
         "default": true,
         "key": "showOrnament",
-        "publicKey": "showOrnament",
-        "publicLabel": "装饰图形"
+        "publicKey": "showOrnament"
       },
       {
         "prop": "focus",
@@ -17058,15 +16513,16 @@ export const pages = [
         "label": "重点信息 Focus",
         "default": true,
         "key": "focus",
-        "publicKey": "focus",
-        "publicLabel": "重点信息 Focus"
+        "publicKey": "focus"
       }
     ],
     "defaultProps": {
+      "images": [],
       "brand": "AI CAPITAL LAB",
       "headline": "结语",
       "headlineEN": "Closing · Thank You",
       "statement": "资本的下一阶段，将从「赌叙事」转向「看兑现」。能把技术沉淀为可持续收入的公司，才能在退潮后留在牌桌上。",
+      "signature": "AInsight",
       "contact": [
         {
           "label": "数据口径",
@@ -17085,7 +16541,10 @@ export const pages = [
       ],
       "imgCount": 0,
       "showOrnament": true,
-      "focus": true
+      "focus": true,
+      "footerLabel": "End of Report",
+      "sourcesLabelEN": "Sources",
+      "sourcesLabelCN": "附录 · 数据来源"
     }
   }
 ];

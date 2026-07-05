@@ -23,8 +23,8 @@ export const THEME = {
   inkDim: '#3D413A',
   paper:  '#FAFAF6',         // off-white page
   card:   '#FFFFFF',
-  muted:  '#5F6559',         // secondary text
-  faint:  '#6B7165',         // tertiary text / labels
+  muted:  '#83877C',         // secondary text
+  faint:  '#B7BBB0',         // tertiary text / labels
   hair:   'rgba(14,17,11,0.10)',   // hairline divider
   hairStrong: 'rgba(14,17,11,0.16)',
   // data semantics
