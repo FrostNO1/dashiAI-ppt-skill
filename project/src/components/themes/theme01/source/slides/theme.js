@@ -97,4 +97,17 @@ export const THEME_CSS = `
   [data-deck-active] .aip-content > *:nth-child(4){animation-delay:.15s;}
   @keyframes aip-rise{from{transform:translateY(14px);}to{transform:none;}}
 }
+
+/* Full-bleed media layers (data-aip-media-layer) sit under the typographic
+   layers (z 3-4), and the entrance animation above pins every .aip-content
+   child in its own stacking context — an empty slot's own z-index can never
+   escape it, so under a full-page composition (mag cover) the slot is
+   unclickable everywhere. While the slot is EMPTY and the deck is in edit
+   mode, lift the media layer above the type so click-to-upload works
+   anywhere; once media lands (or in view/present mode) the layer drops back
+   under the text. Same trade-off the theme04 hero cover shipped with, gated
+   tighter. */
+/* !important: some layers carry an inline z-index (hero overlay pins itself
+   at 0); the edit-mode lift must beat inline values too. */
+body[data-mode="edit"] [data-aip-media-layer]:has([data-aip-slot-empty]){z-index:6 !important;}
 `;
