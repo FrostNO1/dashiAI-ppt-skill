@@ -37,21 +37,34 @@
 
 ## 30 秒开始
 
+**Claude Code** 用官方插件（支持自动更新，之后 `/plugin marketplace update dashiai-ppt-skill` 即可升级）：
+
+```
+/plugin marketplace add chuspeeism/dashiAI-ppt-skill
+/plugin install dashiai-ppt@dashiai-ppt-skill
+```
+
+**Codex / Cursor 等其他 Agent** 用一行命令：
+
 ```bash
 npx skills add https://github.com/chuspeeism/dashiAI-ppt-skill --skill dashiai-ppt
 ```
 
-也可以直接把这段话发给有 shell 权限的 AI Agent：
+也可以直接把这句话发给你的 AI Agent，让它自己完成安装：
 
 ```text
-帮我安装 dashiai-ppt 这个 skill。请把 https://github.com/chuspeeism/dashiAI-ppt-skill 克隆到一个临时目录，把其中的 skills/dashiai-ppt 文件夹复制到 ~/.claude/skills/dashiai-ppt（Codex 用户放到 ~/.codex/skills/dashiai-ppt），删掉临时目录，最后检查安装目录里 SKILL.md、project/、references/、scripts/ 是否存在。
+克隆安装这个 skill https://github.com/chuspeeism/dashiAI-ppt-skill
 ```
 
-已经安装过的话，用这段话更新：
+> skill 内容在仓库的 `skills/dashiai-ppt/` 子目录，Agent 应把该子目录放进自己的 skills 目录。
+
+已经安装过的话，用这句话更新：
 
 ```text
-帮我更新 dashiai-ppt 这个 skill。请把 https://github.com/chuspeeism/dashiAI-ppt-skill 克隆到一个临时目录，用其中的 skills/dashiai-ppt 覆盖 ~/.claude/skills/dashiai-ppt（Codex 用户为 ~/.codex/skills/dashiai-ppt），删掉临时目录，然后告诉我 SKILL.md 里的「当前版本」。
+帮我更新 dashiai-ppt 这个 skill https://github.com/chuspeeism/dashiAI-ppt-skill
 ```
+
+环境要求：本机能运行 **Node.js 18+ 和 npm**（首次生成时依赖自动安装）；导出 PPTX / PDF 需要本机装有 Chrome / Chromium / Edge。
 
 安装后直接对 Agent 说：
 
@@ -117,65 +130,6 @@ HTML 版与导出 PPTX 版的逐页对比：
 | 豆包 | 支持 | 刚支持 Skill 的豆包也能跑出很好的效果 |
 | Cursor / 其他本地 Agent | 可用 | 需要能读写文件并执行 shell 命令 |
 | 普通网页 Chatbot | 不推荐 | 生成器需要本地 Node.js 环境 |
-
-## 安装
-
-### 方式一：Claude Code 官方插件（推荐，支持自动更新）
-
-在 Claude Code 里执行：
-
-```
-/plugin marketplace add chuspeeism/dashiAI-ppt-skill
-/plugin install dashiai-ppt@dashiai-ppt-skill
-```
-
-以后更新只需 `/plugin marketplace update dashiai-ppt-skill`。
-
-### 方式二：一行命令安装（Codex / Cursor 等其他 Agent）
-
-```bash
-npx skills add https://github.com/chuspeeism/dashiAI-ppt-skill --skill dashiai-ppt
-```
-
-### 方式三：把下面这段话直接发给 AI
-
-> 帮我安装 `dashiai-ppt` 这个 skill。请按下面步骤做：
->
-> 1. 确保 `~/.claude/skills/` 目录存在（不存在就创建；Codex 用户为 `~/.codex/skills/`）
-> 2. 执行 `git clone --depth=1 https://github.com/chuspeeism/dashiAI-ppt-skill.git /tmp/dashiai-ppt-skill`
-> 3. 执行 `cp -R /tmp/dashiai-ppt-skill/skills/dashiai-ppt ~/.claude/skills/dashiai-ppt`，然后 `rm -rf /tmp/dashiai-ppt-skill`
-> 4. 验证：`ls ~/.claude/skills/dashiai-ppt/` 应该看到 `SKILL.md`、`project/`、`references/`、`scripts/`
-> 5. 告诉我安装好了，之后我说"帮我做一份 PPT"之类的话就会触发这个 skill
-
-把这段话复制粘贴给 Claude Code / Codex / 任何有 shell 权限的 AI Agent，它会自动完成安装。
-
-### 方式四：手动命令行
-
-skill 内容位于仓库的 `skills/dashiai-ppt/` 子目录，克隆后拷贝该子目录即可：
-
-```bash
-git clone --depth=1 https://github.com/chuspeeism/dashiAI-ppt-skill.git /tmp/dashiai-ppt-skill
-
-# Claude Code
-mkdir -p ~/.claude/skills && cp -R /tmp/dashiai-ppt-skill/skills/dashiai-ppt ~/.claude/skills/dashiai-ppt
-
-# Codex
-mkdir -p ~/.codex/skills && cp -R /tmp/dashiai-ppt-skill/skills/dashiai-ppt ~/.codex/skills/dashiai-ppt
-
-rm -rf /tmp/dashiai-ppt-skill
-```
-
-环境要求：本机能运行 **Node.js 18+ 和 npm**（首次生成时依赖自动安装）；导出 PPTX / PDF 需要本机装有 Chrome / Chromium / Edge。
-
-### 触发方式
-
-装好后，Agent 会在对话里自动发现并调用这个 skill。触发关键词：
-
-- "帮我做一份 PPT / 演示文稿 / 幻灯片 / 汇报材料"
-- "帮我制作一份年终总结汇报 PPT"
-- "根据这份文档生成一份科技感的 PPT"
-- "把风格换成更活泼的"
-- "用 dashiai-ppt 生成 PPT 格式的文件"
 
 ## 使用流程
 

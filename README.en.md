@@ -37,21 +37,34 @@ At generation time the skill shows you previews to choose from, and you can ask 
 
 ## Get Started in 30 Seconds
 
+**Claude Code** — official plugin (auto-updates; upgrade later with `/plugin marketplace update dashiai-ppt-skill`):
+
+```
+/plugin marketplace add chuspeeism/dashiAI-ppt-skill
+/plugin install dashiai-ppt@dashiai-ppt-skill
+```
+
+**Codex / Cursor / other agents** — one-liner:
+
 ```bash
 npx skills add https://github.com/chuspeeism/dashiAI-ppt-skill --skill dashiai-ppt
 ```
 
-Or paste this straight to any AI agent with shell access:
+Or just hand this to your AI agent and let it figure out the install:
 
 ```text
-Install the dashiai-ppt skill for me. Clone https://github.com/chuspeeism/dashiAI-ppt-skill into a temporary directory, copy its skills/dashiai-ppt folder to ~/.claude/skills/dashiai-ppt (Codex users: ~/.codex/skills/dashiai-ppt), remove the temporary directory, then verify that SKILL.md, project/, references/, and scripts/ all exist in the installed directory.
+Clone and install this skill: https://github.com/chuspeeism/dashiAI-ppt-skill
 ```
 
-Already installed? Use this to update:
+> The skill content lives in the repo's `skills/dashiai-ppt/` subdirectory — the agent should place that subdirectory into its own skills directory.
+
+Already installed? Update with:
 
 ```text
-Update the dashiai-ppt skill for me. Clone https://github.com/chuspeeism/dashiAI-ppt-skill into a temporary directory, replace ~/.claude/skills/dashiai-ppt with its skills/dashiai-ppt folder (Codex users: ~/.codex/skills/dashiai-ppt), remove the temporary directory, then tell me the "当前版本" line from SKILL.md.
+Update the dashiai-ppt skill for me: https://github.com/chuspeeism/dashiAI-ppt-skill
 ```
+
+Requirements: a machine that runs **Node.js 18+ and npm** (dependencies auto-install on first generation); exporting PPTX / PDF requires Chrome / Chromium / Edge installed locally.
 
 Once installed, just tell your agent:
 
@@ -121,65 +134,6 @@ Page-by-page comparison between the HTML deck and the exported PPTX:
 | Doubao | Supported | Doubao only just added skill support — and already runs this one remarkably well |
 | Cursor / other local agents | Works | Needs file read/write and shell execution |
 | Plain web chatbots | Not recommended | The generator needs a local Node.js environment |
-
-## Installation
-
-### Option 1: Claude Code official plugin (recommended, auto-updates)
-
-Inside Claude Code, run:
-
-```
-/plugin marketplace add chuspeeism/dashiAI-ppt-skill
-/plugin install dashiai-ppt@dashiai-ppt-skill
-```
-
-To update later, just run `/plugin marketplace update dashiai-ppt-skill`.
-
-### Option 2: One-liner (Codex / Cursor / other agents)
-
-```bash
-npx skills add https://github.com/chuspeeism/dashiAI-ppt-skill --skill dashiai-ppt
-```
-
-### Option 3: Paste this straight to your AI
-
-> Install the `dashiai-ppt` skill for me. Follow these steps:
->
-> 1. Make sure the `~/.claude/skills/` directory exists (create it if not; Codex users: `~/.codex/skills/`)
-> 2. Run `git clone --depth=1 https://github.com/chuspeeism/dashiAI-ppt-skill.git /tmp/dashiai-ppt-skill`
-> 3. Run `cp -R /tmp/dashiai-ppt-skill/skills/dashiai-ppt ~/.claude/skills/dashiai-ppt`, then `rm -rf /tmp/dashiai-ppt-skill`
-> 4. Verify: `ls ~/.claude/skills/dashiai-ppt/` should show `SKILL.md`, `project/`, `references/`, `scripts/`
-> 5. Tell me once it's done — from then on, saying things like "make me a deck" will trigger this skill
-
-Copy-paste this to Claude Code / Codex / any AI agent with shell access, and it will handle the installation on its own.
-
-### Option 4: Manual command line
-
-The skill content lives in the repo's `skills/dashiai-ppt/` subdirectory — clone, then copy that subdirectory:
-
-```bash
-git clone --depth=1 https://github.com/chuspeeism/dashiAI-ppt-skill.git /tmp/dashiai-ppt-skill
-
-# Claude Code
-mkdir -p ~/.claude/skills && cp -R /tmp/dashiai-ppt-skill/skills/dashiai-ppt ~/.claude/skills/dashiai-ppt
-
-# Codex
-mkdir -p ~/.codex/skills && cp -R /tmp/dashiai-ppt-skill/skills/dashiai-ppt ~/.codex/skills/dashiai-ppt
-
-rm -rf /tmp/dashiai-ppt-skill
-```
-
-Requirements: a machine that runs **Node.js 18+ and npm** (dependencies auto-install on first generation); exporting PPTX / PDF requires Chrome / Chromium / Edge installed locally.
-
-### Triggering the skill
-
-Once installed, the agent discovers and invokes this skill automatically in conversation. Trigger phrases:
-
-- "帮我做一份 PPT / 演示文稿 / 幻灯片 / 汇报材料" — "Make me a PPT / presentation / slide deck / report materials"
-- "帮我制作一份年终总结汇报 PPT" — "Make me a year-end summary deck"
-- "根据这份文档生成一份科技感的 PPT" — "Turn this document into a tech-styled deck"
-- "把风格换成更活泼的" — "Switch the style to something livelier"
-- "用 dashiai-ppt 生成 PPT 格式的文件" — "Use dashiai-ppt to generate a PPT file"
 
 ## How It Works
 
