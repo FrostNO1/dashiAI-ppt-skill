@@ -4,11 +4,11 @@
 import { createReadStream, readFileSync, realpathSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { scrubLocalPaths } from '../scrub-local-paths.mjs';
-import { getChromeExecutablePath } from '../chrome-path.mjs';
+import { getExportBrowserPath } from '../chrome-path.mjs';
 import { isExportRequestAllowed } from '../preview-export-auth.mjs';
 import { atomicWriteFileSync, extractDataUrlMedia, isValidDeckState, mergeStateIntoIndexHtml } from '../persist-deck-state.mjs';
 import { isPathInside } from './static-serve.mjs';
-import { ensureUsableTmpdir } from './ensure-tmpdir.mjs';
+import { resolveBrowserTmpdir } from './ensure-tmpdir.mjs';
 
 let ROOT;
 let SERVE_ROOT;
@@ -57,8 +57,12 @@ export async function handleEditablePptxExport(req, res) {
       import('../../packages/html-deck-to-pptx/src/editable.mjs'),
     ]);
     updateExportProgress(progressId, { stage: 'launching', detail: '启动导出浏览器', percent: 6 });
-    ensureUsableTmpdir(message => console.warn(message));
-    const browser = await chromium.launch({ headless: true, executablePath: getChromePath() });
+    const browserTmpdir = resolveBrowserTmpdir([path.join(EXPORT_DIR, '.browser-tmp')], message => console.warn(message));
+    const browser = await chromium.launch({
+      headless: true,
+      executablePath: getChromePath(),
+      env: { ...process.env, TMPDIR: browserTmpdir },
+    });
     const baseName = `${timestampForFile()}-${safeDownloadName(payload.fileName || 'presentation')}`;
     const outFile = path.join(EXPORT_DIR, `${baseName}.pptx`);
     const reportFile = path.join(EXPORT_DIR, `${baseName}.json`);
@@ -155,8 +159,12 @@ export async function handlePdfExport(req, res) {
       import('../../packages/html-deck-to-pptx/src/screenshot.mjs'),
     ]);
     updateExportProgress(progressId, { stage: 'launching', detail: '启动截图浏览器', percent: 6 });
-    ensureUsableTmpdir(message => console.warn(message));
-    const browser = await chromium.launch({ headless: true, executablePath: getChromePath() });
+    const browserTmpdir = resolveBrowserTmpdir([path.join(EXPORT_DIR, '.browser-tmp')], message => console.warn(message));
+    const browser = await chromium.launch({
+      headless: true,
+      executablePath: getChromePath(),
+      env: { ...process.env, TMPDIR: browserTmpdir },
+    });
     const baseName = `${timestampForFile()}-${safeDownloadName(payload.fileName || 'presentation')}`;
     const outFile = path.join(EXPORT_DIR, `${baseName}.pdf`);
     const reportFile = path.join(EXPORT_DIR, `${baseName}.pdf.json`);
@@ -495,7 +503,7 @@ function timestampForFile() {
 }
 
 function getChromePath() {
-  return getChromeExecutablePath();
+  return getExportBrowserPath();
 }
 
 async function closeBrowser(browser) {

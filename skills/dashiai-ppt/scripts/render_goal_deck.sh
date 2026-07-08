@@ -25,6 +25,10 @@ cd "$PROJECT_ROOT"
 if [[ ! -d node_modules || package.json -nt node_modules/.package-lock.json || package-lock.json -nt node_modules/.package-lock.json ]]; then
 npm install
 fi
+# chromium headless shell:无 ProcessSingleton 的无头浏览器。沙箱型宿主(如豆包)会拦完整版
+# Chrome 创建单例锁,导出直接失败;headless shell 同一沙箱下可正常导出。幂等(已装秒过),
+# 下载失败不阻塞生成(那样导出回退系统 Chrome,与旧行为一致)。
+npx --no-install playwright-core install chromium-headless-shell >/dev/null 2>&1 || true
 mkdir -p "$(dirname "$OUT_PATH")"
 npm run props:safe -- --goal "$SPEC_PATH" --write
 npm run validate:goal-spec -- "$SPEC_PATH"

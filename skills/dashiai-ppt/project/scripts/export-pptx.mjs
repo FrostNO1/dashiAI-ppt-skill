@@ -22,8 +22,8 @@ import net from 'node:net';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright-core';
-import { getChromeExecutablePath } from './chrome-path.mjs';
-import { ensureUsableTmpdir } from './preview/ensure-tmpdir.mjs';
+import { getExportBrowserPath } from './chrome-path.mjs';
+import { resolveBrowserTmpdir } from './preview/ensure-tmpdir.mjs';
 import { exportEditablePptxFromUrl } from '../packages/html-deck-to-pptx/src/editable.mjs';
 import { exportScreenshotPdfFromUrl } from '../packages/html-deck-to-pptx/src/screenshot.mjs';
 
@@ -78,8 +78,12 @@ async function main() {
   let browser = null;
   try {
     await waitForServerReady(server);
-    ensureUsableTmpdir(message => console.warn(message));
-    browser = await chromium.launch({ headless: true, executablePath: getChromeExecutablePath() });
+    const browserTmpdir = resolveBrowserTmpdir([path.join(path.dirname(outFile), '.browser-tmp')], message => console.warn(message));
+    browser = await chromium.launch({
+      headless: true,
+      executablePath: getExportBrowserPath(),
+      env: { ...process.env, TMPDIR: browserTmpdir },
+    });
     const url = `http://127.0.0.1:${port}/`;
     if (pdfMode) {
       const result = await exportScreenshotPdfFromUrl(browser, url, { outFile, title });
